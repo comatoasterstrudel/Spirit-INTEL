@@ -20,7 +20,7 @@ class GridUnitPlacerUnitIcon extends FlxSpriteGroup
         this.xPos = xPos;
         this.yPos = yPos;
         
-        bg = new CtSprite(Std.int(x), Std.int(y)).createColorBlock(Constants.gridUnitPlacerUnitIconSize, Constants.gridUnitPlacerUnitIconSize, FlxColor.GRAY);
+        bg = new CtSprite(Std.int(x), Std.int(y)).createFromImage(Constants.gridUnitPlacerUnitBg);
         add(bg);
         
         unitGraphic = new CtSprite().createFromImage(Constants.unitGridGraphicPath + new UnitData(unit).gridGraphic + ".png");

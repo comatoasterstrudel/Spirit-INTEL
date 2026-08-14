@@ -5,6 +5,8 @@ class GridUnitPlacer extends FlxSpriteGroup
     var bg:CtSprite;    
     var uiBg:CtSprite;
 	var uiBgAnim:GridUnitPlacerUiBg;
+    var uiBgLeftEdge:CtSprite;
+    var uiBgRightEdge:CtSprite;
 
 	var robin:GridUnitPlacerRobin;
     
@@ -71,6 +73,20 @@ class GridUnitPlacer extends FlxSpriteGroup
 		uiBgAnim = new GridUnitPlacerUiBg(uiBg);
 		add(uiBgAnim);
         
+        uiBgLeftEdge = new CtSprite().createFromImage(Constants.gridUnitPlacerLeftEdge);
+        uiBgLeftEdge.antialiasing = false;
+        uiBgLeftEdge.x = uiBg.x - uiBgLeftEdge.width;
+        uiBgLeftEdge.alpha = 0;
+        add(uiBgLeftEdge);
+
+        uiBgRightEdge = new CtSprite().createFromImage(Constants.gridUnitPlacerLeftEdge);
+        uiBgRightEdge.antialiasing = false;
+        uiBgRightEdge.x = uiBg.x + uiBg.width;
+        uiBgRightEdge.alpha = 0;
+        uiBgRightEdge.flipX = true;
+        add(uiBgRightEdge);
+
+
         add(uiBg);
         
         bottom = new GridUnitPlacerBottom(uiBg);
@@ -393,6 +409,8 @@ class GridUnitPlacer extends FlxSpriteGroup
 		robin.doAnim();
 
 		FlxTween.tween(uiBg, {alpha: 1}, 0.5);
+		FlxTween.tween(uiBgLeftEdge, {alpha: 1}, 0.5);
+		FlxTween.tween(uiBgRightEdge, {alpha: 1}, 0.5);
 
 		FlxTween.tween(uiBgAnim, {alpha: 1}, 0.5, {
 			onComplete: function(f):Void
@@ -429,7 +447,9 @@ class GridUnitPlacer extends FlxSpriteGroup
 		FlxTween.tween(robin, {alpha: 0}, 0.5);
 
         FlxTween.tween(uiBg, {alpha: 0}, 0.5); 
-        
+        FlxTween.tween(uiBgLeftEdge, {alpha: 0}, 0.5);
+		FlxTween.tween(uiBgRightEdge, {alpha: 0}, 0.5);
+
         FlxTween.tween(unitIcons, {alpha: 0}, 0.5); 
 
         FlxTween.tween(ghostUnitSprites, {alpha: 0}, 0.5); 

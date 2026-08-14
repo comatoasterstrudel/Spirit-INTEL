@@ -20,7 +20,7 @@ class GridUnitPlacerUiBg extends FlxSpriteGroup
         for(spr in 0...Constants.gridUnitPlacerUiBgSpriteNum){
             var prog = 1 - FlxMath.bound(spr / (Constants.gridBackgroundSpriteNum - 1), 0, 1);
             
-            var color:FlxColor = 0xFFEBEBEB;
+            var color:FlxColor = 0xFF9C9C9C;
             color = color.getDarkened(prog);
             
             var bg = new CtSprite(ogBg.x, ogBg.y).createColorBlock(Std.int(ogBg.width), Std.int(ogBg.height), color);
@@ -55,7 +55,7 @@ class GridUnitPlacerUiBg extends FlxSpriteGroup
         tweens = [];
         
         for(spr in members){
-           tweens.push(FlxTween.tween(spr, {x: ogBg.x + (200 * (spr.ID / Constants.gridUnitPlacerUiBgSpriteNum))}, 5, {ease: FlxEase.quadInOut, type: PINGPONG}));
+           tweens.push(FlxTween.tween(spr, {x: ogBg.x + (300 * (spr.ID / Constants.gridUnitPlacerUiBgSpriteNum))}, 5, {ease: FlxEase.quadInOut, type: PINGPONG}));
         }
 		for (i in 0...members.length)
 		{

@@ -11,6 +11,10 @@ class GridUnitPlacerBottom extends FlxSpriteGroup
     var status:GridUnitPlacerBottomStatus = NONE;
 
     // unit info
+    var unitText:CtText;
+    var lvlText:CtText;
+    var hpBar:GridUnitPlacerBottomBar;
+    var mpBar:GridUnitPlacerBottomBar;
 
     // big text
     var bigText:CtText;
@@ -26,7 +30,7 @@ class GridUnitPlacerBottom extends FlxSpriteGroup
         for(anim in ["blank", "finish", "inspect", "reuse", "badreuse"]){
             bottomSprite.animation.addByPrefix(anim, anim, 1, true);
         }
-        bottomSprite.x -= 30;
+        bottomSprite.x -= 10;
         bottomSprite.animation.play("blank");
         add(bottomSprite);
  
@@ -37,7 +41,20 @@ class GridUnitPlacerBottom extends FlxSpriteGroup
         });
 
         // unit info
+        unitText = new CtText();
+        unitText.setFormat(Constants.fontName, 40, FlxColor.BLACK, LEFT);
+        add(unitText);
 
+        lvlText = new CtText();
+        lvlText.setFormat(Constants.fontName, 30, FlxColor.GRAY, LEFT);
+        add(lvlText);
+
+        hpBar = new GridUnitPlacerBottomBar(HP, 640);
+        add(hpBar);
+
+        mpBar = new GridUnitPlacerBottomBar(HP, 680);
+        add(mpBar);
+        
         // big text
         bigText = new CtText();
         bigText.fieldWidth = 300;
@@ -57,6 +74,25 @@ class GridUnitPlacerBottom extends FlxSpriteGroup
         status = UNIT;
 
         bottomSprite.animation.play("blank");
+
+        var unit = new Unit(unit, null, FlxPoint.get(1,1), true, Save.levelUnits.get(unit).getLevel(), true);
+
+        unitText.text = unit.data.name + (placed ? " (PLACED)" : "");
+
+        unitText.scale.set(1,1);
+        unitText.updateHitbox();
+
+        while(unitText.width >= 250){
+            unitText.scale.x -= 0.01;
+            unitText.updateHitbox();
+        }
+
+        unitText.setPosition(720, 570);
+
+        lvlText.text = "LVL " + unit.level;
+        lvlText.setPosition(unitText.x + unitText.width + 10, unitText.y + unitText.height - lvlText.height);
+
+        unit.destroy();
 
         updateVisibility();
     }
@@ -78,9 +114,15 @@ class GridUnitPlacerBottom extends FlxSpriteGroup
 
     public function updateVisibility():Void{
         if(status == UNIT){
-
+            unitText.visible = true;
+            lvlText.visible = true;
+            hpBar.visible = true;
+            mpBar.visible = true;
         } else {
-
+            unitText.visible = false;
+            lvlText.visible = false;
+            hpBar.visible = false;
+            mpBar.visible = false;
         }
 
         if(status == TEXT){
@@ -95,7 +137,7 @@ class GridUnitPlacerBottom extends FlxSpriteGroup
         updateVisibility();
         bottomSprite.animation.play("blank");
 
-        FlxTween.tween(bottomSprite, {alpha: 1}, 0.3);
+        FlxTween.tween(bottomSprite, {alpha: 1}, 0.5);
     }
 
     public function doFadeOut():Void{
@@ -103,6 +145,6 @@ class GridUnitPlacerBottom extends FlxSpriteGroup
         updateVisibility();
         bottomSprite.animation.play("blank");
 
-        FlxTween.tween(bottomSprite, {alpha: 0}, 0.3);
+        FlxTween.tween(bottomSprite, {alpha: 0}, 0.5);
     }
 }
