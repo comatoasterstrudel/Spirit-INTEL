@@ -4,7 +4,7 @@
 
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="RPGENGINE" file="RPGENGINE" main="Main" version="0.0.1" company="comatoasterstrudel_starlaika" />
+	<app title="Spirit-INTEL" file="Spirit-INTEL" main="Main" version="0.0.1" company="Spirit-INTEL" />
 
 	<app preloader="flixel.system.FlxPreloader" />
 
