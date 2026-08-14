@@ -19,8 +19,7 @@ class GridUnitPlacer extends FlxSpriteGroup
     
 	var topButtons:Array<CtSprite> = [];
 
-	var selectingTextBg:CtSprite;
-	var selectingText:CtText;
+	var bottom:GridUnitPlacerBottom;
     
     var placingMenuManager:CtMenuManager;
     var placingCursor:Cursor;
@@ -74,18 +73,8 @@ class GridUnitPlacer extends FlxSpriteGroup
         
         add(uiBg);
         
-		selectingTextBg = new CtSprite().createColorBlock(Std.int(uiBg.width / 1.2), 120, FlxColor.BLACK);
-		selectingTextBg.alpha = .4;
-		selectingTextBg.visible = false;
-		CtUtil.centerSpriteOnSprite(selectingTextBg, uiBg, true, false);
-		selectingTextBg.y = FlxG.height - 150;
-		add(selectingTextBg);
-
-		selectingText = new CtText();
-		selectingText.setFormat(Constants.fontName, 40, FlxColor.WHITE, CENTER, SHADOW, FlxColor.GRAY);
-		selectingText.fieldWidth = uiBg.width / 1.2;
-		selectingText.antialiasing = false;
-		add(selectingText);
+        bottom = new GridUnitPlacerBottom(uiBg);
+        add(bottom);
         
 		addUnitIcons();  
 
@@ -113,7 +102,7 @@ class GridUnitPlacer extends FlxSpriteGroup
         for(i in 0...listOfUnits.length){
             var unitName:String = listOfUnits[i];
             
-            var unitIcon = new GridUnitPlacerUnitIcon(unitName, uiBg.x + (xPos * Constants.gridUnitPlacerUnitIconSize) + (Constants.gridUnitPlacerUnitIconSpacing * (xPos + 1)), 250 + (yPos * Constants.gridUnitPlacerUnitIconSize) + (Constants.gridUnitPlacerUnitIconSpacing * (yPos + 1)), xPos, yPos);
+            var unitIcon = new GridUnitPlacerUnitIcon(unitName, uiBg.x + (xPos * Constants.gridUnitPlacerUnitIconSize) + (Constants.gridUnitPlacerUnitIconSpacing * (xPos + 1)), 200 + (yPos * Constants.gridUnitPlacerUnitIconSize) + (Constants.gridUnitPlacerUnitIconSpacing * (yPos + 1)), xPos, yPos);
             unitIcons.add(unitIcon);
             
             unitIconArray.push(unitIcon);
@@ -163,14 +152,14 @@ class GridUnitPlacer extends FlxSpriteGroup
 					switch (buttonName)
 					{
 						case "finish":
-							updateSelectingText("Start battle");
+                            bottom.updateWithText("Start battle", "finish");
 						case "inspect":
-							updateSelectingText("View the board");
+							bottom.updateWithText("View the board", "inspect");
 						case "reuse":
 							if (reuseEnabled)
-								updateSelectingText("Use last formation");
+								bottom.updateWithText("Use last formation", "reuse");
 							else
-								updateSelectingText("No last formation found");
+								bottom.updateWithText("No formation found", "badreuse");
 					}
 				},
 				clickFunction: function(f):Void
@@ -211,16 +200,7 @@ class GridUnitPlacer extends FlxSpriteGroup
             }
             menuOptions[i.yPos + 1].push({sprite: i.bg, cursorDirection: UP, hoverFunction: function(f):Void{
                 i.updateSelected(true);
-                var theText = new UnitData(i.unit).name + "\nLVL " + CharacterLevel.getLevelFromExp(Save.levelUnits.get(i.unit).exp);
-
-                if (i.placed)
-                {
-                    updateSelectingText(theText + "\nPLACED");
-                }
-                else
-                {
-                    updateSelectingText(theText);
-                }
+                bottom.updateWithUnit(i.unit, i.placed, true);
             }, nonHoverFunction: function(f):Void{
                 i.updateSelected(false);
             }, clickFunction: function(f):Void{
@@ -401,13 +381,6 @@ class GridUnitPlacer extends FlxSpriteGroup
             }
         }
     }
-    
-	function updateSelectingText(text:String):Void
-	{
-		selectingText.text = text;
-		CtUtil.centerSpriteOnSprite(selectingText, selectingTextBg, true, true);
-		selectingTextBg.visible = true;
-	}
 
 	public function activate(?onComplete:Array<GridUnitPlacerInfo>->Void):Void
 	{
@@ -437,9 +410,7 @@ class GridUnitPlacer extends FlxSpriteGroup
 			FlxTween.tween(button, {alpha: 1}, 0.5);
 		}
 
-		FlxTween.tween(selectingText, {alpha: 1}, 0.5);
-
-		FlxTween.tween(selectingTextBg, {alpha: .4}, 0.5);
+        bottom.doFadeIn();
         
         new FlxTimer().start(0.5, function(f):Void{
 			if (!startedBefore)
@@ -463,9 +434,7 @@ class GridUnitPlacer extends FlxSpriteGroup
 
         FlxTween.tween(ghostUnitSprites, {alpha: 0}, 0.5); 
 
-		FlxTween.tween(selectingText, {alpha: 0}, 0.5);
-
-		FlxTween.tween(selectingTextBg, {alpha: 0}, 0.5);
+		bottom.doFadeOut();
 
 		FlxTween.tween(uiBgAnim, {alpha: 0}, 0.5, {
 			onComplete: function(F):Void

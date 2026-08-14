@@ -140,6 +140,7 @@ class Constants
 	public static final gridUnitPlacerButtonPath:String = "assets/images/gridunitplacer/button_";
 	public static final gridUnitPlacerRobinPath:String = "assets/images/gridunitplacer/robin/";
 	public static final gridUnitPlacerUiBgSpriteNum:Int = 15;
+	public static final gridUnitPlacerBubble:String = "assets/images/gridunitplacer/gridplacer_bubble";
 	//
 	// OVERWORLD STUFF !!
 	//

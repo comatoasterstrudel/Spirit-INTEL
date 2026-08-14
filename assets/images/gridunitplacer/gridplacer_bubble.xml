@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="gridplacer_bubble.png">
+<SubTexture name="blank0000" x="591" y="516" width="588" height="257" frameX="-621" frameY="-489" frameWidth="1280" frameHeight="720" />
+<SubTexture name="blank0001" x="0" y="0" width="591" height="258" frameX="-620" frameY="-488" frameWidth="1280" frameHeight="720" />
+<SubTexture name="finish0000" x="0" y="774" width="588" height="257" frameX="-621" frameY="-489" frameWidth="1280" frameHeight="720" />
+<SubTexture name="finish0001" x="0" y="258" width="591" height="258" frameX="-620" frameY="-488" frameWidth="1280" frameHeight="720" />
+<SubTexture name="inspect0000" x="588" y="774" width="588" height="257" frameX="-621" frameY="-489" frameWidth="1280" frameHeight="720" />
+<SubTexture name="inspect0001" x="591" y="0" width="591" height="258" frameX="-620" frameY="-488" frameWidth="1280" frameHeight="720" />
+<SubTexture name="reuse0000" x="1182" y="0" width="588" height="257" frameX="-621" frameY="-489" frameWidth="1280" frameHeight="720" />
+<SubTexture name="reuse0001" x="591" y="258" width="591" height="258" frameX="-620" frameY="-488" frameWidth="1280" frameHeight="720" />
+<SubTexture name="badreuse0000" x="1182" y="257" width="588" height="257" frameX="-621" frameY="-489" frameWidth="1280" frameHeight="720" />
+<SubTexture name="badreuse0001" x="0" y="516" width="591" height="258" frameX="-620" frameY="-488" frameWidth="1280" frameHeight="720" />
+</TextureAtlas>
