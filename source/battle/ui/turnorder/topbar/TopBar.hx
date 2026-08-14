@@ -46,7 +46,7 @@ class TopBar extends FlxSpriteGroup
         hpBar = new TopBarStatDisplay(20, 60, Constants.color_hp, Constants.color_hpLoss, "HP");
         add(hpBar);
 
-        mpBar = new TopBarStatDisplay(20, 115, Constants.color_sp, Constants.color_spLoss, "MP");
+        mpBar = new TopBarStatDisplay(20, 115, Constants.color_mp, Constants.color_mpLoss, "MP");
         add(mpBar);
 
         unitDisplaySprites = [topBarTalkerAnimPath, topText, levelText, hpBar, mpBar];

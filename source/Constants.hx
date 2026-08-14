@@ -14,8 +14,8 @@ class Constants
 	// COLOR
 	public static final color_hp:FlxColor = 0xFFA3E352;
 	public static final color_hpLoss:FlxColor = color_hp.getDarkened(0.8);
-	public static final color_sp:FlxColor = 0xFF525CE3;
-	public static final color_spLoss:FlxColor = color_sp.getDarkened(0.8);
+	public static final color_mp:FlxColor = 0xFF525CE3;
+	public static final color_mpLoss:FlxColor = color_mp.getDarkened(0.8);
 	// Battle
 	public static final battleDataFolder:String = "assets/data/battles/";
 	public static final battleDataPath:String = Constants.battleDataFolder + "battle_";
@@ -66,6 +66,8 @@ class Constants
 	public static final skillIconGraphicPath:String = "assets/images/bottombar/skills/icons/icon_";
 	public static final inspectButtonGraphicPath:String = "assets/images/bottombar/inspect.png";
 	public static final endTurnButtonGraphicPath:String = "assets/images/bottombar/endturn.png";
+	public static final bottomBarTextMiddle:String = "assets/images/bottombar/desctext_bgMiddle.png";
+	public static final bottomBarTextEdge:String = "assets/images/bottombar/desctext_bgEdge.png";
 	// Cursors
 	public static final cursorArrowGraphic:String = "assets/images/cursors/cursor_arrow.png";
 	// LevelSelectorState

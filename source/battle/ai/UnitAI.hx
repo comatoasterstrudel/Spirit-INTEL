@@ -15,7 +15,9 @@ class UnitAi
     }
 
     public function getSkill():UnitAIDecision{        
-        var availableSkills:Array<SkillData> = getAvailableSkills(unit.skills);
+        var mpAllowedSkills:Array<SkillData> = getMpAllowedSkills(unit.skills);
+
+        var availableSkills:Array<SkillData> = getAvailableSkills(mpAllowedSkills);
 
         if(availableSkills.length <= 0){
             return{skillData: null, unit: unit, grid: enemyGrid, position: FlxPoint.get(1,1)};
@@ -24,6 +26,19 @@ class UnitAi
         var advantages = setAdvantageSpots(availableSkills);
 
         return(getFinalDecision(availableSkills, advantages));
+    }
+
+    function getMpAllowedSkills(startingSkills:Array<SkillData>):Array<SkillData>
+    {
+        var skills:Array<SkillData> = [];
+
+        for(skill in startingSkills){
+            if(skill.mpCost <= unit.mp.value){
+                skills.push(skill);
+            }    
+        }
+
+        return skills;
     }
 
     /**

@@ -17,6 +17,9 @@ class SkillData extends CtJsonLoader
 	public var effects:SkillEffects;
 	
 	public var type:String = "";
+
+	public var mpCost:Int;
+
 	public final types:Array<String> = [
 		"damage",
 		"healing",
@@ -59,6 +62,8 @@ class SkillData extends CtJsonLoader
 		}
 		 
 		effects = mapSkillEffects(data);
+
+		this.mpCost = data.mpCost == null ? 0 : data.mpCost;
 	}
 
 	public static function mapSkillEffects(data:Dynamic):SkillEffects

@@ -1,5 +1,7 @@
 package battle.ui.bottombar;
 
+import flixel.text.FlxText.FlxTextFormat;
+
 class BottomBar extends FlxSpriteGroup
 {  
     var bottomCover:CtSprite;
@@ -13,6 +15,9 @@ class BottomBar extends FlxSpriteGroup
 	public var inspect:CtSprite;
 
 	public var descriptionText:CtText;
+	var textBgMiddle:CtSprite;
+    var textBgLeftEdge:CtSprite;
+    var textBgRightEdge:CtSprite;
 	
 	var curUnit:Unit;
 	var lastUnit:Unit;
@@ -49,6 +54,16 @@ class BottomBar extends FlxSpriteGroup
 		endTurn.kill();
 		add(endTurn);
 
+		textBgLeftEdge = new CtSprite().createFromImage(Constants.bottomBarTextEdge);
+        add(textBgLeftEdge);
+
+        textBgRightEdge = new CtSprite().createFromImage(Constants.bottomBarTextEdge);
+        textBgRightEdge.flipX = true;
+        add(textBgRightEdge);
+
+        textBgMiddle = new CtSprite().createFromImage(Constants.bottomBarTextMiddle);
+        add(textBgMiddle);
+
 		descriptionText = new CtText(0, 665, "", Constants.fontName, 35, false);
 		descriptionText.setFormat(Constants.fontName, 35, FlxColor.BLACK, CENTER, SHADOW, FlxColor.GRAY);
 		descriptionText.kill();
@@ -56,6 +71,12 @@ class BottomBar extends FlxSpriteGroup
 		updateCurrentUnit(null);
 	}
     
+	override function update(elapsed:Float):Void{
+		super.update(elapsed);
+
+		updateBgVisibility();
+	}
+
     public function updateCurrentUnit(unit:Unit):Void{
         this.curUnit = unit;
         
@@ -71,7 +92,7 @@ class BottomBar extends FlxSpriteGroup
 
 			for (i in 0...unit.skills.length)
 			{
-				skillIcons[i].updateSkill(true, unit.skills[i]);
+				skillIcons[i].updateSkill(true, unit.skills[i].mpCost <= unit.mp.value, unit.skills[i]);
 			}
 		}
 		else
@@ -99,11 +120,39 @@ class BottomBar extends FlxSpriteGroup
 		inspect.kill();
 		endTurn.kill();
 		descriptionText.kill();
+		descriptionText.visible = false;
 	}
 
 	public function updateText(text:String):Void
 	{
+		descriptionText.visible = true;
 		descriptionText.text = text;
+		descriptionText.applyMarkup(descriptionText.text, [
+			new FlxTextFormatMarkerPair(new FlxTextFormat(Constants.color_mp), "[[BLUE]]"),
+			new FlxTextFormatMarkerPair(new FlxTextFormat(Constants.color_mp.getDarkened(.4)), "[[DARKBLUE]]"),
+			new FlxTextFormatMarkerPair(new FlxTextFormat(FlxColor.GRAY), "[[GRAY]]"),
+		]);
 		descriptionText.screenCenter(X);
+		descriptionText.y = 690 - descriptionText.height / 2;
+
+		textBgMiddle.setGraphicSize(descriptionText.width, descriptionText.height + 20);
+        textBgMiddle.updateHitbox();
+        textBgMiddle.setPosition(descriptionText.x, descriptionText.y - 10);
+
+        textBgLeftEdge.setGraphicSize(textBgLeftEdge.width, textBgMiddle.height);
+        textBgLeftEdge.updateHitbox();
+        textBgLeftEdge.setPosition(descriptionText.x - textBgLeftEdge.width, textBgMiddle.y);
+
+        textBgRightEdge.setGraphicSize(textBgRightEdge.width, textBgMiddle.height);
+        textBgRightEdge.updateHitbox();
+        textBgRightEdge.setPosition(descriptionText.x + descriptionText.width, textBgMiddle.y);
+
+		updateBgVisibility();
+	}
+
+	function updateBgVisibility():Void{
+		for(bg in [textBgLeftEdge, textBgMiddle, textBgRightEdge]){
+			bg.visible = (descriptionText.visible && descriptionText.alive);
+		}
 	}
 }

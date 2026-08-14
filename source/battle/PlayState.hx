@@ -583,12 +583,16 @@ class PlayState extends FlxState
 					cursorDirection: UP,
 					clickFunction: function(spr:FlxSprite):Void
 					{
-						menuManagerPlayerUI.disable(false);
-						new FlxTimer().start(0.01, function(f):Void // jank
-						{
-							uiStatus = GRID_SKILL;
-							addGridSelector();		
-						});
+						if(i.allowed){
+							menuManagerPlayerUI.disable(false);
+							new FlxTimer().start(0.01, function(f):Void // jank
+							{
+								uiStatus = GRID_SKILL;
+								addGridSelector();		
+							});
+						} else {
+							i.shakeBox();
+						}
 					},
 					hoverFunction: function(spr:FlxSprite):Void
 					{
@@ -597,7 +601,9 @@ class PlayState extends FlxState
 							grid.updateFlashingSprites([]);
 						}
 						updateGridSelectorOptions(i.currentSkill.selectType);
-						bottomBar.updateText(i.currentSkill.name + " - " + i.currentSkill.description);
+						var mpCost:Int = i.currentSkill.mpCost;
+						var emptyMPMessage:String = " [[DARKBLUE]](NOT ENOUGH!)[[DARKBLUE]]";
+						bottomBar.updateText("[[GRAY]]" + i.currentSkill.name + "[[GRAY]]   " + i.currentSkill.description + "   [[BLUE]]MP: " + mpCost + "[[BLUE]]" + (currentTurnUnit.mp.value < mpCost ? emptyMPMessage : ""));
 					}
 				});
 		}
@@ -825,6 +831,8 @@ class PlayState extends FlxState
 	 */
 	function useSkill(skillData:SkillData, unit:Unit, grid:Grid, position:FlxPoint, ?onFinish:Void->Void):Void
 	{
+		unit.mp.changeValue(-skillData.mpCost);
+
 		var affectedSpaces = getAffectedSpacesForSkill(skillData, unit, grid, position);
 		
 		eventManager.addEvent(function():Void

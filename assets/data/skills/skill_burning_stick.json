@@ -11,5 +11,6 @@
             }
         ]
     },
+    "mpCost": 6,
     "type": "debuff"
 }

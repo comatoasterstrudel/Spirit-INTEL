@@ -28,8 +28,8 @@ class UnitSelectorBar extends FlxSpriteGroup
                 emptyColor = Constants.color_hpLoss;
                 prefix = "HP";
             case MP:
-                fillColor = Constants.color_sp;
-                emptyColor = Constants.color_spLoss;
+                fillColor = Constants.color_mp;
+                emptyColor = Constants.color_mpLoss;
                 prefix = "MP";
         }
 

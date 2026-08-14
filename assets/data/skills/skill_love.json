@@ -6,5 +6,6 @@
     "effects": {
         "eff_heal": 20 
     },
+    "mpCost": 8,
     "type": "healing"
 }

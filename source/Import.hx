@@ -17,6 +17,7 @@ import battle.victoryscreen.*;
 import battle.result.ResultType;
 import battle.skills.SkillData;
 import save.characterlevel.*;
+import flixel.text.FlxText;
 import battle.skills.SkillEffects;
 import battle.stats.Stat;
 import battle.status.*;

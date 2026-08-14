@@ -44,6 +44,7 @@ class RoundAnim extends FlxSpriteGroup
                 letter.lerpManager.lerpSpeed = 8;
                 letter.lerpManager.targetScale.set(1, 1);
                 letter.scale.set(1.5, 1.5);
+                letter.antialiasing = false;
                 letter.screenCenter(Y);
                 add(letter);
                 letters.push(letter);

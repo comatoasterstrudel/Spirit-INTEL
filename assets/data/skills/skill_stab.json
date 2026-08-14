@@ -6,5 +6,6 @@
     "effects": {
         "eff_damage": 20 
     },
+    "mpCost": 4,
     "type": "damage"
 }

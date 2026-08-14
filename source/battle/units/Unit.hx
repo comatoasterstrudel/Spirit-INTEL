@@ -126,6 +126,10 @@ class Unit extends CtSprite
 		{
 			var skill = new SkillData(data.skills[i]);
 
+			if(i == 0){
+				skill.mpCost = 0;
+			}
+			
 			skills.push(skill);
 		}
 	}

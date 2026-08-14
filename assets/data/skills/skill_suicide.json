@@ -8,5 +8,6 @@
     "effects": {
         "eff_damage": 99999 
     },
+    "mpCost": 9999,
     "type": "na"
 }

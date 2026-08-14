@@ -29,6 +29,16 @@ class SkillIcon extends FlxSpriteGroup
 	 */
 	public var enabled:Bool = false;
 	
+	/**
+	 * The tween used to shake this box
+	 */
+	var shakeTween:FlxTween;
+
+	/**
+	 * Is this skill allowed to be used?
+	 */
+	public var allowed:Bool = false;
+
     public function new():Void{
         super();
         
@@ -46,13 +56,23 @@ class SkillIcon extends FlxSpriteGroup
 		visible = false;
     }
 
+	override function update(elapsed:Float):Void{
+		super.update(elapsed);
+
+		alignSprites();
+	}
+
 	/**
 	 * Call this to update the sprites on this icon.
 	 * @param enabled Should this icon display a skill? Otherwise this box will display as blank.
+	 * @param allowed is this skill allowed to be used?
 	 * @param skill The skill this should display.
 	 */
-	public function updateSkill(enabled:Bool, ?skill:SkillData):Void
+	public function updateSkill(enabled:Bool, ?allowed:Bool = false, ?skill:SkillData):Void
 	{
+		this.allowed = allowed;
+		resetShakeTween();
+
 		this.enabled = enabled;
 
 		if (enabled)
@@ -66,6 +86,17 @@ class SkillIcon extends FlxSpriteGroup
 
 			skillSprite.visible = true;
             
+			if(allowed){
+				for(spr in [outlineSprite, bgSprite, skillSprite]){
+					spr.color = FlxColor.WHITE;
+				}
+			} else {
+				for(spr in [outlineSprite, bgSprite]){
+					spr.color = 0xFF364255;
+				}
+				skillSprite.color = 0xFF404B92;
+			}
+
             if (Assets.exists(path))
             {
                 skillSprite.createFromImage(path);
@@ -81,7 +112,33 @@ class SkillIcon extends FlxSpriteGroup
 			skillSprite.visible = false;
         }
 		visible = true;
+		alignSprites();
+    }
+
+	/**
+	 * Call this to set the positions and offset of the sprites
+	 */
+	public function alignSprites():Void{
 		CtUtil.centerSpriteOnSprite(bgSprite, outlineSprite, true, true);
 		CtUtil.centerSpriteOnSprite(skillSprite, outlineSprite, true, true);
-    }
+		bgSprite.offset.set(outlineSprite.offset.x, outlineSprite.offset.y);
+		skillSprite.offset.set(outlineSprite.offset.x, outlineSprite.offset.y);
+	}
+
+	/**
+	 * Call this to shake this icon box
+	 */
+	public function shakeBox():Void{
+		shakeTween = FlxTween.shake(outlineSprite, 0.1, .1, X);
+	}
+
+	/**
+	 * Remove the shake effect
+	 */
+	public function resetShakeTween():Void{
+		if(shakeTween != null){
+			shakeTween.cancel();
+			shakeTween.destroy();
+		}
+	}
 }
