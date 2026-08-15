@@ -1,0 +1,15 @@
+{
+    "gridSizeX": 3,
+    "gridSizeY": 3,
+    "background": "factory",
+    "allyUnits": [],
+    "enemyUnits": [
+        {
+            "id": "leftovers",
+            "x": 1,
+            "y": 1,
+            "level": 5
+        }
+    ],
+    "music": "factory"
+}

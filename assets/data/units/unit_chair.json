@@ -5,7 +5,7 @@
     "uiGraphicEnemy": "chair_enemy",   
     "stat_maxHp": 60,
     "stat_maxMp": 40,
-    "stat_speed": 5,
+    "stat_speed": 4,
     "stat_attack": 130,
     "stat_sattack": 50,
     "skills": ["stab", "shock", "whip", "suicide"],
