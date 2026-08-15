@@ -91,10 +91,9 @@ class SkillIcon extends FlxSpriteGroup
 					spr.color = FlxColor.WHITE;
 				}
 			} else {
-				for(spr in [outlineSprite, bgSprite]){
-					spr.color = 0xFF364255;
+				for(spr in [outlineSprite, bgSprite, skillSprite]){
+					spr.color = FlxColor.GRAY;
 				}
-				skillSprite.color = 0xFFB2B3B6;
 			}
 
             if (Assets.exists(path))
