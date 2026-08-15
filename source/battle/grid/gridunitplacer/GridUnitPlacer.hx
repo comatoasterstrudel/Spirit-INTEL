@@ -194,8 +194,18 @@ class GridUnitPlacer extends FlxSpriteGroup
 					switch (buttonName)
 					{
 						case "finish":
-							selectingMenuManager.disable();
-							deactivate();    
+                            var hasunits:Bool = false;
+                            for(space in allyGrid.spaces){
+                                if(space.unit != null) hasunits = true;
+                            }
+
+                            if(placedUnits.length <= 0 && !hasunits){
+                                bottom.updateWithText("Can't start without units!", "finish");
+                                FlxTween.shake(button, 0.05, .1, X);
+                            } else {
+                                selectingMenuManager.disable();
+							    deactivate();  
+                            }  
 						case "inspect":
 							selectingMenuManager.disable();
 							deactivate(function():Void

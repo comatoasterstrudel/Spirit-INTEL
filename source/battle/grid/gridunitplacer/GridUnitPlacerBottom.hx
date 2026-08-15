@@ -58,7 +58,7 @@ class GridUnitPlacerBottom extends FlxSpriteGroup
         // big text
         bigText = new CtText();
         bigText.fieldWidth = 300;
-        bigText.setFormat(Constants.fontName, 60, FlxColor.BLACK, LEFT);
+        bigText.setFormat(Constants.fontName, 50, FlxColor.BLACK, LEFT);
         add(bigText);
 
         updateVisibility();
