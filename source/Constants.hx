@@ -143,6 +143,8 @@ class Constants
 	public static final gridUnitPlacerBubble:String = "assets/images/gridunitplacer/gridplacer_bubble";
 	public static final gridUnitPlacerLeftEdge:String = "assets/images/gridunitplacer/gridplacer_leftedge.png";
 	public static final gridUnitPlacerUnitBg:String = "assets/images/gridunitplacer/gridplacer_unitbg.png";
+	public static final gridUnitPlacerBarEdge:String = "assets/images/gridunitplacer/gridplacer_baredge.png";
+	public static final gridUnitPlacerFade:String = "assets/images/gridunitplacer/gridplacer_fade.png";
 	//
 	// OVERWORLD STUFF !!
 	//

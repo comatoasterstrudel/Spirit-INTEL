@@ -46,6 +46,8 @@ class GridUnitPlacer extends FlxSpriteGroup
     
 	var reuseEnabled:Bool = false;
     
+    var fade:CtSprite;
+
     public function new(allyGrid:Grid, enemyGrid:Grid):Void{
         super();
         
@@ -72,7 +74,7 @@ class GridUnitPlacer extends FlxSpriteGroup
         uiBg.alpha = 0;
 		uiBgAnim = new GridUnitPlacerUiBg(uiBg);
 		add(uiBgAnim);
-        
+         
         uiBgLeftEdge = new CtSprite().createFromImage(Constants.gridUnitPlacerLeftEdge);
         uiBgLeftEdge.antialiasing = false;
         uiBgLeftEdge.x = uiBg.x - uiBgLeftEdge.width;
@@ -86,13 +88,17 @@ class GridUnitPlacer extends FlxSpriteGroup
         uiBgRightEdge.flipX = true;
         add(uiBgRightEdge);
 
-
         add(uiBg);
         
         bottom = new GridUnitPlacerBottom(uiBg);
-        add(bottom);
         
 		addUnitIcons();  
+
+        fade = new CtSprite().createFromImage(Constants.gridUnitPlacerFade);
+        fade.alpha = 0;
+        add(fade);
+        
+        add(bottom);
 
         initSelectingMenu();
         initPlacingMenu();
@@ -112,6 +118,10 @@ class GridUnitPlacer extends FlxSpriteGroup
         
 		var listOfUnits:Array<String> = Unit.getListOfUnlockedUnits();
         
+        #if forceUnitPlacerUnits
+        listOfUnits = ["chair", "chair", "chair", "chair", "chair", "chair", "chair", "chair", "chair", "chair", "chair", "chair", "chair", "chair", "chair", "chair", "chair", "chair", "chair", "chair", "chair", "chair", "chair", "chair", "chair", "chair", "chair", ];
+        #end
+
         var xPos:Int = 0;
         var yPos:Int = 0;
         
@@ -139,7 +149,7 @@ class GridUnitPlacer extends FlxSpriteGroup
         selectingCursor = new Cursor(Constants.cursorArrowGraphic);
         add(selectingCursor);
         
-        selectingMenuManager.addCursor(selectingCursor, 30);
+        selectingMenuManager.addCursor(selectingCursor, 30, false, true);
         
 		var menuOptions:Array<Array<CtMenuOption>> = [[]];
         
@@ -177,6 +187,7 @@ class GridUnitPlacer extends FlxSpriteGroup
 							else
 								bottom.updateWithText("No formation found", "badreuse");
 					}
+                    updateUnitIconPositions();
 				},
 				clickFunction: function(f):Void
 				{
@@ -217,6 +228,8 @@ class GridUnitPlacer extends FlxSpriteGroup
             menuOptions[i.yPos + 1].push({sprite: i.bg, cursorDirection: UP, hoverFunction: function(f):Void{
                 i.updateSelected(true);
                 bottom.updateWithUnit(i.unit, i.placed, true);
+
+                updateUnitIconPositions();
             }, nonHoverFunction: function(f):Void{
                 i.updateSelected(false);
             }, clickFunction: function(f):Void{
@@ -224,6 +237,7 @@ class GridUnitPlacer extends FlxSpriteGroup
                     removePlacedUnit(i.unit);
 						selectingMenuManager.changeSelection();
                 } else {
+                    selectingCursor.visible = false;
                     startPlacing(i.unit);
                 }
             }});
@@ -232,6 +246,12 @@ class GridUnitPlacer extends FlxSpriteGroup
         selectingMenuManager.setMenuOptions(menuOptions, true);
     }
     
+    function updateUnitIconPositions():Void{
+        for(icon in unitIconArray){
+            icon.bg.lerpManager.targetPosition.y = icon.baseY - ((Constants.gridUnitPlacerUnitIconSize + Constants.gridUnitPlacerUnitIconSpacing) * ((FlxMath.bound(selectingMenuManager.curRack, 1) - 1)));
+        }
+    }
+
     function initPlacingMenu():Void{
         placingMenuManager = new CtMenuManager(CtControls.getInputFunction("right", JUSTPRESSED), CtControls.getInputFunction("left", JUSTPRESSED),
 			CtControls.getInputFunction("accept", JUSTPRESSED), CtControls.getInputFunction("cancel", JUSTPRESSED),
@@ -336,7 +356,7 @@ class GridUnitPlacer extends FlxSpriteGroup
         status = SELECTING;
         showGridSpaces();
         placingUnitCursor.visible = false;
-        
+        selectingCursor.visible = true;
         placingMenuManager.disable();
         
         new FlxTimer().start(0.0001, function(f):Void{
@@ -404,7 +424,9 @@ class GridUnitPlacer extends FlxSpriteGroup
 			this.onComplete = onComplete;
         
         FlxTween.tween(bg, {alpha: .85}, 0.5);
-        
+
+        FlxTween.tween(fade, {alpha: 1}, 0.5);
+
 		FlxTween.tween(robin, {alpha: 1}, 0.5);
 		robin.doAnim();
 
@@ -444,6 +466,8 @@ class GridUnitPlacer extends FlxSpriteGroup
 	{
         FlxTween.tween(bg, {alpha: 0}, 0.5);
         
+        FlxTween.tween(fade, {alpha: 0}, 0.5);
+
 		FlxTween.tween(robin, {alpha: 0}, 0.5);
 
         FlxTween.tween(uiBg, {alpha: 0}, 0.5); 

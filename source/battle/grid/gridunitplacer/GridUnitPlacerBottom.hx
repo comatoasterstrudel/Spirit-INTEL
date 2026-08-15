@@ -46,13 +46,13 @@ class GridUnitPlacerBottom extends FlxSpriteGroup
         add(unitText);
 
         lvlText = new CtText();
-        lvlText.setFormat(Constants.fontName, 30, FlxColor.GRAY, LEFT);
+        lvlText.setFormat(Constants.fontName, 25, FlxColor.GRAY, LEFT);
         add(lvlText);
 
-        hpBar = new GridUnitPlacerBottomBar(HP, 640);
+        hpBar = new GridUnitPlacerBottomBar(HP, 615);
         add(hpBar);
 
-        mpBar = new GridUnitPlacerBottomBar(HP, 680);
+        mpBar = new GridUnitPlacerBottomBar(MP, 665);
         add(mpBar);
         
         // big text
@@ -82,15 +82,18 @@ class GridUnitPlacerBottom extends FlxSpriteGroup
         unitText.scale.set(1,1);
         unitText.updateHitbox();
 
-        while(unitText.width >= 250){
+        while(unitText.width >= 230){
             unitText.scale.x -= 0.01;
             unitText.updateHitbox();
         }
 
-        unitText.setPosition(720, 570);
+        unitText.setPosition(720, 555);
 
         lvlText.text = "LVL " + unit.level;
         lvlText.setPosition(unitText.x + unitText.width + 10, unitText.y + unitText.height - lvlText.height);
+
+        hpBar.updateWithUnit(unit);
+        mpBar.updateWithUnit(unit);
 
         unit.destroy();
 
