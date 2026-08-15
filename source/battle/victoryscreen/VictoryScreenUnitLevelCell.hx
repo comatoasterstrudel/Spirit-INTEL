@@ -12,10 +12,10 @@ class VictoryScreenUnitLevelCell extends FlxSpriteGroup
 
     var expBar:FlxBar;
 
-    var lastExp:Int = -45;
+    var lastExp:Float = -45;
     var lastLevel:Int = -5;
 
-    var currentExp:Int = 100;
+    var currentExp:Float = 100;
     var currentMaxExp:Int = 100;
 
     var progress:Float = 1;
@@ -88,13 +88,13 @@ class VictoryScreenUnitLevelCell extends FlxSpriteGroup
         unitNameText.y = (baseSprite.y);
         CtUtil.centerSpriteOnSprite(unitNameText, expBar, true, false);
 
-        if(Save.levelUnits.get(unit).exp != lastExp){
+        if(Save.levelUnits.get(unit).expFloat != lastExp){
             levelText.text = "LVL " + Save.levelUnits.get(unit).getLevel() + "\nNEXT: " + (Save.levelUnits.get(unit).getNextlevelExp());
 
             currentExp = Save.levelUnits.get(unit).getCurrentLevelExp();
             currentMaxExp = CharacterLevel.getExpForNextLevel(Save.levelUnits.get(unit).getLevel());
 
-            lastExp = Save.levelUnits.get(unit).exp;
+            lastExp = Save.levelUnits.get(unit).expFloat;
         }
 
         progress = CtUtil.lerpThing(progress, (currentExp / currentMaxExp), elapsed, 10);

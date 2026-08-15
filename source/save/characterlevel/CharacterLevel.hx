@@ -7,6 +7,8 @@ class CharacterLevel
 
     public var exp:Int = 0;
     
+    public var expFloat:Float = 0;
+
     public function new(name:String, type:CharacterLevelType, ?exp:Int = 0):Void{
         this.name = name;
         this.type = type;

@@ -31,6 +31,8 @@ class VictoryScreen extends FlxSubState
     public function new (unitsToAdd:Array<String>, expReward:Int, onComplete:Void->Void){
         super();
 
+        updateExpLevels();
+
         this.unitsToAdd = unitsToAdd;
         this.expReward = expReward;
 
@@ -205,11 +207,11 @@ class VictoryScreen extends FlxSubState
     function distributeExp(exp:Int, ending:Void->Void):Void{
         var time:Float = 2 + (5 * FlxMath.bound(exp / 3000, 0));
         // robin
-        FlxTween.tween(Save.levelRobin, {exp: Save.levelRobin.exp + exp}, time);
+        FlxTween.tween(Save.levelRobin, {exp: Save.levelRobin.exp + exp, expFloat: Save.levelRobin.exp + exp}, time);
 
         for(unit in unitsToAdd){
             var exptogive = FlxMath.bound(exp / unitsToAdd.length, 1);
-            FlxTween.tween(Save.levelUnits.get(unit), {exp: Save.levelUnits.get(unit).exp + exptogive}, time);
+            FlxTween.tween(Save.levelUnits.get(unit), {exp: Save.levelUnits.get(unit).exp + exptogive, expFloat: Save.levelUnits.get(unit).exp + exptogive}, time);
         }
 
         new FlxTimer().start(time, function(f):Void{
@@ -234,5 +236,13 @@ class VictoryScreen extends FlxSubState
 				}
 			}
 		});
+    }
+
+    function updateExpLevels():Void{
+        Save.levelRobin.expFloat = Save.levelRobin.exp;
+
+        for(unit in Save.levelUnits){
+            unit.expFloat = unit.exp;
+        }
     }
 }

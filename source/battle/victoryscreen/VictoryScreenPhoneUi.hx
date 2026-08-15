@@ -12,7 +12,7 @@ class VictoryScreenPhoneUi extends FlxSkewedSprite
     var expBar:FlxBar;
     var levelText:CtText;
     
-    var lastExp:Int = -45;
+    var lastExp:Float = -45;
     var lastLevel:Int = -5;
 
     var currentExp:Int = 100;
@@ -104,7 +104,7 @@ class VictoryScreenPhoneUi extends FlxSkewedSprite
     }
 
     function updateExp(elapsed:Float):Void{
-        if(Save.levelRobin.exp != lastExp){
+        if(Save.levelRobin.expFloat != lastExp){
             levelText.scale.set(1,1);
             levelText.text = "LVL " + Save.levelRobin.getLevel() + "\nNEXT: " + (Save.levelRobin.getNextlevelExp());
             while(levelText.width > expBar.width - 5){
@@ -116,7 +116,7 @@ class VictoryScreenPhoneUi extends FlxSkewedSprite
             currentExp = Save.levelRobin.getCurrentLevelExp();
             currentMaxExp = CharacterLevel.getExpForNextLevel(Save.levelRobin.getLevel());
                         
-            lastExp = Save.levelRobin.exp;
+            lastExp = Save.levelRobin.expFloat;
         }
 
         if(Save.levelRobin.getLevel() > lastLevel){
