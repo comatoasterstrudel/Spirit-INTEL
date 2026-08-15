@@ -747,6 +747,12 @@ class PlayState extends FlxState
 			{
 				eventManager.startTransaction("GAMEOVER"); // never finish this
 
+				bottomBar.updateCurrentUnit(null);
+				bottomBar.removeMenu();
+				
+				turnOrderDisplay.topBar.updateCurrentUnit(null);
+				turnOrderDisplay.updateTurnOrderDisplay([]);
+
 				var type:ResultType = TIE;
 
 				if (alliedUnits > enemyUnits)
@@ -1064,11 +1070,12 @@ class PlayState extends FlxState
 		else if (uiStatus == GRID_PLACER_INSPECT)
 		{
 			bottomBar.updateCurrentUnit(null);
-			turnOrderDisplay.topBar.updateCurrentUnit(null);
 
 			cameraTrackerType = CENTERED;
 			uiStatus = INACTIVE;
 
+			turnOrderDisplay.visible = false;
+			
 			FlxTween.tween(bottomBar, {alpha: 0}, .6, {
 				onComplete: function(f):Void
 				{
@@ -1139,6 +1146,15 @@ class PlayState extends FlxState
 					}
 					else if (uiStatus == GRID_INSPECT || uiStatus == GRID_PLACER_INSPECT)
 					{
+						if(uiStatus == GRID_PLACER_INSPECT)
+						{
+							if(space.unit == null){
+								turnOrderDisplay.visible = false;
+							} else {
+								turnOrderDisplay.visible = true;
+							}
+						}
+
 						bottomBar.updateCurrentUnit(space.unit);
 						turnOrderDisplay.topBar.updateCurrentUnit(space.unit);
 						turnOrderDisplay.updateCurrentTurn(space.unit);
@@ -1287,8 +1303,8 @@ class PlayState extends FlxState
 			bottomBar.visible = true;
 			bottomBar.alpha = 0;
 			bottomBar.updateCurrentUnit(null);
-			turnOrderDisplay.topBar.updateCurrentUnit(null);
 
+			turnOrderDisplay.topBar.updateCurrentUnit(null);
 			FlxTween.tween(bottomBar, {alpha: 1}, .3, {
 				onComplete: function(f):Void
 				{

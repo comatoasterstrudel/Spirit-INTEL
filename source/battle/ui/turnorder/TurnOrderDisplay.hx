@@ -43,6 +43,9 @@ class TurnOrderDisplay extends FlxSpriteGroup
             
             icons.push(icon);
         }
+
+		updateTurnOrderDisplay([]);
+		topBar.updateCurrentUnit(null);
     }
     
     public function updateTurnOrderDisplay(turnOrder:Array<Unit>):Void{
@@ -89,6 +92,18 @@ class TurnOrderDisplay extends FlxSpriteGroup
 			{
 				beyondX = false;
 			}
+		}
+
+		if(turnOrder.length > 0){
+			upperBarDark.color = 0xFFA9A9A9;
+			upperBarDark.createFromImage(Constants.turnOrderDisplayUpperBarDarkGraphicPath);
+			upperBarDark.setGraphicSize(FlxG.width - Constants.turnOrderDisplayStartingX, upperBar.height);
+			upperBarDark.updateHitbox();
+		} else {
+			upperBarDark.color = FlxColor.WHITE;
+			upperBarDark.createFromImage(Constants.turnOrderDisplayUpperBarGraphicPath);
+			upperBarDark.setGraphicSize(FlxG.width - Constants.turnOrderDisplayStartingX, upperBar.height);
+			upperBarDark.updateHitbox();
 		}
 	}
 
