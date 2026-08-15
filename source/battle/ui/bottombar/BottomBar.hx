@@ -22,6 +22,8 @@ class BottomBar extends FlxSpriteGroup
 	var curUnit:Unit;
 	var lastUnit:Unit;
 
+	var shakeTween:FlxTween;
+
 	public function new(style:String = "placeholder"):Void
 	{
         super();
@@ -147,7 +149,20 @@ class BottomBar extends FlxSpriteGroup
         textBgRightEdge.updateHitbox();
         textBgRightEdge.setPosition(descriptionText.x + descriptionText.width, textBgMiddle.y);
 
+		resetShakeTween();
 		updateBgVisibility();
+	}
+
+	public function shakeText():Void{
+		resetShakeTween();
+		shakeTween = FlxTween.shake(descriptionText, 0.1, .1, X);
+	}
+	
+	public function resetShakeTween():Void{
+		if(shakeTween != null){
+			shakeTween.cancel();
+			shakeTween.destroy();
+		}
 	}
 
 	function updateBgVisibility():Void{

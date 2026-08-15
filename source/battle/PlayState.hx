@@ -591,6 +591,8 @@ class PlayState extends FlxState
 								addGridSelector();		
 							});
 						} else {
+							bottomBar.updateText(" [[DARKBLUE]](NOT ENOUGH MP!)[[DARKBLUE]]");
+							bottomBar.shakeText();
 							i.shakeBox();
 						}
 					},
@@ -602,8 +604,7 @@ class PlayState extends FlxState
 						}
 						updateGridSelectorOptions(i.currentSkill.selectType);
 						var mpCost:Int = i.currentSkill.mpCost;
-						var emptyMPMessage:String = " [[DARKBLUE]](NOT ENOUGH!)[[DARKBLUE]]";
-						bottomBar.updateText("[[GRAY]]" + i.currentSkill.name + "[[GRAY]]   " + i.currentSkill.description + "   [[BLUE]]MP: " + mpCost + "[[BLUE]]" + (currentTurnUnit.mp.value < mpCost ? emptyMPMessage : ""));
+						bottomBar.updateText("[[GRAY]]" + i.currentSkill.name + "[[GRAY]]   " + i.currentSkill.description + "   [[BLUE]]MP: " + mpCost + "[[BLUE]]");
 					}
 				});
 		}

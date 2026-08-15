@@ -94,7 +94,7 @@ class SkillIcon extends FlxSpriteGroup
 				for(spr in [outlineSprite, bgSprite]){
 					spr.color = 0xFF364255;
 				}
-				skillSprite.color = 0xFF404B92;
+				skillSprite.color = 0xFFB2B3B6;
 			}
 
             if (Assets.exists(path))
@@ -129,6 +129,7 @@ class SkillIcon extends FlxSpriteGroup
 	 * Call this to shake this icon box
 	 */
 	public function shakeBox():Void{
+		resetShakeTween();
 		shakeTween = FlxTween.shake(outlineSprite, 0.1, .1, X);
 	}
 

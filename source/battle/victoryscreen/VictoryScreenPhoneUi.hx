@@ -15,7 +15,7 @@ class VictoryScreenPhoneUi extends FlxSkewedSprite
     var lastExp:Float = -45;
     var lastLevel:Int = -5;
 
-    var currentExp:Int = 100;
+    var currentExp:Float = 100;
     var currentMaxExp:Int = 100;
 
     var victoryScreen:VictoryScreen;
@@ -113,7 +113,7 @@ class VictoryScreenPhoneUi extends FlxSkewedSprite
             }
             levelText.setPosition(expBar.x + 5, expBar.y - levelText.height - 5);
 
-            currentExp = Save.levelRobin.getCurrentLevelExp();
+            currentExp = Save.levelRobin.getCurrentLevelExpFloat();
             currentMaxExp = CharacterLevel.getExpForNextLevel(Save.levelRobin.getLevel());
                         
             lastExp = Save.levelRobin.expFloat;

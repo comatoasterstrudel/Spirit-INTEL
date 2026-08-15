@@ -91,7 +91,7 @@ class VictoryScreenUnitLevelCell extends FlxSpriteGroup
         if(Save.levelUnits.get(unit).expFloat != lastExp){
             levelText.text = "LVL " + Save.levelUnits.get(unit).getLevel() + "\nNEXT: " + (Save.levelUnits.get(unit).getNextlevelExp());
 
-            currentExp = Save.levelUnits.get(unit).getCurrentLevelExp();
+            currentExp = Save.levelUnits.get(unit).getCurrentLevelExpFloat();
             currentMaxExp = CharacterLevel.getExpForNextLevel(Save.levelUnits.get(unit).getLevel());
 
             lastExp = Save.levelUnits.get(unit).expFloat;

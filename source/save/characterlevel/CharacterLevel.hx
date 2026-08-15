@@ -31,6 +31,17 @@ class CharacterLevel
         return finalExp;
     }
 
+    public function getCurrentLevelExpFloat():Float
+    {
+        var finalExp = expFloat;
+
+        for(level in 0...getLevel()){
+            finalExp -= getExpForNextLevel(level);
+        }
+
+        return finalExp;
+    }
+
     public function getNextlevelExp():Int
     {
         return getExpForNextLevel(getLevel()) - getCurrentLevelExp();
