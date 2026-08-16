@@ -255,7 +255,7 @@ class Unit extends CtSprite
 		return null;
 	}
 
-	public function doStatusEffectAnim(id:String):Void
+	public function doStatusEffectAnim(id:String, showText:Bool = true):Void
 	{
 		var status = getStatusByName(id);
 
@@ -265,7 +265,7 @@ class Unit extends CtSprite
 
 			var transaction = PlayState.eventManager.startTransaction(transactionName);
 
-			cast(FlxG.state, PlayState).damageTextSignal.dispatch(this, status.data.text, status.data.color);
+			if(showText) cast(FlxG.state, PlayState).damageTextSignal.dispatch(this, status.data.text, status.data.color);
 
 			var statusEffectAnim = new StatusEffectAnim(this, status);
 			this.shader = statusEffectAnim;

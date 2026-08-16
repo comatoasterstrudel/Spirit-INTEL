@@ -999,7 +999,7 @@ class PlayState extends FlxState
 			{
 				eventManager.addEvent(function():Void
 				{
-					unit.doStatusEffectAnim(status.id);
+					unit.doStatusEffectAnim(status.id, false);
 				});
 				applySkillEffects(unit, unit, status.data.effects);
 				eventManager.addEvent(function():Void
