@@ -19,6 +19,10 @@ class Constants
 	public static final color_mpLoss:FlxColor = color_mp.getDarkened(0.8);
 	public static final color_sp:FlxColor = 0xFFCB52E3;
 	public static final color_spLoss:FlxColor = color_sp.getDarkened(0.6);
+	// SOUND
+	public static final sfxPath:String = "assets/sounds/sfx_";
+	public static final sfx_ui_volUp:String = sfxPath + "ui_volUp";
+	public static final sfx_ui_volDown:String = sfxPath + "ui_volDown";
 	// Battle
 	public static final battleDataFolder:String = "assets/data/battles/";
 	public static final battleDataPath:String = Constants.battleDataFolder + "battle_";
@@ -248,7 +252,6 @@ class Constants
 	// BASE STUFF ??
 	//
 	public static final startingRoom:String = "factory_intro";
-	public static final sfxPath:String = "assets/sounds/sfx_";
 	public static final fontName:String = "assets/fonts/BestFontEver-Regular.ttf";
 	//
 	// SAVE STUFF

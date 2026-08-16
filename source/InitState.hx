@@ -154,6 +154,6 @@ class InitState extends FlxState{
 	}
 	function hideSoundTray():Void
 	{
-		FlxG.sound.soundTrayEnabled = false;
+		FlxG.plugins.addPlugin(new SoundTrayManager());
 	}
 }
