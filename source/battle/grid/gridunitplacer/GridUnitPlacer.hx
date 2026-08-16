@@ -489,6 +489,8 @@ class GridUnitPlacer extends FlxSpriteGroup
 			}
             selectingMenuManager.enable(false);
         });
+
+        spBar.doFadeIn();
     }
     
 	public function deactivate(?newOnComplete:Void->Void):Void
@@ -520,6 +522,8 @@ class GridUnitPlacer extends FlxSpriteGroup
 		{
 			FlxTween.tween(button, {alpha: 0}, 0.5);
 		}
+
+        spBar.doFadeOut();
 
         new FlxTimer().start(0.5, function(f):Void{
 			if (newOnComplete != null)
