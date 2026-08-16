@@ -87,7 +87,7 @@ function updateDialogues():Void{
 		return;
 	}
 	
-    if(!Save.storyFlags.get("factory_officedoorkeyobtained").val_bool){ // seen the party
+    if(!Save.storyFlags.get("factory_officedoorkeyobtained").val_bool){
         officeDoor.room = "";
         
         if(Save.storyFlags.get("factory_seenbreakroomcutscene").val_bool){
@@ -645,6 +645,9 @@ function startEndOfTutorialCutscene():Void{
 
 function setupScary():Void{
 	if(!Save.storyFlags.get("factory_officedoorkeyobtained")){
+		officeDoor.room = "";
+		officeDoor.dialogue = "factory/hallway/dialogue_officedoor_locked";
+		
 		character_laurin.revive();
 		character_laurin.positionCharacterByGrid(19, 9);
 		character_laurin.changeAnimationPrefix("upset_");
