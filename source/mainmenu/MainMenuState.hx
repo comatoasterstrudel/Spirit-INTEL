@@ -116,6 +116,18 @@ class MainMenuState extends FlxState
 			Sys.exit(1);
 		});
 
+		#if debug
+		addOption("DEBUG: Level Select", function():Void
+		{
+			menuManager.disable();
+
+			openSubState(new SaveLoadMenu(CONTINUEDEBUG, "mainmenu", null, function():Void
+			{
+				menuManager.enable();
+			}));
+		});
+		#end
+
 		menuManager.setMenuOptions(menuOptions);
 
 		new FlxTimer().start(delay, function(f):Void
@@ -126,7 +138,7 @@ class MainMenuState extends FlxState
 
 	function addOption(text:String, onClick:Void->Void):CtText
 	{
-		var text = new CtText(110, Constants.mainMenuStartingY + (80 * texts.members.length), text, Constants.fontName, 60);
+		var text = new CtText(110, Constants.mainMenuStartingY + (60 * texts.members.length), text, Constants.fontName, 50);
 		text.antialiasing = false;
 		texts.add(text);
 

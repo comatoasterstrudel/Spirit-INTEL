@@ -143,6 +143,9 @@ class LevelSelectorState extends FlxState
 
 							OverworldState.roomName = room.id;
 							FlxG.switchState(OverworldState.new);
+						},
+						cancelFunction: function(spr):Void{
+							FlxG.switchState(MainMenuState.new);
 						}
 					}
 				]);

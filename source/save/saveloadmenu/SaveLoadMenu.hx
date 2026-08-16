@@ -45,7 +45,7 @@ class SaveLoadMenu extends FlxSubState
 		allowedSaves = switch (type)
 		{
 			case NEWGAME: NOTSTARTED;
-			case CONTINUE: STARTED;
+			case CONTINUE | CONTINUEDEBUG: STARTED;
 			case ERASE: STARTED;
 			case SAVE: ANY;
 		};
@@ -116,7 +116,7 @@ class SaveLoadMenu extends FlxSubState
         topText.color = FlxColor.BLACK;
         topText.text = switch(type){
             case NEWGAME: "//  NEW";
-            case CONTINUE: "//  CONTINUE";
+            case CONTINUE | CONTINUEDEBUG: "//  CONTINUE";
             case ERASE: "//  ERASE";
             case SAVE: "//  SAVE";
         };
@@ -181,7 +181,7 @@ class SaveLoadMenu extends FlxSubState
 							{
 								case NEWGAME:
 									startSave(i);
-								case CONTINUE:
+								case CONTINUE | CONTINUEDEBUG:
 									continueSave(i);
 								case ERASE:
 									row.doConfirmation("Erase File " + (i + 1) + "?", function():Void
@@ -366,8 +366,14 @@ class SaveLoadMenu extends FlxSubState
 		doTransition(function():Void
 		{
 			Save.load(slot);
-			OverworldState.startAtSavePoint = true;
-			FlxG.switchState(OverworldState.new);
+
+			if(type == CONTINUEDEBUG){
+				FlxG.switchState(LevelSelectorState.new);
+			} else {
+				OverworldState.startAtSavePoint = true;
+				FlxG.switchState(OverworldState.new);
+			}
+
 			if (onComplete != null)
 				onComplete();
 		});
