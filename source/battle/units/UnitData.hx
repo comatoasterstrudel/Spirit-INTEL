@@ -27,6 +27,8 @@ class UnitData extends CtJsonLoader
 	public var ai_debuff:Float;
 	public var ai_buff:Float;
 
+	public var spCost:Int;
+
     public function new(id:String){
         this.id = id;
                 
@@ -54,5 +56,7 @@ class UnitData extends CtJsonLoader
 		this.ai_healing = data.ai_healing == null ? 1 : data.ai_healing;
 		this.ai_debuff = data.ai_debuff == null ? 1 : data.ai_debuff;
 		this.ai_buff = data.ai_buff == null ? 1 : data.ai_buff;
+
+		this.spCost = data.spCost == null ? 0 : data.spCost;
     }
 }

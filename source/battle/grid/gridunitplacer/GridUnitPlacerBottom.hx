@@ -13,6 +13,7 @@ class GridUnitPlacerBottom extends FlxSpriteGroup
     // unit info
     var unitText:CtText;
     var lvlText:CtText;
+    var spText:CtText;
     var hpBar:GridUnitPlacerBottomBar;
     var mpBar:GridUnitPlacerBottomBar;
 
@@ -49,6 +50,10 @@ class GridUnitPlacerBottom extends FlxSpriteGroup
         lvlText.setFormat(Constants.fontName, 25, FlxColor.GRAY, LEFT);
         add(lvlText);
 
+        spText = new CtText();
+        spText.setFormat(Constants.fontName, 30, Constants.color_sp, LEFT);
+        add(spText);
+
         hpBar = new GridUnitPlacerBottomBar(HP, 615);
         add(hpBar);
 
@@ -78,19 +83,40 @@ class GridUnitPlacerBottom extends FlxSpriteGroup
         var unit = new Unit(unit, null, FlxPoint.get(1,1), true, Save.levelUnits.get(unit).getLevel(), true);
 
         unitText.text = unit.data.name + (placed ? " (PLACED)" : "");
+        lvlText.text = "LVL " + unit.level;
+        spText.text = "SP " + unit.data.spCost;
 
         unitText.scale.set(1,1);
         unitText.updateHitbox();
 
-        while(unitText.width >= 230){
-            unitText.scale.x -= 0.01;
-            unitText.updateHitbox();
+        lvlText.scale.set(1,1);
+        lvlText.updateHitbox();
+
+        spText.scale.set(1, 1);
+        spText.updateHitbox();
+
+        var formatted:Bool = false;
+        var maxWidth = 350;
+        var spacing:Int = 10;
+
+        while((unitText.width + lvlText.width + spText.width + (spacing * 2)) > maxWidth || !formatted){
+            if(formatted){
+                unitText.scale.x -= 0.045;
+                unitText.updateHitbox();
+
+                lvlText.scale.x -= 0.01;
+                lvlText.updateHitbox();
+
+                spText.scale.x -= 0.01;
+                spText.updateHitbox();
+            }
+            formatted = true;
+
+            unitText.setPosition(720, 555);
+            lvlText.setPosition(unitText.x + unitText.width + spacing, unitText.y + unitText.height - lvlText.height);
+            spText.setPosition(lvlText.x + lvlText.width + spacing, unitText.y + unitText.height - spText.height);
+
         }
-
-        unitText.setPosition(720, 555);
-
-        lvlText.text = "LVL " + unit.level;
-        lvlText.setPosition(unitText.x + unitText.width + 10, unitText.y + unitText.height - lvlText.height);
 
         hpBar.updateWithUnit(unit);
         mpBar.updateWithUnit(unit);
@@ -100,11 +126,12 @@ class GridUnitPlacerBottom extends FlxSpriteGroup
         updateVisibility();
     }
 
-    public function updateWithText(text:String, ?icon:String = ""):Void{
+    public function updateWithText(text:String, ?icon:String = "", ?color:FlxColor = FlxColor.BLACK):Void{
         status = TEXT;
 
         bigText.text = text;
         bigText.setPosition(720, 580);
+        bigText.color = color;
 
         if(icon == ""){
             bottomSprite.animation.play("blank");
@@ -121,11 +148,13 @@ class GridUnitPlacerBottom extends FlxSpriteGroup
             lvlText.visible = true;
             hpBar.visible = true;
             mpBar.visible = true;
+            spText.visible = true;
         } else {
             unitText.visible = false;
             lvlText.visible = false;
             hpBar.visible = false;
             mpBar.visible = false;
+            spText.visible = false;
         }
 
         if(status == TEXT){

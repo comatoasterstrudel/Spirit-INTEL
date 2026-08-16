@@ -11,11 +11,14 @@ class Constants
 	public static final baseLvlPerExp:Int = 50; 
 	public static final levelExpScaling:Float = 10;
 	public static final statsIncreaseFromLeveling:Float = 5; // all stats will be multiplied by 5 when leveled to full
+	public static final spPerLevel:Int = 8;
 	// COLOR
 	public static final color_hp:FlxColor = 0xFFA3E352;
 	public static final color_hpLoss:FlxColor = color_hp.getDarkened(0.8);
 	public static final color_mp:FlxColor = 0xFF525CE3;
 	public static final color_mpLoss:FlxColor = color_mp.getDarkened(0.8);
+	public static final color_sp:FlxColor = 0xFFCB52E3;
+	public static final color_spLoss:FlxColor = color_sp.getDarkened(0.6);
 	// Battle
 	public static final battleDataFolder:String = "assets/data/battles/";
 	public static final battleDataPath:String = Constants.battleDataFolder + "battle_";
@@ -145,6 +148,8 @@ class Constants
 	public static final gridUnitPlacerUnitBg:String = "assets/images/gridunitplacer/gridplacer_unitbg.png";
 	public static final gridUnitPlacerBarEdge:String = "assets/images/gridunitplacer/gridplacer_baredge.png";
 	public static final gridUnitPlacerFade:String = "assets/images/gridunitplacer/gridplacer_fade.png";
+	public static final spBarBaseHeight:Int = 120;
+	public static final spBarMaxHeight:Int = 520;
 	//
 	// OVERWORLD STUFF !!
 	//

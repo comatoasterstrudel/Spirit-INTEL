@@ -13,5 +13,6 @@
     "ai_damage": 1,
     "ai_healing": 1,
     "ai_debuff": 1,
-    "ai_buff": 1
+    "ai_buff": 1,
+    "spCost": 8
 }

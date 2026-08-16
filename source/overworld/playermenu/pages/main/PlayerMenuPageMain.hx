@@ -40,7 +40,7 @@ class PlayerMenuPageMain extends PlayerMenuPage
            playerMenu.addPage("status");
         });
         
-        addMenuOption("Units", function():Void{
+        addMenuOption("Spirits", function():Void{
            playerMenu.addPage("unitselector");
 		}, Save.storyFlags.get("factory_scarymode").val_bool);
         

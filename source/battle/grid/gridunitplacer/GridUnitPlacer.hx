@@ -48,11 +48,17 @@ class GridUnitPlacer extends FlxSpriteGroup
     
     var fade:CtSprite;
 
+    var spValue:Int;
+    var spMax:Int;
+    var spBar:SpBar;
+
     public function new(allyGrid:Grid, enemyGrid:Grid):Void{
         super();
         
         this.allyGrid = allyGrid;
         this.enemyGrid = enemyGrid;
+
+        setupSP();
 
 		reuseEnabled = (Save.savedUnitPlacements != null && Save.savedUnitPlacements != [] && Save.savedUnitPlacements.length > 0);
         
@@ -99,6 +105,11 @@ class GridUnitPlacer extends FlxSpriteGroup
         add(fade);
         
         add(bottom);
+
+        spBar = new SpBar();
+        add(spBar);
+
+        recalculateSP(true);
 
         initSelectingMenu();
         initPlacingMenu();
@@ -200,7 +211,7 @@ class GridUnitPlacer extends FlxSpriteGroup
                             }
 
                             if(placedUnits.length <= 0 && !hasunits){
-                                bottom.updateWithText("Can't start without units!", "finish");
+                                bottom.updateWithText("Can't start without Spirits!", "finish");
                                 FlxTween.shake(button, 0.05, .1, X);
                             } else {
                                 selectingMenuManager.disable();
@@ -245,10 +256,16 @@ class GridUnitPlacer extends FlxSpriteGroup
             }, clickFunction: function(f):Void{
                 if(i.placed){
                     removePlacedUnit(i.unit);
-						selectingMenuManager.changeSelection();
+					selectingMenuManager.changeSelection();
+                    recalculateSP();
                 } else {
-                    selectingCursor.visible = false;
-                    startPlacing(i.unit);
+                    if(spValue - new UnitData(i.unit).spCost < 0){
+                        bottom.updateWithText("(NOT ENOUGH SP!)", "", Constants.color_spLoss);
+                        FlxTween.shake(i.bg, 0.05, .1, X);
+                    } else {
+                        selectingCursor.visible = false;
+                        startPlacing(i.unit);
+                    }
                 }
             }});
         }
@@ -389,6 +406,8 @@ class GridUnitPlacer extends FlxSpriteGroup
         ghostUnitSprites.add(ghost);
         
         ghostUnits.push(ghost);
+
+        recalculateSP();
     }
     
     function removePlacedUnit(unit:String):Void{
@@ -514,5 +533,21 @@ class GridUnitPlacer extends FlxSpriteGroup
 				destroy();   
 			}
         });
+    }
+
+    function setupSP():Void{
+        spMax = Constants.spPerLevel * Save.levelRobin.getLevel();
+    }
+
+    function recalculateSP(snapBar:Bool = false):Void{
+        var temp:Int = spMax;
+
+        for(unit in placedUnits){
+            temp -= new UnitData(unit.unit).spCost;
+        }
+
+        spValue = temp;
+
+        spBar.updateSp(spValue, spMax, snapBar);
     }
 }
