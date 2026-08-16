@@ -1,4 +1,7 @@
 {
     "name": "factoryhorizontalR",
-    "graphic": "factoryhorizontalR"
+    "graphic": "factoryhorizontalR",
+    "openUpSound": "factory",
+    "openDownSound": "factory",
+    "lockSound": "factory"
 }

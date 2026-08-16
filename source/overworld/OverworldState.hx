@@ -1041,6 +1041,15 @@ class OverworldState extends FlxState
 
 		positionBeforeBattle.set(player.x, player.y);
 
+		FlxG.sound.play(Constants.sfx_encounter + ".ogg", 1);
+
+		if(FlxG.sound.music != null){
+			FlxG.sound.music.stop();
+			FlxG.sound.music.destroy();
+		}
+
+		PlayState.setUpMusic(new BattleData(name));
+
 		doBattleTransition(IN, function():Void
 		{
 			PlayState.setBattle(name, STORY);

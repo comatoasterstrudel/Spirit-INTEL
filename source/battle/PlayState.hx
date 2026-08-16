@@ -100,7 +100,7 @@ class PlayState extends FlxState
 
 		setUpMenus();
 
-		setUpMusic();
+		if(FlxG.sound.music == null && battleData.music != "") setUpMusic(battleData);
 		
 		setUpScripts();
 
@@ -425,13 +425,14 @@ class PlayState extends FlxState
 		unit = null;
 	}
 	
-	function setUpMusic():Void
+	public static function setUpMusic(battleData:BattleData):Void
 	{
 		var path = Constants.battleDataMusicPath + battleData.music + ".ogg";
 
 		if (battleData.music != "" && Assets.exists(path))
 		{
 			FlxG.sound.playMusic(path);
+			FlxG.sound.music.fadeIn(1, 0, FlxG.sound.music.volume);
 		}
 	}
 	

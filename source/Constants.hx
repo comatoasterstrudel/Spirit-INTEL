@@ -23,6 +23,8 @@ class Constants
 	public static final sfxPath:String = "assets/sounds/sfx_";
 	public static final sfx_ui_volUp:String = sfxPath + "ui_volUp";
 	public static final sfx_ui_volDown:String = sfxPath + "ui_volDown";
+	public static final sfx_encounter:String = sfxPath + "encounter";
+
 	// Battle
 	public static final battleDataFolder:String = "assets/data/battles/";
 	public static final battleDataPath:String = Constants.battleDataFolder + "battle_";
@@ -180,8 +182,9 @@ class Constants
 	// Doors
 	public static final doorGraphicPath:String = "assets/images/doors/door_";
 	public static final doorDataPath:String = "assets/data/doors/door_";
-	public static final doorOpenSoundPath:String = "assets/sounds/doors/dooropen_";
-	public static final doorLockSoundPath:String = "assets/sounds/doors/doorlock_";
+	public static final doorOpenUpSoundPath:String = Constants.sfxPath + "dooropenup_";
+	public static final doorOpenDownSoundPath:String = Constants.sfxPath + "dooropendown_";
+	public static final doorLockSoundPath:String = Constants.sfxPath + "doorlock_";
 	// Props
 	public static final propDataPath:String = "assets/data/props/prop_";
 	public static final propImagePath:String = "assets/images/props/prop_";

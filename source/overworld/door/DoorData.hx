@@ -7,7 +7,8 @@ class DoorData extends CtJsonLoader
     public var name:String;
     public var graphic:String;
     
-    public var openSound:String;
+    public var openUpSound:String;
+    public var openDownSound:String;
     public var lockSound:String;
 
     public function new(id:String){
@@ -18,7 +19,8 @@ class DoorData extends CtJsonLoader
         this.name = data.name;
         this.graphic = data.graphic;
         
-        this.openSound = data.openSound ?? "";
+        this.openUpSound = data.openUpSound ?? "";
+        this.openDownSound = data.openDownSound ?? "";
         this.lockSound = data.lockSound ?? "";
     }
 }
