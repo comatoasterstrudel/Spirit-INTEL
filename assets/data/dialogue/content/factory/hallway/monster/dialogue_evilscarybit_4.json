@@ -2,35 +2,35 @@
 	{
 		"speed": 0.03,
 		"dialogue": "HOW is my jacket talking??",
-		"actor": "cutscene_robin"
+		"actor": "cutscene_robin_right"
 	},
 	{
 		"speed": 0.03,
 		"dialogue": "Am I going crazy?",
-		"actor": "cutscene_robin"
+		"actor": "cutscene_robin_right"
 	},
 	{
 		"speed": 0.03,
 		"dialogue": " I-..",
-		"actor": "cutscene_robin",
+		"actor": "cutscene_robin_right",
 		"continueLine": true
 	}, 
 	{
 		"speed": 0.03,
 		"dialogue": " W-what?",
-		"actor": "cutscene_robin",
+		"actor": "cutscene_robin_right",
 		"continueLine": true
 	},
 	{
 		"speed": 0.03,
 		"dialogue": " I..",
-		"actor": "cutscene_robin",
+		"actor": "cutscene_robin_right",
 		"continueLine": true
 	},
 	{
 		"speed": 0.03,
 		"dialogue": " I-",
-		"actor": "cutscene_robin",
+		"actor": "cutscene_robin_right",
 		"continueLine": true
 	}
 ] 

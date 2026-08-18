@@ -2,22 +2,22 @@
 	{
 		"speed": 0.03,
 		"dialogue": "I know this seems insane, just listen to me-",
-		"actor": "cutscene_volor"
+		"actor": "cutscene_volor_right"
 	}, 
 	{
 		"speed": 0.03,
 		"dialogue": "Am I dead?",
-		"actor": "cutscene_robin"
+		"actor": "cutscene_robin_right"
 	},
 	{ 
 		"speed": 0.03,
 		"dialogue": " Hallucinating?",
-		"actor": "cutscene_robin",
+		"actor": "cutscene_robin_right",
 		"continueLine": true
 	},
 	{
 		"speed": 0.03,
 		"dialogue": "Do you wanna get out of this alive?",
-		"actor": "cutscene_volor"
+		"actor": "cutscene_volor_right"
 	}
 ] 

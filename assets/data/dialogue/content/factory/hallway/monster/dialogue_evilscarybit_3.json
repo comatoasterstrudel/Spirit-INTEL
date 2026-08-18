@@ -7,26 +7,26 @@
 		"speed": 0.03,
 		"dialogue": "..?",
 		"actor": "robin",
-		"portrait": "hat_shocked"
+		"portrait": "hat_scaredlookdown"
 	},
 	{
 		"speed": 0.06,
 		"dialogue": "            ",
 		"actor": "volor",
 		"events": ["volorappears"],
-		"portrait": "neutral",
+		"portrait": "hat_scared",
 		"autoSkip": true
 	},
 	{
 		"speed": 0.03,
 		"dialogue": "You need to fight!",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "hat_scared"
 	},
 	{
 		"speed": 0.03,
 		"dialogue": "WHAT!?",
 		"actor": "robin",
-		"portrait": "hat_shocked"
+		"portrait": "hat_shockedtalkdown"
 	}
 ] 

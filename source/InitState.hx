@@ -1,5 +1,7 @@
 package;
 
+import ctDialogueBox.ctdb.namebox.NameBoxFollowType;
+
 class InitState extends FlxState{
 	public static var init_forceCutscene:String = "";
 
@@ -86,6 +88,7 @@ class InitState extends FlxState{
 			portraitOnTopOfBox: true,
 			portraitOffsetRight: new FlxPoint(330, 320),
 			nameBoxOffsetLeft: new FlxPoint(45, 60),
+			nameBoxOffsetRight: new FlxPoint(-45, 60),
 			sentencePauseLength: .2,
 			excludedTextSoundCharacters: [" ", ".", "!", "?"],
 			choicerFont: Constants.fontName,
@@ -94,6 +97,7 @@ class InitState extends FlxState{
 			choicerSpacing: 70,
 			choicerOffset: new FlxPoint(100, 100),
 			positionPortraitFromBottom: true,
+			nameBoxFollowType: Opposite,
 		}
 
 		CtDialogueBox.preloadFont(CtDialogueBox.defaultSettings.font, CtDialogueBox.defaultSettings.fontSize);

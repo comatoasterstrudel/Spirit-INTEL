@@ -9,7 +9,7 @@
 		"speed": 0.03,
 		"dialogue": " Okay!",
 		"actor": "robin",
-		"portrait": "hat_shocked",
+		"portrait": "hat_shockedtalk",
 		"continueLine": true
 	}
 ] 

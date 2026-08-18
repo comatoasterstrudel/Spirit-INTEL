@@ -456,7 +456,7 @@ function startMonsterCutscene():Void
 		fullart_robin2.visible = true;
 		fullart_volor.visible = true;
 
-		FlxTween.tween(fullart_robin2, {x: 500}, 1, {ease: FlxEase.quartOut});
+		FlxTween.tween(fullart_robin2, {x: 400}, 1, {ease: FlxEase.quartOut});
 		FlxTween.tween(fullart_volor, {x: 0}, 1, {ease: FlxEase.quartOut});
 
 		FlxTween.shake(fullart_robin2, 0.1, .2, 0x01);
@@ -761,12 +761,14 @@ function setUpFullArt():Void{
 	fullart_robin1.screenCenter();
 	fullart_robin1.camera = camOverlay;
 	fullart_robin1.visible = false;
+	fullart_robin1.antialiasing = false;
 	add(fullart_robin1);
 
 	fullart_robin2 = new CtSprite().createFromImage(Constants.overworldCutsceneGraphicPath + "volorintro_robin2.png");
 	fullart_robin2.screenCenter();
 	fullart_robin2.camera = camOverlay;
 	fullart_robin2.visible = false;
+	fullart_robin2.antialiasing = false;
 	add(fullart_robin2);
 
 	fullart_volor = new CtSprite().createFromImage(Constants.overworldCutsceneGraphicPath + "volorintro_volor.png");
@@ -774,6 +776,7 @@ function setUpFullArt():Void{
 	fullart_volor.x -= fullart_volor.width;
 	fullart_volor.camera = camOverlay;
 	fullart_volor.visible = false;
+	fullart_volor.antialiasing = false;
 	add(fullart_volor);
 
 	fullart_fade = new CtSprite().createColorBlock(FlxG.width, FlxG.height, 0xFF000000);

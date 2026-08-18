@@ -1,0 +1,9 @@
+{
+    "name": "cutscene_robin",
+	"vanityName": "Robin",
+	"textColor": [255, 255, 255],
+	"customNameBoxImgPath": "robin",
+	"textSound": "robin",
+	"customDialogueBoxImgPath": "box_cutscene",
+	"portraitRight": false
+}  
