@@ -49,7 +49,7 @@ function create(){
 	dialogueBox = get_dialogueBox();
 	
     updateDialogues();
-	if (Save.storyFlags.get("factory_monsterscene1").val_bool && !Save.storyFlags.get("factory_seentutorial").val_bool)
+	if (InitState.init_forceCutscene == "hallwaymonster" || Save.storyFlags.get("factory_monsterscene1").val_bool && !Save.storyFlags.get("factory_seentutorial").val_bool)
 	{
 		startMonsterCutscene();
 	} else if(Save.storyFlags.get("factory_seentutorial").val_bool && !Save.storyFlags.get("factory_scarymode").val_bool){
@@ -138,6 +138,9 @@ function startMonsterCutscene():Void
 {
 	inMonsterCutscene = true;
 
+	character_managerscary.changeAnimationPrefix("stand-");
+	character_managerscary.animation.play("stand-idle_up");
+	
 	set_inCutscene(true);
 	set_lockCamera(true);
 	set_unbindCamera(true);
@@ -185,7 +188,6 @@ function startMonsterCutscene():Void
 		new FlxTimer().start(.8, function(F):Void
 		{
 			character_managerscary.revive();
-			character_managerscary.changeAnimationPrefix("stand-");
 			character_managerscary.movementSpeed = 1.3;
 
 			character_managerscary.positionCharacterByGrid(23.5, 14);
@@ -327,6 +329,8 @@ function startMonsterCutscene():Void
 
 		new FlxTimer().start(2.5, function(f):Void
 		{
+			FlxG.sound.play(Constants.sfxPath + "jacketshatter.ogg");
+
 			fadeBg.color = 0xFF000000;
 
 			character_player.alpha = 1;
@@ -345,6 +349,8 @@ function startMonsterCutscene():Void
 	{
 		OverworldState.eventManager.startTransaction("fade more");
 
+		FlxG.sound.play(Constants.sfxPath + "managerslide.ogg");
+
 		for (char in [character_player, character_managerscary])
 		{
 			char.alpha = 1;
@@ -361,7 +367,7 @@ function startMonsterCutscene():Void
 		character_player.flipX = true;
 		character_player.hitbox.x += 40;
 		character_managerscary.lockAnims = true;
-		character_managerscary.animation.play("idle_left");
+		character_managerscary.animation.play("real_idle_left");
 		FlxTween.tween(character_managerscary.hitbox, {x: character_managerscary.hitbox.x + 170}, 1.5, {ease: FlxEase.quartOut});
 		new FlxTimer().start(2.3, function(F):Void
 		{
@@ -392,6 +398,7 @@ function startMonsterCutscene():Void
 		{
 			if (event == "volorappears")
 			{
+				FlxG.sound.play(Constants.sfxPath + "volorappear.ogg");
 				camUI.shake(0.05, .2, null, true, 0x01);
 			}
 		});

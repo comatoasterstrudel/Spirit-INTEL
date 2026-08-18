@@ -2,11 +2,13 @@
 	{
 		"speed": 0.03,
 		"dialogue": "Do you wanna get out of this alive?",
-		"actor": "volor"
+		"actor": "volor",
+		"portrait": "neutral"
 	},
 	{
 		"speed": 0.03,
 		"dialogue": "Then LISTEN to me!!",
-		"actor": "volor"
+		"actor": "volor",
+		"portrait": "neutral"
 	}
 ] 

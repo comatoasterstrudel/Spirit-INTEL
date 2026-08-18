@@ -2,5 +2,7 @@
     "name": "volor",
 	"vanityName": "Volor",
 	"textColor": [0, 0, 0],
-	"customNameBoxImgPath": "volor"
+	"customNameBoxImgPath": "volor",
+	"portraitPrefix": "volor",
+	"textSound": "volor_"
 }

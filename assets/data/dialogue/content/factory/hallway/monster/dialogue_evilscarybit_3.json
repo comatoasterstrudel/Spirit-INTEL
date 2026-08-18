@@ -4,16 +4,24 @@
 		"dialogue": "It's time, Robin..!"
 	},
 	{
+		"speed": 0.03,
+		"dialogue": "..?",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
 		"speed": 0.06,
 		"dialogue": "            ",
 		"actor": "volor",
 		"events": ["volorappears"],
+		"portrait": "neutral",
 		"autoSkip": true
 	},
 	{
 		"speed": 0.03,
 		"dialogue": "You need to fight!",
-		"actor": "volor"
+		"actor": "volor",
+		"portrait": "neutral"
 	},
 	{
 		"speed": 0.03,
@@ -24,7 +32,8 @@
 	{
 		"speed": 0.03,
 		"dialogue": "I know this seems insane, just listen to me-",
-		"actor": "volor"
+		"actor": "volor",
+		"portrait": "neutral"
 	},
 	{
 		"speed": 0.03,

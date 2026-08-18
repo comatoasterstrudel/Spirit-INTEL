@@ -1,6 +1,8 @@
 package;
 
 class InitState extends FlxState{
+	public static var init_forceCutscene:String = "";
+
     override function create():Void{
         super.create();
         
@@ -19,6 +21,9 @@ class InitState extends FlxState{
 		hideSoundTray();
 		
 		#if debug
+		#if forceCutscene
+		init_forceCutscene = Compiler.getDefine("forceCutscene").split('=')[0];
+		#end
 		#if testLevelCurve
 		for(level in 0...(Constants.maxLevel)){
 			trace("EXP for level " + (level) + ": " + CharacterLevel.getExpForNextLevel(level));
@@ -133,7 +138,7 @@ class InitState extends FlxState{
 		CtScript.setDefaultValue({name: "CharacterStatus.IDLE", value: CharacterStatus.IDLE});
 		CtScript.setDefaultValue({name: "CtUtil", value: CtUtil});
 		CtScript.setDefaultValue({name: "FlxSound", value: FlxSound});
-
+		CtScript.setDefaultValue({name: "InitState", value: InitState});
 	}
 
 	function initSave():Void

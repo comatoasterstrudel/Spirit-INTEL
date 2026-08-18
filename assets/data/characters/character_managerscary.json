@@ -19,6 +19,11 @@
             "fps": 0
         },
         {
+            "name": "real_idle_left",
+            "prefix": "MonManager_Kneel_Left",
+            "fps": 0
+        },
+        {
             "name": "idle_right",
             "prefix": "MonManager-CrawlRight-Idle", 
             "fps": 0
