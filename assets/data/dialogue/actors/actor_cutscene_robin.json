@@ -3,7 +3,6 @@
 	"vanityName": "Robin",
 	"textColor": [255, 255, 255],
 	"customNameBoxImgPath": "robin",
-	"portraitPrefix": "robin",
 	"textSound": "robin",
 	"customDialogueBoxImgPath": "box_cutscene"
-}
+} 

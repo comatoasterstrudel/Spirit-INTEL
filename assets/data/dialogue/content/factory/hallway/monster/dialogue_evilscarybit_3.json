@@ -7,7 +7,7 @@
 		"speed": 0.03,
 		"dialogue": "..?",
 		"actor": "robin",
-		"portrait": "neutral"
+		"portrait": "hat_shocked"
 	},
 	{
 		"speed": 0.06,
@@ -28,64 +28,5 @@
 		"dialogue": "WHAT!?",
 		"actor": "robin",
 		"portrait": "hat_shocked"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "I know this seems insane, just listen to me-",
-		"actor": "volor",
-		"portrait": "neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "HOW is my jacket talking??",
-		"actor": "robin",
-		"portrait": "hat_shocked"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Am I going crazy?",
-		"actor": "robin",
-		"portrait": "hat_shocked"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": " I-..",
-		"actor": "robin",
-		"portrait": "hat_shocked",
-		"continueLine": true
-	},
-	{
-		"speed": 0.03,
-		"dialogue": " W-what?",
-		"actor": "robin",
-		"portrait": "hat_shocked",
-		"continueLine": true
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Am I dead?",
-		"actor": "robin",
-		"portrait": "hat_shocked"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": " Hallucinating?",
-		"actor": "robin",
-		"portrait": "hat_shocked",
-		"continueLine": true
-	},
-	{
-		"speed": 0.03,
-		"dialogue": " I..",
-		"actor": "robin",
-		"portrait": "hat_shocked",
-		"continueLine": true
-	},
-	{
-		"speed": 0.03,
-		"dialogue": " I-",
-		"actor": "robin",
-		"portrait": "hat_shocked",
-		"continueLine": true
 	}
 ] 

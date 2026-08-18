@@ -26,6 +26,12 @@ var fadeBg:CtSprite;
 
 var dialogueBox:CtDialogueBox;
 
+var fullart_fade:CtSprite;
+var fullart_bg:CtSprite;
+var fullart_robin1:CtSprite;
+var fullart_robin2:CtSprite;
+var fullart_volor:CtSprite;
+
 function create(){
     breakRoomDoor = getDoorByTag("breakRoomDoor");
     officeDoor = getDoorByTag("officeDoor");
@@ -151,6 +157,8 @@ function startMonsterCutscene():Void
 	character_player.movementSpeed = 1.5;
 	character_player.lockAnims = true;
 	character_player.lockMovement = true;
+
+	setUpFullArt();
 
 	// run up
 	OverworldState.eventManager.addEvent(function()
@@ -389,6 +397,7 @@ function startMonsterCutscene():Void
 			});
 		});
 	});
+
 	// dimmalog
 	OverworldState.eventManager.addEvent(function()
 	{
@@ -407,6 +416,84 @@ function startMonsterCutscene():Void
 		{
 			OverworldState.eventManager.finishTransaction("dia");
 		});
+	});
+
+	// start full art
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("fullart");
+
+		fullart_fade.visible = true;
+		fullart_fade.alpha = 0;
+
+		FlxTween.tween(fullart_fade, {alpha: 1}, 2, {onComplete: function(f):Void{
+			fullart_bg.visible = true;
+			fullart_robin1.visible = true;
+
+			FlxTween.tween(fullart_fade, {alpha: 0}, 2, {onComplete: function(f):Void{
+				OverworldState.eventManager.finishTransaction("fullart");	
+			}});
+		}});
+	});
+
+	// start dialogue
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("dia");
+
+		startDialogue(["factory/hallway/monster/dialogue_evilscarybit_4"], function():Void
+		{
+			OverworldState.eventManager.finishTransaction("dia");
+		});
+	});
+
+	// volor slides in
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("slide");
+
+		fullart_robin1.visible = false;
+		fullart_robin2.visible = true;
+		fullart_volor.visible = true;
+
+		FlxTween.tween(fullart_robin2, {x: 500}, 1, {ease: FlxEase.quartOut});
+		FlxTween.tween(fullart_volor, {x: 0}, 1, {ease: FlxEase.quartOut});
+
+		FlxTween.shake(fullart_robin2, 0.1, .2, 0x01);
+
+		new FlxTimer().start(2, function(f):Void{
+			OverworldState.eventManager.finishTransaction("slide");
+		});
+	});
+
+	// start dialogue 2
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("dia");
+
+		startDialogue(["factory/hallway/monster/dialogue_evilscarybit_5"], function():Void
+		{
+			OverworldState.eventManager.finishTransaction("dia");
+		});
+	});
+
+	// remove full art
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("undofade");
+
+		fullart_fade.visible = true;
+		fullart_fade.alpha = 0;
+
+		FlxTween.tween(fullart_fade, {alpha: 1}, 2, {onComplete: function(f):Void{
+			fullart_bg.visible = false;
+			fullart_robin2.visible = false;
+			fullart_volor.visible = false;
+
+			FlxTween.tween(fullart_fade, {alpha: 0}, 2, {onComplete: function(f):Void{
+				OverworldState.eventManager.finishTransaction("undofade");	
+			}});
+		}});
 	});
 
 	// manager gets up
@@ -439,7 +526,7 @@ function startMonsterCutscene():Void
 		character_managerscary.animation.play("Kneel-Left");
 	});
 
-	// manager gets up
+	// manager walks toward robin
 	OverworldState.eventManager.addEvent(function()
 	{
 		OverworldState.eventManager.startTransaction("monster walks");
@@ -458,7 +545,7 @@ function startMonsterCutscene():Void
 
 		OverworldState.eventManager.startTransaction("dia");
 
-		startDialogue(["factory/hallway/monster/dialogue_evilscarybit_4"], function():Void
+		startDialogue(["factory/hallway/monster/dialogue_evilscarybit_6"], function():Void
 		{
 			OverworldState.eventManager.finishTransaction("dia");
 		});
@@ -469,7 +556,7 @@ function startMonsterCutscene():Void
 	{
 		OverworldState.eventManager.startTransaction("dia");
 
-		startDialogue(["factory/hallway/monster/dialogue_evilscarybit_5"], function():Void
+		startDialogue(["factory/hallway/monster/dialogue_evilscarybit_7"], function():Void
 		{
 			FlxTween.tween(lightingCover, {alpha: 0}, .8, {
 				onComplete: function(F):Void
@@ -661,4 +748,36 @@ function setupScary():Void{
 	} else {
 
 	}
+}
+
+function setUpFullArt():Void{
+	fullart_bg = new CtSprite().createFromImage(Constants.overworldCutsceneGraphicPath + "volorintro_bgColor.png");
+	fullart_bg.screenCenter();
+	fullart_bg.camera = camOverlay;
+	fullart_bg.visible = false;
+	add(fullart_bg);
+
+	fullart_robin1 = new CtSprite().createFromImage(Constants.overworldCutsceneGraphicPath + "volorintro_robin1.png");
+	fullart_robin1.screenCenter();
+	fullart_robin1.camera = camOverlay;
+	fullart_robin1.visible = false;
+	add(fullart_robin1);
+
+	fullart_robin2 = new CtSprite().createFromImage(Constants.overworldCutsceneGraphicPath + "volorintro_robin2.png");
+	fullart_robin2.screenCenter();
+	fullart_robin2.camera = camOverlay;
+	fullart_robin2.visible = false;
+	add(fullart_robin2);
+
+	fullart_volor = new CtSprite().createFromImage(Constants.overworldCutsceneGraphicPath + "volorintro_volor.png");
+	fullart_volor.screenCenter();
+	fullart_volor.x -= fullart_volor.width;
+	fullart_volor.camera = camOverlay;
+	fullart_volor.visible = false;
+	add(fullart_volor);
+
+	fullart_fade = new CtSprite().createColorBlock(FlxG.width, FlxG.height, 0xFF000000);
+	fullart_fade.camera = camOverlay;
+	fullart_fade.visible = false;
+	add(fullart_fade);
 }

@@ -1,15 +1,23 @@
 [
 	{
 		"speed": 0.03,
-		"dialogue": "I-",
-		"actor": "robin",
-		"portrait": "hat_shocked"
+		"dialogue": "I know this seems insane, just listen to me-",
+		"actor": "cutscene_volor"
+	}, 
+	{
+		"speed": 0.03,
+		"dialogue": "Am I dead?",
+		"actor": "cutscene_robin"
+	},
+	{ 
+		"speed": 0.03,
+		"dialogue": " Hallucinating?",
+		"actor": "cutscene_robin",
+		"continueLine": true
 	},
 	{
 		"speed": 0.03,
-		"dialogue": " Okay!",
-		"actor": "robin",
-		"portrait": "hat_shocked",
-		"continueLine": true
+		"dialogue": "Do you wanna get out of this alive?",
+		"actor": "cutscene_volor"
 	}
 ] 

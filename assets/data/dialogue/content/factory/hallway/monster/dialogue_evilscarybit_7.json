@@ -1,0 +1,15 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "I-",
+		"actor": "robin",
+		"portrait": "hat_shocked" 
+	},
+	{
+		"speed": 0.03,
+		"dialogue": " Okay!",
+		"actor": "robin",
+		"portrait": "hat_shocked",
+		"continueLine": true
+	}
+] 
