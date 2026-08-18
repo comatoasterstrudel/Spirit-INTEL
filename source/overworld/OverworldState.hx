@@ -958,7 +958,7 @@ class OverworldState extends FlxState
 
 		new FlxTimer().start(0.1, function(f):Void
 		{
-			if(!isMusicSameAsLastMusic(new RoomData(newRoom))){
+			if(!isMusicSameAsLastMusic(new RoomData(newRoom)) && FlxG.sound.music != null){
 				FlxG.sound.music.fadeOut(transitionTime, 0);
 			};
 
