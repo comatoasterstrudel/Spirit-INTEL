@@ -92,6 +92,10 @@ class OverworldState extends FlxState
 	var lightingCover:LightingSprite;
 	var lightingShader:LightingEffectShader;
 	
+	// MUSIC
+	public static var lastMusic:String = "";
+	public static var lastTime:Float = 0;
+
     override function create():Void{
         super.create();
         
@@ -108,6 +112,7 @@ class OverworldState extends FlxState
 		setupDialogueBox();
 		loadMap();
 		selectRandomEncounter();
+		setUpMusic(roomData, lastTransitionTime);
 		if (leftForBattle)
 		{
 			player.positionCharacter(positionBeforeBattle.x, positionBeforeBattle.y);
@@ -323,8 +328,10 @@ class OverworldState extends FlxState
 
 			if (exitProgress >= Constants.exitTime)
 			{
-				if (FlxG.sound.music != null)
+				if (FlxG.sound.music != null){
+					updateLastMusic();
 					FlxG.sound.music.stop();
+				}
 
 				FlxG.switchState(LevelSelectorState.new);
 			}
@@ -951,6 +958,10 @@ class OverworldState extends FlxState
 
 		new FlxTimer().start(0.1, function(f):Void
 		{
+			if(!isMusicSameAsLastMusic(new RoomData(newRoom))){
+				FlxG.sound.music.fadeOut(transitionTime, 0);
+			};
+
 			doRoomTransition(transitionTime, OUT, function():Void
 			{
 				FlxG.resetState();
@@ -1043,6 +1054,7 @@ class OverworldState extends FlxState
 		FlxG.sound.play(Constants.sfx_encounter + ".ogg", 1);
 
 		if(FlxG.sound.music != null){
+			updateLastMusic();
 			FlxG.sound.music.stop();
 			FlxG.sound.music.destroy();
 		}
@@ -1500,6 +1512,45 @@ class OverworldState extends FlxState
 		return null;
 	}
 	
+	public static function setUpMusic(roomData:RoomData, time:Float):Void{
+		if(FlxG.sound.music != null && FlxG.sound.music.playing) return;
+
+		var path = Constants.roomMusicPath + roomData.music + ".ogg";
+
+		if (roomData.music != "" && Assets.exists(path))
+		{
+			FlxG.sound.playMusic(path);
+			FlxG.sound.music.fadeIn(time, 0, FlxG.sound.music.volume);
+
+			if(isMusicSameAsLastMusic(roomData)){
+				FlxG.sound.music.time = lastTime;
+			} else {
+				lastTime = 0;
+			}
+
+			lastMusic = path;
+		} else {
+			lastMusic = "";
+			lastTime = 0;
+		}
+	}
+
+	public static function isMusicSameAsLastMusic(roomData:RoomData):Bool
+	{
+		var path = Constants.roomMusicPath + roomData.music + ".ogg";
+
+		if (roomData.music != "" && Assets.exists(path))
+		{
+			if(lastMusic == path) return true;
+		}
+
+		return false;
+	}
+
+	public static function updateLastMusic():Void{
+		lastTime = FlxG.sound.music.time;
+	}
+
 	public static function resetGlobalVars():Void
 	{
 		lastTransitionTime = 0;
@@ -1508,6 +1559,8 @@ class OverworldState extends FlxState
 		leftForBattle = false;
 		positionBeforeBattle.set(0, 0);
 		startAtSavePoint = true;
+		lastMusic = "";
+		lastTime = 0;
 	}
 	#if debug
 	function addDebugFunctions():Void

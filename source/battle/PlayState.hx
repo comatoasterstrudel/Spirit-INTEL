@@ -779,8 +779,11 @@ class PlayState extends FlxState
 						openSubState(new ResultState(type));
 				}
 
-				if (FlxG.sound.music != null)
-					FlxG.sound.music.fadeOut(Constants.resultAnimTiming);
+				if (FlxG.sound.music != null){
+					FlxG.sound.music.fadeOut(Constants.resultAnimTiming, 0, function onComplete(f):Void{
+						FlxG.sound.music.destroy();
+					});
+				}
 			});
 		}
 	}
