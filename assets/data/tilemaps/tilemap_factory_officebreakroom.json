@@ -39,7 +39,7 @@
           "height": 32,
           "originX": 0,
           "originY": 0,
-          "values": {"doorName": "factorybreakroom", "room": "factory_officehallway2", "transitionTime": 0.5, "lockedDialogue": "", "horizontal": false, "scriptFunction": "", "tag": ""}
+          "values": {"doorName": "factorybreakroom", "room": "factory_officehallway2", "transitionTime": 0.5, "lockedDialogue": "", "horizontal": false, "scriptFunction": "", "tag": "", "facingDownwards": true}
         },
         {
           "name": "player",

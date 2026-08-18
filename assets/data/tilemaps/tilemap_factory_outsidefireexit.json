@@ -39,7 +39,7 @@
           "height": 32,
           "originX": 0,
           "originY": 0,
-          "values": {"doorName": "factoryfireexit", "room": "factory_officetransition", "transitionTime": 2, "lockedDialogue": "factory/outsidefireexit/dialogue_fireexitlocked", "horizontal": false, "scriptFunction": "", "tag": "fireexitdoor"}
+          "values": {"doorName": "factoryfireexit", "room": "factory_officetransition", "transitionTime": 2, "lockedDialogue": "factory/outsidefireexit/dialogue_fireexitlocked", "horizontal": false, "scriptFunction": "", "tag": "fireexitdoor", "facingDownwards": false}
         },
         {
           "name": "player",

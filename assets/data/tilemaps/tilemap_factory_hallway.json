@@ -39,7 +39,7 @@
           "height": 32,
           "originX": 0,
           "originY": 0,
-          "values": {"doorName": "factory", "room": "factory_production", "transitionTime": 0.5, "lockedDialogue": "", "horizontal": false, "scriptFunction": "leavingRoom", "tag": "finaldoor"}
+          "values": {"doorName": "factory", "room": "factory_production", "transitionTime": 0.5, "lockedDialogue": "", "horizontal": false, "scriptFunction": "leavingRoom", "tag": "finaldoor", "facingDownwards": true}
         },
         {
           "name": "player",
@@ -61,7 +61,7 @@
           "height": 32,
           "originX": 0,
           "originY": 0,
-          "values": {"doorName": "factory", "room": "factory_breakroom", "transitionTime": 0.5, "lockedDialogue": "", "horizontal": false, "scriptFunction": "", "tag": "breakRoomDoor"}
+          "values": {"doorName": "factory", "room": "factory_breakroom", "transitionTime": 0.5, "lockedDialogue": "", "horizontal": false, "scriptFunction": "", "tag": "breakRoomDoor", "facingDownwards": false}
         },
         {
           "name": "player",
@@ -83,7 +83,7 @@
           "height": 32,
           "originX": 0,
           "originY": 0,
-          "values": {"doorName": "factoryhorizontalR", "room": "factory_officehallway", "transitionTime": 0.5, "lockedDialogue": "", "horizontal": true, "scriptFunction": "opensDoor", "tag": "officeDoor"}
+          "values": {"doorName": "factoryhorizontalR", "room": "factory_officehallway", "transitionTime": 0.5, "lockedDialogue": "", "horizontal": true, "scriptFunction": "opensDoor", "tag": "officeDoor", "facingDownwards": false}
         },
         {
           "name": "interactable",

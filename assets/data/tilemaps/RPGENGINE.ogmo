@@ -238,7 +238,8 @@
         {"name": "lockedDialogue", "definition": "String", "display": 0, "defaults": "", "maxLength": 0, "trimWhitespace": true},
         {"name": "horizontal", "definition": "Boolean", "display": 0, "defaults": false},
         {"name": "scriptFunction", "definition": "String", "display": 0, "defaults": "", "maxLength": 0, "trimWhitespace": true},
-        {"name": "tag", "definition": "String", "display": 0, "defaults": "", "maxLength": 0, "trimWhitespace": true}
+        {"name": "tag", "definition": "String", "display": 0, "defaults": "", "maxLength": 0, "trimWhitespace": true},
+        {"name": "facingDownwards", "definition": "Boolean", "display": 0, "defaults": false}
       ]
     },
     {

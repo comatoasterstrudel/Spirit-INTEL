@@ -39,7 +39,7 @@
           "height": 32,
           "originX": 0,
           "originY": 0,
-          "values": {"doorName": "factoryfireexit", "room": "factory_outsidefireexit", "transitionTime": 2, "lockedDialogue": "", "horizontal": false, "scriptFunction": "", "tag": ""}
+          "values": {"doorName": "factoryfireexit", "room": "factory_outsidefireexit", "transitionTime": 2, "lockedDialogue": "", "horizontal": false, "scriptFunction": "", "tag": "", "facingDownwards": true}
         },
         {
           "name": "player",
@@ -61,7 +61,7 @@
           "height": 32,
           "originX": 0,
           "originY": 0,
-          "values": {"doorName": "factory", "room": "factory_officehallway2", "transitionTime": 0.5, "lockedDialogue": "", "horizontal": false, "scriptFunction": "", "tag": ""}
+          "values": {"doorName": "factory", "room": "factory_officehallway2", "transitionTime": 0.5, "lockedDialogue": "", "horizontal": false, "scriptFunction": "", "tag": "", "facingDownwards": false}
         },
         {
           "name": "player",

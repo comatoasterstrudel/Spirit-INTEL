@@ -39,7 +39,7 @@
           "height": 32,
           "originX": 0,
           "originY": 0,
-          "values": {"doorName": "factory", "room": "factory_outside", "transitionTime": 2, "lockedDialogue": "", "horizontal": false, "scriptFunction": "", "tag": "frontdoor"}
+          "values": {"doorName": "factory", "room": "factory_outside", "transitionTime": 2, "lockedDialogue": "", "horizontal": false, "scriptFunction": "", "tag": "frontdoor", "facingDownwards": true}
         },
         {
           "name": "player",
@@ -61,7 +61,7 @@
           "height": 32,
           "originX": 0,
           "originY": 0,
-          "values": {"doorName": "lobby_factory", "room": "factory_lobbytransition", "transitionTime": 0.5, "lockedDialogue": "", "horizontal": false, "scriptFunction": "", "tag": ""}
+          "values": {"doorName": "lobby_factory", "room": "factory_lobbytransition", "transitionTime": 0.5, "lockedDialogue": "", "horizontal": false, "scriptFunction": "", "tag": "", "facingDownwards": false}
         },
         {
           "name": "player",
@@ -83,7 +83,7 @@
           "height": 32,
           "originX": 0,
           "originY": 0,
-          "values": {"doorName": "lobby_office", "room": "", "transitionTime": 0.5, "lockedDialogue": "factory/lobby/dialogue_officedoor", "horizontal": false, "scriptFunction": "", "tag": ""}
+          "values": {"doorName": "lobby_office", "room": "", "transitionTime": 0.5, "lockedDialogue": "factory/lobby/dialogue_officedoor", "horizontal": false, "scriptFunction": "", "tag": "", "facingDownwards": false}
         },
         {
           "name": "prop",

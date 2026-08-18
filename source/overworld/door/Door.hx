@@ -8,8 +8,10 @@ class Door extends Interactable
 
 	var horizontal:Bool;
 
+	var facingDownwards:Bool;
+
 	public function new(name:String, tag:String, player:Player, x:Int, y:Int, horizontal:Bool, room:String, transitionTime:Float, lockedDialogue:String,
-			scriptFunction:String):Void
+			scriptFunction:String, facingDownwards:Bool):Void
 	{
         super();
 		this.player = player;
@@ -31,6 +33,8 @@ class Door extends Interactable
 		this.horizontal = horizontal;
 
 		antialiasing = false;
+
+		this.facingDownwards = facingDownwards;
 	}
 
 	override function update(elapsed:Float):Void
@@ -57,7 +61,7 @@ class Door extends Interactable
 		{
 			animation.play("open");
 
-			if(player.y >= this.y){ //down
+			if(facingDownwards){ //down
 				if (data.openDownSound != "")
 				{
 					FlxG.sound.play(Constants.doorOpenDownSoundPath + data.openDownSound + ".ogg").pitch = FlxG.random.float(.8, 1.2);
