@@ -1,0 +1,108 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "Can you at least tell me what's going on??",
+		"actor": "robin",
+		"portrait": "shocked"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "I will!",
+		"actor": "laurin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": " Just, please..",
+		"actor": "laurin",
+		"portrait": "neutral",
+		"continueLine": true
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "My job right now is to make sure anyone still alive in this building is evacuated.",
+		"actor": "laurin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "YOUR job is to not die or get caught.",
+		"actor": "laurin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Get caught???",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "ack-",
+		"actor": "laurin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": " um-",
+		"actor": "laurin",
+		"portrait": "neutral",
+		"continueLine": true
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Look, if I sit and explain everything now..",
+		"actor": "laurin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "..we'll be sitting ducks for the sentient detergent bottles to murder us..",
+		"actor": "laurin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "..and cops to arrest our corpses.",
+		"actor": "laurin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Why would the cops-",
+		"actor": "robin",
+		"portrait": "shocked"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Jesus-",
+		"actor": "laurin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": " Just-",
+		"actor": "laurin",
+		"portrait": "neutral",
+		"continueLine": true
+	},
+	{
+		"speed": 0.03,
+		"dialogue": " PLEASE.",
+		"actor": "laurin",
+		"portrait": "neutral",
+		"continueLine": true
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Leave the building, get on your train, and go home.",
+		"actor": "laurin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "...",
+		"actor": "robin",
+		"portrait": "neutral"
+	}
+] 

@@ -1,0 +1,13 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "It's a door to the upstairs offices.",
+		"actor": "narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": " It's locked.",
+		"actor": "narrator",
+		"continueLine": true
+	}
+]

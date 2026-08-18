@@ -176,6 +176,30 @@
           "originX": 0,
           "originY": 0,
           "values": {"name": "laurin", "tag": "laurin"}
+        },
+        {
+          "name": "door",
+          "id": 24,
+          "_eid": "17170951",
+          "x": 160,
+          "y": 176,
+          "width": 32,
+          "height": 32,
+          "originX": 0,
+          "originY": 0,
+          "values": {"doorName": "factoryhorizontalL", "room": "", "transitionTime": 0.5, "lockedDialogue": "factory/hallway/dialogue_weirdleftdoor", "horizontal": true, "scriptFunction": "", "tag": "", "facingDownwards": false}
+        },
+        {
+          "name": "interactable",
+          "id": 25,
+          "_eid": "67528600",
+          "x": 304,
+          "y": 144,
+          "width": 32,
+          "height": 32,
+          "originX": 0,
+          "originY": 0,
+          "values": {"triggerByWalkingOver": false, "dialogue": "factory/hallway/monster/dialogue_laurinphonetalk", "room": "", "roomTransitionTime": 0.3, "encounterName": "", "scriptFunction": "", "tag": "laurinphonedialogue", "openSave": false, "saveName": "", "saveBgName": ""}
         }
       ]
     },

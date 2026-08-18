@@ -1,12 +1,6 @@
 [
 	{
 		"speed": 0.03,
-		"dialogue": "...",
-		"actor": "laurin",
-		"portrait": "gun"
-	},
-	{
-		"speed": 0.03,
 		"dialogue": "L-Laurin!?",
 		"actor": "robin",
 		"portrait": "shocked"	
@@ -15,6 +9,6 @@
 		"speed": 0.03,
 		"dialogue": "Be confused later, you need to get the hell out of here!",
 		"actor": "laurin",
-		"portrait": "gun"
+		"portrait": "mad"
 	}
 ] 

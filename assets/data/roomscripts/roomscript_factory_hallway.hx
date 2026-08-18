@@ -19,6 +19,8 @@ var character_laurin:Character;
 var lightingCover:LightingSprite;
 var inMonsterCutscene:Bool = false;
 
+var laurinphonedialogue:Interactable;
+
 var spr_behindProps:FlxSpriteGroup;
 var props:FlxTypedSpriteGroup<FlxSprite>;
 var spr_top:FlxSpriteGroup;
@@ -54,11 +56,14 @@ function create(){
 	
 	dialogueBox = get_dialogueBox();
 	
+	laurinphonedialogue = getInteractableByTag("laurinphonedialogue");
+	laurinphonedialogue.disabled = true;
+
     updateDialogues();
 	if (InitState.init_forceCutscene == "hallwaymonster" || Save.storyFlags.get("factory_monsterscene1").val_bool && !Save.storyFlags.get("factory_seentutorial").val_bool)
 	{
 		startMonsterCutscene();
-	} else if(Save.storyFlags.get("factory_seentutorial").val_bool && !Save.storyFlags.get("factory_scarymode").val_bool){
+	} else if(InitState.init_forceCutscene == "hallwaymonster2" || Save.storyFlags.get("factory_seentutorial").val_bool && !Save.storyFlags.get("factory_scarymode").val_bool){
 		// tutorial over
 		startEndOfTutorialCutscene();
 
@@ -646,7 +651,11 @@ function startEndOfTutorialCutscene():Void{
 	{
 		OverworldState.eventManager.startTransaction("monstar run awat");
 
+		FlxG.sound.play(Constants.sfxPath + "lauringun.ogg");
+
 		new FlxTimer().start(1, function(f):Void{
+			FlxG.sound.play(Constants.sfxPath + "managerfall.ogg");
+			
 			FlxTween.shake(character_managerscary, 0.03, .2, 0x01);
 			character_managerscary.changeAnimationPrefix("");
 			character_managerscary.hitbox.y += 30;
@@ -656,11 +665,23 @@ function startEndOfTutorialCutscene():Void{
 
 				character_managerscary.moveToGridSpace(-1, 9.5, function():Void
 				{
+					new FlxTimer().start(.2, function(f):Void{
+						character_laurin.animation.play("idle_up");
+
+						new FlxTimer().start(.3, function(f):Void{
+							character_laurin.animation.play("shoot");
+							character_laurin.flipX = true;
+						});
+					});
+
 					character_managerscary.moveToGridSpace(35, -1, function():Void
 					{
 						character_managerscary.kill();
 
 						camGame.shake(0.02, 0.2, null, true, 0x10);
+
+						FlxG.sound.play(Constants.sfxPath + "officedoorslam.ogg");
+
 						OverworldState.eventManager.finishTransaction("monstar run awat");
 					});
 				});
@@ -668,13 +689,13 @@ function startEndOfTutorialCutscene():Void{
 		});
 	});
 
-	// dimmalog
+	// dialogue "..."
 	OverworldState.eventManager.addEvent(function()
 	{
 		OverworldState.eventManager.startTransaction("dia");
 
 		new FlxTimer().start(1.5, function(f):Void{
-			startDialogue(["factory/hallway/monster/dialogue_lauringun"], function():Void
+			startDialogue(["factory/hallway/monster/dialogue_lauringunpause"], function():Void
 			{
 				OverworldState.eventManager.finishTransaction("dia");
 			});
@@ -686,16 +707,33 @@ function startEndOfTutorialCutscene():Void{
 	{
 		OverworldState.eventManager.startTransaction("gun put down");
 
+		character_laurin.animation.play("gun_readyup");
+
 		new FlxTimer().start(.25, function(f):Void{
-			character_laurin.animation.play("gun_readyup");
+			character_laurin.lockAnims = false;
+			character_laurin.facing = RIGHT;
+			character_laurin.flipX = false;
+			character_laurin.changeAnimationPrefix("upset_");
 
 			new FlxTimer().start(.25, function(f):Void{
-				character_laurin.lockAnims = false;
-				character_laurin.changeAnimationPrefix("upset_");
+				OverworldState.eventManager.finishTransaction("gun put down");
+			});
+		});
+	});
 
-				new FlxTimer().start(.25, function(f):Void{
-					OverworldState.eventManager.finishTransaction("gun put down");
-				});
+	// dimmalog
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("dia");
+
+		new FlxTimer().start(.5, function(f):Void{
+			character_laurin.facing = LEFT;
+		});
+
+		new FlxTimer().start(1.3, function(f):Void{
+			startDialogue(["factory/hallway/monster/dialogue_lauringun"], function():Void
+			{
+				OverworldState.eventManager.finishTransaction("dia");
 			});
 		});
 	});
@@ -718,22 +756,69 @@ function startEndOfTutorialCutscene():Void{
 		});
 	});
 
+	// robin walks to laurin
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("walkback");
+		
+		character_player.lockMovement = true;
+		character_player.movementSpeed = .8;
+		character_player.moveToGridSpace(19, -1, function():Void{
+			character_player.facing = UP;
+
+			OverworldState.eventManager.finishTransaction("walkback");
+		});
+	});
+
+	// dialogue 1
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("dia");
+
+		new FlxTimer().start(1, function(f):Void{
+			startDialogue(["factory/hallway/monster/dialogue_laurinphone"], function():Void
+			{
+				OverworldState.eventManager.finishTransaction("dia");
+			});
+		});
+	});
+
+	// dialogue 2
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("dia");
+
+		FlxTween.shake(character_player, 0.05, .2, 0x01);
+
+		new FlxTimer().start(1, function(f):Void{
+			startDialogue(["factory/hallway/monster/dialogue_laurinphone2"], function():Void
+			{
+				OverworldState.eventManager.finishTransaction("dia");
+			});
+		});
+	});
+
 	// cutscene over
 	OverworldState.eventManager.addEvent(function()
 	{
 		OverworldState.eventManager.startTransaction("cutsceneover");
 
-		set_inCutscene(false);
-		set_lockCamera(false);
-		set_unbindCamera(false);
+		FlxTween.tween(camGame.scroll, {x: 432}, 1, {onComplete: function(f):Void{
+			set_inCutscene(false);
+			set_lockCamera(false);
+			set_unbindCamera(false);
 
-		character_player.facing = DOWN;
+			character_player.lockMovement = false;
+			character_player.movementSpeed = 1;
 
-		Save.storyFlags.get("factory_scarymode").val_bool = true;
+			character_player.facing = DOWN;
 
-		OverworldState.lastTransitionTime = 0.5;
+			Save.storyFlags.get("factory_scarymode").val_bool = true;
 
-		setupScary();
+			OverworldState.lastTransitionTime = 0.5;
+
+			setupScary();
+		}});
 	});
 }
 
@@ -745,6 +830,8 @@ function setupScary():Void{
 		character_laurin.revive();
 		character_laurin.positionCharacterByGrid(19, 9);
 		character_laurin.changeAnimationPrefix("upset_");
+
+		laurinphonedialogue.disabled = false;
 	} else {
 
 	}
