@@ -186,6 +186,8 @@ class GridUnitPlacer extends FlxSpriteGroup
 				cursorDirection: DOWN,
 				hoverFunction: function(f):Void
 				{
+                    spBar.doNormal();
+
 					switch (buttonName)
 					{
 						case "finish":
@@ -247,6 +249,7 @@ class GridUnitPlacer extends FlxSpriteGroup
                 menuOptions[i.yPos + 1] = [];
             }
             menuOptions[i.yPos + 1].push({sprite: i.bg, cursorDirection: UP, hoverFunction: function(f):Void{
+                spBar.doNormal();
                 i.updateSelected(true);
                 bottom.updateWithUnit(i.unit, i.placed, true);
 
@@ -260,6 +263,7 @@ class GridUnitPlacer extends FlxSpriteGroup
                     recalculateSP();
                 } else {
                     if(spValue - new UnitData(i.unit).spCost < 0){
+                        spBar.doAngry();
                         bottom.updateWithText("(NOT ENOUGH SP!)", "", Constants.color_spLoss);
                         FlxTween.shake(i.bg, 0.05, .1, X);
                     } else {

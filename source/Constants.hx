@@ -156,8 +156,15 @@ class Constants
 	public static final gridUnitPlacerUnitBg:String = "assets/images/gridunitplacer/gridplacer_unitbg.png";
 	public static final gridUnitPlacerBarEdge:String = "assets/images/gridunitplacer/gridplacer_baredge.png";
 	public static final gridUnitPlacerFade:String = "assets/images/gridunitplacer/gridplacer_fade.png";
-	public static final spBarBaseHeight:Int = 120;
-	public static final spBarMaxHeight:Int = 520;
+	public static final spBarBaseHeight:Int = 140;
+	public static final spBarMaxHeight:Int = 540;
+	public static final spBarTopPath:String = "assets/images/gridunitplacer/gridUnitPlacer_spTop";
+	public static final spBarMidPath:String = "assets/images/gridunitplacer/gridUnitPlacer_spMid.png";
+	public static final spBarBottomPath:String = "assets/images/gridunitplacer/gridUnitPlacer_spBottom.png";
+	public static final spBarTopPathBlank:String = "assets/images/gridunitplacer/gridUnitPlacer_spTop_blank";
+	public static final spBarMidPathBlank:String = "assets/images/gridunitplacer/gridUnitPlacer_spMid_blank.png";
+	public static final spBarBottomPathBlank:String = "assets/images/gridunitplacer/gridUnitPlacer_spBottom_blank.png";
+	public static final spBarBadPath:String = "assets/images/gridunitplacer/gridUnitPlacer_spBad.png";
 	//
 	// OVERWORLD STUFF !!
 	//

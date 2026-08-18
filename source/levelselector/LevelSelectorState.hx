@@ -157,6 +157,7 @@ class LevelSelectorState extends FlxState
 
 				var text = new CtText(Constants.levelSelectTextXPos, Constants.levelSelectTextYPos + (Constants.levelSelectTextYSpacing * textOptions.length),
 					"BATTLE: " + battle.id);
+				text.font = Constants.fontName;
 				text.color = FlxColor.BLACK;
 				text.size = Constants.levelSelectTextSize;
 				textOptions.add(text);
