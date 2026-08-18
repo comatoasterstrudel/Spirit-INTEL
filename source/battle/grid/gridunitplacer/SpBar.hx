@@ -53,8 +53,7 @@ class SpBar extends FlxSpriteGroup
     }
 
     function alignSprites():Void{
-        CtUtil.centerSpriteOnSprite(text, bar, true, false);
-        text.y = bar.y + bar.height - text.height - 25;
+        CtUtil.centerSpriteOnSprite(text, bar, true, true);
         text.alpha = bar.alpha;
         text.offset.x = bar.offset.x;
     }
