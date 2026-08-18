@@ -24,11 +24,13 @@ class Constants
 	public static final sfx_ui_volUp:String = sfxPath + "ui_volUp";
 	public static final sfx_ui_volDown:String = sfxPath + "ui_volDown";
 	public static final sfx_encounter:String = sfxPath + "encounter";
-
+	//MUSIC
+	public static final musicPath:String = "assets/music/mus_";
+	
 	// Battle
 	public static final battleDataFolder:String = "assets/data/battles/";
 	public static final battleDataPath:String = Constants.battleDataFolder + "battle_";
-	public static final battleDataMusicPath:String = "assets/music/battletheme/theme_";
+	public static final battleDataMusicPath:String = musicPath + "battle_";
 	// Grid
     public static final gridSize:Int = 80;
 	public static final unitGridGraphicPath:String = "assets/images/grid/units/unit_";
