@@ -266,6 +266,12 @@ class OverworldState extends FlxState
 				var trueProp:Prop = cast prop;
 				trueProp.y += (trueProp.data.yStackingOffset * Constants.overworldPixelScale);
 			}
+
+			if(prop is Door)
+			{
+				var door:Door = cast prop;
+				if(door.horizontal) door.y -= 999;
+			}
 		}
 		
 		props.sort(FlxSort.byY, FlxSort.ASCENDING);
@@ -275,6 +281,12 @@ class OverworldState extends FlxState
 			{
 				var trueProp:Prop = cast prop;
 				trueProp.y -= (trueProp.data.yStackingOffset * Constants.overworldPixelScale);
+			}
+
+			if(prop is Door)
+			{
+				var door:Door = cast prop;
+				if(door.horizontal) door.y += 999;
 			}
 		}
 	}
@@ -958,7 +970,7 @@ class OverworldState extends FlxState
 
 		new FlxTimer().start(0.1, function(f):Void
 		{
-			if(!isMusicSameAsLastMusic(new RoomData(newRoom)) && FlxG.sound.music != null){
+			if(FlxG.sound.music != null && FlxG.sound.music.playing && !isMusicSameAsLastMusic(new RoomData(newRoom))){
 				FlxG.sound.music.fadeOut(transitionTime, 0);
 			};
 

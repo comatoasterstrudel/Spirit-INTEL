@@ -6,7 +6,7 @@ class Door extends Interactable
 	
 	var player:Player;
 
-	var horizontal:Bool;
+	public var horizontal:Bool;
 
 	var facingDownwards:Bool;
 

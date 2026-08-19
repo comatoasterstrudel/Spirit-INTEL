@@ -5,7 +5,7 @@
     "anims": [
         {
             "name": "idle_down",
-            "prefix": "Laurin_Front_Idle",
+            "prefix": "Laurin_Front_Idle", 
             "fps": 0
         },
         {
@@ -54,7 +54,7 @@
         },
         {
             "name": "upset_idle_up",
-            "prefix": "Upset_Laurin_Up_Idle",
+            "prefix": "Laurin_Up_Idle",
             "fps": 0
         },
         {
@@ -75,7 +75,7 @@
         },
         {
             "name": "upset_walk_up",
-            "prefix": "Upset_Laurin_Up_Walk",
+            "prefix": "Laurin_Up_Walk",
             "fps": 5,
             "looped": true
         },
@@ -104,6 +104,11 @@
         {
             "name": "shoot",
             "prefix": "Laurin_Shoot",
+            "fps": 0
+        },
+        {
+            "name": "phone",
+            "prefix": "Laurin_Phone",
             "fps": 0
         }
     ]

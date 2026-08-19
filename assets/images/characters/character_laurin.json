@@ -279,46 +279,6 @@
     "sourceSize": { "w": 32, "h": 32 },
     "duration": 100
    },
-   "Upset_Laurin_Up_Idle0000": {
-    "frame": { "x": 128, "y": 32, "w": 32, "h": 32 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
-    "sourceSize": { "w": 32, "h": 32 },
-    "duration": 100
-   },
-   "Upset_Laurin_Up_Walk0000": {
-    "frame": { "x": 0, "y": 64, "w": 32, "h": 32 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
-    "sourceSize": { "w": 32, "h": 32 },
-    "duration": 100
-   },
-   "Upset_Laurin_Up_Walk0001": {
-    "frame": { "x": 128, "y": 32, "w": 32, "h": 32 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
-    "sourceSize": { "w": 32, "h": 32 },
-    "duration": 100
-   },
-   "Upset_Laurin_Up_Walk0002": {
-    "frame": { "x": 32, "y": 64, "w": 32, "h": 32 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
-    "sourceSize": { "w": 32, "h": 32 },
-    "duration": 100
-   },
-   "Upset_Laurin_Up_Walk0003": {
-    "frame": { "x": 128, "y": 32, "w": 32, "h": 32 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
-    "sourceSize": { "w": 32, "h": 32 },
-    "duration": 100
-   },
    "Laurin_GunReadyUp0000": {
     "frame": { "x": 32, "y": 128, "w": 32, "h": 32 },
     "rotated": false,
@@ -337,6 +297,14 @@
    },
    "Laurin_Shoot0000": {
     "frame": { "x": 96, "y": 128, "w": 32, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
+    "sourceSize": { "w": 32, "h": 32 },
+    "duration": 100
+   },
+   "Laurin_Phone0000": {
+    "frame": { "x": 128, "y": 128, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -365,11 +333,10 @@
    { "name": "Upset_Laurin_Left_Walk", "from": 26, "to": 29, "direction": "forward", "color": "#000000ff" },
    { "name": "Upset_Laurin_Right_Idle", "from": 30, "to": 30, "direction": "forward", "color": "#000000ff" },
    { "name": "Upset_Laurin_Right_Walk", "from": 31, "to": 34, "direction": "forward", "color": "#000000ff" },
-   { "name": "Upset_Laurin_Up_Idle", "from": 35, "to": 35, "direction": "forward", "color": "#000000ff" },
-   { "name": "Upset_Laurin_Up_Walk", "from": 36, "to": 39, "direction": "forward", "color": "#000000ff" },
-   { "name": "Laurin_GunReadyUp", "from": 40, "to": 40, "direction": "forward", "color": "#000000ff" },
-   { "name": "Laurin_GunReadyTalk", "from": 41, "to": 41, "direction": "forward", "color": "#000000ff" },
-   { "name": "Laurin_Shoot", "from": 42, "to": 42, "direction": "forward", "color": "#000000ff" }
+   { "name": "Laurin_GunReadyUp", "from": 35, "to": 35, "direction": "forward", "color": "#000000ff" },
+   { "name": "Laurin_GunReadyTalk", "from": 36, "to": 36, "direction": "forward", "color": "#000000ff" },
+   { "name": "Laurin_Shoot", "from": 37, "to": 37, "direction": "forward", "color": "#000000ff" },
+   { "name": "Laurin_Phone", "from": 38, "to": 38, "direction": "forward", "color": "#000000ff" }
   ],
   "layers": [
    { "name": "Sprite Sheet", "opacity": 255, "blendMode": "normal" }

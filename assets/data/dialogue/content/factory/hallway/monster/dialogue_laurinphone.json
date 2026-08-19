@@ -3,43 +3,43 @@
 		"speed": 0.03,
 		"dialogue": "...",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"portrait": "call_neutral"
 	},
 	{
 		"speed": 0.03,
 		"dialogue": "Yeah, it's started at site 05..",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"portrait": "call_speak"
 	},
 	{
 		"speed": 0.03,
 		"dialogue": "His great nephew's already been possessed.",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"portrait": "call_eyesclosed"
 	},
 	{
 		"speed": 0.03,
 		"dialogue": "He locked himself in the basement when it happened, I couldn't do any-",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"portrait": "call_speak"
 	},
 	{
 		"speed": 0.03,
 		"dialogue": "...",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"portrait": "call_lookneutral"
 	},
 	{
 		"speed": 0.03,
 		"dialogue": "Robin.",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"portrait": "call_lookupset"
 	},
 	{
 		"speed": 0.03,
 		"dialogue": " You need to get out now, go home and I'll contact you there.",
 		"actor": "laurin",
-		"portrait": "neutral",
+		"portrait": "call_lookupset",
 		"continueLine": true
 	}
 ] 

@@ -751,7 +751,14 @@ function startEndOfTutorialCutscene():Void{
 			character_laurin.lockAnims = false;
 
 			new FlxTimer().start(.5, function(f):Void{
-				OverworldState.eventManager.finishTransaction("walkback");
+				character_laurin.lockAnims = true;
+				character_laurin.animation.play("phone");
+
+				FlxG.sound.play(Constants.sfxPath + "laurinopenphone.ogg");
+
+				new FlxTimer().start(2, function(f):Void{
+					OverworldState.eventManager.finishTransaction("walkback");
+				});
 			});
 		});
 	});
@@ -830,6 +837,8 @@ function setupScary():Void{
 		character_laurin.revive();
 		character_laurin.positionCharacterByGrid(19, 9);
 		character_laurin.changeAnimationPrefix("upset_");
+		character_laurin.lockAnims = true;
+		character_laurin.animation.play("phone");
 
 		laurinphonedialogue.disabled = false;
 	} else {
