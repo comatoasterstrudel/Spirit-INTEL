@@ -61,24 +61,32 @@ class Door extends Interactable
 		{
 			animation.play("open");
 
-			if(facingDownwards){ //down
-				if (data.openDownSound != "")
-				{
-					CtSound.play(Constants.doorOpenDownSoundPath + data.openDownSound + ".ogg").pitch = FlxG.random.float(.8, 1.2);
-				}
-			} else {
-				if (data.openUpSound != "")
-				{
-					CtSound.play(Constants.doorOpenUpSoundPath + data.openUpSound + ".ogg").pitch = FlxG.random.float(.8, 1.2);
-				}
-			}
+			playOpenSound();
 		}
 		else
 		{
-			if (data.lockSound != "")
+			playLockedSound();
+		}
+	}
+
+	public function playOpenSound():Void{
+		if(facingDownwards){ //down
+			if (data.openDownSound != "")
 			{
-				CtSound.play(Constants.doorLockSoundPath + data.lockSound + ".ogg").pitch = FlxG.random.float(.9, 1.1);
+				CtSound.play(Constants.doorOpenDownSoundPath + data.openDownSound + ".ogg").pitch = FlxG.random.float(.8, 1.2);
 			}
+		} else {
+			if (data.openUpSound != "")
+			{
+				CtSound.play(Constants.doorOpenUpSoundPath + data.openUpSound + ".ogg").pitch = FlxG.random.float(.8, 1.2);
+			}
+		}
+	}
+
+	public function playClosedSound():Void{
+		if (data.lockSound != "")
+		{
+			CtSound.play(Constants.doorLockSoundPath + data.lockSound + ".ogg").pitch = FlxG.random.float(.9, 1.1);
 		}
 	}
 }
