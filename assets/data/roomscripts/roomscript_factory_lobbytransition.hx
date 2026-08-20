@@ -9,6 +9,8 @@ var character_player:Player;
 
 var cutsceneTrigger:Interactable;
 
+var lightingCover:LightingSprite;
+
 function create(){
     character_laurin = getCharacterByTag("laurin");
     character_laurin.facing = UP;
@@ -17,12 +19,17 @@ function create(){
     character_player = get_player();
     cutsceneTrigger = getInteractableByTag("cutscenetrigger");
     
-    
+    lightingCover = get_lightingCover();
+
     if(Save.storyFlags.get("factory_seenTransitionCutscene").val_bool){ // disable cutscene        
         character_laurin.kill();
         character_manager.kill();
         removeCutsceneTrigger();
     }        
+
+	if(Save.storyFlags.get("factory_scarymode").val_bool){ //SCARY
+		setUpScary();
+	}
 }
 
 function update(elapsed:Float){
@@ -97,4 +104,8 @@ function startcutscene():Void{
 
 function removeCutsceneTrigger():Void{
     cutsceneTrigger.disabled = true;
+}
+
+function setUpScary():Void{
+	lightingCover.alpha = .5;
 }

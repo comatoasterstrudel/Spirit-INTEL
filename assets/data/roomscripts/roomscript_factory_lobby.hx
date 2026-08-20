@@ -7,11 +7,21 @@ var character_player:Player;
 var character_lobbysecretary:Character;
 var character_laurin:Character;
 
+var jessdialogue:Interactable;
+
+var factoryjesscorpse:Prop;
+
 var anims:Array<String> = ["idle_down", "blink", "idle_right", "blink"];
 var progress:Int = 0;
 
 var frontdoor:Door;
 var inFirstCutscene:Bool = false;
+
+var realdoor:Door;
+
+var lightingCover:LightingSprite;
+
+var addThisX:Int = 14;
 
 function create():Void{
 	character_player = get_player();
@@ -19,6 +29,20 @@ function create():Void{
 	character_laurin = getCharacterByTag("laurin");
 
 	frontdoor = getDoorByTag("frontdoor");
+
+	realdoor = getDoorByTag("realdoor");
+
+	lightingCover = get_lightingCover();
+
+	factoryjesscorpse = getPropByTag("factoryjesscorpse");
+
+	jessdialogue = getInteractableByTag("jessdialogue");
+
+	if (Save.storyFlags.get("factory_scarymode").val_bool){
+		setUpScary();
+	} else {
+		factoryjesscorpse.kill();
+	}
 
 	if (!Save.storyFlags.get("factory_seenLobbyConversation").val_bool)
 	{
@@ -29,6 +53,10 @@ function create():Void{
 		character_laurin.kill();
 		setupBlink();
 		lockDoor();
+	}
+
+	if(!Save.storyFlags.get("factory_seenJessCorpse").val_bool){
+		doCorpseCutscene();
 	}
 }
 
@@ -48,7 +76,7 @@ function doConversationCutscene():Void
 	set_lockCamera(true);
 
 	character_player.lockMovement = true;
-	character_player.positionCharacterByGrid(7, 17);
+	character_player.positionCharacterByGrid(7 + addThisX, 17);
 	character_player.visible = false;
 
 	camGame.scroll.y = 1000;
@@ -84,13 +112,13 @@ function doConversationCutscene():Void
 
 		character_player.movementSpeed = .7;
 		
-		character_player.moveToGridSpace(7, 13.5, function():Void
+		character_player.moveToGridSpace(7 + addThisX, 13.5, function():Void
 		{
-			character_player.moveToGridSpace(9, -1, function():Void
+			character_player.moveToGridSpace(9 + addThisX, -1, function():Void
 			{
-				character_player.moveToGridSpace(9, 8.5, function():Void
+				character_player.moveToGridSpace(9 + addThisX, 8.5, function():Void
 				{
-					character_player.moveToGridSpace(7, -1, function():Void
+					character_player.moveToGridSpace(7 + addThisX, -1, function():Void
 					{
 						character_player.movementSpeed = 1;
 
@@ -138,12 +166,13 @@ function doConversationCutscene():Void
 
 		character_laurin.moveToGridSpace(-1, 7, function():Void
 		{
-			character_laurin.moveToGridSpace(11.5, 5, function():Void
+			character_laurin.moveToGridSpace(11.5 + addThisX, 5, function():Void
 			{
 				character_laurin.facing = UP;
 
 				new FlxTimer().start(.5, function(f):Void
 				{
+					realdoor.playOpenSound();
 					character_laurin.kill();
 					new FlxTimer().start(1, function(f):Void
 					{
@@ -219,4 +248,103 @@ function lockDoor():Void
 {
 	frontdoor.room = "";
 	frontdoor.dialogue = "factory/lobby/dialogue_exitdoor";
+}
+
+function setUpScary():Void{
+	lightingCover.alpha = .5;
+	frontdoor.disabled = true;
+	frontdoor.kill();
+	jessdialogue.disabled = true;
+	new FlxTimer().start(0.01, function(f):Void{
+		FlxG.sound.music.stop();
+	});
+	character_lobbysecretary.kill();
+}
+
+function doCorpseCutscene():Void{
+	Save.storyFlags.get("factory_seenJessCorpse").val_bool = true;
+
+	set_inCutscene(true);
+	set_lockCamera(true);
+	set_unbindCamera(true);
+
+	character_player.positionCharacterByGrid(25.5, 5);
+	character_player.lockMovement = true;
+
+	// robin enters room
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("enters");
+
+		character_player.kill();
+
+		new FlxTimer().start(1, function(f):Void{
+			realdoor.playOpenSound();
+			character_player.revive();
+
+			OverworldState.eventManager.finishTransaction("enters");
+		});
+	});
+
+	// walks downwards
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("walk downwards");
+
+		character_player.moveToGridSpace(-1, 8.5, function():Void
+		{
+			character_player.moveToGridSpace(23, 15, function():Void
+			{
+				character_player.positionCharacterByGrid(21, 14.9);
+
+				new FlxTimer().start(1, function(f):Void{
+					OverworldState.eventManager.finishTransaction("walk downwards");
+				});
+			});
+		});
+	});
+
+	// camera move down
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("camera move down");
+
+		FlxTween.tween(camGame.scroll, {y: camGame.scroll.y + 550}, 3.3, {ease: FlxEase.quartInOut, onComplete: function(f):Void{
+			OverworldState.eventManager.finishTransaction("camera move down");
+		}});
+	});
+
+	// oh my god
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("dialogue");
+
+		new FlxTimer().start(.5, function(f):Void{
+			startDialogue(["factory/lobby/jesscorpse/dialogue_corpsescene1"], function():Void
+			{
+				OverworldState.eventManager.finishTransaction("dialogue");
+			});
+		});
+	});
+
+	// robin walks down to jess
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("walkdown");
+
+		character_player.ignoreCollision = true;
+		character_player.movementSpeed = .3;
+		character_player.moveToGridSpace(-1, 16, function():Void
+		{
+			OverworldState.eventManager.finishTransaction("walkdown");
+		});
+	});
+
+	// robin checks jess' pulse
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("checkpulse");
+
+		OverworldState.eventManager.finishTransaction("checkpulse");
+	});
 }

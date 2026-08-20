@@ -7,6 +7,7 @@ class Player extends Character{
     
 	public var lockMovement:Bool = false;
 	
+	public var ignoreCollision:Bool = false;
 	public function new(name:String)
 	{
 		super(name, "player");
