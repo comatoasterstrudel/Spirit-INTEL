@@ -27,6 +27,8 @@ class MainMenuState extends FlxState
 		logo.antialiasing = false;
 		add(logo);
 		doIntroAnim();
+
+		addMusic();
     }
 	override function update(elapsed:Float):Void
 	{
@@ -58,10 +60,14 @@ class MainMenuState extends FlxState
 		{
 			menuManager.disable();
 
-			openSubState(new SaveLoadMenu(NEWGAME, "mainmenu", null, function():Void
+			var saveloadmenu = new SaveLoadMenu(NEWGAME, "mainmenu", null, function():Void
 			{
 				menuManager.enable();
-			}));
+			});
+
+			saveloadmenu.leaveSignal.add(removeMusic);
+
+			openSubState(saveloadmenu);
 		});
 
 		var allowContinue:Bool = Save.isAnySaveStarted();
@@ -72,10 +78,14 @@ class MainMenuState extends FlxState
 			{
 				menuManager.disable();
 
-				openSubState(new SaveLoadMenu(CONTINUE, "mainmenu", null, function():Void
+				var saveloadmenu = new SaveLoadMenu(CONTINUE, "mainmenu", null, function():Void
 				{
 					menuManager.enable();
-				}));
+				});
+
+				saveloadmenu.leaveSignal.add(removeMusic);
+
+				openSubState(saveloadmenu);
 			}
 			else
 			{
@@ -121,10 +131,14 @@ class MainMenuState extends FlxState
 		{
 			menuManager.disable();
 
-			openSubState(new SaveLoadMenu(CONTINUEDEBUG, "mainmenu", null, function():Void
+			var saveloadmenu = new SaveLoadMenu(CONTINUEDEBUG, "mainmenu", null, function():Void
 			{
 				menuManager.enable();
-			}));
+			});
+
+			saveloadmenu.leaveSignal.add(removeMusic);
+			
+			openSubState(saveloadmenu);
 		});
 		#end
 
@@ -184,6 +198,17 @@ class MainMenuState extends FlxState
 			{
 				black.destroy();
 			}
+		});
+	}
+
+	function addMusic():Void{
+		FlxG.sound.playMusic(Constants.mus_title);
+	}
+
+	function removeMusic():Void{
+		FlxG.sound.music.fadeOut(.25, 0, function(f):Void{
+			FlxG.sound.music.stop();
+			FlxG.sound.music.destroy();
 		});
 	}
 }

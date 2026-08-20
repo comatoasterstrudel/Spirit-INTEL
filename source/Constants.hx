@@ -26,6 +26,7 @@ class Constants
 	public static final sfx_encounter:String = sfxPath + "encounter";
 	//MUSIC
 	public static final musicPath:String = "assets/music/mus_";
+	public static final mus_title:String = musicPath + "title.ogg";
 	
 	// Battle
 	public static final battleDataFolder:String = "assets/data/battles/";

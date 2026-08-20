@@ -33,6 +33,8 @@ class SaveLoadMenu extends FlxSubState
 	var confirmMenuManager:CtMenuManager;
 	var confirmCursor:Cursor;
 	
+	public var leaveSignal = new FlxSignal();
+
 	public function new(type:SaveLoadMenuType, bgName:String, ?onComplete:Void->Void, ?onExit:Void->Void):Void
 	{
         super();
@@ -343,14 +345,16 @@ class SaveLoadMenu extends FlxSubState
         FlxTween.tween(tranSpr, {alpha: 1}, .25, {onComplete: function(f):Void{
             if(step1 != null) step1();
             
-                FlxTween.tween(tranSpr, {alpha: 0}, .25, {onComplete: function(f):Void{
-                    tranSpr.destroy();
-                    if(step2 != null) step2();
-                }});
+			FlxTween.tween(tranSpr, {alpha: 0}, .25, {onComplete: function(f):Void{
+				tranSpr.destroy();
+				if(step2 != null) step2();
+			}});
         }});
     }
 	function startSave(slot:Int):Void
 	{
+		leaveSignal.dispatch();
+
 		doTransition(function():Void
 		{
 			Save.load(slot);
@@ -363,6 +367,8 @@ class SaveLoadMenu extends FlxSubState
 
 	function continueSave(slot:Int):Void
 	{
+		leaveSignal.dispatch();
+		
 		doTransition(function():Void
 		{
 			Save.load(slot);
