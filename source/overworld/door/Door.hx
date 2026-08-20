@@ -83,7 +83,7 @@ class Door extends Interactable
 		}
 	}
 
-	public function playClosedSound():Void{
+	public function playLockedSound():Void{
 		if (data.lockSound != "")
 		{
 			CtSound.play(Constants.doorLockSoundPath + data.lockSound + ".ogg").pitch = FlxG.random.float(.9, 1.1);
