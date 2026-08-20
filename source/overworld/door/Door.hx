@@ -64,12 +64,12 @@ class Door extends Interactable
 			if(facingDownwards){ //down
 				if (data.openDownSound != "")
 				{
-					FlxG.sound.play(Constants.doorOpenDownSoundPath + data.openDownSound + ".ogg").pitch = FlxG.random.float(.8, 1.2);
+					CtSound.play(Constants.doorOpenDownSoundPath + data.openDownSound + ".ogg").pitch = FlxG.random.float(.8, 1.2);
 				}
 			} else {
 				if (data.openUpSound != "")
 				{
-					FlxG.sound.play(Constants.doorOpenUpSoundPath + data.openUpSound + ".ogg").pitch = FlxG.random.float(.8, 1.2);
+					CtSound.play(Constants.doorOpenUpSoundPath + data.openUpSound + ".ogg").pitch = FlxG.random.float(.8, 1.2);
 				}
 			}
 		}
@@ -77,7 +77,7 @@ class Door extends Interactable
 		{
 			if (data.lockSound != "")
 			{
-				FlxG.sound.play(Constants.doorLockSoundPath + data.lockSound + ".ogg").pitch = FlxG.random.float(.9, 1.1);
+				CtSound.play(Constants.doorLockSoundPath + data.lockSound + ".ogg").pitch = FlxG.random.float(.9, 1.1);
 			}
 		}
 	}

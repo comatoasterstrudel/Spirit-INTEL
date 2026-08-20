@@ -431,7 +431,7 @@ class PlayState extends FlxState
 
 		if (battleData.music != "" && Assets.exists(path))
 		{
-			FlxG.sound.playMusic(path);
+			CtSound.playMusic(path);
 			FlxG.sound.music.fadeIn(1, 0, FlxG.sound.music.volume);
 		}
 	}

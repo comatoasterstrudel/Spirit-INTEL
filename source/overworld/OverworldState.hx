@@ -1066,7 +1066,7 @@ class OverworldState extends FlxState
 
 		positionBeforeBattle.set(player.x, player.y);
 
-		FlxG.sound.play(Constants.sfx_encounter + ".ogg", 1);
+		CtSound.play(Constants.sfx_encounter + ".ogg", 1);
 
 		if(FlxG.sound.music != null){
 			updateLastMusic();
@@ -1532,7 +1532,7 @@ class OverworldState extends FlxState
 
 		if (Assets.exists(path))
 		{
-			FlxG.sound.playMusic(path);
+			CtSound.playMusic(path);
 			if(time > 0) FlxG.sound.music.fadeIn(time, 0, FlxG.sound.music.volume);
 
 			if(isMusicSameAsLastMusic(roomData)){

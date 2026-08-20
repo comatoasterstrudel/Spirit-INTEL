@@ -202,7 +202,7 @@ class MainMenuState extends FlxState
 	}
 
 	function addMusic():Void{
-		FlxG.sound.playMusic(Constants.mus_title);
+		CtSound.playMusic(Constants.mus_title);
 	}
 
 	function removeMusic():Void{

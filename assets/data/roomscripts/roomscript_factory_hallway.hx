@@ -342,7 +342,7 @@ function startMonsterCutscene():Void
 
 		new FlxTimer().start(2.5, function(f):Void
 		{
-			FlxG.sound.play(Constants.sfxPath + "jacketshatter.ogg");
+			CtSound.play(Constants.sfxPath + "jacketshatter.ogg");
 
 			fadeBg.color = 0xFF000000;
 
@@ -362,7 +362,7 @@ function startMonsterCutscene():Void
 	{
 		OverworldState.eventManager.startTransaction("fade more");
 
-		FlxG.sound.play(Constants.sfxPath + "managerslide.ogg");
+		CtSound.play(Constants.sfxPath + "managerslide.ogg");
 
 		for (char in [character_player, character_managerscary])
 		{
@@ -412,7 +412,7 @@ function startMonsterCutscene():Void
 		{
 			if (event == "volorappears")
 			{
-				FlxG.sound.play(Constants.sfxPath + "volorappear.ogg");
+				CtSound.play(Constants.sfxPath + "volorappear.ogg");
 				camUI.shake(0.05, .2, null, true, 0x01);
 			}
 		});
@@ -651,10 +651,10 @@ function startEndOfTutorialCutscene():Void{
 	{
 		OverworldState.eventManager.startTransaction("monstar run awat");
 
-		FlxG.sound.play(Constants.sfxPath + "lauringun.ogg");
+		CtSound.play(Constants.sfxPath + "lauringun.ogg");
 
 		new FlxTimer().start(1, function(f):Void{
-			FlxG.sound.play(Constants.sfxPath + "managerfall.ogg");
+			CtSound.play(Constants.sfxPath + "managerfall.ogg");
 			
 			FlxTween.shake(character_managerscary, 0.03, .2, 0x01);
 			character_managerscary.changeAnimationPrefix("");
@@ -680,7 +680,7 @@ function startEndOfTutorialCutscene():Void{
 
 						camGame.shake(0.02, 0.2, null, true, 0x10);
 
-						FlxG.sound.play(Constants.sfxPath + "officedoorslam.ogg");
+						CtSound.play(Constants.sfxPath + "officedoorslam.ogg");
 
 						OverworldState.eventManager.finishTransaction("monstar run awat");
 					});
@@ -754,7 +754,7 @@ function startEndOfTutorialCutscene():Void{
 				character_laurin.lockAnims = true;
 				character_laurin.animation.play("phone");
 
-				FlxG.sound.play(Constants.sfxPath + "laurinopenphone.ogg");
+				CtSound.play(Constants.sfxPath + "laurinopenphone.ogg");
 
 				new FlxTimer().start(2, function(f):Void{
 					OverworldState.eventManager.finishTransaction("walkback");

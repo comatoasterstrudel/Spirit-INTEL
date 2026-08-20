@@ -157,7 +157,7 @@ function doCutscene():Void{
 				frames++;
 				if (frameNum == 1)
 				{
-					FlxG.sound.play(Constants.sfxPath + "clap_" + FlxG.random.int(1, 4) + ".ogg");
+					CtSound.play(Constants.sfxPath + "clap_" + FlxG.random.int(1, 4) + ".ogg");
 				} 
 				if (frames >= maxFrames)
 				{
@@ -194,7 +194,7 @@ function doCutscene():Void{
 
 		new FlxTimer().start(.65, function(f):Void
 		{
-			FlxG.sound.play(Constants.sfxPath + "pop.ogg");
+			CtSound.play(Constants.sfxPath + "pop.ogg");
 
 			character_manager.animation.play("popped");
 
@@ -255,7 +255,7 @@ function doCutscene():Void{
 				}
 				else if (frameNum == 1)
 				{
-					FlxG.sound.play(Constants.sfxPath + "clap_" + FlxG.random.int(1, 4) + ".ogg");
+					CtSound.play(Constants.sfxPath + "clap_" + FlxG.random.int(1, 4) + ".ogg");
 				}
 			}
 		});

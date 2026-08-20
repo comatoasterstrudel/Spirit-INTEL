@@ -143,6 +143,7 @@ class InitState extends FlxState{
 		CtScript.setDefaultValue({name: "CtUtil", value: CtUtil});
 		CtScript.setDefaultValue({name: "FlxSound", value: FlxSound});
 		CtScript.setDefaultValue({name: "InitState", value: InitState});
+		CtScript.setDefaultValue({name: "CtSound", value: CtSound});
 	}
 
 	function initSave():Void
