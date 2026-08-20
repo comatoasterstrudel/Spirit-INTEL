@@ -15,7 +15,7 @@ var character_coworkerA:Character;
 var character_coworkerB:Character;
 var character_coworkerC:Character;
 var character_coworkerD:Character;
-
+ 
 var party_laurin:Interactable;
 var party_coworkerA:Interactable;
 var party_coworkerB:Interactable;
@@ -52,7 +52,7 @@ function create():Void{
 
 	dialogueBox = get_dialogueBox();
 	
-	if (!Save.storyFlags.get("factory_seenbreakroomcutscene").val_bool)
+	if (!Save.storyFlags.get("factory_seenbreakroomcutscene").val_bool || InitState.init_forceCutscene == "breakroomparty")
 	{
 		doCutscene();
 	}
@@ -75,6 +75,8 @@ function update(elapsed:Float):Void{
 }
 
 function doCutscene():Void{	
+	OverworldState.setUpMusic(Constants.roomMusicPath + "party.ogg", 3);
+
 	set_inCutscene(true);
 	
 	set_lockCamera(true);
@@ -288,11 +290,15 @@ function doCutscene():Void{
 							FlxTween.tween(character_coworkerC.hitbox, {y: character_coworkerC.hitbox.y + 12}, .1);
 						}
 					});
+				} else if (event == "tunedownmusic")
+				{
+					FlxG.sound.music.pitch = .9;
 				}
 			});
 
 			startDialogue(["factory/breakroom/dialogue_party_cutscene_4"], function():Void
 			{
+				FlxG.sound.music.fadeOut(4);
 				OverworldState.eventManager.finishTransaction("dialogue");
 			});
 		});
@@ -406,6 +412,8 @@ function doConfetti(x:Int, y:Int):Void
 
 function startParty():Void
 {
+	OverworldState.setUpMusic(Constants.roomMusicPath + "partyfull.ogg", 0, true);
+
 	inParty = true;
 
 	door.room = "";
@@ -430,6 +438,9 @@ function endParty():Void
 		fade.alpha = 0;
 		add(fade);
 
+		FlxG.sound.music.fadeOut(3, 0, function(f):Void{
+			FlxG.sound.music.destroy();
+		});	
 		FlxTween.tween(fade, {alpha: 1}, 3, {
 			onComplete: function(f):Void
 			{

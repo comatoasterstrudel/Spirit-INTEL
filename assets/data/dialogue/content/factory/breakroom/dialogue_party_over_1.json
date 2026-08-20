@@ -6,7 +6,12 @@
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "I usually stay behind later on my shifts, nothing beats the awkwardness of having to ride the subway at the same time as your coworkers.",
+		"dialogue": "I usually stay behind later on my shifts..",
+		"actor": "narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Nothing beats the awkwardness of having to ride the subway at the same time as your coworkers.",
 		"actor": "narrator"
 	},
 	{

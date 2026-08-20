@@ -69,6 +69,7 @@
 		"speed": 0.03,
 		"dialogue": "...ignoramus barbarians.",
 		"actor": "manager",
-		"portrait": "douche"
+		"portrait": "douche",
+		"events": ["tunedownmusic"]
 	}
 ]
