@@ -140,6 +140,47 @@
             "name": "jacket_glow",
             "prefix": "robin_jacket_glow",
             "fps": 0
+        },
+        {
+            "name": "surprise",
+            "prefix": "robin_suprise",
+            "fps": 0
+        },
+        {
+            "name": "crouch_front",
+            "prefix": "robin_crouch_front",
+            "fps": 0
+        },
+        {
+            "name": "crouch_lookover",
+            "prefix": "robin_crouch_lookover",
+            "fps": 0
+        },
+        {
+            "name": "crouch_left",
+            "prefix": "robin_crouch_left",
+            "fps": 0
+        },
+        {
+            "name": "left_lanyard",
+            "prefix": "robin_left_lanyard",
+            "fps": 0
+        },
+        {
+            "name": "door_one",
+            "prefix": "robin_door_one",
+            "fps": 0
+        },
+        {
+            "name": "door_two",
+            "prefix": "robin_door_two",
+            "fps": 0
+        },
+        {
+            "name": "jossledoor",
+            "prefix": "robin_jossledoor",
+            "fps": 2,
+            "looped": true
         }
     ]
 }

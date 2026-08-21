@@ -9,14 +9,14 @@
    },
    "robin_front_walk0000": {
     "frame": { "x": 32, "y": 0, "w": 32, "h": 32 },
-    "rotated": false,
+    "rotated": false, 
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
     "duration": 100
    },
    "robin_front_walk0001": {
-    "frame": { "x": 64, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -24,7 +24,7 @@
     "duration": 100
    },
    "robin_front_walk0002": {
-    "frame": { "x": 96, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 64, "y": 0, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -32,7 +32,7 @@
     "duration": 100
    },
    "robin_front_walk0003": {
-    "frame": { "x": 128, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -40,7 +40,7 @@
     "duration": 100
    },
    "robin_horizontal_idle0000": {
-    "frame": { "x": 160, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 96, "y": 0, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -48,7 +48,7 @@
     "duration": 100
    },
    "robin_horizontal_walk0000": {
-    "frame": { "x": 192, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 128, "y": 0, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -56,7 +56,7 @@
     "duration": 100
    },
    "robin_horizontal_walk0001": {
-    "frame": { "x": 224, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 96, "y": 0, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -64,7 +64,7 @@
     "duration": 100
    },
    "robin_horizontal_walk0002": {
-    "frame": { "x": 256, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 160, "y": 0, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -72,7 +72,7 @@
     "duration": 100
    },
    "robin_horizontal_walk0003": {
-    "frame": { "x": 288, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 96, "y": 0, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -80,7 +80,7 @@
     "duration": 100
    },
    "robin_up_idle0000": {
-    "frame": { "x": 320, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 0, "y": 32, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -88,7 +88,7 @@
     "duration": 100
    },
    "robin_up_walk0000": {
-    "frame": { "x": 352, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 32, "y": 32, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -96,7 +96,7 @@
     "duration": 100
    },
    "robin_up_walk0001": {
-    "frame": { "x": 384, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 0, "y": 32, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -104,7 +104,7 @@
     "duration": 100
    },
    "robin_up_walk0002": {
-    "frame": { "x": 416, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 64, "y": 32, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -112,7 +112,7 @@
     "duration": 100
    },
    "robin_up_walk0003": {
-    "frame": { "x": 448, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 0, "y": 32, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -120,7 +120,7 @@
     "duration": 100
    },
    "robin_party_front_idle0000": {
-    "frame": { "x": 480, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 96, "y": 32, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -128,7 +128,7 @@
     "duration": 100
    },
    "robin_party_front_walk0000": {
-    "frame": { "x": 512, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 128, "y": 32, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -136,7 +136,7 @@
     "duration": 100
    },
    "robin_party_front_walk0001": {
-    "frame": { "x": 544, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 96, "y": 32, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -144,7 +144,7 @@
     "duration": 100
    },
    "robin_party_front_walk0002": {
-    "frame": { "x": 576, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 160, "y": 32, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -152,7 +152,7 @@
     "duration": 100
    },
    "robin_party_front_walk0003": {
-    "frame": { "x": 608, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 96, "y": 32, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -160,7 +160,7 @@
     "duration": 100
    },
    "robin_party_horizontal_idle0000": {
-    "frame": { "x": 640, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 0, "y": 64, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -168,7 +168,7 @@
     "duration": 100
    },
    "robin_party_horizontal_walk0000": {
-    "frame": { "x": 672, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 32, "y": 64, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -176,7 +176,7 @@
     "duration": 100
    },
    "robin_party_horizontal_walk0001": {
-    "frame": { "x": 704, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 0, "y": 64, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -184,7 +184,7 @@
     "duration": 100
    },
    "robin_party_horizontal_walk0002": {
-    "frame": { "x": 736, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 64, "y": 64, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -192,7 +192,7 @@
     "duration": 100
    },
    "robin_party_horizontal_walk0003": {
-    "frame": { "x": 768, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 0, "y": 64, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -200,7 +200,7 @@
     "duration": 100
    },
    "robin_party_up_idle0000": {
-    "frame": { "x": 800, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 96, "y": 64, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -208,7 +208,7 @@
     "duration": 100
    },
    "robin_party_up_walk0000": {
-    "frame": { "x": 832, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 128, "y": 64, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -216,7 +216,7 @@
     "duration": 100
    },
    "robin_party_up_walk0001": {
-    "frame": { "x": 864, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 96, "y": 64, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -224,7 +224,7 @@
     "duration": 100
    },
    "robin_party_up_walk0002": {
-    "frame": { "x": 896, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 160, "y": 64, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -232,7 +232,7 @@
     "duration": 100
    },
    "robin_party_up_walk0003": {
-    "frame": { "x": 928, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 96, "y": 64, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -240,7 +240,7 @@
     "duration": 100
    },
    "robin_shocked_idle0000": {
-    "frame": { "x": 960, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 0, "y": 96, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -248,7 +248,7 @@
     "duration": 100
    },
    "robin_shocked_stepback0000": {
-    "frame": { "x": 992, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 32, "y": 96, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -256,7 +256,7 @@
     "duration": 100
    },
    "robin_shocked_handup0000": {
-    "frame": { "x": 1024, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 64, "y": 96, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -264,7 +264,7 @@
     "duration": 100
    },
    "robin_shocked_run0000": {
-    "frame": { "x": 1056, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 96, "y": 96, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -272,7 +272,7 @@
     "duration": 100
    },
    "robin_shocked_run0001": {
-    "frame": { "x": 1088, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 128, "y": 96, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -280,7 +280,7 @@
     "duration": 100
    },
    "robin_shocked_run0002": {
-    "frame": { "x": 1120, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 160, "y": 96, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -288,7 +288,7 @@
     "duration": 100
    },
    "robin_lookup_scared0000": {
-    "frame": { "x": 1152, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 0, "y": 128, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -296,7 +296,7 @@
     "duration": 100
    },
    "robin_stepback_lookup0000": {
-    "frame": { "x": 1184, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 0, "y": 128, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -304,7 +304,7 @@
     "duration": 100
    },
    "robin_stepback_lookup0001": {
-    "frame": { "x": 1216, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 32, "y": 128, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -312,7 +312,79 @@
     "duration": 100
    },
    "robin_jacket_glow0000": {
-    "frame": { "x": 1248, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 64, "y": 128, "w": 32, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
+    "sourceSize": { "w": 32, "h": 32 },
+    "duration": 100
+   },
+   "robin_suprise0000": {
+    "frame": { "x": 96, "y": 128, "w": 32, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
+    "sourceSize": { "w": 32, "h": 32 },
+    "duration": 100
+   },
+   "robin_crouch_front0000": {
+    "frame": { "x": 128, "y": 128, "w": 32, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
+    "sourceSize": { "w": 32, "h": 32 },
+    "duration": 100
+   },
+   "robin_crouch_lookover0000": {
+    "frame": { "x": 160, "y": 128, "w": 32, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
+    "sourceSize": { "w": 32, "h": 32 },
+    "duration": 100
+   },
+   "robin_crouch_left0000": {
+    "frame": { "x": 0, "y": 160, "w": 32, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
+    "sourceSize": { "w": 32, "h": 32 },
+    "duration": 100
+   },
+   "robin_left_lanyard0000": {
+    "frame": { "x": 32, "y": 160, "w": 32, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
+    "sourceSize": { "w": 32, "h": 32 },
+    "duration": 100
+   },
+   "robin_door_one0000": {
+    "frame": { "x": 64, "y": 160, "w": 32, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
+    "sourceSize": { "w": 32, "h": 32 },
+    "duration": 100
+   },
+   "robin_door_two0000": {
+    "frame": { "x": 96, "y": 160, "w": 32, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
+    "sourceSize": { "w": 32, "h": 32 },
+    "duration": 100
+   },
+   "robin_jossledoor0000": {
+    "frame": { "x": 96, "y": 160, "w": 32, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
+    "sourceSize": { "w": 32, "h": 32 },
+    "duration": 100
+   },
+   "robin_jossledoor0001": {
+    "frame": { "x": 128, "y": 160, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -324,7 +396,7 @@
   "app": "https://www.aseprite.org/",
   "version": "1.3.17.2-x64",
   "format": "RGBA8888",
-  "size": { "w": 1280, "h": 32 },
+  "size": { "w": 192, "h": 192 },
   "scale": "1",
   "frameTags": [
    { "name": "robin_front_idle", "from": 0, "to": 0, "direction": "forward", "color": "#000000ff" },
@@ -345,7 +417,15 @@
    { "name": "robin_shocked_run", "from": 33, "to": 35, "direction": "forward", "color": "#000000ff" },
    { "name": "robin_lookup_scared", "from": 36, "to": 36, "direction": "forward", "color": "#000000ff" },
    { "name": "robin_stepback_lookup", "from": 37, "to": 38, "direction": "forward", "color": "#000000ff" },
-   { "name": "robin_jacket_glow", "from": 39, "to": 39, "direction": "forward", "color": "#000000ff" }
+   { "name": "robin_jacket_glow", "from": 39, "to": 39, "direction": "forward", "color": "#000000ff" },
+   { "name": "robin_suprise", "from": 40, "to": 40, "direction": "forward", "color": "#000000ff" },
+   { "name": "robin_crouch_front", "from": 41, "to": 41, "direction": "forward", "color": "#000000ff" },
+   { "name": "robin_crouch_lookover", "from": 42, "to": 42, "direction": "forward", "color": "#000000ff" },
+   { "name": "robin_crouch_left", "from": 43, "to": 43, "direction": "forward", "color": "#000000ff" },
+   { "name": "robin_left_lanyard", "from": 44, "to": 44, "direction": "forward", "color": "#000000ff" },
+   { "name": "robin_door_one", "from": 45, "to": 45, "direction": "forward", "color": "#000000ff" },
+   { "name": "robin_door_two", "from": 46, "to": 46, "direction": "forward", "color": "#000000ff" },
+   { "name": "robin_jossledoor", "from": 47, "to": 48, "direction": "forward", "color": "#000000ff" }
   ],
   "layers": [
    { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }

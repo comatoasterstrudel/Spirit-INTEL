@@ -295,7 +295,9 @@ function doCorpseCutscene():Void{
 		{
 			character_player.moveToGridSpace(23, 15, function():Void
 			{
+				character_player.lockAnims = true;
 				character_player.positionCharacterByGrid(21, 14.9);
+				character_player.animation.play("surprise");
 
 				new FlxTimer().start(1, function(f):Void{
 					OverworldState.eventManager.finishTransaction("walk downwards");
@@ -332,6 +334,7 @@ function doCorpseCutscene():Void{
 	{
 		OverworldState.eventManager.startTransaction("walkdown");
 
+		character_player.lockAnims = false;
 		character_player.ignoreCollision = true;
 		character_player.movementSpeed = .3;
 		character_player.moveToGridSpace(-1, 16, function():Void
@@ -345,6 +348,9 @@ function doCorpseCutscene():Void{
 	{
 		OverworldState.eventManager.startTransaction("checkpulse");
 
+		character_player.lockAnims = true;
+		character_player.animation.play("crouch_front");
+
 		OverworldState.eventManager.finishTransaction("checkpulse");
 	});
 
@@ -353,7 +359,7 @@ function doCorpseCutscene():Void{
 	{
 		OverworldState.eventManager.startTransaction("dialogue");
 
-		new FlxTimer().start(1.5, function(f):Void{
+		new FlxTimer().start(2, function(f):Void{
 			startDialogue(["factory/lobby/jesscorpse/dialogue_corpsescene2"], function():Void
 			{
 				new FlxTimer().start(2, function(f):Void{
@@ -372,6 +378,7 @@ function doCorpseCutscene():Void{
 
 		new FlxTimer().start(.35, function(f):Void{
 			FlxTween.shake(character_player, 0.05, .2, 0x01);
+			character_player.animation.play("crouch_lookover");
 
 			new FlxTimer().start(5.5, function(f):Void{
 				OverworldState.eventManager.finishTransaction("monster scream");
@@ -443,7 +450,18 @@ function doCorpseCutscene():Void{
 
 		new FlxTimer().start(.4, function(f):Void{
 			CtSound.play(Constants.sfxPath + "lobbydoorstuck.ogg");
-			// anim
+			
+			character_player.lockAnims = true;
+
+			character_player.animation.play("door_one");
+
+			new FlxTimer().start(.25, function(f):Void{
+				character_player.animation.play("door_two");
+
+				new FlxTimer().start(.25, function(f):Void{
+					character_player.animation.play("jossledoor");
+				});
+			});
 
 			new FlxTimer().start(2.5, function(f):Void{
 				OverworldState.eventManager.finishTransaction("walktodoor");
@@ -456,11 +474,13 @@ function doCorpseCutscene():Void{
 	{
 		OverworldState.eventManager.startTransaction("dialogue");
 
+		character_player.animation.play("door_two");
+
 		startDialogue(["factory/lobby/jesscorpse/dialogue_corpsescene4"], function():Void
 		{
-			new FlxTimer().start(1, function(f):Void{
-				OverworldState.eventManager.finishTransaction("dialogue");
-			});
+			character_player.lockAnims = false;
+
+			OverworldState.eventManager.finishTransaction("dialogue");
 		});
 	});
 }
