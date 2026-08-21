@@ -351,6 +351,11 @@ function doCorpseCutscene():Void{
 		character_player.lockAnims = true;
 		character_player.animation.play("crouch_front");
 
+		new FlxTimer().start(.5, function(f):Void{
+			FlxTween.shake(factoryjesscorpse, 0.05, .2, 0x01);
+			CtSound.play(Constants.sfxPath + "checkjess.ogg");
+		});
+
 		OverworldState.eventManager.finishTransaction("checkpulse");
 	});
 
@@ -359,7 +364,7 @@ function doCorpseCutscene():Void{
 	{
 		OverworldState.eventManager.startTransaction("dialogue");
 
-		new FlxTimer().start(2, function(f):Void{
+		new FlxTimer().start(2.5, function(f):Void{
 			startDialogue(["factory/lobby/jesscorpse/dialogue_corpsescene2"], function():Void
 			{
 				new FlxTimer().start(2, function(f):Void{
@@ -426,7 +431,7 @@ function doCorpseCutscene():Void{
 	{
 		OverworldState.eventManager.startTransaction("walktodoor");
 
-		character_player.movementSpeed = .5;
+		character_player.movementSpeed = .7;
 
 		character_player.moveToGridSpace(23, -1, function():Void
 		{
