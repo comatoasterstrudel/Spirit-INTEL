@@ -7,7 +7,7 @@ class PropData extends CtJsonLoader
     public var name:String;
     public var graphic:String;
     
-    public var hitboxX:Int;
+    public var hitboxX:Int; 
     public var hitboxY:Int;
 
     public var hitboxWidth:Int;

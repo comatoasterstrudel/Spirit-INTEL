@@ -1,0 +1,26 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "..?",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "It's stuck.",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "The door's automatic..",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "The blood must've messed with the sensors..",
+		"actor": "robin",
+		"portrait": "neutral"
+	}
+]

@@ -1,4 +1,7 @@
 {
     "name": "lobby_factory",
-    "graphic": "lobby_factory"
+    "graphic": "lobby_factory",
+    "openUpSound": "factory",
+    "openDownSound": "factory",
+    "lockSound": "factory"
 }

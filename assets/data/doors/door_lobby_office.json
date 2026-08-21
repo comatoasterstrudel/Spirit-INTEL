@@ -1,4 +1,7 @@
 {
     "name": "lobby_office",
-    "graphic": "lobby_office"
+    "graphic": "lobby_office",
+    "openUpSound": "factory",
+    "openDownSound": "factory",
+    "lockSound": "factory"
 }

@@ -347,4 +347,120 @@ function doCorpseCutscene():Void{
 
 		OverworldState.eventManager.finishTransaction("checkpulse");
 	});
+
+	// shes gone
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("dialogue");
+
+		new FlxTimer().start(1.5, function(f):Void{
+			startDialogue(["factory/lobby/jesscorpse/dialogue_corpsescene2"], function():Void
+			{
+				new FlxTimer().start(2, function(f):Void{
+					OverworldState.eventManager.finishTransaction("dialogue");
+				});
+			});
+		});
+	});
+
+	// monster screams off screen
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("monster scream");
+
+		CtSound.play(Constants.sfxPath + "lobbymonsterecho.ogg");
+
+		new FlxTimer().start(.35, function(f):Void{
+			FlxTween.shake(character_player, 0.05, .2, 0x01);
+
+			new FlxTimer().start(5.5, function(f):Void{
+				OverworldState.eventManager.finishTransaction("monster scream");
+			});
+		});
+	});
+
+	// "we gotta get outta here1!!""
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("dialogue");
+
+		startDialogue(["factory/lobby/jesscorpse/dialogue_corpsescene3"], function():Void
+		{
+			new FlxTimer().start(1, function(f):Void{
+				OverworldState.eventManager.finishTransaction("dialogue");
+			});
+		});
+	});
+
+	// slowly walk backwards
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("walkbackwards");
+
+		character_player.lockAnims = true;
+
+		character_player.animation.play("walk_down");
+
+		character_player.movementSpeed = .15;
+
+		character_player.moveToGridSpace(-1, 15, function():Void
+		{
+			character_player.lockAnims = false;
+			character_player.facing = DOWN;
+
+			new FlxTimer().start(.5, function(f):Void{
+				OverworldState.eventManager.finishTransaction("walkbackwards");
+			});
+		});
+	});
+
+	// walk to door
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("walktodoor");
+
+		character_player.movementSpeed = .5;
+
+		character_player.moveToGridSpace(23, -1, function():Void
+		{
+			factoryjesscorpse.data.yStackingOffset = -999;
+
+			character_player.moveToGridSpace(-1, 17, function():Void
+			{
+				character_player.moveToGridSpace(21, -1, function():Void
+				{
+					character_player.facing = DOWN;
+					OverworldState.eventManager.finishTransaction("walktodoor");
+				});
+			});
+		});
+	});
+
+	// try to use door
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("walktodoor");
+
+		new FlxTimer().start(.4, function(f):Void{
+			CtSound.play(Constants.sfxPath + "lobbydoorstuck.ogg");
+			// anim
+
+			new FlxTimer().start(2.5, function(f):Void{
+				OverworldState.eventManager.finishTransaction("walktodoor");
+			});
+		});
+	});
+
+	// "door stuck ! door stuck !"
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("dialogue");
+
+		startDialogue(["factory/lobby/jesscorpse/dialogue_corpsescene4"], function():Void
+		{
+			new FlxTimer().start(1, function(f):Void{
+				OverworldState.eventManager.finishTransaction("dialogue");
+			});
+		});
+	});
 }
