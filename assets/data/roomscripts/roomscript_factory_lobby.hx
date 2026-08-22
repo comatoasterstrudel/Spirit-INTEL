@@ -522,7 +522,7 @@ function doCorpseCutscene():Void{
 	{
 		OverworldState.eventManager.startTransaction("robingoin");
 
-		new FlxTimer().start(1, function(f):Void{		
+		new FlxTimer().start(.5, function(f):Void{		
 			
 			for(spr in [fullart_frameLBg, fullart_robin]){
 				spr.visible = true;
@@ -530,7 +530,7 @@ function doCorpseCutscene():Void{
 				FlxTween.tween(spr, {alpha: 1}, 1, {ease: FlxEase.quartOut});
 			}
 
-			fullart_robin.x -= 50;
+			fullart_robin.x += 30;
 			FlxTween.tween(fullart_robin, {x: 0}, 1.5, {ease: FlxEase.quartOut, onComplete: function(f):Void{
 				OverworldState.eventManager.finishTransaction("robingoin");
 			}});
@@ -550,7 +550,7 @@ function doCorpseCutscene():Void{
 				FlxTween.tween(spr, {alpha: 1}, 1, {ease: FlxEase.quartOut});
 			}
 
-			fullart_keycard.x += 50;
+			fullart_keycard.x -= 30;
 			FlxTween.tween(fullart_keycard, {x: 0}, 1.5, {ease: FlxEase.quartOut, onComplete: function(f):Void{
 				OverworldState.eventManager.finishTransaction("karcardgoin");
 			}});
@@ -565,20 +565,20 @@ function doCorpseCutscene():Void{
 		fullart_fade.visible = true;
 		fullart_fade.alpha = 0;
 
-		FlxTween.tween(fullart_fade, {alpha: 1}, 2, {onComplete: function(f):Void{
-			fullart_frame.visible = false;
-			fullart_frameLBg.visible = false;
-			fullart_frameRBg.visible = false;
-			fullart_robin.visible = false;
-			fullart_keycard.visible = false;
-			fullart_bg.visible = false;
+		FlxTween.tween(fullart_fade, {alpha: 1}, 2, {startDelay: 1, onComplete: function(f):Void{
+			fullart_frame.destroy();
+			fullart_frameLBg.destroy();
+			fullart_frameRBg.destroy();
+			fullart_robin.destroy();
+			fullart_keycard.destroy();
+			fullart_bg.destroy();
 			
 			FlxTween.tween(fullart_fade, {alpha: 0}, 2, {onComplete: function(f):Void{
+				fullart_fade.destroy();
 				OverworldState.eventManager.finishTransaction("full art");
 			}});
 		}});
 	});
-
 }
 
 function setUpFullArt():Void
