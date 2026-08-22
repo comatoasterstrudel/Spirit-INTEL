@@ -23,6 +23,14 @@ var lightingCover:LightingSprite;
 
 var addThisX:Int = 14;
 
+var fullart_fade:CtSprite;
+var fullart_frame:CtSprite;
+var fullart_frameLBg:CtSprite;
+var fullart_frameRBg:CtSprite;
+var fullart_robin:CtSprite;
+var fullart_keycard:CtSprite;
+var fullart_bg:CtSprite;
+
 function create():Void{
 	character_player = get_player();
     character_lobbysecretary = getCharacterByTag("lobbysecretary");
@@ -262,6 +270,8 @@ function setUpScary():Void{
 }
 
 function doCorpseCutscene():Void{
+	setUpFullArt();
+
 	Save.storyFlags.get("factory_seenJessCorpse").val_bool = true;
 
 	set_inCutscene(true);
@@ -488,4 +498,134 @@ function doCorpseCutscene():Void{
 			OverworldState.eventManager.finishTransaction("dialogue");
 		});
 	});
+
+	// show full art
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("full art");
+
+		fullart_fade.visible = true;
+		fullart_fade.alpha = 0;
+
+		FlxTween.tween(fullart_fade, {alpha: 1}, 2, {onComplete: function(f):Void{
+			fullart_frame.visible = true;
+			fullart_bg.visible = true;
+			
+			FlxTween.tween(fullart_fade, {alpha: 0}, 2, {onComplete: function(f):Void{
+				OverworldState.eventManager.finishTransaction("full art");
+			}});
+		}});
+	});
+
+	// robin fade in
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("robingoin");
+
+		new FlxTimer().start(1, function(f):Void{		
+			
+			for(spr in [fullart_frameLBg, fullart_robin]){
+				spr.visible = true;
+				spr.alpha = 0;
+				FlxTween.tween(spr, {alpha: 1}, 1, {ease: FlxEase.quartOut});
+			}
+
+			fullart_robin.x -= 50;
+			FlxTween.tween(fullart_robin, {x: 0}, 1.5, {ease: FlxEase.quartOut, onComplete: function(f):Void{
+				OverworldState.eventManager.finishTransaction("robingoin");
+			}});
+		});
+	});
+
+	// keycard fade in
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("karcardgoin");
+
+		new FlxTimer().start(2, function(f):Void{		
+			
+			for(spr in [fullart_frameRBg, fullart_keycard]){
+				spr.visible = true;
+				spr.alpha = 0;
+				FlxTween.tween(spr, {alpha: 1}, 1, {ease: FlxEase.quartOut});
+			}
+
+			fullart_keycard.x += 50;
+			FlxTween.tween(fullart_keycard, {x: 0}, 1.5, {ease: FlxEase.quartOut, onComplete: function(f):Void{
+				OverworldState.eventManager.finishTransaction("karcardgoin");
+			}});
+		});
+	});
+
+	// fade full art
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("full art");
+
+		fullart_fade.visible = true;
+		fullart_fade.alpha = 0;
+
+		FlxTween.tween(fullart_fade, {alpha: 1}, 2, {onComplete: function(f):Void{
+			fullart_frame.visible = false;
+			fullart_frameLBg.visible = false;
+			fullart_frameRBg.visible = false;
+			fullart_robin.visible = false;
+			fullart_keycard.visible = false;
+			fullart_bg.visible = false;
+			
+			FlxTween.tween(fullart_fade, {alpha: 0}, 2, {onComplete: function(f):Void{
+				OverworldState.eventManager.finishTransaction("full art");
+			}});
+		}});
+	});
+
+}
+
+function setUpFullArt():Void
+{
+	fullart_bg = new CtSprite().createFromImage(Constants.overworldCutsceneGraphicPath + "keycard_bgColor.png");
+	fullart_bg.screenCenter();
+	fullart_bg.camera = camOverlay;
+	fullart_bg.visible = false;
+	add(fullart_bg);
+
+	fullart_frameRBg = new CtSprite().createFromImage(Constants.overworldCutsceneGraphicPath + "keycard_frameRBg.png");
+	fullart_frameRBg.screenCenter();
+	fullart_frameRBg.camera = camOverlay;
+	fullart_frameRBg.visible = false;
+	fullart_frameRBg.antialiasing = false;
+	add(fullart_frameRBg);
+	
+	fullart_keycard = new CtSprite().createFromImage(Constants.overworldCutsceneGraphicPath + "keycard_keycard.png");
+	fullart_keycard.screenCenter();
+	fullart_keycard.camera = camOverlay;
+	fullart_keycard.visible = false;
+	fullart_keycard.antialiasing = false;
+	add(fullart_keycard);
+
+	fullart_frameLBg = new CtSprite().createFromImage(Constants.overworldCutsceneGraphicPath + "keycard_frameLBg.png");
+	fullart_frameLBg.screenCenter();
+	fullart_frameLBg.camera = camOverlay;
+	fullart_frameLBg.visible = false;
+	fullart_frameLBg.antialiasing = false;
+	add(fullart_frameLBg);
+	
+	fullart_robin = new CtSprite().createFromImage(Constants.overworldCutsceneGraphicPath + "keycard_robin.png");
+	fullart_robin.screenCenter();
+	fullart_robin.camera = camOverlay;
+	fullart_robin.visible = false;
+	fullart_robin.antialiasing = false;
+	add(fullart_robin);
+
+	fullart_frame = new CtSprite().createFromImage(Constants.overworldCutsceneGraphicPath + "keycard_frame.png");
+	fullart_frame.screenCenter();
+	fullart_frame.camera = camOverlay;
+	fullart_frame.visible = false;
+	fullart_frame.antialiasing = false;
+	add(fullart_frame);
+
+	fullart_fade = new CtSprite().createColorBlock(FlxG.width, FlxG.height, 0xFF000000);
+	fullart_fade.camera = camOverlay;
+	fullart_fade.visible = false;
+	add(fullart_fade);
 }

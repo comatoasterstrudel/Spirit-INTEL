@@ -7,13 +7,19 @@
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "It's stuck.",
+		"dialogue": "The door's stuck.",
 		"actor": "robin",
 		"portrait": "neutral"
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "The door's automatic..",
+		"dialogue": "...Right.",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "It's automatic..",
 		"actor": "robin",
 		"portrait": "neutral"
 	},
