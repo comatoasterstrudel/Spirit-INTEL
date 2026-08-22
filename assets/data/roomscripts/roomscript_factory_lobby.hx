@@ -31,6 +31,8 @@ var fullart_robin:CtSprite;
 var fullart_keycard:CtSprite;
 var fullart_bg:CtSprite;
 
+var keycard:Prop;
+
 function create():Void{
 	character_player = get_player();
     character_lobbysecretary = getCharacterByTag("lobbysecretary");
@@ -45,6 +47,9 @@ function create():Void{
 	factoryjesscorpse = getPropByTag("factoryjesscorpse");
 
 	jessdialogue = getInteractableByTag("jessdialogue");
+
+	keycard = getPropByTag("keycard");
+	keycard.kill();
 
 	if (Save.storyFlags.get("factory_scarymode").val_bool){
 		setUpScary();
@@ -273,6 +278,7 @@ function doCorpseCutscene():Void{
 	setUpFullArt();
 
 	Save.storyFlags.get("factory_seenJessCorpse").val_bool = true;
+	Save.storyFlags.get("factory_officedoorkeyobtained").val_bool = true;
 
 	set_inCutscene(true);
 	set_lockCamera(true);
@@ -281,6 +287,8 @@ function doCorpseCutscene():Void{
 	character_player.positionCharacterByGrid(25.5, 5);
 	character_player.lockMovement = true;
 
+	keycard.revive();
+	
 	// robin enters room
 	OverworldState.eventManager.addEvent(function()
 	{
@@ -557,10 +565,11 @@ function doCorpseCutscene():Void{
 		});
 	});
 
-	// fade full art
+	// fade full art and walk to keycard
 	OverworldState.eventManager.addEvent(function()
 	{
 		OverworldState.eventManager.startTransaction("full art");
+		OverworldState.eventManager.startTransaction("walk");
 
 		fullart_fade.visible = true;
 		fullart_fade.alpha = 0;
@@ -573,11 +582,87 @@ function doCorpseCutscene():Void{
 			fullart_keycard.destroy();
 			fullart_bg.destroy();
 			
+			camGame.scroll.y -= 100;
+			character_player.positionCharacterByGrid(23, 15);
+
+			character_player.movementSpeed = .4;
+			character_player.moveToGridSpace(19, 15, function():Void
+			{	
+				OverworldState.eventManager.finishTransaction("walk");
+			});
+
 			FlxTween.tween(fullart_fade, {alpha: 0}, 2, {onComplete: function(f):Void{
 				fullart_fade.destroy();
 				OverworldState.eventManager.finishTransaction("full art");
 			}});
 		}});
+	});
+
+	// pick up keycard
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("pickup key cardd");
+
+		character_player.lockAnims = true;
+		character_player.animation.play("crouch_left");
+
+		CtSound.play(Constants.sfxPath + "crouch.ogg");
+
+		new FlxTimer().start(1, function(f):Void{
+			character_player.animation.play("left_lanyard");
+			keycard.kill();
+
+			CtSound.play(Constants.sfxPath + "keycard.ogg");
+
+			new FlxTimer().start(2, function(f):Void{
+				character_player.lockAnims = false;
+
+				new FlxTimer().start(1, function(f):Void{
+					OverworldState.eventManager.finishTransaction("pickup key cardd");
+				});
+			});
+		});
+	});
+
+	// "we can go thru fire  exit ahahha"
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("dialogue");
+
+		startDialogue(["factory/lobby/jesscorpse/dialogue_corpsescene5"], function():Void
+		{
+			character_player.lockAnims = false;
+
+			OverworldState.eventManager.finishTransaction("dialogue");
+		});
+	});
+
+	// scroll camera
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("scrll");
+
+		FlxTween.tween(camGame.scroll, {y: 243.07}, 2, {onComplete: function(f):Void{
+			OverworldState.eventManager.finishTransaction("scrll");
+		}});
+	});
+
+	// end cutscene
+	OverworldState.eventManager.addEvent(function()
+	{
+		set_inCutscene(false);
+		set_unbindCamera(false);
+		
+		character_player.ignoreCollision = false;
+
+		character_player.lockMovement = false;
+		character_player.movementSpeed = 1;
+
+		set_lockCamera(false);
+
+		factoryjesscorpse.data.yStackingOffset = 0;
+
+		character_player.facing = DOWN;
 	});
 }
 

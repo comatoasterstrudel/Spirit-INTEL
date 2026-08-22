@@ -29,4 +29,14 @@ class Prop extends CtSprite
         createFromImage(path, Constants.overworldPixelScale);
         antialiasing = false;        
     }
+
+    public override function kill():Void{
+        hitbox.kill();
+        super.kill();
+    }
+
+    public override function revive():Void{
+        hitbox.revive();
+        super.revive();
+    }
 }

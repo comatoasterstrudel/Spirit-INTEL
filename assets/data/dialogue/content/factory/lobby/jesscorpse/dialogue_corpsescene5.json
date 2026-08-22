@@ -1,0 +1,14 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "There's a fire exit in the back hallway with the managers office.",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "We can get through there with this.",
+		"actor": "robin",
+		"portrait": "neutral"
+	}
+]

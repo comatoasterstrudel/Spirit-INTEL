@@ -1,0 +1,8 @@
+{
+    "name": "keycard",
+    "graphic": "keycard",
+    "hitboxX": 0,
+    "hitboxY": 0,
+    "hitboxWidth": 16,
+    "hitboxHeight": 16
+}
