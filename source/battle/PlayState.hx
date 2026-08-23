@@ -782,6 +782,7 @@ class PlayState extends FlxState
 				if (FlxG.sound.music != null){
 					FlxG.sound.music.fadeOut(Constants.resultAnimTiming, 0, function onComplete(f):Void{
 						FlxG.sound.music.destroy();
+						FlxG.sound.music = null;
 					});
 				}
 			});

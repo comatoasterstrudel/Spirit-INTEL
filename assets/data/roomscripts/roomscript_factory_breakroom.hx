@@ -441,6 +441,7 @@ function endParty():Void
 
 		FlxG.sound.music.fadeOut(3, 0, function(f):Void{
 			FlxG.sound.music.destroy();
+			FlxG.sound.music = null;
 		});	
 		FlxTween.tween(fade, {alpha: 1}, 3, {
 			onComplete: function(f):Void

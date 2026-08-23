@@ -978,6 +978,7 @@ class OverworldState extends FlxState
 				FlxG.sound.music.fadeOut(transitionTime, 0, function(f):Void{
 					FlxG.sound.music.stop();
 					FlxG.sound.music.destroy();
+					FlxG.sound.music = null;
 				});
 			};
 
@@ -1076,6 +1077,7 @@ class OverworldState extends FlxState
 			updateLastMusic();
 			FlxG.sound.music.stop();
 			FlxG.sound.music.destroy();
+			FlxG.sound.music = null;
 		}
 
 		PlayState.setUpMusic(new BattleData(name));

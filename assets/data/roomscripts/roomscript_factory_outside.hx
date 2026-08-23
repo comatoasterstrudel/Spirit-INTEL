@@ -3,7 +3,11 @@ function CTSCRIPT_SETNAME():String
 	return "factory_outside";
 }
 
+var frontDoor:Door;
+
 function create():Void{
+    frontDoor = getDoorByTag("frontdoor");
+
     if(!Save.storyFlags.get("factory_scarymode").val_bool){ // start of game
         var lightingCover = get_lightingCover();
         lightingCover.alpha = .25;
@@ -18,5 +22,8 @@ function create():Void{
         
         var doorway = getInteractableByTag("door");
         doorway.roomTransitionTime = .5;
+    } else {
+        frontDoor.room = "";
+        frontDoor.dialogue = "factory/outside/dialogue_door";
     }
 }
