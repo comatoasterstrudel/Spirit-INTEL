@@ -34,6 +34,8 @@ var fullart_robin1:CtSprite;
 var fullart_robin2:CtSprite;
 var fullart_volor:CtSprite;
 
+var doorCutsceneActive:Bool = false;
+
 function create(){
     breakRoomDoor = getDoorByTag("breakRoomDoor");
     officeDoor = getDoorByTag("officeDoor");
@@ -66,14 +68,15 @@ function create(){
 	} else if(InitState.init_forceCutscene == "hallwaymonster2" || Save.storyFlags.get("factory_seentutorial").val_bool && !Save.storyFlags.get("factory_scarymode").val_bool){
 		// tutorial over
 		startEndOfTutorialCutscene();
-
+	} else if(InitState.init_forceCutscene == "hallwaydoor" || Save.storyFlags.get("factory_officedoorkeyobtained").val_bool && !Save.storyFlags.get("factory_officedooropened").val_bool){
+		startDoorCutscene();
 	} else if(Save.storyFlags.get("factory_scarymode").val_bool){
 		setupScary();
 	}
 }
 
 function update(elapsed:Float){
-	if (inMonsterCutscene)
+	if (inMonsterCutscene || doorCutsceneActive)
 	{
 		finaldoor.alpha = 1;
 
@@ -85,16 +88,24 @@ function update(elapsed:Float){
 }
 
 function opensDoor():Void{
-    if(Save.storyFlags.get("factory_seenbreakroomcutscene").val_bool){
-        Save.storyFlags.get("factory_officedoorinteractions").val_int += 1;
-    }
-    updateDialogues();
+	if(Save.storyFlags.get("factory_officedoorkeyobtained").val_bool){
+		startDialogue(["factory/hallway/dialogue_opensdoor"], function():Void
+		{
+			officeDoor.room = "poop";
+			officeDoor.openDoor();
+			moveRoom("factory_officehallway", 2);
+		});
+	} else {
+		if(Save.storyFlags.get("factory_seenbreakroomcutscene").val_bool){
+			Save.storyFlags.get("factory_officedoorinteractions").val_int += 1;
+		}
+		updateDialogues();
+	}
 }
 
 function updateDialogues():Void{
 	if (Save.storyFlags.get("factory_scarymode").val_bool || Save.storyFlags.get("factory_seentutorial").val_bool)
 	{
-		//
 		return;
 	}
 	
@@ -830,7 +841,7 @@ function startEndOfTutorialCutscene():Void{
 }
 
 function setupScary():Void{
-	if(!Save.storyFlags.get("factory_officedoorkeyobtained")){
+	if(!Save.storyFlags.get("factory_officedoorkeyobtained").val_bool){
 		officeDoor.room = "";
 		officeDoor.dialogue = "factory/hallway/dialogue_officedoor_locked";
 		
@@ -842,7 +853,7 @@ function setupScary():Void{
 
 		laurinphonedialogue.disabled = false;
 	} else {
-
+		officeDoor.room = "";
 	}
 }
 
@@ -879,4 +890,91 @@ function setUpFullArt():Void{
 	fullart_fade.camera = camOverlay;
 	fullart_fade.visible = false;
 	add(fullart_fade);
+}
+
+function startDoorCutscene():Void{
+	setupScary();
+
+	Save.storyFlags.get("factory_officedooropened").val_bool = true;
+
+	doorCutsceneActive = true;
+
+	set_inCutscene(true);
+
+	character_player.visible = false;
+	character_player.positionCharacterByGrid(24, 15);
+	character_player.lockMovement = true;
+
+	// robin walks upwards
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("walkupwards");
+
+		new FlxTimer().start(.5, function(f):Void{
+			character_player.visible = true;
+
+			character_player.moveToGridSpace(-1, 11, function():Void{
+				OverworldState.eventManager.finishTransaction("walkupwards");
+			});
+		});
+	});
+
+	// robin looks around
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("lookaround");
+
+		new FlxTimer().start(.5, function(f):Void{
+			character_player.facing = LEFT;
+			new FlxTimer().start(.5, function(f):Void{
+				character_player.facing = UP;
+				new FlxTimer().start(.5, function(f):Void{
+					character_player.facing = RIGHT;
+					new FlxTimer().start(1, function(f):Void{
+						character_player.facing = LEFT;
+
+						new FlxTimer().start(1, function(f):Void{
+							OverworldState.eventManager.finishTransaction("lookaround");
+						});
+					});
+				});
+			});
+		});
+	});
+
+	// "laurin mustve gone upstairs"
+	OverworldState.eventManager.addEvent(function()
+	{	
+		OverworldState.eventManager.startTransaction("dia");
+
+		startDialogue(["factory/hallway/dialogue_lauringone"], function():Void
+		{
+			OverworldState.eventManager.finishTransaction("dia");
+		});
+	});
+
+	// "i need to go to the basement"
+	OverworldState.eventManager.addEvent(function()
+	{	
+		OverworldState.eventManager.startTransaction("dia");
+
+		character_player.facing = RIGHT;
+
+		new FlxTimer().start(1, function(f):Void{
+			startDialogue(["factory/hallway/dialogue_basement"], function():Void
+			{
+				OverworldState.eventManager.finishTransaction("dia");
+			});
+		});
+	});
+
+	// end
+	OverworldState.eventManager.addEvent(function()
+	{	
+		set_inCutscene(false);
+		character_player.lockMovement = false;
+		character_player.facing = DOWN;
+
+		doorCutsceneActive = false;
+	});
 }

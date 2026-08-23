@@ -347,12 +347,24 @@ function doCorpseCutscene():Void{
 		});
 	});
 
+	// shake out of it robin!!
+	OverworldState.eventManager.addEvent(function()
+	{	
+		OverworldState.eventManager.startTransaction("dialogue");
+
+		FlxTween.shake(character_player, 0.05, .2, 0x01);
+		character_player.lockAnims = false;
+
+		new FlxTimer().start(1, function(f):Void{
+			OverworldState.eventManager.finishTransaction("dialogue")
+		});
+	});
+
 	// robin walks down to jess
 	OverworldState.eventManager.addEvent(function()
 	{
 		OverworldState.eventManager.startTransaction("walkdown");
 
-		character_player.lockAnims = false;
 		character_player.ignoreCollision = true;
 		character_player.movementSpeed = .3;
 		character_player.moveToGridSpace(-1, 16, function():Void

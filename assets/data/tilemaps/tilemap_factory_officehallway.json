@@ -49,7 +49,7 @@
           "height": 32,
           "originX": 0,
           "originY": 0,
-          "values": {"doorName": "factoryhorizontalL", "room": "factory_hallway", "transitionTime": 0.5, "lockedDialogue": "", "horizontal": true, "scriptFunction": "", "tag": "", "facingDownwards": false}
+          "values": {"doorName": "factoryhorizontalL", "room": "", "transitionTime": 0.5, "lockedDialogue": "factory/officehallway/dialogue_lock", "horizontal": true, "scriptFunction": "", "tag": "", "facingDownwards": false}
         },
         {
           "name": "door",

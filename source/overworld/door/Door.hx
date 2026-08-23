@@ -55,7 +55,7 @@ class Door extends Interactable
 			lerpManager.targetAlpha = 1;
 		}
     }
-	function openDoor():Void
+	public function openDoor():Void
 	{
 		if (room != "")
 		{
