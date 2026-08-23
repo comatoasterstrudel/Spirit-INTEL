@@ -53,6 +53,10 @@ function create():Void{
 
 	if (Save.storyFlags.get("factory_scarymode").val_bool){
 		setUpScary();
+
+		if(!Save.storyFlags.get("factory_seenJessCorpse").val_bool){
+			doCorpseCutscene();
+		}
 	} else {
 		factoryjesscorpse.kill();
 	}
@@ -66,10 +70,6 @@ function create():Void{
 		character_laurin.kill();
 		setupBlink();
 		lockDoor();
-	}
-
-	if(!Save.storyFlags.get("factory_seenJessCorpse").val_bool){
-		doCorpseCutscene();
 	}
 }
 
@@ -356,7 +356,7 @@ function doCorpseCutscene():Void{
 		character_player.lockAnims = false;
 
 		new FlxTimer().start(1, function(f):Void{
-			OverworldState.eventManager.finishTransaction("dialogue")
+			OverworldState.eventManager.finishTransaction("dialogue");
 		});
 	});
 

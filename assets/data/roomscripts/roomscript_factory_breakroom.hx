@@ -322,6 +322,7 @@ function doCutscene():Void{
 			{
 				character_manager.moveToGridSpace(8.5, 15, function():Void
 				{
+					door.playOpenSound();
 					character_manager.kill();
 
 					new FlxTimer().start(1, function(f):Void

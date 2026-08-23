@@ -313,7 +313,9 @@ class OverworldState extends FlxState
 
 		if (player != null)
 		{
-			camGame.focusOn(new FlxPoint(player.hitbox.x + player.hitbox.width / 2, player.hitbox.y + player.hitbox.height / 2));
+			var follower = player.hitbox;
+
+			camGame.focusOn(new FlxPoint(follower.x + follower.width / 2, follower.y + follower.height / 2));
 		}
 
 		if (!cameraScrollX)
