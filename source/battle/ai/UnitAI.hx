@@ -128,11 +128,11 @@ class UnitAi
 
                                         var statusData = new StatusEffectData(effect.id);
 
-                                        if(skill.type == "debuff"){
-                                            points += statusData.effects.eff_damage;
-                                        } else if(skill.type == "buff"){
-                                            points += statusData.effects.eff_heal;
-                                        }
+                                        points += statusData.effects.eff_damage;
+                                        points += statusData.effects.eff_heal;
+
+                                        points += Std.int(CtUtil.getFullValue(statusData.passiveEffects.eff_damageTaken) * 75);
+                                        points += Std.int(CtUtil.getFullValue(statusData.passiveEffects.eff_damageDealt) * 75);
                                     }
                                 }
                             default: 
