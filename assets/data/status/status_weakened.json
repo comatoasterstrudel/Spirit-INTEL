@@ -1,0 +1,13 @@
+{
+    "name": "Weakened",
+    "text": "WEAKENED !!",
+    "iconGraphic": "weakened",
+    "color": [150, 150, 150], 
+    "triggerType": "passive",
+    "effects": {
+    
+    },
+    "passiveEffects": {
+        "eff_damageDealt": -0.30
+    }
+} 

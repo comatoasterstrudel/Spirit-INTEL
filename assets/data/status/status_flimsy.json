@@ -1,0 +1,13 @@
+{
+    "name": "Flimsy",
+    "text": "FLIMSY !!",
+    "iconGraphic": "flimsy",
+    "color": [150, 150, 150], 
+    "triggerType": "passive",
+    "effects": {
+    
+    },
+    "passiveEffects": {
+        "eff_damageTaken": 0.30
+    }
+} 

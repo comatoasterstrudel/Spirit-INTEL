@@ -8,6 +8,6 @@
         
     },
     "passiveEffects": {
-        "eff_strength": 0.30
+        "eff_damageDealt": 0.30
     }
 } 

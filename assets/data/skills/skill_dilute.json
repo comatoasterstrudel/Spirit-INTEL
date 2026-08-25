@@ -1,0 +1,16 @@
+{
+    "name": "Dilute",
+    "description": "Flimsy an Enemy for 3 turns.",
+    "iconGraphic": "dilute",
+    "selectType": "enemy_all",
+    "effects": {
+        "eff_statuses": [
+            {
+                "id": "flimsy",
+                "turns": 3
+            }
+        ]
+    },
+    "mpCost": 4,
+    "type": "debuff"
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Weaken",
+    "description": "Weaken an Enemy for 3 turns.",
+    "iconGraphic": "weaken",
+    "selectType": "enemy_all",
+    "effects": {
+        "eff_statuses": [
+            {
+                "id": "weakened",
+                "turns": 3
+            }
+        ]
+    },
+    "mpCost": 4,
+    "type": "debuff"
+}

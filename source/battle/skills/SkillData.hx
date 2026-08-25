@@ -82,8 +82,8 @@ class SkillData extends CtJsonLoader
 	public static function mapPassiveSkillEffects(data:Dynamic):PassiveSkillEffects
 	{		
 		var effects:PassiveSkillEffects = {
-			passiveeff_strength: data.passiveEffects.eff_strength == null ? 0 : data.passiveEffects.eff_strength,
-			passiveeff_weakness: data.passiveEffects.eff_weakness == null ? 0 : data.passiveEffects.eff_weakness,
+			eff_damageDealt: data.passiveEffects.eff_damageDealt == null ? 0 : data.passiveEffects.eff_damageDealt,
+			eff_damageTaken: data.passiveEffects.eff_damageTaken == null ? 0 : data.passiveEffects.eff_damageTaken,
 		};
 
 		return effects;

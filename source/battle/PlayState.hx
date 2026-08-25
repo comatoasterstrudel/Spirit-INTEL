@@ -919,11 +919,11 @@ class PlayState extends FlxState
 		var passiveDamageMult:Float = 1;
 
 		for(passive in attackingUnit.getPassiveEffects()){
-			passiveDamageMult += passive.passiveeff_strength;
+			passiveDamageMult += passive.eff_damageDealt;
 		}
 
 		for(passive in affectedUnit.getPassiveEffects()){
-			passiveDamageMult += passive.passiveeff_weakness;
+			passiveDamageMult += passive.eff_damageTaken;
 		}
 
 		passiveDamageMult = FlxMath.bound(passiveDamageMult, 0);
