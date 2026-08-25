@@ -292,4 +292,14 @@ class Unit extends CtSprite
 
 		return(trueList);
 	}
+
+	public function getPassiveEffects():Array<PassiveSkillEffects>{
+		var passiveEffects:Array<PassiveSkillEffects> = [];
+
+		for(status in statuses){
+			passiveEffects.push(status.data.passiveEffects);
+		}
+
+		return passiveEffects;
+	}
 }

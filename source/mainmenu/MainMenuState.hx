@@ -209,6 +209,7 @@ class MainMenuState extends FlxState
 		FlxG.sound.music.fadeOut(.25, 0, function(f):Void{
 			FlxG.sound.music.stop();
 			FlxG.sound.music.destroy();
+			FlxG.sound.music = null;
 		});
 	}
 }

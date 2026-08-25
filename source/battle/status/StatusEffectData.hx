@@ -9,13 +9,14 @@ class StatusEffectData extends CtJsonLoader
     public var text:String;
     
 	public var iconGraphic:String;
-    
+     
     public var color:FlxColor;
     
     public var triggerType:String = '';
     
 	public var effects:SkillEffects;
-	
+    public var passiveEffects:PassiveSkillEffects;
+
     public function new(id:String){
         this.id = id;
                 
@@ -32,5 +33,6 @@ class StatusEffectData extends CtJsonLoader
         this.triggerType = data.triggerType;
         
 		effects = SkillData.mapSkillEffects(data);
+        passiveEffects = SkillData.mapPassiveSkillEffects(data);
 	}
 }

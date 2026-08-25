@@ -649,6 +649,7 @@ class PlayState extends FlxState
 		eventManager.addEvent(function():Void
 		{
 			applySingleUnitStatusEffects(currentTurnUnit, "endOfTurn");
+			applySingleUnitStatusEffects(currentTurnUnit, "passive");
 		});
 
 		eventManager.addEvent(function():Void
@@ -693,6 +694,7 @@ class PlayState extends FlxState
 		eventManager.addEvent(function():Void
 		{
 			applySingleUnitStatusEffects(currentTurnUnit, "endOfTurn");
+			applySingleUnitStatusEffects(currentTurnUnit, "passive");
 		});
 		eventManager.addEvent(function():Void
 		{
@@ -914,7 +916,19 @@ class PlayState extends FlxState
 			attackingStat = attackingUnit.sattack.value;
 		}
 		
-		return(Std.int(skill.effects.eff_damage * (attackingStat / 100)));
+		var passiveDamageMult:Float = 1;
+
+		for(passive in attackingUnit.getPassiveEffects()){
+			passiveDamageMult += passive.passiveeff_strength;
+		}
+
+		for(passive in affectedUnit.getPassiveEffects()){
+			passiveDamageMult += passive.passiveeff_weakness;
+		}
+
+		passiveDamageMult = FlxMath.bound(passiveDamageMult, 0);
+		
+		return(Std.int((skill.effects.eff_damage * (attackingStat / 100)) * passiveDamageMult));
 	}
 
 	public static function getAffectedSpacesForSkill(skillData:SkillData, unit:Unit, grid:Grid, position:FlxPoint)

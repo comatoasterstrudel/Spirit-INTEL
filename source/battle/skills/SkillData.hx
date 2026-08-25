@@ -78,4 +78,14 @@ class SkillData extends CtJsonLoader
 
 		return effects;
 	}
+
+	public static function mapPassiveSkillEffects(data:Dynamic):PassiveSkillEffects
+	{		
+		var effects:PassiveSkillEffects = {
+			passiveeff_strength: data.passiveEffects.eff_strength == null ? 0 : data.passiveEffects.eff_strength,
+			passiveeff_weakness: data.passiveEffects.eff_weakness == null ? 0 : data.passiveEffects.eff_weakness,
+		};
+
+		return effects;
+	}
 }

@@ -6,5 +6,8 @@
     "triggerType": "endOfTurn",
     "effects": {
         "eff_damage": 10
+    },
+    "passiveEffects": {
+        
     }
 }

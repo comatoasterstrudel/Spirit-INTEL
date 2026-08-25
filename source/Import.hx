@@ -30,6 +30,7 @@ import battle.ui.minihealthbar.MiniHealthBar;
 import battle.ui.turnorder.topbar.*;
 import battle.ui.minihealthbar.MiniHealthBars;
 import battle.ui.roundanim.RoundAnim;
+import battle.skills.PassiveSkillEffects;
 import battle.ui.statuseffectbar.StatusEffectBar;
 import battle.ui.statuseffectbar.StatusEffectBars;
 import battle.ui.turnattentionanim.TurnAttentionAnim;

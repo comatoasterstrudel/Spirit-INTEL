@@ -1,0 +1,16 @@
+{
+    "name": "Strengthen",
+    "description": "Strengthen an Ally for 2 turns.",
+    "iconGraphic": "strengthen",
+    "selectType": "ally_all",
+    "effects": {
+        "eff_statuses": [
+            {
+                "id": "strength",
+                "turns": 3
+            }
+        ]
+    },
+    "mpCost": 6,
+    "type": "buff"
+}

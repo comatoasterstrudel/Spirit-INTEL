@@ -1,0 +1,13 @@
+{
+    "name": "Strength",
+    "text": "STRENGTH !!",
+    "iconGraphic": "strength",
+    "color": [210, 210, 210], 
+    "triggerType": "passive",
+    "effects": {
+        
+    },
+    "passiveEffects": {
+        "eff_strength": 0.30
+    }
+} 
