@@ -227,7 +227,7 @@ class OverworldState extends FlxState
 			}
 
 			if (moved)
-				player.centerSpriteOnHitbox();	
+				player.centerSpriteOnHitbox(false);	
 		}
 		
 		if(!player.ignoreCollision){

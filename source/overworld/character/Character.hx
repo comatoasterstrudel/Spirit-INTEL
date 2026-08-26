@@ -66,13 +66,15 @@ class Character extends CtSprite
 		super.draw();
 	}
 
-	public function centerSpriteOnHitbox():Void
+	public function centerSpriteOnHitbox(doPixelSnapping:Bool = true):Void
 	{
 		CtUtil.centerSpriteOnSprite(this, hitbox, true, false);
 		y = hitbox.y + hitbox.height - height;
 
-		x = CtUtil.roundToMultiple(x, Constants.overworldPixelScale);
-		y = CtUtil.roundToMultiple(y, Constants.overworldPixelScale);
+		if(doPixelSnapping){
+			x = CtUtil.roundToMultiple(x, Constants.overworldPixelScale);
+			y = CtUtil.roundToMultiple(y, Constants.overworldPixelScale);
+		}
 	}
 	
 	public function initCharacterAnimations(name:String):Void
