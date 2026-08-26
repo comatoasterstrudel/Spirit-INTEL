@@ -71,12 +71,8 @@ class Character extends CtSprite
 		CtUtil.centerSpriteOnSprite(this, hitbox, true, false);
 		y = hitbox.y + hitbox.height - height;
 
-		if(hitbox.velocity.x == 0){
-			x = CtUtil.roundToMultiple(x, Constants.overworldPixelScale);
-		}
-		if(hitbox.velocity.y == 0){
-			y = CtUtil.roundToMultiple(y, Constants.overworldPixelScale);
-		}
+		x = CtUtil.roundToMultiple(x, Constants.overworldPixelScale);
+		y = CtUtil.roundToMultiple(y, Constants.overworldPixelScale);
 	}
 	
 	public function initCharacterAnimations(name:String):Void

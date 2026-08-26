@@ -136,8 +136,6 @@ class OverworldState extends FlxState
 
 		handleCollision();
 		handleSorting();
-		handleCameraScroll();
-		updateCamLighting();
 		handleExit(elapsed);
 		handleRandomEncounters(elapsed);
 		if (battleTransition != null)
@@ -150,6 +148,22 @@ class OverworldState extends FlxState
 		#if debug
 		updateDebugFunctions();
 		#end
+	}
+
+	override function draw():Void{
+		for(prop in props){
+			if(prop is Character){
+				var character:Character = cast prop;
+
+				character.centerSpriteOnHitbox();
+			}
+		}
+
+		player.centerSpriteOnHitbox();
+
+		handleCameraScroll();
+
+		super.draw();
 	}
 
 	/**
@@ -308,32 +322,35 @@ class OverworldState extends FlxState
 				cameraBoundsMin.y == -999 ? null : cameraBoundsMin.y, cameraBoundsMax.y == -999 ? null : cameraBoundsMax.y);
 		}
 
-		if (lockCamera || unbindCamera)
-			return; // what!
+		if (!lockCamera && !unbindCamera){
+			if (player != null)
+			{
+				var follower = player;
 
-		if (player != null)
-		{
-			var follower = player.hitbox;
+				camGame.focusOn(new FlxPoint(follower.x + follower.width / 2, follower.y + follower.height / 2));
+			}
 
-			camGame.focusOn(new FlxPoint(follower.x + follower.width / 2, follower.y + follower.height / 2));
+			if (!cameraScrollX)
+			{
+				camGame.scroll.x = (mapSizeStart.x + mapWidth / 2) - (FlxG.width / 2);
+			}
+
+			if (!cameraScrollY)
+			{
+				camGame.scroll.y = (mapSizeStart.y + mapHeight / 2) - (FlxG.height / 2);
+			}
 		}
 
-		if (!cameraScrollX)
-		{
-			camGame.scroll.x = (mapSizeStart.x + mapWidth / 2) - (FlxG.width / 2);
-		}
+		camGame.updateScroll();
 
-		if (!cameraScrollY)
-		{
-			camGame.scroll.y = (mapSizeStart.y + mapHeight / 2) - (FlxG.height / 2);
-		}
+		updateCamLighting();
 	}
 	
 	function updateCamLighting():Void
 	{
+		camLighting.setScrollBounds(camGame.minScrollX, camGame.maxScrollX, camGame.minScrollY, camGame.maxScrollY);
 		camLighting.scroll.set(camGame.scroll.x, camGame.scroll.y);
 		camLighting.zoom = camGame.zoom;
-		camLighting.setScrollBounds(camGame.minScrollX, camGame.maxScrollX, camGame.minScrollY, camGame.maxScrollY);
 	}
 	
 	function handleExit(elapsed:Float):Void
