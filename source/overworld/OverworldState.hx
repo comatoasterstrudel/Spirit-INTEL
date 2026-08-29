@@ -96,6 +96,9 @@ class OverworldState extends FlxState
 	public static var lastMusic:String = "";
 	public static var lastTime:Float = 0;
 
+	// STAIRS
+	var stairManager:StairManager;
+
     override function create():Void{
         super.create();
         
@@ -622,6 +625,9 @@ class OverworldState extends FlxState
 			handleCameraScroll();
 		}
 		
+		stairManager = new StairManager();
+		add(stairManager);
+		
 		spr_behindProps = new FlxSpriteGroup();
 		spr_behindProps.camera = camGame;
 		add(spr_behindProps);
@@ -634,6 +640,8 @@ class OverworldState extends FlxState
 		player.camera = camGame;
 		player.facing = lastFacing;
 		props.add(player);
+		
+		stairManager.addCharacter(player);
 		
 		var playerPlacePoints:Array<PlayerPlacePoint> = [];
 
@@ -710,6 +718,12 @@ class OverworldState extends FlxState
 
 					props.add(savespot);
 					interactInteractables.add(savespot);
+				case "stairs":
+					var stairTrigger = new StairTrigger(Std.int(entity.x * Constants.overworldPixelScale), Std.int(entity.y * Constants.overworldPixelScale),
+						Std.int(entity.width * Constants.overworldPixelScale), Std.int(entity.height * Constants.overworldPixelScale), entity.values.leftIsUp);
+					walkInteractables.add(stairTrigger);
+
+					stairManager.addStairs(stairTrigger);
 				default:
 					//
 			}
@@ -809,6 +823,8 @@ class OverworldState extends FlxState
 		char.positionCharacter(x, y);
 		char.camera = camGame;
 		props.add(char);
+
+		stairManager.addCharacter(char);
 
 		return char;
 	}

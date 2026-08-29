@@ -9,6 +9,7 @@ import battle.grid.GridBackground;
 import battle.grid.GridSpace;
 import battle.grid.gridunitplacer.*;
 import flixel.addons.effects.FlxSkewedSprite;
+import overworld.stairs.*;
 import flixel.addons.display.FlxRadialGauge;
 import battle.ai.UnitAI;
 import battle.result.ResultState;

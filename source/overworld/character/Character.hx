@@ -33,6 +33,10 @@ class Character extends CtSprite
 	
 	public var animationPrefix:String = "";
 	
+	// stairs
+	public var onStairs:Bool = false;
+	public var stairsMode:StairsMode;
+
 	public function new(id:String, tag:String):Void
 	{
         super();
@@ -142,6 +146,8 @@ class Character extends CtSprite
 	}
     
     function doMovement():Void{
+		if(onStairs) handleStairs();
+
 		var speed = Constants.characterSpeed * movementSpeed;
 		var diagonalSpeed = Constants.characterSpeedDiagonal * movementSpeed;
         
@@ -160,16 +166,28 @@ class Character extends CtSprite
 				facing = DOWN;
             case MOVE_LEFT_UP:
 				hitbox.velocity.set(-diagonalSpeed, -diagonalSpeed);
-				facing = UP;
+				if(onStairs) 
+					facing = LEFT; 
+				else
+					facing = UP;
             case MOVE_LEFT_DOWN:
 				hitbox.velocity.set(-diagonalSpeed, diagonalSpeed);
+				if(onStairs) 
+					facing = LEFT; 
+				else
 				facing = DOWN;
             case MOVE_RIGHT_UP:
 				hitbox.velocity.set(diagonalSpeed, -diagonalSpeed);
-				facing = UP;
+				if(onStairs) 
+					facing = RIGHT; 
+				else
+					facing = UP;
             case MOVE_RIGHT_DOWN:
 				hitbox.velocity.set(diagonalSpeed, diagonalSpeed);
-				facing = DOWN;
+				if(onStairs) 
+					facing = RIGHT; 
+				else
+					facing = DOWN;
             default:
 				hitbox.velocity.set(0, 0);
         }
@@ -245,6 +263,34 @@ class Character extends CtSprite
 			if (autoMovementComplete != null)
 			{
 				autoMovementComplete();
+			}
+		}
+	}
+
+	function handleStairs():Void{
+		if(status == IDLE) return;
+
+		if(status == MOVE_UP || status == MOVE_DOWN){
+			status = IDLE;
+			return;
+		}
+
+		var movingLeft:Array<CharacterStatus> = [MOVE_LEFT, MOVE_LEFT_DOWN, MOVE_LEFT_UP];
+		var movingRight:Array<CharacterStatus> = [MOVE_RIGHT, MOVE_RIGHT_DOWN, MOVE_RIGHT_UP];
+
+		if(stairsMode == LEFTISUP){
+			if(movingLeft.contains(status)){
+				status = MOVE_LEFT_UP;
+			}
+			if(movingRight.contains(status)){
+				status = MOVE_RIGHT_DOWN;
+			}
+		} else if(stairsMode == RIGHTISUP){
+			if(movingLeft.contains(status)){
+				status = MOVE_LEFT_DOWN;
+			}
+			if(movingRight.contains(status)){
+				status = MOVE_RIGHT_UP;
 			}
 		}
 	}
