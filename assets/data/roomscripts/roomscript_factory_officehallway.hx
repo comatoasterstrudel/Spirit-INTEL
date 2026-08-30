@@ -5,8 +5,8 @@ function CTSCRIPT_SETNAME():String
 
 var player:Character;
 
-var gridStart:Int = 20;
-var gridEnd:Int = 43;
+var gridStart:Int = 14;
+var gridEnd:Int = 26;
 
 var dark:Float = .7;
 
