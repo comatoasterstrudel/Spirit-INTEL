@@ -301,14 +301,10 @@ class PlayState extends FlxState
 	function setUpMenus():Void
 	{
 		// init menuManagerPlayerUI
-		menuManagerPlayerUI = new CtMenuManager(CtControls.getInputFunction("right", JUSTPRESSED), CtControls.getInputFunction("left", JUSTPRESSED),
-			CtControls.getInputFunction("accept", JUSTPRESSED), CtControls.getInputFunction("cancel", JUSTPRESSED),
-			CtControls.getInputFunction("down", JUSTPRESSED), CtControls.getInputFunction("up", JUSTPRESSED));
+		menuManagerPlayerUI = new CtMenuManager();
 		add(menuManagerPlayerUI.addCursor(menuMakeCursor(), 20, false));
 		// init menuManagerGridSelector
-		menuManagerGridSelector = new CtMenuManager(CtControls.getInputFunction("right", JUSTPRESSED), CtControls.getInputFunction("left", JUSTPRESSED),
-			CtControls.getInputFunction("accept", JUSTPRESSED), CtControls.getInputFunction("cancel", JUSTPRESSED),
-			CtControls.getInputFunction("down", JUSTPRESSED), CtControls.getInputFunction("up", JUSTPRESSED));
+		menuManagerGridSelector = new CtMenuManager();
 		var gridSelectorCursor = menuMakeCursor();
 		gridSelectorCursor.camera = camGame;
 		add(menuManagerGridSelector.addCursor(gridSelectorCursor, 20, false));

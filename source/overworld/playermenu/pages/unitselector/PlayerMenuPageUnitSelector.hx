@@ -69,9 +69,7 @@ class PlayerMenuPageUnitSelector extends PlayerMenuPage
     }
     
     function initMenu():Void{
-        menuManager = new CtMenuManager(CtControls.getInputFunction("right", JUSTPRESSED), CtControls.getInputFunction("left", JUSTPRESSED),
-			CtControls.getInputFunction("accept", JUSTPRESSED), CtControls.getInputFunction("cancel", JUSTPRESSED),
-			CtControls.getInputFunction("down", JUSTPRESSED), CtControls.getInputFunction("up", JUSTPRESSED));
+        menuManager = new CtMenuManager();
 		cursor = new Cursor(Constants.cursorArrowGraphic);
 		add(menuManager.addCursor(cursor, 20, false, true));    
         

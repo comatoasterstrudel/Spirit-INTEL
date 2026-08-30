@@ -29,7 +29,9 @@ class PlayerMenu extends FlxSubState
         
         initPages();
         
-        addPage("main");
+        new FlxTimer().start(0.05, function(f):Void{
+            addPage("main");
+        });
         
         realignCamera(true);
     }

@@ -61,6 +61,10 @@ class InitState extends FlxState{
 		CtControls.registerControl({id: "accept", inputKey: [Z, ENTER], inputPad: [A]});
 		CtControls.registerControl({id: "cancel", inputKey: [X, BACKSPACE], inputPad: [B]});
 		CtControls.registerControl({id: "exit", inputKey: [ESCAPE], inputPad: [START]});
+
+		CtMenuManager.setDefaultControls(CtControls.getInputFunction("right", JUSTPRESSED), CtControls.getInputFunction("left", JUSTPRESSED),
+			CtControls.getInputFunction("accept", JUSTPRESSED), CtControls.getInputFunction("cancel", JUSTPRESSED),
+			CtControls.getInputFunction("down", JUSTPRESSED), CtControls.getInputFunction("up", JUSTPRESSED));
 	}
 	
 	function initDialogueBox():Void

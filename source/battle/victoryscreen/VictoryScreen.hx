@@ -137,9 +137,7 @@ class VictoryScreen extends FlxSubState
     }
 
     function setupMenuManager():Void{
-        menuManager = new CtMenuManager(CtControls.getInputFunction("right", JUSTPRESSED), CtControls.getInputFunction("left", JUSTPRESSED),
-			CtControls.getInputFunction("accept", JUSTPRESSED), CtControls.getInputFunction("cancel", JUSTPRESSED),
-			CtControls.getInputFunction("down", JUSTPRESSED), CtControls.getInputFunction("up", JUSTPRESSED));
+        menuManager = new CtMenuManager();
             
         cursor = new Cursor(Constants.cursorArrowGraphic);
         cursor.camera = victoryCam;

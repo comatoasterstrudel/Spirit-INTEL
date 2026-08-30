@@ -78,9 +78,7 @@ class SaveLoadMenu extends FlxSubState
 	 */
 	function setUpMenu():Void
 	{
-		menuManager = new CtMenuManager(CtControls.getInputFunction("right", JUSTPRESSED), CtControls.getInputFunction("left", JUSTPRESSED),
-			CtControls.getInputFunction("accept", JUSTPRESSED), CtControls.getInputFunction("cancel", JUSTPRESSED),
-			CtControls.getInputFunction("down", JUSTPRESSED), CtControls.getInputFunction("up", JUSTPRESSED));
+		menuManager = new CtMenuManager();
 		cursor = new Cursor(Constants.cursorArrowGraphic);
         cursor.camera = camUI;
 	}
@@ -249,9 +247,7 @@ class SaveLoadMenu extends FlxSubState
 			spr.y -= 100;
 		}
 
-		confirmMenuManager = new CtMenuManager(CtControls.getInputFunction("right", JUSTPRESSED), CtControls.getInputFunction("left", JUSTPRESSED),
-			CtControls.getInputFunction("accept", JUSTPRESSED), CtControls.getInputFunction("cancel", JUSTPRESSED),
-			CtControls.getInputFunction("down", JUSTPRESSED), CtControls.getInputFunction("up", JUSTPRESSED));
+		confirmMenuManager = new CtMenuManager();
 		confirmCursor = new Cursor(Constants.cursorArrowGraphic);
 
 		confirmSprites.add(confirmMenuManager.addCursor(confirmCursor, 20, false));

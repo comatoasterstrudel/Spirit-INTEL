@@ -153,9 +153,7 @@ class GridUnitPlacer extends FlxSpriteGroup
     }
     
     function initSelectingMenu():Void{
-        selectingMenuManager = new CtMenuManager(CtControls.getInputFunction("right", JUSTPRESSED), CtControls.getInputFunction("left", JUSTPRESSED),
-			CtControls.getInputFunction("accept", JUSTPRESSED), CtControls.getInputFunction("cancel", JUSTPRESSED),
-			CtControls.getInputFunction("down", JUSTPRESSED), CtControls.getInputFunction("up", JUSTPRESSED));
+        selectingMenuManager = new CtMenuManager();
             
         selectingCursor = new Cursor(Constants.cursorArrowGraphic);
         add(selectingCursor);
@@ -284,9 +282,7 @@ class GridUnitPlacer extends FlxSpriteGroup
     }
 
     function initPlacingMenu():Void{
-        placingMenuManager = new CtMenuManager(CtControls.getInputFunction("right", JUSTPRESSED), CtControls.getInputFunction("left", JUSTPRESSED),
-			CtControls.getInputFunction("accept", JUSTPRESSED), CtControls.getInputFunction("cancel", JUSTPRESSED),
-			CtControls.getInputFunction("down", JUSTPRESSED), CtControls.getInputFunction("up", JUSTPRESSED));
+        placingMenuManager = new CtMenuManager();
             
         ghostUnitSprites = new FlxSpriteGroup();
         add(ghostUnitSprites);

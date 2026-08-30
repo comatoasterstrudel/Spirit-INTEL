@@ -83,8 +83,7 @@ class ResultState extends FlxSubState
 	}
     
     function setUpMenu():Void{
-        menuManager = new CtMenuManager(CtControls.getInputFunction("up", JUSTPRESSED), CtControls.getInputFunction("down", JUSTPRESSED),
-			CtControls.getInputFunction("accept", JUSTPRESSED), CtControls.getInputFunction("cancel", JUSTPRESSED));
+        menuManager = new CtMenuManager();
             
         var cursor = new Cursor(Constants.cursorArrowGraphic);
         cursor.camera = camMenu;

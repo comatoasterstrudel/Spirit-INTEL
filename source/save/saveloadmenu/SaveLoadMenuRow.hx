@@ -169,9 +169,7 @@ class SaveLoadMenuRow extends FlxSpriteGroup{
 		CtUtil.centerSpriteOnSprite(confirmNo, callIcon, false, true);
 		confirmNo.y += 40;
 
-		confirmMenuManager = new CtMenuManager(CtControls.getInputFunction("right", JUSTPRESSED), CtControls.getInputFunction("left", JUSTPRESSED),
-			CtControls.getInputFunction("accept", JUSTPRESSED), CtControls.getInputFunction("cancel", JUSTPRESSED),
-			CtControls.getInputFunction("down", JUSTPRESSED), CtControls.getInputFunction("up", JUSTPRESSED));
+		confirmMenuManager = new CtMenuManager();
 		cursor = new Cursor(Constants.cursorArrowGraphic);
 		confirmSprites.add(confirmMenuManager.addCursor(cursor, 20, false));
 	}
