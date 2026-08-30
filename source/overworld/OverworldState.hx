@@ -233,28 +233,34 @@ class OverworldState extends FlxState
 				player.centerSpriteOnHitbox(false);	
 		}
 		
-		if(!player.ignoreCollision){
-			for (tile in tileSets)
-			{
-				FlxG.collide(tile, player.hitbox);
-			}
-			for (prop in props.members)
-			{
-				if (prop is Character)
-				{
-					var character:Character = cast prop;
-					
-					if (character != player && !character.noclip)
-					{
-						FlxG.collide(character.hitbox, player.hitbox);
-					}
-				}
-				if (prop is Prop)
-				{
-					var trueProp:Prop = cast prop;
+		if(player.ignoreCollision){
+			player.allowCollisions = NONE;
+		} else if(player.onStairs){
+			player.allowCollisions = UP | DOWN;
+		} else {
+			player.allowCollisions = ANY;
+		}
 
-					FlxG.collide(player.hitbox, trueProp.hitbox);
+		for (tile in tileSets)
+		{
+			FlxG.collide(tile, player.hitbox);
+		}
+		for (prop in props.members)
+		{
+			if (prop is Character)
+			{
+				var character:Character = cast prop;
+				
+				if (character != player && !character.noclip)
+				{
+					FlxG.collide(character.hitbox, player.hitbox);
 				}
+			}
+			if (prop is Prop)
+			{
+				var trueProp:Prop = cast prop;
+
+				FlxG.collide(player.hitbox, trueProp.hitbox);
 			}
 		}
 

@@ -1,5 +1,5 @@
 {
     "name": "testroom",
     "graphic": "testroom",
-    "collisions": ["NONE", "NONE", "ANY", "ANY", "ANY", "ANY", "ANY", "NONE", "NONE", "ANY", "NONE", "ANY", "NONE", "NONE", "NONE", "TEST"]
+    "collisions": ["NONE", "NONE", "ANY", "ANY", "ANY", "ANY", "ANY", "NONE", "NONE", "ANY", "NONE", "ANY", "NONE", "NONE", "NONE", "ANY"]
 }
