@@ -234,11 +234,9 @@ class OverworldState extends FlxState
 		}
 		
 		if(player.ignoreCollision){
-			player.allowCollisions = NONE;
-		} else if(player.onStairs){
-			player.allowCollisions = UP | DOWN;
+			player.hitbox.allowCollisions = NONE;
 		} else {
-			player.allowCollisions = ANY;
+			player.hitbox.allowCollisions = ANY;
 		}
 
 		for (tile in tileSets)

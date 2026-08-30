@@ -8,6 +8,6 @@
         "ANY", "ANY", "ANY", "ANY", "ANY", "NONE", "ANY", "ANY", "ANY", "ANY",
         "NONE", "NONE", "NONE", "NONE", "ANY", "ANY", "ANY", "ANY", "ANY", "ANY",
         "NONE", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE",
-        "NONE", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE"
+        "NONE", "ANY", "ANY", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE"
     ]
 }
