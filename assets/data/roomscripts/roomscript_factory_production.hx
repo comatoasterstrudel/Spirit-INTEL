@@ -11,6 +11,11 @@ var character_player:Player;
 var character_laurin:Character;
 var character_managerscary:Character;
 
+var coworkerA:Character;
+var coworkerB:Character;
+var coworkerC:Character;
+var coworkerD:Character;
+
 var conveyorsHorizontal:Array<ScrollingProp> = [];
 var conveyorsVertical:Array<ScrollingProp> = [];
 
@@ -54,6 +59,13 @@ function create():Void
 	character_player = get_player();
 	character_laurin = getCharacterByTag("laurin");
 	character_managerscary = getCharacterByTag("managerscary");
+
+	coworkerA = getCharacterByTag("coworkerA");
+	coworkerB = getCharacterByTag("coworkerB");
+	coworkerC = getCharacterByTag("coworkerC");
+	coworkerD = getCharacterByTag("coworkerD");
+
+	killCoworkers();
 
 	conveyorsHorizontal = [
 		getScrollingPropByTag("conveyorHorizontal1"),
@@ -121,6 +133,10 @@ function create():Void
 	{
 		character_managerscary.kill();
 	}
+
+	if(InitState.init_forceCutscene == "production"){
+		doProductionCutscene();
+	}
 }
 
 function update(elapsed:Float):Void
@@ -137,6 +153,10 @@ function update(elapsed:Float):Void
 
 function doProductionCutscene():Void
 {
+	lightingCover.alpha = 0;
+
+	set_inCutscene(true);
+
 	Save.storyFlags.get("factory_sawproductioncutscene").val_bool = true;
 	removeProductionCutsceneTrigger();
 
@@ -268,6 +288,14 @@ function doProductionCutscene():Void
 
 		doSceneFade(2);
 
+		coworkerA.revive();
+		coworkerA.positionCharacterByGrid(13, 27);
+		coworkerA.facing = UP;
+
+		coworkerB.revive();
+		coworkerB.positionCharacterByGrid(9, 23);
+		coworkerB.facing = RIGHT;
+
 		camGame.scroll.set(0, 1500);
 
 		FlxTween.tween(camGame.scroll, {y: 800}, 9, {
@@ -282,7 +310,7 @@ function doProductionCutscene():Void
 
 					camGame.scroll.set(1000, 1200);
 
-					new FlxTimer().start(8, function(F):Void
+					new FlxTimer().start(6.5, function(F):Void
 					{
 						OverworldState.eventManager.finishTransaction("cinematic");
 					});
@@ -302,6 +330,16 @@ function doProductionCutscene():Void
 
 		camGame.scroll.set(0, 800);
 
+		coworkerA.positionCharacterByGrid(18, 22);
+		coworkerA.facing = LEFT;
+
+		coworkerB.positionCharacterByGrid(12, 18);
+		coworkerB.facing = RIGHT;
+
+		coworkerC.revive();
+		coworkerC.positionCharacterByGrid(22, 24);
+		coworkerC.facing = DOWN;
+
 		FlxTween.tween(camGame.scroll, {x: 900}, 9, {
 			ease: FlxEase.quadInOut,
 			onComplete: function(f):Void
@@ -311,6 +349,19 @@ function doProductionCutscene():Void
 					queuedTimeChange = 5;
 					doSceneFade(2);
 					camGame.scroll.set(1000, 1200);
+
+					coworkerA.positionCharacterByGrid(22, 20);
+					coworkerA.facing = UP;
+
+					coworkerB.positionCharacterByGrid(28, 29);
+					coworkerB.facing = RIGHT;
+
+					coworkerC.positionCharacterByGrid(12, 18);
+					coworkerC.facing = RIGHT;
+
+					coworkerD.revive();
+					coworkerD.positionCharacterByGrid(33, 20);
+					coworkerD.facing = LEFT;
 
 					new FlxTimer().start(8, function(F):Void
 					{
@@ -327,7 +378,6 @@ function doProductionCutscene():Void
 		executeSingleScriptFunction("snow", "snow_set_frequency", [.5]);
 
 		cutsceneSnowOverlay = new CtSprite(100, 100).createColorBlock(FlxG.width * 2.5, 1000, 0x67FFFFFF);
-		// cutsceneSnowOverlay.alpha = .3;
 		spr_behindTiles.add(cutsceneSnowOverlay);
 
 		OverworldState.eventManager.startTransaction("cinematic");
@@ -344,6 +394,7 @@ function doProductionCutscene():Void
 
 						new FlxTimer().start(3, function(f):Void
 						{
+							killCoworkers();
 							doSceneFade(2);
 							lightingCover.alpha = .5;
 							cutsceneSnowOverlay.visible = false;
@@ -1272,4 +1323,11 @@ function setScaryMode():Void
 {
 	lightingCover.alpha = .5;
 	set_encountersDisabled(false);
+}
+
+function killCoworkers():Void{
+	coworkerA.kill();
+	coworkerB.kill();
+	coworkerC.kill();
+	coworkerD.kill();
 }

@@ -276,6 +276,54 @@
           "originX": 0,
           "originY": 0,
           "values": {"name": "managerscary", "tag": "managerscary"}
+        },
+        {
+          "name": "character",
+          "id": 30,
+          "_eid": "68173711",
+          "x": 0,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "originX": 0,
+          "originY": 0,
+          "values": {"name": "coworkerA", "tag": "coworkerA"}
+        },
+        {
+          "name": "character",
+          "id": 31,
+          "_eid": "68173711",
+          "x": 32,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "originX": 0,
+          "originY": 0,
+          "values": {"name": "coworkerB", "tag": "coworkerB"}
+        },
+        {
+          "name": "character",
+          "id": 32,
+          "_eid": "68173711",
+          "x": 64,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "originX": 0,
+          "originY": 0,
+          "values": {"name": "coworkerC", "tag": "coworkerC"}
+        },
+        {
+          "name": "character",
+          "id": 33,
+          "_eid": "68173711",
+          "x": 96,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "originX": 0,
+          "originY": 0,
+          "values": {"name": "coworkerD", "tag": "coworkerD"}
         }
       ]
     },
