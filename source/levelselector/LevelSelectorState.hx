@@ -39,6 +39,12 @@ class LevelSelectorState extends FlxState
 	public static var savedCurSelected:Int = 0;
 
     override function create():Void{
+		if(FlxG.sound.music != null){
+			FlxG.sound.music.stop();
+			FlxG.sound.music.destroy();
+			FlxG.sound.music = null;
+		}
+
 		OverworldState.resetGlobalVars();
 		
         bgColor = FlxColor.WHITE;

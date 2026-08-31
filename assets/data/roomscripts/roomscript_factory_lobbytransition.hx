@@ -82,15 +82,12 @@ function startcutscene():Void{
         character_manager.moveToGridSpace(-1, 0);
         character_manager.movementSpeed = .3;
 
-        FlxTween.tween(camGame.scroll, {y: 710}, 3, { ease: FlxEase.quartInOut,
-			onComplete: function(f):Void
-			{
-                character_laurin.kill();
-                character_manager.kill();
+		moveCameraBackToPlayer(3, FlxEase.quartInOut, function():Void{
+			character_laurin.kill();
+            character_manager.kill();
                 
-				OverworldState.eventManager.finishTransaction("godown");
-			}
-		});	
+			OverworldState.eventManager.finishTransaction("godown");
+		});
 	});
     
     // end cutscene

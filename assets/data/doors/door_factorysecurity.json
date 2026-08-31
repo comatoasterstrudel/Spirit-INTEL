@@ -1,4 +1,7 @@
 {
     "name": "factorysecurity",
-    "graphic": "factorysecurity"
+    "graphic": "factorysecurity",
+    "openUpSound": "wood",
+    "openDownSound": "wood",
+    "lockSound": "wood"
 }

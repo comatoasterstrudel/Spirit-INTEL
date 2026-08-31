@@ -212,11 +212,8 @@ function doConversationCutscene():Void
 	{
 		OverworldState.eventManager.startTransaction("camra");
 
-		FlxTween.tween(camGame.scroll, {y: 120}, .5, {
-			onComplete: function(f):Void
-			{
-				OverworldState.eventManager.finishTransaction("camra");
-			}
+		moveCameraBackToPlayer(.5, null, function():Void{
+			OverworldState.eventManager.finishTransaction("camra");
 		});
 	});
 
@@ -654,9 +651,9 @@ function doCorpseCutscene():Void{
 	{
 		OverworldState.eventManager.startTransaction("scrll");
 
-		FlxTween.tween(camGame.scroll, {y: 243.07}, 2, {onComplete: function(f):Void{
+		moveCameraBackToPlayer(2, null, function():Void{
 			OverworldState.eventManager.finishTransaction("scrll");
-		}});
+		});
 	});
 
 	// end cutscene

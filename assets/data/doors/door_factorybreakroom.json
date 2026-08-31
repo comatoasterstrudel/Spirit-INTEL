@@ -1,4 +1,7 @@
 {
     "name": "factorybreakroom",
-    "graphic": "factorybreakroom"
+    "graphic": "factorybreakroom",
+    "openUpSound": "wood",
+    "openDownSound": "wood",
+    "lockSound": "wood"
 }

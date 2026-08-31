@@ -91,14 +91,14 @@ class ResultState extends FlxSubState
     }
     
     function populateOptions():Void{
-        var options:Array<CtMenuOption> = [];
+        var options:Array<Array<CtMenuOption>> = [];
         
         for(i in 0...optionList.length){
 			var text = new CtText(Constants.resultTextX, Constants.resultTextY + Constants.resultTextSpacing * i, optionList[i], Constants.fontName,
 				Constants.resultTextSize, false);
             texts.add(text);
                         
-            options.push({sprite: text, cursorDirection: LEFT, clickFunction: function(spr):Void{
+            options.push([{sprite: text, cursorDirection: LEFT, clickFunction: function(spr):Void{
                 switch(optionList[i]){
                     case "Replay":
                         FlxG.resetState();
@@ -111,10 +111,10 @@ class ResultState extends FlxSubState
 								FlxG.switchState(OverworldState.new);
 							});
                 }
-            }});
+            }}]);
         }
         
-        menuManager.setMenuOptions([options]);
+        menuManager.setMenuOptions(options);
     }
     
     function doAnim():Void{

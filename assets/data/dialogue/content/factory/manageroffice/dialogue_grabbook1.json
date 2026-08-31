@@ -1,0 +1,13 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "There are many books here.",
+		"actor": "narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "...",
+		"actor": "robin",
+		"portrait": "neutral"
+	}
+]

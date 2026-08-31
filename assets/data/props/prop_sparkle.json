@@ -1,0 +1,17 @@
+{
+    "name": "sparkle",
+    "graphic": "sparkle",
+    "hitboxX": 0,
+    "hitboxY": 0,
+    "hitboxWidth": 16,
+    "hitboxHeight": 16,
+    "baseAnim": "Interactable_Sparkle",
+    "anims": [
+        {
+            "name": "Interactable_Sparkle",
+            "prefix": "Interactable_Sparkle",
+            "fps": 2,
+            "looped": true
+        }
+    ]
+}

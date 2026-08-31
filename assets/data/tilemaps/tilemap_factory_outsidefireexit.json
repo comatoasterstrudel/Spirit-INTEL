@@ -61,7 +61,7 @@
           "height": 48,
           "originX": 0,
           "originY": 0,
-          "values": {"propName": "factoryfireexitlamp", "tag": ""}
+          "values": {"propName": "factoryfireexitlamp", "tag": "", "addLight": false}
         },
         {
           "name": "lightsource",

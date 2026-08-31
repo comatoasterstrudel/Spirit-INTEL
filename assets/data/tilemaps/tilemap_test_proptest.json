@@ -39,7 +39,7 @@
           "height": 48,
           "originX": 0,
           "originY": 0,
-          "values": {"propName": "lobbydesk", "tag": ""}
+          "values": {"propName": "lobbydesk", "tag": "", "addLight": false}
         },
         {
           "name": "player",

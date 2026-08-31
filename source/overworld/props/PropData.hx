@@ -15,6 +15,9 @@ class PropData extends CtJsonLoader
     
 	public var yStackingOffset:Int;
 
+    public var anims:Array<CharacterAnimation> = [];
+    public var baseAnim:String = "";
+
     public function new(id:String){
         this.id = id;
         
@@ -29,5 +32,14 @@ class PropData extends CtJsonLoader
         this.hitboxWidth = data.hitboxWidth;
         this.hitboxHeight = data.hitboxHeight;
 		this.yStackingOffset = data.yStackingOffset ?? 0;
+
+        this.baseAnim = data.baseAnim == null ? "" : data.baseAnim;
+        
+        if (data.anims == null)
+			anims = [];
+		else
+		{
+			anims = CharacterData.mapCharacterAnimation(data);
+		}
     }
 }

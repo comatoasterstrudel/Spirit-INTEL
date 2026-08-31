@@ -127,10 +127,7 @@ class PlayState extends FlxState
 			exitProgress += elapsed;
 
 			if (exitProgress >= Constants.exitTime)
-			{
-				if (FlxG.sound.music != null)
-					FlxG.sound.music.stop();
-				
+			{	
 				FlxG.switchState(LevelSelectorState.new);
 			}
 		}
@@ -210,7 +207,7 @@ class PlayState extends FlxState
 		var sizing = Grid.calculateGridSize(gridSize);
 
 		bgLine = new CtSprite().createColorBlock(FlxG.width * 2, Std.int(sizing.y + Constants.gridSize), FlxColor.WHITE);
-		bgLine.alpha = .5;
+		bgLine.alpha = (.5 * bg.data.gridBgAlpha);
 		bgLine.screenCenter(X);
 		bgLine.y = (FlxG.height / 2 - bgLine.height / 2) + Constants.uiYOffset;
 		bgLine.camera = camGame;

@@ -1,7 +1,7 @@
 {
     "gridSizeX": 3,
     "gridSizeY": 3,
-    "background": "factory",
+    "background": "factorydark",
     "allyUnits": [],
     "enemyUnits": [
         {

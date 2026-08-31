@@ -1,0 +1,18 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "The door won't budge.",
+		"actor": "narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Next to the handle is a 6 digit security lock.",
+		"actor": "narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "He locked the door down here too???",
+		"actor": "robin",
+		"portrait": "neutral"
+	}
+]

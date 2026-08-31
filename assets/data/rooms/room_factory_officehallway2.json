@@ -3,5 +3,6 @@
     "displayName": "Factory - Basement",
     "map": "factory_officehallway2",
     "lighting": 0.7,
-    "bgColor": [220, 220, 220]
+    "bgColor": [220, 220, 220],
+    "script": ["factory_officehallway2"]
 }

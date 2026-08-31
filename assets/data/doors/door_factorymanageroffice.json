@@ -1,4 +1,7 @@
 {
     "name": "factorymanageroffice",
-    "graphic": "factorymanageroffice"
-}
+    "graphic": "factorymanageroffice",
+    "openUpSound": "wood",
+    "openDownSound": "wood",
+    "lockSound": "wood"
+} 

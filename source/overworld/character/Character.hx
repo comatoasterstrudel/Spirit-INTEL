@@ -89,8 +89,7 @@ class Character extends CtSprite
 		
 		if (data.fromAseprite)
 		{
-			frames = FlxAtlasFrames.fromTexturePackerJson(Constants.characterGraphicPath + data.graphic + ".png",
-				Constants.characterGraphicPath + data.graphic + ".json", false);
+			frames = FlxAtlasFrames.fromTexturePackerJson(Constants.characterGraphicPath + data.graphic + ".png", Constants.characterGraphicPath + data.graphic + ".json", false);
 		}
 		else
 		{

@@ -821,7 +821,7 @@ function startEndOfTutorialCutscene():Void{
 	{
 		OverworldState.eventManager.startTransaction("cutsceneover");
 
-		FlxTween.tween(camGame.scroll, {x: 432}, 1, {onComplete: function(f):Void{
+		moveCameraBackToPlayer(1, null, function():Void{
 			set_inCutscene(false);
 			set_lockCamera(false);
 			set_unbindCamera(false);
@@ -836,7 +836,7 @@ function startEndOfTutorialCutscene():Void{
 			OverworldState.lastTransitionTime = 0.5;
 
 			setupScary();
-		}});
+		});
 	});
 }
 

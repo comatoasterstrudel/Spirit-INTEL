@@ -1,0 +1,14 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "Yeah..",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "I'll just put that back..",
+		"actor": "robin",
+		"portrait": "neutral"
+	}
+]

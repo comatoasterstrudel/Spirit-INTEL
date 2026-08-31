@@ -359,6 +359,34 @@ class OverworldState extends FlxState
 		camLighting.scroll.set(camGame.scroll.x, camGame.scroll.y);
 		camLighting.zoom = camGame.zoom;
 	}
+
+	function moveCameraBackToPlayer(time:Float, ease:EaseFunction, ?onComplete:Void->Void):Void{
+		var desiredX:Float = 0;
+		var desiredY:Float = 0;
+
+		var preScroll = FlxPoint.get();
+		preScroll.set(camGame.scroll.x, camGame.scroll.y);
+		var preBind:Bool = unbindCamera;
+		var preLock:Bool = lockCamera;
+
+		unbindCamera = false;
+		lockCamera = false;
+
+		handleCameraScroll();
+
+		desiredX = FlxMath.bound(camGame.scroll.x, camGame.minScrollX, camGame.maxScrollX);
+		desiredY = FlxMath.bound(camGame.scroll.y, camGame.minScrollY, camGame.maxScrollY);
+
+		camGame.scroll.set(preScroll.x, preScroll.y);
+		unbindCamera = preBind;
+		lockCamera = preLock;
+
+		handleCameraScroll();
+
+		FlxTween.tween(camGame.scroll, {x: desiredX, y: desiredY}, time, {ease: ease, onComplete: function(f):Void{
+			if(onComplete != null) onComplete();
+		}});
+	}
 	
 	function handleExit(elapsed:Float):Void
 	{
@@ -370,7 +398,6 @@ class OverworldState extends FlxState
 			{
 				if (FlxG.sound.music != null){
 					updateLastMusic();
-					FlxG.sound.music.stop();
 				}
 
 				FlxG.switchState(LevelSelectorState.new);
@@ -702,7 +729,26 @@ class OverworldState extends FlxState
 					props.add(door);
 					interactInteractables.add(door);
 				case "prop":
-					props.add(new Prop(entity.values.propName, entity.values.tag, entity.x, entity.y));
+					var makeProp:Void->Prop = function():Prop{
+						return new Prop(entity.values.propName, entity.values.tag, entity.x, entity.y);
+					};
+
+					var ogProp = makeProp();
+					props.add(ogProp);
+
+					if(entity.values.addLight){
+						var light = makeProp();
+						light.colorTransform.color = 0xFFFFFFFF;
+						lightingCover.add(light);
+						
+						ogProp.killedSignal.add(function():Void{
+							lightingCover.getPropByTag(ogProp.tag).kill();
+						});
+
+						ogProp.revivedSignal.add(function():Void{
+							lightingCover.getPropByTag(ogProp.tag).revive();
+						});
+					}
 				case "scrollingprop":
 					var scrollingprop = new ScrollingProp(entity.values.tag, Constants.scrollingPropImagePath + entity.values.propName + ".png",
 						Std.int(entity.x * Constants.overworldPixelScale), Std.int(entity.y * Constants.overworldPixelScale),
@@ -1271,6 +1317,8 @@ class OverworldState extends FlxState
 
 		script.setValue({name: "moveRoom", value: moveRoom});
 		script.setValue({name: "startBattle", value: startBattle});
+
+		script.setValue({name: "moveCameraBackToPlayer", value: moveCameraBackToPlayer});
 
 		// get, set
 		script.setValue({name: "get_inCutscene", value: get_inCutscene});

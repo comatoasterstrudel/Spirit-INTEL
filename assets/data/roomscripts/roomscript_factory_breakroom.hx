@@ -349,20 +349,17 @@ function doCutscene():Void{
 	{
 		OverworldState.eventManager.startTransaction("end");
 
-		FlxTween.tween(camGame.scroll, {y: 152}, 1, {
-			onComplete: function(f):Void
-			{
-				inTheCutscene = false;
-				startParty();
-				character_player.lockMovement = false;
-				set_inCutscene(false);
-				set_lockCamera(false);
-				character_player.facing = DOWN;
-				character_player.movementSpeed = 1;
+		moveCameraBackToPlayer(1, null, function():Void{
+			inTheCutscene = false;
+			startParty();
+			character_player.lockMovement = false;
+			set_inCutscene(false);
+			set_lockCamera(false);
+			character_player.facing = DOWN;
+			character_player.movementSpeed = 1;
 
-				OverworldState.eventManager.finishTransaction("end");
-			}
-		});
+			OverworldState.eventManager.finishTransaction("end");
+		});		
 	});
 }
 

@@ -61,7 +61,7 @@
           "height": 80,
           "originX": 0,
           "originY": 0,
-          "values": {"propName": "factorysecuritydesk", "tag": ""}
+          "values": {"propName": "factorysecuritydesk", "tag": "", "addLight": false}
         },
         {
           "name": "lightsource",

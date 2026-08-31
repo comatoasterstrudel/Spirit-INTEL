@@ -20,4 +20,6 @@ typedef BattleBackgroundSpriteInfo =
     var colorHeight:Int;
     
     var graphic:String;
+
+    var alpha:Float;
 }

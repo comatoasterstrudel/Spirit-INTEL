@@ -1,0 +1,27 @@
+{
+    "name": "monsterbook",
+    "graphic": "monsterbook",
+    "hitboxX": 0,
+    "hitboxY": 0,
+    "hitboxWidth": 16,
+    "hitboxHeight": 16,
+    "baseAnim": "normal",
+    "anims": [
+        {
+            "name": "normal",
+            "prefix": "monsterbook_normal",
+            "fps": 0
+        },
+        {
+            "name": "evil",
+            "prefix": "monsterbook_evil",
+            "fps": 0
+        },
+        {
+            "name": "tongue",
+            "prefix": "monsterbook_tongue",
+            "fps": 2,
+            "looped": false
+        }
+    ]
+}

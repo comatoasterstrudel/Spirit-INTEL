@@ -25,7 +25,9 @@ class BattleBackground extends FlxSpriteGroup
             spr.scale.set(sprite.scaleX, sprite.scaleY);
             spr.updateHitbox();
             
-			spr.scrollFactor.set(sprite.scrollX, sprite.scrollY);            
+			spr.scrollFactor.set(sprite.scrollX, sprite.scrollY);    
+            
+            spr.alpha = sprite.alpha;
         }
     }
 }

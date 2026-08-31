@@ -25,17 +25,22 @@ class CharacterData extends CtJsonLoader
 			anims = [];
 		else
 		{
-			anims = data.anims.map(function(item)
-			{
-				return {
-					name: item.name ?? "",
-					prefix: item.prefix ?? "",
-					fps: item.fps ?? 24,
-					looped: item.looped ?? false,
-					flipX: item.flipX ?? false,
-					flipY: item.flipY ?? false
-				};
-			});
+			anims = mapCharacterAnimation(data);
 		}
     }
+
+	public static function mapCharacterAnimation(data:Dynamic):Array<CharacterAnimation>
+	{
+		return data.anims.map(function(item)
+		{
+			return {
+				name: item.name ?? "",
+				prefix: item.prefix ?? "",
+				fps: item.fps ?? 24,
+				looped: item.looped ?? false,
+				flipX: item.flipX ?? false,
+				flipY: item.flipY ?? false
+			};
+		});
+	}
 }

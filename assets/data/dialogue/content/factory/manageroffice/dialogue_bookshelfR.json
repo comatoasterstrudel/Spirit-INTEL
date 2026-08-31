@@ -1,0 +1,12 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "Books on various subjects.",
+		"actor": "narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "The bottom shelf is full of reports and other business crap.",
+		"actor": "narrator"
+	}
+]

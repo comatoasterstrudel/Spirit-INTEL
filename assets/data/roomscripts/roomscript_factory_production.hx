@@ -514,12 +514,14 @@ function doProductionCutscene():Void
 
 	// end cutscene
 	OverworldState.eventManager.addEvent(function() {
-		character_player.facing = DOWN;
-		tile_main_front.visible = false;
-		character_player.movementSpeed = 1;
-		character_player.lockMovement = false;
-		set_inCutscene(false);
-		set_lockCamera(false);
+		moveCameraBackToPlayer(1, null, function():Void{
+			character_player.facing = DOWN;
+			tile_main_front.visible = false;
+			character_player.movementSpeed = 1;
+			character_player.lockMovement = false;
+			set_inCutscene(false);
+			set_lockCamera(false);
+		});
 	});
 }
 
@@ -1246,12 +1248,9 @@ function doSnowScene():Void
 	{
 		OverworldState.eventManager.startTransaction("cameraUp");
 
-		FlxTween.tween(camGame.scroll, {y: ogY}, 1.5, {
-			onComplete: function(f):Void
-			{
-				OverworldState.eventManager.finishTransaction("cameraUp");
-			}
-		});
+		moveCameraBackToPlayer(1.5, null, function():Void{
+			OverworldState.eventManager.finishTransaction("cameraUp");
+		});		
 	});
 
 	OverworldState.eventManager.addEvent(function()

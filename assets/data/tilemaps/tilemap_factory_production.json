@@ -83,7 +83,7 @@
           "height": 32,
           "originX": 0,
           "originY": 0,
-          "values": {"propName": "factorycart1L", "tag": ""}
+          "values": {"propName": "factorycart1L", "tag": "", "addLight": false}
         },
         {
           "name": "prop",
@@ -95,7 +95,7 @@
           "height": 32,
           "originX": 0,
           "originY": 0,
-          "values": {"propName": "factorycart2L", "tag": ""}
+          "values": {"propName": "factorycart2L", "tag": "", "addLight": false}
         },
         {
           "name": "prop",
@@ -107,7 +107,7 @@
           "height": 32,
           "originX": 0,
           "originY": 0,
-          "values": {"propName": "factorycart1R", "tag": ""}
+          "values": {"propName": "factorycart1R", "tag": "", "addLight": false}
         },
         {
           "name": "prop",
@@ -119,7 +119,7 @@
           "height": 32,
           "originX": 0,
           "originY": 0,
-          "values": {"propName": "factorycart2R", "tag": ""}
+          "values": {"propName": "factorycart2R", "tag": "", "addLight": false}
         },
         {
           "name": "scrollingprop",
@@ -203,7 +203,7 @@
           "height": 32,
           "originX": 0,
           "originY": 0,
-          "values": {"propName": "conveyorlight", "tag": "conveyorlight1"}
+          "values": {"propName": "conveyorlight", "tag": "conveyorlight1", "addLight": false}
         },
         {
           "name": "prop",
@@ -215,7 +215,7 @@
           "height": 32,
           "originX": 0,
           "originY": 0,
-          "values": {"propName": "conveyorlight", "tag": "conveyorlight2"}
+          "values": {"propName": "conveyorlight", "tag": "conveyorlight2", "addLight": false}
         },
         {
           "name": "character",

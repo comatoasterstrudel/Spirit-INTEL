@@ -10,6 +10,8 @@ class BattleBackgroundData extends CtJsonLoader
     
     public var sprites:Array<BattleBackgroundSpriteInfo> = [];
     
+    public var gridBgAlpha:Float;
+
     public function new(id:String){
         this.id = id;
         
@@ -19,6 +21,8 @@ class BattleBackgroundData extends CtJsonLoader
         
 		this.uiStyle = data.uiStyle ?? "placeholder";
         
+        this.gridBgAlpha = data.gridBgAlpha == null ? 1 : data.gridBgAlpha;
+
         sprites = data.sprites.map(function(item)
 		{            
             return {
@@ -34,6 +38,7 @@ class BattleBackgroundData extends CtJsonLoader
                 colorWidth: item.colorWidth ?? 1,
                 colorHeight: item.colorHeight ?? 1,
                 graphic: item.graphic ?? "",
+                alpha: item.alpha ?? 1,
             };
         });
     }

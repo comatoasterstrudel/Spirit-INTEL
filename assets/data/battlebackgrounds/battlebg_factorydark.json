@@ -1,0 +1,62 @@
+{
+    "name": "factory",
+    "uiStyle": "factory",
+    "gridBgAlpha": 0.5,
+    "sprites": [
+        {
+            "tag": "bottom",
+            "type": "graphic",
+            "x": -100,
+            "y": -100,
+            "scrollX": 0.4,
+            "scrollY": 0.4,
+            "scaleX": 1.2,
+            "scaleY": 1.2,
+            "graphic": "factory_bottom"
+        },
+        {
+            "tag": "back",
+            "type": "graphic",
+            "x": -100,
+            "y": -100,
+            "scrollX": 0.3,
+            "scrollY": 0.3,
+            "scaleX": 1.2,
+            "scaleY": 1.2,
+            "graphic": "factory_back"
+        },
+        {
+            "tag": "mid",
+            "type": "graphic",
+            "x": -100,
+            "y": -100,
+            "scrollX": 0.5,
+            "scrollY": 0.5,
+            "scaleX": 1.2,
+            "scaleY": 1.2,
+            "graphic": "factory_mid"
+        },
+        {
+            "tag": "top",
+            "type": "graphic",
+            "x": -100,
+            "y": -100,
+            "scrollX": 0.6,
+            "scrollY": 0.6,
+            "scaleX": 1.2,
+            "scaleY": 1.2,
+            "graphic": "factory_top"
+        },
+        {
+            "tag": "overlay",
+            "type": "color",
+            "x": -300,
+            "y": -300,
+            "scrollX": 0,
+            "scrollY": 0,
+            "color": [0, 0, 0, 200],
+            "colorWidth": 2000,
+            "colorHeight": 2000
+        }
+    ]
+}

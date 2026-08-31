@@ -26,4 +26,16 @@ class LightingSprite extends FlxSpriteGroup
         
         return lightSource;
     } 
+
+    public function getPropByTag(tag:String):Prop{
+        for(spr in members){
+            if(spr is Prop){
+                var prop:Prop = cast spr;
+
+                if(prop.tag == tag) return prop;
+            }
+        }
+        
+        return null;
+    }
 }
