@@ -105,6 +105,9 @@ class InitState extends FlxState{
 		}
 
 		CtDialogueBox.preloadFont(CtDialogueBox.defaultSettings.font, CtDialogueBox.defaultSettings.fontSize);
+
+		CtDialogueBox.addTextEffect({typableStartText: "[[BLUE]]", typableEndText: "[[ENDBLUE]]", startText: "@[NUM]331640A", endText: "@[NUM]0", effectClass: BlueEffect});
+
 	}
 	function initScripts():Void
 	{

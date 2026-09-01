@@ -126,3 +126,6 @@ import save.saveloadmenu.*;
 import save.storyflags.*;
 import save.time.*;
 import sys.thread.Thread;
+import texteffects.BlueEffect;
+import ctDialogueBox.textbox.effects.IEffect;
+import ctDialogueBox.textbox.Text;

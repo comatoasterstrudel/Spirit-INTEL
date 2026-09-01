@@ -58,5 +58,10 @@
 		"speed": 0.03,
 		"dialogue": "\"We hope you do, Steven.\"", 
 		"actor": "cutscene_unknownsender_blue"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "...", 
+		"actor": "cutscene_robin"
 	}
 ]
