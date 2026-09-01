@@ -1,0 +1,8 @@
+{
+    "name": "passkey",
+    "graphic": "passkey",
+    "hitboxX": -999,
+    "hitboxY": 0,
+    "hitboxWidth": 1,
+    "hitboxHeight": 1
+}

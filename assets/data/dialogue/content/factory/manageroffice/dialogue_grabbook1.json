@@ -6,6 +6,60 @@
 	},
 	{
 		"speed": 0.03,
+		"dialogue": "The bottom row is all documentation and data, but a lot of what's on this shelf is personal stuff.",
+		"actor": "narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "So many poetry collections...",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "You enjoy poetry, right?",
+		"actor": "volor",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Is any of this stuff good?",
+		"actor": "volor",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Yeah I do, but most of this stuff is pretty pretentious and tired....",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "How do you know that though?",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": " That I like poetry.",
+		"actor": "robin",
+		"portrait": "neutral",
+		"continueLine": true
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "I have much more knowledge than an ephemeral being like yourself has.",
+		"actor": "volor",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Okay...",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
 		"dialogue": "...",
 		"actor": "robin",
 		"portrait": "neutral"

@@ -1,0 +1,33 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "Looking at his desktop, it's the digital equivalent of hoarder house.",
+		"actor": "cutscene_narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Does he know what a file explorer is?",
+		"actor": "cutscene_narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": " This is horrific.",
+		"actor": "cutscene_narrator",
+		"continueLine": true
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Aren't humans in this era irrevocably attached to their electronics?",
+		"actor": "cutscene_volor"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "I'm sure it's on here.",
+		"actor": "cutscene_volor"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Yeah, most likely, the harder part is gonna be finding it in this clutter.",
+		"actor": "cutscene_robin"
+	}
+]

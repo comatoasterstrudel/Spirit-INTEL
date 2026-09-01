@@ -1,0 +1,17 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "The computer is locked, requiring a physical passkey.",
+		"actor": "narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "On the screen is a hint.",
+		"actor": "narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "\"Bookshelf\"",
+		"actor": "narrator"
+	}
+]

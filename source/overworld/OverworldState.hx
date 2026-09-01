@@ -124,6 +124,7 @@ class OverworldState extends FlxState
 			{
 				executeScriptFunction("battleTransitionDone", [PlayState.battleName]);
 			});
+			executeScriptFunction("backFromBattle", [PlayState.battleName]);
 		}
 		else
 		{

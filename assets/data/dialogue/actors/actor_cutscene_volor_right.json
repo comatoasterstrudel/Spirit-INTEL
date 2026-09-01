@@ -2,6 +2,8 @@
     "name": "cutscene_volor",
 	"vanityName": "Volor",
 	"textColor": [255, 255, 255],
+	"choicerSelectedTextColor": [255, 255, 255],
+	"choicerUnselectedTextColor": [255, 255, 255],
 	"customNameBoxImgPath": "volor",
 	"textSound": "volor_",
 	"customDialogueBoxImgPath": "box_cutscene",

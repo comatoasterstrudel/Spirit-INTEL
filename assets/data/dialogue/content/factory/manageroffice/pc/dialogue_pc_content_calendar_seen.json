@@ -1,0 +1,27 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "The calendar is filled to the brim with activities, mostly corporate events or activities.",
+		"actor": "cutscene_narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "\"Atman manager ball\", \"management development class\", \"Pickleball with DBO\"...",
+		"actor": "cutscene_narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "\"Racketball with main branch Operations Supervisor\", \"golf with assistant VP\", \"Tennis with company tennis team\"...",
+		"actor": "cutscene_narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Today on the calendar is labeled with 2 things.",
+		"actor": "cutscene_narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "\"Robin's birthday\", \"Celebration dinner with Maggie :]\"",
+		"actor": "cutscene_narrator"
+	}
+]

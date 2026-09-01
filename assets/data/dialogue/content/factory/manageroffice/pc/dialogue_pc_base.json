@@ -1,0 +1,25 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "What should I look through?",
+		"actor": "cutscene_narrator",
+		"choicerOptions": [
+			{
+				"text": "Calendar",
+				"tag": "Calendar"
+			},
+			{
+				"text": "E-Mail",
+				"tag": "E-Mail"
+			},
+			{
+				"text": "Messages",
+				"tag": "Messages"
+			},
+			{
+				"text": "Nevermind",
+				"tag": "Nevermind"
+			}
+		]
+	}
+]

@@ -1,13 +1,13 @@
 [
 	{
 		"speed": 0.03,
-		"dialogue": "Yeesh...",
+		"dialogue": "Seems to be Steven's office..",
 		"actor": "robin",
 		"portrait": "neutral"
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "I'll just put that back..",
+		"dialogue": "His computer is on..",
 		"actor": "robin",
 		"portrait": "neutral"
 	}

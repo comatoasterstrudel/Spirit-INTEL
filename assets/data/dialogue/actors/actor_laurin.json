@@ -2,6 +2,8 @@
     "name": "laurin",
 	"vanityName": "Laurin",
 	"textColor": [0, 0, 0],
+	"choicerSelectedTextColor": [0, 0, 0],
+	"choicerUnselectedTextColor": [0, 0, 0],
 	"customNameBoxImgPath": "laurin",
 	"portraitPrefix": "laurin",
 	"textSound": "laurin",

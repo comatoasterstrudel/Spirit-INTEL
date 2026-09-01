@@ -1,0 +1,19 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "It's a passkey you could plug into a computer.",
+		"actor": "narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "This must be for his computer.",
+		"actor": "volor",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Let's just go plug it in so we can get out of here.",
+		"actor": "robin",
+		"portrait": "neutral"
+	}
+]

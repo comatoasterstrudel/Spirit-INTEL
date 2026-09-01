@@ -2,6 +2,8 @@
     "name": "jess",
 	"vanityName": "Jess",
 	"textColor": [0, 0, 0],
+	"choicerSelectedTextColor": [0, 0, 0],
+	"choicerUnselectedTextColor": [0, 0, 0],
 	"customNameBoxImgPath": "jess",
 	"portraitPrefix": "jess",
 	"textSound": "jess",

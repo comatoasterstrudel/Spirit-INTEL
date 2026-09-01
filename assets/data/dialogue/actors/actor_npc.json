@@ -1,5 +1,7 @@
 {
     "name": "npc",
 	"textColor": [0, 0, 0],
+	"choicerSelectedTextColor": [0, 0, 0],
+	"choicerUnselectedTextColor": [0, 0, 0],
 	"textSound": "narrator"
 }

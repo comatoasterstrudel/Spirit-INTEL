@@ -97,9 +97,9 @@ class InitState extends FlxState{
 			excludedTextSoundCharacters: [" ", ".", "!", "?"],
 			choicerFont: Constants.fontName,
 			choicerCursorPath: "cursor_arrow",
-			choicerFontSize: 65,
-			choicerSpacing: 70,
-			choicerOffset: new FlxPoint(100, 100),
+			choicerFontSize: 55,
+			choicerSpacing: 50,
+			choicerOffset: new FlxPoint(100, 70),
 			positionPortraitFromBottom: true,
 			nameBoxFollowType: Opposite,
 		}

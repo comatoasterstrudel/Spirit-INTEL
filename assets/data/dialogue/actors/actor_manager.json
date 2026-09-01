@@ -2,6 +2,8 @@
     "name": "manager",
 	"vanityName": "The Manager",
 	"textColor": [0, 0, 0],
+	"choicerSelectedTextColor": [0, 0, 0],
+	"choicerUnselectedTextColor": [0, 0, 0],
 	"textSound": "manager",
 	"textSoundVolume": 0.45,
 	"customNameBoxImgPath": "manager",

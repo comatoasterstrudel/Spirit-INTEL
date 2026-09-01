@@ -1,0 +1,12 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "I inserted the passkey into the computer.",
+		"actor": "narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "It boots to the desktop.",
+		"actor": "narrator"
+	}
+]

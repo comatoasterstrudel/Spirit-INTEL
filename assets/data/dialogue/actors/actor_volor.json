@@ -2,6 +2,8 @@
     "name": "volor",
 	"vanityName": "Volor",
 	"textColor": [0, 0, 0],
+	"choicerSelectedTextColor": [0, 0, 0],
+	"choicerUnselectedTextColor": [0, 0, 0],
 	"customNameBoxImgPath": "volor",
 	"portraitPrefix": "volor",
 	"textSound": "volor_"

@@ -1,8 +1,5 @@
 
 {
     "flagName": "factory_doneBookCutscene",
-    "val_string": "",
-    "val_bool": false,
-    "val_int": 1,
-    "val_float": 1
+    "val_bool": false
 }

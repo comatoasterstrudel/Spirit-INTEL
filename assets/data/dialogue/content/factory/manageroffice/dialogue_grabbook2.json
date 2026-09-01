@@ -1,6 +1,12 @@
 [
 	{
 		"speed": 0.03,
+		"dialogue": "Looks like this one isn't a poetry collection.",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
 		"dialogue": "\"Be Your Own Boss: The Working World When Battling with Clinical Depression\"",
 		"actor": "narrator"
 	}

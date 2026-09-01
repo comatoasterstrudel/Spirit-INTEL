@@ -1,0 +1,129 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "The calendar is filled to the brim with activities, mostly corporate events or activities.",
+		"actor": "cutscene_narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "\"Atman manager ball\", \"management development class\", \"Pickleball with DBO\"...",
+		"actor": "cutscene_narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "\"Racketball with main branch Operations Supervisor\", \"golf with assistant VP\", \"Tennis with company tennis team\"...",
+		"actor": "cutscene_narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "This computer belongs to your manager?",
+		"actor": "cutscene_volor"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": " Are you sure he isn't a god?",
+		"actor": "cutscene_volor",
+		"continueLine": true
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "His schedule lacks sleep humans need.",
+		"actor": "cutscene_volor"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Nah, he's human.",
+		"actor": "cutscene_robin"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "People are just idiotic and care more about bootlicking to social climb than sleeping.",
+		"actor": "cutscene_robin"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Doesn't surprise me though.",
+		"actor": "cutscene_robin"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": " He always looks wired and jittery.",
+		"actor": "cutscene_robin",
+		"continueLine": true
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Today on the calendar is labeled with 2 things.",
+		"actor": "cutscene_narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "My birthday..?",
+		"actor": "cutscene_robin"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Why would he label my birthday?",
+		"actor": "cutscene_robin"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Ooo maybe he's crushing on you and was planning a surprise for you.",
+		"actor": "cutscene_volor"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Hah, no way.",
+		"actor": "cutscene_robin"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "He ignores me or treats me like a bug on his shirt most of the time.",
+		"actor": "cutscene_robin"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Weird.",
+		"actor": "cutscene_volor"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Yeah, weird...",
+		"actor": "cutscene_robin"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "And it looks like he already has someone.",
+		"actor": "cutscene_robin"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Today is also labeled:",
+		"actor": "cutscene_narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "\"Celebration dinner with Maggie :]\"",
+		"actor": "cutscene_narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Oh, how sweet.",
+		"actor": "cutscene_volor"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "I don't even know how he has time for a girlfriend with this schedule.",
+		"actor": "cutscene_robin"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Well, that dinner isn't happening.",
+		"actor": "cutscene_volor"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Guess it isn't.",
+		"actor": "cutscene_robin"
+	}
+]

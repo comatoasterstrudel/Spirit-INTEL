@@ -2,6 +2,8 @@
     "name": "cutscene_alex",
 	"vanityName": "Alex",
 	"textColor": [255, 255, 255],
+	"choicerSelectedTextColor": [255, 255, 255],
+	"choicerUnselectedTextColor": [255, 255, 255],
 	"customNameBoxImgPath": "alex", 
 	"customDialogueBoxImgPath": "box_cutscene",
 	"textSound": "alex_",
