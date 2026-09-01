@@ -385,10 +385,16 @@ function useComputer():Void{
 
                 computerDialogues.push("factory/manageroffice/pc/dialogue_pc_baseintro");
             }
-
+            
             computerDialogues.push("factory/manageroffice/pc/dialogue_pc_base");
 
-            startDialogue(computerDialogues);
+            if(Save.storyFlags.get("factory_pc_done").val_bool){
+                startDialogue(["factory/manageroffice/pc/dialogue_pc_content_donerepeat"], function():Void{
+                    pc_finish();
+                });
+            } else {
+                startDialogue(computerDialogues);
+            }
         });
     }
 }

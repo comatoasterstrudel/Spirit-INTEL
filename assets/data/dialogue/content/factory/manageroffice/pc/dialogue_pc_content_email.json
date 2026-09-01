@@ -1,7 +1,138 @@
 [
 	{
 		"speed": 0.03,
-		"dialogue": "email",
+		"dialogue": "Despite the state of his desktop, his e-mails are very thoroughly scanned through and all the spam has been deleted.",
 		"actor": "cutscene_narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Or he was just never subscribed to any mailing lists in the first place.",
+		"actor": "cutscene_narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "A particular email catches my eye in particular...",
+		"actor": "cutscene_narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "\"new initiative for the company starting soon; looking for those interested in this next step.\"",
+		"actor": "cutscene_narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "It reads:",
+		"actor": "cutscene_narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "\"Dear esteemed managers of the Atman Corporation,",
+		"actor": "cutscene_unknownsender"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "We're coming up on Atman's 50th anniversary this year, and with big birthdays like that come big changes to our family!",
+		"actor": "cutscene_unknownsender"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Don't worry - we aren't gonna fire any of you wonderful managers, but we are asking you to make a big decision.",
+		"actor": "cutscene_unknownsender"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "We as a company are hoping that we can raise our productivity and production to create more goods for the people who need them the most.",
+		"actor": "cutscene_unknownsender"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Our team at Atman's headquarters has been devising a plan for more than a decade to make this possible...",
+		"actor": "cutscene_unknownsender"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "And we've set everything in place, now we just need you all to implement it properly.",
+		"actor": "cutscene_unknownsender"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "We've been testing a new [[SHAKE]]hybrid computer-human intelligence[[ENDSHAKE]] at select controlled facilities.",
+		"actor": "cutscene_unknownsender"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "It's shown a 500% increase in worker productivity and efficiency, beating out leading competitors in our field by a wide margin.",
+		"actor": "cutscene_unknownsender"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "With your lovely managers helping to integrate this technology into our workplace, you'll change the landscape of not only our company...",
+		"actor": "cutscene_unknownsender"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "But the whole world!",
+		"actor": "cutscene_unknownsender"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Though keep in mind that this'll be a large undertaking, that some of you may not be prepared for.",
+		"actor": "cutscene_unknownsender"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Though, I suggest if you want to keep being an important part of this company, you will participate.",
+		"actor": "cutscene_unknownsender"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "For more details, please contact me or another administrative official over Direct Correspondence..",
+		"actor": "cutscene_unknownsender"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "As E-Mail is not secure enough for information like this.",
+		"actor": "cutscene_unknownsender"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Jane Atman                                                     VP of Operations at Atman.\"",
+		"actor": "cutscene_unknownsender"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Hybrid computer-human intelligence?",
+		"actor": "cutscene_volor"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Well that's obviously not true, if they're referring to everything that happened today.",
+		"actor": "cutscene_volor"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "These are ghosts, not some artificial intelligence.",
+		"actor": "cutscene_volor"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Yeah, no shit.",
+		"actor": "cutscene_robin"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": " They're obviously lying to keep it under wraps.",
+		"actor": "cutscene_robin",
+		"continueLine": true
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "They were trying to keep it secret from any third parties, maybe even the managers themselves..",
+		"actor": "cutscene_robin"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "At least until they were fully on board with it.",
+		"actor": "cutscene_robin"
 	}
-]
+] 
