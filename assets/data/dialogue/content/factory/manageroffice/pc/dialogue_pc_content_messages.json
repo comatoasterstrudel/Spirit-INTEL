@@ -1,7 +1,62 @@
 [
 	{
 		"speed": 0.03,
-		"dialogue": "messages",
+		"dialogue": "Almost all of the messages have been deleted, except for a few from the last day.", 
 		"actor": "cutscene_narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "\"Okay so... quick question about when I'm supposed to activate it...\"", 
+		"actor": "cutscene_manager"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "\"Should I do it when there's still people here? Or should I wait until everyone is at home?\"", 
+		"actor": "cutscene_manager"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "\"Wait until you think everyone is gone. We need it to get accustomed to its environment before it integrates.\"", 
+		"actor": "cutscene_unknownsender_blue"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "\"Doesn't it all already know what's going on?\"", 
+		"actor": "cutscene_manager"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "\"I think it would be fine to do it when people are already here, then I can introduce it.\"", 
+		"actor": "cutscene_manager"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "\"It's not that simple, Steven.\"", 
+		"actor": "cutscene_unknownsender_blue"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "\"Please, just follow what I say and don't get too caught up on the minor details, it'll all work out.\"", 
+		"actor": "cutscene_unknownsender_blue"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "\"Okie dokie artichokie!\"", 
+		"actor": "cutscene_manager"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "\"Thank you for giving me this opportunity, Jane.\"", 
+		"actor": "cutscene_manager"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "\"I promise to make our company thrive!\"", 
+		"actor": "cutscene_manager"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "\"We hope you do, Steven.\"", 
+		"actor": "cutscene_unknownsender_blue"
 	}
 ]

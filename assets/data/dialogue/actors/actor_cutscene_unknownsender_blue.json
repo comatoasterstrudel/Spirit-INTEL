@@ -1,0 +1,8 @@
+{
+    "name": "unknownsender",
+	"textSound": "unknownsender",
+	"textColor": [200, 200, 255],
+	"choicerSelectedTextColor": [255, 255, 255],
+	"choicerUnselectedTextColor": [255, 255, 255],
+	"customDialogueBoxImgPath": "box_cutscene"
+}
