@@ -4,6 +4,5 @@
 	"textColor": [255, 255, 255],
 	"choicerSelectedTextColor": [255, 255, 255],
 	"choicerUnselectedTextColor": [255, 255, 255],
-	"customDialogueBoxImgPath": "box_cutscene",
-	"customNameBoxImgPath": "unknownsender"
+	"customDialogueBoxImgPath": "box_cutscene"
 }

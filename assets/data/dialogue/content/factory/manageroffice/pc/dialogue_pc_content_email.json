@@ -11,7 +11,7 @@
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "A particular email catches my eye in particular...",
+		"dialogue": "A particular email catches my eye...",
 		"actor": "cutscene_narrator"
 	},
 	{
@@ -96,7 +96,7 @@
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "Jane Atman                                                     VP of Operations at Atman.\"",
+		"dialogue": "Jane Atman, VP of Operations at Atman.\"",
 		"actor": "cutscene_unknownsender"
 	},
 	{
