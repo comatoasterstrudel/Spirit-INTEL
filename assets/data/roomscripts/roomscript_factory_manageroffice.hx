@@ -20,6 +20,9 @@ var passkey:Prop;
 var dialogueBox:CtDialogueBox;
 
 var pcBg:CtSprite;
+var pcBg_calendar:CtSprite;
+var pcBg_emails:CtSprite;
+var pcBg_messages:CtSprite;
 var fadeSpr:CtSprite;
 
 function create():Void{
@@ -418,35 +421,41 @@ function setupPc():Void{
 
 function pc_calendar():Void{
     set_inCutscene(true);
-    new FlxTimer().start(0.11, function(f):Void{
+    pcBg_calendar.alpha = 0;
+    pcBg_calendar.revive();
+    FlxTween.tween(pcBg_calendar, {alpha: 1}, 1, {onComplete: function(f):Void{
         startDialogue(["factory/manageroffice/pc/dialogue_pc_content_calendar" + (Save.storyFlags.get("factory_pc_calendar").val_bool ? "_seen" : "")], function():Void
         {
             Save.storyFlags.get("factory_pc_calendar").val_bool = true;
             pc_finish();
         });
-    });
+    }});
 }
 
 function pc_email():Void{
     set_inCutscene(true);
-    new FlxTimer().start(0.11, function(f):Void{
+    pcBg_emails.alpha = 0;
+    pcBg_emails.revive();
+    FlxTween.tween(pcBg_emails, {alpha: 1}, 1, {onComplete: function(f):Void{
         startDialogue(["factory/manageroffice/pc/dialogue_pc_content_email" + (Save.storyFlags.get("factory_pc_email").val_bool ? "_seen" : "")], function():Void
         {
             Save.storyFlags.get("factory_pc_email").val_bool = true;
             pc_finish();
         });
-    });
+    }});
 }
 
 function pc_messages():Void{
     set_inCutscene(true);
-    new FlxTimer().start(0.11, function(f):Void{
+    pcBg_messages.alpha = 0;
+    pcBg_messages.revive();
+    FlxTween.tween(pcBg_messages, {alpha: 1}, 1, {onComplete: function(f):Void{
         startDialogue(["factory/manageroffice/pc/dialogue_pc_content_messages" + (Save.storyFlags.get("factory_pc_messages").val_bool ? "_seen" : "")], function():Void
         {
             Save.storyFlags.get("factory_pc_messages").val_bool = true;
             pc_finish();
         });
-    });
+    }});
 }
 
 function pc_nevermind():Void{
@@ -479,6 +488,24 @@ function setupPcBg():Void{
     pcBg.antialiasing = false;
     add(pcBg);
 
+    pcBg_calendar = new CtSprite().createFromImage(Constants.overworldMiscGraphicPath + "managerpc_calendar.png");
+    pcBg_calendar.camera = camOverlay;
+    pcBg_calendar.kill();
+    pcBg_calendar.antialiasing = false;
+    add(pcBg_calendar);
+
+    pcBg_emails = new CtSprite().createFromImage(Constants.overworldMiscGraphicPath + "managerpc_emails.png");
+    pcBg_emails.camera = camOverlay;
+    pcBg_emails.kill();
+    pcBg_emails.antialiasing = false;
+    add(pcBg_emails);
+
+    pcBg_messages = new CtSprite().createFromImage(Constants.overworldMiscGraphicPath + "managerpc_messages.png");
+    pcBg_messages.camera = camOverlay;
+    pcBg_messages.kill();
+    pcBg_messages.antialiasing = false;
+    add(pcBg_messages);
+
     fadeSpr = new CtSprite().createColorBlock(FlxG.width, FlxG.height, 0xFF000000);
     fadeSpr.camera = camOverlay;
     fadeSpr.kill();
@@ -505,7 +532,10 @@ function addPcBg(onComplete:Void->Void):Void{
 function removePcBg(onComplete:Void->Void):Void{
     fadeSpr.revive();
     FlxTween.tween(fadeSpr, {alpha: 1}, .5, {onComplete: function(f):Void{
-        pcBg.alpha = 0;
+        for(i in [pcBg, pcBg_calendar, pcBg_emails, pcBg_messages]){
+            i.alpha = 0;
+            i.kill();
+        }
         FlxTween.tween(fadeSpr, {alpha: 0}, .5, {onComplete: function(f):Void{
             fadeSpr.kill();
             onComplete();
