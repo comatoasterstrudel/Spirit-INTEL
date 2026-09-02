@@ -8,7 +8,7 @@
     "stat_speed": 4,
     "stat_attack": 130,
     "stat_sattack": 50,
-    "skills": ["stab", "shock", "whip", "suicide"],
+    "skills": ["stab", "shock", "whip"],
     "unlockedByDefault": true,
     "expReward": 6,
     "ai_damage": 1.5,

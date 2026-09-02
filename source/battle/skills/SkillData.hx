@@ -74,6 +74,7 @@ class SkillData extends CtJsonLoader
 			eff_damage: data.effects.eff_damage ?? 0,
 			eff_heal: data.effects.eff_heal ?? 0,
 			eff_statuses: StatusEffect.mapStatusParams(data.effects.eff_statuses) ?? thing,
+			eff_hpleech: data.effects.eff_hpleech == null ? 0 : data.effects.eff_hpleech,
 		};
 
 		return effects;

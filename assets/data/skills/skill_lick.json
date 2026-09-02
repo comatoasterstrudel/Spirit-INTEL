@@ -1,0 +1,13 @@
+{
+    "name": "Lick",
+    "description": "Damage enemy Units in a 3 tile wide area and regain HP",
+    "iconGraphic": "lick",
+    "selectType": "enemy_all",
+    "rangeX": 2,
+    "effects": {
+        "eff_damage": 8,
+        "eff_hpleech": 0.55
+    },
+    "mpCost": 6,
+    "type": "damage"
+}

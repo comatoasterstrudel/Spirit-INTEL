@@ -1,0 +1,12 @@
+{
+    "name": "Bite",
+    "description": "Damage an enemy Unit in the same Row and regain HP",
+    "iconGraphic": "bite",
+    "selectType": "enemy_sameRow",
+    "effects": {
+        "eff_damage": 15,
+        "eff_hpleech": 0.75
+    },
+    "mpCost": 8,
+    "type": "damage"
+} 

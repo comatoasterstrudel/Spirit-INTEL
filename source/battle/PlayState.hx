@@ -871,10 +871,21 @@ class PlayState extends FlxState
 			eventManager.addEvent(function():Void
 			{
 				if (unit != null){
+
+					var damage:Int = 1;
+
 					if(skill == null){
-						unit.takeDamage(effects.eff_damage);	
+						damage = effects.eff_damage;
 					} else {
-						unit.takeDamage(calculateSkillDamage(skill, unit, applyingUnit));	
+						damage = calculateSkillDamage(skill, unit, applyingUnit);
+					}
+
+					unit.takeDamage(damage);	
+
+					if(effects.eff_hpleech > 0){
+						if(applyingUnit != null){
+							applyingUnit.heal(Std.int(damage * effects.eff_hpleech));
+						}
 					}
 				}			
 			});
