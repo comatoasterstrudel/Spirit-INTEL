@@ -23,7 +23,6 @@ class PlayerMenuPageUnitStatus extends PlayerMenuPage
     var textBgLeftEdge:CtSprite;
     var textBgRightEdge:CtSprite;
 	
-
     var cursor:Cursor;
     var menuManager:CtMenuManager;
 
