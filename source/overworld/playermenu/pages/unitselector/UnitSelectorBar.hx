@@ -10,14 +10,12 @@ class UnitSelectorBar extends FlxSpriteGroup
 
     var prefix:String = "";
 
-    var tab:UnitSelectorTab;
     var type:UnitSelectorBarType;
 
-    public function new(type:UnitSelectorBarType, tab:UnitSelectorTab):Void{
+    public function new(type:UnitSelectorBarType):Void{
         super();
 
         this.type = type;
-        this.tab = tab;
 
         var fillColor:FlxColor = FlxColor.BLACK;
         var emptyColor:FlxColor = FlxColor.BLACK;
@@ -47,21 +45,19 @@ class UnitSelectorBar extends FlxSpriteGroup
         text = new CtText();
         text.setFormat(Constants.fontName, 22, fillColor.getDarkened(.5), LEFT, SHADOW, fillColor.getDarkened(.7));
         add(text);
-
-        refreshValues();
     }
 
-    public function refreshValues():Void{
+    public function refreshValues(unit:Unit):Void{
         var val:Int = 1;
         var maxVal:Int = 1;
 
         switch(type){
             case HP:
-                val = tab.realUnit.hp.value;
-                maxVal = tab.realUnit.maxHp.value;
+                val = unit.hp.value;
+                maxVal = unit.maxHp.value;
             case MP:
-                val = tab.realUnit.mp.value;
-                maxVal = tab.realUnit.maxMp.value;
+                val = unit.mp.value;
+                maxVal = unit.maxMp.value;
 
         }
 

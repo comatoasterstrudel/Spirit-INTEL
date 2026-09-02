@@ -13,9 +13,10 @@ class PlayerMenu extends FlxSubState
     var pages:Array<PlayerMenuPage> = [];
     var openPages:Array<PlayerMenuPage> = [];
     
-    var page_main:PlayerMenuPageMain;
-    var page_status:PlayerMenuPageStatus;
-    var page_unitselector:PlayerMenuPageUnitSelector;
+    public var page_main:PlayerMenuPageMain;
+    public var page_status:PlayerMenuPageStatus;
+    public var page_unitselector:PlayerMenuPageUnitSelector;
+    public var page_unitstatus:PlayerMenuPageUnitStatus;
 
     public function new():Void{
         super();
@@ -63,6 +64,10 @@ class PlayerMenu extends FlxSubState
         page_unitselector = new PlayerMenuPageUnitSelector(this);
         pageGroup.add(page_unitselector);
         pages.push(page_unitselector);
+
+        page_unitstatus = new PlayerMenuPageUnitStatus(this);
+        pageGroup.add(page_unitstatus);
+        pages.push(page_unitstatus);
     }
     
     public function addPage(tag:String):Void{

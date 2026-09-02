@@ -5,7 +5,7 @@ class PlayerMenuPageStatus extends PlayerMenuPage
 	var nameplate:CtSprite;
 	var statusText:CtText;
 	var robinAura:CtSprite;
-	var biggerText:CtText;
+	var biggerText:CtText; 
     
 	var lastText:String = "";
 
