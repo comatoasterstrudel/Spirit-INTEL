@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="cutscene_officepc_robin1.png">
+<SubTexture name="rsmile0000" x="0" y="0" width="1304" height="679" frameX="0" frameY="-65" frameWidth="1280" frameHeight="720" />
+<SubTexture name="rcomplain0000" x="1304" y="0" width="1304" height="679" frameX="0" frameY="-65" frameWidth="1280" frameHeight="720" />
+<SubTexture name="vsurprised0000" x="0" y="679" width="1304" height="679" frameX="0" frameY="-65" frameWidth="1280" frameHeight="720" />
+<SubTexture name="rupsettalk0000" x="1304" y="679" width="1304" height="679" frameX="0" frameY="-65" frameWidth="1280" frameHeight="720" />
+<SubTexture name="rneutral0000" x="0" y="1358" width="1304" height="679" frameX="0" frameY="-65" frameWidth="1280" frameHeight="720" />
+<SubTexture name="rpossessed0000" x="1304" y="1358" width="1304" height="679" frameX="0" frameY="-65" frameWidth="1280" frameHeight="720" />
+<SubTexture name="rtalk0000" x="2608" y="0" width="1304" height="679" frameX="0" frameY="-65" frameWidth="1280" frameHeight="720" />
+<SubTexture name="vtalk0000" x="2608" y="679" width="1304" height="679" frameX="0" frameY="-65" frameWidth="1280" frameHeight="720" />
+</TextureAtlas>

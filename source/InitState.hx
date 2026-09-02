@@ -19,7 +19,7 @@ class InitState extends FlxState{
 		initScripts();
 		
 		initSave();
-		
+	
 		hideSoundTray();
 		
 		#if debug
@@ -152,6 +152,7 @@ class InitState extends FlxState{
 		CtScript.setDefaultValue({name: "InitState", value: InitState});
 		CtScript.setDefaultValue({name: "CtSound", value: CtSound});
 		CtScript.setDefaultValue({name: "FlxG", value: FlxG});
+		CtScript.setDefaultValue({name: "StringTools", value: StringTools});
 	}
 
 	function initSave():Void

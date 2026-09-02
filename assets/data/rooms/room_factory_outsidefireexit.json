@@ -7,5 +7,5 @@
     "script": ["snow", "factory_outsidefireexit"],
     "hasBorders": true,
     "music": "outsidefactory",
-    "polaroidBg": "outsidefactory"
+    "polaroidBg": "factoryoutside"
 }

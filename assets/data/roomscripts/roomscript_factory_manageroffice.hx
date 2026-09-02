@@ -27,7 +27,6 @@ var fadeSpr:CtSprite;
 
 var fullart_bg:CtSprite;
 var fullart_robin1:CtSprite;
-var fullart_robin2:CtSprite;
 
 function create():Void{
     doSnow(); 
@@ -495,12 +494,11 @@ function doFinishedPcCutscene():Void{
 
         FlxTween.tween(fadeSpr, {alpha: 0}, 1, {onComplete: function(f):Void{
             new FlxTimer().start(.5, function(f):Void{
-                startDialogue(["factory/manageroffice/pc/dialogue_pc_content_done1"], function():Void
+                startDialogue(["factory/manageroffice/pc/dialogue_pc_content_done1"], function():Void 
                 {
-                    fullart_robin1.visible = false;
-                    fullart_robin2.visible = true;
+                    FlxTween.shake(fullart_robin1, 0.1, .2, 0x01);
 
-                    FlxTween.shake(fullart_robin2, 0.1, .2, 0x01);
+                    fullart_robin1.animation.play("rpossessed");
 
                     new FlxTimer().start(.65, function(f):Void{
                         startDialogue(["factory/manageroffice/pc/dialogue_pc_content_done2"], function():Void
@@ -508,6 +506,14 @@ function doFinishedPcCutscene():Void{
                             pc_finish();
                         });
                     });
+                });
+
+                dialogueBox.onEvent.add(function(event:String):Void
+                {
+                    if (StringTools.startsWith(event, "anim"))
+                    {
+                        fullart_robin1.animation.play(event.split("_")[1]);
+                    }
                 });
             });
         }});
@@ -545,19 +551,16 @@ function setupPcBg():Void{
 	fullart_bg.visible = false;
 	add(fullart_bg);
 
-    fullart_robin1 = new CtSprite().createFromImage(Constants.overworldCutsceneGraphicPath + "officepc_robin1.png");
+    fullart_robin1 = new CtSprite().createFromSparrow(Constants.overworldCutsceneGraphicPath + "officepc_robin1.png", Constants.overworldCutsceneGraphicPath + "officepc_robin1.xml");
+    for(anim in ["rneutral", "rsmile", "rcomplain", "vsurprised", "rupsettalk", "rpossessed", "rtalk", "vtalk"]){
+        fullart_robin1.animation.addByPrefix(anim, anim);
+    }
+    fullart_robin1.animation.play("rneutral");
 	fullart_robin1.screenCenter();
 	fullart_robin1.camera = camOverlay;
 	fullart_robin1.visible = false;
 	fullart_robin1.antialiasing = false;
 	add(fullart_robin1);
-
-    fullart_robin2 = new CtSprite().createFromImage(Constants.overworldCutsceneGraphicPath + "officepc_robin2.png");
-	fullart_robin2.screenCenter();
-	fullart_robin2.camera = camOverlay;
-	fullart_robin2.visible = false;
-	fullart_robin2.antialiasing = false;
-	add(fullart_robin2);
 
     fadeSpr = new CtSprite().createColorBlock(FlxG.width, FlxG.height, 0xFF000000);
     fadeSpr.camera = camOverlay;
@@ -589,7 +592,7 @@ function removePcBg(onComplete:Void->Void):Void{
             i.alpha = 0;
             i.kill();
         }
-        for(i in [fullart_bg, fullart_robin1, fullart_robin2]){
+        for(i in [fullart_bg, fullart_robin1]){
             i.visible = false;
         }
         FlxTween.tween(fadeSpr, {alpha: 0}, .5, {onComplete: function(f):Void{

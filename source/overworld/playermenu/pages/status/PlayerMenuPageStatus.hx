@@ -52,6 +52,7 @@ class PlayerMenuPageStatus extends PlayerMenuPage
     override function removeActivePage():Void{
         super.removeActivePage();        
     }
+	
 	function configText():Void
 	{
 		var levelText:String = "LVL: " + Save.levelRobin.getLevel() + "\n";
