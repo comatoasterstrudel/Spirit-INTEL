@@ -46,6 +46,12 @@ class PlayerMenuPolaroid extends FlxSpriteGroup
     
     function getBgPath():String
     {
+        var customBg:String = Constants.playerMenuPolaroidBgPath + OverworldState.roomData.polaroidBg + ".png";
+
+        if(Assets.exists(customBg)){
+            return customBg;    
+        }
+
         var specificBg:String = Constants.playerMenuPolaroidBgPath + (OverworldState.roomName.split("_")[0]) + ".png";
         
         if(Assets.exists(specificBg)){

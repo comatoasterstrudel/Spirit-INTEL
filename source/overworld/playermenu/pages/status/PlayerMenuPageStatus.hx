@@ -55,7 +55,7 @@ class PlayerMenuPageStatus extends PlayerMenuPage
 	function configText():Void
 	{
 		var levelText:String = "LVL: " + Save.levelRobin.getLevel() + "\n";
-		var expText:String = "EXP: " + Save.levelRobin.exp + "\n";
+		var expText:String = "EXP: " + Save.levelRobin.getCurrentLevelExp() + "\n";
 		var nextLevelText:String = "EXP TO NEXT LVL: " + Save.levelRobin.getNextlevelExp() + "\n";
 		var timeText:String = "TIME: " + FlxStringUtil.formatTime(Save.playtime, false) + "\n";
 

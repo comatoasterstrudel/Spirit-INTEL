@@ -3,5 +3,6 @@
     "map": "factory_officesecurity",
     "lighting": 0.7,
     "bgColor": [200, 200, 255],
-    "script": ["snow", "factory_officesecurity"]
+    "script": ["snow", "factory_officesecurity"],
+    "polaroidBg": "factorybasement"
 }

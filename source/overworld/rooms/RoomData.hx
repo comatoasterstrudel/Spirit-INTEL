@@ -8,6 +8,8 @@ class RoomData extends CtJsonLoader
     public var map:String;
 	public var displayName:String;
 
+	public var polaroidBg:String;
+
 	public var encounters:Array<EncounterData>;
 	public var encounterChance:Float;
     
@@ -33,6 +35,8 @@ class RoomData extends CtJsonLoader
         this.name = data.name ?? "";
         this.map = data.map ?? "test";
 		this.displayName = data.displayName ?? "";
+		
+		this.polaroidBg = data.polaroidBg ?? "";
 		
 		if (data.encounters == null)
 		{

@@ -1,7 +1,5 @@
 package overworld.playermenu.pages.unitstatus;
 
-import battle.ui.bottombar.SkillIcon;
-
 class PlayerMenuPageUnitStatus extends PlayerMenuPage
 {
     var curUnit:String = "";
@@ -143,7 +141,7 @@ class PlayerMenuPageUnitStatus extends PlayerMenuPage
         hpBar.refreshValues(realUnit);
         mpBar.refreshValues(realUnit);
 
-        biggerText.text = "EXP: " + Save.levelUnits.get(unit).exp + "\nEXP TO NEXT LVL: " + Save.levelUnits.get(unit).getNextlevelExp();
+        biggerText.text = "EXP: " + Save.levelUnits.get(unit).getCurrentLevelExp() + "\nEXP TO NEXT LVL: " + Save.levelUnits.get(unit).getNextlevelExp();
         statText.text = "ATTACK: " + realUnit.attack.value + "\nS. ATTACK: " + realUnit.sattack.value + "\nSPEED: " + realUnit.speed.value;
 
         for(skill in skillSprites){
