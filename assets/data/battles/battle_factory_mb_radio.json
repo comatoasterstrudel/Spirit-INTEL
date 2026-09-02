@@ -11,5 +11,12 @@
             "level": 5
         }
     ],
-    "music": "factory"
+    "music": "factory",
+    "unlockableUnits": [
+        {
+            "id": "radio",
+            "chance": 100,
+            "level": 5
+        }
+    ]
 }

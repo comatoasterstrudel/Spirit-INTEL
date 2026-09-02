@@ -17,5 +17,12 @@
             "level": 2
         }
     ],
-    "music": "factory"
+    "music": "factory",
+    "unlockableUnits": [
+        {
+            "id": "leftovers",
+            "chance": 100,
+            "level": 5
+        }
+    ]
 }

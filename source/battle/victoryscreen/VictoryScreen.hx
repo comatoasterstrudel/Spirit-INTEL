@@ -2,6 +2,9 @@ package battle.victoryscreen;
 
 class VictoryScreen extends FlxSubState
 {
+    final stages = [EXP, UNLOCKUNITS, FINISH];
+    var stage:Int = 0;
+
     var victoryCam:CtCamera;
 
     var bg:CtSprite;
@@ -12,6 +15,8 @@ class VictoryScreen extends FlxSubState
     var unitLevelUi:VictoryScreenUnitLevelUi;
     var phone:VictoryScreenPhone;
     
+    var unitUnlocker:VictoryScreenUnitUnlocker;
+
     var robinblank:CtSprite;
     var robin:CtSprite;
 
@@ -28,6 +33,8 @@ class VictoryScreen extends FlxSubState
     
     var onComplete:Void->Void;
 
+    var expUiEnabled:Bool = true;
+    
     public function new (unitsToAdd:Array<String>, expReward:Int, onComplete:Void->Void){
         super();
 
@@ -101,6 +108,10 @@ class VictoryScreen extends FlxSubState
         phone.camera = victoryCam;
         add(phone);
 
+        unitUnlocker = new VictoryScreenUnitUnlocker();
+        unitUnlocker.camera = victoryCam;
+        add(unitUnlocker);
+
         sparkles = new CtSprite().createFromSparrow(Constants.vsSparklesPath + ".png", Constants.vsSparklesPath + ".xml");
         sparkles.animation.addByPrefix("idle", "idle", 1);
         sparkles.animation.play("idle");        
@@ -159,7 +170,12 @@ class VictoryScreen extends FlxSubState
         menuManager.setMenuOptions([[{sprite: continueText, cursorDirection: LEFT, clickFunction: function(F):Void{
             menuManager.disable();
             continueText.visible = false;
-            doEnding();
+
+            if(stages[stage] == UNLOCKUNITS){
+                unitUnlocker.advance(1);
+            } else {
+                advanceStage();
+            }
         }}]]);
     }
 
@@ -215,6 +231,69 @@ class VictoryScreen extends FlxSubState
         new FlxTimer().start(time, function(f):Void{
             ending();
         });
+    }
+
+    function advanceStage():Void{
+        stage ++;
+
+        switch(stages[stage]){
+            case EXP:
+                // ???
+            case UNLOCKUNITS:
+                unlockUnits();
+            case FINISH:
+                doEnding();
+        }
+    }
+
+    function hideExpUi():Void{
+        if(!expUiEnabled) return;
+
+        phone.doFadeOut();
+        unitLevelUi.doFadeOut();
+        expUiEnabled = false;
+    }
+
+    function unlockUnits():Void{
+        var unlockThese:Array<String> = [];
+
+        for(unit in PlayState.battleData.unlockableUnits){
+            if(FlxG.random.bool(unit.chance) && !Save.unlockedUnits.get(unit.id)){
+                unlockThese.push(unit.id);
+                Save.unlockedUnits.set(unit.id, true);
+                Save.levelUnits.get(unit.id).exp = CharacterLevel.getExpFromLevel(unit.level);
+                var realunit = new Unit(unit.id, null, FlxPoint.get(1,1), true, unit.level, true);
+                Save.savedUnitHP.set(unit.id, realunit.maxHp.value);
+                Save.savedUnitMP.set(unit.id, realunit.maxMp.value);
+            }
+        }
+
+        if(unlockThese.length > 0){
+            var wait:Float = 0.01;
+
+            if(expUiEnabled){
+                hideExpUi();
+                wait = .5;
+            }
+
+            new FlxTimer().start(wait, function(f):Void{
+                unitUnlocker.readySignal.add(function():Void{
+                    continueText.x = unitUnlocker.bg.x + 150;
+                    continueText.y = unitUnlocker.bg.y - 100;
+                    continueText.visible = true;
+                    menuManager.enable();
+                });
+
+                unitUnlocker.finishedSignal.add(function():Void{
+                    advanceStage();
+                });
+
+                unitUnlocker.setUnits(unlockThese);
+                unitUnlocker.fadeIn();
+            });
+        } else {
+            advanceStage();
+        }
     }
 
     function doEnding():Void{

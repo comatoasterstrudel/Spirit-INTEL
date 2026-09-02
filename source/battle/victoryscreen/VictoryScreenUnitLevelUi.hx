@@ -192,6 +192,12 @@ class VictoryScreenUnitLevelUi extends FlxSpriteGroup
         });
     }
 
+    public function doFadeOut():Void{
+        if(units.length <= 0) return;
+
+        FlxTween.tween(this, {alpha: 0}, .5);
+    }
+
     function addDoodles():Void{
         var paths = [];
 
