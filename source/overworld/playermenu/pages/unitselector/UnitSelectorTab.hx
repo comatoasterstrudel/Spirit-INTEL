@@ -14,7 +14,7 @@ class UnitSelectorTab extends FlxSpriteGroup
     public var bars:Array<UnitSelectorBar> = [];
     var barSprites:Array<FlxBar> = [];
 
-    var unit:String;    
+    public var unit:String;    
     var page:PlayerMenuPage;
     public var id:Int;
 
@@ -57,10 +57,12 @@ class UnitSelectorTab extends FlxSpriteGroup
         levelText.setFormat(Constants.fontName, 30, FlxColor.GRAY);
         add(levelText);
 
-        hpBar = new UnitSelectorBar(HP, this);
+        hpBar = new UnitSelectorBar(HP);
+        hpBar.refreshValues(realUnit);
         add(hpBar);
 
-        mpBar = new UnitSelectorBar(MP, this);
+        mpBar = new UnitSelectorBar(MP);
+        mpBar.refreshValues(realUnit);
         add(mpBar);
 
         bars = [hpBar, mpBar];

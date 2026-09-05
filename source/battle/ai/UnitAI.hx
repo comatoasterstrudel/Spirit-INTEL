@@ -99,7 +99,7 @@ class UnitAi
                                 if(affectedUnit.hp.value - dmg <= 0){
                                     points += 9999;
                                 } else {
-                                    points += dmg;
+                                    points += Std.int(dmg * (1 + (skill.effects.eff_hpleech)));
                                 }
                             case "healing":
                                 var plac_hp:Int = affectedUnit.hp.value;

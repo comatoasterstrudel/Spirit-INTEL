@@ -128,6 +128,7 @@ class Constants
 	public static final vsBarPath:String = "assets/images/victoryscreen/vs_bar.png";
 	public static final vsSparklesPath:String = "assets/images/victoryscreen/vs_sparkle";
 	public static final vsBoxDoodlesPath:String = "assets/images/victoryscreen/vs_doodle_";
+	public static final vsSpiritUnlocked:String = "assets/images/victoryscreen/vs_spiritunlocked.png";
 	// TurnAttentionAnim
 	public static final turnAttentionAnimTime:Float = .6;
 	public static final turnAttentionAnimTimeSplit:Float = .7;

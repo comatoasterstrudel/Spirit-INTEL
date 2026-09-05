@@ -1,0 +1,71 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "Shit.",
+		"actor": "cutscene_robin"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": " The code's not on here.",
+		"actor": "cutscene_robin",
+		"continueLine": true,
+		"events": ["anim_rcomplain"]
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Noooo, look more.",
+		"actor": "cutscene_volor",
+		"events": ["anim_vtalk"]
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Have you even opened the \"cute puppies and kitties awww\" folder?",
+		"actor": "cutscene_volor"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "50% chance it's porn, I'd rather not know what my ex-pos boss, now attempted killer is into.",
+		"actor": "cutscene_robin",
+		"events": ["anim_rcomplain"]
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Scandalous!",
+		"actor": "cutscene_volor",
+		"events": ["anim_vtalk"]
+	},
+	{
+		"speed": 0.03,
+		"dialogue": " Partaking in such art at work!",
+		"actor": "cutscene_volor",
+		"continueLine": true
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Pfft, art?",
+		"actor": "cutscene_robin",
+		"events": ["anim_rsmile"]
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "All things created by mortals are art, it is the nature of living.",
+		"actor": "cutscene_volor",
+		"events": ["anim_vtalk"]
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "..You're quite radical.",
+		"actor": "cutscene_robin",
+		"events": ["anim_rtalk"]
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "He gets paid to do spreadsheets sometimes and glare at us while we do the hard work.",
+		"actor": "cutscene_robin"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "He probably gets super bored sitting on his bony ass-!",
+		"actor": "cutscene_robin"
+	}
+]

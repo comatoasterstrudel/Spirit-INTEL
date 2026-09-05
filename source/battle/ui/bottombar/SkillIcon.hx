@@ -54,6 +54,8 @@ class SkillIcon extends FlxSpriteGroup
         outlineSprite.antialiasing = false;
         add(outlineSprite);        
 		visible = false;
+
+		updateSkill(false);
     }
 
 	override function update(elapsed:Float):Void{

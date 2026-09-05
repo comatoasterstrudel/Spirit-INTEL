@@ -5,7 +5,7 @@ class PlayerMenuPageStatus extends PlayerMenuPage
 	var nameplate:CtSprite;
 	var statusText:CtText;
 	var robinAura:CtSprite;
-	var biggerText:CtText;
+	var biggerText:CtText; 
     
 	var lastText:String = "";
 
@@ -52,10 +52,11 @@ class PlayerMenuPageStatus extends PlayerMenuPage
     override function removeActivePage():Void{
         super.removeActivePage();        
     }
+	
 	function configText():Void
 	{
 		var levelText:String = "LVL: " + Save.levelRobin.getLevel() + "\n";
-		var expText:String = "EXP: " + Save.levelRobin.exp + "\n";
+		var expText:String = "EXP: " + Save.levelRobin.getCurrentLevelExp() + "\n";
 		var nextLevelText:String = "EXP TO NEXT LVL: " + Save.levelRobin.getNextlevelExp() + "\n";
 		var timeText:String = "TIME: " + FlxStringUtil.formatTime(Save.playtime, false) + "\n";
 

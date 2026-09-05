@@ -77,4 +77,10 @@ class VictoryScreenPhone extends FlxSpriteGroup
             }});
         }});
     }
+
+    public function doFadeOut():Void{
+        phoneSprite.animation.play("closed");
+
+        FlxTween.tween(phoneSprite, {alpha: 0}, .5);
+    };
 }

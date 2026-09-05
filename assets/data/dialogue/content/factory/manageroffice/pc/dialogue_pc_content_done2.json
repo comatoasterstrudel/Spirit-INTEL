@@ -1,0 +1,133 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "[[SHAKE]]How the hell'd you do that!?-[[ENDSHAKE]]",
+		"actor": "cutscene_robin"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": " EUGH why'd you make me click it!?",
+		"actor": "cutscene_robin",
+		"continueLine": true
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "See? I told you!!",
+		"actor": "cutscene_volor",
+		"events": ["anim_vtalk"]
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "There are, in fact, photos of small dogs and cats..",
+		"actor": "cutscene_narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "..and two folders are nestled inside.",
+		"actor": "cutscene_narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "One is labeled \"sensitive personal stuff (DO NOT OPEN!!!!)\", and the other \"passwords\".",
+		"actor": "cutscene_narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "...Seems like we were both right.",
+		"actor": "cutscene_robin",
+		"events": ["anim_rupsettalk"]
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Open up the passwords!!!",
+		"actor": "cutscene_volor",
+		"events": ["anim_vsurprised"]
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Jesus-",
+		"actor": "cutscene_robin",
+		"events": ["anim_rupsettalk"]
+	},
+	{
+		"speed": 0.03,
+		"dialogue": " Yeah I was planning on it, prick.",
+		"actor": "cutscene_robin",
+		"continueLine": true
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "...",
+		"actor": "cutscene_narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "...So many streaming sites..",
+		"actor": "cutscene_robin",
+		"events": ["anim_rtalk"]
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "\"Uvo\", \"Ploob\", \"The Glendale Family Channel\"?",
+		"actor": "cutscene_robin"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": " What is this shit?",
+		"actor": "cutscene_robin",
+		"continueLine": true
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Oh wait at the bottom, look.",
+		"actor": "cutscene_volor",
+		"events": ["anim_vsurprised"]
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "At the bottom of the folder there is a text document.",
+		"actor": "cutscene_narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "\"First two digits of the fire exit code: [[BLUE]]12[[ENDBLUE]]. next two are in the staff break room.\"",
+		"actor": "cutscene_narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Seriously?",
+		"actor": "cutscene_robin",
+		"events": ["anim_rupsettalk"]
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "It looks like we're on a scavenger hunt now.",
+		"actor": "cutscene_volor",
+		"events": ["anim_vtalk"]
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Nothing can be simple in this world, I swear to god...",
+		"actor": "cutscene_robin",
+		"events": ["anim_rtalk"]
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Right behind you!",
+		"actor": "cutscene_volor",
+		"events": ["anim_vtalk"]
+	},
+	{
+		"speed": 0.03,
+		"dialogue": " ...well, I'm moreso [[WAVE]]on[[ENDWAVE]] you.",
+		"actor": "cutscene_volor",
+		"continueLine": true,
+		"events": ["anim_vsurprised"]
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "haha.",
+		"actor": "cutscene_robin",
+		"events": ["anim_rsmile"]
+	}
+]

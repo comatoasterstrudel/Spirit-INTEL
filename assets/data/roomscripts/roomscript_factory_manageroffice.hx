@@ -20,7 +20,13 @@ var passkey:Prop;
 var dialogueBox:CtDialogueBox;
 
 var pcBg:CtSprite;
+var pcBg_calendar:CtSprite;
+var pcBg_emails:CtSprite;
+var pcBg_messages:CtSprite;
 var fadeSpr:CtSprite;
+
+var fullart_bg:CtSprite;
+var fullart_robin1:CtSprite;
 
 function create():Void{
     doSnow(); 
@@ -418,35 +424,41 @@ function setupPc():Void{
 
 function pc_calendar():Void{
     set_inCutscene(true);
-    new FlxTimer().start(0.11, function(f):Void{
+    pcBg_calendar.alpha = 0;
+    pcBg_calendar.revive();
+    FlxTween.tween(pcBg_calendar, {alpha: 1}, 1, {onComplete: function(f):Void{
         startDialogue(["factory/manageroffice/pc/dialogue_pc_content_calendar" + (Save.storyFlags.get("factory_pc_calendar").val_bool ? "_seen" : "")], function():Void
         {
             Save.storyFlags.get("factory_pc_calendar").val_bool = true;
             pc_finish();
         });
-    });
+    }});
 }
 
 function pc_email():Void{
     set_inCutscene(true);
-    new FlxTimer().start(0.11, function(f):Void{
+    pcBg_emails.alpha = 0;
+    pcBg_emails.revive();
+    FlxTween.tween(pcBg_emails, {alpha: 1}, 1, {onComplete: function(f):Void{
         startDialogue(["factory/manageroffice/pc/dialogue_pc_content_email" + (Save.storyFlags.get("factory_pc_email").val_bool ? "_seen" : "")], function():Void
         {
             Save.storyFlags.get("factory_pc_email").val_bool = true;
             pc_finish();
         });
-    });
+    }});
 }
 
 function pc_messages():Void{
     set_inCutscene(true);
-    new FlxTimer().start(0.11, function(f):Void{
+    pcBg_messages.alpha = 0;
+    pcBg_messages.revive();
+    FlxTween.tween(pcBg_messages, {alpha: 1}, 1, {onComplete: function(f):Void{
         startDialogue(["factory/manageroffice/pc/dialogue_pc_content_messages" + (Save.storyFlags.get("factory_pc_messages").val_bool ? "_seen" : "")], function():Void
         {
             Save.storyFlags.get("factory_pc_messages").val_bool = true;
             pc_finish();
         });
-    });
+    }});
 }
 
 function pc_nevermind():Void{
@@ -457,13 +469,7 @@ function pc_finish():Void{
     var seenEverything:Bool = (Save.storyFlags.get("factory_pc_calendar").val_bool && Save.storyFlags.get("factory_pc_email").val_bool && Save.storyFlags.get("factory_pc_messages").val_bool && !Save.storyFlags.get("factory_pc_done").val_bool);
 
     if(seenEverything){
-        Save.storyFlags.get("factory_pc_done").val_bool = true;
-        new FlxTimer().start(0.1, function(f):Void{
-            startDialogue(["factory/manageroffice/pc/dialogue_pc_content_done"], function():Void
-            {
-                pc_finish();
-            });
-        });
+        doFinishedPcCutscene();
     } else {
         removePcBg(function():Void{
             set_inCutscene(false);
@@ -472,12 +478,89 @@ function pc_finish():Void{
     }
 }
 
+function doFinishedPcCutscene():Void{
+    Save.storyFlags.get("factory_pc_done").val_bool = true;
+    
+    fadeSpr.revive();
+    fadeSpr.alpha = 0;
+    FlxTween.tween(fadeSpr, {alpha: 1}, 1, {onComplete: function(f):Void{
+        for(i in [pcBg, pcBg_calendar, pcBg_emails, pcBg_messages]){
+            i.alpha = 0;
+            i.kill();
+        }
+
+        fullart_bg.visible = true;
+        fullart_robin1.visible = true;
+
+        FlxTween.tween(fadeSpr, {alpha: 0}, 1, {onComplete: function(f):Void{
+            new FlxTimer().start(.5, function(f):Void{
+                startDialogue(["factory/manageroffice/pc/dialogue_pc_content_done1"], function():Void 
+                {
+                    FlxTween.shake(fullart_robin1, 0.1, .2, 0x01);
+
+                    fullart_robin1.animation.play("rpossessed");
+
+                    new FlxTimer().start(.65, function(f):Void{
+                        startDialogue(["factory/manageroffice/pc/dialogue_pc_content_done2"], function():Void
+                        {
+                            pc_finish();
+                        });
+                    });
+                });
+
+                dialogueBox.onEvent.add(function(event:String):Void
+                {
+                    if (StringTools.startsWith(event, "anim"))
+                    {
+                        fullart_robin1.animation.play(event.split("_")[1]);
+                    }
+                });
+            });
+        }});
+    }});
+}
+
 function setupPcBg():Void{
     pcBg = new CtSprite().createFromImage(Constants.overworldMiscGraphicPath + "managerpc.png");
     pcBg.camera = camOverlay;
     pcBg.kill();
     pcBg.antialiasing = false;
     add(pcBg);
+
+    pcBg_calendar = new CtSprite().createFromImage(Constants.overworldMiscGraphicPath + "managerpc_calendar.png");
+    pcBg_calendar.camera = camOverlay;
+    pcBg_calendar.kill();
+    pcBg_calendar.antialiasing = false;
+    add(pcBg_calendar);
+
+    pcBg_emails = new CtSprite().createFromImage(Constants.overworldMiscGraphicPath + "managerpc_emails.png");
+    pcBg_emails.camera = camOverlay;
+    pcBg_emails.kill();
+    pcBg_emails.antialiasing = false;
+    add(pcBg_emails);
+
+    pcBg_messages = new CtSprite().createFromImage(Constants.overworldMiscGraphicPath + "managerpc_messages.png");
+    pcBg_messages.camera = camOverlay;
+    pcBg_messages.kill();
+    pcBg_messages.antialiasing = false;
+    add(pcBg_messages);
+
+    fullart_bg = new CtSprite().createFromImage(Constants.overworldCutsceneGraphicPath + "officepc_bgColor.png");
+	fullart_bg.screenCenter();
+	fullart_bg.camera = camOverlay;
+	fullart_bg.visible = false;
+	add(fullart_bg);
+
+    fullart_robin1 = new CtSprite().createFromSparrow(Constants.overworldCutsceneGraphicPath + "officepc_robin1.png", Constants.overworldCutsceneGraphicPath + "officepc_robin1.xml");
+    for(anim in ["rneutral", "rsmile", "rcomplain", "vsurprised", "rupsettalk", "rpossessed", "rtalk", "vtalk"]){
+        fullart_robin1.animation.addByPrefix(anim, anim);
+    }
+    fullart_robin1.animation.play("rneutral");
+	fullart_robin1.screenCenter();
+	fullart_robin1.camera = camOverlay;
+	fullart_robin1.visible = false;
+	fullart_robin1.antialiasing = false;
+	add(fullart_robin1);
 
     fadeSpr = new CtSprite().createColorBlock(FlxG.width, FlxG.height, 0xFF000000);
     fadeSpr.camera = camOverlay;
@@ -505,7 +588,13 @@ function addPcBg(onComplete:Void->Void):Void{
 function removePcBg(onComplete:Void->Void):Void{
     fadeSpr.revive();
     FlxTween.tween(fadeSpr, {alpha: 1}, .5, {onComplete: function(f):Void{
-        pcBg.alpha = 0;
+        for(i in [pcBg, pcBg_calendar, pcBg_emails, pcBg_messages]){
+            i.alpha = 0;
+            i.kill();
+        }
+        for(i in [fullart_bg, fullart_robin1]){
+            i.visible = false;
+        }
         FlxTween.tween(fadeSpr, {alpha: 0}, .5, {onComplete: function(f):Void{
             fadeSpr.kill();
             onComplete();

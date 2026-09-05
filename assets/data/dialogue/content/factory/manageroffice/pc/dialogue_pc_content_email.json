@@ -101,6 +101,11 @@
 	},
 	{
 		"speed": 0.03,
+		"dialogue": "...",
+		"actor": "cutscene_robin"
+	},
+	{
+		"speed": 0.03,
 		"dialogue": "Hybrid computer-human intelligence?",
 		"actor": "cutscene_volor"
 	},

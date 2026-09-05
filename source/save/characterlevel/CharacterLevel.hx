@@ -78,4 +78,21 @@ class CharacterLevel
 
         return Std.int(baseExp);
     }
+
+    public static function getExpFromLevel(level:Int):Int
+    {
+        var exp:Int = 0;
+
+        var done:Bool = false;
+
+        while(!done){
+            if(getLevelFromExp(exp) != level){
+                exp ++;
+            } else {
+                done = true;
+            }
+        }
+
+        return exp;
+    }
 }

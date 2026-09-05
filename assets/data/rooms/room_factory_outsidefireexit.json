@@ -6,5 +6,6 @@
     "lightingGlowColor": [255, 153, 0, 155],
     "script": ["snow", "factory_outsidefireexit"],
     "hasBorders": true,
-    "music": "outsidefactory"
+    "music": "outsidefactory",
+    "polaroidBg": "factoryoutside"
 }

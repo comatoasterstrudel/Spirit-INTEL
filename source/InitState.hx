@@ -19,7 +19,7 @@ class InitState extends FlxState{
 		initScripts();
 		
 		initSave();
-		
+	
 		hideSoundTray();
 		
 		#if debug
@@ -105,6 +105,9 @@ class InitState extends FlxState{
 		}
 
 		CtDialogueBox.preloadFont(CtDialogueBox.defaultSettings.font, CtDialogueBox.defaultSettings.fontSize);
+
+		CtDialogueBox.addTextEffect({typableStartText: "[[BLUE]]", typableEndText: "[[ENDBLUE]]", startText: "@[NUM]331640A", endText: "@[NUM]0", effectClass: BlueEffect});
+
 	}
 	function initScripts():Void
 	{
@@ -149,6 +152,7 @@ class InitState extends FlxState{
 		CtScript.setDefaultValue({name: "InitState", value: InitState});
 		CtScript.setDefaultValue({name: "CtSound", value: CtSound});
 		CtScript.setDefaultValue({name: "FlxG", value: FlxG});
+		CtScript.setDefaultValue({name: "StringTools", value: StringTools});
 	}
 
 	function initSave():Void

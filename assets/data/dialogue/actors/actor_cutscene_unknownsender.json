@@ -1,6 +1,6 @@
 {
     "name": "unknownsender",
-	"textSound": "unknownsender_",
+	"textSound": "unknownsender",
 	"textColor": [255, 255, 255],
 	"choicerSelectedTextColor": [255, 255, 255],
 	"choicerUnselectedTextColor": [255, 255, 255],

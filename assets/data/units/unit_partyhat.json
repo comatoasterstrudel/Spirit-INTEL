@@ -8,7 +8,7 @@
     "stat_speed": 8,
     "stat_attack": 50,
     "stat_sattack": 120,
-    "skills": ["love", "toxins", "burning_stick", "kamikaze"],
+    "skills": ["love", "toxins", "burning_stick"],
     "unlockedByDefault": true,
     "expReward": 4,
     "ai_damage": 1,

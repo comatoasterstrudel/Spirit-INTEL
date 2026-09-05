@@ -1,0 +1,32 @@
+{
+    "gridSizeX": 3,
+    "gridSizeY": 3,
+    "disableUnitPlacer": true,
+    "allyUnits": [
+        {
+            "id": "chair",
+            "x": 1,
+            "y": 1
+        },
+        {
+            "id": "partyhat",
+            "x": 2,
+            "y": 2
+        }  
+    ],
+    "enemyUnits": [
+        
+    ],
+    "unlockableUnits": [
+        {
+            "id": "book",
+            "chance": 100,
+            "level": 25
+        },
+        {
+            "id": "leftovers",
+            "chance": 100,
+            "level": 25
+        }
+    ]
+}

@@ -51,7 +51,7 @@ class PlayerMenuPageUnitSelector extends PlayerMenuPage
 
         for(tab in tabArray){
             for(bar in tab.bars){
-                bar.refreshValues();
+                bar.refreshValues(tab.realUnit);
             }
         }
     }
@@ -59,7 +59,9 @@ class PlayerMenuPageUnitSelector extends PlayerMenuPage
     override function setActivePage():Void{
         super.setActivePage();   
 		
-		menuManager.enable();
+        new FlxTimer().start(.01, function(f):Void{
+            menuManager.enable();
+        });
     }
     
     override function removeActivePage():Void{
@@ -78,9 +80,15 @@ class PlayerMenuPageUnitSelector extends PlayerMenuPage
         var menuOptions:Array<Array<CtMenuOption>> = [];
 
         for(tab in tabArray){
-            menuOptions.push([{sprite: tab.baseSprite, cursorDirection: LEFT, cancelFunction: function(f):Void{
-                playerMenu.removePage("unitselector");
-            }}]);
+            menuOptions.push([{sprite: tab.baseSprite, cursorDirection: LEFT, 
+                cancelFunction: function(f):Void{
+                    playerMenu.removePage("unitselector");
+                }, 
+                clickFunction: function(f):Void{
+                    playerMenu.page_unitstatus.setUnit(tab.unit);
+                    playerMenu.addPage("unitstatus");
+                }                
+            }]);
         }
 
         menuManager.setMenuOptions(menuOptions);
