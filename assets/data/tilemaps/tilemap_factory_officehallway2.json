@@ -73,7 +73,7 @@
           "height": 32,
           "originX": 0,
           "originY": 0,
-          "values": {"doorName": "factorysecurity", "room": "factory_officesecurity", "transitionTime": 0.5, "lockedDialogue": "", "horizontal": false, "scriptFunction": "", "tag": "", "facingDownwards": false}
+          "values": {"doorName": "factorysecurity", "room": "factory_officesecurity", "transitionTime": 0.5, "lockedDialogue": "", "horizontal": false, "scriptFunction": "", "tag": "securitydoor", "facingDownwards": false}
         },
         {
           "name": "door",
@@ -85,7 +85,7 @@
           "height": 32,
           "originX": 0,
           "originY": 0,
-          "values": {"doorName": "factorybreakroom", "room": "factory_officebreakroom", "transitionTime": 0.5, "lockedDialogue": "", "horizontal": false, "scriptFunction": "", "tag": "", "facingDownwards": false}
+          "values": {"doorName": "factorybreakroom", "room": "factory_officebreakroom", "transitionTime": 0.5, "lockedDialogue": "", "horizontal": false, "scriptFunction": "", "tag": "breakroomdoor", "facingDownwards": false}
         },
         {
           "name": "player",
@@ -131,7 +131,7 @@
           "height": 96,
           "originX": 0,
           "originY": 0,
-          "values": {"propName": "factoryofficelight", "tag": "", "addLight": false}
+          "values": {"propName": "factoryofficelight", "tag": "managerofficedoor", "addLight": false}
         },
         {
           "name": "prop",

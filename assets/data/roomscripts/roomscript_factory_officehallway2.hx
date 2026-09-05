@@ -8,15 +8,25 @@ var bottomDoor:Door;
 
 var character_player:Player;
 
+var managerofficedoor:Door;
+var breakroomdoor:Door;
+var securitydoor:Door;
+
 function create():Void{
     doorTopLeft = getDoorByTag("doorTopLeft");
     bottomDoor = getDoorByTag("bottomDoor");
 
     character_player = get_player();
 
+    managerofficedoor = getDoorByTag("managerofficedoor");
+    breakroomdoor = getDoorByTag("breakroomdoor");
+    securitydoor = getDoorByTag("securitydoor");
+
     if(!Save.storyFlags.get("factory_sawFireDoorLocked").val_bool){
         doFireDoorLockedCutscene();
     }
+
+    updateDoors();
 }
 
 function update(elapsed:Float):Void{
@@ -153,4 +163,20 @@ function doFireDoorLockedCutscene():Void{
 
 function openBottomDoor():Void{
     //
+}
+
+function updateDoors():Void{
+    var doorOneComplete:Bool = Save.storyFlags.get("factory_pc_done").val_bool;
+    var doorTwoComplete:Bool = false;
+
+    if(!doorOneComplete){ // lock door 2 and 3
+        breakroomdoor.room = "";
+        breakroomdoor.dialogue = "factory/officehallway2/dialogue_doorslocked1";
+
+        securitydoor.room = "";
+        securitydoor.dialogue = "factory/officehallway2/dialogue_doorslocked1";
+    } else if(!doorTwoComplete){ //lock door 3
+        securitydoor.room = "";
+        securitydoor.dialogue = "factory/officehallway2/dialogue_doorslocked2";
+    }
 }

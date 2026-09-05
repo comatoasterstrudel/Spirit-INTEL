@@ -2,6 +2,5 @@
     "name": "factorysecurity",
     "graphic": "factorysecurity",
     "openUpSound": "wood",
-    "openDownSound": "wood",
-    "lockSound": "wood"
+    "openDownSound": "wood"
 }

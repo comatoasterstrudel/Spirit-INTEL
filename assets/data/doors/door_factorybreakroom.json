@@ -2,6 +2,5 @@
     "name": "factorybreakroom",
     "graphic": "factorybreakroom",
     "openUpSound": "wood",
-    "openDownSound": "wood",
-    "lockSound": "wood"
+    "openDownSound": "wood"
 }
