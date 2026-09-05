@@ -36,6 +36,8 @@ var fullart_volor:CtSprite;
 
 var doorCutsceneActive:Bool = false;
 
+var stepvolume:Float = 1;
+
 function create(){
     breakRoomDoor = getDoorByTag("breakRoomDoor");
     officeDoor = getDoorByTag("officeDoor");
@@ -183,6 +185,8 @@ function startMonsterCutscene():Void
 
 		new FlxTimer().start(.5, function(F):Void
 		{
+			finaldoor.playOpenSound();
+
 			character_player.animation.play("walk_up_fast");
 
 			character_player.moveToGridSpace(-1, 11.3, function():Void
@@ -213,6 +217,8 @@ function startMonsterCutscene():Void
 		{
 			character_managerscary.revive();
 			character_managerscary.movementSpeed = 1.3;
+
+			finaldoor.playOpenSound();
 
 			character_managerscary.positionCharacterByGrid(23.5, 14);
 
@@ -286,10 +292,17 @@ function startMonsterCutscene():Void
 		});
 		OverworldState.eventManager.startTransaction("monster walks");
 
+		OverworldState.lockMusic = false;
+
 		for (i in 0...6)
 		{
 			new FlxTimer().start(1.5 * i, function(f):Void
 			{
+				FlxG.sound.music.volume -= .17;
+				if(FlxG.sound.music.volume <= 0){
+					FlxG.sound.music.volume = 0;
+					FlxG.sound.music.stop();
+				}
 				moveManagerForward(true, i >= 3);
 				if (i == 5)
 				{
@@ -374,6 +387,7 @@ function startMonsterCutscene():Void
 		OverworldState.eventManager.startTransaction("fade more");
 
 		CtSound.play(Constants.sfxPath + "managerslide.ogg");
+		CtSound.play(Constants.sfxPath + "volorslash.ogg", stepvolume);
 
 		for (char in [character_player, character_managerscary])
 		{
@@ -418,6 +432,8 @@ function startMonsterCutscene():Void
 	OverworldState.eventManager.addEvent(function()
 	{
 		OverworldState.eventManager.startTransaction("dia");
+
+		OverworldState.setUpMusic(Constants.roomMusicPath + "chase2.ogg");
 
 		dialogueBox.onEvent.add(function(event:String):Void
 		{
@@ -477,6 +493,8 @@ function startMonsterCutscene():Void
 
 		FlxTween.shake(fullart_robin2, 0.1, .2, 0x01);
 
+		CtSound.play(Constants.sfxPath + "volorappear.ogg").pitch = .9;
+
 		new FlxTimer().start(2, function(f):Void{
 			OverworldState.eventManager.finishTransaction("slide");
 		});
@@ -524,6 +542,8 @@ function startMonsterCutscene():Void
 		{
 			if (name == "standup" || name == "Kneel-Left")
 			{
+				CtSound.play(Constants.sfxPath + "managerstep" + FlxG.random.int(1,3) + ".ogg", 0.2);
+
 				FlxTween.shake(character_managerscary, 0.05, .2, 0x01);
 
 				if (frameNum == 1)
@@ -540,12 +560,16 @@ function startMonsterCutscene():Void
 
 		character_managerscary.lockAnims = true;
 		character_managerscary.animation.play("Kneel-Left");
+
+		CtSound.play(Constants.sfxPath + "managergetup.ogg");
 	});
 
 	// manager walks toward robin
 	OverworldState.eventManager.addEvent(function()
 	{
 		OverworldState.eventManager.startTransaction("monster walks");
+
+		stepvolume = .35;
 
 		for (i in 0...11)
 		{
@@ -581,6 +605,7 @@ function startMonsterCutscene():Void
 					character_player.lockAnims = false;
 					Save.storyFlags.get("factory_seentutorial").val_bool = true;
 					startBattle("factory_tutorial");
+					FlxG.sound.music.time = 13720;
 				}
 			});
 		});
@@ -617,6 +642,8 @@ function moveManagerForward(doLighting:Bool, useLookUpwardAnim:Bool)
 			}
 		}
 	});
+
+	CtSound.play(Constants.sfxPath + "managerstep" + FlxG.random.int(1,3) + ".ogg", stepvolume);
 }
 
 function battleTransitionDone(battleName:String):Void

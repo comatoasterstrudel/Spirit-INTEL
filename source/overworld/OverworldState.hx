@@ -95,6 +95,7 @@ class OverworldState extends FlxState
 	// MUSIC
 	public static var lastMusic:String = "";
 	public static var lastTime:Float = 0;
+	public static var lockMusic:Bool = false;
 
 	// STAIRS
 	var stairManager:StairManager;
@@ -115,7 +116,7 @@ class OverworldState extends FlxState
 		setupDialogueBox();
 		loadMap();
 		selectRandomEncounter();
-		setUpMusic(getMusicPathFromRoom(roomData), lastTransitionTime);
+		if(!lockMusic) setUpMusic(getMusicPathFromRoom(roomData), lastTransitionTime);
 		if (leftForBattle)
 		{
 			player.positionCharacter(positionBeforeBattle.x, positionBeforeBattle.y);
@@ -1058,7 +1059,7 @@ class OverworldState extends FlxState
 
 		new FlxTimer().start(0.1, function(f):Void
 		{
-			if(FlxG.sound.music != null && FlxG.sound.music.playing && !isMusicSameAsLastMusic(new RoomData(newRoom))){
+			if(!lockMusic && FlxG.sound.music != null && FlxG.sound.music.playing && !isMusicSameAsLastMusic(new RoomData(newRoom))){
 				FlxG.sound.music.fadeOut(transitionTime, 0, function(f):Void{
 					FlxG.sound.music.stop();
 					FlxG.sound.music.destroy();
@@ -1671,6 +1672,7 @@ class OverworldState extends FlxState
 		startAtSavePoint = true;
 		lastMusic = "";
 		lastTime = 0;
+		lockMusic = false;
 	}
 	#if debug
 	function addDebugFunctions():Void

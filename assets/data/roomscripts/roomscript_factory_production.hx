@@ -1005,6 +1005,9 @@ function startEvilMonsterBit():Void
 	{
 		OverworldState.eventManager.startTransaction("mamamove");
 
+		OverworldState.setUpMusic(Constants.roomMusicPath + "chase.ogg", 13);
+		OverworldState.lockMusic = true;
+
 		moveManagerChain(3, 1, 2, "right", function():Void
 		{
 			new FlxTimer().start(1, function(f):Void
@@ -1020,6 +1023,8 @@ function startEvilMonsterBit():Void
 
 						new FlxTimer().start(0.5, function(F):Void
 						{
+							CtSound.play(Constants.sfxPath + "managerstep" + FlxG.random.int(1,3) + ".ogg", 0.35);
+
 							character_player.movementSpeed = .3;
 							character_player.animation.play("shocked_stepback");
 							character_player.move(character_player.x + 20, -1, function():Void
@@ -1063,6 +1068,8 @@ function startEvilMonsterBit():Void
 
 		new FlxTimer().start(0.5, function(F):Void
 		{
+			CtSound.play(Constants.sfxPath + "managerstep" + FlxG.random.int(1,3) + ".ogg", 0.35);
+
 			character_player.movementSpeed = .3;
 			character_player.animation.play("shocked_stepback");
 			character_player.move(character_player.x + 20, -1, function():Void
@@ -1092,10 +1099,14 @@ function startEvilMonsterBit():Void
 	{
 		OverworldState.eventManager.startTransaction("standup");
 
+		CtSound.play(Constants.sfxPath + "managergetup.ogg");
+
 		character_managerscary.animation.onFrameChange.add(function(name:String, frameNum:Int, frameIndex:Int):Void
 		{
 			if (name == "standup")
 			{
+				CtSound.play(Constants.sfxPath + "managerstep" + FlxG.random.int(1,3) + ".ogg", 0.3);
+
 				FlxTween.shake(character_managerscary, 0.05, .2, 0x01);
 
 				if (frameNum == 2)
@@ -1120,6 +1131,8 @@ function startEvilMonsterBit():Void
 
 		set_lockCamera(true);
 
+		CtSound.play(Constants.sfxPath + "managerstep" + FlxG.random.int(1,3) + ".ogg", 0.35);
+
 		character_player.animation.play("shocked_stepback");
 
 		character_player.movementSpeed = .3;
@@ -1140,7 +1153,9 @@ function startEvilMonsterBit():Void
 
 		character_player.animation.play("walk_up_fast");
 
-		character_player.moveToGridSpace(-1, 17);
+		character_player.moveToGridSpace(-1, 17, function():Void{
+			topDoor.playOpenSound();
+		});
 
 		FlxTween.shake(character_managerscary, 0.05, .2, 0x01);
 
@@ -1149,6 +1164,7 @@ function startEvilMonsterBit():Void
 			character_managerscary.movementSpeed = 1.6;
 			character_managerscary.moveToGridSpace(38, 19, function():Void
 			{
+				topDoor.playOpenSound();
 				OverworldState.eventManager.finishTransaction("run away!!!!");
 			});
 		});
@@ -1227,6 +1243,8 @@ function moveManager(tiles:Int, direction:String, ?onComplete:Void->Void):Void
 				onComplete();
 		}
 	});
+
+	CtSound.play(Constants.sfxPath + "managercrawl" + FlxG.random.int(1,3) + ".ogg").pitch = .5;
 }
 
 function spawnBloodStain(xGrid:Int, yGrid:Int):Void
