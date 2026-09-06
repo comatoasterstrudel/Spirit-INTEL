@@ -7,7 +7,7 @@
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "Morning, sir.",
+		"dialogue": "Morning man.",
 		"actor": "laurin",
 		"portrait": "neutral"
 	},
@@ -58,5 +58,71 @@
 		"dialogue": "Haha, don't!",
 		"actor": "manager",
 		"portrait": "talk"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Oh, also...",
+		"actor": "manager",
+		"portrait": "talk"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Did Robin come in with you by any chance?",
+		"actor": "manager",
+		"portrait": "talk"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Well, they didn't come in with me perse-",
+		"actor": "laurin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Are they here?",
+		"actor": "manager",
+		"portrait": "talk"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Um, yeah, they were right behind me-",
+		"actor": "laurin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Great!",
+		"actor": "manager",
+		"portrait": "talk"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "They're always on time though, it's me you outta be worrying about.",
+		"actor": "laurin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "HAHAHA! TRUE! Your work ethic is appalling!",
+		"actor": "manager",
+		"portrait": "talk"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "I just wanted to make sure they didn't miss a special day like this!",
+		"actor": "manager",
+		"portrait": "talk"
+	},
+	{
+        "speed": 0.03,
+		"dialogue": "Well, lets cut the idle chatting, we gotta make sure you stamp your card on time!",
+		"actor": "manager",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Uh-huh.",
+		"actor": "laurin",
+		"portrait": "neutral"
 	}
 ]

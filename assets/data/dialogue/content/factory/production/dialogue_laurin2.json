@@ -7,13 +7,13 @@
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "Work has been over for 5 minutes now..",
+		"dialogue": "Our shift's been over for 5 minutes now..",
 		"actor": "laurin",
 		"portrait": "work_talk"
 	},
 	{
 		"speed": 0.03,
-		"dialogue": " You can stop.",
+		"dialogue": " You can stop working.",
 		"actor": "laurin",
 		"portrait": "work_talk",
 		"continueLine": true
@@ -26,13 +26,13 @@
 	},
 	{
 		"speed": 0.03,
-		"dialogue": " My bad.",
+		"dialogue": " I didn't realize.",
 		"actor": "robin",
 		"portrait": "work_talk",
 		"continueLine": true
 	},
 	{	"speed": 0.03,
-		"dialogue": "It's fine, it's just that there's uh, something in the breakroom to see..",
+		"dialogue": "It's fine, it's just that there's something in the breakroom..",
 		"actor": "laurin",
 		"portrait": "work_neutral"
 	},
@@ -44,11 +44,35 @@
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "It's um, it's nothing bad you uh, just should see it.",
+		"dialogue": "If it's a bigass rat like last time I'm NOT going in there.",
+		"actor": "robin",
+		"portrait": "work_neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "NO! No it isn't, I've changed my ways, I'm good now.",
 		"actor": "laurin",
 		"portrait": "work_neutral"
-	}
-	,
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "You sure?",
+		"actor": "robin",
+		"portrait": "work_neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Oh my god, YES!",
+		"actor": "laurin",
+		"portrait": "work_neutral",
+		"continueLine": true
+	},
+	{
+		"speed": 0.03,
+		"dialogue": " now come on!",
+		"actor": "laurin",
+		"portrait": "work_neutral"
+	},
 	{
 		"speed": 0.03,
 		"dialogue": "...",
