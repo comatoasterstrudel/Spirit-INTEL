@@ -162,16 +162,18 @@ function doFireDoorLockedCutscene():Void{
 }
 
 function openBottomDoor():Void{
-    executeSingleScriptFunction("codeentry", "setCode", [[1, 2, 0, 0, 0, 0]]);
+    executeSingleScriptFunction("codeentry", "setCode", [[1, 2, 7, 4, 0, 0]]);
     executeSingleScriptFunction("codeentry", "openMenu", [
         function(correct:Bool):Void{ // corrent answer
+            var seenCodes:Bool = (Save.storyFlags.get("factory_pc_done").val_bool && true && true);
+
             if(correct){
-                startDialogue(["factory/officehallway2/dialogue_doorcode_right"], function():Void
+                startDialogue(["factory/officehallway2/dialogue_doorcode_right" + (seenCodes ? "_seen" : "")], function():Void
                 {
                     moveRoom("factory_officetransition", 2);
                 });
             } else {
-                startDialogue(["factory/officehallway2/dialogue_doorcode_wrong"], function():Void
+                startDialogue(["factory/officehallway2/dialogue_doorcode_wrong" + (seenCodes ? "_seen" : "")], function():Void
                 {
                     set_inCutscene(false);
                 });

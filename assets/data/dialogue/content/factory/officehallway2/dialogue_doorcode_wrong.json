@@ -1,0 +1,13 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "Wrong code...",
+		"actor": "narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Damn.",
+		"actor": "volor",
+		"portrait": "neutral"
+	}
+]

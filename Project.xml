@@ -34,4 +34,9 @@
 	<haxedef name="FLX_NO_DEBUG" unless="debug" />
 	<haxedef name="NAPE_RELEASE_BUILD" unless="debug" />
 	<haxedef name="message.reporting" value="pretty" />
+
+	<icon path="assets/images/icons/256.png" size='258'/>
+	<icon path="assets/images/icons/128.png" size='128'/>
+	<icon path="assets/images/icons/64.png" size='64'/>
+	<icon path="assets/images/icons/32.png" size='32'/>
 </project>

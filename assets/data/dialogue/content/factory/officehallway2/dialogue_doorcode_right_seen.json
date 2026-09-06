@@ -1,0 +1,19 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "The door unlocked.",
+		"actor": "narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Finally, god.",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Lets get the hell out of here.",
+		"actor": "robin",
+		"portrait": "neutral"
+	}
+]

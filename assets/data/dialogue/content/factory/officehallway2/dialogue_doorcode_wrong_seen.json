@@ -1,0 +1,12 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "Wrong code...",
+		"actor": "narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "...Maybe I should check the code again...",
+		"actor": "narrator"
+	}
+]

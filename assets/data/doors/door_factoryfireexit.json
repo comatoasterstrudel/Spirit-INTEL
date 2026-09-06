@@ -1,4 +1,7 @@
 {
     "name": "factoryfireexit",
-    "graphic": "factoryfireexit"
-}
+    "graphic": "factoryfireexit",
+    "openUpSound": "factory",
+    "openDownSound": "factory",
+    "lockSound": "factory"
+} 

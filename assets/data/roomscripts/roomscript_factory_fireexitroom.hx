@@ -1,12 +1,12 @@
 function CTSCRIPT_SETNAME():String
 {
-	return "factory_officetransition";
+	return "factory_fireexitroom";
 }
 
 var player:Character;
 
-var gridStart:Int = 10;
-var gridEnd:Int = 27;
+var gridStart:Int = 20;
+var gridEnd:Int = 40;
 
 var colorA:Array<Int> = [0, 0, 0, 255];
 var colorB:Array<Int> = [0, 19, 44, 255];

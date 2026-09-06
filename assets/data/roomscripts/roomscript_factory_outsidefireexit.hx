@@ -23,5 +23,8 @@ function create():Void{
         
         var doorway = getInteractableByTag("door");
         doorway.roomTransitionTime = .5;
+    } else {
+        fireexitdoor.room = "";
+        fireexitdoor.dialogue = "factory/outsidefireexit/dialogue_hellno";
     }
 }
