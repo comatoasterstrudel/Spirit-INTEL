@@ -37,6 +37,17 @@
 	},
 	{
 		"speed": 0.03,
+		"dialogue": "Isn't that right, Lucas?",
+		"actor": "manager",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Huh? Uh-um yeah!",
+		"actor": "npc"
+	},
+	{
+		"speed": 0.03,
 		"dialogue": "Respectable people like you, for the past 50 years..",
 		"actor": "manager",
 		"portrait": "neutral"
@@ -55,7 +66,7 @@
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "As of 3 hours ago marking our 50th anniversary!",
+		"dialogue": "Today marking our 50th anniversary!",
 		"actor": "manager",
 		"portrait": "talk"
 	},

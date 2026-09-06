@@ -13,7 +13,7 @@
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "So is this part of the big change you've talked about? Or...",
+		"dialogue": "So does this have to do with the big change you've talked about? Or...",
 		"events": ["coworkerjump"],
 		"actor": "npc"
 	},
@@ -25,13 +25,19 @@
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "BUT don't worry, you all will be filled in on that tomorrow.",
+		"dialogue": "Well, maybe a little! You might say.",
 		"actor": "manager",
 		"portrait": "neutral"
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "And I'm sure you'll all be so so happy!",
+		"dialogue": "you all will be properly filled in on that tomorrow!",
+		"actor": "manager",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "And I'm sure you'll all be jumping for joy!",
 		"actor": "manager",
 		"portrait": "talk"
 	},
