@@ -72,6 +72,18 @@
           "originX": 0,
           "originY": 0,
           "values": {"doorName": "factoryhorizontalL", "room": "", "transitionTime": 0.5, "lockedDialogue": "factory/fireexitroom/dialogue_no", "horizontal": true, "scriptFunction": "", "tag": "", "facingDownwards": false}
+        },
+        {
+          "name": "interactable",
+          "id": 12,
+          "_eid": "67528600",
+          "x": 176,
+          "y": 128,
+          "width": 128,
+          "height": 16,
+          "originX": 0,
+          "originY": 0,
+          "values": {"triggerByWalkingOver": false, "dialogue": "factory/fireexitroom/dialogue_wall", "room": "", "roomTransitionTime": 0.3, "encounterName": "", "scriptFunction": "", "tag": "", "openSave": false, "saveName": "", "saveBgName": ""}
         }
       ]
     },

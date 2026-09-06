@@ -1,0 +1,37 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "It's open ajar..",
+		"actor": "narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "It seems like it hasn't been opened like this long..",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "The air coming out of it is still cold.",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Do you think the manager came in here to get a bite?",
+		"actor": "volor",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Haha, very funny.",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "I wonder if they have any good food in here-",
+		"actor": "robin",
+		"portrait": "neutral"
+	}
+]

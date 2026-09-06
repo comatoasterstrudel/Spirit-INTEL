@@ -1,8 +1,8 @@
 {
     "name": "sparkle",
     "graphic": "sparkle",
-    "hitboxX": 0,
-    "hitboxY": 0,
+    "hitboxX": -999,
+    "hitboxY": -999,
     "hitboxWidth": 16,
     "hitboxHeight": 16,
     "baseAnim": "Interactable_Sparkle",
@@ -13,5 +13,6 @@
             "fps": 2,
             "looped": true
         }
-    ]
+    ],
+    "yStackingOffset": 999
 }

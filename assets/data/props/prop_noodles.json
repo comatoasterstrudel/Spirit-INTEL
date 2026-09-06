@@ -1,0 +1,18 @@
+{
+    "name": "noodles",
+    "graphic": "noodles",
+    "hitboxX": -999,
+    "hitboxY": -999,
+    "hitboxWidth": 16,
+    "hitboxHeight": 16,
+    "baseAnim": "Noodles_Emerge",
+    "anims": [
+        {
+            "name": "Noodles_Emerge",
+            "prefix": "Noodles_Emerge",
+            "fps": 2,
+            "looped": false
+        }
+    ],
+    "yStackingOffset": 999
+}

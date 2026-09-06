@@ -1,0 +1,12 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "The leaves are quite detailed.",
+		"actor": "narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Not really a piece that makes you think.",
+		"actor": "narrator"
+	}
+]

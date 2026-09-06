@@ -1,0 +1,26 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "A breakroom?",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Seems redundant.",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Does the manager need his own special one?",
+		"actor": "volor",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Apparently.",
+		"actor": "robin",
+		"portrait": "neutral"
+	}
+]

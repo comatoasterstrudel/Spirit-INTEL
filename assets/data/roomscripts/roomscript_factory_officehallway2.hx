@@ -165,7 +165,7 @@ function openBottomDoor():Void{
     executeSingleScriptFunction("codeentry", "setCode", [[1, 2, 7, 4, 0, 0]]);
     executeSingleScriptFunction("codeentry", "openMenu", [
         function(correct:Bool):Void{ // corrent answer
-            var seenCodes:Bool = (Save.storyFlags.get("factory_pc_done").val_bool && true && true);
+            var seenCodes:Bool = (Save.storyFlags.get("factory_pc_done").val_bool && Save.storyFlags.get("factory_gotNoodles").val_bool && true);
 
             if(correct){
                 startDialogue(["factory/officehallway2/dialogue_doorcode_right" + (seenCodes ? "_seen" : "")], function():Void
@@ -184,7 +184,7 @@ function openBottomDoor():Void{
 
 function updateDoors():Void{
     var doorOneComplete:Bool = Save.storyFlags.get("factory_pc_done").val_bool;
-    var doorTwoComplete:Bool = false;
+    var doorTwoComplete:Bool = Save.storyFlags.get("factory_gotNoodles").val_bool;
 
     if(!doorOneComplete){ // lock door 2 and 3
         breakroomdoor.room = "";

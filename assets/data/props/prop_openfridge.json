@@ -1,0 +1,9 @@
+{
+    "name": "openfridge",
+    "graphic": "openfridge",
+    "hitboxX": 0,
+    "hitboxY": 0,
+    "hitboxWidth": 40,
+    "hitboxHeight": 52,
+    "yStackingOffset": -999
+}

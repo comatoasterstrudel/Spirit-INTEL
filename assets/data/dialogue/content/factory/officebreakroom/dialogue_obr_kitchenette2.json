@@ -1,0 +1,17 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "It's a normal kitchenette.",
+		"actor": "narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "It's pretty dusty though, I doubt this ends up being used for much..",
+		"actor": "narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "..Besides the coffee maker.",
+		"actor": "narrator"
+	}
+]

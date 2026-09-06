@@ -1,0 +1,56 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "...",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "...",
+		"actor": "volor",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "It actually isn't that bad.",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Really?",
+		"actor": "volor",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Yeah, it's just kinda stale.",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "You cannot be serious.",
+		"actor": "volor",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "They put a bunch of preservatives in these..",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "They'd probably still taste good after I was dead.",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "That's fascinating...",
+		"actor": "volor",
+		"portrait": "neutral"
+	}
+]

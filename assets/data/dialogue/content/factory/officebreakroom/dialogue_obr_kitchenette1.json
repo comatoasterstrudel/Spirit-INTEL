@@ -1,0 +1,89 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "It's a normal kitchenette.",
+		"actor": "narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "It's pretty dusty though, I doubt this ends up being used for much..",
+		"actor": "narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "..Besides the coffee maker.",
+		"actor": "narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "You should check out the cabinets.",
+		"actor": "volor",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Yeah I'll check...",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "...",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Seems to be nothing in here besides a box of ding dongs.",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Ding dongs?",
+		"actor": "volor",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Yeah, like the little chocolate cakes..",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "The box is unopened, when are these from?",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "...Expired... 4 years ago??",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "I'd only been working here for a year or two at that point.",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "I wonder if they taste any good...",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "I don't think you should eat those.",
+		"actor": "volor",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "I haven't eaten since lunch, I'm starvin-",
+		"actor": "robin",
+		"portrait": "neutral"
+	}
+]

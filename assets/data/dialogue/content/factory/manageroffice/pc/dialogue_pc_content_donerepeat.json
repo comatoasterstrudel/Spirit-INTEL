@@ -1,7 +1,7 @@
 [
 	{
 		"speed": 0.03,
-		"dialogue": "\"First two digits of the fire exit code: [[BLUE]]12[[ENDBLUE]]. next two are in the staff break room.\"",
+		"dialogue": "\"First two digits of the fire exit code: [[BLUE]]12[[ENDBLUE]]. next two are in the next room over.\"",
 		"actor": "cutscene_narrator"
 	}
 ]

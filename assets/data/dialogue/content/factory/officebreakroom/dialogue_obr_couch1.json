@@ -1,0 +1,74 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "It's an expensive looking couch.",
+		"actor": "narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "They haven't been keeping this leather in good condition...",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "It's starting to crack.",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "...Leather cracks?",
+		"actor": "volor",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Yeah, it's skin.",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "When skin gets dry it cracks.",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Oh, I guess I never put that together in my head.",
+		"actor": "volor",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Seems like something you should know if you have \"[[WAVE]]so much knowledge[[ENDWAVE]]\".",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Hey!",
+		"actor": "volor",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": " I do know quite a lot, but not silly things like how you take care of leather.",
+		"actor": "volor",
+		"portrait": "neutral",
+		"continueLine": true
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "...",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Seems like you know a lot of things about me, but you're stupid generally.",
+		"actor": "robin",
+		"portrait": "neutral"
+	}
+]
