@@ -64,14 +64,14 @@
 		"speed": 0.03,
 		"dialogue": "Oh my god, YES!",
 		"actor": "laurin",
-		"portrait": "work_neutral",
-		"continueLine": true
+		"portrait": "work_neutral"
 	},
 	{
 		"speed": 0.03,
-		"dialogue": " now come on!",
+		"dialogue": " Now come on!",
 		"actor": "laurin",
-		"portrait": "work_neutral"
+		"portrait": "work_neutral",
+		"continueLine": true
 	},
 	{
 		"speed": 0.03,
