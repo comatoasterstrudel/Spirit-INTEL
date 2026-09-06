@@ -38,5 +38,7 @@
 	<icon path="assets/images/icons/256.png" size='258'/>
 	<icon path="assets/images/icons/128.png" size='128'/>
 	<icon path="assets/images/icons/64.png" size='64'/>
+	<icon path="assets/images/icons/48.png" size='48'/>
 	<icon path="assets/images/icons/32.png" size='32'/>
+	<icon path="assets/images/icons/16.png" size='16'/>
 </project>

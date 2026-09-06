@@ -114,10 +114,10 @@ function openMenu(?newOnFinish:Bool->Void):Void{
 
     set_inCutscene(true);
 
-    bg.revive();
-    numbers.revive();
+    new FlxTimer().start(0.04, function(F):Void{
+        bg.revive();
+        numbers.revive();
 
-    new FlxTimer().start(0.1, function(F):Void{
         inputAllowed = true;
 
         menuManager.enable(true);
