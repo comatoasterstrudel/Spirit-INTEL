@@ -172,7 +172,7 @@ function end():Void{
 
 function closeMenu(changeCutscene:Bool):Void{
     if(changeCutscene){
-        set_inCutscene(true);
+        set_inCutscene(false);
     }
 
     bg.kill();
