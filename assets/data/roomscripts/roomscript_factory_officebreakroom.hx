@@ -11,6 +11,7 @@ var character_robin:Player;
 var sparkle:Prop;
 
 var openFridge:Prop;
+var openFridgeLight:LightSourceSprite;
 
 var noodles:Prop;
 
@@ -31,6 +32,7 @@ function create():Void{
     sparkle = getPropByTag("sparkle");
 
     openFridge = getPropByTag("openfridge");
+    openFridgeLight = getLightSourceByTag("openfridge");
 
     noodles = getPropByTag("noodles");
     noodles.kill();
@@ -41,6 +43,7 @@ function create():Void{
     if(Save.storyFlags.get("factory_gotNoodles").val_bool){
         sparkle.kill();
         openFridge.kill();
+        openFridgeLight.kill();
         noodleCutscene.disabled = true;
     } else {
         fridgedone.disabled = true;
@@ -220,6 +223,7 @@ function doNoodleAftermathCutscene():Void{
         OverworldState.eventManager.startTransaction("slam");
 
         openFridge.kill();
+        openFridgeLight.kill();
         CtSound.play(Constants.sfxPath + "fridgeclose.ogg");
         character_robin.facing = LEFT;
 
@@ -279,6 +283,7 @@ function doNoodleAftermathCutscene():Void{
 
 function prepNoodleAftermathCutscene():Void{
     openFridge.revive();
+    openFridgeLight.revive();
     character_robin.positionCharacterByGrid(10, 13);
 
     fade = new CtSprite().createColorBlock(FlxG.width, FlxG.height, 0xFF000000);
