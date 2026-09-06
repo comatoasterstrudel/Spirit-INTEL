@@ -38,7 +38,7 @@ function doFireDoorLockedCutscene():Void{
     set_lockCamera(true);
     set_unbindCamera(true);
 
-    character_player.positionCharacterByGrid(7.5, 9);
+    character_player.positionCharacterByGrid(7.5, 10);
     character_player.kill();
     character_player.lockMovement = true;
 
@@ -67,7 +67,7 @@ function doFireDoorLockedCutscene():Void{
 
         character_player.moveToGridSpace(-1, 12.5, function():Void{
             character_player.moveToGridSpace(18, -1, function():Void{
-                character_player.moveToGridSpace(-1, 18, function():Void{
+                character_player.moveToGridSpace(-1, 16, function():Void{
                     new FlxTimer().start(.5, function(f):Void{
                         OverworldState.eventManager.finishTransaction("walkdown");
                     });
@@ -125,7 +125,7 @@ function doFireDoorLockedCutscene():Void{
         character_player.animation.play("walk_down");
         character_player.movementSpeed = .3;
 
-        character_player.moveToGridSpace(-1, 16, function():Void{
+        character_player.moveToGridSpace(-1, 14, function():Void{
             character_player.animation.play("idle_down");
             OverworldState.eventManager.finishTransaction("walk upwards");
         });

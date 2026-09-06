@@ -51,6 +51,8 @@ function create():Void{
     } else if(!Save.storyFlags.get("factory_seenOfficeBreakroomIntro").val_bool){
         doIntro();
     }
+
+    setCameraScroll();
 } 
 
 function doIntro():Void{
@@ -208,6 +210,8 @@ function backFromBattle(name:String):Void{
 function doNoodleAftermathCutscene():Void{
     set_inCutscene(true);
 
+    setCameraScroll();
+
     // slam door and turn robin to the left
 	OverworldState.eventManager.addEvent(function()
 	{
@@ -258,4 +262,9 @@ function snow():Void{
     
     executeSingleScriptFunction("snow", "snow_set_frequency", [1.1]);    
     executeSingleScriptFunction("snow", "snow_setBoundariesFromGrid", [8, 20, 9, 11]);    
+}
+
+function setCameraScroll():Void{
+    set_lockCamera(true);
+    camGame.scroll.y = 355;
 }

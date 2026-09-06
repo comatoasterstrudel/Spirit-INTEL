@@ -111,7 +111,13 @@
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "I only fight spirits of mortals when they don't bow down to me in reverence and fear.",
+		"dialogue": "I only fight spirits of mortals..",
+		"actor": "volor",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "..when they don't bow down to me in reverence and fear.",
 		"actor": "volor",
 		"portrait": "neutral"
 	},

@@ -1689,8 +1689,8 @@ class OverworldState extends FlxState
 	{
 		FlxG.watch.addQuick("inCutscene", inCutscene);
 		FlxG.watch.addQuick("inCutsceneBeforeDialogue", inCutsceneBeforeDialogue);
-		FlxG.watch.addQuick("camGame.scroll.x", camGame.scroll.x);
-		FlxG.watch.addQuick("camGame.scroll.y", camGame.scroll.y);
+		FlxG.watch.addQuick("camGame.scroll.x", (unbindCamera ? camGame.scroll.x : FlxMath.bound(camGame.scroll.x, camGame.minScrollX, camGame.maxScrollX)));
+		FlxG.watch.addQuick("camGame.scroll.y", (unbindCamera ? camGame.scroll.y : FlxMath.bound(camGame.scroll.y, camGame.minScrollY, camGame.maxScrollY)));
 		#if enableQuickSave
 		if (FlxG.keys.justPressed.SEVEN)
 		{
