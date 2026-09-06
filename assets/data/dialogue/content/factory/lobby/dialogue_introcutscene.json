@@ -14,7 +14,7 @@
     },
 	{
         "speed": 0.03,
-		"dialogue": " Good Evening!",
+		"dialogue": " Good Afternoon!",
 		"actor": "laurin",
 		"portrait": "neutral",
 		"continueLine": true
@@ -27,13 +27,13 @@
 	},
 	{
         "speed": 0.03,
-		"dialogue": "Laurin. Jess.",
+		"dialogue": "Hey guys.",
 		"actor": "robin",
 		"portrait": "neutral"
 	},
 	{
         "speed": 0.03,
-		"dialogue": "Ready to work a riveting night shift full of fun?",
+		"dialogue": "Ready to work a riveting shift full of fun?",
 		"actor": "laurin",
 		"portrait": "neutral"
     },
@@ -51,7 +51,7 @@
 	},
 	{
         "speed": 0.03,
-		"dialogue": "I've had to be 'er all day since the other secretary quit.",
+		"dialogue": "I have to be 'er all day since the other secretary quit.",
 		"actor": "jess",
 		"portrait": "neutral"
 	},
@@ -107,7 +107,7 @@
 	},
 	{
         "speed": 0.03,
-		"dialogue": "At least they got heating 'er.",
+		"dialogue": "At least they got heating here.",
 		"actor": "jess",
 		"portrait": "neutral"
 	},
@@ -143,19 +143,19 @@
 	},
 	{
         "speed": 0.03,
-		"dialogue": "Please, you think they actually give a shit?",
+		"dialogue": "You think they actually give a shit?",
 		"actor": "jess",
 		"portrait": "neutral"
 	},
 	{
         "speed": 0.03,
-		"dialogue": "I don' think they care if we pass away as long as they get rent money.",
+		"dialogue": "I don' think they care if we kick the bucket as long as they get rent money.",
 		"actor": "jess",
 		"portrait": "neutral"
 	},
 	{
         "speed": 0.03,
-		"dialogue": "They can't be asking for rent money if they lose the building after you sue them.",
+		"dialogue": "They can't be asking for rent money if they lose their rental license after you sue them.",
 		"actor": "laurin",
 		"portrait": "neutral"
 	},
@@ -363,25 +363,25 @@
 	},
 	{
         "speed": 0.03,
-		"dialogue": "After rent, utilities, basic necessities... I have barely anything left afterwards.",
+		"dialogue": "I live in a \"high-value unit\" apparently so they've jacked up the rent and utilities.",
 		"actor": "robin",
 		"portrait": "neutral"
 	},
 	{
         "speed": 0.03,
-		"dialogue": "Plus some health issues lately have been eating up anything I save.",
+		"dialogue": "I'm living on air and discounted damaged snacks the girl at the bodega gives me.",
 		"actor": "robin",
 		"portrait": "neutral"
 	},
 	{
         "speed": 0.03,
-		"dialogue": "I just wanna have the money to not be scraping by...",
+		"dialogue": "I want to not be broke all the time,",
 		"actor": "robin",
 		"portrait": "neutral"
 	},
 	{
         "speed": 0.03,
-		"dialogue": "Especially since I'm one of the top performers at the company.",
+		"dialogue": "Especially since I've consistenly outperformed everyone at this facility.",
 		"actor": "robin",
 		"portrait": "neutral"
 	},
@@ -393,14 +393,74 @@
 	},
 	{
         "speed": 0.03,
-		"dialogue": "Hah, yeah, I'm sure he'll be receptive to... whatever it is.",
+		"dialogue": "YOU think he'll be receptive to that?",
 		"actor": "laurin",
 		"portrait": "neutral"
 	},
 	{
         "speed": 0.03,
-		"dialogue": "Um... I wish you luck on that Robin!",
+		"dialogue": "Probably not, but I can dream, yeah?",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+        "speed": 0.03,
+		"dialogue": "Well I wish you luck on that Robin!",
 		"actor": "jess",
+		"portrait": "neutral"
+	},
+	{
+        "speed": 0.03,
+		"dialogue": "Hey-Okay, yes I think it's good you're trying to get a raise,",
+		"actor": "laurin",
+		"portrait": "neutral"
+	},
+	{
+        "speed": 0.03,
+		"dialogue": "I didn't mean to come off like a douche, it's just, have you met the guy?",
+		"actor": "laurin",
+		"portrait": "neutral"
+	},
+	{
+        "speed": 0.03,
+		"dialogue": "He's so passive aggresive it feels like he wants to murder you everytime he speaks.",
+		"actor": "laurin",
+		"portrait": "neutral"
+	},
+	{
+        "speed": 0.03,
+		"dialogue": "Especially with you, he's a lot more mean, for some reason.",
+		"actor": "laurin",
+		"portrait": "neutral"
+	},
+	{
+        "speed": 0.03,
+		"dialogue": "I just don't want you to get upset when he shuts you down.",
+		"actor": "laurin",
+		"portrait": "neutral"
+	},
+	{
+        "speed": 0.03,
+		"dialogue": "Plus, I think he's gonna be preoccupied tonight.",
+		"actor": "laurin",
+		"portrait": "neutral"
+	},
+	{
+        "speed": 0.03,
+		"dialogue": "It's fine. I'm used to being disapointed.",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+        "speed": 0.03,
+		"dialogue": "...",
+		"actor": "laurin",
+		"portrait": "neutral"
+	},
+	{
+        "speed": 0.03,
+		"dialogue": "hah...If you say so...",
+		"actor": "laurin",
 		"portrait": "neutral"
 	},
 	{
@@ -411,7 +471,7 @@
 	},
 	{
         "speed": 0.03,
-		"dialogue": "Ah, yeah.",
+		"dialogue": "Oh damn, yeah.",
 		"actor": "robin",
 		"portrait": "neutral"
 	}
