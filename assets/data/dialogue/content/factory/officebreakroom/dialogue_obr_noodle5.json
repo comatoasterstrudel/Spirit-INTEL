@@ -1,0 +1,82 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "What a boring meal...",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "She wasn't much of a cook, was she?",
+		"actor": "volor",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Hah, yeah...",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "...",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Looking deeper into the fridge, there's an ancient bottle of mustard that's almost full.",
+		"actor": "narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Its contents are separated, a thick layer of liquid at the top.",
+		"actor": "narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Upon turning the bottle around, there's...",
+		"actor": "narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "\"[[BLUE]]74[[ENDBLUE]]\"",
+		"actor": "narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Well there's two more!",
+		"actor": "volor",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Means we gotta find the last part in the security office.",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "This is so convoluted, for no reason.",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "If there was ever an actual emergency, we'd all die immediately.",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "I think this constitutes an actual emergency.",
+		"actor": "volor",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Well, lets find that last part then.",
+		"actor": "robin",
+		"portrait": "neutral"
+	}
+]

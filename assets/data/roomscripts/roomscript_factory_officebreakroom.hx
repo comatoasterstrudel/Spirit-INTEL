@@ -17,6 +17,8 @@ var noodles:Prop;
 var fridgedone:Interactable;
 var noodleCutscene:Interactable;
 
+var fade:CtSprite;
+
 function create():Void{
     snowGroup = executeSingleScriptFunction("snow", "snow_get_snowGroup", []);    
     spr_behindTiles = get_spr_behindTiles();
@@ -217,15 +219,12 @@ function doNoodleAftermathCutscene():Void{
 	{
         OverworldState.eventManager.startTransaction("slam");
 
-        new FlxTimer().start(.3, function(f):Void{
-            openFridge.kill();
-            CtSound.play(Constants.sfxPath + "fridgeclose.ogg");
+        openFridge.kill();
+        CtSound.play(Constants.sfxPath + "fridgeclose.ogg");
+        character_robin.facing = LEFT;
 
-            character_robin.facing = LEFT;
-
-            new FlxTimer().start(2, function(f):Void{
-                OverworldState.eventManager.finishTransaction("slam");
-            });
+        new FlxTimer().start(2, function(f):Void{
+            OverworldState.eventManager.finishTransaction("slam");
         });
     });
 
@@ -237,6 +236,35 @@ function doNoodleAftermathCutscene():Void{
         startDialogue(["factory/officebreakroom/dialogue_obr_noodle3"], function():Void{
             OverworldState.eventManager.finishTransaction("talk");
         });
+    });
+
+    // "theres a lot of stuff youd expect"
+	OverworldState.eventManager.addEvent(function()
+	{
+        OverworldState.eventManager.startTransaction("talk");
+
+        FlxTween.shake(character_robin, 0.05, .2, 0x01);
+        CtSound.play(Constants.sfxPath + "managerslide.ogg").pitch = 1.5;
+
+        fade.revive();
+        FlxTween.tween(fade, {alpha: 1}, 2, {onComplete: function(f):Void{
+            startDialogue(["factory/officebreakroom/dialogue_obr_noodle4"], function():Void{
+                OverworldState.eventManager.finishTransaction("talk");
+            });
+        }});
+    });
+
+    // "what a boring meal"
+	OverworldState.eventManager.addEvent(function()
+	{
+        OverworldState.eventManager.startTransaction("talk");
+
+        FlxTween.tween(fade, {alpha: 0}, 2, {onComplete: function(f):Void{
+            fade.kill();
+            startDialogue(["factory/officebreakroom/dialogue_obr_noodle5"], function():Void{
+                OverworldState.eventManager.finishTransaction("talk");
+            });
+        }});
     });
 
     // done
@@ -252,6 +280,12 @@ function doNoodleAftermathCutscene():Void{
 function prepNoodleAftermathCutscene():Void{
     openFridge.revive();
     character_robin.positionCharacterByGrid(10, 13);
+
+    fade = new CtSprite().createColorBlock(FlxG.width, FlxG.height, 0xFF000000);
+    fade.alpha = 0;
+    fade.camera = camOverlay;
+    add(fade);
+    fade.kill();
 }
 
 function snow():Void{

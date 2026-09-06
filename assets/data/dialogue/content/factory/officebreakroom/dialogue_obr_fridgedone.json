@@ -1,0 +1,22 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "Looking deeper into the fridge, there's an ancient bottle of mustard that's almost full.",
+		"actor": "narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Its contents are separated, a thick layer of liquid at the top.",
+		"actor": "narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Upon turning the bottle around, there's...",
+		"actor": "narrator"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "\"[[BLUE]]74[[ENDBLUE]]\"",
+		"actor": "narrator"
+	}
+]

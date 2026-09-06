@@ -1,0 +1,156 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "God...",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "We keep getting jumpscared, huh?",
+		"actor": "volor",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Yeah.",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": " I'm getting used to it now though, I think.",
+		"actor": "robin",
+		"portrait": "neutral",
+		"continueLine": true
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "I don't understand why they're all so violent though.",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "I guess the vengeful ghost trope is a thing in real life too.",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Yeah, I'd say 55% of spirits are calm.",
+		"actor": "volor",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "But there's a lot of them who wasted their lives away..",
+		"actor": "volor",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "..or were evil when they were alive..",
+		"actor": "volor",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "..whose regrets and behavior amplify after they pass.",
+		"actor": "volor",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Makes sense...",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": " I doubt most people I know will die happy.",
+		"actor": "robin",
+		"portrait": "neutral",
+		"continueLine": true
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "So, what are you?",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": " Are you also a spirit?",
+		"actor": "robin",
+		"portrait": "neutral",
+		"continueLine": true
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "No, I wouldn't say that.",
+		"actor": "volor",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "I've never lived, per se, so I cannot possess a soul..",
+		"actor": "volor",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "..which is what a spirit is born from.",
+		"actor": "volor",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "I'm something different.",
+		"actor": "volor",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Like what?",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "A god, maybe.",
+		"actor": "volor",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "...Sounds like YOU have a big ego.",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Heh!",
+		"actor": "volor",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": " That might also be true.",
+		"actor": "volor",
+		"portrait": "neutral",
+		"continueLine": true
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "It absolutely is true.",
+		"actor": "robin",
+		"portrait": "neutral"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": "Lets dig through this fridge now, yeah?",
+		"actor": "robin",
+		"portrait": "neutral"
+	}
+]
