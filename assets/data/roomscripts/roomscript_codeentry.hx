@@ -181,6 +181,8 @@ function closeMenu(changeCutscene:Bool):Void{
     arrowUp.kill();
 
     inputAllowed = false;
+
+    menuManager.disable();
 }
 
 function initMenu():Void{
