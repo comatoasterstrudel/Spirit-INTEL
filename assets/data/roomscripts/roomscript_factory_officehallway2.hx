@@ -162,7 +162,22 @@ function doFireDoorLockedCutscene():Void{
 }
 
 function openBottomDoor():Void{
-    //
+    executeSingleScriptFunction("codeentry", "setCode", [[1, 2, 0, 0, 0, 0]]);
+    executeSingleScriptFunction("codeentry", "openMenu", [
+        function(correct:Bool):Void{ // corrent answer
+            if(correct){
+                startDialogue(["factory/officehallway2/dialogue_doorcode_right"], function():Void
+                {
+                    moveRoom("factory_officetransition", 2);
+                });
+            } else {
+                startDialogue(["factory/officehallway2/dialogue_doorcode_wrong"], function():Void
+                {
+                    set_inCutscene(false);
+                });
+            }
+        }
+    ]);
 }
 
 function updateDoors():Void{
