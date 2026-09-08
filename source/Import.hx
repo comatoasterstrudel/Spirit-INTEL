@@ -132,3 +132,9 @@ import ctDialogueBox.textbox.effects.IEffect;
 import ctDialogueBox.textbox.Text;
 import battle.victoryscreen.VictoryScreenStages;
 import overworld.playermenu.pages.unitstatus.*;
+
+#if debug
+#if ctDialogueEditor
+import ctDialogueBox.editor.*;
+#end
+#end

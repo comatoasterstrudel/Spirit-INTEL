@@ -1,484 +1,974 @@
 [
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "Oh!",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
-    },
+		"autoSkip": false
+	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": " Robin!",
-		"actor": "laurin",
+		"choicerOptions": [],
 		"portrait": "neutral",
-		"continueLine": true
-    },
+		"continueLine": true,
+		"voiceLine": "",
+		"actor": "laurin",
+		"autoSkip": false
+	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": " Good Afternoon!",
-		"actor": "laurin",
+		"choicerOptions": [],
 		"portrait": "neutral",
-		"continueLine": true
+		"continueLine": true,
+		"voiceLine": "",
+		"actor": "laurin",
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "Hey.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "jess",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "Hey guys.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "Ready to work a riveting shift full of fun?",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
-    },
+		"autoSkip": false
+	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "I'd rather shoot myself I think.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
-    },
+		"autoSkip": false
+	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "YOU'D shoot yourself?",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "jess",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "I have to be 'er all day since the other secretary quit.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "jess",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "They still ain't found a replacement.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "jess",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "What?",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": " Is that even legal?",
-		"actor": "robin",
+		"choicerOptions": [],
 		"portrait": "neutral",
-		"continueLine": true
+		"continueLine": true,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "I dunno.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "jess",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": " I ain't getting paid either.",
-		"actor": "jess",
+		"choicerOptions": [],
 		"portrait": "neutral",
-		"continueLine": true
+		"continueLine": true,
+		"voiceLine": "",
+		"actor": "jess",
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "You aren't?",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "I think that's very illegal.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "Eh, better than my apartment.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "jess",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "At least they got heating here.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "jess",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "That's also very illegal.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "Landlords are required to give you heating, that's a foundational tenants right.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "It's fine, I've got a space heater.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "jess",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "Not everyone has a space heater, Jess.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "You should complain about it if you haven't already.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "You think they actually give a shit?",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "jess",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "I don' think they care if we kick the bucket as long as they get rent money.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "jess",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "They can't be asking for rent money..",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "..if they lose their rental license after you sue them.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "God, actin' like my mom or somethin'.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "jess",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "I'll call em' later.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "jess",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "That's the spirit!",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "We gotta advocate for ourselves and not let greedy bastards pull us around.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "Right, Robin?",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "I don't really care.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "...",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "Well I think you should start-",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"	
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "Haa whatever, how was your day, Robin?",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "It was fine.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "Slept until I had to leave.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "I got a call from my brother wishing me a happy birthday.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": " That was nice I guess.",
-		"actor": "robin",
+		"choicerOptions": [],
 		"portrait": "neutral",
-		"continueLine": true
+		"continueLine": true,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "Wait, it's your birthday?",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": " Happy Birthday!",
-		"actor": "laurin",
+		"choicerOptions": [],
 		"portrait": "neutral",
-		"continueLine": true
+		"continueLine": true,
+		"voiceLine": "",
+		"actor": "laurin",
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "You feelin' any older?",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "jess",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "My birthday's tomorrow actually, he just misremembered it.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "Doing anything for it?",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "No.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": " I pretty much forgot about it until he called me.",
-		"actor": "robin",
+		"choicerOptions": [],
 		"portrait": "neutral",
-		"continueLine": true
+		"continueLine": true,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "If they do give me a raise though, that would be a pretty good gift.",
-		"actor": "robin",
-		"portrait": "neutral"
-	},
-	{
-        "speed": 0.03,
-		"dialogue": "Yeah, all that \"Big Change\" stuff...",
-		"actor": "laurin",
-		"portrait": "neutral"
-	},
-	{
-        "speed": 0.03,
-		"dialogue": "You think it's gonna be raises?",
-		"actor": "laurin",
-		"portrait": "neutral"
-	},
-	{
-        "speed": 0.03,
-		"dialogue": "Not really, but I hope it is.",
-		"actor": "robin",
-		"portrait": "neutral"
-	},
-	{
-        "speed": 0.03,
-		"dialogue": "Mhm.",
-		"actor": "laurin",
-		"portrait": "neutral"
-	},
-	{
-        "speed": 0.03,
-		"dialogue": "The manager's been extra jovial today, strutin' around n' stuff.",
-		"actor": "jess",
-		"portrait": "neutral"
-	},
-	{
-        "speed": 0.03,
-		"dialogue": "I think whatever that \"Big change\" is, it's happening real soon.",
-		"actor": "jess",
-		"portrait": "neutral"
-	},
-	{
-        "speed": 0.03,
-		"dialogue": "What'll you do with the extra dough?",
-		"actor": "jess",
-		"portrait": "neutral"
-	},
-	{
-        "speed": 0.03,
-		"dialogue": " If it's a raise.",
-		"actor": "jess",
+		"choicerOptions": [],
 		"portrait": "neutral",
-		"continueLine": true
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
+		"dialogue": "Yeah, all that \"Big Change\" stuff...",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "laurin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
+		"dialogue": "You think it's gonna be raises?",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "laurin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
+		"dialogue": "Not really, but I hope it is.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
+		"dialogue": "Mhm.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "laurin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
+		"dialogue": "The manager's been extra jovial today, strutin' around n' stuff.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "jess",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
+		"dialogue": "I think whatever that \"Big change\" is, it's happening real soon.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "jess",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
+		"dialogue": "What'll you do with the extra dough?",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "jess",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
+		"dialogue": " If it's a raise.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": true,
+		"voiceLine": "",
+		"actor": "jess",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "My fridge has been leaking for awhile and it's ruining the carpets.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "I'd like to either get it fixed or just get a new one.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "You could still get it without the raise, it'll just take you a lil' longer, yeah?",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "jess",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "...I mean I guess, but that really isn't the point.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
-		"dialogue": "I live in a \"high-value unit\" apparently so they've jacked up the rent and utilities.",
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
+		"dialogue": "I live in a \"high-value unit\" apparently..",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
-		"dialogue": "I'm living on air and discounted damaged snacks the girl at the bodega gives me.",
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
+		"dialogue": "..so they've jacked up the rent and utilities.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
+		"dialogue": "I'm living on air and old  discounted snacks the girl at the bodega gives me.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "I want to not be broke all the time,",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "Especially since I've consistenly outperformed everyone at this facility.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "If we don't get pay raises, I'll try to make a case to our manager, but we'll see.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "YOU think he'll be receptive to that?",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "Probably not, but I can dream, yeah?",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "Well I wish you luck on that Robin!",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "jess",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "Hey-Okay, yes I think it's good you're trying to get a raise,",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "I didn't mean to come off like a douche, it's just, have you met the guy?",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
-		"dialogue": "He's so passive aggresive it feels like he wants to murder you everytime he speaks.",
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
+		"dialogue": "He's so passive aggressive..",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
+		"dialogue": "..it feels like he wants to murder you everytime he speaks.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "laurin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "Especially with you, he's a lot more mean, for some reason.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "I just don't want you to get upset when he shuts you down.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "Plus, I think he's gonna be preoccupied tonight.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "It's fine. I'm used to being disappointed.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "...",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "hah...If you say so...",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "Anyway, we're gonna be late, I'm heading in.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 0,
+		"events": [],
 		"dialogue": "Oh damn, yeah.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	}
 ]

@@ -25,6 +25,16 @@
       "version": "3.3.0"
     },
     {
+      "name": "flixel-text-input",
+      "type": "haxelib",
+      "version": null
+    },
+    {
+      "name": "flixel-ui",
+      "type": "haxelib",
+      "version": null
+    },
+    {
       "name": "hscript",
       "type": "haxelib",
       "version": null

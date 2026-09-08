@@ -48,6 +48,11 @@ class InitState extends FlxState{
 		FlxG.switchState(LevelSelectorState.new);
 		return;
 		#end
+		#if ctDialogueEditor
+		trace("what");
+		FlxG.switchState(CtDialogueEditor.new);
+		return;
+		#end
 		#end
         
 		FlxG.switchState(MainMenuState.new);
