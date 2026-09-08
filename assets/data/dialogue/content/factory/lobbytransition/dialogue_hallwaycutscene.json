@@ -1,128 +1,290 @@
 [
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Good Morning!",
+		"choicerOptions": [],
+		"portrait": "talk",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "manager",
-		"portrait": "talk"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Morning man.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Ready to get working?",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "manager",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "mhm",
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Mhm.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Oh come on! Let's get more energy in that voice!",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "manager",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Keep this between you and me, but...",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "manager",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "There's gonna be a little celebration for a member of our company tonight!",
+		"choicerOptions": [],
+		"portrait": "talk",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "manager",
-		"portrait": "talk"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Hah, sounds fun.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "I'll make sure to practice my dance moves close to the very breakable machinery.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Haha, don't!",
+		"choicerOptions": [],
+		"portrait": "talk",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "manager",
-		"portrait": "talk"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Oh, also...",
+		"choicerOptions": [],
+		"portrait": "talk",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "manager",
-		"portrait": "talk"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Did Robin come in with you by any chance?",
+		"choicerOptions": [],
+		"portrait": "talk",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "manager",
-		"portrait": "talk"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "Well, they didn't come in with me perse-",
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Well, they didn't come in with me per se-",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Are they here?",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "manager",
-		"portrait": "talk"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Um, yeah, they were right behind me-",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Great!",
+		"choicerOptions": [],
+		"portrait": "talk",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "manager",
-		"portrait": "talk"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "They're always on time though, it's me you outta be worrying about.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "HAHAHA! TRUE! Your work ethic is appalling!",
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "HAHAHA!",
+		"choicerOptions": [],
+		"portrait": "talk",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "manager",
-		"portrait": "talk"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": " TRUE!",
+		"choicerOptions": [],
+		"portrait": "talk",
+		"continueLine": true,
+		"voiceLine": "",
+		"actor": "manager",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": " Your work ethic is appalling!",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": true,
+		"voiceLine": "",
+		"actor": "manager",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "I just wanted to make sure they didn't miss a special day like this!",
+		"choicerOptions": [],
+		"portrait": "talk",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "manager",
-		"portrait": "talk"
-	},
-	{
-        "speed": 0.03,
-		"dialogue": "Well, lets cut the idle chatting, we gotta make sure you stamp your card on time!",
-		"actor": "manager",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Well, lets cut the idle chatting.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "manager",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "We gotta make sure you stamp your card on time!",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "manager",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Uh-huh.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "neutral"
+		"autoSkip": false
 	}
 ]

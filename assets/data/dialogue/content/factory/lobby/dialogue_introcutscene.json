@@ -1,7 +1,7 @@
 [
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "Oh!",
 		"choicerOptions": [],
@@ -13,7 +13,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": " Robin!",
 		"choicerOptions": [],
@@ -25,7 +25,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": " Good Afternoon!",
 		"choicerOptions": [],
@@ -37,7 +37,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "Hey.",
 		"choicerOptions": [],
@@ -49,7 +49,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "Hey guys.",
 		"choicerOptions": [],
@@ -61,7 +61,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "Ready to work a riveting shift full of fun?",
 		"choicerOptions": [],
@@ -73,7 +73,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "I'd rather shoot myself I think.",
 		"choicerOptions": [],
@@ -85,7 +85,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "YOU'D shoot yourself?",
 		"choicerOptions": [],
@@ -97,7 +97,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "I have to be 'er all day since the other secretary quit.",
 		"choicerOptions": [],
@@ -109,7 +109,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "They still ain't found a replacement.",
 		"choicerOptions": [],
@@ -121,7 +121,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "What?",
 		"choicerOptions": [],
@@ -133,7 +133,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": " Is that even legal?",
 		"choicerOptions": [],
@@ -145,7 +145,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "I dunno.",
 		"choicerOptions": [],
@@ -157,7 +157,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": " I ain't getting paid either.",
 		"choicerOptions": [],
@@ -169,7 +169,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "You aren't?",
 		"choicerOptions": [],
@@ -181,7 +181,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "I think that's very illegal.",
 		"choicerOptions": [],
@@ -193,7 +193,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "Eh, better than my apartment.",
 		"choicerOptions": [],
@@ -205,7 +205,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "At least they got heating here.",
 		"choicerOptions": [],
@@ -217,7 +217,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "That's also very illegal.",
 		"choicerOptions": [],
@@ -229,7 +229,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "Landlords are required to give you heating, that's a foundational tenants right.",
 		"choicerOptions": [],
@@ -241,7 +241,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "It's fine, I've got a space heater.",
 		"choicerOptions": [],
@@ -253,7 +253,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "Not everyone has a space heater, Jess.",
 		"choicerOptions": [],
@@ -265,7 +265,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "You should complain about it if you haven't already.",
 		"choicerOptions": [],
@@ -277,7 +277,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "You think they actually give a shit?",
 		"choicerOptions": [],
@@ -289,7 +289,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "I don' think they care if we kick the bucket as long as they get rent money.",
 		"choicerOptions": [],
@@ -301,7 +301,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "They can't be asking for rent money..",
 		"choicerOptions": [],
@@ -313,7 +313,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "..if they lose their rental license after you sue them.",
 		"choicerOptions": [],
@@ -325,7 +325,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "God, actin' like my mom or somethin'.",
 		"choicerOptions": [],
@@ -337,7 +337,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "I'll call em' later.",
 		"choicerOptions": [],
@@ -349,7 +349,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "That's the spirit!",
 		"choicerOptions": [],
@@ -361,7 +361,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "We gotta advocate for ourselves and not let greedy bastards pull us around.",
 		"choicerOptions": [],
@@ -373,7 +373,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "Right, Robin?",
 		"choicerOptions": [],
@@ -385,7 +385,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "I don't really care.",
 		"choicerOptions": [],
@@ -397,7 +397,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "...",
 		"choicerOptions": [],
@@ -409,7 +409,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "Well I think you should start-",
 		"choicerOptions": [],
@@ -421,7 +421,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "Haa whatever, how was your day, Robin?",
 		"choicerOptions": [],
@@ -433,7 +433,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "It was fine.",
 		"choicerOptions": [],
@@ -445,7 +445,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "Slept until I had to leave.",
 		"choicerOptions": [],
@@ -457,7 +457,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "I got a call from my brother wishing me a happy birthday.",
 		"choicerOptions": [],
@@ -469,7 +469,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": " That was nice I guess.",
 		"choicerOptions": [],
@@ -481,7 +481,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "Wait, it's your birthday?",
 		"choicerOptions": [],
@@ -493,7 +493,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": " Happy Birthday!",
 		"choicerOptions": [],
@@ -505,7 +505,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "You feelin' any older?",
 		"choicerOptions": [],
@@ -517,7 +517,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "My birthday's tomorrow actually, he just misremembered it.",
 		"choicerOptions": [],
@@ -529,7 +529,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "Doing anything for it?",
 		"choicerOptions": [],
@@ -541,7 +541,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "No.",
 		"choicerOptions": [],
@@ -553,7 +553,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": " I pretty much forgot about it until he called me.",
 		"choicerOptions": [],
@@ -565,7 +565,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "If they do give me a raise though, that would be a pretty good gift.",
 		"choicerOptions": [],
@@ -577,7 +577,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "Yeah, all that \"Big Change\" stuff...",
 		"choicerOptions": [],
@@ -589,7 +589,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "You think it's gonna be raises?",
 		"choicerOptions": [],
@@ -601,7 +601,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "Not really, but I hope it is.",
 		"choicerOptions": [],
@@ -613,7 +613,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "Mhm.",
 		"choicerOptions": [],
@@ -625,7 +625,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "The manager's been extra jovial today, strutin' around n' stuff.",
 		"choicerOptions": [],
@@ -637,7 +637,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "I think whatever that \"Big change\" is, it's happening real soon.",
 		"choicerOptions": [],
@@ -649,7 +649,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "What'll you do with the extra dough?",
 		"choicerOptions": [],
@@ -661,7 +661,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": " If it's a raise.",
 		"choicerOptions": [],
@@ -673,7 +673,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "My fridge has been leaking for awhile and it's ruining the carpets.",
 		"choicerOptions": [],
@@ -685,7 +685,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "I'd like to either get it fixed or just get a new one.",
 		"choicerOptions": [],
@@ -697,7 +697,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "You could still get it without the raise, it'll just take you a lil' longer, yeah?",
 		"choicerOptions": [],
@@ -709,7 +709,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "...I mean I guess, but that really isn't the point.",
 		"choicerOptions": [],
@@ -721,7 +721,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "I live in a \"high-value unit\" apparently..",
 		"choicerOptions": [],
@@ -733,7 +733,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "..so they've jacked up the rent and utilities.",
 		"choicerOptions": [],
@@ -745,7 +745,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "I'm living on air and old  discounted snacks the girl at the bodega gives me.",
 		"choicerOptions": [],
@@ -757,7 +757,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "I want to not be broke all the time,",
 		"choicerOptions": [],
@@ -769,7 +769,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "Especially since I've consistenly outperformed everyone at this facility.",
 		"choicerOptions": [],
@@ -781,7 +781,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "If we don't get pay raises, I'll try to make a case to our manager, but we'll see.",
 		"choicerOptions": [],
@@ -793,7 +793,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "YOU think he'll be receptive to that?",
 		"choicerOptions": [],
@@ -805,7 +805,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "Probably not, but I can dream, yeah?",
 		"choicerOptions": [],
@@ -817,7 +817,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "Well I wish you luck on that Robin!",
 		"choicerOptions": [],
@@ -829,7 +829,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "Hey-Okay, yes I think it's good you're trying to get a raise,",
 		"choicerOptions": [],
@@ -841,7 +841,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "I didn't mean to come off like a douche, it's just, have you met the guy?",
 		"choicerOptions": [],
@@ -853,7 +853,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "He's so passive aggressive..",
 		"choicerOptions": [],
@@ -865,7 +865,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "..it feels like he wants to murder you everytime he speaks.",
 		"choicerOptions": [],
@@ -877,7 +877,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "Especially with you, he's a lot more mean, for some reason.",
 		"choicerOptions": [],
@@ -889,7 +889,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "I just don't want you to get upset when he shuts you down.",
 		"choicerOptions": [],
@@ -901,7 +901,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "Plus, I think he's gonna be preoccupied tonight.",
 		"choicerOptions": [],
@@ -913,7 +913,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "It's fine. I'm used to being disappointed.",
 		"choicerOptions": [],
@@ -925,7 +925,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "...",
 		"choicerOptions": [],
@@ -937,7 +937,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "hah...If you say so...",
 		"choicerOptions": [],
@@ -949,7 +949,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "Anyway, we're gonna be late, I'm heading in.",
 		"choicerOptions": [],
@@ -961,7 +961,7 @@
 	},
 	{
 		"speed": 0.03,
-		"diaPitch": 0,
+		"diaPitch": 1,
 		"events": [],
 		"dialogue": "Oh damn, yeah.",
 		"choicerOptions": [],

@@ -1,81 +1,162 @@
 [
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "(ah... okay.)",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "(...I shouldn't have gotten my hopes up.)",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [
+			"coworkerjump"
+		],
 		"dialogue": "So does this have to do with the big change you've talked about? Or...",
-		"events": ["coworkerjump"],
-		"actor": "npc"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "npc",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "No.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "manager",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Well, maybe a little! You might say.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "manager",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "you all will be properly filled in on that tomorrow!",
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "You will all be properly filled in on that tomorrow!",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "manager",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "And I'm sure you'll all be jumping for joy!",
+		"choicerOptions": [],
+		"portrait": "talk",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "manager",
-		"portrait": "talk"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "...",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "manager",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Enjoy everyone!",
+		"choicerOptions": [],
+		"portrait": "talk",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "manager",
-		"portrait": "talk"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "We're closing production early tonight for maintenance..",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "manager",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "So make sure you're out of here in the next hour or so.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "manager",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "I'll be in my office.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "manager",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [
+			"tunedownmusic"
+		],
 		"dialogue": "...ignoramus barbarians.",
-		"actor": "manager",
+		"choicerOptions": [],
 		"portrait": "douche",
-		"events": ["tunedownmusic"]
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "manager",
+		"autoSkip": false
 	}
 ]

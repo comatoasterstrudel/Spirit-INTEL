@@ -49,7 +49,6 @@ class InitState extends FlxState{
 		return;
 		#end
 		#if ctDialogueEditor
-		trace("what");
 		FlxG.switchState(CtDialogueEditor.new);
 		return;
 		#end

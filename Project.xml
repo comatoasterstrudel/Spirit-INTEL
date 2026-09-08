@@ -26,11 +26,11 @@
 	<haxelib name="openfl" />
 	<haxelib name="ctUtil" />
 	<haxelib name="ctDialogueBox" />
-	<haxelib name="flixel-ui" />
-	<haxelib name="flixel-text-input" />
+	<haxelib name="flixel-ui" if="ctDialogueEditor"/>
+	<haxelib name="flixel-text-input" if="ctDialogueEditor"/>
 
 	<haxedef name="FLX_NO_HEALTH" />
-	<haxedef if="release" name="FLX_NO_MOUSE"/>
+	<haxedef unless="ctDialogueEditor" name="FLX_NO_MOUSE"/>
 	<haxedef name="FLX_NO_KEYBOARD" if="mobile" />
 	<haxedef name="FLX_NO_TOUCH" if="desktop" />
 	<haxedef name="FLX_NO_DEBUG" unless="debug" />
