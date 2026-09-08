@@ -155,7 +155,13 @@
 	},
 	{
         "speed": 0.03,
-		"dialogue": "They can't be asking for rent money if they lose their rental license after you sue them.",
+		"dialogue": "They can't be asking for rent money..",
+		"actor": "laurin",
+		"portrait": "neutral"
+	},
+	{
+        "speed": 0.03,
+		"dialogue": "..if they lose their rental license after you sue them.",
 		"actor": "laurin",
 		"portrait": "neutral"
 	},
@@ -447,7 +453,7 @@
 	},
 	{
         "speed": 0.03,
-		"dialogue": "It's fine. I'm used to being disapointed.",
+		"dialogue": "It's fine. I'm used to being disappointed.",
 		"actor": "robin",
 		"portrait": "neutral"
 	},
