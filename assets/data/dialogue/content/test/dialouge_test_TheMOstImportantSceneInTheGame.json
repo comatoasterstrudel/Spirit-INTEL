@@ -1,0 +1,62 @@
+[
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "*pees* oh no...I need someone to clean me up...",
+		"choicerOptions": [],
+		"portrait": "call_lookshock",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "laurin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Heh...Don't worry kitten...daddy's here....",
+		"choicerOptions": [],
+		"portrait": "smiletalk",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "You're homosexual behavior is ungodly and I will condemn you to hell",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "[[SHAKE]]*starts JOing like crazy*[[ENDSHAKE]]",
+		"choicerOptions": [],
+		"portrait": "hat_shockedtalk",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": " Ough....",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": true,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	}
+]
