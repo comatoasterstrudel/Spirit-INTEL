@@ -2,7 +2,7 @@
     "name": "factoryjesscorpse",
     "graphic": "factoryjesscorpse",
     "hitboxX": 0,
-    "hitboxY": 15,
+    "hitboxY": 16,
     "hitboxWidth": 64,
     "hitboxHeight": 17
 }

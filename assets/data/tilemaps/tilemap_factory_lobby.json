@@ -156,6 +156,54 @@
           "originX": 0,
           "originY": 0,
           "values": {"propName": "keycard", "tag": "keycard", "addLight": false}
+        },
+        {
+          "name": "interactable",
+          "id": 13,
+          "_eid": "67528600",
+          "x": 336,
+          "y": 176,
+          "width": 32,
+          "height": 48,
+          "originX": 0,
+          "originY": 0,
+          "values": {"triggerByWalkingOver": false, "dialogue": "factory/lobby/dialogue_table", "room": "", "roomTransitionTime": 0.3, "encounterName": "", "scriptFunction": "", "tag": "", "openSave": false, "saveName": "", "saveBgName": ""}
+        },
+        {
+          "name": "interactable",
+          "id": 14,
+          "_eid": "67528600",
+          "x": 400,
+          "y": 176,
+          "width": 32,
+          "height": 32,
+          "originX": 0,
+          "originY": 0,
+          "values": {"triggerByWalkingOver": false, "dialogue": "factory/lobby/dialogue_chair", "room": "", "roomTransitionTime": 0.3, "encounterName": "", "scriptFunction": "", "tag": "", "openSave": false, "saveName": "", "saveBgName": ""}
+        },
+        {
+          "name": "interactable",
+          "id": 15,
+          "_eid": "67528600",
+          "x": 272,
+          "y": 160,
+          "width": 32,
+          "height": 64,
+          "originX": 0,
+          "originY": 0,
+          "values": {"triggerByWalkingOver": false, "dialogue": "factory/lobby/dialogue_couch", "room": "", "roomTransitionTime": 0.3, "encounterName": "", "scriptFunction": "", "tag": "", "openSave": false, "saveName": "", "saveBgName": ""}
+        },
+        {
+          "name": "interactable",
+          "id": 16,
+          "_eid": "67528600",
+          "x": 320,
+          "y": 272,
+          "width": 64,
+          "height": 32,
+          "originX": 0,
+          "originY": 0,
+          "values": {"triggerByWalkingOver": false, "dialogue": "factory/lobby/jesscorpse/dialogue_corpse", "room": "", "roomTransitionTime": 0.3, "encounterName": "", "scriptFunction": "", "tag": "corpsedia", "openSave": false, "saveName": "", "saveBgName": ""}
         }
       ]
     },

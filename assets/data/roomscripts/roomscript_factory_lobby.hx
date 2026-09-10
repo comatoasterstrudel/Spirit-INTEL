@@ -33,6 +33,8 @@ var fullart_bg:CtSprite;
 
 var keycard:Prop;
 
+var corpsedia:Interactable;
+
 function create():Void{
 	character_player = get_player();
     character_lobbysecretary = getCharacterByTag("lobbysecretary");
@@ -51,12 +53,17 @@ function create():Void{
 	keycard = getPropByTag("keycard");
 	keycard.kill();
 
+	corpsedia = getInteractableByTag("corpsedia");
+	corpsedia.kill();
+
 	if (Save.storyFlags.get("factory_scarymode").val_bool){
 		setUpScary();
 
 		if(!Save.storyFlags.get("factory_seenJessCorpse").val_bool){
 			doCorpseCutscene();
 		}
+
+		corpsedia.revive();
 	} else {
 		factoryjesscorpse.kill();
 	}

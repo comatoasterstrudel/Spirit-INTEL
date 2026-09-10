@@ -1,0 +1,14 @@
+[
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "I REALLY couldn't afford this.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "narrator",
+		"autoSkip": false
+	}
+]
