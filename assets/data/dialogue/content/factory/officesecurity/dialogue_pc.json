@@ -1,0 +1,38 @@
+[
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "A PC sits on the ground, turned on, the old green LED flickering.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "narrator",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "This is a relic, I wonder how it's still running...",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"dialogue": "It's got a disk drive and everything.",
+		"events": [],
+		"continueLine": false,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "robin",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
+	}
+]

@@ -74,6 +74,42 @@
           "originX": 0,
           "originY": 0,
           "values": {"graphic": "factorysecuritydesk", "tag": ""}
+        },
+        {
+          "name": "interactable",
+          "id": 4,
+          "_eid": "67528600",
+          "x": 288,
+          "y": 112,
+          "width": 64,
+          "height": 32,
+          "originX": 0,
+          "originY": 0,
+          "values": {"triggerByWalkingOver": false, "dialogue": "", "room": "", "roomTransitionTime": 0.3, "encounterName": "", "scriptFunction": "chest", "tag": "", "openSave": false, "saveName": "", "saveBgName": ""}
+        },
+        {
+          "name": "interactable",
+          "id": 5,
+          "_eid": "67528600",
+          "x": 176,
+          "y": 112,
+          "width": 16,
+          "height": 32,
+          "originX": 0,
+          "originY": 0,
+          "values": {"triggerByWalkingOver": false, "dialogue": "", "room": "", "roomTransitionTime": 0.3, "encounterName": "", "scriptFunction": "pc", "tag": "", "openSave": false, "saveName": "", "saveBgName": ""}
+        },
+        {
+          "name": "interactable",
+          "id": 6,
+          "_eid": "67528600",
+          "x": 192,
+          "y": 144,
+          "width": 96,
+          "height": 16,
+          "originX": 0,
+          "originY": 0,
+          "values": {"triggerByWalkingOver": false, "dialogue": "", "room": "", "roomTransitionTime": 0.3, "encounterName": "", "scriptFunction": "pcreal", "tag": "", "openSave": false, "saveName": "", "saveBgName": ""}
         }
       ]
     },

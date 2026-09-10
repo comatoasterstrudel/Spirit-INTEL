@@ -1,0 +1,35 @@
+[
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "A stack of monitors sit on top of a large desk, all but one turned off.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "narrator",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "The one that's turned on is filled with various camera feeds from all around the building, inside and out.",
+		"choicerOptions": [
+			{
+				"text": "View Security Footage",
+				"tag": "cam"
+			},
+			{
+				"text": "Nevermind",
+				"tag": "Nevermind"
+			}
+		],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "narrator",
+		"autoSkip": false
+	}
+]
