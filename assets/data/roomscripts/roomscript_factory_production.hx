@@ -1349,3 +1349,18 @@ function killCoworkers():Void{
 	coworkerC.kill();
 	coworkerD.kill();
 }
+
+function box():Void{
+	var name = "box";
+	
+	if(Save.storyFlags.get("factory_boxInteractions").val_int > 3){
+		name += "alt";
+	}
+
+	startDialogue(["factory/production/dialogue_" + name], function():Void
+	{
+		Save.storyFlags.get("factory_boxInteractions").val_int += 1;
+
+		OverworldState.eventManager.finishTransaction("d");
+	});
+}

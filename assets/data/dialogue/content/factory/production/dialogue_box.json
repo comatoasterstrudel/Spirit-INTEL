@@ -1,0 +1,26 @@
+[
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Boxes.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "narrator",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Many, many boxes.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "narrator",
+		"autoSkip": false
+	}
+]
