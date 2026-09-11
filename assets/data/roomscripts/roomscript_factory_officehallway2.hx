@@ -162,7 +162,7 @@ function doFireDoorLockedCutscene():Void{
 }
 
 function openBottomDoor():Void{
-    executeSingleScriptFunction("codeentry", "setCode", [[1, 2, 7, 4, 0, 0]]);
+    executeSingleScriptFunction("codeentry", "setCode", [[1, 2, 7, 4, 8, 3]]);
     executeSingleScriptFunction("codeentry", "openMenu", [
         function(correct:Bool):Void{ // corrent answer
             var seenCodes:Bool = (Save.storyFlags.get("factory_pc_done").val_bool && Save.storyFlags.get("factory_gotNoodles").val_bool && true);

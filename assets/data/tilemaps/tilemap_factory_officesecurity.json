@@ -61,7 +61,7 @@
           "height": 80,
           "originX": 0,
           "originY": 0,
-          "values": {"propName": "factorysecuritydesk", "tag": "", "addLight": false}
+          "values": {"propName": "factorysecuritydesk", "tag": "desk", "addLight": false}
         },
         {
           "name": "lightsource",
@@ -110,6 +110,30 @@
           "originX": 0,
           "originY": 0,
           "values": {"triggerByWalkingOver": false, "dialogue": "", "room": "", "roomTransitionTime": 0.3, "encounterName": "", "scriptFunction": "pcreal", "tag": "", "openSave": false, "saveName": "", "saveBgName": ""}
+        },
+        {
+          "name": "prop",
+          "id": 7,
+          "_eid": "37256014",
+          "x": 288,
+          "y": 160,
+          "width": 16,
+          "height": 16,
+          "originX": 0,
+          "originY": 0,
+          "values": {"propName": "radiomonster", "tag": "monsterradio", "addLight": false}
+        },
+        {
+          "name": "prop",
+          "id": 8,
+          "_eid": "37256014",
+          "x": 192,
+          "y": 80,
+          "width": 16,
+          "height": 16,
+          "originX": 0,
+          "originY": 0,
+          "values": {"propName": "radiomonster", "tag": "radio2", "addLight": true}
         }
       ]
     },

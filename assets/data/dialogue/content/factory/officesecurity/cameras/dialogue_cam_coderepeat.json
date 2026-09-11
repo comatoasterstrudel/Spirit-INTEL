@@ -1,0 +1,14 @@
+[
+	{
+		"dialogue": "...[[BLUE]]83[[ENDBLUE]].",
+		"events": [],
+		"continueLine": false,
+		"portrait": "",
+		"diaPitch": 1,
+		"actor": "narrator",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
+	}
+]

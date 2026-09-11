@@ -1,0 +1,26 @@
+[
+	{
+		"speed": 0.112,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "....Ha..Um...?! La.....En....",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "radiomonster",
+		"actor": "",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "...!?",
+		"choicerOptions": [],
+		"portrait": "shocked",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	}
+]

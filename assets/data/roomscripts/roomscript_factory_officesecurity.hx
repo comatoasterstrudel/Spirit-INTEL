@@ -14,6 +14,12 @@ var dialogueBox:CtDialogueBox;
 var fadeSpr:CtSprite;
 var fullart_bg:CtSprite;
 
+var desk:Prop;
+var monsterradio:Prop;
+var radio2:Prop;
+
+var lightingCover:LightingSprite;
+
 function create():Void{
     snowGroup = executeSingleScriptFunction("snow", "snow_get_snowGroup", []);    
     spr_behindTiles = get_spr_behindTiles();
@@ -23,6 +29,20 @@ function create():Void{
 
     character_robin = get_player();
     dialogueBox = get_dialogueBox();
+
+    desk = getPropByTag("desk");
+
+    monsterradio = getPropByTag("monsterradio");
+    monsterradio.setPosition(desk.x, desk.y);
+    
+    radio2 = getPropByTag("radio2");
+    radio2.kill();
+
+    lightingCover = get_lightingCover();
+
+    if(Save.storyFlags.get("factory_seenSecurityPcScene").val_bool){
+        monsterradio.kill();
+    }
 
     if(!Save.storyFlags.get("factory_seenSecurityIntro").val_bool){
         doIntro();
@@ -125,21 +145,88 @@ function pcreal():Void{
     } else {
         Save.storyFlags.get("factory_seenSecurityPcScene").val_bool = true;
 
-        startDialogue(["factory/officesecurity/cameras/dialogue_cam_1"], function():Void{
+        set_inCutscene(true);
+
+        // dialogue 1
+        OverworldState.eventManager.addEvent(function()
+        {
+            OverworldState.eventManager.startTransaction("dia");
+
+            startDialogue(["factory/officesecurity/cameras/dialogue_cam_1"], function():Void{
+                OverworldState.eventManager.finishTransaction("dia");
+            });
+        });
+
+        // camera cutscene
+        OverworldState.eventManager.addEvent(function()
+        {
+            OverworldState.eventManager.startTransaction("dia");
+
             doCameraCutscene(false, function():Void{
-                startDialogue(["factory/officesecurity/cameras/dialogue_cam_3"], function():Void{
-                    // shake radio here or smth..
-                    startDialogue(["factory/officesecurity/cameras/dialogue_cam_4"], function():Void{ 
+                OverworldState.eventManager.finishTransaction("dia");
+            });
+        });
+
+        // dialogue 3
+        OverworldState.eventManager.addEvent(function()
+        {
+            OverworldState.eventManager.startTransaction("dia");
+
+            startDialogue(["factory/officesecurity/cameras/dialogue_cam_3"], function():Void{
+                OverworldState.eventManager.finishTransaction("dia");
+            });
+        });   
+        
+        // radio bit
+        OverworldState.eventManager.addEvent(function()
+        {
+            OverworldState.eventManager.startTransaction("radio");
+
+            monsterradio.kill();
+            radio2.revive();
+
+            CtSound.play(Constants.sfxPath + "radioon.ogg");
+
+            FlxTween.shake(character_robin, 0.05, .2, 0x01);
+
+            new FlxTimer().start(1, function(f):Void{
+                radio2.animation.play("radio_smile");
+                lightingCover.getPropByTag("radio2").animation.play("radio_smile");
+                CtSound.play(Constants.sfxPath + "radiolaugh.ogg", 0.5).pitch = .7;
+
+                new FlxTimer().start(2, function(f):Void{
+                    OverworldState.eventManager.finishTransaction("radio");
+                });
+            });
+        });
+
+         // dialogue 3
+        OverworldState.eventManager.addEvent(function()
+        {
+            OverworldState.eventManager.startTransaction("dia");
+
+            startDialogue(["factory/officesecurity/cameras/dialogue_cam_4"], function():Void{ 
+
+                radio2.animation.play("radio_jump");
+                lightingCover.getPropByTag("radio2").animation.play("radio_jump");
+
+                CtSound.play(Constants.sfxPath + "radiolaugh.ogg");
+
+                new FlxTimer().start(2, function(f):Void{
+                    radio2.animation.stop();
+                    lightingCover.getPropByTag("radio2").animation.stop();
+
+                    new FlxTimer().start(1.5, function(f):Void{
                         startBattle("factory_mb_radio");
                     });
                 });
             });
-        });
+        }); 
     }
 }
 
 function setupPostBattle():Void{
-    //
+    monsterradio.revive();
 }
 
 function postBattleCutscene():Void{
@@ -154,7 +241,12 @@ function postBattleCutscene():Void{
         OverworldState.eventManager.startTransaction("pause");
 
         new FlxTimer().start(.5, function(f):Void{
-            OverworldState.eventManager.finishTransaction("pause");
+            monsterradio.kill();
+            CtSound.play(Constants.sfxPath + "putbookback.ogg");
+
+            new FlxTimer().start(1, function(f):Void{
+                OverworldState.eventManager.finishTransaction("pause");
+            });
         });
     });
 
@@ -182,6 +274,9 @@ function doCameraCutscene(seen:Bool, onComplete:Void->Void):Void{
 
     fadeSpr.revive();
 
+    var ogVolume:Float = FlxG.sound.music.volume;
+    FlxG.sound.music.fadeOut(2);
+
     FlxTween.tween(fadeSpr, {alpha: 1}, seen ? .5 : 1, {onComplete: function(f):Void{
         fullart_bg.revive();
 
@@ -190,7 +285,12 @@ function doCameraCutscene(seen:Bool, onComplete:Void->Void):Void{
             startDialogue(["factory/officesecurity/cameras/dialogue_cam_2" + (seen ? "seen" : "")], function():Void{
                 startDialogue(["factory/officesecurity/cameras/dialogue_cam_2part2" + (seen ? "seen" : "")], function():Void{
                     fadeSpr.revive();
-                        FlxTween.tween(fadeSpr, {alpha: 1}, seen ? .5 : 1, {onComplete: function(f):Void{
+
+                    if(seen){
+                        FlxG.sound.music.fadeIn(2);
+                    }
+
+                    FlxTween.tween(fadeSpr, {alpha: 1}, seen ? .5 : 1, {onComplete: function(f):Void{
                         fullart_bg.kill();
 
                         FlxTween.tween(fadeSpr, {alpha: 0}, seen ? .5 : 1, {onComplete: function(f):Void{

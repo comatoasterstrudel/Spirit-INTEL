@@ -1,0 +1,30 @@
+{
+    "name": "radiomonster",
+    "graphic": "radiomonster",
+    "hitboxX": -999,
+    "hitboxY": -999,
+    "hitboxWidth": 16,
+    "hitboxHeight": 16,
+    "baseAnim": "radio_default",
+    "anims": [
+        {
+            "name": "radio_default",
+            "prefix": "radio_default",
+            "fps": 0,
+            "looped": false
+        },
+        {
+            "name": "radio_smile",
+            "prefix": "radio_smile",
+            "fps": 0,
+            "looped": false
+        },
+        {
+            "name": "radio_jump",
+            "prefix": "radio_jump",
+            "fps": 2,
+            "looped": true
+        }
+    ],
+    "yStackingOffset": 999
+}
