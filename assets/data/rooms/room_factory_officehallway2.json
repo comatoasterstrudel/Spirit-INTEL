@@ -5,5 +5,6 @@
     "lighting": 0.7,
     "bgColor": [220, 220, 220],
     "script": ["codeentry", "factory_officehallway2"],
-    "polaroidBg": "factorybasement"
+    "polaroidBg": "factorybasement",
+    "music": "atmanbasement"
 }

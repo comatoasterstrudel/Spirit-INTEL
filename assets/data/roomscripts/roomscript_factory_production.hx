@@ -1005,9 +1005,6 @@ function startEvilMonsterBit():Void
 	{
 		OverworldState.eventManager.startTransaction("mamamove");
 
-		OverworldState.setUpMusic(Constants.roomMusicPath + "chase.ogg", 13);
-		OverworldState.lockMusic = true;
-
 		moveManagerChain(3, 1, 2, "right", function():Void
 		{
 			new FlxTimer().start(1, function(f):Void
@@ -1098,6 +1095,9 @@ function startEvilMonsterBit():Void
 	OverworldState.eventManager.addEvent(function()
 	{
 		OverworldState.eventManager.startTransaction("standup");
+
+		OverworldState.setUpMusic(Constants.roomMusicPath + "chase.ogg");
+		OverworldState.lockMusic = true;
 
 		CtSound.play(Constants.sfxPath + "managergetup.ogg");
 

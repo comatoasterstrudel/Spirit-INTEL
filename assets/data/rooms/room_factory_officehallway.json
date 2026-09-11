@@ -3,5 +3,6 @@
     "map": "factory_officehallway",
     "script": ["factory_officehallway"],
     "bgColor": [220, 220, 220],
-    "polaroidBg": "factorybasement"
+    "polaroidBg": "factorybasement",
+    "music": "atmanbasement"
 }

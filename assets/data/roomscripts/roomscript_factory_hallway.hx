@@ -252,7 +252,9 @@ function startMonsterCutscene():Void
 	OverworldState.eventManager.addEvent(function()
 	{
 		OverworldState.eventManager.startTransaction("shocked_stepback");
-
+ 
+		CtSound.play(Constants.sfxPath + "managerstep" + FlxG.random.int(1,3) + ".ogg", 0.35);
+		
 		character_player.movementSpeed = .3;
 		character_player.animation.play("shocked_stepback");
 		character_player.move(character_player.x - 20, -1, function():Void
