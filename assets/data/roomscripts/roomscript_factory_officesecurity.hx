@@ -87,7 +87,7 @@ function setupPc():Void{
         switch(tag){
             case "cam":
                 set_inCutsceneBeforeDialogue(true);
-                doCameraCutscene(function():Void{
+                doCameraCutscene(true, function():Void{
                     set_inCutscene(false);
                     character_robin.facing = DOWN;
                 });
@@ -104,13 +104,20 @@ function pcreal():Void{
         Save.storyFlags.get("factory_seenSecurityPc").val_bool = true;
 
         startDialogue(["factory/officesecurity/cameras/dialogue_cam_1"], function():Void{
-            doCameraCutscene(function():Void{
-
+            doCameraCutscene(false, function():Void{
+                set_inCutscene(false);
+                character_robin.facing = DOWN;
             });
         });
     }
 }
 
-function doCameraCutscene(onComplete:Void->Void):Void{
+function doCameraCutscene(seen:Bool, onComplete:Void->Void):Void{
     set_inCutscene(true);
+
+    startDialogue(["factory/officesecurity/cameras/dialogue_cam_2" + (seen ? "seen" : "")], function():Void{
+        startDialogue(["factory/officesecurity/cameras/dialogue_cam_3" + (seen ? "seen" : "")], function():Void{
+            onComplete();
+        });
+    });
 }
