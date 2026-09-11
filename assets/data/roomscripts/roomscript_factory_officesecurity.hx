@@ -11,6 +11,9 @@ var character_robin:Player;
 
 var dialogueBox:CtDialogueBox;
 
+var fadeSpr:CtSprite;
+var fullart_bg:CtSprite;
+
 function create():Void{
     snowGroup = executeSingleScriptFunction("snow", "snow_get_snowGroup", []);    
     spr_behindTiles = get_spr_behindTiles();
@@ -26,6 +29,7 @@ function create():Void{
     }
 
     setupPc();
+    setupFullArt();
 } 
 
 function doIntro():Void{
@@ -91,10 +95,24 @@ function setupPc():Void{
                     set_inCutscene(false);
                     character_robin.facing = DOWN;
                 });
+            case "code":
+                startDialogue(["factory/officesecurity/cameras/dialogue_cam_coderepeat"]);
             case "Nevermind":
                 character_robin.facing = DOWN;
         }
     });
+}
+
+function backFromBattle(name:String):Void{
+    if(name == "factory_mb_radio"){
+        setupPostBattle();
+    }
+}
+
+function battleTransitionDone(name:String):Void{
+    if(name == "factory_mb_radio"){
+        postBattleCutscene();
+    }
 }
 
 function pcreal():Void{
@@ -105,19 +123,91 @@ function pcreal():Void{
 
         startDialogue(["factory/officesecurity/cameras/dialogue_cam_1"], function():Void{
             doCameraCutscene(false, function():Void{
-                set_inCutscene(false);
-                character_robin.facing = DOWN;
+                startDialogue(["factory/officesecurity/cameras/dialogue_cam_3"], function():Void{
+                    // shake radio here or smth..
+                    startDialogue(["factory/officesecurity/cameras/dialogue_cam_4"], function():Void{ 
+                        startBattle("factory_mb_radio");
+                    });
+                });
             });
         });
     }
 }
 
+function setupPostBattle():Void{
+    //
+}
+
+function postBattleCutscene():Void{
+    set_inCutscene(true);
+
+    character_robin.facing = UP;
+    character_robin.lockMovement = true;
+
+    // pause
+	OverworldState.eventManager.addEvent(function()
+	{
+        OverworldState.eventManager.startTransaction("pause");
+
+        new FlxTimer().start(.5, function(f):Void{
+            OverworldState.eventManager.finishTransaction("pause");
+        });
+    });
+
+    // "83"
+	OverworldState.eventManager.addEvent(function()
+	{
+        OverworldState.eventManager.startTransaction("dialogue");
+
+        startDialogue(["factory/officesecurity/cameras/dialogue_cam_5"], function():Void{
+            OverworldState.eventManager.finishTransaction("dialogue");
+        });
+    });
+
+    // end
+	OverworldState.eventManager.addEvent(function()
+	{
+        set_inCutscene(false);
+        character_robin.facing = DOWN;
+        character_robin.lockMovement = false;
+    });
+}
+
 function doCameraCutscene(seen:Bool, onComplete:Void->Void):Void{
     set_inCutscene(true);
 
-    startDialogue(["factory/officesecurity/cameras/dialogue_cam_2" + (seen ? "seen" : "")], function():Void{
-        startDialogue(["factory/officesecurity/cameras/dialogue_cam_3" + (seen ? "seen" : "")], function():Void{
-            onComplete();
-        });
-    });
+    fadeSpr.revive();
+
+    FlxTween.tween(fadeSpr, {alpha: 1}, seen ? .5 : 1, {onComplete: function(f):Void{
+        fullart_bg.revive();
+
+        FlxTween.tween(fadeSpr, {alpha: 0}, seen ? .5 : 1, {onComplete: function(f):Void{
+            fadeSpr.kill();
+            startDialogue(["factory/officesecurity/cameras/dialogue_cam_2" + (seen ? "seen" : "")], function():Void{
+                fadeSpr.revive();
+                    FlxTween.tween(fadeSpr, {alpha: 1}, seen ? .5 : 1, {onComplete: function(f):Void{
+                    fullart_bg.kill();
+
+                    FlxTween.tween(fadeSpr, {alpha: 0}, seen ? .5 : 1, {onComplete: function(f):Void{
+                        fadeSpr.kill();
+                        onComplete();
+                    }});
+                }});
+            });
+        }});
+    }});
+}
+
+function setupFullArt():Void{
+    fullart_bg = new CtSprite().createFromImage(Constants.overworldCutsceneGraphicPath + "factorycamera_bgColor.png");
+	fullart_bg.screenCenter();
+	fullart_bg.camera = camOverlay;
+	fullart_bg.kill();
+	add(fullart_bg);
+
+    fadeSpr = new CtSprite().createColorBlock(FlxG.width, FlxG.height, 0xFF000000);
+    fadeSpr.camera = camOverlay;
+    fadeSpr.kill();
+    fadeSpr.alpha = 0;
+    add(fadeSpr);
 }
