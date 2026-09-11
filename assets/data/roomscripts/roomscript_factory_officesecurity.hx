@@ -96,7 +96,11 @@ function setupPc():Void{
                     character_robin.facing = DOWN;
                 });
             case "code":
-                startDialogue(["factory/officesecurity/cameras/dialogue_cam_coderepeat"]);
+                set_inCutsceneBeforeDialogue(true);
+                startDialogue(["factory/officesecurity/cameras/dialogue_cam_coderepeat"], function():Void{
+                    set_inCutscene(false);
+                    character_robin.facing = DOWN;
+                });
             case "Nevermind":
                 character_robin.facing = DOWN;
         }
@@ -184,15 +188,17 @@ function doCameraCutscene(seen:Bool, onComplete:Void->Void):Void{
         FlxTween.tween(fadeSpr, {alpha: 0}, seen ? .5 : 1, {onComplete: function(f):Void{
             fadeSpr.kill();
             startDialogue(["factory/officesecurity/cameras/dialogue_cam_2" + (seen ? "seen" : "")], function():Void{
-                fadeSpr.revive();
-                    FlxTween.tween(fadeSpr, {alpha: 1}, seen ? .5 : 1, {onComplete: function(f):Void{
-                    fullart_bg.kill();
+                startDialogue(["factory/officesecurity/cameras/dialogue_cam_2part2" + (seen ? "seen" : "")], function():Void{
+                    fadeSpr.revive();
+                        FlxTween.tween(fadeSpr, {alpha: 1}, seen ? .5 : 1, {onComplete: function(f):Void{
+                        fullart_bg.kill();
 
-                    FlxTween.tween(fadeSpr, {alpha: 0}, seen ? .5 : 1, {onComplete: function(f):Void{
-                        fadeSpr.kill();
-                        onComplete();
+                        FlxTween.tween(fadeSpr, {alpha: 0}, seen ? .5 : 1, {onComplete: function(f):Void{
+                            fadeSpr.kill();
+                            onComplete();
+                        }});
                     }});
-                }});
+                });
             });
         }});
     }});

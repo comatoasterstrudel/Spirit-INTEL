@@ -1,0 +1,9 @@
+{
+    "name": "cutscene_manager",
+	"textSound": "manager",
+	"textColor": [255, 255, 255],
+	"choicerSelectedTextColor": [255, 255, 255],
+	"choicerUnselectedTextColor": [255, 255, 255],
+	"customNameBoxImgPath": "manager",
+	"customDialogueBoxImgPath": "box_cutscene"
+}
