@@ -22,6 +22,8 @@ class InitState extends FlxState{
 	
 		hideSoundTray();
 		
+		initDiscord();
+
 		#if debug
 		#if forceCutscene
 		init_forceCutscene = Compiler.getDefine("forceCutscene").split('=')[0];
@@ -182,5 +184,9 @@ class InitState extends FlxState{
 	function hideSoundTray():Void
 	{
 		FlxG.plugins.addPlugin(new SoundTrayManager());
+	}
+	function initDiscord():Void{
+		DiscordClient.initialize();
+		DiscordClient.changePresence("ahaha", null);
 	}
 }

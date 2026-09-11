@@ -53,6 +53,13 @@
       "name": "openfl",
       "type": "haxelib",
       "version": "9.4.1"
+    },
+    {
+      "name": "discord_rpc",
+      "type": "git",
+      "dir": null,
+      "ref": "master",
+      "url": "https://github.com/comatoasterstrudel/linc_discord-rpc"
     }
   ]
 }

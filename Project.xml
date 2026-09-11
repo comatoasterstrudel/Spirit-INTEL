@@ -30,6 +30,7 @@
 	<haxelib name="ctDialogueBox" />
 	<haxelib name="flixel-ui" if="ctDialogueEditor"/>
 	<haxelib name="flixel-text-input" if="ctDialogueEditor"/>
+	<haxelib name="discord_rpc"/> 
 
 	<haxedef name="FLX_NO_HEALTH" />
 	<haxedef unless="ctDialogueEditor " name="FLX_NO_MOUSE"/>

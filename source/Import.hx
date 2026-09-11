@@ -132,6 +132,10 @@ import ctDialogueBox.textbox.effects.IEffect;
 import ctDialogueBox.textbox.Text;
 import battle.victoryscreen.VictoryScreenStages;
 import overworld.playermenu.pages.unitstatus.*;
+import misc.Discord;
+import misc.Discord.DiscordClient;
+import discord_rpc.DiscordRpc;
+import Sys.sleep;
 
 #if debug
 #if ctDialogueEditor
