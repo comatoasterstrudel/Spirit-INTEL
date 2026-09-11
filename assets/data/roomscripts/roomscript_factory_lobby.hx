@@ -128,6 +128,8 @@ function doConversationCutscene():Void
 	{
 		OverworldState.eventManager.startTransaction("robinMove");
 
+		realdoor.playOpenSound();
+		
 		character_player.visible = true;
 
 		character_player.movementSpeed = .7;

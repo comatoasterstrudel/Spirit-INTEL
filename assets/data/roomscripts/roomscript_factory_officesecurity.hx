@@ -98,10 +98,10 @@ function setupPc():Void{
 }
 
 function pcreal():Void{
-    if(Save.storyFlags.get("factory_seenSecurityPc").val_bool){
+    if(Save.storyFlags.get("factory_seenSecurityPcScene").val_bool){
         startDialogue(["factory/officesecurity/cameras/dialogue_cam_repeat"]);
     } else {
-        Save.storyFlags.get("factory_seenSecurityPc").val_bool = true;
+        Save.storyFlags.get("factory_seenSecurityPcScene").val_bool = true;
 
         startDialogue(["factory/officesecurity/cameras/dialogue_cam_1"], function():Void{
             doCameraCutscene(false, function():Void{
