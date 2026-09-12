@@ -117,9 +117,11 @@ function setupPc():Void{
                 });
             case "code":
                 set_inCutsceneBeforeDialogue(true);
-                startDialogue(["factory/officesecurity/cameras/dialogue_cam_coderepeat"], function():Void{
-                    set_inCutscene(false);
-                    character_robin.facing = DOWN;
+                new FlxTimer().start(0.01, function(f):Void{
+                    startDialogue(["factory/officesecurity/cameras/dialogue_cam_coderepeat"], function():Void{
+                        set_inCutscene(false);
+                        character_robin.facing = DOWN;
+                    });
                 });
             case "Nevermind":
                 character_robin.facing = DOWN;
@@ -210,7 +212,7 @@ function pcreal():Void{
                 radio2.animation.play("radio_jump");
                 lightingCover.getPropByTag("radio2").animation.play("radio_jump");
 
-                CtSound.play(Constants.sfxPath + "radiolaugh.ogg");
+                CtSound.play(Constants.sfxPath + "radiolaughcut.ogg");
 
                 new FlxTimer().start(2, function(f):Void{
                     radio2.animation.stop();

@@ -165,7 +165,7 @@ function openBottomDoor():Void{
     executeSingleScriptFunction("codeentry", "setCode", [[1, 2, 7, 4, 8, 3]]);
     executeSingleScriptFunction("codeentry", "openMenu", [
         function(correct:Bool):Void{ // corrent answer
-            var seenCodes:Bool = (Save.storyFlags.get("factory_pc_done").val_bool && Save.storyFlags.get("factory_gotNoodles").val_bool && true);
+            var seenCodes:Bool = (Save.storyFlags.get("factory_pc_done").val_bool && Save.storyFlags.get("factory_gotNoodles").val_bool && Save.storyFlags.get("factory_seenSecurityPcScene").val_bool);
 
             if(correct){
                 startDialogue(["factory/officehallway2/dialogue_doorcode_right" + (seenCodes ? "_seen" : "")], function():Void
