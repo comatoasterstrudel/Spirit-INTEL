@@ -18,5 +18,6 @@
             "rarity": 20
         }
     ],
-    "encounterChance": 60
+    "encounterChance": 60,
+    "music": "factory"
 }

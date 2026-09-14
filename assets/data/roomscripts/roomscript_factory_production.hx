@@ -47,6 +47,11 @@ var bloodStains:FlxSpriteGroup;
 var bloodStainChance:Float = 110;
 var bloodStainPositions:Array<Array<Int>> = [];
 
+// new music
+var newMusic:FlxSound;
+var baseVolume1:Float = 0;
+var baseVolume2:Float = 0;
+
 function create():Void
 {
 	lightingCover = get_lightingCover();
@@ -92,6 +97,7 @@ function create():Void
 	
 	if (Save.storyFlags.get("factory_sawproductioncutscene").val_bool == false)
 	{
+		newMusic = CtSound.load(Constants.roomMusicPath + "factorydistort.ogg", 1, true);
 		stopConveyors();
 	}
 	else
@@ -106,6 +112,17 @@ function create():Void
 	{
 		if (tag == "Yes")
 		{
+			CtSound.play(Constants.sfxPath + "gotowork.ogg", .5);
+			
+			baseVolume1 = FlxG.sound.music.volume;
+			baseVolume2 = newMusic.volume;
+
+			newMusic.play();
+			newMusic.time = FlxG.sound.music.time;
+
+			FlxG.sound.music.volume = 0;
+			newMusic.volume = 0;
+
 			set_inCutscene(true);
 			set_inCutsceneBeforeDialogue(true);
 			doProductionCutscene();
@@ -203,6 +220,8 @@ function doProductionCutscene():Void
 		OverworldState.eventManager.startTransaction("fadeIn");
 		OverworldState.eventManager.startTransaction("robinMovement");
 
+		FlxG.sound.music.fadeIn(10, 0, baseVolume1);
+
 		camGame.scroll.set(20, 1000);
 
 		character_player.positionCharacterByGrid(17.5, 35);
@@ -229,6 +248,8 @@ function doProductionCutscene():Void
 
 		new FlxTimer().start(.5, function(f):Void
 		{
+			CtSound.play(Constants.sfxPath + "machineon.ogg");
+
 			startConveyors();
 			new FlxTimer().start(1.5, function(f):Void
 			{
@@ -275,6 +296,10 @@ function doProductionCutscene():Void
 
 		character_player.lockAnims = true;
 		enableProduction(3);
+
+		FlxG.sound.music.fadeOut(40, baseVolume1 * 0.3);
+		newMusic.fadeIn(40, 0, baseVolume2 * 0.7);
+
 		new FlxTimer().start(10, function(f):Void
 		{
 			OverworldState.eventManager.finishTransaction("startProduction");
@@ -474,6 +499,13 @@ function doProductionCutscene():Void
 		character_player.lockAnims = false;
 		character_player.facing = UP;
 		FlxTween.shake(character_player, 0.05, .2, 0x01);
+
+		newMusic.volume = 0;
+		newMusic.stop();
+		newMusic.destroy();
+		FlxG.sound.music.volume = baseVolume1;
+
+		CtSound.play(Constants.sfxPath + "checkjess.ogg")
 
 		FlxTween.tween(lightingCover, {alpha: 0}, .5, {
 			ease: FlxEase.quartOut,
@@ -829,8 +861,12 @@ function addProductionObject(id:Int, ?sprite:FlxSprite):Void
 
 		robinanimstatus = true;
 
+		CtSound.play(Constants.sfxPath + "soapplace" + FlxG.random.int(1,3) + ".ogg").pitch = .6;
+
 		new FlxTimer().start(1, function(F):Void
 		{
+			CtSound.play(Constants.sfxPath + "soapplace" + FlxG.random.int(1,3) + ".ogg");
+
 			if (prod_horiz[obj.ID])
 			{
 				obj.velocity.set(conveyorSpeed, 0);
@@ -906,6 +942,13 @@ function updateSleepyLevel(name:String):Void
 
 function startMonsterCutscene():Void
 {
+	if(FlxG.sound.music != null){
+		FlxG.sound.music.stop();
+		FlxG.sound.music.destroy();
+		FlxG.sound.music = null;
+	}
+	OverworldState.setUpMusic(Constants.roomMusicPath + "factorymonster.ogg", 2);
+
 	monsterCutsceneEnabled = true;
 	
 	snowDialogue.disabled = false;
@@ -954,6 +997,12 @@ function startEvilMonsterBit():Void
 		OverworldState.eventManager.startTransaction("snd");
 
 		// play sound here
+		
+		if(FlxG.sound.music != null){
+			FlxG.sound.music.stop();
+			FlxG.sound.music.destroy();
+			FlxG.sound.music = null;
+		}
 
 		new FlxTimer().start(2, function(f):Void
 		{
@@ -1113,7 +1162,7 @@ function startEvilMonsterBit():Void
 				{
 					character_managerscary.changeAnimationPrefix("stand-");
 					character_managerscary.lockAnims = false;
-					new FlxTimer().start(1.5, function(f):Void
+					new FlxTimer().start(.5, function(f):Void
 					{
 						OverworldState.eventManager.finishTransaction("standup");
 					});

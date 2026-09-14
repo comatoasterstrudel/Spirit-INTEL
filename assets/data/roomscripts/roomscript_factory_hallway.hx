@@ -155,6 +155,9 @@ function updateDialogues():Void{
 function leavingRoom():Void{
     if(bottomDoorIsOpen){
         Save.storyFlags.get("factory_startedmonstercutscene").val_bool = true;
+		if(FlxG.sound.music != null){
+			FlxG.sound.music.fadeOut(1.5);
+		}
     }
 }
 // monster scenee
@@ -689,6 +692,12 @@ function startEndOfTutorialCutscene():Void{
 	// monster runs away wounded
 	OverworldState.eventManager.addEvent(function()
 	{
+		if(FlxG.sound.music != null){
+			FlxG.sound.music.stop();
+			FlxG.sound.music.destroy();
+			FlxG.sound.music = null;
+		}
+
 		OverworldState.eventManager.startTransaction("monstar run awat");
 
 		CtSound.play(Constants.sfxPath + "lauringun.ogg");
@@ -865,6 +874,8 @@ function startEndOfTutorialCutscene():Void{
 			OverworldState.lastTransitionTime = 0.5;
 
 			setupScary();
+
+			OverworldState.setUpMusic(Constants.roomMusicPath + "factory.ogg");
 		});
 	});
 }
