@@ -861,11 +861,11 @@ function addProductionObject(id:Int, ?sprite:FlxSprite):Void
 
 		robinanimstatus = true;
 
-		CtSound.play(Constants.sfxPath + "soapplace" + FlxG.random.int(1,3) + ".ogg").pitch = .6;
+		CtSound.play(Constants.sfxPath + "soapplace" + FlxG.random.int(2,3) + ".ogg").pitch = .6;
 
 		new FlxTimer().start(1, function(F):Void
 		{
-			CtSound.play(Constants.sfxPath + "soapplace" + FlxG.random.int(1,3) + ".ogg");
+			CtSound.play(Constants.sfxPath + "soapplace" + FlxG.random.int(2,3) + ".ogg");
 
 			if (prod_horiz[obj.ID])
 			{
