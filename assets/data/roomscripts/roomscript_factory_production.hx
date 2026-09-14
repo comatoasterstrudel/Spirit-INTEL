@@ -505,7 +505,7 @@ function doProductionCutscene():Void
 		newMusic.destroy();
 		FlxG.sound.music.volume = baseVolume1;
 
-		CtSound.play(Constants.sfxPath + "checkjess.ogg")
+		CtSound.play(Constants.sfxPath + "checkjess.ogg");
 
 		FlxTween.tween(lightingCover, {alpha: 0}, .5, {
 			ease: FlxEase.quartOut,
