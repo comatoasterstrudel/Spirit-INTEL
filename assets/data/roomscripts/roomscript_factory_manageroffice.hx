@@ -156,6 +156,8 @@ function doBookCutscene():Void{
 	{
 		OverworldState.eventManager.startTransaction("put back book");
 
+        FlxG.sound.music.fadeOut(1);
+
         character_robin.animation.play("putaway_book");
                 
         CtSound.play(Constants.sfxPath + "putbookback.ogg");
@@ -317,6 +319,8 @@ function doBookAftermathCutscene():Void{
                 passkey.kill();
                 character_robin.lockAnims = false;
 
+                CtSound.play(Constants.sfxPath + "keycard.ogg");
+
                 new FlxTimer().start(1, function(f):Void{
                     OverworldState.eventManager.finishTransaction("walk");
                 });
@@ -377,11 +381,13 @@ function interactWithComputer():Void{
 function useComputer():Void{
     if(!Save.storyFlags.get("factory_unlockedManagerComputer").val_bool){ // unlock it
         Save.storyFlags.get("factory_unlockedManagerComputer").val_bool = true;
+        CtSound.play(Constants.sfxPath + "plugin.ogg");
         startDialogue(["factory/manageroffice/pc/dialogue_pc_unlock"], function():Void
         {
             useComputer();
         });
     } else { // actually use computer
+        CtSound.play(Constants.sfxPath + "pcon.ogg");
         set_inCutscene(true);
         addPcBg(function():Void{
             var computerDialogues:Array<String> = [];
@@ -499,6 +505,8 @@ function doFinishedPcCutscene():Void{
                     FlxTween.shake(fullart_robin1, 0.1, .2, 0x01);
 
                     fullart_robin1.animation.play("rpossessed");
+
+                    CtSound.play(Constants.sfxPath + "ghostclick.ogg");
 
                     new FlxTimer().start(.65, function(f):Void{
                         startDialogue(["factory/manageroffice/pc/dialogue_pc_content_done2"], function():Void

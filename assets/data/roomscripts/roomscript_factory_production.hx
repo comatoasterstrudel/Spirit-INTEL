@@ -560,6 +560,8 @@ function doProductionCutscene():Void
 		fadeout2.camera = camOverlay;
 		add(fadeout2);
 
+		FlxG.sound.music.fadeOut(2);
+
 		FlxTween.tween(fadeout2, {alpha: 1}, 2, {
 			onComplete: function(f):Void
 			{
@@ -585,6 +587,8 @@ function doProductionCutscene():Void
 	OverworldState.eventManager.addEvent(function()
 	{
 		OverworldState.eventManager.startTransaction("fadeIn2");
+
+		FlxG.sound.music.fadeIn(2, 0, baseVolume1);
 
 		FlxTween.tween(fadeout2, {alpha: 0}, 2, {
 			onComplete: function(f):Void
@@ -996,7 +1000,7 @@ function startEvilMonsterBit():Void
 	{
 		OverworldState.eventManager.startTransaction("snd");
 
-		// play sound here
+		CtSound.play(Constants.sfxPath + "managercrash.ogg");
 		
 		if(FlxG.sound.music != null){
 			FlxG.sound.music.stop();
@@ -1004,7 +1008,7 @@ function startEvilMonsterBit():Void
 			FlxG.sound.music = null;
 		}
 
-		new FlxTimer().start(2, function(f):Void
+		new FlxTimer().start(3.5, function(f):Void
 		{
 			character_player.facing = LEFT;
 

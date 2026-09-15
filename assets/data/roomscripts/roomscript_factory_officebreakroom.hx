@@ -158,6 +158,8 @@ function doNoodleCutscene():Void{
 
         FlxTween.shake(character_robin, 0.05, .2, 0x01);
 
+        FlxG.sound.music.fadeOut(1);
+        
         new FlxTimer().start(.5, function(f):Void{
             character_robin.lockMovement = true;
             character_robin.lockAnims = true;
