@@ -12,7 +12,11 @@ var character_robin:Player;
 var dialogueBox:CtDialogueBox;
 
 var fadeSpr:CtSprite;
-var fullart_bg:CtSprite;
+var fullart_f1:CtSprite;
+var fullart_static:CtSprite;
+
+var staticCounter:Float = 0;
+var staticFrame:Int = 0;
 
 var desk:Prop;
 var monsterradio:Prop;
@@ -51,6 +55,35 @@ function create():Void{
     setupPc();
     setupFullArt();
 } 
+
+function update(elapsed:Float):Void{
+    if(fullart_static != null){
+        staticCounter += elapsed;
+
+        if(staticCounter >= .2){
+            staticCounter = 0;
+            staticFrame += 1;
+            if(staticFrame > 3){
+                staticFrame = 0;
+            }
+
+            switch(staticFrame){
+                case 0:
+                    fullart_static.flipX = false;
+                    fullart_static.flipY = false;
+                case 1:
+                    fullart_static.flipX = true;
+                    fullart_static.flipY = false;
+                case 2:
+                    fullart_static.flipX = true;
+                    fullart_static.flipY = true;
+                case 3:
+                    fullart_static.flipX = false;
+                    fullart_static.flipY = true;
+            }
+        }
+    }
+}
 
 function doIntro():Void{
     set_inCutscene(true);
@@ -280,7 +313,8 @@ function doCameraCutscene(seen:Bool, onComplete:Void->Void):Void{
     FlxG.sound.music.fadeOut(2);
 
     FlxTween.tween(fadeSpr, {alpha: 1}, seen ? .5 : 1, {onComplete: function(f):Void{
-        fullart_bg.revive();
+        fullart_f1.revive();
+        fullart_static.revive();
 
         FlxTween.tween(fadeSpr, {alpha: 0}, seen ? .5 : 1, {onComplete: function(f):Void{
             fadeSpr.kill();
@@ -293,7 +327,8 @@ function doCameraCutscene(seen:Bool, onComplete:Void->Void):Void{
                     }
 
                     FlxTween.tween(fadeSpr, {alpha: 1}, seen ? .5 : 1, {onComplete: function(f):Void{
-                        fullart_bg.kill();
+                        fullart_f1.kill();
+                        fullart_static.kill();
 
                         FlxTween.tween(fadeSpr, {alpha: 0}, seen ? .5 : 1, {onComplete: function(f):Void{
                             fadeSpr.kill();
@@ -307,11 +342,18 @@ function doCameraCutscene(seen:Bool, onComplete:Void->Void):Void{
 }
 
 function setupFullArt():Void{
-    fullart_bg = new CtSprite().createFromImage(Constants.overworldCutsceneGraphicPath + "factorycamera_bgColor.png");
-	fullart_bg.screenCenter();
-	fullart_bg.camera = camOverlay;
-	fullart_bg.kill();
-	add(fullart_bg);
+    fullart_f1 = new CtSprite().createFromImage(Constants.overworldMiscGraphicPath + "camera_f1.png");
+	fullart_f1.screenCenter();
+	fullart_f1.camera = camOverlay;
+	fullart_f1.kill();
+	add(fullart_f1);
+
+    fullart_static = new CtSprite().createFromImage(Constants.overworldMiscGraphicPath + "camera_static.png");
+	fullart_static.screenCenter();
+	fullart_static.camera = camOverlay;
+	fullart_static.kill();
+    fullart_static.alpha = .1;
+	add(fullart_static);
 
     fadeSpr = new CtSprite().createColorBlock(FlxG.width, FlxG.height, 0xFF000000);
     fadeSpr.camera = camOverlay;
