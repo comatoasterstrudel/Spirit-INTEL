@@ -57,32 +57,7 @@ function create():Void{
 } 
 
 function update(elapsed:Float):Void{
-    if(fullart_static != null){
-        staticCounter += elapsed;
-
-        if(staticCounter >= .2){
-            staticCounter = 0;
-            staticFrame += 1;
-            if(staticFrame > 3){
-                staticFrame = 0;
-            }
-
-            switch(staticFrame){
-                case 0:
-                    fullart_static.flipX = false;
-                    fullart_static.flipY = false;
-                case 1:
-                    fullart_static.flipX = true;
-                    fullart_static.flipY = false;
-                case 2:
-                    fullart_static.flipX = true;
-                    fullart_static.flipY = true;
-                case 3:
-                    fullart_static.flipX = false;
-                    fullart_static.flipY = true;
-            }
-        }
-    }
+    handleStatic(elapsed);
 }
 
 function doIntro():Void{
@@ -360,4 +335,33 @@ function setupFullArt():Void{
     fadeSpr.kill();
     fadeSpr.alpha = 0;
     add(fadeSpr);
+}
+
+function handleStatic(elapsed:Float):Void{
+    if(fullart_static != null){
+        staticCounter += elapsed;
+
+        if(staticCounter >= .2){
+            staticCounter = 0;
+            staticFrame += 1;
+            if(staticFrame > 3){
+                staticFrame = 0;
+            }
+
+            switch(staticFrame){
+                case 0:
+                    fullart_static.flipX = false;
+                    fullart_static.flipY = false;
+                case 1:
+                    fullart_static.flipX = true;
+                    fullart_static.flipY = false;
+                case 2:
+                    fullart_static.flipX = true;
+                    fullart_static.flipY = true;
+                case 3:
+                    fullart_static.flipX = false;
+                    fullart_static.flipY = true;
+            }
+        }
+    }
 }
