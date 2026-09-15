@@ -52,9 +52,12 @@ class PlayState extends FlxState
 	
 	var roundAnim:RoundAnim;
 	
+	var inspectingSpr:CtSprite;
+
 	// MENU MANAGERS
 	var menuManagerPlayerUI:CtMenuManager;
 	var menuManagerGridSelector:CtMenuManager;
+	var menuManagerUnitInspector:CtMenuManager;
 	var menus:Array<CtMenuManager> = [];
 	
 	// GAME STUFF
@@ -137,6 +140,12 @@ class PlayState extends FlxState
 		}
 		eventManager.update();
 		handleCamera(elapsed);
+
+		if(uiStatus == GRID_INSPECT || uiStatus == GRID_PLACER_INSPECT){
+			inspectingSpr.lerpManager.targetAlpha = .3;
+		} else {
+			inspectingSpr.lerpManager.targetAlpha = 0;
+		}
 	}
 	
 	/**
@@ -268,24 +277,41 @@ class PlayState extends FlxState
 		statusEffectBars = new StatusEffectBars();
 		statusEffectBars.camera = camGame;
 		add(statusEffectBars);
+
 		miniHealthBars = new MiniHealthBars();
 		miniHealthBars.camera = camGame;
 		add(miniHealthBars);
+
 		turnAttentionAnim = new TurnAttentionAnim();
 		turnAttentionAnim.camera = camGame;
 		add(turnAttentionAnim);
+
 		bottomBar = new BottomBar(bg.data.uiStyle);
 		bottomBar.camera = camUI;
 		add(bottomBar);
+		
+		inspectingSpr = new CtSprite().createFromImage(Constants.inspect2ButtonGraphicPath);
+		inspectingSpr.alpha = 0;
+		inspectingSpr.setPosition(FlxG.width - 300, FlxG.height - 180);
+		inspectingSpr.lerpManager.targetAlpha = 0;
+		inspectingSpr.lerpManager.lerpSpeed = 15;
+		inspectingSpr.lerpManager.lerpAlpha = true;
+		inspectingSpr.camera = camUI;
+		inspectingSpr.antialiasing = false;
+		add(inspectingSpr);
+
 		damageTexts = new FlxTypedGroup<DamageText>();
 		damageTexts.camera = camGame;
 		add(damageTexts);
+		
 		damageTextSignal.add(function(unit:Unit, text:String, color:FlxColor)
 		{
 			damageTexts.add(new DamageText(unit, text, color));
 		});
+
 		roundAnim = new RoundAnim();
 		add(roundAnim);
+
 		turnOrderDisplay = new TurnOrderDisplay(gridSize);
 		turnOrderDisplay.camera = camGame;
 		turnOrderDisplay.scrollFactor.set(0, 0);
@@ -305,8 +331,11 @@ class PlayState extends FlxState
 		var gridSelectorCursor = menuMakeCursor();
 		gridSelectorCursor.camera = camGame;
 		add(menuManagerGridSelector.addCursor(gridSelectorCursor, 20, false));
+		// init menuManagerUnitInspector
+		menuManagerUnitInspector = new CtMenuManager();
+		add(menuManagerUnitInspector.addCursor(menuMakeCursor(), 20, false));
 
-		menus = [menuManagerPlayerUI, menuManagerGridSelector];
+		menus = [menuManagerPlayerUI, menuManagerGridSelector, menuManagerUnitInspector];
 	}
 
 	function menuMakeCursor():Cursor
@@ -556,7 +585,9 @@ class PlayState extends FlxState
 				menuManagerPlayerUI.disable(false);
 				uiStatus = GRID_INSPECT;
 				bottomBar.removeMenu();
-				addGridSelector();
+				new FlxTimer().start(0.01, function(f):Void{
+					addGridSelector();
+				});
 			},
 			hoverFunction: function(spr:FlxSprite):Void
 			{
@@ -569,38 +600,8 @@ class PlayState extends FlxState
 			}
 		});
 
-		for (i in bottomBar.skillIcons)
-		{
-			if (i.enabled)
-				menuOptions[0].push({
-					sprite: i.outlineSprite,
-					cursorDirection: UP,
-					clickFunction: function(spr:FlxSprite):Void
-					{
-						if(i.allowed){
-							menuManagerPlayerUI.disable(false);
-							new FlxTimer().start(0.01, function(f):Void // jank
-							{
-								uiStatus = GRID_SKILL;
-								addGridSelector();		
-							});
-						} else {
-							bottomBar.updateText(" [[DARKBLUE]](NOT ENOUGH MP!)[[DARKBLUE]]");
-							bottomBar.shakeText();
-							i.shakeBox();
-						}
-					},
-					hoverFunction: function(spr:FlxSprite):Void
-					{
-						for (grid in grids)
-						{
-							grid.updateFlashingSprites([]);
-						}
-						updateGridSelectorOptions(i.currentSkill.selectType);
-						var mpCost:Int = i.currentSkill.mpCost;
-						bottomBar.updateText("[[GRAY]]" + i.currentSkill.name + "[[GRAY]]   " + i.currentSkill.description + "   [[BLUE]]MP: " + mpCost + "[[BLUE]]");
-					}
-				});
+		for(i in getSkillIconMenuOptions()){
+			menuOptions[0].push(i);
 		}
 
 		menuOptions[0].push({
@@ -695,6 +696,61 @@ class PlayState extends FlxState
 		});
 	}
 	
+	function getSkillIconMenuOptions():Array<CtMenuOption>
+	{
+		var menuOptions:Array<CtMenuOption> = [];
+
+		for (i in bottomBar.skillIcons)
+		{
+			if (i.enabled)
+				menuOptions.push({
+					sprite: i.outlineSprite,
+					cursorDirection: UP,
+					clickFunction: function(spr:FlxSprite):Void
+					{
+						if(uiStatus == SELECTING_SKILLS){
+							if(i.allowed){
+								menuManagerPlayerUI.disable(false);
+								new FlxTimer().start(0.01, function(f):Void // jank
+								{
+									uiStatus = GRID_SKILL;
+									addGridSelector();		
+								});
+							} else {
+								bottomBar.updateText(" [[DARKBLUE]](NOT ENOUGH MP!)[[DARKBLUE]]");
+								bottomBar.shakeText();
+								i.shakeBox();
+							}
+						}
+					},
+					hoverFunction: function(spr:FlxSprite):Void
+					{
+						if(uiStatus == SELECTING_SKILLS){
+							for (grid in grids)
+							{
+								grid.updateFlashingSprites([]);
+							}
+							updateGridSelectorOptions(i.currentSkill.selectType);
+						}
+						var mpCost:Int = i.currentSkill.mpCost;
+						bottomBar.updateText("[[GRAY]]" + i.currentSkill.name + "[[GRAY]]   " + i.currentSkill.description + "   [[BLUE]]MP: " + mpCost + "[[BLUE]]");
+					},
+					cancelFunction: function(spr:FlxSprite):Void
+					{
+						if(uiStatus == GRID_INSPECT || uiStatus == GRID_PLACER_INSPECT){
+							menuManagerUnitInspector.disable(true);
+							menuManagerGridSelector.enable();
+
+							bottomBar.descriptionText.visible = false;
+							bottomBar.descriptionText.kill();
+						}
+					}
+				});
+		}
+
+		return menuOptions;
+	}
+
 	/**
 	 * Call this to chekc for and remove dead units
 	 */
@@ -1152,6 +1208,16 @@ class PlayState extends FlxState
 						{
 							endPlayerTurn();
 						});
+					} else if(uiStatus == GRID_INSPECT || uiStatus == GRID_PLACER_INSPECT){
+						if(space.unit != null){
+							menuManagerGridSelector.disable();
+
+							menuManagerUnitInspector.setMenuOptions([getSkillIconMenuOptions()]);
+							menuManagerUnitInspector.enable();
+
+							bottomBar.descriptionText.visible = true;
+							bottomBar.descriptionText.revive();
+						}
 					}
 				},
 				cancelFunction: function(sprite):Void
@@ -1332,6 +1398,7 @@ class PlayState extends FlxState
 				onComplete: function(f):Void
 				{
 					uiStatus = GRID_PLACER_INSPECT;
+
 					addGridSelector();
 				}
 			});

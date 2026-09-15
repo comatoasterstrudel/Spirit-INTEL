@@ -60,9 +60,12 @@ class TopBar extends FlxSpriteGroup
         updateBars();
     }
 
-    public function updateCurrentUnit(unit:Unit):Void{
+    public function updateCurrentUnit(unit:Unit):Void{        
+        var first:Bool = unit != curUnit;
+
         this.curUnit = unit;
-        
+
+
 		if (unit != null){
             incomingCalls.visible = false;
 
@@ -71,7 +74,7 @@ class TopBar extends FlxSpriteGroup
             }
 
             topBarTalkerAnimPath.animation.play("idle");
-            topBarTalkerAnimPath.x = 35;
+            if(first) topBarTalkerAnimPath.x = 35;
 
             turnOrderDisplay.upperBar.createFromImage(Constants.turnOrderDisplayUpperBarGraphicPath);
             turnOrderDisplay.upperBar.setGraphicSize(Constants.turnOrderDisplayStartingX, turnOrderDisplay.upperBar.height);
