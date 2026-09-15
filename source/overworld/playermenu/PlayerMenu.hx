@@ -31,6 +31,7 @@ class PlayerMenu extends FlxSubState
         initPages();
         
         new FlxTimer().start(0.05, function(f):Void{
+            CtMenuManager.playUISound(Constants.sfx_ui_openMenu);
             addPage("main");
         });
         

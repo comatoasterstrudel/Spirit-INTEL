@@ -32,6 +32,7 @@ class PlayerMenuPageStatus extends PlayerMenuPage
         super.update(elapsed);
         
         if(CtControls.checkInput("cancel", JUSTPRESSED)){
+			CtMenuManager.playUISound(Constants.sfx_ui_back);
             playerMenu.removePage("status");
         }        
 		configText();

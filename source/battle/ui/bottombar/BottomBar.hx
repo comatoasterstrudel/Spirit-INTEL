@@ -1,7 +1,5 @@
 package battle.ui.bottombar;
 
-import flixel.text.FlxText.FlxTextFormat;
-
 class BottomBar extends FlxSpriteGroup
 {  
     var bottomCover:CtSprite;

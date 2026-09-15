@@ -14,6 +14,8 @@ class InitState extends FlxState{
 		
 		initControls();
 
+		initMenuManager();
+
 		initDialogueBox();
 		
 		initScripts();
@@ -67,12 +69,25 @@ class InitState extends FlxState{
 		CtControls.registerControl({id: "accept", inputKey: [Z, ENTER], inputPad: [A]});
 		CtControls.registerControl({id: "cancel", inputKey: [X, BACKSPACE], inputPad: [B]});
 		CtControls.registerControl({id: "exit", inputKey: [ESCAPE], inputPad: [START]});
-
-		CtMenuManager.setDefaultControls(CtControls.getInputFunction("right", JUSTPRESSED), CtControls.getInputFunction("left", JUSTPRESSED),
-			CtControls.getInputFunction("accept", JUSTPRESSED), CtControls.getInputFunction("cancel", JUSTPRESSED),
-			CtControls.getInputFunction("down", JUSTPRESSED), CtControls.getInputFunction("up", JUSTPRESSED));
 	}
 	
+	function initMenuManager():Void{
+		CtMenuManager.setDefaultControls(
+			CtControls.getInputFunction("right", JUSTPRESSED), // increase selected
+			CtControls.getInputFunction("left", JUSTPRESSED), // decrease selected
+			CtControls.getInputFunction("accept", JUSTPRESSED), // accepted
+			CtControls.getInputFunction("cancel", JUSTPRESSED), // cancel
+			CtControls.getInputFunction("down", JUSTPRESSED),  // increase rack
+			CtControls.getInputFunction("up", JUSTPRESSED) // decrease rack
+		);
+
+		CtMenuManager.cancelSoundPath = Constants.sfx_ui_back;
+		CtMenuManager.selectSoundPath = Constants.sfx_ui_select;
+		CtMenuManager.scrollRackSoundPath = Constants.sfx_ui_scroll;
+		CtMenuManager.scrollSelectedSoundPath = Constants.sfx_ui_scroll;
+
+	}
+
 	function initDialogueBox():Void
 	{
 		CtDialogueBox.defaultSettings = {

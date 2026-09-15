@@ -575,6 +575,8 @@ class PlayState extends FlxState
 	 */
 	function startAllyTurn():Void
 	{
+		uiStatus = SELECTING_SKILLS;
+		
 		var menuOptions:Array<Array<CtMenuOption>> = [[]];
 
 		menuOptions[0].push({
@@ -627,7 +629,6 @@ class PlayState extends FlxState
 
 		menuManagerPlayerUI.enable(true);
 		menuManagerPlayerUI.changeSelection(1);
-		uiStatus = SELECTING_SKILLS;
 		cameraTrackerType = UNIT;
 	}
 

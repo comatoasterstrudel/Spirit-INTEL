@@ -136,6 +136,7 @@ import misc.Discord;
 import misc.Discord.DiscordClient;
 import discord_rpc.DiscordRpc;
 import Sys.sleep;
+import flixel.text.FlxText.FlxTextFormat;
 
 #if debug
 #if ctDialogueEditor

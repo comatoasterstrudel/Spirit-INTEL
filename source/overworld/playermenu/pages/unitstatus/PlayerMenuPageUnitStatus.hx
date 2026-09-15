@@ -102,6 +102,7 @@ class PlayerMenuPageUnitStatus extends PlayerMenuPage
         positionStuff();
 
         if(CtControls.checkInput("cancel", JUSTPRESSED)){
+            CtMenuManager.playUISound(Constants.sfx_ui_back);
             playerMenu.removePage("unitstatus");
         }
     }

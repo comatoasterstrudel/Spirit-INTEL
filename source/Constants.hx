@@ -23,6 +23,11 @@ class Constants
 	public static final sfxPath:String = "assets/sounds/sfx_";
 	public static final sfx_ui_volUp:String = sfxPath + "ui_volUp";
 	public static final sfx_ui_volDown:String = sfxPath + "ui_volDown";
+	public static final sfx_ui_select:String = sfxPath + "ui_select.ogg";
+	public static final sfx_ui_back:String = sfxPath + "ui_back.ogg";
+	public static final sfx_ui_scroll:String = sfxPath + "ui_scroll.ogg";
+	public static final sfx_ui_openMenu:String = sfxPath + "ui_openMenu.ogg";
+
 	public static final sfx_encounter:String = sfxPath + "encounter";
 	//MUSIC
 	public static final musicPath:String = "assets/music/mus_";
