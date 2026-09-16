@@ -109,7 +109,6 @@ class OverworldState extends FlxState
 		inCutscene = false;
 
 		loadRoom();        
-		bgColor = roomData.bgColor;
 
 		setupCameras();
 
@@ -177,7 +176,7 @@ class OverworldState extends FlxState
 	function setupCameras():Void
 	{
 		camGame = new FlxCamera();
-		camGame.bgColor.alpha = 0;
+		camGame.bgColor = roomData.bgColor;
 		FlxG.cameras.add(camGame, true);
 
 		lightingShader = new LightingEffectShader(roomData.lightingDarkColor, roomData.lightingGlowColor);

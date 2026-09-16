@@ -1,7 +1,5 @@
 package;
 
-import ctDialogueBox.ctdb.namebox.NameBoxFollowType;
-
 class InitState extends FlxState{
 	public static var init_forceCutscene:String = "";
 

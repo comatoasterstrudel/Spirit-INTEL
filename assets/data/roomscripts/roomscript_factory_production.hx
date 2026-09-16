@@ -95,7 +95,7 @@ function create():Void
 	
 	initProduction();
 	
-	if (Save.storyFlags.get("factory_sawproductioncutscene").val_bool == false)
+	if (Save.storyFlags.get("factory_sawproductioncutscene").val_bool == false || InitState.init_forceCutscene == "production")
 	{
 		newMusic = CtSound.load(Constants.roomMusicPath + "factorydistort.ogg", 1, true);
 		stopConveyors();
@@ -704,10 +704,9 @@ function doSceneFade(time:Float, ?onComplete:Void->Void):Void
 
 	OverworldState.eventManager.startTransaction("sceneFading!!");
 
-	var spr:CtSprite = new CtSprite().createColorBlock(FlxG.width, FlxG.height, 0xFF7D2D2D);
-	spr.pixels.draw(FlxG.game);
-	spr.setGraphicSize(FlxG.width, FlxG.height);
-	spr.updateHitbox();
+	var spr:CtSprite = new CtSprite();
+	spr = CtUtil.renderFlxCameraToCtSprite(spr, camGame);
+	spr.antialiasing = false;
 	spr.camera = camUI;
 	add(spr);
 
