@@ -1,0 +1,19 @@
+{
+    "name": "Manager",
+    "gridGraphic": "partyhat",
+    "uiGraphicAlly": "partyhat_ally",
+    "uiGraphicEnemy": "partyhat_enemy",    
+    "stat_maxHp": 350,
+    "stat_maxMp": 500,
+    "stat_speed": -400,
+    "stat_attack": 60,
+    "stat_sattack": 120,
+    "skills": ["slash"],
+    "unlockedByDefault": true,
+    "expReward": 4,
+    "ai_damage": 1,
+    "ai_healing": 2,
+    "ai_debuff": 1.3,
+    "ai_buff": 1,
+    "spCost": 4
+}

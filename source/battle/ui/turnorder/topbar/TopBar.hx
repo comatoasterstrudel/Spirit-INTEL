@@ -65,7 +65,6 @@ class TopBar extends FlxSpriteGroup
 
         this.curUnit = unit;
 
-
 		if (unit != null){
             incomingCalls.visible = false;
 

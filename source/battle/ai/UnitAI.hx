@@ -192,7 +192,11 @@ class UnitAi
 			}
 		}
 
-        return({skillData: null, unit: unit, grid: enemyGrid, position: FlxPoint.get(1,1)});
+        var random = FlxG.random.int(0, availableSkills.length - 1);
+
+        var skillAdvantage = advantage.get(availableSkills[random]);
+
+		return({skillData: availableSkills[random], unit: unit, grid: skillAdvantage.grid, position: skillAdvantage.position});
     }
 }
 //made with grok

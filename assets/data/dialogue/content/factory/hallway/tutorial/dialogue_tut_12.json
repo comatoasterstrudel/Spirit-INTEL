@@ -1,0 +1,14 @@
+[
+	{
+		"speed": 0.06,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "[[SHAKE]]Why... is he so strong!?[[ENDSHAKE]]",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	}
+]

@@ -1,0 +1,14 @@
+[
+	{
+		"speed": 0.06,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "[[SHAKE]]He...  he has too much HP left...[[ENDSHAKE]]",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	}
+]

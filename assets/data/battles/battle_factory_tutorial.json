@@ -2,20 +2,16 @@
     "gridSizeX": 3,
     "gridSizeY": 3,
     "background": "factory",
-    "allyUnits": [
-        {
-            "id": "chair",
-            "x": 1, 
-            "y": 1
-        }
-    ],
+    "allyUnits": [],
     "enemyUnits": [
         {
-            "id": "partyhat",
+            "id": "managertutorial",
             "x": 1,
-            "y": 1
+            "y": 1,
+            "tag": "manager"
         }  
     ],
     "disableUnitPlacer": true,
-    "music": "tutorial"
+    "music": "tutorial",
+    "script": ["factory_tutorial"]
 }

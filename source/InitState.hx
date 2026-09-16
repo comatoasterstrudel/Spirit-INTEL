@@ -178,6 +178,10 @@ class InitState extends FlxState{
 		CtScript.setDefaultValue({name: "CtControls", value: CtControls});
 		CtScript.setDefaultValue({name: "JUSTPRESSED", value: CtControlsInputType.JUSTPRESSED});
 		CtScript.setDefaultValue({name: "JUSTRELEASED", value: CtControlsInputType.JUSTRELEASED});
+		CtScript.setDefaultValue({name: "PlayState", value: PlayState});
+		CtScript.setDefaultValue({name: "Unit", value: Unit});
+		CtScript.setDefaultValue({name: "FlxPoint", value: flixel.math.FlxBasePoint});
+		CtScript.setDefaultValue({name: "Grid", value: Grid});
 	}
 
 	function initSave():Void

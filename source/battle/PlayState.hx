@@ -11,6 +11,7 @@ class PlayState extends FlxState
 	// CAMERAS
 	var camGame:CtCamera;
 	var camUI:FlxCamera;
+	var camDialogue:FlxCamera;
 	var cameraTrackerType:BattleCameraTrackingType = CENTERED;	
 
 	// BG STUFF
@@ -54,6 +55,10 @@ class PlayState extends FlxState
 	
 	var inspectingSpr:CtSprite;
 
+	var dialogueBox:CtDialogueBox;
+	var dialogueBg:CtSprite;
+	var onDialogueComplete:Void->Void;
+
 	// MENU MANAGERS
 	var menuManagerPlayerUI:CtMenuManager;
 	var menuManagerGridSelector:CtMenuManager;
@@ -74,6 +79,9 @@ class PlayState extends FlxState
 
 	var uiStatus:UIStatus = INACTIVE;
 	
+	var disableInspectButton:Bool = false;
+	var disableEndTurnButton:Bool = false;
+
 	// EXIT
 	var exitProgress:Float = 0;
 	
@@ -86,12 +94,18 @@ class PlayState extends FlxState
 	// EXP
 	var expReward:Int = 0;
 
+	public static var battleFrozen:Bool = false;
+	public static var preventBattleEnding:Bool = false;
+
 	override public function create()
 	{
 		persistentUpdate = true;
 		
 		eventManager = new CtEventManager();
 		eventManager.reset();
+		
+		battleFrozen = false;
+		preventBattleEnding = false;
 		
 		loadBattle();
 
@@ -146,6 +160,8 @@ class PlayState extends FlxState
 		} else {
 			inspectingSpr.lerpManager.targetAlpha = 0;
 		}
+
+		executeScriptFunction("update", [elapsed]);
 	}
 	
 	/**
@@ -175,6 +191,10 @@ class PlayState extends FlxState
 		camUI = new FlxCamera();
 		camUI.bgColor.alpha = 0;
 		FlxG.cameras.add(camUI, false);
+
+		camDialogue = new FlxCamera();
+		camDialogue.bgColor.alpha = 0;
+		FlxG.cameras.add(camDialogue, false);
 	}
 	
 	function handleCamera(elapsed:Float):Void
@@ -316,6 +336,18 @@ class PlayState extends FlxState
 		turnOrderDisplay.camera = camGame;
 		turnOrderDisplay.scrollFactor.set(0, 0);
 		add(turnOrderDisplay);
+
+		dialogueBg = new CtSprite().createColorBlock(FlxG.width, FlxG.height, FlxColor.BLACK);
+		dialogueBg.alpha = .6;
+		dialogueBg.kill();
+		dialogueBg.camera = camUI;
+		add(dialogueBg);
+
+		dialogueBox = new CtDialogueBox();
+		dialogueBox.camera = camDialogue;
+		dialogueBox.antialiasing = false;
+		add(dialogueBox);
+		dialogueBox.onComplete.add(endDialogues);
 	}
 
 	/**
@@ -352,11 +384,11 @@ class PlayState extends FlxState
 	{
 		for (unit in battleData.allyUnits)
 		{
-			placeUnit(unit.id, allyGrid, unit.position, true, unit.level, false);
+			placeUnit(unit.id, allyGrid, unit.position, true, unit.level, false, false, unit.tag);
 		}
 		for (unit in battleData.enemyUnits)
 		{
-			placeUnit(unit.id, enemyGrid, unit.position, false, unit.level, false);
+			placeUnit(unit.id, enemyGrid, unit.position, false, unit.level, false, false, unit.tag);
 		}
 	}
 	
@@ -367,7 +399,7 @@ class PlayState extends FlxState
 	 * @param position Which position on the grid you want to place it on
 	 * @param controllable Should this unit be controllable or not? basically is it an enemy or ally
 	 */
-	function placeUnit(unitID:String, grid:Grid, position:FlxPoint, controllable:Bool, level:Int, ?doAnim:Bool = true, ?placedByPlayer:Bool = false):Void
+	function placeUnit(unitID:String, grid:Grid, position:FlxPoint, controllable:Bool, level:Int, ?doAnim:Bool = true, ?placedByPlayer:Bool = false, ?tag:String = ""):Void
 	{
 		if (position.x >= gridSize.x || position.y >= gridSize.y)
 		{
@@ -381,7 +413,7 @@ class PlayState extends FlxState
 			return;
 		}
 		
-		var unit = new Unit(unitID, grid, position, controllable, level, placedByPlayer);
+		var unit = new Unit(unitID, grid, position, controllable, level, placedByPlayer, tag);
 		unit.camera = camGame;
 		if (controllable)
 		{
@@ -447,6 +479,15 @@ class PlayState extends FlxState
 		unit = null;
 	}
 	
+	function getUnitByTag(tag:String):Unit
+	{
+		for(unit in units){
+			if(unit.tag == tag) return unit;
+		}
+
+		return null;
+	}
+
 	public static function setUpMusic(battleData:BattleData):Void
 	{
 		var path = Constants.battleDataMusicPath + battleData.music + ".ogg";
@@ -470,6 +511,12 @@ class PlayState extends FlxState
 
 			eventManager.addEvent(function():Void
 			{
+				executeScriptFunction("onAdvanceTurn", []);
+
+				if(battleFrozen){
+					return;
+				}
+
 				turnNum += amount;
 
 				if (turnNum >= turnOrder.length)
@@ -484,8 +531,16 @@ class PlayState extends FlxState
 				bottomBar.updateCurrentUnit(currentTurnUnit);
 				turnOrderDisplay.topBar.updateCurrentUnit(currentTurnUnit);
 
-				if (currentTurnUnit.controllable)
+				if (currentTurnUnit.controllable){
 					bottomBar.addMenu();
+					if(disableEndTurnButton){
+						bottomBar.endTurn.kill();
+					}
+					if(disableInspectButton){
+						bottomBar.inspect.kill();
+					}
+				}
+
 				turnAttentionAnim.doAnim(currentTurnUnit);
 
 				allyGrid.updateHighlightedSpace(0xFFD7FFBA, currentTurnUnit);
@@ -555,6 +610,9 @@ class PlayState extends FlxState
 					miniHealthBars.visible = true;
 					statusEffectBars.visible = true;
 
+					bottomBar.updateCurrentUnit(null);
+					turnOrderDisplay.topBar.updateCurrentUnit(null);
+
 					for (ui in [bottomBar, turnOrderDisplay])
 					{
 						ui.alpha = 0;
@@ -579,57 +637,67 @@ class PlayState extends FlxState
 		
 		var menuOptions:Array<Array<CtMenuOption>> = [[]];
 
-		menuOptions[0].push({
-			sprite: bottomBar.inspect,
-			cursorDirection: UP,
-			clickFunction: function(spr:FlxSprite):Void
-			{
-				menuManagerPlayerUI.disable(false);
-				uiStatus = GRID_INSPECT;
-				bottomBar.removeMenu();
-				new FlxTimer().start(0.01, function(f):Void{
-					addGridSelector();
-				});
-			},
-			hoverFunction: function(spr:FlxSprite):Void
-			{
-				for (grid in grids)
+		if(!disableInspectButton){
+			menuOptions[0].push({
+				sprite: bottomBar.inspect,
+				cursorDirection: UP,
+				clickFunction: function(spr:FlxSprite):Void
 				{
-					grid.updateFlashingSprites([]);
+					menuManagerPlayerUI.disable(false);
+					uiStatus = GRID_INSPECT;
+					bottomBar.removeMenu();
+					new FlxTimer().start(0.01, function(f):Void{
+						addGridSelector();
+					});
+				},
+				hoverFunction: function(spr:FlxSprite):Void
+				{
+					for (grid in grids)
+					{
+						grid.updateFlashingSprites([]);
+					}
+					updateGridSelectorOptions();
+					bottomBar.updateText("View the board");
 				}
-				updateGridSelectorOptions();
-				bottomBar.updateText("View the board");
-			}
-		});
+			});
+		}
 
 		for(i in getSkillIconMenuOptions()){
 			menuOptions[0].push(i);
 		}
 
-		menuOptions[0].push({
-			sprite: bottomBar.endTurn,
-			cursorDirection: UP,
-			clickFunction: function(spr:FlxSprite):Void
-			{
-				cameraTrackerType = CENTERED;
-				endPlayerTurn();
-			},
-			hoverFunction: function(spr:FlxSprite):Void
-			{
-				for (grid in grids)
+		if(!disableEndTurnButton){
+			menuOptions[0].push({
+				sprite: bottomBar.endTurn,
+				cursorDirection: UP,
+				clickFunction: function(spr:FlxSprite):Void
 				{
-					grid.updateFlashingSprites([]);
+					cameraTrackerType = CENTERED;
+					endPlayerTurn();
+				},
+				hoverFunction: function(spr:FlxSprite):Void
+				{
+					for (grid in grids)
+					{
+						grid.updateFlashingSprites([]);
+					}
+					updateGridSelectorOptions();
+					bottomBar.updateText("End your turn");
 				}
-				updateGridSelectorOptions();
-				bottomBar.updateText("End your turn");
-			}
-		});
+			});
+		}
 
 		menuManagerPlayerUI.setMenuOptions(menuOptions);
 
 		menuManagerPlayerUI.enable(true);
-		menuManagerPlayerUI.changeSelection(1);
+		
+		menuManagerPlayerUI.playScrollSelectedSound = false;
+		menuManagerPlayerUI.changeSelection(disableInspectButton ? 0 : 1);
+		menuManagerPlayerUI.playScrollSelectedSound = true;
+
 		cameraTrackerType = UNIT;
+
+		executeScriptFunction("onStartPlayerTurn", []);
 	}
 
 	/**
@@ -778,7 +846,7 @@ class PlayState extends FlxState
 			}
 		}
 
-		isGameOver();
+		if(!preventBattleEnding) isGameOver();
 	}
 	function isGameOver():Void
 	{
@@ -825,7 +893,7 @@ class PlayState extends FlxState
 							}
 						}
 						openSubState(new VictoryScreen(unitsToAdd, Std.int(FlxMath.bound(expReward, 1)), function():Void{
-							FlxG.switchState(OverworldState.new);
+							goBackToOverworld();
 						}));
 					case LOSS | TIE:
 						openSubState(new ResultState(type));
@@ -839,6 +907,10 @@ class PlayState extends FlxState
 				}
 			});
 		}
+	}
+
+	function goBackToOverworld():Void{
+		FlxG.switchState(OverworldState.new);
 	}
 	
 	function addDeathEffect(spr:FlxSprite):Void
@@ -1120,6 +1192,8 @@ class PlayState extends FlxState
 			}
 		}
 		cameraTrackerType = GRID;
+
+		executeScriptFunction("onAddGridSelector", []);
 	}
 
 	/**
@@ -1204,7 +1278,7 @@ class PlayState extends FlxState
 
 						removeGridSelector();
 
-						useSkill(currentTurnUnit.skills[menuManagerPlayerUI.curSelected - 1], currentTurnUnit, space.grid,
+						useSkill(currentTurnUnit.skills[menuManagerPlayerUI.curSelected - (disableInspectButton ? 0 : 1)], currentTurnUnit, space.grid,
 							new FlxPoint(space.position.x, space.position.y), function():Void
 						{
 							endPlayerTurn();
@@ -1231,7 +1305,7 @@ class PlayState extends FlxState
 					
 					if (uiStatus == GRID_SKILL)
 					{
-						space.grid.updateFlashingSprites(getAffectedSpacesForSkill(currentTurnUnit.skills[menuManagerPlayerUI.curSelected - 1],
+						space.grid.updateFlashingSprites(getAffectedSpacesForSkill(currentTurnUnit.skills[menuManagerPlayerUI.curSelected - (disableInspectButton ? 0 : 1)],
 							currentTurnUnit, space.grid, new FlxPoint(space.position.x, space.position.y)));
 					}
 					else if (uiStatus == GRID_INSPECT || uiStatus == GRID_PLACER_INSPECT)
@@ -1292,6 +1366,32 @@ class PlayState extends FlxState
 			text.destroy();
 		}
 	}
+
+	/**
+	 * Call this to start a dialogue box cutscene!!
+	 * @param dialogues 
+	 */
+	function startDialogue(dialogues:Array<String>, ?onComplete:Void->Void):Void
+	{
+		dialogueBox.loadDialogueFiles(dialogues);
+		dialogueBox.openBox();
+		dialogueBox.playDialogue();
+		onDialogueComplete = onComplete;
+		dialogueBg.revive();
+	}
+
+	/**
+	 * Call this when a dialogue is finished
+	 */
+	function endDialogues():Void
+	{
+		new FlxTimer().start(0.1, function(f):Void
+		{
+			dialogueBg.kill();
+			if (onDialogueComplete != null)
+				onDialogueComplete();
+		});
+	}
 	
 	function setUpScripts():Void
 	{
@@ -1312,7 +1412,42 @@ class PlayState extends FlxState
 		script.setValue({name: "enemyGrid", value: enemyGrid});
 		script.setValue({name: "grids", value: grids});
 
+		script.setValue({name: "camUI", value: camUI});
+		script.setValue({name: "camGame", value: camGame});
+		script.setValue({name: "camDialogue", value: camDialogue});
+
+		script.setValue({name: "goBackToOverworld", value: goBackToOverworld});
+		
 		script.setValue({name: "placeUnit", value: placeUnit});
+		script.setValue({name: "getUnitByTag", value: getUnitByTag});
+
+		script.setValue({name: "calculateTurnOrder", value: calculateTurnOrder});
+
+		script.setValue({name: "startDialogue", value: startDialogue});
+
+		script.setValue({name: "advanceTurn", value: advanceTurn});
+		
+		script.setValue({name: "menuManagerPlayerUI", value: menuManagerPlayerUI});
+		script.setValue({name: "menuManagerGridSelector", value: menuManagerGridSelector});
+
+		// get / set
+		script.setValue({name: "get_disableEndTurnButton", value: get_disableEndTurnButton});
+		script.setValue({name: "set_disableEndTurnButton", value: set_disableEndTurnButton});
+
+		script.setValue({name: "get_disableInspectButton", value: get_disableInspectButton});
+		script.setValue({name: "set_disableInspectButton", value: set_disableInspectButton});
+
+		script.setValue({name: "get_dialogueBox", value: get_dialogueBox});
+		script.setValue({name: "set_dialogueBox", value: set_dialogueBox});
+
+		script.setValue({name: "get_bottomBar", value: get_bottomBar});
+		script.setValue({name: "set_bottomBar", value: set_bottomBar});
+
+		script.setValue({name: "get_turnOrderDisplay", value: get_turnOrderDisplay});
+		script.setValue({name: "set_turnOrderDisplay", value: set_turnOrderDisplay});
+
+		script.setValue({name: "get_bgLine", value: get_bgLine});
+		script.setValue({name: "set_bgLine", value: set_bgLine});
 
 		scripts.push(script);
 		script.executeFunction("create");
@@ -1320,12 +1455,94 @@ class PlayState extends FlxState
 		return script;
 	}
 
-	function executeScriptFunction(name:String, args:Array<Any>):Void
+	// disableEndTurnButton
+	
+	public function get_disableEndTurnButton():Bool
+	{
+		return disableEndTurnButton;
+	}
+
+	function set_disableEndTurnButton(val:Bool):Void
+	{
+		disableEndTurnButton = val;
+	}
+
+	// disableInspectButton
+	
+	public function get_disableInspectButton():Bool
+	{
+		return disableInspectButton;
+	}
+
+	function set_disableInspectButton(val:Bool):Void
+	{
+		disableInspectButton = val;
+	}
+
+	// dialogueBox
+	
+	public function get_dialogueBox():CtDialogueBox
+	{
+		return dialogueBox;
+	}
+
+	public function set_dialogueBox(val:CtDialogueBox):Void{
+		dialogueBox = val;
+	}
+
+	// bottomBar
+	
+	public function get_bottomBar():BottomBar
+	{
+		return bottomBar;
+	}
+
+	public function set_bottomBar(val:BottomBar):Void{
+		bottomBar = val;
+	}
+	
+	// turnOrderDisplay
+	
+	public function get_turnOrderDisplay():TurnOrderDisplay
+	{
+		return turnOrderDisplay;
+	}
+
+	public function set_turnOrderDisplay(val:TurnOrderDisplay):Void{
+		turnOrderDisplay = val;
+	}
+
+	// bgLine
+	
+	public function get_bgLine():CtSprite
+	{
+		return bgLine;
+	}
+
+	public function set_bgLine(val:CtSprite):Void{
+		bgLine = val;
+	}
+
+
+	function executeScriptFunction(name:String, args:Array<Any>):Void 
 	{
 		for (script in scripts)
 		{
 			script.executeFunction(name, args);
 		}
+	}
+
+	function executeSingleScriptFunction(scriptName:String, name:String, args:Array<Any>):Dynamic
+	{
+		for (script in scripts)
+		{
+			if (script.name == scriptName)
+			{
+				return script.executeFunction(name, args);
+			}
+		}
+
+		return null;
 	}
 	
 	public static function setBattle(name:String, type:BattleType):Void
@@ -1465,6 +1682,8 @@ class PlayState extends FlxState
 						space.unit.visible = true;
 						space.unit.doEntranceAnimation();
 					}
+
+					CtSound.play(Constants.sfx_gridPlace).pitch = FlxG.random.float(.6, 1.4);
 				}
 			}
 		});

@@ -1,0 +1,14 @@
+[
+	{
+		"speed": 0.06,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Make sure to think through your decision first, though!",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	}
+]

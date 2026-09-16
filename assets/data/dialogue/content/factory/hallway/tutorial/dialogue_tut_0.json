@@ -1,0 +1,26 @@
+[
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "This is the battle screen.",
+		"choicerOptions": [],
+		"portrait": "hat_shocked",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "As you can see there are two grids..",
+		"choicerOptions": [],
+		"portrait": "hat_shocked",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	}
+]

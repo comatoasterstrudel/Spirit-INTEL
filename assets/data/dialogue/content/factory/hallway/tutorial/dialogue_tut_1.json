@@ -1,0 +1,74 @@
+[
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "That grid on the left belongs to YOU!",
+		"choicerOptions": [],
+		"portrait": "hat_shocked",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Each grid space can contain a spirit..",
+		"choicerOptions": [],
+		"portrait": "hat_shocked",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"dialogue": "...",
+		"events": [],
+		"continueLine": false,
+		"portrait": "hat_shocked",
+		"diaPitch": 1,
+		"actor": "volor",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "..That hat on your head is doing something!!",
+		"choicerOptions": [],
+		"portrait": "hat_scared",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"dialogue": "..?",
+		"events": [],
+		"continueLine": false,
+		"portrait": "hat_shocked",
+		"diaPitch": 1,
+		"actor": "robin",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
+	},
+	{
+		"dialogue": "[[SHAKE]]..![[ENDSHAKE]]",
+		"events": ["shake"],
+		"continueLine": false,
+		"portrait": "shocked",
+		"diaPitch": 1,
+		"actor": "robin",
+		"choicerOptions": [],
+		"voiceLine": "",
+		"autoSkip": false,
+		"speed": 0.03
+	}
+]

@@ -27,6 +27,7 @@ class Constants
 	public static final sfx_ui_back:String = sfxPath + "ui_back.ogg";
 	public static final sfx_ui_scroll:String = sfxPath + "ui_scroll.ogg";
 	public static final sfx_ui_openMenu:String = sfxPath + "ui_openMenu.ogg";
+	public static final sfx_gridPlace:String = sfxPath + "gridplace.ogg";
 
 	public static final sfx_encounter:String = sfxPath + "encounter";
 	//MUSIC
@@ -173,6 +174,8 @@ class Constants
 	public static final spBarMidPathBlank:String = "assets/images/gridunitplacer/gridUnitPlacer_spMid_blank.png";
 	public static final spBarBottomPathBlank:String = "assets/images/gridunitplacer/gridUnitPlacer_spBottom_blank.png";
 	public static final spBarBadPath:String = "assets/images/gridunitplacer/gridUnitPlacer_spBad.png";
+	// battle misc
+	public static final battleMiscGraphicPath:String = "assets/images/battlemisc/battlemisc_";
 	//
 	// OVERWORLD STUFF !!
 	//

@@ -46,7 +46,9 @@ class Unit extends CtSprite
 	// SIGNALS
 	public var onStatusChanged = new FlxTypedSignal<Array<StatusEffect>->Void>();
 
-	public function new(unitID:String, grid:Grid, position:FlxPoint, controllable:Bool, level:Int, ?placedByPlayer:Bool = false):Void
+	public var tag:String = "";
+
+	public function new(unitID:String, grid:Grid, position:FlxPoint, controllable:Bool, level:Int, ?placedByPlayer:Bool = false, ?tag:String):Void
 	{
         super();
 
@@ -75,6 +77,8 @@ class Unit extends CtSprite
         lerpManager.lerpX = true;
         lerpManager.lerpY = true;
 		lerpManager.lerpSpeed = 8;
+
+		this.tag = tag;
 	}
 
 	override function update(elapsed:Float):Void{
