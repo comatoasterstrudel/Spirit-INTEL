@@ -182,6 +182,7 @@ class InitState extends FlxState{
 		CtScript.setDefaultValue({name: "Unit", value: Unit});
 		CtScript.setDefaultValue({name: "FlxPoint", value: flixel.math.FlxBasePoint});
 		CtScript.setDefaultValue({name: "Grid", value: Grid});
+		CtScript.setDefaultValue({name: "GridBackground", value: GridBackground});
 	}
 
 	function initSave():Void

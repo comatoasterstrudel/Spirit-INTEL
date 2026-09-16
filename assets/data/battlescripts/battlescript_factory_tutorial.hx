@@ -232,6 +232,8 @@ function onAddGridSelector():Void{
 }
 
 var laurinGrid:Grid;
+var gridBg:GridBackground;
+
 var larinGun:CtSprite;
 
 function doEndScene():Void
@@ -251,6 +253,11 @@ function doEndScene():Void
 
                     laurinGrid = new Grid(gridSize, FlxPoint.get(FlxG.width - 175, (bgLine.y + bgLine.height / 2) - (Grid.calculateGridSize(FlxPoint.get(1, 1)).y / 2)));
 		            laurinGrid.camera = camGame;
+
+                    gridBg = new GridBackground(laurinGrid);
+                    gridBg.camera = camGame;
+                    add(gridBg);
+
                     add(laurinGrid);
 
                     CtSound.play(Constants.sfxPath + "gridplacebig.ogg");
@@ -264,7 +271,7 @@ function doEndScene():Void
                             laurinGun.camera = camGame;
                             add(laurinGun);
 
-                            FlxTween.tween(laurinGun, {x: laurinGun.x - 200}, 2.5, {onComplete: function(f):Void{
+                            FlxTween.tween(laurinGun, {x: laurinGun.x - 200}, 3, {onComplete: function(f):Void{
                                 var thing = new CtSprite().createColorBlock(FlxG.width, FlxG.height, 0xFFFFFFFF);
                                 thing.camera = camUI;
                                 thing.alpha = 0;
