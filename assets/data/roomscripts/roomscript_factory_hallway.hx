@@ -701,6 +701,7 @@ function startEndOfTutorialCutscene():Void{
 		OverworldState.eventManager.startTransaction("monstar run awat");
 
 		CtSound.play(Constants.sfxPath + "lauringun.ogg");
+		CtSound.play(Constants.sfxPath + "gun.ogg");
 
 		new FlxTimer().start(1, function(f):Void{
 			CtSound.play(Constants.sfxPath + "managerfall.ogg");

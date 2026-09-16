@@ -312,7 +312,7 @@ class PlayState extends FlxState
 		
 		inspectingSpr = new CtSprite().createFromImage(Constants.inspect2ButtonGraphicPath);
 		inspectingSpr.alpha = 0;
-		inspectingSpr.setPosition(FlxG.width - 300, FlxG.height - 180);
+		inspectingSpr.setPosition(bottomBar.inspect.x, bottomBar.inspect.y);
 		inspectingSpr.lerpManager.targetAlpha = 0;
 		inspectingSpr.lerpManager.lerpSpeed = 15;
 		inspectingSpr.lerpManager.lerpAlpha = true;
@@ -363,6 +363,9 @@ class PlayState extends FlxState
 		var gridSelectorCursor = menuMakeCursor();
 		gridSelectorCursor.camera = camGame;
 		add(menuManagerGridSelector.addCursor(gridSelectorCursor, 20, false));
+		menuManagerGridSelector.selectSoundPath = Constants.sfx_ui_gridSelect;
+		menuManagerGridSelector.scrollRackSoundPath = Constants.sfx_ui_gridScroll;
+		menuManagerGridSelector.scrollSelectedSoundPath = Constants.sfx_ui_gridScroll;
 		// init menuManagerUnitInspector
 		menuManagerUnitInspector = new CtMenuManager();
 		add(menuManagerUnitInspector.addCursor(menuMakeCursor(), 20, false));

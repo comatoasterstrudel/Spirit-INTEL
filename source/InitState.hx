@@ -81,11 +81,10 @@ class InitState extends FlxState{
 			CtControls.getInputFunction("up", JUSTPRESSED) // decrease rack
 		);
 
-		CtMenuManager.cancelSoundPath = Constants.sfx_ui_back;
-		CtMenuManager.selectSoundPath = Constants.sfx_ui_select;
-		CtMenuManager.scrollRackSoundPath = Constants.sfx_ui_scroll;
-		CtMenuManager.scrollSelectedSoundPath = Constants.sfx_ui_scroll;
-
+		CtMenuManager.defaultCancelSoundPath = Constants.sfx_ui_back;
+		CtMenuManager.defaultSelectSoundPath = Constants.sfx_ui_select;
+		CtMenuManager.defaultScrollRackSoundPath = Constants.sfx_ui_scroll;
+		CtMenuManager.defaultScrollSelectedSoundPath = Constants.sfx_ui_scroll;
 	}
 
 	function initDialogueBox():Void

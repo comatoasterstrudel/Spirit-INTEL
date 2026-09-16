@@ -9,7 +9,7 @@
     "stat_attack": 60,
     "stat_sattack": 120,
     "skills": ["slash"],
-    "unlockedByDefault": true,
+    "unlockedByDefault": false,
     "expReward": 4,
     "ai_damage": 1,
     "ai_healing": 2,

@@ -27,6 +27,8 @@ class Constants
 	public static final sfx_ui_back:String = sfxPath + "ui_back.ogg";
 	public static final sfx_ui_scroll:String = sfxPath + "ui_scroll.ogg";
 	public static final sfx_ui_openMenu:String = sfxPath + "ui_openMenu.ogg";
+	public static final sfx_ui_gridSelect:String = sfxPath + "ui_gridSelect.ogg";
+	public static final sfx_ui_gridScroll:String = sfxPath + "ui_gridScroll.ogg";
 	public static final sfx_gridPlace:String = sfxPath + "gridplace.ogg";
 
 	public static final sfx_encounter:String = sfxPath + "encounter";

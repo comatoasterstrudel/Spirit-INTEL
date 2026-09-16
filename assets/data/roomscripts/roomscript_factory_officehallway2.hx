@@ -83,7 +83,7 @@ function doFireDoorLockedCutscene():Void{
 	{
         OverworldState.eventManager.startTransaction("jossle");
 
-        CtSound.play(Constants.sfxPath + "lobbydoorstuck.ogg");
+        CtSound.play(Constants.sfxPath + "firedoorlock.ogg");
                 
         character_player.lockAnims = true;
 
