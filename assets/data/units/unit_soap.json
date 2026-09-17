@@ -8,7 +8,7 @@
     "stat_speed": 6,
     "stat_attack": 80,
     "stat_sattack": 80,
-    "skills": ["toxins"],
+    "skills": ["poke", "toxins", "love"],
     "expReward": 8,
     "ai_damage": 1,
     "ai_healing": 1,

@@ -11,5 +11,12 @@
             "level": 2
         }
     ],
-    "music": "factory"
+    "music": "factory",
+    "unlockableUnits": [
+        {
+            "id": "soap",
+            "chance": 100,
+            "level": 1
+        }
+    ]
 }

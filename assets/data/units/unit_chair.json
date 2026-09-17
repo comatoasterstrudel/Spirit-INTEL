@@ -9,7 +9,7 @@
     "stat_attack": 50,
     "stat_sattack": 120,
     "skills": ["love", "toxins", "burning_stick"],
-    "unlockedByDefault": true,
+    "unlockedByDefault": false,
     "expReward": 4,
     "ai_damage": 1,
     "ai_healing": 2,
