@@ -99,6 +99,7 @@ class VictoryScreenUnitUnlocker extends FlxSpriteGroup
 
                 FlxTween.tween(spiritUnlocked.scale, {x: 2, y: 2}, .4, {ease: FlxEase.backIn, onComplete: function(f):Void{
                     FlxTween.shake(spiritUnlocked, 0.1, .1, X);
+                    CtSound.play(Constants.sfx_vic_crash).pitch = .8;
                 }});
 
                 var unitData = new UnitData(units[progress]);

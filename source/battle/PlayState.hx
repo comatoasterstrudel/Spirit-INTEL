@@ -899,14 +899,14 @@ class PlayState extends FlxState
 							goBackToOverworld();
 						}));
 					case LOSS | TIE:
-						openSubState(new ResultState(type));
-				}
+						if (FlxG.sound.music != null){
+							FlxG.sound.music.fadeOut(Constants.resultAnimTiming, 0, function onComplete(f):Void{
+								FlxG.sound.music.destroy();
+								FlxG.sound.music = null;
+							});
+						}
 
-				if (FlxG.sound.music != null){
-					FlxG.sound.music.fadeOut(Constants.resultAnimTiming, 0, function onComplete(f):Void{
-						FlxG.sound.music.destroy();
-						FlxG.sound.music = null;
-					});
+						openSubState(new ResultState(type));
 				}
 			});
 		}

@@ -30,12 +30,12 @@ class Constants
 	public static final sfx_ui_gridSelect:String = sfxPath + "ui_gridSelect.ogg";
 	public static final sfx_ui_gridScroll:String = sfxPath + "ui_gridScroll.ogg";
 	public static final sfx_gridPlace:String = sfxPath + "gridplace.ogg";
-
-	public static final sfx_encounter:String = sfxPath + "encounter";
+	public static final sfx_encounter:String = sfxPath + "encounter.ogg";
+	public static final sfx_vic_crash:String = sfxPath + "vic_crash.ogg";
 	//MUSIC
 	public static final musicPath:String = "assets/music/mus_";
 	public static final mus_title:String = musicPath + "title.ogg";
-	
+	public static final mus_victory:String = musicPath + "victory.ogg";
 	// Battle
 	public static final battleDataFolder:String = "assets/data/battles/";
 	public static final battleDataPath:String = Constants.battleDataFolder + "battle_";

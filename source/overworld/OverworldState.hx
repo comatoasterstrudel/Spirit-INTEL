@@ -1155,7 +1155,7 @@ class OverworldState extends FlxState
 
 		positionBeforeBattle.set(player.x, player.y);
 
-		CtSound.play(Constants.sfx_encounter + ".ogg", 1);
+		CtSound.play(Constants.sfx_encounter, 1);
 
 		if(FlxG.sound.music != null){
 			updateLastMusic();
