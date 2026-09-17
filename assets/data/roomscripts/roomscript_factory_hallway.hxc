@@ -141,7 +141,7 @@ function updateDialogues():Void{
             
             finaldoor.dialogue = "";
             finaldoor.room = "factory_production";
-            finaldoor.roomTransitionTime = 1.5;
+            finaldoor.roomTransitionTime = 1;
             bottomDoorIsOpen = true;
         } else {
             breakRoomDoor.dialogue = "factory/hallway/dialogue_door_nogood";     
