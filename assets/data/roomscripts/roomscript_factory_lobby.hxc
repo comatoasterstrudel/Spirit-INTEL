@@ -660,7 +660,7 @@ function doCorpseCutscene():Void{
 	{
 		OverworldState.eventManager.startTransaction("scrll");
 
-		moveCameraBackToPlayer(2, null, function():Void{
+		moveCameraBackToPlayer(1, null, function():Void{
 			OverworldState.eventManager.finishTransaction("scrll");
 		});
 	});
