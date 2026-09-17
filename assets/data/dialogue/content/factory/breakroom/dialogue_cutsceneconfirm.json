@@ -1,0 +1,17 @@
+[
+	{
+		"speed": 0.03,
+		"dialogue": "Am I done at the party?",
+		"actor": "narrator",
+		"choicerOptions": [
+			{
+				"text": "Yes",
+				"tag": "Yes"
+			},
+			{
+				"text": "No",
+				"tag": "No"
+			}
+		]
+	}
+]

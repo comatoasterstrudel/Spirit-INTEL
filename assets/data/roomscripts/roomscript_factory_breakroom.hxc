@@ -52,6 +52,8 @@ function create():Void{
 
 	dialogueBox = get_dialogueBox();
 	
+	setupEnd();
+
 	if (!Save.storyFlags.get("factory_seenbreakroomcutscene").val_bool || InitState.init_forceCutscene == "breakroomparty")
 	{
 		doCutscene();
@@ -423,59 +425,88 @@ function startParty():Void
 	}
 }
 
+var seenEndCutscene:Bool = false;
+
+function setupEnd():Void{
+	dialogueBox.onChoicerSelected.add(function(tag:String):Void
+	{
+		if (tag == "Yes")
+		{
+			set_inCutscene(true);
+			set_inCutsceneBeforeDialogue(true);
+			doFullEnd();
+		}
+		else if (tag == "No")
+		{
+			character_player.facing = DOWN;
+		}
+	});
+}
+
 function endParty():Void
 {
+	var dialogues = [];
+
+	if(!seenEndCutscene){
+		dialogues.push("factory/breakroom/dialogue_party_laurin");
+	}
+
+	dialogues.push("factory/breakroom/dialogue_cutsceneconfirm");
+
+	startDialogue(dialogues);
+
+	seenEndCutscene = true;
+}
+
+function doFullEnd():Void{
 	Save.storyFlags.get("factory_seenbreakroomcutscene").val_bool = true;
 
 	set_inCutscene(true);
 
-	startDialogue(["factory/breakroom/dialogue_party_laurin"], function():Void
-	{
-		var fade = new CtSprite().createColorBlock(FlxG.width, FlxG.height, 0xFF000000);
-		fade.camera = camOverlay;
-		fade.alpha = 0;
-		add(fade);
+	var fade = new CtSprite().createColorBlock(FlxG.width, FlxG.height, 0xFF000000);
+	fade.camera = camOverlay;
+	fade.alpha = 0;
+	add(fade);
 
-		FlxG.sound.music.fadeOut(3, 0, function(f):Void{
-			FlxG.sound.music.destroy();
-			FlxG.sound.music = null;
-		});	
-		FlxTween.tween(fade, {alpha: 1}, 3, {
-			onComplete: function(f):Void
+	FlxG.sound.music.fadeOut(3, 0, function(f):Void{
+		FlxG.sound.music.destroy();
+		FlxG.sound.music = null;
+	});	
+	FlxTween.tween(fade, {alpha: 1}, 3, {
+		onComplete: function(f):Void
+		{
+			startDialogue(["factory/breakroom/dialogue_party_over_1"], function():Void
 			{
-				startDialogue(["factory/breakroom/dialogue_party_over_1"], function():Void
-				{
-					character_laurin.kill();
-					character_coworkerA.kill();
-					character_coworkerB.kill();
-					character_coworkerC.kill();
-					character_coworkerD.kill();
+				character_laurin.kill();
+				character_coworkerA.kill();
+				character_coworkerB.kill();
+				character_coworkerC.kill();
+				character_coworkerD.kill();
 
-					party_laurin.disabled = true;
-					party_coworkerA.disabled = true;
-					party_coworkerB.disabled = true;
-					party_coworkerC.disabled = true;
-					party_coworkerD.disabled = true;
+				party_laurin.disabled = true;
+				party_coworkerA.disabled = true;
+				party_coworkerB.disabled = true;
+				party_coworkerC.disabled = true;
+				party_coworkerD.disabled = true;
 
-					door.room = "factory_hallway";
-					door.dialogue = "";
+				door.room = "factory_hallway";
+				door.dialogue = "";
 
-					character_player.positionCharacterByGrid(8.5, 11);
-					character_player.facing = UP;
-					character_player.changeAnimationPrefix("party_");
+				character_player.positionCharacterByGrid(8.5, 11);
+				character_player.facing = UP;
+				character_player.changeAnimationPrefix("party_");
 
-					FlxTween.tween(fade, {alpha: 0}, 3, {
-						onComplete: function(f):Void
+				FlxTween.tween(fade, {alpha: 0}, 3, {
+					onComplete: function(f):Void
+					{
+						startDialogue(["factory/breakroom/dialogue_party_over_2"], function():Void
 						{
-							startDialogue(["factory/breakroom/dialogue_party_over_2"], function():Void
-							{
-								character_player.facing = DOWN;
-								set_inCutscene(false);
-							});
-						}
-					});
+							character_player.facing = DOWN;
+							set_inCutscene(false);
+						});
+					}
 				});
-			}
-		});
+			});
+		}
 	});
 }
