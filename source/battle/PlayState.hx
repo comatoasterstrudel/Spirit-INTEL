@@ -1400,7 +1400,7 @@ class PlayState extends FlxState
 	{
 		for (script in battleData.script)
 		{
-			addScript(Constants.battleScriptPath + script + ".hx");
+			addScript(Constants.battleScriptPath + script + ".hxc");
 		}
 	}
 

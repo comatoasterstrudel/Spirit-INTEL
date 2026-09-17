@@ -238,7 +238,7 @@ class Constants
 	public static final playerMenuPolaroidBorderPath:String = "assets/images/playermenu/polaroid/polaroid_border.png";
 	public static final playerMenuPolaroidBorderShadowPath:String = "assets/images/playermenu/polaroid/polaroid_borderShadow.png";
 	public static final playerMenuPolaroidBgPath:String = "assets/images/playermenu/polaroid/bg/polaroidbg_";
-	public static final playerMenuPolaroidScriptPath:String = "assets/data/playermenu/polaroid.hx";
+	public static final playerMenuPolaroidScriptPath:String = "assets/data/playermenu/polaroid.hxc";
 	public static final playerMenuPolaroidImgPath:String = "assets/images/playermenu/polaroid/img/polaroidimg_";
 	public static final playerMenuUnitSelectorWidth:Int = 420;
 	public static final playerMenuUnitSelectorHeight:Int = 100;

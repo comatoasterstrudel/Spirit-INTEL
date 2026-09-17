@@ -856,7 +856,7 @@ class OverworldState extends FlxState
 		
 		for (script in roomData.script)
 		{
-			addScript(Constants.roomScriptPath + script + ".hx");
+			addScript(Constants.roomScriptPath + script + ".hxc");
 		}
 		startAtSavePoint = false;
 	}
