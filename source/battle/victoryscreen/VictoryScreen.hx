@@ -333,7 +333,7 @@ class VictoryScreen extends FlxSubState
 
     function doMusic():Void{
         if (FlxG.sound.music != null){
-            FlxG.sound.music.fadeOut(0.5, 0, function onComplete(f):Void{
+            FlxG.sound.music.fadeOut(0.4, 0, function onComplete(f):Void{
                 FlxG.sound.music.destroy();
                 FlxG.sound.music = null;
             });

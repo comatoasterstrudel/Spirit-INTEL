@@ -402,7 +402,7 @@ function useComputer():Void{
 
             if(Save.storyFlags.get("factory_pc_done").val_bool){
                 startDialogue(["factory/manageroffice/pc/dialogue_pc_content_donerepeat"], function():Void{
-                    pc_finish();
+                    pc_finish(true);
                 });
             } else {
                 startDialogue(computerDialogues);
@@ -468,19 +468,31 @@ function pc_messages():Void{
 }
 
 function pc_nevermind():Void{
-    pc_finish();
+    pc_finish(true);
 }
 
-function pc_finish():Void{
+function pc_finish(?forceFinish:Bool = false):Void{
     var seenEverything:Bool = (Save.storyFlags.get("factory_pc_calendar").val_bool && Save.storyFlags.get("factory_pc_email").val_bool && Save.storyFlags.get("factory_pc_messages").val_bool && !Save.storyFlags.get("factory_pc_done").val_bool);
 
     if(seenEverything){
         doFinishedPcCutscene();
     } else {
-        removePcBg(function():Void{
-            set_inCutscene(false);
-            character_robin.facing = DOWN; 
-        });
+        if(forceFinish){
+            removePcBg(function():Void{
+                set_inCutscene(false);
+                character_robin.facing = DOWN; 
+            });
+        } else {
+            trace("a!?!?!?");
+
+            for(i in [pcBg_calendar, pcBg_emails, pcBg_messages]){
+                FlxTween.tween(i, {alpha: 0}, 1);
+            }
+
+            new FlxTimer().start(1, function(f):Void{
+                startDialogue(["factory/manageroffice/pc/dialogue_pc_base"]);
+            });
+        }
     }
 }
 
@@ -511,7 +523,7 @@ function doFinishedPcCutscene():Void{
                     new FlxTimer().start(.65, function(f):Void{
                         startDialogue(["factory/manageroffice/pc/dialogue_pc_content_done2"], function():Void
                         {
-                            pc_finish();
+                            pc_finish(true);
                         });
                     });
                 });
