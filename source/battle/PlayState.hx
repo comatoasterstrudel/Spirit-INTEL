@@ -70,6 +70,8 @@ class PlayState extends FlxState
 	var units:Array<Unit> = [];
 	var allyUnitGroup:FlxTypedGroup<Unit>;
 	var enemyUnitGroup:FlxTypedGroup<Unit>;
+	var allyBossEffectGroup:FlxTypedGroup<UnitBossEffect>;
+	var enemyBossEffectGroup:FlxTypedGroup<UnitBossEffect>;
 
 	var roundNum:Int = 0;
 	var turnNum:Int = 0;
@@ -264,6 +266,11 @@ class PlayState extends FlxState
 		add(enemyGridBg);
 
 		add(enemyGrid);
+
+		enemyBossEffectGroup = new FlxTypedGroup<UnitBossEffect>();
+		enemyBossEffectGroup.camera = camGame;
+		add(enemyBossEffectGroup);
+
 		enemyUnitGroup = new FlxTypedGroup<Unit>();
 		enemyUnitGroup.camera = camGame;
 		add(enemyUnitGroup);
@@ -280,6 +287,10 @@ class PlayState extends FlxState
 		add(allyGridBg);
 
 		add(allyGrid);
+
+		allyBossEffectGroup = new FlxTypedGroup<UnitBossEffect>();
+		allyBossEffectGroup.camera = camGame;
+		add(allyBossEffectGroup);
 
 		allyUnitGroup = new FlxTypedGroup<Unit>();
 		allyUnitGroup.camera = camGame;
@@ -418,13 +429,22 @@ class PlayState extends FlxState
 		
 		var unit = new Unit(unitID, grid, position, controllable, level, placedByPlayer, tag);
 		unit.camera = camGame;
+
+		var bossEffect:UnitBossEffect = null;
+
+		if(unit.data.isBoss){
+			bossEffect = new UnitBossEffect(unit);
+		}
+
 		if (controllable)
 		{
+			if(bossEffect != null) allyBossEffectGroup.add(bossEffect);
 			allyUnitGroup.add(unit);
 		}
 		else
 		{
 			expReward += Std.int(unit.data.expReward * (unit.level / 1.5));
+			if(bossEffect != null) enemyBossEffectGroup.add(bossEffect);
 			enemyUnitGroup.add(unit);
 		}
 
@@ -474,6 +494,15 @@ class PlayState extends FlxState
 					space.unit = null;
 					break;
 				}
+			}
+		}
+
+		var effectGroup = (unit.controllable ? allyBossEffectGroup : enemyBossEffectGroup);
+		for(bossEffect in effectGroup.members){
+			if(bossEffect.unit.uniqueUnitID == unit.uniqueUnitID){
+				effectGroup.remove(bossEffect);
+				bossEffect.destroy();
+				bossEffect = null;
 			}
 		}
 

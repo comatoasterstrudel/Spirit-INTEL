@@ -1,0 +1,36 @@
+{
+    "gridSizeX": 3,
+    "gridSizeY": 3,
+    "allyUnits": [
+        {
+            "id": "partyhat",
+            "x": 0,
+            "y": 1,
+            "level": 999,
+            "tag": "partyhat"
+        },
+        {
+            "id": "partyhat",
+            "x": 1,
+            "y": 1,
+            "level": 999,
+            "tag": "partyhat"
+        },
+        {
+            "id": "partyhat",
+            "x": 2,
+            "y": 1,
+            "level": 999,
+            "tag": "partyhat"
+        }
+    ],
+    "enemyUnits": [
+        {
+            "id": "managerboss",
+            "x": 1,
+            "y": 1,
+            "level": 1,
+            "tag": "managerboss"
+        }  
+    ]
+}

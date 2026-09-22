@@ -1,0 +1,16 @@
+{
+    "gridSizeX": 3,
+    "gridSizeY": 3,
+    "background": "factorydark",
+    "allyUnits": [],
+    "enemyUnits": [
+        {
+            "id": "managerboss",
+            "x": 1,
+            "y": 1,
+            "level": 7,
+            "tag": "managerboss"
+        }  
+    ],
+    "music": "managerboss"
+}

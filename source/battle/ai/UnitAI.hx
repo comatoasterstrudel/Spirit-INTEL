@@ -85,7 +85,11 @@ class UnitAi
         for(skill in skills){
             var highestPoints:Int = -1;
 
-            for(space in PlayState.getAvailableSpacesForSkillType(skill.selectType, unit, [allyGrid, enemyGrid])){
+            // randomize so it doesnt only target the first guy
+            var spaces = PlayState.getAvailableSpacesForSkillType(skill.selectType, unit, [allyGrid, enemyGrid]);
+            FlxG.random.shuffle(spaces);
+            
+            for(space in spaces){
                 var points:Int = 0;
 
                 for(affectedSpace in PlayState.getAffectedSpacesForSkill(skill, unit, space.grid, space.position)){
@@ -97,7 +101,7 @@ class UnitAi
                                 var dmg = PlayState.calculateSkillDamage(skill, affectedUnit, unit);
 
                                 if(affectedUnit.hp.value - dmg <= 0){
-                                    points += 9999;
+                                    points += 9999; // get the kill
                                 } else {
                                     points += Std.int(dmg * (1 + (skill.effects.eff_hpleech)));
                                 }

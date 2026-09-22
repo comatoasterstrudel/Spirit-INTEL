@@ -47,6 +47,9 @@ class Constants
 	// Units
 	public static final unitDataFolder:String = "assets/data/units/";
 	public static final unitDataPath:String = unitDataFolder + "unit_";
+	// Boss Effect
+	public static final bossEffectTime:Float = .6;
+	public static final bossEffectDelay:Float = .3;
 	// Skills
 	public static final skillDataPath:String = "assets/data/skills/skill_";
 	public static final unitMaxSkills:Int = 5;
