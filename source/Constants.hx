@@ -42,7 +42,7 @@ class Constants
 	public static final battleDataMusicPath:String = musicPath + "battle_";
 	// Grid
     public static final gridSize:Int = 80;
-	public static final unitGridGraphicPath:String = "assets/images/grid/units/unit_";
+	public static final unitGridGraphicPath:String = "assets/images/uniticons/unit_";
 	public static final gridBackgroundSpriteNum:Int = 15;
 	// Units
 	public static final unitDataFolder:String = "assets/data/units/";
@@ -80,10 +80,10 @@ class Constants
 	public static final turnOrderIconOutline:String = "assets/images/turnorder/turnOrderIconOutline.png";
 	// BottomBar
 	public static final bottomBarGraphicPath:String = "assets/images/bottombar/bar/bottombar_";
-	public static final unitUiGraphicPath:String = "assets/images/bottombar/portraits/portrait_";
+	public static final unitUiGraphicPath:String = "assets/images/unitportraits/portrait_";
 	public static final skillOutlineGraphicPath:String = "assets/images/bottombar/skills/box/box_outline.png";
-	public static final skillBackgroundGraphicPath:String = "assets/images/bottombar/skills/box/box_bg.png";
-	public static final skillIconGraphicPath:String = "assets/images/bottombar/skills/icons/icon_";
+	public static final skillBackgroundGraphicPath:String = "assets/images/skills/box/box_bg.png";
+	public static final skillIconGraphicPath:String = "assets/images/skills/icons/icon_";
 	public static final inspectButtonGraphicPath:String = "assets/images/bottombar/inspect.png";
 	public static final inspect2ButtonGraphicPath:String = "assets/images/bottombar/inspect2.png";
 	public static final endTurnButtonGraphicPath:String = "assets/images/bottombar/endturn.png";
