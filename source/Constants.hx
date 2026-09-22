@@ -81,7 +81,7 @@ class Constants
 	// BottomBar
 	public static final bottomBarGraphicPath:String = "assets/images/bottombar/bar/bottombar_";
 	public static final unitUiGraphicPath:String = "assets/images/unitportraits/portrait_";
-	public static final skillOutlineGraphicPath:String = "assets/images/bottombar/skills/box/box_outline.png";
+	public static final skillOutlineGraphicPath:String = "assets/images/skills/box/box_outline.png";
 	public static final skillBackgroundGraphicPath:String = "assets/images/skills/box/box_bg.png";
 	public static final skillIconGraphicPath:String = "assets/images/skills/icons/icon_";
 	public static final inspectButtonGraphicPath:String = "assets/images/bottombar/inspect.png";
