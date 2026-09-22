@@ -4,6 +4,8 @@ class UnitPortrait extends CtSprite
 {
     public var unit:Unit;
     
+	var outline:UnitPortraitOutlineEffect;
+
     public function new():Void{
         super();
         
@@ -12,8 +14,13 @@ class UnitPortrait extends CtSprite
         
         antialiasing = false;
 		visible = false;
+
+		outline = new UnitPortraitOutlineEffect();
+
+		this.shader = outline;
+		
     }
-    
+     
     override function update(elapsed:Float):Void{
         super.update(elapsed);        
     }
@@ -48,5 +55,7 @@ class UnitPortrait extends CtSprite
 		lerpManager.targetPosition.set(this.x, this.y);
 
 		this.x -= 30;
+
+		outline.updateValues(unit.data.isBoss ? FlxColor.RED : FlxColor.WHITE, 2, 2);
 	}
 }

@@ -29,6 +29,8 @@ class UnitData extends CtJsonLoader
 
 	public var spCost:Int;
 
+	public var isBoss:Bool;
+
     public function new(id:String){
         this.id = id;
                 
@@ -58,5 +60,7 @@ class UnitData extends CtJsonLoader
 		this.ai_buff = data.ai_buff == null ? 1 : data.ai_buff;
 
 		this.spCost = data.spCost == null ? 0 : data.spCost;
+
+		this.isBoss = data.isBoss == null ? false : data.isBoss;
     }
 }
