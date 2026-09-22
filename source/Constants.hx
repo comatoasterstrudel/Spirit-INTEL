@@ -42,7 +42,7 @@ class Constants
 	public static final battleDataMusicPath:String = musicPath + "battle_";
 	// Grid
     public static final gridSize:Int = 80;
-	public static final unitGridGraphicPath:String = "assets/images/uniticons/unit_";
+	public static final unitGridGraphicPath:String = "assets/images/units/unit_";
 	public static final gridBackgroundSpriteNum:Int = 15;
 	// Units
 	public static final unitDataFolder:String = "assets/data/units/";
