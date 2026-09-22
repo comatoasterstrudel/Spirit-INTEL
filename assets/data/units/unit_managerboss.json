@@ -10,7 +10,7 @@
     "stat_sattack": 120,
     "skills": ["slash"],
     "unlockedByDefault": false,
-    "expReward": 4,
+    "expReward": 100,
     "ai_damage": 1,
     "ai_healing": 2,
     "ai_debuff": 1.3,
