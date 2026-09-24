@@ -147,6 +147,7 @@ class VictoryScreen extends FlxSubState
         var floatingText = new VictoryScreenFloatingText(text, color, baseSprite);
         floatingText.camera = victoryCam;
         add(floatingText);
+        CtSound.play(Constants.sfx_levelup).pitch = FlxG.random.float(.8, 1.3);
     }
 
     function setupMenuManager():Void{

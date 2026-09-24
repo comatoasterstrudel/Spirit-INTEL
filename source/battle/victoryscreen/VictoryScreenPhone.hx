@@ -63,6 +63,7 @@ class VictoryScreenPhone extends FlxSpriteGroup
         phoneSprite.visible = true;
 
         FlxTween.tween(phoneSprite, {angle: 35, x: phoneSprite.x + 350}, .5, {ease: FlxEase.circOut, onComplete: function(f):Void{
+            CtSound.play(Constants.sfx_resultphone);
             phoneSprite.animation.play("open");
             FlxTween.shake(phoneSprite, 0.1 , 0.05,  XY);
             FlxTween.tween(black2, {alpha: 0}, .7);

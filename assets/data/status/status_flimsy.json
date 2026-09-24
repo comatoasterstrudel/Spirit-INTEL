@@ -9,5 +9,6 @@
     },
     "passiveEffects": {
         "eff_damageTaken": 0.30
-    }
+    },
+    "sound": "metal"
 } 

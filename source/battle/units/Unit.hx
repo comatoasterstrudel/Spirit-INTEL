@@ -159,6 +159,7 @@ class Unit extends CtSprite
 		lerpManager.lerpScaleY = true;
 		lerpManager.targetScale.set(1, 1);
 		scale.set(10, 10);
+		CtSound.play(Constants.sfx_bat_placeunit).pitch = FlxG.random.float(.8, 1.2);
 	}
 	public function changeStat(name:String, amount:Int):Void
 	{
@@ -195,6 +196,7 @@ class Unit extends CtSprite
 			PlayState.eventManager.finishTransaction(transactionName);
 		});
 		cast(FlxG.state, PlayState).damageTextSignal.dispatch(this, "- " + Std.string(amount), FlxColor.RED);
+		CtSound.play(Constants.sfx_bat_damage).pitch = FlxG.random.float(.8, 1.3);
 	}
 
 	public function heal(amount:Int):Void
@@ -218,6 +220,7 @@ class Unit extends CtSprite
 			PlayState.eventManager.finishTransaction(transactionName);
 		});
 		cast(FlxG.state, PlayState).damageTextSignal.dispatch(this, "+ " + Std.string(amount), FlxColor.LIME);
+		CtSound.play(Constants.sfx_bat_heal).pitch = FlxG.random.float(.8, 1.3);
 	}
 	public function applyStatusEffect(id:String, turns:Int):Void
 	{
@@ -278,6 +281,10 @@ class Unit extends CtSprite
 				PlayState.eventManager.finishTransaction(transactionName);
 				this.shader = null;
 			});
+
+			if(status.data.sound != ""){
+				CtSound.play(Constants.sfx_statusPath + status.data.sound + ".ogg");
+			}
 		}
 	}
 	public static function getListOfUnits():Array<String>

@@ -32,6 +32,14 @@ class Constants
 	public static final sfx_gridPlace:String = sfxPath + "gridplace.ogg";
 	public static final sfx_encounter:String = sfxPath + "encounter.ogg";
 	public static final sfx_vic_crash:String = sfxPath + "vic_crash.ogg";
+	public static final sfx_resultphone:String = sfxPath + "resultphone.ogg";
+	public static final sfx_levelup:String = sfxPath + "levelup.ogg";
+	public static final sfx_bat_damage:String = sfxPath + "bat_damage.ogg";
+	public static final sfx_bat_heal:String = sfxPath + "bat_heal.ogg";
+	public static final sfx_statusPath:String = sfxPath + "bat_status_";
+	public static final sfx_bat_death:String = sfxPath + "bat_death.ogg";
+	public static final sfx_bat_placeunit:String = sfxPath + "bat_placeunit.ogg";
+
 	//MUSIC
 	public static final musicPath:String = "assets/music/mus_";
 	public static final mus_title:String = musicPath + "title.ogg";

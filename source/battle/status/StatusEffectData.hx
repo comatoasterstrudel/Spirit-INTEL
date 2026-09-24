@@ -17,6 +17,8 @@ class StatusEffectData extends CtJsonLoader
 	public var effects:SkillEffects;
     public var passiveEffects:PassiveSkillEffects;
 
+    public var sound:String;
+
     public function new(id:String){
         this.id = id;
                 
@@ -34,5 +36,7 @@ class StatusEffectData extends CtJsonLoader
         
 		effects = SkillData.mapSkillEffects(data);
         passiveEffects = SkillData.mapPassiveSkillEffects(data);
+
+        this.sound = data.sound ?? "";
 	}
 }

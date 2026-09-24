@@ -956,6 +956,8 @@ class PlayState extends FlxState
 		{
 			deathEffects.remove(shader);
 		});
+
+		CtSound.play(Constants.sfx_bat_death);
 	}
 
 	function updateDeathEffects(elapsed:Float):Void
