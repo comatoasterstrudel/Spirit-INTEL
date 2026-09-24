@@ -648,6 +648,18 @@
           "originX": 0,
           "originY": 0,
           "values": {"triggerByWalkingOver": false, "dialogue": "", "room": "", "roomTransitionTime": 0.3, "encounterName": "", "scriptFunction": "box", "tag": "", "openSave": false, "saveName": "", "saveBgName": ""}
+        },
+        {
+          "name": "interactable",
+          "id": 63,
+          "_eid": "67528600",
+          "x": 528,
+          "y": 368,
+          "width": 300,
+          "height": 16,
+          "originX": 0,
+          "originY": 0,
+          "values": {"triggerByWalkingOver": true, "dialogue": "", "room": "", "roomTransitionTime": 0.3, "encounterName": "", "scriptFunction": "soapTrigger", "tag": "", "openSave": false, "saveName": "", "saveBgName": ""}
         }
       ]
     },

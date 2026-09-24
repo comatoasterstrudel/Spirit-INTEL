@@ -1416,3 +1416,9 @@ function box():Void{
 		OverworldState.eventManager.finishTransaction("d");
 	});
 }
+
+function soapTrigger():Void{
+	if(Save.storyFlags.get("factory_seenJessCorpse").val_bool && !Save.unlockedUnits.get("soap")){
+		startBattle(get_selectedRandomEncounter());
+	}
+}

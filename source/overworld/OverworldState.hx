@@ -1376,6 +1376,9 @@ class OverworldState extends FlxState
 		script.setValue({name: "get_encountersDisabled", value: get_encountersDisabled});
 		script.setValue({name: "set_encountersDisabled", value: set_encountersDisabled});
 
+		script.setValue({name: "get_selectedRandomEncounter", value: get_selectedRandomEncounter});
+		script.setValue({name: "set_selectedRandomEncounter", value: set_selectedRandomEncounter});
+
 		scripts.push(script);
 		script.executeFunction("create");
 
@@ -1596,6 +1599,18 @@ class OverworldState extends FlxState
 	function set_encountersDisabled(val:Bool):Void
 	{
 		encountersDisabled = val;
+	}
+
+	// selectedRandomEncounter
+
+	function get_selectedRandomEncounter():String
+	{
+		return selectedRandomEncounter;
+	}
+
+	function set_selectedRandomEncounter(val:String):Void
+	{
+		selectedRandomEncounter = val;
 	}
 
 	function executeScriptFunction(name:String, args:Array<Any>):Void
