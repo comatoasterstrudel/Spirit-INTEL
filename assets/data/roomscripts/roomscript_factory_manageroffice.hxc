@@ -483,8 +483,6 @@ function pc_finish(?forceFinish:Bool = false):Void{
                 character_robin.facing = DOWN; 
             });
         } else {
-            trace("a!?!?!?");
-
             for(i in [pcBg_calendar, pcBg_emails, pcBg_messages]){
                 FlxTween.tween(i, {alpha: 0}, 1);
             }

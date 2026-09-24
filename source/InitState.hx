@@ -120,6 +120,8 @@ class InitState extends FlxState{
 			choicerOffset: new FlxPoint(100, 70),
 			positionPortraitFromBottom: true,
 			nameBoxFollowType: Opposite,
+			confirmImagePath: "dialogueconfirm",
+			confirmOffset: FlxPoint.get(40, 50)
 		}
 
 		CtDialogueBox.preloadFont(CtDialogueBox.defaultSettings.font, CtDialogueBox.defaultSettings.fontSize);
