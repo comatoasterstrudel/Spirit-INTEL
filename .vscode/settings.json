@@ -6,4 +6,7 @@
     "*.hxs": "haxe",
     "*.hxc": "haxe"
   },
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  }
 }
