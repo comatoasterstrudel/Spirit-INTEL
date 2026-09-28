@@ -660,6 +660,42 @@
           "originX": 0,
           "originY": 0,
           "values": {"triggerByWalkingOver": true, "dialogue": "", "room": "", "roomTransitionTime": 0.3, "encounterName": "", "scriptFunction": "soapTrigger", "tag": "", "openSave": false, "saveName": "", "saveBgName": ""}
+        },
+        {
+          "name": "interactable",
+          "id": 64,
+          "_eid": "67528600",
+          "x": 432,
+          "y": 336,
+          "width": 16,
+          "height": 16,
+          "originX": 0,
+          "originY": 0,
+          "values": {"triggerByWalkingOver": false, "dialogue": "", "room": "", "roomTransitionTime": 0.3, "encounterName": "", "scriptFunction": "box", "tag": "", "openSave": false, "saveName": "", "saveBgName": ""}
+        },
+        {
+          "name": "interactable",
+          "id": 65,
+          "_eid": "67528600",
+          "x": 416,
+          "y": 352,
+          "width": 16,
+          "height": 16,
+          "originX": 0,
+          "originY": 0,
+          "values": {"triggerByWalkingOver": false, "dialogue": "", "room": "", "roomTransitionTime": 0.3, "encounterName": "", "scriptFunction": "box", "tag": "", "openSave": false, "saveName": "", "saveBgName": ""}
+        },
+        {
+          "name": "interactable",
+          "id": 66,
+          "_eid": "67528600",
+          "x": 432,
+          "y": 368,
+          "width": 32,
+          "height": 16,
+          "originX": 0,
+          "originY": 0,
+          "values": {"triggerByWalkingOver": false, "dialogue": "", "room": "", "roomTransitionTime": 0.3, "encounterName": "", "scriptFunction": "box", "tag": "", "openSave": false, "saveName": "", "saveBgName": ""}
         }
       ]
     },
