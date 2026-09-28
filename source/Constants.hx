@@ -31,6 +31,7 @@ class Constants
 	public static final sfx_ui_gridScroll:String = sfxPath + "ui_gridScroll.ogg";
 	public static final sfx_gridPlace:String = sfxPath + "gridplace.ogg";
 	public static final sfx_encounter:String = sfxPath + "encounter.ogg";
+	public static final sfx_encounterdone:String = sfxPath + "encounterover.ogg";
 	public static final sfx_vic_crash:String = sfxPath + "vic_crash.ogg";
 	public static final sfx_resultphone:String = sfxPath + "resultphone.ogg";
 	public static final sfx_levelup:String = sfxPath + "levelup.ogg";

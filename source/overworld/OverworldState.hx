@@ -120,6 +120,7 @@ class OverworldState extends FlxState
 		{
 			player.positionCharacter(positionBeforeBattle.x, positionBeforeBattle.y);
 			leftForBattle = false;
+			CtSound.play(Constants.sfx_encounterdone);
 			doBattleTransition(OUT, function():Void
 			{
 				executeScriptFunction("battleTransitionDone", [PlayState.battleName]);
@@ -183,9 +184,7 @@ class OverworldState extends FlxState
 		
 		camLighting = new FlxCamera();
 		camLighting.bgColor.alpha = 0;
-		camLighting.filters = [
-		(new ShaderFilter(lightingShader))
-		];
+		camLighting.filters = [(new ShaderFilter(lightingShader))];
 		FlxG.cameras.add(camLighting, false);
 		
 		camOverlay = new FlxCamera();
@@ -1155,7 +1154,7 @@ class OverworldState extends FlxState
 
 		positionBeforeBattle.set(player.x, player.y);
 
-		CtSound.play(Constants.sfx_encounter, 1);
+		CtSound.play(Constants.sfx_encounter);
 
 		if(FlxG.sound.music != null){
 			updateLastMusic();
