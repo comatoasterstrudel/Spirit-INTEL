@@ -4,5 +4,6 @@
     "lighting": 0.7,
     "bgColor": [220, 220, 220],
     "script": ["factory_fireexitroom"],
-    "polaroidBg": "factorybasement"
+    "polaroidBg": "factorybasement",
+    "music": "factorymonster"
 }  

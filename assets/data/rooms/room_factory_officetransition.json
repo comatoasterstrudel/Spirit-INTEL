@@ -4,5 +4,6 @@
     "map": "factory_officetransition",
     "lighting": 0.7,
     "bgColor": [220, 220, 220],
-    "polaroidBg": "factorybasement"
+    "polaroidBg": "factorybasement",
+    "music": "factorymonster"
 } 

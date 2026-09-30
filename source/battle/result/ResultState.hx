@@ -103,13 +103,13 @@ class ResultState extends FlxSubState
                     case "Replay":
                         FlxG.resetState();
                     case "Exit to Menu":
-                        FlxG.switchState(LevelSelectorState.new);
-						case "Continue":
-							menuManager.disable();
-							doOutroAnim(function():Void
-							{
-								FlxG.switchState(OverworldState.new);
-							});
+                        FlxG.switchState(MainMenuState.new);
+					case "Continue":
+                        menuManager.disable();
+                        doOutroAnim(function():Void
+                        {
+                            FlxG.switchState(OverworldState.new);
+                        });
                 }
             }}]);
         }

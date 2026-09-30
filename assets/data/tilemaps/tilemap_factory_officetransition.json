@@ -119,7 +119,7 @@
           "height": 32,
           "originX": 0,
           "originY": 0,
-          "values": {"doorName": "factoryhorizontalR", "room": "factory_fireexitroom", "transitionTime": 2, "lockedDialogue": "", "horizontal": true, "scriptFunction": "", "tag": "", "facingDownwards": false}
+          "values": {"doorName": "factoryhorizontalR", "room": "factory_fireexitroom", "transitionTime": 1, "lockedDialogue": "", "horizontal": true, "scriptFunction": "", "tag": "", "facingDownwards": false}
         },
         {
           "name": "lightsource",

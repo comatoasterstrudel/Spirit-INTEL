@@ -39,7 +39,7 @@
           "height": 32,
           "originX": 0,
           "originY": 0,
-          "values": {"doorName": "factoryfireexit", "room": "factory_outsidefireexit", "transitionTime": 2, "lockedDialogue": "", "horizontal": false, "scriptFunction": "", "tag": "", "facingDownwards": true}
+          "values": {"doorName": "factoryfireexit", "room": "factory_outsidefireexit", "transitionTime": 2, "lockedDialogue": "", "horizontal": false, "scriptFunction": "", "tag": "thebottomdoor", "facingDownwards": true}
         },
         {
           "name": "player",
@@ -90,12 +90,24 @@
           "id": 13,
           "_eid": "67528600",
           "x": 128,
-          "y": 416,
+          "y": 352,
           "width": 300,
           "height": 16,
           "originX": 0,
           "originY": 0,
           "values": {"triggerByWalkingOver": true, "dialogue": "", "room": "", "roomTransitionTime": 0.3, "encounterName": "", "scriptFunction": "doBossIntroScene", "tag": "", "openSave": false, "saveName": "", "saveBgName": ""}
+        },
+        {
+          "name": "character",
+          "id": 14,
+          "_eid": "68173711",
+          "x": 528,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "originX": 0,
+          "originY": 0,
+          "values": {"name": "managerscary", "tag": "managerscary"}
         }
       ]
     },

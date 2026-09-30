@@ -3,9 +3,12 @@ function CTSCRIPT_SETNAME():String
 	return "factory_fireexitroom";
 }
 
-var player:Character;
+var character_robin:Player;
+var character_managerscary:Character;
 
-var gridStart:Int = 20;
+var thebottomdoor:Door;
+
+var gridStart:Int = 30;
 var gridEnd:Int = 40;
 
 var colorA:Array<Int> = [0, 0, 0, 255];
@@ -17,8 +20,17 @@ var lastPlayerY:Float = 0;
 
 var lightingShader:LightingEffectShader;
 
+var managerHurt:Bool = false;
+var managerHurtTimer:Float = 0;
+var managerHurtTimerMax:Float = .75;
+
 function create(){
-    player = getCharacterByTag("player");
+    character_robin = get_player();
+    character_managerscary = getCharacterByTag("managerscary");
+    character_managerscary.kill();
+
+    thebottomdoor = getDoorByTag("thebottomdoor");
+
     lightingShader = get_lightingShader();
     
     setColor();
@@ -26,10 +38,20 @@ function create(){
 }
 
 function update(elapsed:Float){
-    if(player.y != lastPlayerY){
+    if(character_robin.y != lastPlayerY){
         setColor();
     }
     updatePlayerPos();
+
+    if(managerHurt){
+        managerHurtTimer += elapsed;
+        if(managerHurtTimer >= managerHurtTimerMax){
+            managerHurtTimer -= (managerHurtTimerMax * FlxG.random.float(.6, 1.6));
+
+            CtSound.play(Constants.sfx_bat_damage, .3).pitch = FlxG.random.float(.6, 1);
+            FlxTween.shake(character_managerscary, 0.05, .2, 0x01);
+        }
+    }
 }
 
 function getYCordByGrid(pos:Float):Float{
@@ -37,11 +59,11 @@ function getYCordByGrid(pos:Float):Float{
 }
 
 function updatePlayerPos():Void{
-    lastPlayerY = player.y;
+    lastPlayerY = character_robin.y;
 }
 
 function setColor():Void{
-    var factor = FlxMath.bound((player.y - getYCordByGrid(gridStart)) / (getYCordByGrid(gridEnd) - getYCordByGrid(gridStart)), 0, 1);
+    var factor = FlxMath.bound((character_robin.y - getYCordByGrid(gridStart)) / (getYCordByGrid(gridEnd) - getYCordByGrid(gridStart)), 0, 1);
                 
     var newcolor:Array<Int> = [];
             
@@ -61,4 +83,235 @@ function doBossIntroScene():Void{
     set_inCutscene(true);
 
     Save.storyFlags.get("factory_seenManagerBossIntro").val_bool = true;
+
+    // Robin stops, manager bangs on door
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("bang bang");
+
+        var muted:Bool = false;
+
+        for(i in 0...3){
+            new FlxTimer().start(.65 * i, function(f):Void{
+                if(!muted){
+                    muted = true;
+                    FlxG.sound.music.stop();
+                    FlxG.sound.music.destroy();
+                    FlxG.sound.music = null;
+                }
+                bangOnDoor();
+
+                if(i == 2){
+                    new FlxTimer().start(1.5, function(f):Void{
+                        OverworldState.eventManager.finishTransaction("bang bang");
+                    });
+                }
+            });
+        }
+    });
+
+    // "Is he still here?""
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("talk");
+
+        startDialogue(["factory/fireexitroom/dialogue_boss_0"], function():Void
+		{
+			OverworldState.eventManager.finishTransaction("talk");
+		});
+    });
+
+    // Zoom camera down to manager
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("zoom");
+
+        character_managerscary.revive();
+        character_managerscary.positionCharacterByGrid(15.5, 41);
+
+        set_lockCamera(true);
+
+        FlxTween.tween(camGame.scroll, {y: 1530}, 3, {ease: FlxEase.quartInOut, onComplete: function(f):Void{
+            OverworldState.eventManager.finishTransaction("zoom");
+        }});
+    });
+
+    // shake door again
+	OverworldState.eventManager.addEvent(function()
+	{
+        OverworldState.eventManager.startTransaction("bang bang");
+
+        for(i in 0...3){
+            new FlxTimer().start(.9 * i, function(f):Void{
+                bangOnDoor();
+
+                if(i == 2){
+                    new FlxTimer().start(2, function(f):Void{
+                        OverworldState.eventManager.finishTransaction("bang bang");
+                    });
+                }
+            });
+        }
+    });
+
+    // manager trn around
+	OverworldState.eventManager.addEvent(function()
+	{
+        OverworldState.eventManager.startTransaction("turn");
+        
+        FlxTween.shake(character_managerscary, 0.05, .2, 0x01);
+        character_managerscary.facing = RIGHT;
+        CtSound.play(Constants.sfxPath + "checkjess.ogg");
+
+        new FlxTimer().start(1, function(f):Void{
+            FlxTween.shake(character_managerscary, 0.05, .2, 0x01);
+            character_managerscary.facing = UP;
+            CtSound.play(Constants.sfxPath + "checkjess.ogg").pitch = .7;
+
+            new FlxTimer().start(2, function(f):Void{
+                OverworldState.eventManager.finishTransaction("turn");
+            });
+        });
+    });
+
+    // manager stands up
+	OverworldState.eventManager.addEvent(function()
+	{
+        OverworldState.eventManager.startTransaction("stand");
+        
+        FlxTween.shake(character_managerscary, 0.08, .2, 0x01);
+        character_managerscary.changeAnimationPrefix("stand-");
+        CtSound.play(Constants.sfxPath + "managergetup.ogg", .5);
+
+        new FlxTimer().start(2, function(f):Void{
+            OverworldState.eventManager.finishTransaction("stand");
+        });
+
+        OverworldState.setUpMusic(Constants.roomMusicPath + "chase.ogg", 4);
+        FlxG.sound.music.pitch = 0;
+
+        FlxTween.tween(FlxG.sound.music, {pitch: .5}, 3);
+    });
+
+    /**
+     * the manager runs at robin, camera pans up
+     */
+    OverworldState.eventManager.addEvent(function(){
+        OverworldState.eventManager.startTransaction("RUN");
+        OverworldState.eventManager.startTransaction("camera go back");
+        OverworldState.eventManager.startTransaction("robin backup");
+
+        character_managerscary.lockAnims = true;
+        character_managerscary.animation.play("walkbutslow");
+        character_managerscary.movementSpeed = .23;
+        
+        character_managerscary.moveToGridSpace(-1, 18, function():Void
+		{
+			character_managerscary.lockAnims = false;
+            OverworldState.eventManager.finishTransaction("RUN");
+		});
+
+        character_managerscary.animation.onFrameChange.add(function(name:String, frameNum:Int, frameIndex:Int):Void
+		{
+			if (name == "walkbutslow")
+			{
+				if (frameNum == 1)
+				{
+					CtSound.play(Constants.sfxPath + "managerstep" + FlxG.random.int(1,3) + ".ogg", 0.7).pitch = .5;
+
+				    FlxTween.shake(character_managerscary, 0.05, .2, 0x01);
+				}
+			}
+		});
+
+        // put robin in place
+        character_robin.positionCharacterByGrid(16, 22);
+
+        moveCameraBackToPlayer(5, FlxEase.quartInOut, function():Void{
+			character_managerscary.hitbox.y -= 180; // go faster pls
+            character_managerscary.movementSpeed = .6;
+            OverworldState.eventManager.finishTransaction("camera go back");
+		});		
+
+        new FlxTimer().start(3, function(f):Void{
+            character_robin.lockMovement = true;
+            character_robin.lockAnims = true;
+
+            character_robin.animation.play("walk_down");
+            character_robin.movementSpeed = .2;
+
+            character_robin.moveToGridSpace(-1, 16, function():Void
+            {
+                character_robin.lockAnims = false;
+                character_robin.facing = DOWN;
+                OverworldState.eventManager.finishTransaction("robin backup");
+            });
+        });
+    });
+
+    // "Gjh.... YOU...""
+    OverworldState.eventManager.addEvent(function()
+    {
+        OverworldState.eventManager.startTransaction("talk");
+
+        startDialogue(["factory/fireexitroom/dialogue_boss_1"], function():Void
+        {
+            OverworldState.eventManager.finishTransaction("talk");
+        });
+    });
+
+    // Volor flashes and knocks manager back.. 
+    OverworldState.eventManager.addEvent(function()
+    {
+        OverworldState.eventManager.startTransaction("talk");
+
+        camGame.flash(0xFF0026FF);
+        character_managerscary.changeAnimationPrefix("");
+
+        FlxTween.tween(FlxG.sound.music, {pitch: 1.3}, 2);
+
+        CtSound.play(Constants.sfxPath + "managerslide.ogg");
+        CtSound.play(Constants.sfxPath + "jacketshatter.ogg");
+
+        FlxTween.tween(character_managerscary.hitbox, {y: character_managerscary.hitbox.y + 200}, 1.5, {ease: FlxEase.quartOut, onComplete: function(f):Void{
+            managerHurt = true;
+            new FlxTimer().start(1.5, function(f):Void{
+                OverworldState.eventManager.finishTransaction("talk");
+            });
+        }});
+    });
+
+    // "He's actually hurt??"
+    OverworldState.eventManager.addEvent(function()
+    {
+        OverworldState.eventManager.startTransaction("talk");
+
+        startDialogue(["factory/fireexitroom/dialogue_boss_2"], function():Void
+        {
+            OverworldState.eventManager.finishTransaction("talk");
+        });
+    });
+
+    // walk down and start battle
+    OverworldState.eventManager.addEvent(function()
+    {
+        FlxTween.tween(FlxG.sound.music, {volume: 0}, 3);
+
+        character_robin.movementSpeed = .2;
+        character_robin.moveToGridSpace(-1, 20, function():Void
+        {
+            managerHurt = false;
+
+            new FlxTimer().start(1, function(f):Void{
+                startBattle("factory_managerboss");
+            }); 
+        });
+    });
+}
+
+function bangOnDoor():Void{
+    camGame.shake(0.023, .2, null, true, 0x01);
+    FlxTween.shake(thebottomdoor, 0.05, .2, 0x01);
+    
+    CtSound.play(Constants.sfxPath + "hitdoor.ogg").pitch = FlxG.random.float(.5, 1);
 }

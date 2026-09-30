@@ -111,6 +111,12 @@
             "prefix": "MonManager_Kneel_Left",
             "fps": 1,
             "looped": false
+        },
+        {
+            "name": "walkbutslow",
+            "prefix": "MonManager-StandUp-Shuffle",
+            "fps": 3, 
+            "looped": true
         }
     ]
 }
