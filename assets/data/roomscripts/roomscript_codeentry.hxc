@@ -31,6 +31,7 @@ function update(elapsed:Float):Void{
         var changed:Bool = false;
 
         if(CtControls.checkInput("up", JUSTPRESSED)){
+            CtSound.play(Constants.sfx_ui_scroll);
             inputtedCode[menuManager.curSelected] ++;
             changed = true;
             if(inputtedCode[menuManager.curSelected] > 9){
@@ -39,6 +40,7 @@ function update(elapsed:Float):Void{
         }
 
         if(CtControls.checkInput("down", JUSTPRESSED)){
+            CtSound.play(Constants.sfx_ui_scroll);
             inputtedCode[menuManager.curSelected] --;
             changed = true;
             if(inputtedCode[menuManager.curSelected] < 0){
@@ -152,8 +154,10 @@ function end():Void{
         var color = 0xFF000000;
 
         if(correct){
+            CtSound.play(Constants.sfxPath + "codegood.ogg");
             color = 0xFF27F53F;
         } else {
+            CtSound.play(Constants.sfxPath + "codebad.ogg");
             color = 0xFFF52727;
         }
 

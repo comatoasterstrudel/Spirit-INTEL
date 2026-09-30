@@ -1,5 +1,6 @@
 {
     "name": "factoryphone",
     "graphic": "factoryphone",
-    "bgName": "factory"
+    "bgName": "factory",
+    "sound": "factory"
 }

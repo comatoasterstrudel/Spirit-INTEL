@@ -14,5 +14,11 @@ class SaveSpot extends Interactable
         resize(Constants.overworldPixelScale);
         antialiasing = false;
         visible = true;
+
+		triggerSignal.add(function():Void{
+			if(data.sound != ""){
+				CtSound.play(Constants.sfx_saveSoundPath + data.sound + ".ogg");
+			}
+		});
 	}
 }

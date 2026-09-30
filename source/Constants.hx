@@ -40,6 +40,7 @@ class Constants
 	public static final sfx_statusPath:String = sfxPath + "bat_status_";
 	public static final sfx_bat_death:String = sfxPath + "bat_death.ogg";
 	public static final sfx_bat_placeunit:String = sfxPath + "bat_placeunit.ogg";
+	public static final sfx_saveSoundPath:String = sfxPath + "phone_";
 
 	//MUSIC
 	public static final musicPath:String = "assets/music/mus_";
