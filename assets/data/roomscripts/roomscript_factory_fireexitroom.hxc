@@ -52,3 +52,13 @@ function setColor():Void{
             
     lightingShader.updateColorsFromArray(newcolor, colorGlow);
 }
+
+function doBossIntroScene():Void{
+    if(Save.storyFlags.get("factory_seenManagerBossIntro").val_bool){
+        return;
+    }
+
+    set_inCutscene(true);
+
+    Save.storyFlags.get("factory_seenManagerBossIntro").val_bool = true;
+}

@@ -84,6 +84,18 @@
           "originX": 0,
           "originY": 0,
           "values": {"triggerByWalkingOver": false, "dialogue": "factory/fireexitroom/dialogue_wall", "room": "", "roomTransitionTime": 0.3, "encounterName": "", "scriptFunction": "", "tag": "", "openSave": false, "saveName": "", "saveBgName": ""}
+        },
+        {
+          "name": "interactable",
+          "id": 13,
+          "_eid": "67528600",
+          "x": 128,
+          "y": 416,
+          "width": 300,
+          "height": 16,
+          "originX": 0,
+          "originY": 0,
+          "values": {"triggerByWalkingOver": true, "dialogue": "", "room": "", "roomTransitionTime": 0.3, "encounterName": "", "scriptFunction": "doBossIntroScene", "tag": "", "openSave": false, "saveName": "", "saveBgName": ""}
         }
       ]
     },
