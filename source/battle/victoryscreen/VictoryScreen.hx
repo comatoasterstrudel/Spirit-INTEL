@@ -255,7 +255,7 @@ class VictoryScreen extends FlxSubState
         var exptogive = FlxMath.bound(exp / unitsToAdd.length, 1);
 
         // robin
-        FlxTween.tween(Save.levelRobin, {exp: Save.levelRobin.exp + exptogive, expFloat: Save.levelRobin.exp + exp}, time);
+        FlxTween.tween(Save.levelRobin, {exp: Save.levelRobin.exp + exptogive, expFloat: Save.levelRobin.exp + exptogive}, time);
 
         for(unit in unitsToAdd){
             FlxTween.tween(Save.levelUnits.get(unit), {exp: Save.levelUnits.get(unit).exp + exptogive, expFloat: Save.levelUnits.get(unit).exp + exptogive}, time);
