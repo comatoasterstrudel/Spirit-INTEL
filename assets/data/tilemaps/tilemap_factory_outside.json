@@ -225,7 +225,7 @@
           "height": 48,
           "originX": 0,
           "originY": 0,
-          "values": {"triggerByWalkingOver": false, "dialogue": "factory/outside/dialogue_fance", "room": "", "roomTransitionTime": 0.3, "encounterName": "", "scriptFunction": "", "tag": "", "openSave": false, "saveName": "", "saveBgName": ""}
+          "values": {"triggerByWalkingOver": false, "dialogue": "factory/outside/dialogue_fence", "room": "", "roomTransitionTime": 0.3, "encounterName": "", "scriptFunction": "", "tag": "", "openSave": false, "saveName": "", "saveBgName": ""}
         },
         {
           "name": "interactable",
