@@ -1,4 +1,5 @@
 import Sys.sleep;
+import Sys;
 import battle.PlayState;
 import battle.ai.UnitAI;
 import battle.battleData.BattleData;
@@ -33,6 +34,7 @@ import battle.units.*;
 import battle.units.Unit;
 import battle.victoryscreen.*;
 import battle.victoryscreen.VictoryScreenStages;
+import cpp.vm.Gc;
 import ctDialogueBox.ctdb.CtDialogueBox;
 import ctDialogueBox.textbox.Text;
 import ctDialogueBox.textbox.effects.IEffect;
@@ -137,7 +139,6 @@ import save.storyflags.*;
 import save.time.*;
 import sys.thread.Thread;
 import texteffects.BlueEffect;
-
 #if debug
 #if ctDialogueEditor
 import ctDialogueBox.editor.*;

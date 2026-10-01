@@ -24,6 +24,8 @@ class InitState extends FlxState{
 		
 		initDiscord();
 
+		setupMemoryCleanup();
+
 		#if debug
 		#if forceCutscene
 		init_forceCutscene = Compiler.getDefine("forceCutscene").split('=')[0];
@@ -207,5 +209,13 @@ class InitState extends FlxState{
 	function initDiscord():Void{
 		DiscordClient.initialize();
 		DiscordClient.changePresence("ahaha", null);
+	}
+	function setupMemoryCleanup():Void{
+		FlxG.signals.postStateSwitch.add(function():Void{
+			FlxG.bitmap.clearCache();
+			FlxG.bitmap.clearUnused();
+			Assets.cache.clear();
+			Gc.run(true);
+		});
 	}
 }
