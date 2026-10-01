@@ -1154,20 +1154,10 @@ class OverworldState extends FlxState
 
 		positionBeforeBattle.set(player.x, player.y);
 
-		CtSound.play(Constants.sfx_encounter);
-
-		if(FlxG.sound.music != null){
-			updateLastMusic();
-			FlxG.sound.music.stop();
-			FlxG.sound.music.destroy();
-			FlxG.sound.music = null;
-		}
-
-		PlayState.setUpMusic(new BattleData(name));
-
+		PlayState.setBattle(name, STORY);
+		
 		doBattleTransition(IN, function():Void
 		{
-			PlayState.setBattle(name, STORY);
 			FlxG.switchState(PlayState.new);
 		});
 	}
@@ -1198,77 +1188,110 @@ class OverworldState extends FlxState
 		lockCamera = true;
 		inCutscene = true;
 
-		new FlxTimer().start(transitionType == IN ? .5 : 0, function(f):Void
-		{
-			battleTransition = new MosaicEffect();
-			battleTransition.thewidth = transitionType == IN ? startBlockWidth : endBlockWidth;
-			battleTransition.theheight = transitionType == IN ? startBlockHeight : endBlockHeight;
+		var isBoss = (transitionType == IN && BattleData.isBoss(PlayState.battleData));
 
-			var shaderfilter = (new ShaderFilter(battleTransition));
+		if(isBoss){
+			CtSound.play(Constants.sfx_bossflare);
 
-			camGame.filters = [shaderfilter];
-			camLighting.filters.push(shaderfilter);
-			
-			FlxTween.tween(battleTransition, {
-				thewidth: transitionType == IN ? endBlockWidth : startBlockWidth,
-				theheight: transitionType == IN ? endBlockHeight : startBlockHeight
-			}, 1, {
+			var spr = new CtSprite().createColorBlock(FlxG.width, FlxG.height, FlxColor.RED);
+			spr.camera = camUI;
+			spr.alpha = 0;
+			spr.blend = MULTIPLY;
+			add(spr);
+
+			FlxTween.tween(spr, {alpha: .3}, .5, {onComplete: function(f):Void{
+				FlxTween.tween(spr, {alpha: 0}, .5, {onComplete: function(f):Void{
+					spr.destroy();
+				}});
+			}});
+		}
+
+		new FlxTimer().start(isBoss ? 1.5 : 0.001, function(f):Void{
+			if(transitionType == IN){
+				CtSound.play(Constants.sfx_encounter);
+
+				if(FlxG.sound.music != null){
+					updateLastMusic();
+					FlxG.sound.music.stop();
+					FlxG.sound.music.destroy();
+					FlxG.sound.music = null;
+				}
+
+				PlayState.setUpMusic(PlayState.battleData);
+			}
+
+			new FlxTimer().start(transitionType == IN ? .5 : 0, function(f):Void
+			{
+				battleTransition = new MosaicEffect();
+				battleTransition.thewidth = transitionType == IN ? startBlockWidth : endBlockWidth;
+				battleTransition.theheight = transitionType == IN ? startBlockHeight : endBlockHeight;
+
+				var shaderfilter = (new ShaderFilter(battleTransition));
+
+				camGame.filters = [shaderfilter];
+				camLighting.filters.push(shaderfilter);
+				
+				FlxTween.tween(battleTransition, {
+					thewidth: transitionType == IN ? endBlockWidth : startBlockWidth,
+					theheight: transitionType == IN ? endBlockHeight : startBlockHeight
+				}, 1, {
+					ease: transitionType == IN ? FlxEase.quartIn : FlxEase.quartOut,
+					onComplete: function(f):Void
+					{
+						if (transitionType == OUT)
+						{
+							camGame.filters = [];
+							camLighting.filters.remove(shaderfilter);
+							shaderfilter = null;
+							battleTransition = null;
+						}
+					}
+				});
+			});
+
+			camGame.scroll.set(transitionType == IN ? startCameraPosition.x : endCameraPosition.x,
+				transitionType == IN ? startCameraPosition.y : endCameraPosition.y);
+
+			FlxTween.tween(camGame.scroll,
+				{x: transitionType == IN ? endCameraPosition.x : startCameraPosition.x, y: transitionType == IN ? endCameraPosition.y : startCameraPosition.y}, 1,
+				{startDelay: transitionType == IN ? 0 : .5});
+
+			camGame.zoom = transitionType == IN ? startZoom : endZoom;
+
+			FlxTween.tween(camGame, {zoom: transitionType == IN ? endZoom : startZoom}, 1.5, {
 				ease: transitionType == IN ? FlxEase.quartIn : FlxEase.quartOut,
 				onComplete: function(f):Void
 				{
 					if (transitionType == OUT)
 					{
-						camGame.filters = [];
-						camLighting.filters.remove(shaderfilter);
-						shaderfilter = null;
-						battleTransition = null;
+						player.facing = lastFacing;
+					}
+
+					inCutscene = false;
+					lockCamera = false;
+
+					if (onComplete != null)
+					{
+						onComplete();
 					}
 				}
 			});
-		});
 
-		camGame.scroll.set(transitionType == IN ? startCameraPosition.x : endCameraPosition.x,
-			transitionType == IN ? startCameraPosition.y : endCameraPosition.y);
+			var spr = new CtSprite().createColorBlock(FlxG.width, FlxG.height, isBoss ? FlxColor.RED : FlxColor.WHITE);
+			spr.camera = camUI;
+			spr.alpha = transitionType == IN ? startFadeAlpha : endFadeAlpha;
+			add(spr);
 
-		FlxTween.tween(camGame.scroll,
-			{x: transitionType == IN ? endCameraPosition.x : startCameraPosition.x, y: transitionType == IN ? endCameraPosition.y : startCameraPosition.y}, 1,
-			{startDelay: transitionType == IN ? 0 : .5});
-
-		camGame.zoom = transitionType == IN ? startZoom : endZoom;
-
-		FlxTween.tween(camGame, {zoom: transitionType == IN ? endZoom : startZoom}, 1.5, {
-			ease: transitionType == IN ? FlxEase.quartIn : FlxEase.quartOut,
-			onComplete: function(f):Void
+			new FlxTimer().start(transitionType == IN ? .5 : 0, function(f):Void
 			{
-				if (transitionType == OUT)
-				{
-					player.facing = lastFacing;
-				}
-
-				inCutscene = false;
-				lockCamera = false;
-
-				if (onComplete != null)
-				{
-					onComplete();
-				}
-			}
-		});
-
-		var spr = new CtSprite().createColorBlock(FlxG.width, FlxG.height, FlxColor.WHITE);
-		spr.camera = camUI;
-		spr.alpha = transitionType == IN ? startFadeAlpha : endFadeAlpha;
-		add(spr);
-
-		new FlxTimer().start(transitionType == IN ? .5 : 0, function(f):Void
-		{
-			FlxTween.tween(spr, {alpha: transitionType == IN ? endFadeAlpha : startFadeAlpha}, 1, {
-				ease: transitionType == IN ? FlxEase.quartIn : FlxEase.quartOut,
-				onComplete: function(f):Void
-				{
-					if (transitionType == OUT)
-						spr.destroy();
-				}
+				FlxTween.tween(spr, {alpha: transitionType == IN ? endFadeAlpha : startFadeAlpha}, .9, {
+					ease: transitionType == IN ? FlxEase.quartIn : FlxEase.quartOut,
+					onComplete: function(f):Void
+					{
+						if (transitionType == OUT)
+							spr.destroy();
+					}
+				});
 			});
 		});
 	}

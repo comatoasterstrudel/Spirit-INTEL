@@ -17,6 +17,8 @@ class TurnOrderIcon extends FlxSpriteGroup
 
 	public var scaleFactor:Float = 1;
 	
+	public var uniqueID:Int = 0;
+
     public function new():Void{
         super();
         
@@ -59,11 +61,25 @@ class TurnOrderIcon extends FlxSpriteGroup
 		lightening = CtUtil.lerpThing(lightening, targetLightening, elapsed, 12);
 
 		bg.color = ogColor.getLightened(lightening);
+
+		unitGraphic.alpha = FlxMath.bound(1 - lightening, 0.3, 1);
 	}
 
 	public function updateCurrentTurn(unit:Unit):Void
 	{
 		if (unit != null && curUnit.uniqueUnitID == unit.uniqueUnitID)
+		{
+			targetLightening = 0;
+		}
+		else
+		{
+			targetLightening = 0.9;
+		}
+	}
+
+	public function updateCurrentTurnWithID(id:Int):Void
+	{
+		if (id == uniqueID)
 		{
 			targetLightening = 0;
 		}

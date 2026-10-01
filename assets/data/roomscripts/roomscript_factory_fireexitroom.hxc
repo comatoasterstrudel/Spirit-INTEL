@@ -99,7 +99,7 @@ function doBossIntroScene():Void{
                     FlxG.sound.music.destroy();
                     FlxG.sound.music = null;
                 }
-                bangOnDoor();
+                bangOnDoor(.4);
 
                 if(i == 2){
                     new FlxTimer().start(1.5, function(f):Void{
@@ -134,6 +134,8 @@ function doBossIntroScene():Void{
         FlxTween.tween(camGame.scroll, {y: 1530}, 3, {ease: FlxEase.quartInOut, onComplete: function(f):Void{
             OverworldState.eventManager.finishTransaction("zoom");
         }});
+
+        CtSound.play(Constants.sfxPath + "managerambience.ogg");
     });
 
     // shake door again
@@ -161,17 +163,21 @@ function doBossIntroScene():Void{
         
         FlxTween.shake(character_managerscary, 0.05, .2, 0x01);
         character_managerscary.facing = RIGHT;
-        CtSound.play(Constants.sfxPath + "checkjess.ogg");
+        CtSound.play(Constants.sfxPath + "checkjess.ogg", .5);
 
         new FlxTimer().start(1, function(f):Void{
             FlxTween.shake(character_managerscary, 0.05, .2, 0x01);
             character_managerscary.facing = UP;
-            CtSound.play(Constants.sfxPath + "checkjess.ogg").pitch = .7;
+            CtSound.play(Constants.sfxPath + "checkjess.ogg", .5).pitch = .7;
 
             new FlxTimer().start(2, function(f):Void{
                 OverworldState.eventManager.finishTransaction("turn");
             });
         });
+
+        OverworldState.setUpMusic(Constants.roomMusicPath + "chase.ogg", 4);
+        FlxG.sound.music.pitch = 0;
+        FlxTween.tween(FlxG.sound.music, {pitch: .5}, 3);
     });
 
     // manager stands up
@@ -186,11 +192,6 @@ function doBossIntroScene():Void{
         new FlxTimer().start(2, function(f):Void{
             OverworldState.eventManager.finishTransaction("stand");
         });
-
-        OverworldState.setUpMusic(Constants.roomMusicPath + "chase.ogg", 4);
-        FlxG.sound.music.pitch = 0;
-
-        FlxTween.tween(FlxG.sound.music, {pitch: .5}, 3);
     });
 
     /**
@@ -302,16 +303,14 @@ function doBossIntroScene():Void{
         {
             managerHurt = false;
 
-            new FlxTimer().start(1, function(f):Void{
-                startBattle("factory_managerboss");
-            }); 
+            startBattle("factory_managerboss");
         });
     });
 }
 
-function bangOnDoor():Void{
+function bangOnDoor(?vol:Float = 1):Void{
     camGame.shake(0.023, .2, null, true, 0x01);
-    FlxTween.shake(thebottomdoor, 0.05, .2, 0x01);
+    FlxTween.shake(thebottomdoor, 0.13, .35, 0x01);
     
-    CtSound.play(Constants.sfxPath + "hitdoor.ogg").pitch = FlxG.random.float(.5, 1);
+    CtSound.play(Constants.sfxPath + "hitdoor.ogg", vol).pitch = FlxG.random.float(.5, 1);
 }

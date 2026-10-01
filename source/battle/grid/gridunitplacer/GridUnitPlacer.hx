@@ -52,6 +52,8 @@ class GridUnitPlacer extends FlxSpriteGroup
     var spMax:Int;
     var spBar:SpBar;
 
+    var doneSoundThisFrame:Bool = false;
+
     public function new(allyGrid:Grid, enemyGrid:Grid):Void{
         super();
         
@@ -120,6 +122,8 @@ class GridUnitPlacer extends FlxSpriteGroup
         
         selectingMenuManager.update();
         placingMenuManager.update();
+
+        doneSoundThisFrame = false;
     }
     
     function addUnitIcons():Void{
@@ -283,7 +287,10 @@ class GridUnitPlacer extends FlxSpriteGroup
 
     function initPlacingMenu():Void{
         placingMenuManager = new CtMenuManager();
-            
+        placingMenuManager.selectSoundPath = Constants.sfx_ui_gridSelect;
+		placingMenuManager.scrollRackSoundPath = Constants.sfx_ui_gridScroll;
+		placingMenuManager.scrollSelectedSoundPath = Constants.sfx_ui_gridScroll;
+
         ghostUnitSprites = new FlxSpriteGroup();
         add(ghostUnitSprites);
         
@@ -408,6 +415,11 @@ class GridUnitPlacer extends FlxSpriteGroup
         ghostUnits.push(ghost);
 
         recalculateSP();
+
+        if(!doneSoundThisFrame){
+            doneSoundThisFrame = true;
+            CtSound.play(Constants.sfx_bat_placeunit).pitch = FlxG.random.float(.8, 1.2);
+        }
     }
     
     function removePlacedUnit(unit:String):Void{

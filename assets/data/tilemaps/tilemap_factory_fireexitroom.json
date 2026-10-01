@@ -71,7 +71,7 @@
           "height": 32,
           "originX": 0,
           "originY": 0,
-          "values": {"doorName": "factoryhorizontalL", "room": "", "transitionTime": 0.5, "lockedDialogue": "factory/fireexitroom/dialogue_no", "horizontal": true, "scriptFunction": "", "tag": "", "facingDownwards": false}
+          "values": {"doorName": "factoryhorizontalL", "room": "factory_prebossgrind", "transitionTime": 0.5, "lockedDialogue": "factory/fireexitroom/dialogue_no", "horizontal": true, "scriptFunction": "", "tag": "", "facingDownwards": false}
         },
         {
           "name": "interactable",

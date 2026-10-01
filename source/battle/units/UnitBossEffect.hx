@@ -30,11 +30,11 @@ class UnitBossEffect extends FlxSpriteGroup
         effectTimer = new FlxTimer().start(Constants.bossEffectDelay, function(f):Void{
             var spr = new CtSprite(unit.x, unit.y);
             spr.loadGraphicFromSprite(unit);
-            spr.colorTransform.color = 0xFFFF0000;
+            spr.shader = new UnitBossEffectShader();
             spr.alpha = .6;
             add(spr);
 
-            effectTween1 = FlxTween.tween(spr.scale, {x: 2, y: 2}, Constants.bossEffectTime, {onUpdate: function(f):Void{
+            effectTween1 = FlxTween.tween(spr.scale, {x: 3.3, y: 3.3}, Constants.bossEffectTime, {onUpdate: function(f):Void{
                 if(spr != null && !ended){
                     spr.updateHitbox();
                     CtUtil.centerSpriteOnSprite(spr, unit, true, true);
@@ -63,7 +63,7 @@ class UnitBossEffect extends FlxSpriteGroup
         }
 
         for(spr in removethese){
-            remove(spr);
+            remove(spr, true);
             spr.destroy();
             spr = null;
         }

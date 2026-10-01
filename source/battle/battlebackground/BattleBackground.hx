@@ -4,10 +4,10 @@ class BattleBackground extends FlxSpriteGroup
 {
 	public var data:BattleBackgroundData;
     
-    public function new(id:String):Void{
+    public function new(battleData:BattleData):Void{
         super();
         
-        data = new BattleBackgroundData(id);
+        data = new BattleBackgroundData(battleData.background);
         
         for(sprite in data.sprites){            
             var spr = new CtSprite(sprite.x, sprite.y);
@@ -28,6 +28,16 @@ class BattleBackground extends FlxSpriteGroup
 			spr.scrollFactor.set(sprite.scrollX, sprite.scrollY);    
             
             spr.alpha = sprite.alpha;
+        }
+
+        if(BattleData.isBoss(battleData)){
+            var bossFlareSpr = new CtSprite().createColorBlock(FlxG.width * 2, FlxG.height * 2, FlxColor.RED);
+            bossFlareSpr.alpha = .6;
+            bossFlareSpr.blend = MULTIPLY;
+            bossFlareSpr.screenCenter();
+            add(bossFlareSpr);
+
+            FlxTween.tween(bossFlareSpr, {alpha: .3}, 4, {type: PINGPONG});
         }
     }
 }

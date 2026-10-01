@@ -38,7 +38,7 @@ class VictoryScreen extends FlxSubState
     public function new (unitsToAdd:Array<String>, expReward:Int, onComplete:Void->Void){
         super();
 
-        doMusic();
+        fadeMusic();
 
         updateExpLevels();
 
@@ -79,6 +79,10 @@ class VictoryScreen extends FlxSubState
         bottomBar.updateHitbox();
         bottomBar.screenCenter();
         add(bottomBar);
+
+        var barDistance:Float = 330;
+        topBar.y -= barDistance;
+        bottomBar.y += barDistance;
 
         robinblank = new CtSprite().createFromImage(Constants.vsRobinBlankPath);
         robinblank.antialiasing = false;
@@ -125,13 +129,39 @@ class VictoryScreen extends FlxSubState
 
         setupMenuManager();
 
-        doFadeIn();
+        var timer:Float = 0.01;
 
-        new FlxTimer().start(3.5, function(f):Void{
-            distributeExp(this.expReward, function():Void{
-                new FlxTimer().start(.5, function(f):Void{
-                    continueText.visible = true;
-                    menuManager.enable();
+        var isBoss = BattleData.isBoss(PlayState.battleData);
+        
+        if(isBoss){
+            timer = 1.5;
+
+            CtSound.play(Constants.sfx_bossflare);
+
+            var spr = new CtSprite().createColorBlock(FlxG.width, FlxG.height, FlxColor.RED);
+            spr.camera = victoryCam;
+            spr.alpha = 0;
+            spr.blend = MULTIPLY;
+            add(spr);
+
+            FlxTween.tween(spr, {alpha: .3}, .5, {onComplete: function(f):Void{
+                FlxTween.tween(spr, {alpha: 0}, .5, {onComplete: function(f):Void{
+                    spr.destroy();
+                }});
+            }});
+        }
+
+        doMusic(.5 + timer);
+
+        new FlxTimer().start(timer, function(f):Void{
+            doFadeIn();
+
+            new FlxTimer().start(3.5, function(f):Void{
+                distributeExp(this.expReward, function():Void{
+                    new FlxTimer().start(.5, function(f):Void{
+                        continueText.visible = true;
+                        menuManager.enable();
+                    });
                 });
             });
         });
@@ -185,9 +215,6 @@ class VictoryScreen extends FlxSubState
     function doFadeIn():Void{
         FlxTween.tween(bg, {alpha: .94}, .7);
 
-        var barDistance:Float = 300;
-        topBar.y -= barDistance;
-        bottomBar.y += barDistance;
         for(bar in [topBar, bottomBar]){
             FlxTween.tween(bar, {y: 0}, 1, {ease: FlxEase.quartOut});
         }
@@ -224,11 +251,13 @@ class VictoryScreen extends FlxSubState
 
     function distributeExp(exp:Int, ending:Void->Void):Void{
         var time:Float = 2 + (5 * FlxMath.bound(exp / 3000, 0));
+
+        var exptogive = FlxMath.bound(exp / unitsToAdd.length, 1);
+
         // robin
-        FlxTween.tween(Save.levelRobin, {exp: Save.levelRobin.exp + exp, expFloat: Save.levelRobin.exp + exp}, time);
+        FlxTween.tween(Save.levelRobin, {exp: Save.levelRobin.exp + exptogive, expFloat: Save.levelRobin.exp + exp}, time);
 
         for(unit in unitsToAdd){
-            var exptogive = FlxMath.bound(exp / unitsToAdd.length, 1);
             FlxTween.tween(Save.levelUnits.get(unit), {exp: Save.levelUnits.get(unit).exp + exptogive, expFloat: Save.levelUnits.get(unit).exp + exptogive}, time);
         }
 
@@ -332,15 +361,17 @@ class VictoryScreen extends FlxSubState
         }
     }
 
-    function doMusic():Void{
+    function fadeMusic():Void{
         if (FlxG.sound.music != null){
             FlxG.sound.music.fadeOut(0.4, 0, function onComplete(f):Void{
                 FlxG.sound.music.destroy();
                 FlxG.sound.music = null;
             });
         }
+    }
 
-        new FlxTimer().start(.5, function(f):Void{
+    function doMusic(time:Float):Void{
+        new FlxTimer().start(time, function(f):Void{
             CtSound.playMusic(Constants.mus_victory);
         });
     }

@@ -1,0 +1,15 @@
+{
+    "gridSizeX": 3,
+    "gridSizeY": 3,
+    "background": "factorydark",
+    "allyUnits": [],
+    "enemyUnits": [
+        {
+            "id": "soap",
+            "x": 2,
+            "y": 1,
+            "level": 5
+        }
+    ],
+    "music": "factory"
+}

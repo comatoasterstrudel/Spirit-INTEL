@@ -3,15 +3,16 @@
     "gridGraphic": "soap",
     "uiGraphicAlly": "soap_ally",
     "uiGraphicEnemy": "soap_enemy",
-    "stat_maxHp": 35,
+    "stat_maxHp": 45,
     "stat_maxMp": 100,
     "stat_speed": 6,
     "stat_attack": 80,
     "stat_sattack": 80,
     "skills": ["poke", "toxins", "love"],
-    "expReward": 8,
+    "expReward": 12,
     "ai_damage": 1,
-    "ai_healing": 1,
+    "ai_healing": 0,
     "ai_debuff": 2,
-    "ai_buff": 1
+    "ai_buff": 1,
+    "spCost": 4
 }

@@ -8,7 +8,7 @@
             "id": "leftovers",
             "x": 1,
             "y": 1,
-            "level": 5
+            "level": 4
         },
         {
             "id": "partyhat",
@@ -22,7 +22,7 @@
         {
             "id": "leftovers",
             "chance": 100,
-            "level": 5
+            "level": 4
         }
     ]
 }

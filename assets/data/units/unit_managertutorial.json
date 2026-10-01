@@ -1,8 +1,8 @@
 {
     "name": "Manager",
-    "gridGraphic": "partyhat",
-    "uiGraphicAlly": "partyhat_ally",
-    "uiGraphicEnemy": "partyhat_enemy",    
+    "gridGraphic": "manager",
+    "uiGraphicAlly": "manager",
+    "uiGraphicEnemy": "manager",    
     "stat_maxHp": 350,
     "stat_maxMp": 500,
     "stat_speed": -400,

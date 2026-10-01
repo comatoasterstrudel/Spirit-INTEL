@@ -119,7 +119,7 @@
           "height": 32,
           "originX": 0,
           "originY": 0,
-          "values": {"doorName": "factoryhorizontalR", "room": "factory_fireexitroom", "transitionTime": 1, "lockedDialogue": "", "horizontal": true, "scriptFunction": "", "tag": "", "facingDownwards": false}
+          "values": {"doorName": "factoryhorizontalR", "room": "factory_prebossgrind", "transitionTime": 0.5, "lockedDialogue": "", "horizontal": true, "scriptFunction": "", "tag": "", "facingDownwards": false}
         },
         {
           "name": "lightsource",
@@ -144,6 +144,16 @@
           "originX": 0,
           "originY": 0,
           "values": {"propName": "factoryofficelight", "tag": "", "addLight": false}
+        },
+        {
+          "name": "player",
+          "id": 15,
+          "_eid": "58713646",
+          "x": 576,
+          "y": 104,
+          "originX": 0,
+          "originY": 0,
+          "values": {"entrance": "factory_prebossgrind", "entranceSave": ""}
         }
       ]
     },

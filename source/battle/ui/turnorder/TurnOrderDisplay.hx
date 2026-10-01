@@ -51,6 +51,7 @@ class TurnOrderDisplay extends FlxSpriteGroup
     public function updateTurnOrderDisplay(turnOrder:Array<Unit>):Void{
         for(icon in icons){
             icon.kill();
+			icon.uniqueID = -1;
         }
         
         aliveIcons = [];
@@ -60,6 +61,8 @@ class TurnOrderDisplay extends FlxSpriteGroup
             icons[i].updateTurnOrderIcon(turnOrder[i]);
             
             aliveIcons.push(icons[i].bg);
+
+			icons[i].uniqueID = i;
         }
         
 		for (i in icons)
@@ -121,13 +124,24 @@ class TurnOrderDisplay extends FlxSpriteGroup
     }
 
 	public function updateCurrentTurn(unit:Unit):Void
-	{
+	{ 
 		for (icon in icons)
 		{
 			if (!icon.alive)
 				continue;
 
 			icon.updateCurrentTurn(unit);
+		}
+	}
+
+	public function updateCurrentTurnWithID(id:Int):Void
+	{ 
+		for (icon in icons)
+		{
+			if (!icon.alive)
+				continue;
+
+			icon.updateCurrentTurnWithID(id);
 		}
 	}
 }

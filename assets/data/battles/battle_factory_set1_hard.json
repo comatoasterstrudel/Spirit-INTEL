@@ -5,13 +5,11 @@
     "allyUnits": [],
     "enemyUnits": [
         {
-            "id": "managerboss",
+            "id": "soap",
             "x": 1,
             "y": 1,
-            "level": 7,
-            "tag": "managerboss"
-        }  
+            "level": 5
+        }
     ],
-    "music": "managerboss",
-    "script": ["factory_managerboss"]
+    "music": "factory"  
 }

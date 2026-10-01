@@ -1,5 +1,7 @@
 package battle;
 
+import battle.ui.turnorder.TurnOrderInfo;
+
 class PlayState extends FlxState
 {
 	public static var eventManager:CtEventManager;
@@ -231,7 +233,7 @@ class PlayState extends FlxState
 	 */
 	function setUpBg():Void
 	{
-		bg = new BattleBackground(battleData.background);
+		bg = new BattleBackground(battleData);
 		bg.camera = camGame;
 		add(bg);
 		
@@ -559,7 +561,7 @@ class PlayState extends FlxState
 
 				currentTurnUnit = turnOrder[turnNum];
 
-				turnOrderDisplay.updateCurrentTurn(currentTurnUnit);
+				turnOrderDisplay.updateCurrentTurnWithID(turnNum);
 				bottomBar.updateCurrentUnit(currentTurnUnit);
 				turnOrderDisplay.topBar.updateCurrentUnit(currentTurnUnit);
 
@@ -968,7 +970,6 @@ class PlayState extends FlxState
 		}
 	}
 	
-
 	/**
 	 * Call this to calculate and start the turn order for the next round
 	 */
@@ -976,19 +977,28 @@ class PlayState extends FlxState
 	{
 		turnOrder = [];
 
+		var curTurnOrder:Array<TurnOrderInfo> = [];
+
 		for (unit in units)
 		{
-			turnOrder.push(unit);
+			for(i in 0...unit.data.turns){
+				curTurnOrder.push({unit: unit, speed: unit.data.turnSpeed[i] ?? (unit.speed.value / (i + 1))});
+			}
 		}
 
-		ArraySort.sort(turnOrder, function(a, b)
+		ArraySort.sort(curTurnOrder, function(a, b)
 		{
-			if (a.speed.value < b.speed.value)
+			if (a.speed < b.speed)
 				return 1;
-			if (a.speed.value > b.speed.value)
+			if (a.speed > b.speed)
 				return -1;
 			return 0;
 		});
+
+		for(turn in curTurnOrder){
+			turnOrder.push(turn.unit);
+		}
+
 		turnOrderDisplay.updateTurnOrderDisplay(turnOrder);
 	}
 
@@ -1247,7 +1257,7 @@ class PlayState extends FlxState
 			{
 				bottomBar.updateCurrentUnit(currentTurnUnit);
 				turnOrderDisplay.topBar.updateCurrentUnit(currentTurnUnit);
-				turnOrderDisplay.updateCurrentTurn(currentTurnUnit);
+				turnOrderDisplay.updateCurrentTurnWithID(turnNum);
 				bottomBar.addMenu();
 			}
 			
@@ -1583,6 +1593,7 @@ class PlayState extends FlxState
 	{
 		battleName = name;
 		battleType = type;
+		battleData = new BattleData(battleName);
 	}
 
 	function doIntroAnim():Void
@@ -1597,7 +1608,9 @@ class PlayState extends FlxState
 
 		if (battleType == STORY)
 		{
-			var spr = new CtSprite().createColorBlock(FlxG.width, FlxG.height, FlxColor.WHITE);
+			var isBoss = BattleData.isBoss(battleData);
+
+			var spr = new CtSprite().createColorBlock(FlxG.width, FlxG.height, isBoss ? FlxColor.RED : FlxColor.WHITE);
 			spr.camera = camUI;
 			add(spr);
 			

@@ -177,6 +177,9 @@ class LevelSelectorState extends FlxState
 
 							PlayState.setBattle(battle.id, ARCADE);
 							FlxG.switchState(PlayState.new);
+						},
+						cancelFunction: function(spr):Void{
+							FlxG.switchState(MainMenuState.new);
 						}
 					}
 				]);

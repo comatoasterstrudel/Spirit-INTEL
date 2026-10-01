@@ -31,6 +31,9 @@ class UnitData extends CtJsonLoader
 
 	public var isBoss:Bool;
 
+	public var turns:Int;
+	public var turnSpeed:Array<Null<Int>>;
+
     public function new(id:String){
         this.id = id;
                 
@@ -62,5 +65,8 @@ class UnitData extends CtJsonLoader
 		this.spCost = data.spCost == null ? 0 : data.spCost;
 
 		this.isBoss = data.isBoss == null ? false : data.isBoss;
+
+		this.turns = Std.int(FlxMath.bound(data.turns == null ? 1 : data.turns, 0));
+		this.turnSpeed = data.turnSpeed == null ? [] : data.turnSpeed;
     }
 }

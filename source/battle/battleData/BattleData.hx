@@ -67,4 +67,14 @@ class BattleData extends CtJsonLoader
             });
         }
     }
+
+    public static function isBoss(data:BattleData):Bool
+    {
+        var allUnits:Array<UnitInfo> = [];
+
+        for(unit in data.allyUnits.concat(data.enemyUnits)){
+            if(new UnitData(unit.id).isBoss) return true;
+        }
+        return false;
+    }
 }

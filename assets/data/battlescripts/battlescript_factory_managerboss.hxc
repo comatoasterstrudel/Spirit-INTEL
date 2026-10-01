@@ -1,0 +1,11 @@
+function CTSCRIPT_SETNAME():String
+{
+	return "factory_managerboss";
+}
+
+var unit_manager:Unit;
+
+function create(){
+    unit_manager = getUnitByTag("managerboss");
+    unit_manager.hp.value -= (150 + FlxG.random.int(-5, 5)); // from the gunshot
+}

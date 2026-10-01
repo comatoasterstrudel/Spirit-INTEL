@@ -1,0 +1,23 @@
+{
+    "name":"factory_prebossgrind",
+    "map": "factory_prebossgrind",
+    "lighting": 0.7,
+    "bgColor": [220, 220, 220],
+    "polaroidBg": "factorybasement",
+    "music": "factorymonster",
+    "encounters": [
+        {
+            "battleName": "factory_set2_hard",
+            "rarity": 40
+        },
+        {
+            "battleName": "factory_set2_hard",
+            "rarity": 8
+        },
+        {
+            "battleName": "factory_set2_hard",
+            "rarity": 20
+        }
+    ],
+    "encounterChance": 80
+} 
