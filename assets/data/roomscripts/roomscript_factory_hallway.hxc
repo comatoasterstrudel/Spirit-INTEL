@@ -610,7 +610,9 @@ function startMonsterCutscene():Void
 					character_player.lockAnims = false;
 					Save.storyFlags.get("factory_seentutorial").val_bool = true;
 					startBattle("factory_tutorial");
-					FlxG.sound.music.time = 13720;
+					new FlxTimer().start(0.1, function(f):Void{
+						FlxG.sound.music.time = 13720;
+					});
 				}
 			});
 		});
