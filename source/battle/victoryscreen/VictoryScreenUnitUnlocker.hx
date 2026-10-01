@@ -1,5 +1,7 @@
 package battle.victoryscreen;
 
+import battle.ui.bottombar.UnitPortrait;
+
 class VictoryScreenUnitUnlocker extends FlxSpriteGroup
 {
     var units:Array<String> = [];
@@ -20,7 +22,7 @@ class VictoryScreenUnitUnlocker extends FlxSpriteGroup
 
     var spiritUnlocked:CtSprite;
 
-    var unitPortrait:CtSprite;
+    var unitPortrait:UnitPortrait;
 
     var unitText:CtText;
     var lvlText:CtText;
@@ -35,8 +37,8 @@ class VictoryScreenUnitUnlocker extends FlxSpriteGroup
         spiritUnlocked.kill();
         add(spiritUnlocked);
 
-        unitPortrait = new CtSprite();
-        unitPortrait.antialiasing = false;
+        unitPortrait = new UnitPortrait();
+        unitPortrait.lerpManager.lerpX = false;
         unitPortrait.kill();
         add(unitPortrait);
 
@@ -105,7 +107,7 @@ class VictoryScreenUnitUnlocker extends FlxSpriteGroup
                 var unitData = new UnitData(units[progress]);
                 
                 unitPortrait.revive();
-                unitPortrait.createFromImage(Constants.unitUiGraphicPath + unitData.uiGraphicAlly + ".png");
+                unitPortrait.applyUnitGraphic(new Unit(unitData.id, null, FlxPoint.get(0,0), true, 5, true));
                 unitPortrait.setPosition(bg.x + bg.width - unitPortrait.width, bg_bottom.y + bg_bottom.height - unitPortrait.height);
                 unitPortrait.alpha = 0;
 

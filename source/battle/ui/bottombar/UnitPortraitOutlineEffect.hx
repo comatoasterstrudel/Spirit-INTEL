@@ -19,11 +19,9 @@ class UnitPortraitOutlineEffect extends FlxShader
                 float w = size.x / openfl_TextureSize.x;
                 float h = size.y / openfl_TextureSize.y;
                 
-                if (flixel_texture2D(bitmap, vec2(openfl_TextureCoordv.x + w, openfl_TextureCoordv.y)).a != 0.
-                || flixel_texture2D(bitmap, vec2(openfl_TextureCoordv.x - w, openfl_TextureCoordv.y)).a != 0.
-                || flixel_texture2D(bitmap, vec2(openfl_TextureCoordv.x, openfl_TextureCoordv.y + h)).a != 0.
-                || flixel_texture2D(bitmap, vec2(openfl_TextureCoordv.x, openfl_TextureCoordv.y - h)).a != 0.)
+                if (flixel_texture2D(bitmap, vec2(openfl_TextureCoordv.x + w, openfl_TextureCoordv.y)).a != 0. || flixel_texture2D(bitmap, vec2(openfl_TextureCoordv.x - w, openfl_TextureCoordv.y)).a != 0. || flixel_texture2D(bitmap, vec2(openfl_TextureCoordv.x, openfl_TextureCoordv.y + h)).a != 0. || flixel_texture2D(bitmap, vec2(openfl_TextureCoordv.x, openfl_TextureCoordv.y - h)).a != 0.){
                     sample = color;
+                }
             }
             gl_FragColor = sample;
         }')
@@ -33,9 +31,11 @@ class UnitPortraitOutlineEffect extends FlxShader
 		super();
         updateValues();
 	}
-
+ 
     public function updateValues(color:FlxColor = 0xFFFFFFFF, width:Float = 1, height:Float = 1):Void{
-        this.color.value = [color.red, color.green, color.blue, color.alpha];
+        var alpha = color.alpha / 255.0;
+
+        this.color.value = [(color.red / 255.0) * alpha, (color.green / 255.0) * alpha, (color.blue / 255.0) * alpha, alpha];
 		this.size.value = [width, height];
     }
 }

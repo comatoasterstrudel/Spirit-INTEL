@@ -252,7 +252,7 @@ class VictoryScreen extends FlxSubState
     function distributeExp(exp:Int, ending:Void->Void):Void{
         var time:Float = 2 + (5 * FlxMath.bound(exp / 3000, 0));
 
-        var exptogive = FlxMath.bound(exp / unitsToAdd.length, 1);
+        var exptogive = Std.int(FlxMath.bound(exp / unitsToAdd.length, 1));
 
         // robin
         FlxTween.tween(Save.levelRobin, {exp: Save.levelRobin.exp + exptogive, expFloat: Save.levelRobin.exp + exptogive}, time);

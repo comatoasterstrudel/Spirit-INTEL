@@ -6,6 +6,8 @@ class UnitPortrait extends CtSprite
     
 	var outline:UnitPortraitOutlineEffect;
 
+	var theColor:FlxColor;
+
     public function new():Void{
         super();
         
@@ -22,10 +24,12 @@ class UnitPortrait extends CtSprite
     }
      
     override function update(elapsed:Float):Void{
-        super.update(elapsed);        
+        super.update(elapsed);    
+		
+		updatePortraitColor(theColor);
     }
     
-    public function applyUnitGraphic(unit):Void{
+    public function applyUnitGraphic(unit:Unit):Void{
         this.unit = unit;
         
 		var graphicPath:String = "";
@@ -56,6 +60,14 @@ class UnitPortrait extends CtSprite
 
 		this.x -= 30;
 
-		outline.updateValues(unit.data.isBoss ? FlxColor.RED : FlxColor.WHITE, 2, 2);
+		updatePortraitColor(unit.data.isBoss ? FlxColor.RED : FlxColor.WHITE);
+	}
+
+	function updatePortraitColor(color:FlxColor):Void{
+		color.alpha = Std.int(this.alpha * 255);
+		theColor = color;
+
+		trace(color.alpha);
+		outline.updateValues(theColor, 2, 2);
 	}
 }

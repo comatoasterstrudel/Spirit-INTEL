@@ -27,6 +27,11 @@
             "id": "leftovers",
             "chance": 100,
             "level": 25
+        },
+        {
+            "id": "radio",
+            "chance": 100,
+            "level": 25
         }
     ]
 }
