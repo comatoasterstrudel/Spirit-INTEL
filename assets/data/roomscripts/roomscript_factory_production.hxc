@@ -1034,7 +1034,7 @@ function startEvilMonsterBit():Void
 	{
 		OverworldState.eventManager.startTransaction("sbd2");
 
-		// play sound 2 here
+		CtSound.play(Constants.sfxPath + "managerambience.ogg");
 
 		new FlxTimer().start(3, function(f):Void
 		{
@@ -1057,7 +1057,7 @@ function startEvilMonsterBit():Void
 	{
 		OverworldState.eventManager.startTransaction("mamamove");
 
-		CtSound.play(Constants.sfxPath + "managerambience.ogg");
+		CtSound.play(Constants.sfxPath + "managerambience.ogg", .4).pitch = .7;
 		
 		moveManagerChain(3, 1, 2, "right", function():Void
 		{
