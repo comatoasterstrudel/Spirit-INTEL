@@ -20,6 +20,8 @@ var noodleCutscene:Interactable;
 
 var fade:CtSprite;
 
+var prevolume:Float = 1;
+
 function create():Void{
     snowGroup = executeSingleScriptFunction("snow", "snow_get_snowGroup", []);    
     spr_behindTiles = get_spr_behindTiles();
@@ -252,6 +254,10 @@ function doNoodleAftermathCutscene():Void{
         FlxTween.shake(character_robin, 0.05, .2, 0x01);
         CtSound.play(Constants.sfxPath + "managerslide.ogg").pitch = 1.5;
 
+        prevolume = FlxG.sound.music.volume;
+
+        FlxTween.tween(FlxG.sound.music, {volume: 0}, 2);
+
         fade.revive();
         FlxTween.tween(fade, {alpha: 1}, 2, {onComplete: function(f):Void{
             startDialogue(["factory/officebreakroom/dialogue_obr_noodle4"], function():Void{
@@ -264,6 +270,8 @@ function doNoodleAftermathCutscene():Void{
 	OverworldState.eventManager.addEvent(function()
 	{
         OverworldState.eventManager.startTransaction("talk");
+
+        FlxTween.tween(FlxG.sound.music, {volume: prevolume}, 2);
 
         FlxTween.tween(fade, {alpha: 0}, 2, {onComplete: function(f):Void{
             fade.kill();

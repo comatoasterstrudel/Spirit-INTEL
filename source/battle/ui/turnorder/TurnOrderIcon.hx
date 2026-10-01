@@ -62,7 +62,7 @@ class TurnOrderIcon extends FlxSpriteGroup
 
 		bg.color = ogColor.getLightened(lightening);
 
-		unitGraphic.alpha = FlxMath.bound(1 - lightening, 0.3, 1);
+		unitGraphic.alpha = (FlxMath.bound(1 - lightening, 0.3, 1) * alpha);
 	}
 
 	public function updateCurrentTurn(unit:Unit):Void

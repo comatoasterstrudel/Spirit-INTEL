@@ -67,7 +67,6 @@ class UnitPortrait extends CtSprite
 		color.alpha = Std.int(this.alpha * 255);
 		theColor = color;
 
-		trace(color.alpha);
 		outline.updateValues(theColor, 2, 2);
 	}
 }
