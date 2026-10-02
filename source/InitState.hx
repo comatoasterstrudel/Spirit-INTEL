@@ -214,7 +214,6 @@ class InitState extends FlxState{
 	}
 	function setupMemoryCleanup():Void{
 		FlxG.signals.preStateSwitch.add(function():Void{
-			trace("cleaned");
 			FlxG.bitmap.clearUnused();
 			Assets.cache.clear();
 			Gc.run(true);
