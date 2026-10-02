@@ -68,6 +68,7 @@ class InitState extends FlxState{
 		CtControls.registerControl({id: "down", inputKey: [DOWN, S], inputPad: [DPAD_DOWN, LEFT_STICK_DIGITAL_DOWN]});
 		CtControls.registerControl({id: "accept", inputKey: [Z, ENTER], inputPad: [A]});
 		CtControls.registerControl({id: "cancel", inputKey: [X, BACKSPACE], inputPad: [B]});
+		CtControls.registerControl({id: "skipDialogue", inputKey: [C, SEVEN], inputPad: [Y]});
 		CtControls.registerControl({id: "exit", inputKey: [ESCAPE], inputPad: [START]});
 	}
 	
@@ -96,6 +97,7 @@ class InitState extends FlxState{
 			choicerPressedUpFunction: CtControls.getInputFunction("up", JUSTPRESSED),
 			choicerPressedDownFunction: CtControls.getInputFunction("down", JUSTPRESSED),
 			choicerPressedAcceptFunction: CtControls.getInputFunction("accept", JUSTPRESSED),
+			pressedSkipFunction: CtControls.getInputFunction("skipDialogue", PRESSED),
 			boxImgPath: Constants.dialogueBoxGraphicPath,
 			nameBoxFont: Constants.fontName,
 			nameBoxImgPath: Constants.dialogueNameBoxGraphicPath,
@@ -211,8 +213,8 @@ class InitState extends FlxState{
 		DiscordClient.changePresence("ahaha", null);
 	}
 	function setupMemoryCleanup():Void{
-		FlxG.signals.postStateSwitch.add(function():Void{
-			FlxG.bitmap.clearCache();
+		FlxG.signals.preStateSwitch.add(function():Void{
+			trace("cleaned");
 			FlxG.bitmap.clearUnused();
 			Assets.cache.clear();
 			Gc.run(true);
