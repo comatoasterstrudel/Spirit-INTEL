@@ -12,14 +12,14 @@ class Character extends CtSprite
 	public var id:String;
 	public var data:CharacterData;
 
-	var previousPosition:FlxPoint = new FlxPoint();
+	var previousPosition:FlxPoint = FlxPoint.get();
 	
 	public var moving:Bool = false;
 	
 	public var noclip:Bool = false;
 	
-	var autoMovementTarget:FlxPoint = new FlxPoint();
-	var autoMovementStartPosition:FlxPoint = new FlxPoint();
+	var autoMovementTarget:FlxPoint = FlxPoint.get();
+	var autoMovementStartPosition:FlxPoint = FlxPoint.get();
 	var autoMovementActive:Bool = false;
 	var autoMovementComplete:Void->Void;
 	var autoMovementDoX:Bool = false;

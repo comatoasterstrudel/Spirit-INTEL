@@ -36,7 +36,7 @@ class BattleData extends CtJsonLoader
         {
             return {
 				id: item.id,
-                position: new FlxPoint(item.x, item.y),
+                position: FlxPoint.get(item.x, item.y),
                 level: item.level == null ? 1 : item.level,
                 tag: item.tag == null ? "" : item.tag
             };
@@ -46,7 +46,7 @@ class BattleData extends CtJsonLoader
         {
             return {
 				id: item.id,
-                position: new FlxPoint(item.x, item.y),
+                position: FlxPoint.get(item.x, item.y),
                 level: item.level == null ? 1 : item.level,
                 tag: item.tag == null ? "" : item.tag
             };

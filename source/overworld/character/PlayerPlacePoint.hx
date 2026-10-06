@@ -9,7 +9,7 @@ class PlayerPlacePoint
 	public var entranceSave:String;
 
     public function new(entity:EntityData){
-        position = new FlxPoint(entity.x, entity.y);
+        position = FlxPoint.get(entity.x, entity.y);
         entrance = entity.values.entrance;
 		entranceSave = entity.values.entranceSave;
     }

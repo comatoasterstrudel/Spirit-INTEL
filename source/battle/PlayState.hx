@@ -21,7 +21,7 @@ class PlayState extends FlxState
 	var bgLine:CtSprite;
 
 	// GRID STUFF
-	var gridSize:FlxPoint = new FlxPoint();
+	var gridSize:FlxPoint = FlxPoint.get();
 
 	var allyGrid:Grid;
 	var enemyGrid:Grid;
@@ -257,10 +257,10 @@ class PlayState extends FlxState
 		var midPointY = (bgLine.y + bgLine.height / 2) - (sizing.y / 2);
 		var spacing:Float = sizing.x + 15;
 
-		allyGrid = new Grid(gridSize, new FlxPoint(midPointX - (spacing), midPointY));
+		allyGrid = new Grid(gridSize, FlxPoint.get(midPointX - (spacing), midPointY));
 		allyGrid.camera = camGame;
 
-		enemyGrid = new Grid(gridSize, new FlxPoint(midPointX + (spacing), midPointY));
+		enemyGrid = new Grid(gridSize, FlxPoint.get(midPointX + (spacing), midPointY));
 		enemyGrid.camera = camGame;
 
 		enemyGridBg = new GridBackground(enemyGrid);
@@ -1117,7 +1117,7 @@ class PlayState extends FlxState
 
 			for (i in 0...skillData.rangeX)
 			{
-				var gridSpaceXNeg = Grid.getGridSpaceFromGrid(grid, new FlxPoint(affectedSpaces[0].position.x - i, affectedSpaces[0].position.y));
+				var gridSpaceXNeg = Grid.getGridSpaceFromGrid(grid, FlxPoint.get(affectedSpaces[0].position.x - i, affectedSpaces[0].position.y));
 
 				if (gridSpaceXNeg != null)
 				{
@@ -1125,7 +1125,7 @@ class PlayState extends FlxState
 						affectedSpaces.push(gridSpaceXNeg);
 				}
 
-				var gridSpaceXPos = Grid.getGridSpaceFromGrid(grid, new FlxPoint(affectedSpaces[0].position.x + i, affectedSpaces[0].position.y));
+				var gridSpaceXPos = Grid.getGridSpaceFromGrid(grid, FlxPoint.get(affectedSpaces[0].position.x + i, affectedSpaces[0].position.y));
 				if (gridSpaceXPos != null)
 				{
 					if (!affectedSpaces.contains(gridSpaceXPos))
@@ -1135,7 +1135,7 @@ class PlayState extends FlxState
 
 			for (i in 0...skillData.rangeY)
 			{
-				var gridSpaceYNeg = Grid.getGridSpaceFromGrid(grid, new FlxPoint(affectedSpaces[0].position.x, affectedSpaces[0].position.y - i));
+				var gridSpaceYNeg = Grid.getGridSpaceFromGrid(grid, FlxPoint.get(affectedSpaces[0].position.x, affectedSpaces[0].position.y - i));
 
 				if (gridSpaceYNeg != null)
 				{
@@ -1143,7 +1143,7 @@ class PlayState extends FlxState
 						affectedSpaces.push(gridSpaceYNeg);
 				}
 
-				var gridSpaceYPos = Grid.getGridSpaceFromGrid(grid, new FlxPoint(affectedSpaces[0].position.x, affectedSpaces[0].position.y + i));
+				var gridSpaceYPos = Grid.getGridSpaceFromGrid(grid, FlxPoint.get(affectedSpaces[0].position.x, affectedSpaces[0].position.y + i));
 				if (gridSpaceYPos != null)
 				{
 					if (!affectedSpaces.contains(gridSpaceYPos))
@@ -1323,7 +1323,7 @@ class PlayState extends FlxState
 						removeGridSelector();
 
 						useSkill(currentTurnUnit.skills[menuManagerPlayerUI.curSelected - (disableInspectButton ? 0 : 1)], currentTurnUnit, space.grid,
-							new FlxPoint(space.position.x, space.position.y), function():Void
+							FlxPoint.get(space.position.x, space.position.y), function():Void
 						{
 							endPlayerTurn();
 						});
@@ -1350,7 +1350,7 @@ class PlayState extends FlxState
 					if (uiStatus == GRID_SKILL)
 					{
 						space.grid.updateFlashingSprites(getAffectedSpacesForSkill(currentTurnUnit.skills[menuManagerPlayerUI.curSelected - (disableInspectButton ? 0 : 1)],
-							currentTurnUnit, space.grid, new FlxPoint(space.position.x, space.position.y)));
+							currentTurnUnit, space.grid, FlxPoint.get(space.position.x, space.position.y)));
 					}
 					else if (uiStatus == GRID_INSPECT || uiStatus == GRID_PLACER_INSPECT)
 					{

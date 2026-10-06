@@ -78,7 +78,7 @@ class GridUnitPlacer extends FlxSpriteGroup
 		add(robin);
         
         uiBg = new CtSprite().createColorBlock(Std.int(Constants.gridUnitPlacerBgWidth), FlxG.height, FlxColor.WHITE);
-        uiBg.setPosition(enemyGrid.spaces[0].baseSprite.x + (Grid.calculateGridSize(new FlxPoint(enemyGrid.size.x, enemyGrid.size.y)).x / 2) - uiBg.width / 2, 0);
+        uiBg.setPosition(enemyGrid.spaces[0].baseSprite.x + (Grid.calculateGridSize(FlxPoint.get(enemyGrid.size.x, enemyGrid.size.y)).x / 2) - uiBg.width / 2, 0);
         uiBg.alpha = 0;
 		uiBgAnim = new GridUnitPlacerUiBg(uiBg);
 		add(uiBgAnim);

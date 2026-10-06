@@ -66,7 +66,7 @@ class LevelSelectorState extends FlxState
         
         menuManager.update();
         
-		camUI.focusOn(new FlxPoint(FlxG.width / 2, cursor.y + cursor.height / 2));
+		camUI.focusOn(FlxPoint.get(FlxG.width / 2, cursor.y + cursor.height / 2));
 		
         super.update(elapsed);
     }

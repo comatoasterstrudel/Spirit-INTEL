@@ -24,8 +24,8 @@ class OverworldState extends FlxState
 	var cameraFollowingTilemap:FlxTilemap;
 	var lockCamera:Bool = false;
 	var unbindCamera:Bool = false;
-	var cameraBoundsMin:FlxPoint = new FlxPoint();
-	var cameraBoundsMax:FlxPoint = new FlxPoint();
+	var cameraBoundsMin:FlxPoint = FlxPoint.get();
+	var cameraBoundsMax:FlxPoint = FlxPoint.get();
 	
 	// CHARACTERS
     var player:Player;
@@ -78,7 +78,7 @@ class OverworldState extends FlxState
 	
 	// BATTLE
 	public static var leftForBattle:Bool = false;
-	public static var positionBeforeBattle:FlxPoint = new FlxPoint();
+	public static var positionBeforeBattle:FlxPoint = FlxPoint.get();
 	
 	// RANDOM ENCOUNTEr
 	var selectedRandomEncounter:String = "";
@@ -334,7 +334,7 @@ class OverworldState extends FlxState
 			{
 				var follower = player;
 
-				camGame.focusOn(new FlxPoint(follower.x + follower.width / 2, follower.y + follower.height / 2));
+				camGame.focusOn(FlxPoint.get(follower.x + follower.width / 2, follower.y + follower.height / 2));
 			}
 
 			if (!cameraScrollX)

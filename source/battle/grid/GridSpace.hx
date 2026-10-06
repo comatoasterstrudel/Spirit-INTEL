@@ -46,7 +46,7 @@ class GridSpace extends FlxTypedGroup<CtSprite>{
         baseSprite.visible = false;
         add(baseSprite);
         
-        lastBaseSpritePosition = new FlxPoint();
+        lastBaseSpritePosition = FlxPoint.get();
         
         final outlineSpriteSize:Int = Std.int(Constants.gridSize / 1.2);
         

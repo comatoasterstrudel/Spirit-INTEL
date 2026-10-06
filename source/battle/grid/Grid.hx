@@ -21,7 +21,7 @@ class Grid extends FlxTypedGroup<GridSpace>
         
         for(xSpace in 0...Std.int(size.x)){
             for(ySpace in 0...Std.int(size.y)){
-				var gridSpace = new GridSpace(new FlxPoint(xSpace, ySpace), this);
+				var gridSpace = new GridSpace(FlxPoint.get(xSpace, ySpace), this);
                 gridSpace.baseSprite.setPosition(position.x + (Constants.gridSize * xSpace), position.y + (Constants.gridSize * ySpace));
                 gridSpace.updateGridSprites();
                 add(gridSpace);
@@ -95,6 +95,6 @@ class Grid extends FlxTypedGroup<GridSpace>
     }
     
     public static function calculateGridSize(size:FlxPoint):FlxPoint{
-        return new FlxPoint(Constants.gridSize * size.x, Constants.gridSize * size.y);
+        return FlxPoint.get(Constants.gridSize * size.x, Constants.gridSize * size.y);
     }
 }
