@@ -39,7 +39,7 @@
 		"speed": 0.046,
 		"diaPitch": 0.9,
 		"events": [],
-		"dialogue": "[[SHAKE]] YOU..![[ENDSHAKE]]",
+		"dialogue": "[[SHAKE]] YGAH..!![[ENDSHAKE]]",
 		"choicerOptions": [],
 		"portrait": "stand",
 		"continueLine": true,
@@ -60,15 +60,15 @@
 		"autoSkip": false
 	},
 	{
-		"dialogue": " Look out..!",
-		"events": [],
-		"continueLine": true,
-		"portrait": "neutral",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "volor",
+		"events": [],
+		"dialogue": "Be ready!",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "neutral",
+		"continueLine": true,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "volor",
+		"autoSkip": false
 	}
 ]

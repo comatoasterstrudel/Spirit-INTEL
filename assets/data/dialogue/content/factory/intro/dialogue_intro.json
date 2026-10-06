@@ -1,195 +1,434 @@
 [
 	{
 		"speed": 0.03,
-		"dialogue": "Alex, what's up?",
-		"actor": "cutscene_robin"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Hey Robin!!",
-		"actor": "cutscene_alex"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Just checking in, what're you up to?",
-		"actor": "cutscene_alex"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "...",
-		"actor": "cutscene_robin"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "I'm on my way to work.",
-		"actor": "cutscene_robin"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Ahh nice nice...",
-		"actor": "cutscene_alex"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": " still working for Atman?",
-		"actor": "cutscene_alex",
-		"continueLine": true
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Yeah, not like there's really any other good jobs around here.",
-		"actor": "cutscene_robin"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Hah! I think calling Atman a good gig is stretching it a bit.",
-		"actor": "cutscene_alex"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Well I'm independent and can pay my bills, which is more than what some people have.",
-		"actor": "cutscene_robin"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "As long as I'm able to live off it, I don't care if it's menial production line work.",
-		"actor": "cutscene_robin"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "...",
-		"actor": "cutscene_alex"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Well if barely scraping by at a passionless job is what makes you happy, then I'm glad you're happy.",
-		"actor": "cutscene_alex"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "I won't be barely scraping by for long, I'm getting a raise soon.",
-		"actor": "cutscene_robin"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Really?",
-		"actor": "cutscene_alex"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Yeah.",
-		"actor": "cutscene_robin"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "The manager's been talking about a \"Big Change\" coming soon..",
-		"actor": "cutscene_robin"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "People are pretty sure the top performers are getting raises.",
-		"actor": "cutscene_robin"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "I'm deciding to be positive for once.",
-		"actor": "cutscene_robin"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "I need a new fridge.",
-		"actor": "cutscene_robin"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "You really think that \"Big Change\" is gonna be a positive one?",
-		"actor": "cutscene_alex"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "They're probably laying off people or replacing everyone with robots.",
-		"actor": "cutscene_alex"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "I don't think you should get your hopes up.",
-		"actor": "cutscene_alex"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "...",
-		"actor": "cutscene_robin"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "...So did you call me for any actual reason?",
-		"actor": "cutscene_robin"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": " Or was it just to be an ass.",
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Alex? Something up?",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "cutscene_robin",
-		"continueLine": true
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "I'm just being realistic, Robin.",
-		"actor": "cutscene_alex"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "You're only realistic when it comes to my business, aren't you?",
-		"actor": "cutscene_robin"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "I mean, I don't think it was realistic to turn a profit on that brewing setup for your piss ale but I didn't say anything.",
-		"actor": "cutscene_robin"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "God you're impossible.",
-		"actor": "cutscene_alex"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "What I wanted to say was happy birthday, and that mom and dad are wishing you well.",
-		"actor": "cutscene_alex"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "...",
-		"actor": "cutscene_alex"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "they'd like you to come home for Christmas.",
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Hey Robin!!",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "cutscene_alex",
-		"continueLine": true
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Just checking in, what're you up to?",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_alex",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "...I'm on my way to work.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Ahhhh, nice nice...",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_alex",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": " still working for Atman?",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": true,
+		"voiceLine": "",
+		"actor": "cutscene_alex",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Yeah, not like there's really any other good jobs around here.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Hah! I think calling Atman a good job is stretching it a bit.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_alex",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Well, I'm independent and can pay my bills, which is more than what some people have.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "As long as I'm able to live off it, I don't care if it's menial labor.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "...",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_alex",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Well if barely scraping by at a passionless job is what makes you happy, then I'm glad you're happy.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_alex",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "I won't be barely scraping by for long, I'm getting a raise soon.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Really?",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_alex",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Yeah.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "The manager's been talking about a \"Big Change\" coming soon..",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "People are pretty sure the top performers are getting raises.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "I'm deciding to be positive for once.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "I need a new fridge.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "They're probably laying off people or replacing everyone with robots.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_alex",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "I don't think you should get your hopes up.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_alex",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "...",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "...So did you call me for any actual reason?",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": " Or was it just to be an ass.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": true,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "I'm just being realistic, Robin.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_alex",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "You're only realistic when it comes to my business, aren't you?",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "I think your delusions of grandure could use their own reality check, but I keep my mouth shut.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Delusions of gradure? You're seriously saying-! hah-god you're impossible.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_alex",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "What I wanted to say was happy birthday, and that mom and dad are wishing you well.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_alex",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "...",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_alex",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "and that they'd like you to come home for Christmas.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": true,
+		"voiceLine": "",
+		"actor": "cutscene_alex",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "My birthday is tomorrow, and hell no.",
-		"actor": "cutscene_robin"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "You know how that would go.",
-		"actor": "cutscene_robin"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Yeah, but they'd be badgering me if I didn't at least ask.",
-		"actor": "cutscene_alex"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_alex",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "I hope you have a good birthday, Robin.",
-		"actor": "cutscene_alex"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_alex",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Thanks. Bye.",
-		"actor": "cutscene_robin"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
 	}
 ]
