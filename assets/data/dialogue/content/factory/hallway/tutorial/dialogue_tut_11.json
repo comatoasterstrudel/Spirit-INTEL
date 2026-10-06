@@ -12,7 +12,7 @@
 		"autoSkip": false
 	},
 	{
-		"dialogue": "However, the first skill a spirit has will always be free!",
+		"dialogue": "However, the first skill a spirit has will always be free.",
 		"events": [],
 		"continueLine": false,
 		"portrait": "neutral",
@@ -24,7 +24,7 @@
 		"speed": 0.03
 	},
 	{
-		"dialogue": "Make sure to conserve MP!",
+		"dialogue": "Make sure to conserve MP!!",
 		"events": [],
 		"continueLine": false,
 		"portrait": "neutral",

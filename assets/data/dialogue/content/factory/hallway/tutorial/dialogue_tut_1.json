@@ -3,7 +3,7 @@
 		"speed": 0.03,
 		"diaPitch": 1,
 		"events": [],
-		"dialogue": "That grid on the left belongs to YOU!",
+		"dialogue": "That grid on the left is yours.",
 		"choicerOptions": [],
 		"portrait": "hat_shocked",
 		"continueLine": false,
@@ -24,7 +24,7 @@
 		"autoSkip": false
 	},
 	{
-		"dialogue": "...",
+		"dialogue": "...!",
 		"events": [],
 		"continueLine": false,
 		"portrait": "hat_shocked",
@@ -39,7 +39,7 @@
 		"speed": 0.03,
 		"diaPitch": 1,
 		"events": [],
-		"dialogue": "..That hat on your head is doing something!!",
+		"dialogue": "Like that one on your head!",
 		"choicerOptions": [],
 		"portrait": "hat_scared",
 		"continueLine": false,
