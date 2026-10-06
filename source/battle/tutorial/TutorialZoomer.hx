@@ -5,6 +5,7 @@ class TutorialZoomer extends FlxSpriteGroup
     var baseicon:CtSprite;
     var icon:CtSprite;
     var bars:Array<CtSprite> = [];
+    var edges:Array<CtSprite> = [];
 
     public function new():Void{
         super();
@@ -22,6 +23,24 @@ class TutorialZoomer extends FlxSpriteGroup
             var bar = new CtSprite().createColorBlock(1, 1, FlxColor.BLACK);
             add(bar);
             bars.push(bar);
+        }
+
+        for(i in 0...4)
+        {
+            var edge = new CtSprite().createFromImage(Constants.tutorialZoomerPath);
+            edge.antialiasing = false;
+            add(edge);
+            edges.push(edge);
+
+            switch(i){
+                case 1: //top right
+                    edge.flipX = true;
+                case 2: // bottom left
+                    edge.flipY = true;
+                case 3: // bottom right
+                    edge.flipX = true;
+                    edge.flipY = true;
+            }
         }
 
         alpha = 0;
@@ -111,6 +130,24 @@ class TutorialZoomer extends FlxSpriteGroup
                     bars[i].setPosition(icon.x + icon.width, icon.y);
             }
         }  
+
+        for (i in 0...edges.length)
+        {
+            edges[i].alpha = alpha;
+            var edge = edges[i];
+            switch (i)
+            {
+                case 0: //top left
+                    edge.setPosition(icon.x, icon.y);
+                case 1: //top right
+                    edge.setPosition(icon.x + icon.width - edge.width, icon.y);
+                case 2: // bottom left
+                    edge.setPosition(icon.x, icon.y + icon.height - edge.height);
+                case 3: // bottom right
+                    edge.setPosition(icon.x + icon.width - edge.width, icon.y + icon.height - edge.height);
+            }
+        }  
+
 		super.draw();
 	}
 }

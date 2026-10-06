@@ -116,6 +116,8 @@ class Constants
 		+ "\nand then press R to reload this menu!";
 	// Exit
 	public static final exitTime:Float = 1;
+	//Tutorial
+	public static final tutorialZoomerPath:String = "assets/images/tutorial/tut_round.png";
 	// Death Effect
 	public static final deathEffectTime:Float = 1;
 	// Result State

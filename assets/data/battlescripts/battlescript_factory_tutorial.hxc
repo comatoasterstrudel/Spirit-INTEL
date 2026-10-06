@@ -49,7 +49,7 @@ function onAdvanceTurn():Void{
 
             new FlxTimer().start(1, function(f):Void{
                 startDialogue(["factory/hallway/tutorial/dialogue_tut_0"], function():Void{
-                    tutorialZoomer.goHere(220, 200, FlxG.width - 440, FlxG.height - 400, 1.5, function():Void{
+                    tutorialZoomer.goHere(220, 200, FlxG.width - 440, FlxG.height - 400, 1.5, function():Void{ // grids
                         startDialogue(["factory/hallway/tutorial/dialogue_tut_1"], function():Void{
                             placeUnit("partyhat", allyGrid, FlxPoint.get(1, 1), true);
                             calculateTurnOrder();
@@ -83,7 +83,7 @@ function onAdvanceTurn():Void{
                 lastHp = unit_manager.hp.value;
 
                 startDialogue(["factory/hallway/tutorial/dialogue_tut_5"], function():Void{
-                    tutorialZoomer.goHere(550, 0, 400, 190, 1.5, function():Void{
+                    tutorialZoomer.goHere(550, -10, 385, 190, 1.5, function():Void{ // turn order
 
                         startDialogue(["factory/hallway/tutorial/dialogue_tut_6"], function():Void{
                             tutorialProgress = 4;
@@ -121,7 +121,7 @@ function onAdvanceTurn():Void{
                 lastHp = unit_manager.hp.value;
 
                 startDialogue(["factory/hallway/tutorial/dialogue_tut_10"], function():Void{
-                    tutorialZoomer.goHere(14, 100, 230, 75, 1.5, function():Void{
+                    tutorialZoomer.goHere(0, 100, 245, 75, 1.5, function():Void{ // mp
 
                         startDialogue(["factory/hallway/tutorial/dialogue_tut_11"], function():Void{
                             tutorialProgress = 8;
@@ -202,7 +202,7 @@ function onStartPlayerTurn():Void{
             menuManagerPlayerUI.disable();
 
             startDialogue(["factory/hallway/tutorial/dialogue_tut_8"], function():Void{
-                tutorialZoomer.goHere(280, 550, 130, 130, 1.5, function():Void{ // inspect
+                tutorialZoomer.goHere(270, 550, 130, 130, 1.5, function():Void{ // inspect
                     startDialogue(["factory/hallway/tutorial/dialogue_tut_9"], function():Void{
                         tutorialProgress = 7;
 
@@ -214,7 +214,7 @@ function onStartPlayerTurn():Void{
             menuManagerPlayerUI.disable();
 
             startDialogue(["factory/hallway/tutorial/dialogue_tut_13"], function():Void{
-                tutorialZoomer.goHere(1040, 550, 160, 150, 1.5, function():Void{ // end turn
+                tutorialZoomer.goHere(1037, 550, 160, 150, 1.5, function():Void{ // end turn
                     startDialogue(["factory/hallway/tutorial/dialogue_tut_14"], function():Void{
                         tutorialProgress = 11;
 
