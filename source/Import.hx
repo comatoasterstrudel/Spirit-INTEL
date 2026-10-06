@@ -18,6 +18,7 @@ import battle.skills.SkillData;
 import battle.skills.SkillEffects;
 import battle.stats.Stat;
 import battle.status.*;
+import battle.tutorial.*;
 import battle.ui.UIStatus;
 import battle.ui.bottombar.BottomBar;
 import battle.ui.bottombar.SkillIcon;

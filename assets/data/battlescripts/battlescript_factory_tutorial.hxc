@@ -19,6 +19,8 @@ var lastHp:Int = 0;
 
 var bgLine:CtSprite;
 
+var tutorialZoomer:TutorialZoomer;
+
 function create(){
     set_disableInspectButton(true);
     set_disableEndTurnButton(true);
@@ -28,6 +30,10 @@ function create(){
     dialogueBox = get_dialogueBox();
 
     bgLine = get_bgLine();
+
+    tutorialZoomer = new TutorialZoomer();
+    tutorialZoomer.camera = camUI;
+    add(tutorialZoomer);
 
     PlayState.preventBattleEnding = true;
 }
@@ -43,28 +49,28 @@ function onAdvanceTurn():Void{
 
             new FlxTimer().start(1, function(f):Void{
                 startDialogue(["factory/hallway/tutorial/dialogue_tut_0"], function():Void{
-                    // zoom in on grids
+                    tutorialZoomer.goHere(220, 200, FlxG.width - 440, FlxG.height - 400, 1.5, function():Void{
+                        startDialogue(["factory/hallway/tutorial/dialogue_tut_1"], function():Void{
+                            placeUnit("partyhat", allyGrid, FlxPoint.get(1, 1), true);
+                            calculateTurnOrder();
 
-                    startDialogue(["factory/hallway/tutorial/dialogue_tut_1"], function():Void{
-                        placeUnit("partyhat", allyGrid, FlxPoint.get(1, 1), true);
-                        calculateTurnOrder();
+                            PlayState.preventBattleEnding = false;
 
-                        PlayState.preventBattleEnding = false;
+                            new FlxTimer().start(1.5, function(f):Void{
+                                tutorialProgress = 1;
 
-                        new FlxTimer().start(1.5, function(f):Void{
-                            tutorialProgress = 1;
-
-                            PlayState.battleFrozen = false;
-                            advanceTurn(0);
+                                PlayState.battleFrozen = false;
+                                advanceTurn(0);
+                            });
                         });
-                    });
 
-                    dialogueBox.onEvent.add(function(event:String):Void
-                    {
-                        if (event == "shake")
+                        dialogueBox.onEvent.add(function(event:String):Void
                         {
-                            camDialogue.shake(0.02, .2, null, true, 0x01);
-                        }
+                            if (event == "shake")
+                            {
+                                camDialogue.shake(0.02, .2, null, true, 0x01);
+                            }
+                        });
                     });
                 });
             });
@@ -77,13 +83,14 @@ function onAdvanceTurn():Void{
                 lastHp = unit_manager.hp.value;
 
                 startDialogue(["factory/hallway/tutorial/dialogue_tut_5"], function():Void{
-                    // zoom in on turn order
+                    tutorialZoomer.goHere(550, 0, 400, 190, 1.5, function():Void{
 
-                    startDialogue(["factory/hallway/tutorial/dialogue_tut_6"], function():Void{
-                        tutorialProgress = 4;
+                        startDialogue(["factory/hallway/tutorial/dialogue_tut_6"], function():Void{
+                            tutorialProgress = 4;
 
-                        PlayState.battleFrozen = false;
-                        advanceTurn(1);
+                            PlayState.battleFrozen = false;
+                            advanceTurn(1);
+                        });
                     });
                 });   
             } else {
@@ -114,13 +121,14 @@ function onAdvanceTurn():Void{
                 lastHp = unit_manager.hp.value;
 
                 startDialogue(["factory/hallway/tutorial/dialogue_tut_10"], function():Void{
-                    // zoom in on mp
+                    tutorialZoomer.goHere(14, 100, 230, 75, 1.5, function():Void{
 
-                    startDialogue(["factory/hallway/tutorial/dialogue_tut_11"], function():Void{
-                        tutorialProgress = 8;
+                        startDialogue(["factory/hallway/tutorial/dialogue_tut_11"], function():Void{
+                            tutorialProgress = 8;
 
-                        PlayState.battleFrozen = false;
-                        advanceTurn(1);
+                            PlayState.battleFrozen = false;
+                            advanceTurn(1);
+                        });
                     });
                 });   
             } else {
@@ -182,37 +190,36 @@ function onStartPlayerTurn():Void{
             menuManagerPlayerUI.disable();
 
             startDialogue(["factory/hallway/tutorial/dialogue_tut_2"], function():Void{
+                tutorialZoomer.goHere(350, 550, FlxG.width - 700, 130, 1.5, function():Void{ // skills
+                    startDialogue(["factory/hallway/tutorial/dialogue_tut_3"], function():Void{
+                        tutorialProgress = 2;
 
-                // zoom in on skills
-
-                startDialogue(["factory/hallway/tutorial/dialogue_tut_3"], function():Void{
-                    tutorialProgress = 2;
-
-                    menuManagerPlayerUI.enable();
+                        menuManagerPlayerUI.enable();
+                    });
                 });
             });
         case 6:
             menuManagerPlayerUI.disable();
 
             startDialogue(["factory/hallway/tutorial/dialogue_tut_8"], function():Void{
-                // zoom in on inspect btton
+                tutorialZoomer.goHere(280, 550, 130, 130, 1.5, function():Void{ // inspect
+                    startDialogue(["factory/hallway/tutorial/dialogue_tut_9"], function():Void{
+                        tutorialProgress = 7;
 
-                startDialogue(["factory/hallway/tutorial/dialogue_tut_9"], function():Void{
-                    tutorialProgress = 7;
-
-                    menuManagerPlayerUI.enable();
+                        menuManagerPlayerUI.enable();
+                    });
                 });
             });
         case 10:
             menuManagerPlayerUI.disable();
 
             startDialogue(["factory/hallway/tutorial/dialogue_tut_13"], function():Void{
-                // zoom in on end turn btton
+                tutorialZoomer.goHere(1040, 550, 160, 150, 1.5, function():Void{ // end turn
+                    startDialogue(["factory/hallway/tutorial/dialogue_tut_14"], function():Void{
+                        tutorialProgress = 11;
 
-                startDialogue(["factory/hallway/tutorial/dialogue_tut_14"], function():Void{
-                    tutorialProgress = 11;
-
-                    menuManagerPlayerUI.enable();
+                        menuManagerPlayerUI.enable();
+                    });
                 });
             });
     }

@@ -125,7 +125,7 @@ class InitState extends FlxState{
 			positionPortraitFromBottom: true,
 			nameBoxFollowType: Opposite,
 			confirmImagePath: "dialogueconfirm",
-			confirmOffset: FlxPoint.get(40, 50)
+			confirmOffset: FlxPoint.get(40, 50),
 		}
 
 		CtDialogueBox.preloadFont(CtDialogueBox.defaultSettings.font, CtDialogueBox.defaultSettings.fontSize);
@@ -186,6 +186,7 @@ class InitState extends FlxState{
 		CtScript.setDefaultValue({name: "FlxPoint", value: flixel.math.FlxBasePoint});
 		CtScript.setDefaultValue({name: "Grid", value: Grid});
 		CtScript.setDefaultValue({name: "GridBackground", value: GridBackground});
+		CtScript.setDefaultValue({name: "TutorialZoomer", value: TutorialZoomer});
 	}
 
 	function initSave():Void
