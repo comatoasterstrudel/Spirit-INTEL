@@ -212,7 +212,7 @@ class Constants
 	public static final roomDataPath:String = roomDataFolder + "room_";
 	public static final roomMusicPath:String = musicPath + "area_";
 	// Tilemaps
-	public static final ogmoFilePath:String = "assets/data/tilemaps/RPGENGINE.ogmo";
+	public static final ogmoFilePath:String = "assets/data/tilemaps/Spirit-INTEL.ogmo";
 	public static final tilemapsDataPath:String = "assets/data/tilemaps/tilemap_";
 	// Tilesets
 	public static final tilesetDataPath:String = "assets/data/tilesets/tileset_";
