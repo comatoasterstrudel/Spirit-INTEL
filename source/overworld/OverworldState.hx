@@ -466,6 +466,7 @@ class OverworldState extends FlxState
 	{
 		if (!inCutscene && CtControls.checkInput("cancel", JUSTPRESSED))
 		{
+			destroySubStates = false;
 			openSubState(playerMenu);
 			playerMenu.start();
 		}
@@ -485,8 +486,6 @@ class OverworldState extends FlxState
 
 	function setupPlayerMenu():Void
 	{
-		destroySubStates = false;
-
 		playerMenu = new PlayerMenu();
 		playerMenu.onStart.add(function():Void{
 			if(camGame.filters == null){
@@ -1131,6 +1130,8 @@ class OverworldState extends FlxState
 				if (cover != null)
 					cover.destroy();
 				
+				destroySubStates = true;
+
 				var tranSubState = new RoomTransitionSubState(time, transitionType);
 				tranSubState.onComplete.add(function():Void
 				{
@@ -1328,6 +1329,8 @@ class OverworldState extends FlxState
 		savePointName = saveName;
 
 		inCutscene = true;
+
+		destroySubStates = true;
 
 		openSubState(new SaveLoadMenu(SAVE, bgName, function():Void
 		{
