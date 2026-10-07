@@ -75,7 +75,7 @@
 		"speed": 0.03,
 		"diaPitch": 1,
 		"events": [],
-		"dialogue": "We need to fight. There's no other way around this.",
+		"dialogue": "We need to fight.",
 		"choicerOptions": [],
 		"portrait": "neutral",
 		"continueLine": false,
@@ -84,10 +84,22 @@
 		"autoSkip": false
 	},
 	{
+		"dialogue": " There's no other way around this.",
+		"events": [],
+		"continueLine": true,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "volor",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
+	},
+	{
 		"speed": 0.03,
 		"diaPitch": 1,
 		"events": [],
-		"dialogue": "What if it just ends up like last time? What then?",
+		"dialogue": "What if it just ends up like last time?",
 		"choicerOptions": [],
 		"portrait": "neutral",
 		"continueLine": false,
@@ -96,16 +108,40 @@
 		"autoSkip": false
 	},
 	{
+		"dialogue": "  What then?",
+		"events": [],
+		"continueLine": true,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "robin",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
+	},
+	{
 		"speed": 0.03,
 		"diaPitch": 1,
 		"events": [],
-		"dialogue": "We've got more spirits by our side now. We can do this.",
+		"dialogue": "We've got more spirits by our side now.",
 		"choicerOptions": [],
 		"portrait": "neutral",
 		"continueLine": false,
 		"voiceLine": "",
 		"actor": "volor",
 		"autoSkip": false
+	},
+	{
+		"dialogue": " We can do this.",
+		"events": [],
+		"continueLine": true,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "volor",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
 	},
 	{
 		"speed": 0.03,
@@ -123,7 +159,7 @@
 		"speed": 0.03,
 		"diaPitch": 1,
 		"events": [],
-		"dialogue": "(..This has been the worst shift of my life..)",
+		"dialogue": "(This has been the worst shift of my life..)",
 		"choicerOptions": [],
 		"portrait": "neutral",
 		"continueLine": false,
