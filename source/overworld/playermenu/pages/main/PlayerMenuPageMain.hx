@@ -19,7 +19,7 @@ class PlayerMenuPageMain extends PlayerMenuPage
 		add(polaroid);
     }
     
-    override function update(elapsed:Float):Void{
+    override function update(elapsed:Float):Void{ 
         super.update(elapsed);
         
         menuManager.update();
@@ -68,7 +68,8 @@ class PlayerMenuPageMain extends PlayerMenuPage
         }, cancelFunction: function(F):Void{
             removeActivePage();
             new FlxTimer().start(0.01, function(f):Void{
-               playerMenu.close(); 
+                playerMenu.removePage("main");
+                playerMenu.close(); 
             });
         }}]);
     }

@@ -105,6 +105,7 @@ import openfl.Assets;
 import openfl.display.BitmapData;
 import openfl.display.BitmapDataChannel;
 import openfl.display.Sprite;
+import openfl.filters.BlurFilter;
 import openfl.filters.ShaderFilter;
 import openfl.geom.ColorTransform;
 import openfl.geom.Point;

@@ -18,24 +18,44 @@ class PlayerMenu extends FlxSubState
     public var page_unitselector:PlayerMenuPageUnitSelector;
     public var page_unitstatus:PlayerMenuPageUnitStatus;
 
+    public var onStart = new FlxSignal();
+    public var onExit = new FlxSignal();
+
+    var doCameraPos:Bool = false;
+
     public function new():Void{
         super();
         
         initCameras();
-        
+         
         bg = new CtSprite().createColorBlock(FlxG.width, FlxG.height, FlxColor.BLACK);
-        bg.alpha = .8;
+        bg.alpha = .3;
         bg.camera = camBg;
         add(bg);
         
         initPages();
-        
+    }
+
+    override function update(elapsed:Float):Void{
+        super.update(elapsed);
+
+        if(doCameraPos){
+            camUI.scroll.x = 0;
+            camUI.lerpManager.targetPosition.x = 0;
+            doCameraPos = false;
+        }
+    }
+
+    public function start():Void{
         new FlxTimer().start(0.05, function(f):Void{
             CtMenuManager.playUISound(Constants.sfx_ui_openMenu);
             addPage("main");
         });
         
         realignCamera(true);
+        doCameraPos = true;
+
+        onStart.dispatch();
     }
     
     function initCameras():Void{
@@ -96,7 +116,7 @@ class PlayerMenu extends FlxSubState
         openPages.remove(page);
         
         var lastActivePage = openPages[openPages.length - 1];
-        setActivePage(lastActivePage.tag);
+        if(lastActivePage != null) setActivePage(lastActivePage.tag);
         
         realignCamera();
     }
@@ -129,6 +149,12 @@ class PlayerMenu extends FlxSubState
         xPos = (lastActivePage.bg.bgCenter.x + (lastActivePage.bg.bgCenter.width / 2)) - (FlxG.width / 2);
         
         camUI.lerpManager.targetPosition.x = xPos;
-        if(snap) camUI.scroll.x = xPos;
+        if(snap) camUI.lerpManager.snap();
+    }
+
+    override function close():Void{
+        super.close();
+
+        onExit.dispatch();
     }
 }

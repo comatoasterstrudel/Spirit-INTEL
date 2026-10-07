@@ -18,6 +18,7 @@ class OverworldState extends FlxState
 	var camLighting:FlxCamera;
 	var camOverlay:FlxCamera;
 	var camUI:FlxCamera;
+	
 	// CAMERA STUFF
 	var cameraScrollX:Bool = false;
 	var cameraScrollY:Bool = false;
@@ -26,7 +27,12 @@ class OverworldState extends FlxState
 	var unbindCamera:Bool = false;
 	var cameraBoundsMin:FlxPoint = FlxPoint.get();
 	var cameraBoundsMax:FlxPoint = FlxPoint.get();
-	
+
+	// PLAYER MENU
+	var playerMenu:PlayerMenu;
+	var blurGame = new BlurFilter();
+	var blurLighting = new BlurFilter();
+
 	// CHARACTERS
     var player:Player;
 	// PROPS
@@ -113,6 +119,7 @@ class OverworldState extends FlxState
 		setupCameras();
 
 		setupDialogueBox();
+		setupPlayerMenu();
 		loadMap();
 		selectRandomEncounter();
 		if(!lockMusic) setUpMusic(getMusicPathFromRoom(roomData), lastTransitionTime);
@@ -459,7 +466,8 @@ class OverworldState extends FlxState
 	{
 		if (!inCutscene && CtControls.checkInput("cancel", JUSTPRESSED))
 		{
-			openSubState(new PlayerMenu());
+			openSubState(playerMenu);
+			playerMenu.start();
 		}
 	}
 	
@@ -473,6 +481,25 @@ class OverworldState extends FlxState
 		dialogueBox.antialiasing = false;
 		add(dialogueBox);
 		dialogueBox.onComplete.add(endDialogues);		
+	}
+
+	function setupPlayerMenu():Void
+	{
+		destroySubStates = false;
+
+		playerMenu = new PlayerMenu();
+		playerMenu.onStart.add(function():Void{
+			if(camGame.filters == null){
+				camGame.filters = [];
+			}
+
+			camGame.filters.push(blurGame);
+			camLighting.filters.push(blurLighting);
+		});
+		playerMenu.onExit.add(function():Void{
+			camGame.filters.remove(blurGame);
+			camLighting.filters.remove(blurLighting);
+		});
 	}
 
 	/**
@@ -1710,6 +1737,12 @@ class OverworldState extends FlxState
 		lastTime = 0;
 		lockMusic = false;
 	}
+
+	override function destroy():Void{
+		playerMenu.destroy();
+		super.destroy();
+	}
+
 	#if debug
 	function addDebugFunctions():Void
 	{
