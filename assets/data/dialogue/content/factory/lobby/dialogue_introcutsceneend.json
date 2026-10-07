@@ -1,20 +1,38 @@
 [
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "I hope the rest of your night goes well, Jess.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
-    },
+		"autoSkip": false
+	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "I'm probably just gonna play Tetris til I can leave.",
+		"choicerOptions": [],
+		"portrait": "talksmile",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "jess",
-		"portrait": "neutral"
-    },
+		"autoSkip": false
+	},
 	{
-        "speed": 0.03,
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Hah, have fun.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
-    }
+		"autoSkip": false
+	}
 ]
