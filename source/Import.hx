@@ -40,6 +40,7 @@ import ctDialogueBox.ctdb.CtDialogueBox;
 import ctDialogueBox.textbox.Text;
 import ctDialogueBox.textbox.effects.IEffect;
 import ctUtil.CtUtil;
+import ctUtil.cache.CtCache;
 import ctUtil.camera.*;
 import ctUtil.controls.*;
 import ctUtil.events.*;

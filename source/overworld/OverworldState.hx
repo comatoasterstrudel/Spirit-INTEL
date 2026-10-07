@@ -108,7 +108,7 @@ class OverworldState extends FlxState
 
     override function create():Void{
         super.create();
-        
+		
 		eventManager = new CtEventManager();
 		eventManager.reset();
 		
@@ -122,6 +122,7 @@ class OverworldState extends FlxState
 		setupPlayerMenu();
 		loadMap();
 		selectRandomEncounter();
+
 		if(!lockMusic) setUpMusic(getMusicPathFromRoom(roomData), lastTransitionTime);
 		if (leftForBattle)
 		{
