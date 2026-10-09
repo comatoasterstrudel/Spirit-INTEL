@@ -12,6 +12,8 @@ class BottomBar extends FlxSpriteGroup
 
 	public var inspect:CtSprite;
 
+	public var status:CtSprite;
+
 	public var descriptionText:CtText;
 	var textBgMiddle:CtSprite;
     var textBgLeftEdge:CtSprite;
@@ -53,6 +55,10 @@ class BottomBar extends FlxSpriteGroup
 		endTurn = new CtSprite(1050, 567).createFromImage(Constants.endTurnButtonGraphicPath);
 		endTurn.kill();
 		add(endTurn);
+
+		status = new CtSprite(1050, 567).createFromImage(Constants.statusButtonGraphicPath);
+		status.kill();
+		add(status);
 
 		textBgLeftEdge = new CtSprite().createFromImage(Constants.bottomBarTextEdge);
         add(textBgLeftEdge);

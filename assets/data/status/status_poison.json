@@ -1,6 +1,7 @@
 {
     "name": "Poison",
     "text": "POISONED !!!",
+    "description": "This Unit will take damage at the end of its turn",
     "iconGraphic": "poison",
     "color": [255, 0, 255], 
     "triggerType": "endOfTurn",

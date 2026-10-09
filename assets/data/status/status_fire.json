@@ -1,6 +1,7 @@
 {
     "name": "Fire",
     "text": "ON FIRE !!!",
+    "description": "This Unit will take damage at the start of its turn",
     "iconGraphic": "fire",
     "color": [255, 0, 0], 
     "triggerType": "startOfTurn",

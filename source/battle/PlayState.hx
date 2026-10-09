@@ -61,10 +61,13 @@ class PlayState extends FlxState
 	var dialogueBg:CtSprite;
 	var onDialogueComplete:Void->Void;
 
+	var statusEffectInfoBox:StatusEffectInfoBox;
+
 	// MENU MANAGERS
 	var menuManagerPlayerUI:CtMenuManager;
 	var menuManagerGridSelector:CtMenuManager;
 	var menuManagerUnitInspector:CtMenuManager;
+	var menuManagerStatusInspector:CtMenuManager;
 	var menus:Array<CtMenuManager> = [];
 	
 	// GAME STUFF
@@ -101,6 +104,9 @@ class PlayState extends FlxState
 	public static var battleFrozen:Bool = false;
 	public static var preventBattleEnding:Bool = false;
 
+	// STATUS INSPECTOR
+	var currentStatusInspectorUnit:Unit;
+
 	override public function create()
 	{
 		persistentUpdate = true;
@@ -117,9 +123,8 @@ class PlayState extends FlxState
 		setUpBg();
 		setUpGrids();
 		setUpUI();
-		addInitialUnits();
-
 		setUpMenus();
+		addInitialUnits();
 
 		if(FlxG.sound.music == null && battleData.music != "") setUpMusic(battleData);
 		
@@ -361,6 +366,10 @@ class PlayState extends FlxState
 		dialogueBox.antialiasing = false;
 		add(dialogueBox);
 		dialogueBox.onComplete.add(endDialogues);
+
+		statusEffectInfoBox = new StatusEffectInfoBox();
+		statusEffectInfoBox.camera = camGame;
+		statusEffectInfoBox.kill();
 	}
 
 	/**
@@ -382,8 +391,16 @@ class PlayState extends FlxState
 		// init menuManagerUnitInspector
 		menuManagerUnitInspector = new CtMenuManager();
 		add(menuManagerUnitInspector.addCursor(menuMakeCursor(), 20, false));
+		// init menuManagerStatusInspector
+		var statusInspectorCursor = menuMakeCursor();
+		statusInspectorCursor.camera = camGame;
+		menuManagerStatusInspector = new CtMenuManager();
+		add(menuManagerStatusInspector.addCursor(statusInspectorCursor, 10, false));
 
-		menus = [menuManagerPlayerUI, menuManagerGridSelector, menuManagerUnitInspector];
+		statusEffectInfoBox.cursor = statusInspectorCursor;
+		add(statusEffectInfoBox);
+
+		menus = [menuManagerPlayerUI, menuManagerGridSelector, menuManagerUnitInspector, menuManagerStatusInspector];
 	}
 
 	function menuMakeCursor():Cursor
@@ -846,6 +863,12 @@ class PlayState extends FlxState
 
 							bottomBar.descriptionText.visible = false;
 							bottomBar.descriptionText.kill();
+
+							bottomBar.status.kill();
+
+							for(otherUnit in units){
+								otherUnit.alpha = 1;
+							}
 						}
 					}
 				});
@@ -1253,6 +1276,8 @@ class PlayState extends FlxState
 		menuManagerGridSelector.disable();
 		if (uiStatus == GRID_INSPECT || uiStatus == GRID_SKILL)
 		{
+			bottomBar.status.kill();
+
 			if (uiStatus == GRID_INSPECT)
 			{
 				bottomBar.updateCurrentUnit(currentTurnUnit);
@@ -1331,16 +1356,38 @@ class PlayState extends FlxState
 						if(space.unit != null){
 							menuManagerGridSelector.disable();
 
-							menuManagerUnitInspector.setMenuOptions([getSkillIconMenuOptions()]);
+							var options:Array<CtMenuOption> = getSkillIconMenuOptions();
+
+							if(space.unit.statuses.length > 0){
+								options.push({sprite: bottomBar.status, cursorDirection: UP, 
+									cancelFunction: options[0].cancelFunction, // work pls
+									hoverFunction: function(f):Void{
+										bottomBar.updateText("View this Units Status Effects");
+									},
+									clickFunction: function(f):Void{
+										menuManagerUnitInspector.disable();
+										openStatusInspector(space.unit);
+									}
+								});
+							}
+
+							menuManagerUnitInspector.setMenuOptions([options]);
 							menuManagerUnitInspector.enable();
 
 							bottomBar.descriptionText.visible = true;
 							bottomBar.descriptionText.revive();
+
+							for(otherUnit in units){
+								if(otherUnit.uniqueUnitID != space.unit.uniqueUnitID){
+									otherUnit.alpha = .2;
+								}
+							}
 						}
 					}
 				},
 				cancelFunction: function(sprite):Void
 				{
+					bottomBar.status.kill();
 					removeGridSelector();
 				},
 				hoverFunction: function(sprite):Void
@@ -1367,6 +1414,12 @@ class PlayState extends FlxState
 						turnOrderDisplay.topBar.updateCurrentUnit(space.unit);
 						turnOrderDisplay.updateCurrentTurn(space.unit);
 						space.toggleFlashSprite(true);
+
+						if(space.unit != null && space.unit.statuses.length > 0){
+							bottomBar.status.revive();
+						} else {
+							bottomBar.status.kill();
+						}
 					}
 				},
 				nonHoverFunction: function(sprite):Void
@@ -1387,6 +1440,38 @@ class PlayState extends FlxState
 				gridSelectorOptions.splice(i, 1);
 			}
 		}
+	}
+
+	function openStatusInspector(unit:Unit):Void{
+		currentStatusInspectorUnit = unit;
+
+		statusEffectInfoBox.revive();
+
+		var options:Array<CtMenuOption> = [];
+		
+		for(status in currentStatusInspectorUnit.statuses){
+			var icon = statusEffectBars.getBarByUnit(currentStatusInspectorUnit).getIconByStatus(status);
+			options.push({
+				sprite: icon.baseSprite, 
+				cursorDirection: UP,
+				cancelFunction: function(f):Void{
+					closeStatusInspector();
+				},
+				hoverFunction: function(f):Void{
+					statusEffectInfoBox.updateStatus(status);
+				}
+			});
+		}
+
+		menuManagerStatusInspector.setMenuOptions([options]);
+		menuManagerStatusInspector.enable();
+	}
+
+	function closeStatusInspector():Void{
+		menuManagerStatusInspector.disable();
+		menuManagerUnitInspector.enable();
+
+		statusEffectInfoBox.kill();
 	}
 
 	/**

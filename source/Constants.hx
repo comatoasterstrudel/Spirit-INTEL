@@ -102,6 +102,7 @@ class Constants
 	public static final inspectButtonGraphicPath:String = "assets/images/bottombar/inspect.png";
 	public static final inspect2ButtonGraphicPath:String = "assets/images/bottombar/inspect2.png";
 	public static final endTurnButtonGraphicPath:String = "assets/images/bottombar/endturn.png";
+	public static final statusButtonGraphicPath:String = "assets/images/bottombar/status.png";
 	public static final bottomBarTextMiddle:String = "assets/images/bottombar/desctext_bgMiddle.png";
 	public static final bottomBarTextEdge:String = "assets/images/bottombar/desctext_bgEdge.png";
 	// Cursors
