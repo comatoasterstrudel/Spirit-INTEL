@@ -7,5 +7,14 @@
 	"customNameBoxImgPath": "laurin",
 	"portraitPrefix": "laurin",
 	"textSound": "laurin",
-	"textSoundVolume": 0.7
+	"textSoundVolume": 0.7,
+	"layeredPortraits": [
+		{
+			"name": "talk",
+			"layers": [
+				"laurin_base_normal",
+				"laurin_face_talk"
+			]
+		}
+	]
 }
