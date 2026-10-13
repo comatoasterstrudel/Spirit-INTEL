@@ -15,6 +15,247 @@
 				"laurin_base_normal",
 				"laurin_face_talk"
 			]
+		},
+		{
+			"name": "sympathysmile",
+			"layers": [
+				"laurin_base_normal",
+				"laurin_face_sympathysmile"
+			]
+		},
+		{
+			"name": "secret",
+			"layers": [
+				"laurin_base_normal",
+				"laurin_face_secret"
+			]
+		},
+		{
+			"name": "neutral",
+			"layers": [
+				"laurin_base_normal",
+				"laurin_face_neutral"
+			]
+		},
+		{
+			"name": "frown",
+			"layers": [
+				"laurin_base_normal",
+				"laurin_face_frown"
+			]
+		},
+		{
+			"name": "biglaugh",
+			"layers": [
+				"laurin_base_normal",
+				"laurin_face_biglaugh"
+			]
+		},
+		{
+			"name": "mad",
+			"layers": [
+				"laurin_base_normal",
+				"laurin_face_mad"
+			]
+		},
+		{
+			"name": "singlebrowraise",
+			"layers": [
+				"laurin_base_normal",
+				"laurin_face_singlebrowraise"
+			]
+		},
+		{
+			"name": "talkhighbrows",
+			"layers": [
+				"laurin_base_normal",
+				"laurin_face_talkhighbrows"
+			]
+		},
+		{
+			"name": "raisedbrows",
+			"layers": [
+				"laurin_base_normal",
+				"laurin_face_raisedbrows"
+			]
+		},
+		{
+			"name": "lecture",
+			"layers": [
+				"laurin_base_normal",
+				"laurin_face_lecture"
+			]
+		},
+		{
+			"name": "sadtalk",
+			"layers": [
+				"laurin_base_normal",
+				"laurin_face_sadtalk"
+			]
+		},
+		{
+			"name": "sigh",
+			"layers": [
+				"laurin_base_normal",
+				"laurin_face_sigh"
+			]
+		},
+		{
+			"name": "happy",
+			"layers": [
+				"laurin_base_normal",
+				"laurin_face_happy"
+			]
+		},
+		
+		{
+			"name": "work_talk",
+			"layers": [
+				"laurin_base_work",
+				"laurin_face_talk"
+			]
+		},
+		{
+			"name": "work_sympathysmile",
+			"layers": [
+				"laurin_base_work",
+				"laurin_face_sympathysmile"
+			]
+		},
+		{
+			"name": "work_secret",
+			"layers": [
+				"laurin_base_work",
+				"laurin_face_secret"
+			]
+		},
+		{
+			"name": "work_neutral",
+			"layers": [
+				"laurin_base_work",
+				"laurin_face_neutral"
+			]
+		},
+		{
+			"name": "work_frown",
+			"layers": [
+				"laurin_base_work",
+				"laurin_face_frown"
+			]
+		},
+		{
+			"name": "work_biglaugh",
+			"layers": [
+				"laurin_base_work",
+				"laurin_face_biglaugh"
+			]
+		},
+		{
+			"name": "work_mad",
+			"layers": [
+				"laurin_base_work",
+				"laurin_face_mad"
+			]
+		},
+		{
+			"name": "work_singlebrowraise",
+			"layers": [
+				"laurin_base_work",
+				"laurin_face_singlebrowraise"
+			]
+		},
+		{
+			"name": "work_talkhighbrows",
+			"layers": [
+				"laurin_base_work",
+				"laurin_face_talkhighbrows"
+			]
+		},
+		{
+			"name": "work_raisedbrows",
+			"layers": [
+				"laurin_base_work",
+				"laurin_face_raisedbrows"
+			]
+		},
+		{
+			"name": "work_lecture",
+			"layers": [
+				"laurin_base_work",
+				"laurin_face_lecture"
+			]
+		},
+		{
+			"name": "work_sadtalk",
+			"layers": [
+				"laurin_base_work",
+				"laurin_face_sadtalk"
+			]
+		},
+		{
+			"name": "work_sigh",
+			"layers": [
+				"laurin_base_work",
+				"laurin_face_sigh"
+			]
+		},
+		{
+			"name": "work_happy",
+			"layers": [
+				"laurin_base_work",
+				"laurin_face_happy"
+			]
+		},
+
+	
+		{
+			"name": "call_lookshock",
+			"layers": [
+				"laurincall_base_normal",
+				"laurincall_face_lookshock"
+			]
+		},
+		{
+			"name": "call_eyesclosed",
+			"layers": [
+				"laurincall_base_normal",
+				"laurincall_face_eyesclosed"
+			]
+		},
+		{
+			"name": "call_lookneutral",
+			"layers": [
+				"laurincall_base_normal",
+				"laurincall_face_lookneutral"
+			]
+		},
+		{
+			"name": "call_looksad",
+			"layers": [
+				"laurincall_base_normal",
+				"laurincall_face_looksad"
+			]
+		},
+		{
+			"name": "call_lookupset",
+			"layers": [
+				"laurincall_base_normal",
+				"laurincall_face_lookupset"
+			]
+		},
+		{
+			"name": "call_neutral",
+			"layers": [
+				"laurincall_base_normal",
+				"laurincall_face_neutral"
+			]
+		},
+		{
+			"name": "call_speak",
+			"layers": [
+				"laurincall_base_normal",
+				"laurincall_face_speak"
+			]
 		}
 	]
 }
