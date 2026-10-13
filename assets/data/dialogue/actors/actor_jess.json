@@ -7,5 +7,56 @@
 	"customNameBoxImgPath": "jess",
 	"portraitPrefix": "jess",
 	"textSound": "jess",
-	"textSoundVolume": 0.6
-}
+	"textSoundVolume": 0.6,
+	"layeredPortraits": [
+		{
+			"name": "closedsmile",
+			"layers": [
+				"jess_base_normal",
+				"jess_face_closedsmile"
+			]
+		},
+		{
+			"name": "neutral",
+			"layers": [
+				"jess_base_normal",
+				"jess_face_neutral"
+			]
+		},
+		{
+			"name": "quirkedup",
+			"layers": [
+				"jess_base_normal",
+				"jess_face_quirkedup"
+			]
+		},
+		{
+			"name": "sigh",
+			"layers": [
+				"jess_base_normal",
+				"jess_face_sigh"
+			]
+		},
+		{
+			"name": "smile",
+			"layers": [
+				"jess_base_normal",
+				"jess_face_smile"
+			]
+		},
+		{
+			"name": "talksmile",
+			"layers": [
+				"jess_base_normal",
+				"jess_face_talksmile"
+			]
+		},
+		{
+			"name": "talkneutral",
+			"layers": [
+				"jess_base_normal",
+				"jess_face_talkneutral"
+			]
+		}
+	]
+} 
