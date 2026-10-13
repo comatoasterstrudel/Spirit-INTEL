@@ -1,6 +1,7 @@
 {
     "name": "Flimsy",
     "text": "FLIMSY !!",
+    "description": "This Unit will take more damage",
     "iconGraphic": "flimsy",
     "color": [150, 150, 150], 
     "triggerType": "passive",

@@ -1,6 +1,7 @@
 {
     "name": "Strength",
     "text": "STRENGTH !!",
+    "description": "This Unit will deal more damage",
     "iconGraphic": "strength",
     "color": [210, 210, 210], 
     "triggerType": "passive",

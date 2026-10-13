@@ -102,6 +102,7 @@ class Constants
 	public static final inspectButtonGraphicPath:String = "assets/images/bottombar/inspect.png";
 	public static final inspect2ButtonGraphicPath:String = "assets/images/bottombar/inspect2.png";
 	public static final endTurnButtonGraphicPath:String = "assets/images/bottombar/endturn.png";
+	public static final statusButtonGraphicPath:String = "assets/images/bottombar/status.png";
 	public static final bottomBarTextMiddle:String = "assets/images/bottombar/desctext_bgMiddle.png";
 	public static final bottomBarTextEdge:String = "assets/images/bottombar/desctext_bgEdge.png";
 	// Cursors
@@ -212,7 +213,7 @@ class Constants
 	public static final roomDataPath:String = roomDataFolder + "room_";
 	public static final roomMusicPath:String = musicPath + "area_";
 	// Tilemaps
-	public static final ogmoFilePath:String = "assets/data/tilemaps/RPGENGINE.ogmo";
+	public static final ogmoFilePath:String = "assets/data/tilemaps/Spirit-INTEL.ogmo";
 	public static final tilemapsDataPath:String = "assets/data/tilemaps/tilemap_";
 	// Tilesets
 	public static final tilesetDataPath:String = "assets/data/tilesets/tileset_";

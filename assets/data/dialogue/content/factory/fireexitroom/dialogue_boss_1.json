@@ -63,7 +63,7 @@
 		"speed": 0.03,
 		"diaPitch": 1,
 		"events": [],
-		"dialogue": "Be ready!",
+		"dialogue": " Be ready!",
 		"choicerOptions": [],
 		"portrait": "neutral",
 		"continueLine": true,

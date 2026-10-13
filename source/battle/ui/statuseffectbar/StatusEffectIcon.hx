@@ -4,7 +4,7 @@ class StatusEffectIcon extends FlxSpriteGroup
 {
     var unit:Unit;
     
-	var status:StatusEffect;
+	public var status:StatusEffect;
 
     public var baseSprite:CtSprite;
     

@@ -11,7 +11,7 @@ class StatusEffectBar extends FlxTypedGroup<StatusEffectIcon>
     
     public function new(unit:Unit):Void{
         this.unit = unit;
-        
+         
         super();
         
         unit.onStatusChanged.add(updateStatuses);
@@ -67,4 +67,12 @@ class StatusEffectBar extends FlxTypedGroup<StatusEffectIcon>
 		lastX = unit.x;
 		lastY = unit.y;
 	}
+
+    public function getIconByStatus(status:StatusEffect):StatusEffectIcon{
+        for(icon in members){
+            if(icon.status.id == status.id) return icon;
+        }
+
+        return null;
+    }
 }

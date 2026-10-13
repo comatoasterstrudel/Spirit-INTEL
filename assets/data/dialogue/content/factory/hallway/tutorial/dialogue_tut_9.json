@@ -12,16 +12,16 @@
 		"autoSkip": false
 	},
 	{
-		"dialogue": "..Including which skills they have.",
-		"events": [],
-		"continueLine": false,
-		"portrait": "neutral",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "volor",
+		"events": [],
+		"dialogue": "..Including which skills and status effects they have.",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "neutral",
+		"continueLine": false,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "volor",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
