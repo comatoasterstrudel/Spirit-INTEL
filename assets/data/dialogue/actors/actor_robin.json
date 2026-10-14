@@ -6,5 +6,35 @@
 	"choicerUnselectedTextColor": [0, 0, 0],
 	"customNameBoxImgPath": "robin",
 	"portraitPrefix": "robin",
-	"textSound": "robin"
+	"textSound": "robin",
+	"layeredPortraits": [
+		{
+			"name": "smiletalk",
+			"layers": [
+				"robin_base_normal",
+				"robin_face_smiletalk"
+			]
+		},
+		{
+			"name": "smile",
+			"layers": [
+				"robin_base_normal",
+				"robin_face_smile"
+			]
+		},
+		{
+			"name": "talk",
+			"layers": [
+				"robin_base_normal",
+				"robin_face_talk"
+			]
+		},
+		{
+			"name": "neutral",
+			"layers": [
+				"robin_base_normal",
+				"robin_face_neutral"
+			]
+		}
+	]
 }
