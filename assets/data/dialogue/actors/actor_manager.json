@@ -7,5 +7,28 @@
 	"textSound": "manager",
 	"textSoundVolume": 0.45,
 	"customNameBoxImgPath": "manager",
-	"portraitPrefix": "manager"
+	"portraitPrefix": "manager",
+	"layeredPortraits": [
+		{
+			"name": "neutral",
+			"layers": [
+				"manager_base_normal",
+				"manager_face_neutral"
+			]
+		},
+		{
+			"name": "talk",
+			"layers": [
+				"manager_base_normal",
+				"manager_face_talk"
+			]
+		},
+		{
+			"name": "douche",
+			"layers": [
+				"manager_base_normal",
+				"manager_face_douche"
+			]
+		}
+	]
 } 
