@@ -297,6 +297,7 @@ function doCameraCutscene(seen:Bool, onComplete:Void->Void):Void{
             fadeSpr.kill();
             startDialogue(["factory/officesecurity/cameras/dialogue_cam_2" + (seen ? "seen" : "")], function():Void{
                 fullart_f1.animation.play("2normal");
+                FlxTween.shake(fullart_f1, 0.05, .2, 0x01);
 
                 new FlxTimer().start(1.5, function(f):Void{
                     fullart_f1.animation.play("2ghosts");
@@ -305,12 +306,16 @@ function doCameraCutscene(seen:Bool, onComplete:Void->Void):Void{
                         fullart_f1.animation.play("2normal");
                         new FlxTimer().start(2, function(f):Void{
                             fullart_f1.animation.play("3");
+                            FlxTween.shake(fullart_f1, 0.05, .2, 0x01);
 
                             new FlxTimer().start(1.2, function(f):Void{
                                 fullart_f1.animation.play("4");
+                                FlxTween.shake(fullart_f1, 0.05, .2, 0x01);
 
                                 new FlxTimer().start(1.2, function(f):Void{
                                     fullart_f1.animation.play("5");
+                                    FlxTween.shake(fullart_f1, 0.05, .2, 0x01);
+                                    
                                     new FlxTimer().start(1.7, function(f):Void{
                                         startDialogue(["factory/officesecurity/cameras/dialogue_cam_2part2" + (seen ? "seen" : "")], function():Void{
                                             fadeSpr.revive();
