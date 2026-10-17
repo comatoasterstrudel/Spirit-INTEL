@@ -291,25 +291,49 @@ function doCameraCutscene(seen:Bool, onComplete:Void->Void):Void{
         fullart_f1.revive();
         fullart_static.revive();
 
+        fullart_f1.animation.play("1");
+        
         FlxTween.tween(fadeSpr, {alpha: 0}, seen ? .5 : 1, {onComplete: function(f):Void{
             fadeSpr.kill();
             startDialogue(["factory/officesecurity/cameras/dialogue_cam_2" + (seen ? "seen" : "")], function():Void{
-                startDialogue(["factory/officesecurity/cameras/dialogue_cam_2part2" + (seen ? "seen" : "")], function():Void{
-                    fadeSpr.revive();
+                fullart_f1.animation.play("2normal");
 
-                    if(seen){
-                        FlxG.sound.music.fadeIn(2);
-                    }
+                new FlxTimer().start(1.5, function(f):Void{
+                    fullart_f1.animation.play("2ghosts");
 
-                    FlxTween.tween(fadeSpr, {alpha: 1}, seen ? .5 : 1, {onComplete: function(f):Void{
-                        fullart_f1.kill();
-                        fullart_static.kill();
+                    fullart_f1.animation.onFinish.add(function(f):Void{
+                        fullart_f1.animation.play("2normal");
+                        new FlxTimer().start(2, function(f):Void{
+                            fullart_f1.animation.play("3");
 
-                        FlxTween.tween(fadeSpr, {alpha: 0}, seen ? .5 : 1, {onComplete: function(f):Void{
-                            fadeSpr.kill();
-                            onComplete();
-                        }});
-                    }});
+                            new FlxTimer().start(1.2, function(f):Void{
+                                fullart_f1.animation.play("4");
+
+                                new FlxTimer().start(1.2, function(f):Void{
+                                    fullart_f1.animation.play("5");
+                                    new FlxTimer().start(1.7, function(f):Void{
+                                        startDialogue(["factory/officesecurity/cameras/dialogue_cam_2part2" + (seen ? "seen" : "")], function():Void{
+                                            fadeSpr.revive();
+
+                                            if(seen){
+                                                FlxG.sound.music.fadeIn(2);
+                                            }
+
+                                            FlxTween.tween(fadeSpr, {alpha: 1}, seen ? .5 : 1, {onComplete: function(f):Void{
+                                                fullart_f1.kill();
+                                                fullart_static.kill();
+
+                                                FlxTween.tween(fadeSpr, {alpha: 0}, seen ? .5 : 1, {onComplete: function(f):Void{
+                                                    fadeSpr.kill();
+                                                    onComplete();
+                                                }});
+                                            }});
+                                        });
+                                    });
+                                });
+                            });
+                        });
+                    });
                 });
             });
         }});
@@ -317,7 +341,13 @@ function doCameraCutscene(seen:Bool, onComplete:Void->Void):Void{
 }
 
 function setupFullArt():Void{
-    fullart_f1 = new CtSprite().createFromImage(Constants.overworldMiscGraphicPath + "camera_f1.png");
+    fullart_f1 = new CtSprite().createFromSparrow(Constants.overworldMiscGraphicPath + "camera_f1.png", Constants.overworldMiscGraphicPath + "camera_f1.xml");
+    fullart_f1.animation.addByPrefix("1", "1");
+    fullart_f1.animation.addByPrefix("2normal", "2normal");
+    fullart_f1.animation.addByPrefix("2ghosts", "2ghosts", 3.5, false);
+    fullart_f1.animation.addByPrefix("3", "3");
+    fullart_f1.animation.addByPrefix("4", "4");
+    fullart_f1.animation.addByPrefix("5", "5");
 	fullart_f1.screenCenter();
 	fullart_f1.camera = camOverlay;
 	fullart_f1.kill();
