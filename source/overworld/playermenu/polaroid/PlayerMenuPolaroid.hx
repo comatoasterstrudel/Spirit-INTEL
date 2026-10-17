@@ -14,28 +14,39 @@ class PlayerMenuPolaroid extends FlxSpriteGroup
     public function new(bgCenter:CtSprite):Void{
         super();
         
-        this.bgCenter;
+        this.bgCenter = bgCenter;
         
         bordershadow = new CtSprite().createFromImage(Constants.playerMenuPolaroidBorderShadowPath);
         bordershadow.antialiasing = false;
         bordershadow.alpha = .5;
         add(bordershadow);
         
-        bg = new CtSprite().createFromImage(getBgPath());
+        bg = new CtSprite();
         bg.antialiasing = false;
         add(bg);
         
-        pola = new CtSprite().createFromImage(getPolaPath());
+        pola = new CtSprite();
         pola.antialiasing = false;
         add(pola);
         
         border = new CtSprite().createFromImage(Constants.playerMenuPolaroidBorderPath);
         border.antialiasing = false;
         add(border);
-        
+
+        updatePhoto();
+    }
+    
+    public function updatePhoto():Void{
+        bg.createFromImage(getBgPath());
+        pola.createFromImage(getPolaPath());
+
+        updatePositions();
+    }
+
+    function updatePositions():Void{
         CtUtil.centerSpriteOnSprite(border, bgCenter, true, false);
         
-		border.y = bgCenter.y + 50;
+		border.y = bgCenter.y;
         
         for(spr in [bordershadow, bg, pola]){
             spr.setPosition(border.x, border.y);
@@ -43,7 +54,7 @@ class PlayerMenuPolaroid extends FlxSpriteGroup
         
         bordershadow.y += 10;
     }
-    
+
     function getBgPath():String
     {
         var customBg:String = Constants.playerMenuPolaroidBgPath + OverworldState.roomData.polaroidBg + ".png";

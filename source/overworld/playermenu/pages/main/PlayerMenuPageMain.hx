@@ -81,6 +81,8 @@ class PlayerMenuPageMain extends PlayerMenuPage
             text.x = xPos + 50;
         }
         menuManager.changeSelection(0);
+
+        if(polaroid != null) polaroid.updatePhoto();
     }
     
     override function setActivePage():Void{
