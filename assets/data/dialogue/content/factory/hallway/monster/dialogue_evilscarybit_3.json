@@ -7,7 +7,7 @@
 		"speed": 0.03,
 		"dialogue": "..?",
 		"actor": "robin",
-		"portrait": "hat_scaredlookdown"
+		"portrait": "hat_scareddown"
 	},
 	{
 		"speed": 0.06,
@@ -27,6 +27,6 @@
 		"speed": 0.03,
 		"dialogue": "WHAT!?",
 		"actor": "robin",
-		"portrait": "hat_shockedtalkdown"
+		"portrait": "hat_terrifieddown"
 	}
 ] 

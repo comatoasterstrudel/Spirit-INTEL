@@ -41,7 +41,7 @@
 		"events": [],
 		"dialogue": "[[SHAKE]]*starts JOing like crazy*[[ENDSHAKE]]",
 		"choicerOptions": [],
-		"portrait": "hat_shockedtalk",
+		"portrait": "hat_terrified",
 		"continueLine": false,
 		"voiceLine": "",
 		"actor": "robin",

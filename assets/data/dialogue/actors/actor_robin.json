@@ -35,6 +35,127 @@
 				"robin_base_normal",
 				"robin_face_neutral"
 			]
+		},
+		{
+			"name": "shocked",
+			"layers": [
+				"robin_base_normal",
+				"robin_face_shocked"
+			]
+		},
+		{
+			"name": "terrified",
+			"layers": [
+				"robin_base_normal",
+				"robin_face_terrified"
+			]
+		},
+		{
+			"name": "terrifieddown",
+			"layers": [
+				"robin_base_normal",
+				"robin_face_terrifieddown"
+			]
+		},
+		{
+			"name": "scared",
+			"layers": [
+				"robin_base_normal",
+				"robin_face_scared"
+			]
+		},
+		{
+			"name": "scareddown",
+			"layers": [
+				"robin_base_normal",
+				"robin_face_scareddown"
+			]
+		},
+		{
+			"name": "sleepy",
+			"layers": [
+				"robin_base_normal",
+				"robin_face_sleepy"
+			]
+		},
+		{
+			"name": "sleepyshock",
+			"layers": [
+				"robin_base_normal",
+				"robin_face_sleepyshock"
+			]
+		},
+
+		{
+			"name": "work_talk",
+			"layers": [
+				"robin_base_work",
+				"robin_face_talk"
+			]
+		},
+		{
+			"name": "work_neutral",
+			"layers": [
+				"robin_base_work",
+				"robin_face_neutral"
+			]
+		},
+
+		{
+			"name": "hat_neutral",
+			"layers": [
+				"robin_base_normal",
+				"robin_hat",
+				"robin_face_neutral"
+			]
+		},
+		{
+			"name": "hat_talk",
+			"layers": [
+				"robin_base_normal",
+				"robin_hat",
+				"robin_face_talk"
+			]
+		},
+		{
+			"name": "hat_scared",
+			"layers": [
+				"robin_base_normal",
+				"robin_hat",
+				"robin_face_scared"
+			]
+		},
+		{
+			"name": "hat_scareddown",
+			"layers": [
+				"robin_base_normal",
+				"robin_hat",
+				"robin_face_scareddown"
+			]
+		},
+		{
+			"name": "hat_shocked",
+			"layers": [
+				"robin_base_normal",
+				"robin_hat",
+				"robin_face_shocked"
+			]
+		},
+		{
+			"name": "hat_terrified",
+			"layers": [
+				"robin_base_normal",
+				"robin_hat",
+				"robin_face_terrified"
+			]
+		},
+		{
+			"name": "hat_terrifieddown",
+			"layers": [
+				"robin_base_normal",
+				"robin_hat",
+				"robin_face_terrifieddown"
+			]
 		}
 	]
 }
