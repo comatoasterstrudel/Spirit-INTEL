@@ -329,48 +329,6 @@ function doProductionCutscene():Void
 			{
 				new FlxTimer().start(1.5, function(f):Void
 				{
-					queuedTimeChange = 4;
-					doSceneFade(2);
-					updateSleepyLevel("lil_sleepy");
-
-					camGame.scroll.set(1000, 1200);
-
-					new FlxTimer().start(6.5, function(F):Void
-					{
-						OverworldState.eventManager.finishTransaction("cinematic");
-					});
-				});
-			}
-		});
-	});
-
-	// wait, then change scene and move camera
-	OverworldState.eventManager.addEvent(function()
-	{				
-		OverworldState.eventManager.startTransaction("cinematic");
-
-		updateSleepyLevel("mid_sleepy");
-
-		doSceneFade(2);
-
-		camGame.scroll.set(0, 800);
-
-		coworkerA.positionCharacterByGrid(18, 22);
-		coworkerA.facing = LEFT;
-
-		coworkerB.positionCharacterByGrid(12, 18);
-		coworkerB.facing = RIGHT;
-
-		coworkerC.revive();
-		coworkerC.positionCharacterByGrid(22, 24);
-		coworkerC.facing = DOWN;
-
-		FlxTween.tween(camGame.scroll, {x: 900}, 9, {
-			ease: FlxEase.quadInOut,
-			onComplete: function(f):Void
-			{
-				new FlxTimer().start(1.5, function(f):Void
-				{
 					queuedTimeChange = 5;
 					doSceneFade(2);
 					camGame.scroll.set(1000, 1200);
@@ -381,6 +339,7 @@ function doProductionCutscene():Void
 					coworkerB.positionCharacterByGrid(28, 29);
 					coworkerB.facing = RIGHT;
 
+					coworkerC.revive();
 					coworkerC.positionCharacterByGrid(12, 18);
 					coworkerC.facing = RIGHT;
 
@@ -388,7 +347,7 @@ function doProductionCutscene():Void
 					coworkerD.positionCharacterByGrid(33, 20);
 					coworkerD.facing = LEFT;
 
-					new FlxTimer().start(8, function(F):Void
+					new FlxTimer().start(6.5, function(F):Void
 					{
 						OverworldState.eventManager.finishTransaction("cinematic");
 					});
@@ -397,6 +356,7 @@ function doProductionCutscene():Void
 		});
 	});
 
+	
 	// wait, then change scene and move camera
 	OverworldState.eventManager.addEvent(function()
 	{
@@ -465,9 +425,9 @@ function doProductionCutscene():Void
 
 		disableProduction();
 
-		character_laurin.moveToGridSpace(-1, 28, function():Void
+		character_laurin.moveToGridSpace(-1, 27, function():Void
 		{
-			character_laurin.moveToGridSpace(33.5, 28, function():Void
+			character_laurin.moveToGridSpace(33.5, -1, function():Void
 			{
 				character_laurin.moveToGridSpace(-1, 29.5, function():Void
 				{
