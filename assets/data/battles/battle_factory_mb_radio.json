@@ -14,13 +14,13 @@
             "id": "partyhat",
             "x": 2,
             "y": 1,
-            "level": 3
+            "level": 1
         },
         {
             "id": "partyhat",
             "x": 0,
             "y": 1,
-            "level": 3
+            "level": 1
         }
     ],
     "music": "factory",
