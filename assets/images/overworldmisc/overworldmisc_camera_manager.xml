@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="overworldmisc_camera_manager.png">
+<SubTexture name="10000" x="0" y="0" width="154" height="409" frameX="-610" frameY="-264" frameWidth="1280" frameHeight="720" />
+<SubTexture name="20000" x="720" y="0" width="256" height="395" frameX="-515" frameY="-339" frameWidth="1280" frameHeight="720" />
+<SubTexture name="30000" x="0" y="409" width="261" height="371" frameX="-523" frameY="-336" frameWidth="1280" frameHeight="720" />
+<SubTexture name="40000" x="451" y="0" width="269" height="396" frameX="-514" frameY="-328" frameWidth="1280" frameHeight="720" />
+<SubTexture name="50000" x="154" y="0" width="297" height="409" frameX="-499" frameY="-329" frameWidth="1280" frameHeight="720" />
+</TextureAtlas>

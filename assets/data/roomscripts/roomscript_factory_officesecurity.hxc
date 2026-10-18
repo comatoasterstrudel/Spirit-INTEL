@@ -12,7 +12,10 @@ var character_robin:Player;
 var dialogueBox:CtDialogueBox;
 
 var fadeSpr:CtSprite;
-var fullart_f1:CtSprite;
+var fullart_bg:CtSprite;
+var fullart_manager:CtSprite;
+var fullart_phone:CtSprite;
+var fullart_ghosts:CtSprite;
 var fullart_static:CtSprite;
 
 var staticCounter:Float = 0;
@@ -288,34 +291,38 @@ function doCameraCutscene(seen:Bool, onComplete:Void->Void):Void{
     FlxG.sound.music.fadeOut(2);
 
     FlxTween.tween(fadeSpr, {alpha: 1}, seen ? .5 : 1, {onComplete: function(f):Void{
-        fullart_f1.revive();
+        fullart_manager.revive();
         fullart_static.revive();
+        fullart_bg.revive();
 
-        fullart_f1.animation.play("1");
+        fullart_manager.animation.play("1");
         
         FlxTween.tween(fadeSpr, {alpha: 0}, seen ? .5 : 1, {onComplete: function(f):Void{
             fadeSpr.kill();
             startDialogue(["factory/officesecurity/cameras/dialogue_cam_2" + (seen ? "seen" : "")], function():Void{
-                fullart_f1.animation.play("2normal");
-                FlxTween.shake(fullart_f1, 0.05, .2, 0x01);
+                fullart_manager.animation.play("2");
+                FlxTween.shake(fullart_manager, 0.024, .2, 0x01);
+                fullart_phone.revive();
 
                 new FlxTimer().start(1.5, function(f):Void{
-                    fullart_f1.animation.play("2ghosts");
+                    fullart_ghosts.revive();
+                    fullart_ghosts.animation.play("idle", true);
 
-                    fullart_f1.animation.onFinish.add(function(f):Void{
-                        fullart_f1.animation.play("2normal");
+                    fullart_ghosts.animation.onFinish.add(function(f):Void{
+                        fullart_ghosts.kill();
+
                         new FlxTimer().start(2, function(f):Void{
-                            fullart_f1.animation.play("3");
-                            FlxTween.shake(fullart_f1, 0.05, .2, 0x01);
+                            fullart_manager.animation.play("3");
+                            FlxTween.shake(fullart_manager, 0.024, .2, 0x01);
 
                             new FlxTimer().start(1.2, function(f):Void{
-                                fullart_f1.animation.play("4");
-                                FlxTween.shake(fullart_f1, 0.05, .2, 0x01);
+                                fullart_manager.animation.play("4");
+                                FlxTween.shake(fullart_manager, 0.024, .2, 0x01);
 
                                 new FlxTimer().start(1.2, function(f):Void{
-                                    fullart_f1.animation.play("5");
-                                    FlxTween.shake(fullart_f1, 0.05, .2, 0x01);
-                                    
+                                    fullart_manager.animation.play("5");
+                                    FlxTween.shake(fullart_manager, 0.024, .2, 0x01);
+
                                     new FlxTimer().start(1.7, function(f):Void{
                                         startDialogue(["factory/officesecurity/cameras/dialogue_cam_2part2" + (seen ? "seen" : "")], function():Void{
                                             fadeSpr.revive();
@@ -325,8 +332,10 @@ function doCameraCutscene(seen:Bool, onComplete:Void->Void):Void{
                                             }
 
                                             FlxTween.tween(fadeSpr, {alpha: 1}, seen ? .5 : 1, {onComplete: function(f):Void{
-                                                fullart_f1.kill();
+                                                fullart_manager.kill();
                                                 fullart_static.kill();
+                                                fullart_bg.kill();
+                                                fullart_phone.kill();
 
                                                 FlxTween.tween(fadeSpr, {alpha: 0}, seen ? .5 : 1, {onComplete: function(f):Void{
                                                     fadeSpr.kill();
@@ -346,17 +355,35 @@ function doCameraCutscene(seen:Bool, onComplete:Void->Void):Void{
 }
 
 function setupFullArt():Void{
-    fullart_f1 = new CtSprite().createFromSparrow(Constants.overworldMiscGraphicPath + "camera_f1.png", Constants.overworldMiscGraphicPath + "camera_f1.xml");
-    fullart_f1.animation.addByPrefix("1", "1");
-    fullart_f1.animation.addByPrefix("2normal", "2normal");
-    fullart_f1.animation.addByPrefix("2ghosts", "2ghosts", 3.5, false);
-    fullart_f1.animation.addByPrefix("3", "3");
-    fullart_f1.animation.addByPrefix("4", "4");
-    fullart_f1.animation.addByPrefix("5", "5");
-	fullart_f1.screenCenter();
-	fullart_f1.camera = camOverlay;
-	fullart_f1.kill();
-	add(fullart_f1);
+    fullart_bg = new CtSprite().createFromImage(Constants.overworldMiscGraphicPath + "camera_bg.png");
+    fullart_bg.screenCenter();
+    fullart_bg.camera = camOverlay;
+    fullart_bg.kill();
+    add(fullart_bg);
+
+    fullart_manager = new CtSprite().createFromSparrow(Constants.overworldMiscGraphicPath + "camera_manager.png", Constants.overworldMiscGraphicPath + "camera_manager.xml");
+    fullart_manager.animation.addByPrefix("1", "1");
+    fullart_manager.animation.addByPrefix("2", "2");
+    fullart_manager.animation.addByPrefix("3", "3");
+    fullart_manager.animation.addByPrefix("4", "4");
+    fullart_manager.animation.addByPrefix("5", "5");
+	fullart_manager.screenCenter();
+	fullart_manager.camera = camOverlay;
+	fullart_manager.kill();
+	add(fullart_manager);
+
+    fullart_phone = new CtSprite().createFromImage(Constants.overworldMiscGraphicPath + "camera_phone.png");
+    fullart_phone.screenCenter();
+    fullart_phone.camera = camOverlay;
+    fullart_phone.kill();
+    add(fullart_phone);
+
+    fullart_ghosts = new CtSprite().createFromSparrow(Constants.overworldMiscGraphicPath + "camera_ghosts.png", Constants.overworldMiscGraphicPath + "camera_ghosts.xml");
+    fullart_ghosts.animation.addByPrefix("idle", "idle", 3.5, false);
+	fullart_ghosts.screenCenter();
+	fullart_ghosts.camera = camOverlay;
+	fullart_ghosts.kill();
+	add(fullart_ghosts);
 
     fullart_static = new CtSprite().createFromImage(Constants.overworldMiscGraphicPath + "camera_static.png");
 	fullart_static.screenCenter();
