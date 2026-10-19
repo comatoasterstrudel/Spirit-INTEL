@@ -97,7 +97,8 @@ function create():Void
 	
 	if (Save.storyFlags.get("factory_sawproductioncutscene").val_bool == false || InitState.init_forceCutscene == "production")
 	{
-		newMusic = CtSound.load(Constants.roomMusicPath + "factorydistort.ogg", 1, true);
+		newMusic = CtSound.loadEmbedded(Constants.roomMusicPath + "factorydistort.ogg", true);
+		FlxG.sound.list.add(newMusic);
 		stopConveyors();
 	}
 	else

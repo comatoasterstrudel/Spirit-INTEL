@@ -27,6 +27,9 @@ var radio2:Prop;
 
 var lightingCover:LightingSprite;
 
+var camSound:FlxSound;
+var cameraVolume:Float = 0;
+
 function create():Void{
     snowGroup = executeSingleScriptFunction("snow", "snow_get_snowGroup", []);    
     spr_behindTiles = get_spr_behindTiles();
@@ -46,6 +49,11 @@ function create():Void{
     radio2.kill();
 
     lightingCover = get_lightingCover();
+
+    camSound = CtSound.loadEmbedded(Constants.sfxPath + "securitycamera.ogg", true);
+    FlxG.sound.list.add(camSound);
+    cameraVolume = camSound.volume;
+    camSound.volume = 0;
 
     if(Save.storyFlags.get("factory_seenSecurityPcScene").val_bool){
         monsterradio.kill();
@@ -288,7 +296,7 @@ function doCameraCutscene(seen:Bool, onComplete:Void->Void):Void{
     fadeSpr.revive();
 
     var ogVolume:Float = FlxG.sound.music.volume;
-    FlxG.sound.music.fadeOut(2);
+    FlxG.sound.music.fadeOut(seen ? 1 : 2);
 
     FlxTween.tween(fadeSpr, {alpha: 1}, seen ? .5 : 1, {onComplete: function(f):Void{
         fullart_manager.revive();
@@ -298,34 +306,49 @@ function doCameraCutscene(seen:Bool, onComplete:Void->Void):Void{
         fullart_manager.animation.play("1");
         
         FlxTween.tween(fadeSpr, {alpha: 0}, seen ? .5 : 1, {onComplete: function(f):Void{
+            camSound.play();
+            camSound.pitch = 1;
+            FlxTween.tween(camSound, {volume: cameraVolume}, seen ? 1 : 2);
+            
             fadeSpr.kill();
             startDialogue(["factory/officesecurity/cameras/dialogue_cam_2" + (seen ? "seen" : "")], function():Void{
                 fullart_manager.animation.play("2");
                 FlxTween.shake(fullart_manager, 0.024, .2, 0x01);
                 fullart_phone.revive();
 
-                new FlxTimer().start(1.5, function(f):Void{
+                CtSound.play(Constants.sfxPath + "camfallover.ogg");
+
+                FlxTween.tween(camSound, {pitch: .4}, 4);
+
+                new FlxTimer().start(2.5, function(f):Void{
                     fullart_ghosts.revive();
                     fullart_ghosts.animation.play("idle", true);
+                    CtSound.play(Constants.sfxPath + "ghostwhisper.ogg");
 
                     fullart_ghosts.animation.onFinish.add(function(f):Void{
                         fullart_ghosts.kill();
 
-                        new FlxTimer().start(2, function(f):Void{
+                        new FlxTimer().start(1, function(f):Void{
                             fullart_manager.animation.play("3");
                             FlxTween.shake(fullart_manager, 0.024, .2, 0x01);
+                            CtSound.play(Constants.sfxPath + "managerstep" + FlxG.random.int(1,3) + ".ogg", 0.4);
+                            CtSound.play(Constants.sfxPath + "managerambience.ogg");
 
                             new FlxTimer().start(1.2, function(f):Void{
                                 fullart_manager.animation.play("4");
                                 FlxTween.shake(fullart_manager, 0.024, .2, 0x01);
+                                CtSound.play(Constants.sfxPath + "managerstep" + FlxG.random.int(1,3) + ".ogg", 0.4);
 
                                 new FlxTimer().start(1.2, function(f):Void{
                                     fullart_manager.animation.play("5");
                                     FlxTween.shake(fullart_manager, 0.024, .2, 0x01);
+                                    CtSound.play(Constants.sfxPath + "managerstep" + FlxG.random.int(1,3) + ".ogg", 0.4);
 
                                     new FlxTimer().start(1.7, function(f):Void{
                                         startDialogue(["factory/officesecurity/cameras/dialogue_cam_2part2" + (seen ? "seen" : "")], function():Void{
                                             fadeSpr.revive();
+                                            
+                                            camSound.fadeOut(2);
 
                                             if(seen){
                                                 FlxG.sound.music.fadeIn(2);
