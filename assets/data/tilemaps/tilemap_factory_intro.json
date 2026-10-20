@@ -49,7 +49,7 @@
           "height": 1000,
           "originX": 0,
           "originY": 0,
-          "values": {"triggerByWalkingOver": true, "dialogue": "", "room": "factory_outside", "roomTransitionTime": 3, "encounterName": "", "scriptFunction": "", "tag": "roomtrigger", "openSave": false, "saveName": "", "saveBgName": ""}
+          "values": {"triggerByWalkingOver": true, "dialogue": "", "room": "factory_chapterintro", "roomTransitionTime": 3, "encounterName": "", "scriptFunction": "", "tag": "roomtrigger", "openSave": false, "saveName": "", "saveBgName": ""}
         }
       ]
     },

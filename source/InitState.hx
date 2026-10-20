@@ -187,6 +187,7 @@ class InitState extends FlxState{
 		CtScript.setDefaultValue({name: "Grid", value: Grid});
 		CtScript.setDefaultValue({name: "GridBackground", value: GridBackground});
 		CtScript.setDefaultValue({name: "TutorialZoomer", value: TutorialZoomer});
+		CtScript.setDefaultValue({name: "CtConductor", value: CtConductor});
 	}
 
 	function initSave():Void

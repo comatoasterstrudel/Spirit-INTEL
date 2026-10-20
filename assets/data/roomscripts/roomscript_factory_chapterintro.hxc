@@ -1,0 +1,136 @@
+function CTSCRIPT_SETNAME():String
+{
+	return "factory_chapterintro";
+}
+
+// bg shit
+var bg_back:CtSprite;
+
+// ui shit
+var conductor:CtConductor;
+
+var startingBeat:Int = 16;
+var endingBeat:Int = 24;
+
+var text:Array<String> = ["P", "R", "O", "L", "O", "G", "U", "E"];
+var chapterName = "Tommorow is my birthday";
+
+var bottom:CtSprite;
+
+var letters:FlxSpriteGroup;
+var letterList:Array<CtText> = [];
+
+var black:CtSprite;
+
+var ending:Bool = false;
+
+function create():Void{
+	set_inCutscene(true);
+	camGame.visible = false;
+	
+	// bg 
+
+	bg_back = new CtSprite().createColorBlock(FlxG.width, FlxG.height, 0xFF0000FF);
+	bg_back.camera = camOverlay;
+	add(bg_back);
+	
+	// ui
+
+	bottom = new CtSprite().createFromImage(Constants.chapterIntroGraphicPath + "bottom.png");
+	bottom.screenCenter();
+	bottom.y = FlxG.height - bottom.height;
+	bottom.antialiasing = false;
+	bottom.camera = camUI;
+	add(bottom);
+
+	letters = new FlxSpriteGroup();
+	letters.camera = camUI;
+	add(letters);
+
+	// black
+	black = new CtSprite().createColorBlock(FlxG.width, FlxG.height, 0xFF000000);
+	black.camera = camUI;
+	add(black);
+
+	CtSound.play(Constants.sfxPath + "getofftrain.ogg");
+
+	new FlxTimer().start(9, function(f):Void{
+		doMusicScene();
+	});
+}
+
+function update(elapsed:Float):Void{
+	if(conductor != null){
+		conductor.update(elapsed);
+	}
+}
+
+function doMusicScene():Void{
+	FlxTween.tween(black, {alpha: 0}, 6);
+
+	conductor = new CtConductor(175, CtSound.play(Constants.musicPath + "chapterintro_0.ogg"));
+	conductor.start();
+
+	conductor.onBeat.add(function(beat:Int):Void{
+		if(beat >= startingBeat && beat < endingBeat){
+			addNewLetter();
+			if(text.length == 0 && !ending){
+				ending = true;
+
+				new FlxTimer().start(1, function(f):Void{
+					addBigText();
+
+					new FlxTimer().start(4, function(f):Void{
+						moveRoom("factory_outside", 3);
+					});
+				});
+			}
+		}
+	});
+}
+
+function addNewLetter():Void{
+	if(text.length <= 0) return; // dont do that
+
+	var letter = text[0];
+	text.shift();
+
+	var newLetter = new CtText();
+	newLetter.text = letter;
+	newLetter.setFormat(Constants.fontName, 70);
+	letters.add(newLetter);
+
+	var thex = 50;
+
+	if(letterList.length > 0){
+		thex = letterList[letterList.length - 1].x + letterList[letterList.length - 1].width + 5;
+	}
+
+	newLetter.setPosition(thex, FlxG.height - newLetter.height - 50);
+
+	letterList.push(newLetter);
+
+	doLetterTransition(newLetter, 1);
+}
+
+function addBigText():Void{
+	var lastLetter = letterList[letterList.length - 1];
+	var x = lastLetter.x + lastLetter.width;
+
+	var trueLength = FlxG.width - x;
+
+	var bigText = new CtText();
+	bigText.text = '"' + chapterName + '"';
+	bigText.setFormat(Constants.fontName, 60, 0xFF0000FF);
+	letters.add(bigText);
+
+	bigText.setPosition(x + trueLength / 2 - bigText.width / 2, FlxG.height - bigText.height - 50);
+
+	doLetterTransition(bigText, 2.2);
+}
+
+function doLetterTransition(text:FlxSprite, time:Float):Void{
+	text.y -= 30;
+	text.alpha = 0;
+	FlxTween.tween(text, {alpha: 1, y: text.y + 30}, time, {ease: FlxEase.quartOut});
+}
