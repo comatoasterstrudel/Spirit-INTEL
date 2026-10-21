@@ -6,6 +6,7 @@ function CTSCRIPT_SETNAME():String
 var character_robin:Player;
 var character_managerscary:Character;
 
+var thetopdoor:Door;
 var thebottomdoor:Door;
 
 var gridStart:Int = 30;
@@ -24,17 +25,34 @@ var managerHurt:Bool = false;
 var managerHurtTimer:Float = 0;
 var managerHurtTimerMax:Float = .75;
 
+var spr_behindProps:FlxSpriteGroup;
+
+var fullart_bg:CtSprite;
+var fullart_robin:CtSprite;
+var fullart_manager:CtSprite;
+var fullart_fade:CtSprite;
+
 function create(){
     character_robin = get_player();
     character_managerscary = getCharacterByTag("managerscary");
     character_managerscary.kill();
 
+    thetopdoor = getDoorByTag("thetopdoor");
     thebottomdoor = getDoorByTag("thebottomdoor");
 
     lightingShader = get_lightingShader();
     
+    spr_behindProps = get_spr_behindProps();
+
     setColor();
     updatePlayerPos();
+
+    if(InitState.init_forceCutscene == "postManagerBossScene"){
+        prepPostManagerBossScene();
+        new FlxTimer().start(2, function(f):Void{
+            doPostManagerBossScene();
+        });
+    }
 }
 
 function update(elapsed:Float){
@@ -266,7 +284,7 @@ function doBossIntroScene():Void{
     {
         OverworldState.eventManager.startTransaction("talk");
 
-        camGame.flash(0xFF0026FF);
+        camUI.flash(0xFF0026FF);
         character_managerscary.changeAnimationPrefix("");
 
         FlxTween.tween(FlxG.sound.music, {pitch: 1.3}, 2);
@@ -313,4 +331,250 @@ function bangOnDoor(?vol:Float = 1):Void{
     FlxTween.shake(thebottomdoor, 0.13, .35, 0x01);
     
     CtSound.play(Constants.sfxPath + "hitdoor.ogg", vol).pitch = FlxG.random.float(.5, 1);
+}
+
+function battleTransitionDone(name:String):Void{
+    if(name == "factory_managerboss"){
+        doPostManagerBossScene();
+    }
+}
+
+function backFromBattle(name:String):Void{
+    if(name == "factory_managerboss"){
+        prepPostManagerBossScene();
+    }
+}
+
+function prepPostManagerBossScene():Void{
+    character_robin.positionCharacterByGrid(16, 15);
+
+    character_managerscary.revive();
+    character_managerscary.positionCharacterByGrid(15.5, 19);
+    character_managerscary.facing = UP;
+
+    thetopdoor.room = "";
+    thetopdoor.dialogue = "factory/fireexitroom/dialogue_no";
+
+    set_lockCamera(true);
+    camGame.scroll.y = 650;
+
+    new FlxTimer().start(0.01, function(f):Void{
+		FlxG.sound.music.stop();
+	});
+
+    setUpFullArt();
+}
+
+function doPostManagerBossScene():Void{
+    set_inCutscene(true);
+    set_lockCamera(true); // again
+
+    character_managerscary.hitbox.solid = false;
+
+    // off blodo splatter lol
+    OverworldState.eventManager.addEvent(function()
+    {
+        OverworldState.eventManager.startTransaction("blood");
+
+        var bloodSplatter = new CtSprite().createFromImage(Constants.overworldMiscGraphicPath + "managerbloodsplatter.png");
+        bloodSplatter.antialiasing = false;
+        bloodSplatter.scale.set(Constants.overworldPixelScale, Constants.overworldPixelScale);
+	    bloodSplatter.updateHitbox();
+        spr_behindProps.add(bloodSplatter);
+
+        bloodSplatter.setPosition(character_managerscary.x, character_managerscary.y);
+        bloodSplatter.x += Std.int(20 * Constants.overworldPixelScale);
+
+        CtSound.play(Constants.sfxPath + "stab.ogg").pitch = FlxG.random.float(0.8, 1.2);
+
+        FlxTween.tween(bloodSplatter, {alpha: 0}, .4, {onComplete: function(f):Void{
+            CtSound.play(Constants.sfxPath + "stab.ogg").pitch = FlxG.random.float(0.8, 1.2);
+
+            bloodSplatter.x += Std.int(FlxG.random.int(-4,4) * Constants.overworldPixelScale);
+            bloodSplatter.y += Std.int(FlxG.random.int(-4,4) * Constants.overworldPixelScale);
+
+            bloodSplatter.alpha = 1;
+            FlxTween.tween(bloodSplatter, {alpha: 0}, .4, {onComplete: function(f):Void{
+                bloodSplatter.destroy();
+                OverworldState.eventManager.finishTransaction("blood");
+            }});
+        }});
+    });
+
+    // flash to white and make him dead
+    OverworldState.eventManager.addEvent(function()
+    {
+        OverworldState.eventManager.startTransaction("flash");
+        camUI.flash(0xFFFF0000);
+
+        //character_managerscary.animation.play("");
+
+        new FlxTimer().start(3, function(f):Void{
+            OverworldState.eventManager.finishTransaction("flash");
+        });
+    });
+
+    // "hah  hah"
+    OverworldState.eventManager.addEvent(function()
+    {
+        OverworldState.eventManager.startTransaction("talk");
+
+        startDialogue(["factory/fireexitroom/dialogue_postboss_1"], function():Void
+        {
+            OverworldState.eventManager.finishTransaction("talk");
+        });
+    });
+
+    // robin walks down to manager
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("walkdown");
+
+        character_robin.lockMovement = true;
+		character_robin.movementSpeed = .3;
+		character_robin.moveToGridSpace(-1, 17, function():Void
+		{
+			OverworldState.eventManager.finishTransaction("walkdown");
+		});
+	});
+
+	// robin checks manager
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("checkpulse");
+
+		character_robin.lockAnims = true;
+		character_robin.animation.play("crouch_front");
+
+		new FlxTimer().start(.5, function(f):Void{
+			FlxTween.shake(character_managerscary, 0.05, .2, 0x01);
+			CtSound.play(Constants.sfxPath + "checkjess.ogg");
+
+            new FlxTimer().start(2, function(f):Void{
+                OverworldState.eventManager.finishTransaction("checkpulse");
+            });
+		});
+	});
+
+    // "i think hes dead"
+    OverworldState.eventManager.addEvent(function()
+    {
+        OverworldState.eventManager.startTransaction("talk");
+
+        character_robin.lockAnims = false;
+
+        startDialogue(["factory/fireexitroom/dialogue_postboss_2"], function():Void
+        {
+            OverworldState.eventManager.finishTransaction("talk");
+        });
+    });
+
+    // show full art
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("full art");
+
+		fullart_fade.visible = true;
+		fullart_fade.alpha = 0;
+        camOverlay.scroll.y = -300;
+		FlxTween.tween(fullart_fade, {alpha: 1}, 2, {onComplete: function(f):Void{
+			fullart_bg.visible = true;
+            fullart_robin.visible = true;
+			fullart_manager.visible = true;
+
+			FlxTween.tween(fullart_fade, {alpha: 0}, 2);
+
+            FlxTween.tween(camOverlay.scroll, {y: 0}, 4, {onComplete: function(f):Void{
+
+                new FlxTimer().start(2, function(f):Void{
+                    OverworldState.eventManager.finishTransaction("full art");
+                });
+            }});
+		}});
+	});
+
+     // hide full art
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("full art");
+
+		FlxTween.tween(fullart_fade, {alpha: 1}, 2, {onComplete: function(f):Void{
+			fullart_bg.visible = false;
+            fullart_robin.visible = false;
+			fullart_manager.visible = false;
+
+            FlxTween.tween(fullart_fade, {alpha: 0}, 2, {onComplete: function(f):Void{
+                OverworldState.eventManager.finishTransaction("full art");
+            }});
+		}});
+	});
+
+    // "lets leave"
+    OverworldState.eventManager.addEvent(function()
+    {
+        OverworldState.eventManager.startTransaction("talk");
+
+        character_robin.lockAnims = false;
+
+        startDialogue(["factory/fireexitroom/dialogue_postboss_3"], function():Void
+        {
+            OverworldState.eventManager.finishTransaction("talk");
+        });
+    });
+
+    // Camera goes back to robin
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("camra");
+
+        FlxG.sound.music.play();
+        var preVol = FlxG.sound.music.volume;
+        FlxG.sound.music.volume = 0;
+        FlxTween.tween(FlxG.sound.music, {volume: preVol}, 2);
+
+		moveCameraBackToPlayer(2, null, function():Void{
+			OverworldState.eventManager.finishTransaction("camra");
+		});
+	});
+
+	// End cutscene
+	OverworldState.eventManager.addEvent(function()
+	{
+        character_robin.movementSpeed = 1;
+		set_lockCamera(false);
+		set_inCutscene(false);
+		character_robin.facing = DOWN;
+		character_robin.lockMovement = false;
+	});
+}
+
+function setUpFullArt():Void
+{
+	fullart_bg = new CtSprite().createFromImage(Constants.overworldCutsceneGraphicPath + "managercorpse_bgColor.png");
+	fullart_bg.screenCenter();
+	fullart_bg.camera = camOverlay;
+	fullart_bg.visible = false;
+    fullart_bg.scrollFactor.set(0,0);
+	add(fullart_bg);
+
+	fullart_robin = new CtSprite().createFromImage(Constants.overworldCutsceneGraphicPath + "managercorpse_robin.png");
+	fullart_robin.screenCenter();
+	fullart_robin.camera = camOverlay;
+	fullart_robin.visible = false;
+	fullart_robin.antialiasing = false;
+    fullart_robin.scrollFactor.set(.7,.7);
+	add(fullart_robin);
+
+    fullart_manager = new CtSprite().createFromImage(Constants.overworldCutsceneGraphicPath + "managercorpse_manager.png");
+	fullart_manager.screenCenter();
+	fullart_manager.camera = camOverlay;
+	fullart_manager.visible = false;
+	fullart_manager.antialiasing = false;
+	add(fullart_manager);
+
+	fullart_fade = new CtSprite().createColorBlock(FlxG.width, FlxG.height, 0xFF000000);
+	fullart_fade.camera = camOverlay;
+	fullart_fade.visible = false;
+    fullart_fade.scrollFactor.set(0,0);
+	add(fullart_fade);
 }
