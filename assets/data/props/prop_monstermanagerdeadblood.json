@@ -1,0 +1,9 @@
+{
+    "name": "monstermanagerdeadblood",
+    "graphic": "monstermanagerdeadblood",
+    "hitboxX": 0,
+    "hitboxY": 99999,
+    "hitboxWidth": 1,
+    "hitboxHeight": 1,
+    "yStackingOffset": -999999
+}
