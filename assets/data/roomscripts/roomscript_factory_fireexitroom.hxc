@@ -422,6 +422,13 @@ function doPostManagerBossScene():Void{
     {
         OverworldState.eventManager.startTransaction("flash");
         camUI.flash(0xFF75D0DE);
+        CtSound.play(Constants.sfxPath + "stabbig.ogg").pitch = 0.9;
+
+        FlxG.sound.music.play();
+        var preVol = FlxG.sound.music.volume;
+        FlxG.sound.music.volume = 0;
+        FlxTween.tween(FlxG.sound.music, {volume: preVol}, 2);
+        FlxG.sound.music.pitch = .5;
 
         monstermanagerdead.setPosition(character_managerscary.x, character_managerscary.y);
         monstermanagerdead.revive();
@@ -548,11 +555,6 @@ function doPostManagerBossScene():Void{
 	OverworldState.eventManager.addEvent(function()
 	{
 		OverworldState.eventManager.startTransaction("camra");
-
-        FlxG.sound.music.play();
-        var preVol = FlxG.sound.music.volume;
-        FlxG.sound.music.volume = 0;
-        FlxTween.tween(FlxG.sound.music, {volume: preVol}, 2);
 
 		moveCameraBackToPlayer(2, null, function():Void{
 			OverworldState.eventManager.finishTransaction("camra");
