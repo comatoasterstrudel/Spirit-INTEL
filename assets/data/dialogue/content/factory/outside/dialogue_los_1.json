@@ -1,0 +1,38 @@
+[
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "...",
+		"choicerOptions": [],
+		"portrait": "call_neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "laurin",
+		"autoSkip": false
+	},
+	{
+		"dialogue": "...",
+		"events": [],
+		"continueLine": false,
+		"portrait": "call_lookneutral",
+		"diaPitch": 1,
+		"actor": "laurin",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
+	},
+	{
+		"dialogue": "..!?",
+		"events": [],
+		"continueLine": false,
+		"portrait": "call_lookshock",
+		"diaPitch": 1,
+		"actor": "laurin",
+		"choicerOptions": [],
+		"voiceLine": "",
+		"autoSkip": false,
+		"speed": 0.03
+	}
+]

@@ -5,8 +5,15 @@ function CTSCRIPT_SETNAME():String
 
 var frontDoor:Door;
 
+var character_robin:Player;
+var character_laurin:Player;
+
 function create():Void{
     frontDoor = getDoorByTag("frontdoor");
+
+    character_robin = get_player();
+    character_laurin = getCharacterByTag("laurin");
+    character_laurin.kill();
 
     if(!Save.storyFlags.get("factory_scarymode").val_bool){ // start of game
         var lightingCover = get_lightingCover();
@@ -26,4 +33,163 @@ function create():Void{
         frontDoor.room = "";
         frontDoor.dialogue = "factory/outside/dialogue_door";
     }
+
+    if(Save.storyFlags.get("factory_killedmanager").val_bool && !Save.storyFlags.get("factory_seenLaurinOutside").val_bool || InitState.init_forceCutscene == "laurinOutsideScene"){
+        doLaurinOutsideScene();
+
+        new FlxTimer().start(0.01, function(f):Void{
+            FlxG.sound.music.pitch = .5;
+        });
+    }
+} 
+function doLaurinOutsideScene():Void{
+    Save.storyFlags.get("factory_seenLaurinOutside").val_bool = true;
+
+    set_inCutscene(true);
+
+    character_robin.positionCharacterByGrid(28, 18);
+    character_robin.kill();
+    character_robin.lockMovement = true;
+
+    set_lockCamera(true);
+    
+    camGame.scroll.x = 50;
+    camGame.scroll.y = 480;
+
+    character_laurin.revive();
+    character_laurin.positionCharacterByGrid(13, 13);
+    character_laurin.lockAnims = true;
+    character_laurin.animation.play("phone");
+
+    // robin walks to the left
+    OverworldState.eventManager.addEvent(function()
+    {
+        OverworldState.eventManager.startTransaction("robin walk");
+
+        new FlxTimer().start(4, function():Void{
+            character_robin.revive();
+
+            character_robin.movementSpeed = .6;
+            character_robin.moveToGridSpace(13, -1, function():Void
+            {
+                OverworldState.eventManager.finishTransaction("robin walk");
+            });
+        });
+    });
+
+    // "..!?"
+    OverworldState.eventManager.addEvent(function()
+    {
+        OverworldState.eventManager.startTransaction("talk");
+
+        startDialogue(["factory/outside/dialogue_los_1"], function():Void
+        {
+            OverworldState.eventManager.finishTransaction("talk");
+        });
+    });
+
+    // laurin closes phone
+    OverworldState.eventManager.addEvent(function()
+    {
+        OverworldState.eventManager.startTransaction("phoneclose");
+
+        CtSound.play(Constants.sfxPath + "phoneClose.ogg");
+        character_laurin.lockAnims = false;
+        character_laurin.changeAnimationPrefix("upset_");
+
+        new FlxTimer().start(1, function(f):Void{
+            OverworldState.eventManager.finishTransaction("phoneclose");
+        }); 
+    });
+
+    // "robin!"
+    OverworldState.eventManager.addEvent(function()
+    {
+        OverworldState.eventManager.startTransaction("talk");
+
+        character_robin.facing = UP;
+
+        startDialogue(["factory/outside/dialogue_los_2"], function():Void
+        {
+            OverworldState.eventManager.finishTransaction("talk");
+        });
+    });
+
+    // laurin walks down as camera pans
+    OverworldState.eventManager.addEvent(function()
+    {
+        OverworldState.eventManager.startTransaction("laurinwalk");
+        OverworldState.eventManager.startTransaction("scroll");
+
+        character_laurin.movementSpeed = .3;
+        character_laurin.moveToGridSpace(13, 16, function():Void
+        {
+            OverworldState.eventManager.finishTransaction("laurinwalk");
+        });
+
+        FlxTween.tween(camGame.scroll, {y: camGame.scroll.y + 150}, 2, {onComplete: function(f):Void{
+            OverworldState.eventManager.finishTransaction("scroll");
+        }});       
+    });
+
+    // "laurin, hey"
+    OverworldState.eventManager.addEvent(function()
+    {
+        OverworldState.eventManager.startTransaction("talk");
+
+        character_robin.facing = UP;
+
+        startDialogue(["factory/outside/dialogue_los_3"], function():Void
+        {
+            OverworldState.eventManager.finishTransaction("talk");
+        });
+    });
+
+    // laurin turns around to check the door
+    OverworldState.eventManager.addEvent(function()
+    {
+        OverworldState.eventManager.startTransaction("turn");
+
+        character_laurin.facing = UP;
+
+        new FlxTimer().start(1.5, function(f):Void{
+            character_laurin.facing = DOWN;
+
+            new FlxTimer().start(1, function(f):Void{
+                OverworldState.eventManager.finishTransaction("turn");
+            });
+        });
+    });
+
+    // "oh, yeah"
+    OverworldState.eventManager.addEvent(function()
+    {
+        OverworldState.eventManager.startTransaction("talk");
+
+        startDialogue(["factory/outside/dialogue_los_4"], function():Void
+        {
+            OverworldState.eventManager.finishTransaction("talk");
+        });
+    });
+
+    // wait
+    OverworldState.eventManager.addEvent(function()
+    {
+        OverworldState.eventManager.startTransaction("talk");
+
+        new FlxTimer().start(1, function(f):Void{
+            OverworldState.eventManager.finishTransaction("talk");
+        });
+    });
+
+    // "you need to save the world!!!"
+    OverworldState.eventManager.addEvent(function()
+    {
+        OverworldState.eventManager.startTransaction("talk");
+
+        startDialogue(["factory/outside/dialogue_los_5"], function():Void
+        {
+            OverworldState.eventManager.finishTransaction("talk");
+        });
+    });
 }

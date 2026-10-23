@@ -1,0 +1,74 @@
+[
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Laurin.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"dialogue": " Hey.",
+		"events": [],
+		"continueLine": true,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "robin",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
+	},
+	{
+		"dialogue": "What're you still doing here??",
+		"events": [],
+		"continueLine": false,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "laurin",
+		"choicerOptions": [],
+		"voiceLine": "",
+		"autoSkip": false,
+		"speed": 0.03
+	},
+	{
+		"dialogue": "The front door wasn't opening, so I had to go out the back.",
+		"events": [],
+		"continueLine": false,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "robin",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
+	},
+	{
+		"dialogue": "Which was more of a chore than I thought it would be.",
+		"events": [],
+		"continueLine": false,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "robin",
+		"choicerOptions": [],
+		"voiceLine": "",
+		"autoSkip": false,
+		"speed": 0.03
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Why wasn't it open-",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "laurin",
+		"autoSkip": false
+	}
+]

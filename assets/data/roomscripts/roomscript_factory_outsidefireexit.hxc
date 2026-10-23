@@ -27,4 +27,10 @@ function create():Void{
         fireexitdoor.room = "";
         fireexitdoor.dialogue = "factory/outsidefireexit/dialogue_hellno";
     }
+
+    if(Save.storyFlags.get("factory_killedmanager").val_bool && !Save.storyFlags.get("factory_seenLaurinOutside").val_bool){
+        new FlxTimer().start(0.01, function(f):Void{
+            FlxG.sound.music.pitch = .5;
+        });
+    }
 }
