@@ -36,6 +36,8 @@ var fullart_fade:CtSprite;
 var monstermanagerdead:Prop;
 var monstermanagerdeadblood:Prop;
 
+var seenEndScene:Bool = false;
+
 function create(){
     character_robin = get_player();
     character_managerscary = getCharacterByTag("managerscary");
@@ -105,7 +107,7 @@ function setColor():Void{
 }
 
 function doBossIntroScene():Void{
-    if(Save.storyFlags.get("factory_seenManagerBossIntro").val_bool){
+    if(Save.storyFlags.get("factory_seenManagerBossIntro").val_bool || seenEndScene){
         return;
     }
 
@@ -357,6 +359,8 @@ function backFromBattle(name:String):Void{
 }
 
 function prepPostManagerBossScene():Void{
+    seenEndScene = true;
+
     character_robin.positionCharacterByGrid(16, 15);
 
     character_managerscary.revive();
@@ -425,7 +429,7 @@ function doPostManagerBossScene():Void{
         CtSound.play(Constants.sfxPath + "stabbig.ogg").pitch = 0.9;
 
         FlxG.sound.music.play();
-        var preVol = FlxG.sound.music.volume;
+        var preVol = FlxG.sound.music.volume * 1.3;
         FlxG.sound.music.volume = 0;
         FlxTween.tween(FlxG.sound.music, {volume: preVol}, 2);
         FlxG.sound.music.pitch = .5;
