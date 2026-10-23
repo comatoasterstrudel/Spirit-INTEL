@@ -38,6 +38,8 @@ var monstermanagerdeadblood:Prop;
 
 var seenEndScene:Bool = false;
 
+var monsterdialogue:Interactable;
+
 function create(){
     character_robin = get_player();
     character_managerscary = getCharacterByTag("managerscary");
@@ -56,6 +58,9 @@ function create(){
 
     monstermanagerdeadblood = getPropByTag("monstermanagerdeadblood");
     monstermanagerdeadblood.kill();
+
+    monsterdialogue = getInteractableByTag("monsterdialogue");
+    monsterdialogue.disabled = true;
 
     setColor();
     updatePlayerPos();
@@ -568,6 +573,7 @@ function doPostManagerBossScene():Void{
 	// End cutscene
 	OverworldState.eventManager.addEvent(function()
 	{
+        monsterdialogue.disabled = false;
         character_robin.movementSpeed = 1;
 		set_lockCamera(false);
 		set_inCutscene(false);

@@ -132,6 +132,18 @@
           "originX": 0,
           "originY": 0,
           "values": {"propName": "monstermanagerdead", "tag": "monstermanagerdead", "addLight": false}
+        },
+        {
+          "name": "interactable",
+          "id": 18,
+          "_eid": "67528600",
+          "x": 248,
+          "y": 304,
+          "width": 48,
+          "height": 48,
+          "originX": 0,
+          "originY": 0,
+          "values": {"triggerByWalkingOver": false, "dialogue": "factory/fireexitroom/dialogue_corpse", "room": "", "roomTransitionTime": 0.3, "encounterName": "", "scriptFunction": "", "tag": "monsterdialogue", "openSave": false, "saveName": "", "saveBgName": ""}
         }
       ]
     },
