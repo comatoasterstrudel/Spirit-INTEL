@@ -42,6 +42,7 @@ function create():Void{
         });
     }
 } 
+
 function doLaurinOutsideScene():Void{
     Save.storyFlags.get("factory_seenLaurinOutside").val_bool = true;
 
@@ -70,7 +71,7 @@ function doLaurinOutsideScene():Void{
             character_robin.revive();
 
             character_robin.movementSpeed = .6;
-            character_robin.moveToGridSpace(13, -1, function():Void
+            character_robin.moveToGridSpace(character_laurin.getGridSpace().x, -1, function():Void
             {
                 OverworldState.eventManager.finishTransaction("robin walk");
             });
@@ -188,6 +189,72 @@ function doLaurinOutsideScene():Void{
         OverworldState.eventManager.startTransaction("talk");
 
         startDialogue(["factory/outside/dialogue_los_5"], function():Void
+        {
+            OverworldState.eventManager.finishTransaction("talk");
+        });
+    });
+
+    // turn around
+    OverworldState.eventManager.addEvent(function()
+    {
+        OverworldState.eventManager.startTransaction("talk");
+
+        FlxTween.shake(character_robin, 0.05, .2, 0x01);
+
+        new FlxTimer().start(1, function(f):Void
+        {
+            character_robin.facing = LEFT;
+
+            new FlxTimer().start(1, function(f):Void
+            {
+                character_robin.facing = DOWN;
+
+                new FlxTimer().start(2, function(f):Void
+                {
+                    OverworldState.eventManager.finishTransaction("talk");
+                });
+            });
+        });
+    });
+
+    // "you are very important to saving the world!!"
+    OverworldState.eventManager.addEvent(function()
+    {
+        OverworldState.eventManager.startTransaction("talk");
+
+        startDialogue(["factory/outside/dialogue_los_6"], function():Void
+        {
+            OverworldState.eventManager.finishTransaction("talk");
+        });
+    });
+
+    // turn back around
+    OverworldState.eventManager.addEvent(function()
+    {
+        OverworldState.eventManager.startTransaction("talk");
+
+        new FlxTimer().start(1, function(f):Void
+        {
+            character_robin.facing = LEFT;
+
+            new FlxTimer().start(1, function(f):Void
+            {
+                character_robin.facing = UP;
+
+                new FlxTimer().start(2, function(f):Void
+                {
+                    OverworldState.eventManager.finishTransaction("talk");
+                });
+            });
+        });
+    });
+
+    // "POOOP"
+    OverworldState.eventManager.addEvent(function()
+    {
+        OverworldState.eventManager.startTransaction("talk");
+
+        startDialogue(["factory/outside/dialogue_los_7"], function():Void
         {
             OverworldState.eventManager.finishTransaction("talk");
         });

@@ -256,6 +256,8 @@ class Character extends CtSprite
 
 		if ((autoMovementTarget.x == x || !autoMovementDoX) && (autoMovementTarget.y == y || !autoMovementDoY))
 		{
+			positionCharacter(x, y);
+			
 			autoMovementActive = false;
 			autoMovementTarget.set(-1, -1);
 			status = IDLE;
@@ -310,7 +312,7 @@ class Character extends CtSprite
 		var moveX:Bool = x != -1;
 		var moveY:Bool = y != -1;
 
-		autoMovementStartPosition.set(hitbox.x, hitbox.y);
+		autoMovementStartPosition.set(this.x, this.y);
 		autoMovementTarget.set(moveX ? x : this.x, moveY ? y : this.y);
 		autoMovementActive = true;
 
@@ -343,6 +345,11 @@ class Character extends CtSprite
 			trueY = (y * Constants.overworldPixelScale) * 16;
 
 		move(trueX, trueY, onComplete);
+	}
+
+	public function getGridSpace():FlxPoint
+	{
+		return FlxPoint.get(x / Constants.overworldPixelScale / 16, y / Constants.overworldPixelScale / 16);
 	}
 
 	override function kill():Void
