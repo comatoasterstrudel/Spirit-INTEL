@@ -86,6 +86,8 @@ class InitState extends FlxState{
 		CtMenuManager.defaultSelectSoundPath = Constants.sfx_ui_select;
 		CtMenuManager.defaultScrollRackSoundPath = Constants.sfx_ui_scroll;
 		CtMenuManager.defaultScrollSelectedSoundPath = Constants.sfx_ui_scroll;
+
+		CtMenuManager.allowOverlappingUISounds = true;
 	}
 
 	function initDialogueBox():Void
