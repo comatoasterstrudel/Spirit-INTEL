@@ -24,16 +24,55 @@ var black:CtSprite;
 
 var ending:Bool = false;
 
+var spr_6:CtSprite;
+var spr_5:CtSprite;
+var spr_4:CtSprite;
+var spr_3:CtSprite;
+var spr_2:CtSprite;
+var spr_1:CtSprite;
+
 function create():Void{
 	set_inCutscene(true);
 	camGame.visible = false;
 	
 	// bg 
 
-	bg_back = new CtSprite().createColorBlock(FlxG.width, FlxG.height, 0xFF0000FF);
-	bg_back.camera = camOverlay;
-	add(bg_back);
+	spr_6 = new CtSprite().createFromImage(Constants.chapterIntroGraphicPath + "prologue_6.png");
+	spr_6.antialiasing = false;
+	spr_6.camera = camOverlay;
+	add(spr_6);
 	
+	spr_5 = new CtSprite().createFromImage(Constants.chapterIntroGraphicPath + "prologue_5.png");
+	spr_5.antialiasing = false;
+	spr_5.camera = camOverlay;
+	add(spr_5);
+
+	spr_4 = new CtSprite().createFromImage(Constants.chapterIntroGraphicPath + "prologue_4.png");
+	spr_4.antialiasing = false;
+	spr_4.camera = camOverlay;
+	add(spr_4);
+
+	spr_3 = new CtSprite().createFromImage(Constants.chapterIntroGraphicPath + "prologue_3.png");
+	spr_3.antialiasing = false;
+	spr_3.camera = camOverlay;
+	add(spr_3);
+
+	spr_2 = new CtSprite().createFromImage(Constants.chapterIntroGraphicPath + "prologue_2.png");
+	spr_2.antialiasing = false;
+	spr_2.camera = camOverlay;
+	add(spr_2);
+
+	spr_1 = new CtSprite().createFromImage(Constants.chapterIntroGraphicPath + "prologue_1.png");
+	spr_1.antialiasing = false;
+	spr_1.camera = camOverlay;
+	add(spr_1);
+
+	for(spr in [spr_1, spr_2, spr_3, spr_4, spr_5, spr_6]){
+		spr.y = FlxG.height - spr.height;
+	}
+
+	camOverlay.scroll.y = spr_1.y;
+
 	// ui
 
 	bottom = new CtSprite().createFromImage(Constants.chapterIntroGraphicPath + "bottom.png");
@@ -67,6 +106,8 @@ function update(elapsed:Float):Void{
 
 function doMusicScene():Void{
 	FlxTween.tween(black, {alpha: 0}, 6);
+
+	FlxTween.tween(camOverlay.scroll, {y: 0}, 10);
 
 	conductor = new CtConductor(175, CtSound.play(Constants.musicPath + "chapterintro_0.ogg"));
 	conductor.start();
