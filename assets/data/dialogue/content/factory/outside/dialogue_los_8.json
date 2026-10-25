@@ -1,0 +1,86 @@
+[
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "I said I was something like a god, didn't I?",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"dialogue": "Well, yeah, but I thought it was an exaggeration.",
+		"events": [],
+		"continueLine": false,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "robin",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
+	},
+	{
+		"dialogue": "A long time ago, Atman's founders trapped Volor in that coat..",
+		"events": [],
+		"continueLine": false,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "laurin",
+		"choicerOptions": [],
+		"voiceLine": "",
+		"autoSkip": false,
+		"speed": 0.03
+	},
+	{
+		"dialogue": "..to weaken the underworld's defenses.",
+		"events": [],
+		"continueLine": false,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "laurin",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
+	},
+	{
+		"dialogue": "We don't know how, but you got your hands on it.",
+		"events": [],
+		"continueLine": false,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "laurin",
+		"choicerOptions": [],
+		"voiceLine": "",
+		"autoSkip": false,
+		"speed": 0.03
+	},
+	{
+		"dialogue": "When you started working here, and this coat was seen by Atman for the first time in a decade..",
+		"events": [],
+		"continueLine": false,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "laurin",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
+	},
+	{
+		"dialogue": "..we had to make sure they didn't try to go for it.",
+		"events": [],
+		"continueLine": false,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "laurin",
+		"choicerOptions": [],
+		"voiceLine": "",
+		"autoSkip": false,
+		"speed": 0.03
+	}
+]

@@ -249,12 +249,36 @@ function doLaurinOutsideScene():Void{
         });
     });
 
-    // "POOOP"
+    // "explains the organization and shit"
     OverworldState.eventManager.addEvent(function()
     {
         OverworldState.eventManager.startTransaction("talk");
 
         startDialogue(["factory/outside/dialogue_los_7"], function():Void
+        {
+            OverworldState.eventManager.finishTransaction("talk");
+        });
+    });
+
+    // shake and volor
+    OverworldState.eventManager.addEvent(function()
+    {
+        OverworldState.eventManager.startTransaction("talk");
+
+        FlxTween.shake(character_robin, 0.05, .2, 0x01);
+        CtSound.play(Constants.sfxPath + "volorappear.ogg");
+
+        new FlxTimer().start(2, function(f):Void{
+            OverworldState.eventManager.finishTransaction("talk");
+        });
+    });
+
+    // "im a god ahah"
+    OverworldState.eventManager.addEvent(function()
+    {
+        OverworldState.eventManager.startTransaction("talk");
+
+        startDialogue(["factory/outside/dialogue_los_8"], function():Void
         {
             OverworldState.eventManager.finishTransaction("talk");
         });
