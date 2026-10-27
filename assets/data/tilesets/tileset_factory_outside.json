@@ -4,5 +4,11 @@
     "collisions": [
         "NONE", "NONE", "NONE", "NONE", "NONE", "ANY", "ANY", "ANY", "NONE", "NONE",
         "NONE", "NONE", "NONE", "NONE", "NONE", "NONE", "ANY", "ANY", "ANY", "ANY"
+    ],
+    "footsteps": [
+        {
+            "tiles": [1, 2, 3, 4],
+            "graphics": ["factorysnow"]
+        }
     ]
 }

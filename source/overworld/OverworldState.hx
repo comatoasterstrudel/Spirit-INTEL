@@ -148,6 +148,7 @@ class OverworldState extends FlxState
 		super.update(elapsed);
 
 		handleCollision();
+		handleFootsteps();
 		handleSorting();
 		handleExit(elapsed);
 		handleRandomEncounters(elapsed);
@@ -283,6 +284,20 @@ class OverworldState extends FlxState
 				}
 			}
 		}
+	}
+
+	/**
+	 * place footsteps!!
+	*/
+	function handleFootsteps():Void{
+		/*
+		var mainTiles:FlxTilemap = tile_main.members[0];
+
+		var characterPos = player.getGridSpace();
+		trace(mainTiles.getTileIndex(Std.int(characterPos.x * characterPos.y)));
+		*/
+
+		// im too tired
 	}
 
 	/**
