@@ -1,5 +1,7 @@
 package overworld;
 
+import overworld.footstep.FootstepSprite;
+
 class OverworldState extends FlxState
 {
 	public static var eventManager:CtEventManager;
@@ -62,6 +64,9 @@ class OverworldState extends FlxState
 	var underMap:FlxSpriteGroup;
 	var overMap:FlxSpriteGroup;
 
+	// main tiles
+	var maintileset:String;
+
 	// MAP SIZE
 	var mapSizeStart:FlxPoint = FlxPoint.get();
 	var mapSizeEnd:FlxPoint = FlxPoint.get();
@@ -105,6 +110,9 @@ class OverworldState extends FlxState
 
 	// STAIRS
 	var stairManager:StairManager;
+
+	// FOOTSTEPS
+	var footstepSprites:FlxTypedSpriteGroup<FootstepSprite>;
 
     override function create():Void{
         super.create();
@@ -290,14 +298,44 @@ class OverworldState extends FlxState
 	 * place footsteps!!
 	*/
 	function handleFootsteps():Void{
-		/*
-		var mainTiles:FlxTilemap = tile_main.members[0];
+		var mainTiles:FlxTilemap = tileSets.get(maintileset);
 
-		var characterPos = player.getGridSpace();
-		trace(mainTiles.getTileIndex(Std.int(characterPos.x * characterPos.y)));
-		*/
+		if(mainTiles == null) return;
 
-		// im too tired
+		for(prop in props.members){
+			if(prop is Character){
+				var character:Character = cast prop;
+
+				if(!character.moving) continue;
+				
+				var tile = mainTiles.getTileDataAt(character.x + character.width / 2, character.y + character.height);
+
+				if(tile == null) return;
+
+				for(footstep in new TilesetData(maintileset).footsteps){
+					if(footstep.tiles.contains(tile.index)){
+						placeFootstep(footstep, tile, character);
+					}
+				}
+			}
+		}
+	}	
+
+	function placeFootstep(footstep:FootstepData, tile:FlxTile, character:Character):Void{
+		for(step in footstepSprites.members){
+			if(step.fixedPos.x == FootstepSprite.getFixedPosition(character).x && step.fixedPos.y == FootstepSprite.getFixedPosition(character).y) { // dont place on a tile that already has a footstep
+				return;
+			}
+		}
+
+		var spr = new FootstepSprite(footstep, tile, character, footstepSprites);
+
+		if(spr.overlaps(footstepSprites)){ // dont overlap other steps
+			spr.destroy();
+			return;
+		}
+
+		footstepSprites.add(spr);
 	}
 
 	/**
@@ -626,7 +664,6 @@ class OverworldState extends FlxState
 					realSizeMax.set((((realSizeMax.x + 1) * Constants.overworldPixelScale) * 16), (((realSizeMax.y + 1) * Constants.overworldPixelScale) * 16));
 				}
 					
-				
 				var tilesetData = new TilesetData(layer.tileset);
 				var tiles = map.loadTilemap(Constants.tilesetGraphicPath + tilesetData.graphic + ".png", layer.name);
 				tiles.scale.set(Constants.overworldPixelScale, Constants.overworldPixelScale);
@@ -643,6 +680,8 @@ class OverworldState extends FlxState
 				}
 				if (layer.name == "main")
 				{
+					maintileset = tilesetData.name;
+
 					mapSizeStart.set(realSizeMin.x, realSizeMin.y);
 					mapSizeEnd.set(realSizeMax.x, realSizeMax.y);
 
@@ -705,6 +744,9 @@ class OverworldState extends FlxState
 		spr_behindProps.camera = camGame;
 		add(spr_behindProps);
 		
+		footstepSprites = new FlxTypedSpriteGroup<FootstepSprite>();
+		spr_behindProps.add(footstepSprites);
+
 		props = new FlxTypedSpriteGroup<FlxSprite>();
 		props.camera = camGame;
 		add(props);
