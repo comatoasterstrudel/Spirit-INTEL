@@ -1,57 +1,218 @@
 [
 	{
 		"speed": 0.03,
-		"dialogue": "\"Okay so... quick question about when I'm supposed to activate it...\"", 
-		"actor": "cutscene_manager"
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "A particular email catches my eye...",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_narrator",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "\"Should I do it when there's still people here? Or should I wait until everyone is at home?\"", 
-		"actor": "cutscene_manager"
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "\"new initiative for the company starting soon; looking for those interested in this next step.\"",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_narrator",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "\"Wait until you think everyone is gone. We need it to get accustomed to its environment before it integrates.\"", 
-		"actor": "cutscene_unknownsender_blue"
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "It reads:",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_narrator",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "\"Doesn't it all already know what's going on?\"", 
-		"actor": "cutscene_manager"
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "\"Dear esteemed managers of the Atman Corporation,",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_unknownsender",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "\"I think it would be fine to do it when people are already here, then I can introduce it.\"", 
-		"actor": "cutscene_manager"
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "We're coming up on Atman's 50th anniversary this year, and with big birthdays like that come big changes to our family!",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_unknownsender",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "\"It's not that simple, Steven.\"", 
-		"actor": "cutscene_unknownsender_blue"
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Don't worry - we aren't gonna fire any of you wonderful managers, but we are asking you to make a big decision.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_unknownsender",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "\"Please, just follow what I say and don't get too caught up on the minor details, it'll all work out.\"", 
-		"actor": "cutscene_unknownsender_blue"
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "We as a company are hoping that we can raise our productivity and production to create more goods for the people who need them the most.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_unknownsender",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "\"Okie dokie artichokie!\"", 
-		"actor": "cutscene_manager"
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Our team at Atman's headquarters has been devising a plan for more than a decade to make this possible...",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_unknownsender",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "\"Thank you for giving me this opportunity, Jane.\"", 
-		"actor": "cutscene_manager"
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "And we've set everything in place, now we just need you all to implement it properly.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_unknownsender",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "\"I promise to make our company thrive!\"", 
-		"actor": "cutscene_manager"
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "We've been testing a new [[WAVE]]hybrid computer-human intelligence[[ENDWAVE]] at select controlled facilities.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_unknownsender",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "\"We hope you do, Steven.\"", 
-		"actor": "cutscene_unknownsender_blue"
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "It's shown a 500% increase in worker productivity and efficiency, beating out leading competitors in our field by a wide margin.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_unknownsender",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "With you lovely managers helping to integrate this technology into our workplace, you'll change the landscape of not only our company...",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_unknownsender",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "But the whole world!",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_unknownsender",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Though keep in mind that this'll be a large undertaking, that some of you may not be prepared for.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_unknownsender",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Though, I suggest if you want to keep being an important part of this company, you will participate.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_unknownsender",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "For more details, please contact me or another administrative official over Direct Correspondence..",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_unknownsender",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "As E-Mail is not secure enough for information like this.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_unknownsender",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Jane Atman, VP of Operations at Atman.\"",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_unknownsender",
+		"autoSkip": false
 	}
 ]
