@@ -91,6 +91,12 @@ class UnitSelectorTab extends FlxSpriteGroup
         applyShaders();
     }
 
+    public function updateValues():Void{
+        realUnit = new Unit(unit, null, FlxPoint.get(1,1), true, CharacterLevel.getLevelFromExp(Save.levelUnits.get(unit).exp), true);
+        hpBar.refreshValues(realUnit);
+        mpBar.refreshValues(realUnit);
+    }
+
     override function draw():Void{
         updateCropEffects();
 

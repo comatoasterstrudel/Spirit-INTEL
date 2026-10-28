@@ -50,9 +50,7 @@ class PlayerMenuPageUnitSelector extends PlayerMenuPage
 		updateTabPositions(true);
 
         for(tab in tabArray){
-            for(bar in tab.bars){
-                bar.refreshValues(tab.realUnit);
-            }
+            tab.updateValues();
         }
     }
     

@@ -107,7 +107,7 @@ function update(elapsed:Float):Void{
 function doMusicScene():Void{
 	FlxTween.tween(black, {alpha: 0}, 6);
 
-	FlxTween.tween(camOverlay.scroll, {y: 0}, 10);
+	FlxTween.tween(camOverlay.scroll, {y: -100}, 10);
 
 	conductor = new CtConductor(175, CtSound.play(Constants.musicPath + "chapterintro_0.ogg"));
 	conductor.start();

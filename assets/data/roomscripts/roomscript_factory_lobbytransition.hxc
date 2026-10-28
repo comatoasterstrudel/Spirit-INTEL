@@ -7,6 +7,8 @@ var character_laurin:Character;
 var character_manager:Character;
 var character_player:Player;
 
+var topdoor:Door;
+
 var cutsceneTrigger:Interactable;
 
 var lightingCover:LightingSprite;
@@ -21,6 +23,8 @@ function create(){
     
     lightingCover = get_lightingCover();
 
+	topdoor = getDoorByTag("topdoor");
+	
     if(Save.storyFlags.get("factory_seenTransitionCutscene").val_bool){ // disable cutscene        
         character_laurin.kill();
         character_manager.kill();
@@ -85,7 +89,9 @@ function startcutscene():Void{
 		moveCameraBackToPlayer(3, FlxEase.quartInOut, function():Void{
 			character_laurin.kill();
             character_manager.kill();
-                
+            
+			topdoor.playOpenSound();
+			
 			OverworldState.eventManager.finishTransaction("godown");
 		});
 	});

@@ -948,6 +948,8 @@ function startDoorCutscene():Void{
 	character_player.positionCharacterByGrid(24, 15);
 	character_player.lockMovement = true;
 
+	finaldoor.playOpenSound();
+	
 	// robin walks upwards
 	OverworldState.eventManager.addEvent(function()
 	{

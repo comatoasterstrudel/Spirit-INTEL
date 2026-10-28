@@ -61,7 +61,7 @@
           "height": 32,
           "originX": 0,
           "originY": 0,
-          "values": {"doorName": "factory", "room": "factory_production", "transitionTime": 0.5, "lockedDialogue": "", "horizontal": false, "scriptFunction": "", "tag": "", "facingDownwards": false}
+          "values": {"doorName": "factory", "room": "factory_production", "transitionTime": 0.5, "lockedDialogue": "", "horizontal": false, "scriptFunction": "", "tag": "topdoor", "facingDownwards": false}
         },
         {
           "name": "player",
