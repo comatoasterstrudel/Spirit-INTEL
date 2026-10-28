@@ -118,6 +118,7 @@ import overworld.character.*;
 import overworld.character.CharacterData;
 import overworld.door.*;
 import overworld.footstep.FootstepData;
+import overworld.footstep.FootstepTileData;
 import overworld.interactables.Interactable;
 import overworld.interactables.InteractableOutcome;
 import overworld.lighting.*;

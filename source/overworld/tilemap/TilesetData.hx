@@ -12,7 +12,7 @@ class TilesetData extends CtJsonLoader
     
     public var collisions:Array<String>;
     
-    public var footsteps:Array<FootstepData>;
+    public var footsteps:Array<FootstepTileData>;
 
     public function new(id:String){
         this.id = id;
@@ -32,7 +32,7 @@ class TilesetData extends CtJsonLoader
             {
                 return {
                     tiles: item.tiles ?? [],
-                    graphics: item.graphics ?? [],
+                    footstepName: item.footstepName ?? "",
                 };
             });
         }

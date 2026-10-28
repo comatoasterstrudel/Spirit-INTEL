@@ -175,8 +175,7 @@ class Constants
 	public static final gridUnitPlacerUnitIconSize:Int = 80;
 	public static final gridUnitPlacerUnitIconSpacing:Int = 20;
 	public static final gridUnitPlacerUnitsPerRow:Int = 3;
-	public static final gridUnitPlacerBgWidth:Float = (gridUnitPlacerUnitIconSize * gridUnitPlacerUnitsPerRow)
-		+ (gridUnitPlacerUnitIconSpacing * (gridUnitPlacerUnitsPerRow + 1));
+	public static final gridUnitPlacerBgWidth:Float = (gridUnitPlacerUnitIconSize * gridUnitPlacerUnitsPerRow) + (gridUnitPlacerUnitIconSpacing * (gridUnitPlacerUnitsPerRow + 1));
 	public static final gridUnitPlacerButtonPath:String = "assets/images/gridunitplacer/button_";
 	public static final gridUnitPlacerRobinPath:String = "assets/images/gridunitplacer/robin/";
 	public static final gridUnitPlacerUiBgSpriteNum:Int = 15;
@@ -242,6 +241,7 @@ class Constants
 	// Chapter intro
 	public static final chapterIntroGraphicPath:String = "assets/images/chapterintro/chapterintro_";
 	// Footsteps
+	public static final footstepDataPath = "assets/data/footstep/footstep_";
 	public static final footstepGraphicPath:String = "assets/images/footstep/footstep_";
 	// Save spots
 	public static final saveSpotGraphicPath:String = "assets/images/savespots/savespot_";

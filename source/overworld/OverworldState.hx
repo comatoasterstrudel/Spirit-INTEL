@@ -308,13 +308,13 @@ class OverworldState extends FlxState
 
 				if(!character.moving) continue;
 				
-				var tile = mainTiles.getTileDataAt(character.x + character.width / 2, character.y + character.height);
+				var tile = mainTiles.getTileDataAt(character.x + character.width / 2, (character.y + character.height) - 1);
 
 				if(tile == null) return;
 
 				for(footstep in new TilesetData(maintileset).footsteps){
 					if(footstep.tiles.contains(tile.index)){
-						placeFootstep(footstep, tile, character);
+						placeFootstep(new FootstepData(footstep.footstepName), tile, character);
 					}
 				}
 			}

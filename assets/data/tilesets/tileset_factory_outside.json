@@ -8,11 +8,11 @@
     "footsteps": [
         {
             "tiles": [1, 2, 3, 4],
-            "graphics": ["factorysnow"]
+            "footstepName": "factorysnow"
         },
         {
             "tiles": [10, 11, 12, 13, 14, 15],
-            "graphics": ["factorysnowdark"]
+            "footstepName": "factorysnowdark"
         }
     ]
 }

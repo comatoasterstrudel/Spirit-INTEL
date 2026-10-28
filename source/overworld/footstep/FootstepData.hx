@@ -1,9 +1,18 @@
 package overworld.footstep;
 
-typedef FootstepData =
+class FootstepData extends CtJsonLoader
 {
-    var tiles:Array<Int>;
-    var graphics:Array<String>;
-    var fadeIn:Float;
-    var fadeOut:Float;
+    var id:String;
+    
+    public var name:String;
+    public var graphics:Array<String>;
+
+    public function new(id:String){
+        this.id = id;
+        
+        super(Constants.footstepDataPath + id + '.json', Constants.footstepDataPath + 'factorysnow.json');
+        
+        this.name = data.name ?? "";
+        this.graphics = data.graphics ?? cast [];
+    }
 }
