@@ -16,7 +16,7 @@ class StatusEffect
     public function new(id:String, turns:Int):Void{
         this.id = id;
         
-        this.data = new StatusEffectData(id);
+        this.data = Registry.get(StatusEffectData, id);
         
         this.turns = turns;
 		this.maxTurns = turns;        

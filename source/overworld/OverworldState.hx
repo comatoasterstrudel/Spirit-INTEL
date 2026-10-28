@@ -312,9 +312,11 @@ class OverworldState extends FlxState
 
 				if(tile == null) return;
 
-				for(footstep in new TilesetData(maintileset).footsteps){
+				var tileset:TilesetData = Registry.get(TilesetData, maintileset);
+
+				for(footstep in tileset.footsteps){
 					if(footstep.tiles.contains(tile.index)){
-						placeFootstep(new FootstepData(footstep.footstepName), tile, character);
+						placeFootstep(Registry.get(FootstepData, footstep.footstepName), tile, character);
 					}
 				}
 			}
@@ -348,7 +350,7 @@ class OverworldState extends FlxState
 			if (prop is Prop)
 			{
 				var trueProp:Prop = cast prop;
-				trueProp.y += (trueProp.data.yStackingOffset * Constants.overworldPixelScale);
+				trueProp.y += ((trueProp.data.yStackingOffset + trueProp.tempStackingOffset) * Constants.overworldPixelScale);
 			}
 
 			if(prop is Door)
@@ -364,7 +366,7 @@ class OverworldState extends FlxState
 			if (prop is Prop)
 			{
 				var trueProp:Prop = cast prop;
-				trueProp.y -= (trueProp.data.yStackingOffset * Constants.overworldPixelScale);
+				trueProp.y -= ((trueProp.data.yStackingOffset + trueProp.tempStackingOffset) * Constants.overworldPixelScale);
 			}
 
 			if(prop is Door)
@@ -560,7 +562,7 @@ class OverworldState extends FlxState
 	 */
 	function loadRoom():Void
 	{
-		roomData = new RoomData(roomName);
+		roomData = Registry.get(RoomData, roomName);
 	}
 
 	/**
@@ -664,7 +666,7 @@ class OverworldState extends FlxState
 					realSizeMax.set((((realSizeMax.x + 1) * Constants.overworldPixelScale) * 16), (((realSizeMax.y + 1) * Constants.overworldPixelScale) * 16));
 				}
 					
-				var tilesetData = new TilesetData(layer.tileset);
+				var tilesetData = Registry.get(TilesetData, layer.tileset);
 				var tiles = map.loadTilemap(Constants.tilesetGraphicPath + tilesetData.graphic + ".png", layer.name);
 				tiles.scale.set(Constants.overworldPixelScale, Constants.overworldPixelScale);
 				tiles.antialiasing = false;
@@ -1141,7 +1143,7 @@ class OverworldState extends FlxState
 
 		new FlxTimer().start(0.1, function(f):Void
 		{
-			if(!lockMusic && FlxG.sound.music != null && FlxG.sound.music.playing && !isMusicSameAsLastMusic(new RoomData(newRoom))){
+			if(!lockMusic && FlxG.sound.music != null && FlxG.sound.music.playing && !isMusicSameAsLastMusic(Registry.get(RoomData, newRoom))){
 				FlxG.sound.music.fadeOut(transitionTime, 0, function(f):Void{
 					FlxG.sound.music.stop();
 					FlxG.sound.music.destroy();

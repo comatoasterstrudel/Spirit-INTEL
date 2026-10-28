@@ -34,7 +34,7 @@ class VictoryScreenUnitLevelCell extends FlxSpriteGroup
         baseSprite.visible = false;
         add(baseSprite);
 
-        var unitData = new UnitData(unit);
+        var unitData = Registry.get(UnitData, unit);
 
         unitIcon = new CtSprite().createFromImage(Constants.unitGridGraphicPath + unitData.gridGraphic + ".png");
         unitIcon.antialiasing = false;

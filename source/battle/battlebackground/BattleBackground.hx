@@ -7,7 +7,7 @@ class BattleBackground extends FlxSpriteGroup
     public function new(battleData:BattleData):Void{
         super();
         
-        data = new BattleBackgroundData(battleData.background);
+        data = Registry.get(BattleBackgroundData, battleData.background);
         
         for(sprite in data.sprites){            
             var spr = new CtSprite(sprite.x, sprite.y);

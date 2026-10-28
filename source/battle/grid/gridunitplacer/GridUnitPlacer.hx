@@ -264,7 +264,7 @@ class GridUnitPlacer extends FlxSpriteGroup
 					selectingMenuManager.changeSelection();
                     recalculateSP();
                 } else {
-                    if(spValue - new UnitData(i.unit).spCost < 0){
+                    if(spValue - Registry.get(UnitData, i.unit).spCost < 0){
                         spBar.doAngry();
                         bottom.updateWithText("(NOT ENOUGH SP!)", "", Constants.color_spLoss);
                         FlxTween.shake(i.bg, 0.05, .1, X);
@@ -559,7 +559,8 @@ class GridUnitPlacer extends FlxSpriteGroup
         var temp:Int = spMax;
 
         for(unit in placedUnits){
-            temp -= new UnitData(unit.unit).spCost;
+            var data:UnitData = Registry.get(UnitData, unit.unit);
+            temp -= data.spCost;
         }
 
         spValue = temp;

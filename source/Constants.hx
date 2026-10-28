@@ -50,7 +50,8 @@ class Constants
 	public static final mus_victory:String = musicPath + "victory.ogg";
 	// Battle
 	public static final battleDataFolder:String = "assets/data/battles/";
-	public static final battleDataPath:String = Constants.battleDataFolder + "battle_";
+	public static final battleDataPrefix:String = "battle_";
+	public static final battleDataPath:String = Constants.battleDataFolder + Constants.battleDataPrefix;
 	public static final battleDataMusicPath:String = musicPath + "battle_";
 	// Grid
     public static final gridSize:Int = 80;
@@ -58,15 +59,20 @@ class Constants
 	public static final gridBackgroundSpriteNum:Int = 15;
 	// Units
 	public static final unitDataFolder:String = "assets/data/units/";
-	public static final unitDataPath:String = unitDataFolder + "unit_";
+	public static final unitDataPrefix:String = "unit_";
+	public static final unitDataPath:String = unitDataFolder + unitDataPrefix;
 	// Boss Effect
 	public static final bossEffectTime:Float = .6;
 	public static final bossEffectDelay:Float = .3;
 	// Skills
-	public static final skillDataPath:String = "assets/data/skills/skill_";
+	public static final skillDataFolder:String = "assets/data/skills/";
+	public static final skillDataPrefix:String = "skill_";
+	public static final skillDataPath:String = skillDataFolder + skillDataPrefix;
 	public static final unitMaxSkills:Int = 5;
 	// Status Effects
-	public static final statusEffectDataPath:String = "assets/data/status/status_";
+	public static final statusEffectDataFolder:String = "assets/data/status/";
+	public static final statusEffectDataPrefix:String = "status_";
+	public static final statusEffectDataPath:String = statusEffectDataFolder + statusEffectDataPrefix;
 	public static final statusEffectAnimTime:Float = 1;
 	// UI
 	public static final uiYOffset:Float = 0;
@@ -167,7 +173,9 @@ class Constants
 	public static final battleCameraMovementY:Float = 0.05;
 	public static final battleCameraMovementSpeed:Float = 3;
 	// Battle Background
-	public static final battleBackgroundDataPath:String = "assets/data/battlebackgrounds/battlebg_";
+	public static final battleBackgroundDataFolder:String = "assets/data/battlebackgrounds/";
+	public static final battleBackgroundDataPrefix:String = "battlebg_";
+	public static final battleBackgroundDataPath:String = battleBackgroundDataFolder + battleBackgroundDataPrefix;
 	public static final battleBackgroundGraphicPath:String = "assets/images/battlebackgrounds/battlebg_";
 	// Scripts
 	public static final battleScriptPath:String = "assets/data/battlescripts/battlescript_";
@@ -202,31 +210,40 @@ class Constants
 	public static final overworldPixelScale:Float = 3;
 	// Characters
 	public static final playerCharacterName:String = "robin";
-	public static final characterDataPath:String = "assets/data/characters/character_";
+	public static final characterDataFolder:String = "assets/data/characters/";
+	public static final characterDataPrefix:String = "character_";
+	public static final characterDataPath:String = characterDataFolder + characterDataPrefix;
 	public static final characterGraphicPath:String = "assets/images/characters/character_";
 	public static final characterSpeed:Float = 300;
 	public static final characterSpeedDiagonal:Float = characterSpeed * .707;
 	public static final characterWalkFps:Int = 5;
 	// Rooms
 	public static final roomDataFolder:String = "assets/data/rooms/";
-	public static final roomDataPath:String = roomDataFolder + "room_";
+	public static final roomDataPrefix:String = "room_";
+	public static final roomDataPath:String = roomDataFolder + roomDataPrefix;
 	public static final roomMusicPath:String = musicPath + "area_";
 	// Tilemaps
 	public static final ogmoFilePath:String = "assets/data/tilemaps/Spirit-INTEL.ogmo";
 	public static final tilemapsDataPath:String = "assets/data/tilemaps/tilemap_";
 	// Tilesets
-	public static final tilesetDataPath:String = "assets/data/tilesets/tileset_";
+	public static final tilesetDataFolder:String = "assets/data/tilesets/";
+	public static final tilesetDataPrefix:String = "tileset_";
+	public static final tilesetDataPath:String = tilesetDataFolder + tilesetDataPrefix;
 	public static final tilesetGraphicPath:String = "assets/images/tileset/tileset_";
 	// Encounters
 	public static final encounterCooldown:Float = 3.5;
 	// Doors
 	public static final doorGraphicPath:String = "assets/images/doors/door_";
-	public static final doorDataPath:String = "assets/data/doors/door_";
+	public static final doorDataFolder:String = "assets/data/doors/";
+	public static final doorDataPrefix:String = "door_";
+	public static final doorDataPath:String = doorDataFolder + doorDataPrefix;
 	public static final doorOpenUpSoundPath:String = Constants.sfxPath + "dooropenup_";
 	public static final doorOpenDownSoundPath:String = Constants.sfxPath + "dooropendown_";
 	public static final doorLockSoundPath:String = Constants.sfxPath + "doorlock_";
 	// Props
-	public static final propDataPath:String = "assets/data/props/prop_";
+	public static final propDataFolder:String = "assets/data/props/";
+	public static final propDataPrefix:String = "prop_";
+	public static final propDataPath:String = propDataFolder + propDataPrefix;
 	public static final propImagePath:String = "assets/images/props/prop_";
 	// Scrolling Props
 	public static final scrollingPropImagePath:String = "assets/images/scrollingprops/scrollingprop_";
@@ -241,11 +258,15 @@ class Constants
 	// Chapter intro
 	public static final chapterIntroGraphicPath:String = "assets/images/chapterintro/chapterintro_";
 	// Footsteps
-	public static final footstepDataPath = "assets/data/footstep/footstep_";
+	public static final footstepDataFolder = "assets/data/footstep/";
+	public static final footstepDataPrefix = "footstep_";
+	public static final footstepDataPath = footstepDataFolder + footstepDataPrefix;
 	public static final footstepGraphicPath:String = "assets/images/footstep/footstep_";
 	// Save spots
 	public static final saveSpotGraphicPath:String = "assets/images/savespots/savespot_";
-	public static final saveSpotDataPath:String = "assets/data/savespots/savespot_";
+	public static final saveSpotDataFolder:String = "assets/data/savespots/";
+	public static final saveSpotDataPrefix:String = "savespot_";
+	public static final saveSpotDataPath:String = saveSpotDataFolder + saveSpotDataPrefix;
 	// Player Menu
 	public static final playerMenuBgLeftUp:String = "assets/images/playermenu/bg/bg_leftUp.png";
 	public static final playerMenuBgLeft:String = "assets/images/playermenu/bg/bg_left.png";

@@ -104,7 +104,7 @@ class VictoryScreenUnitUnlocker extends FlxSpriteGroup
                     CtSound.play(Constants.sfx_vic_crash).pitch = .8;
                 }});
 
-                var unitData = new UnitData(units[progress]);
+                var unitData = Registry.get(UnitData, units[progress]);
                 
                 unitPortrait.revive();
                 unitPortrait.applyUnitGraphic(new Unit(unitData.id, null, FlxPoint.get(0,0), true, 5, true));

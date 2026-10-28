@@ -131,7 +131,7 @@ function doConversationCutscene():Void
 	{
 		OverworldState.eventManager.startTransaction("robinMove");
 
-		realdoor.playOpenSound();
+		frontdoor.playOpenSound();
 		
 		character_player.visible = true;
 
@@ -479,7 +479,7 @@ function doCorpseCutscene():Void{
 
 		character_player.moveToGridSpace(23, -1, function():Void
 		{
-			factoryjesscorpse.data.yStackingOffset = -999;
+			factoryjesscorpse.tempStackingOffset = -999;
 
 			character_player.moveToGridSpace(-1, 17, function():Void
 			{
@@ -686,7 +686,7 @@ function doCorpseCutscene():Void{
 
 		set_lockCamera(false);
 
-		factoryjesscorpse.data.yStackingOffset = 0;
+		factoryjesscorpse.tempStackingOffset = 0;
 
 		character_player.facing = DOWN;
 	});

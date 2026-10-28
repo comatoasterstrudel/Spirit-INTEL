@@ -34,7 +34,7 @@ class UnitSelectorTab extends FlxSpriteGroup
 
         realUnit = new Unit(unit, null, FlxPoint.get(1,1), true, CharacterLevel.getLevelFromExp(Save.levelUnits.get(unit).exp), true);
 
-        unitData = new UnitData(unit);
+        unitData = Registry.get(UnitData, unit);
 
         baseSprite = new CtSprite().createColorBlock(Constants.playerMenuUnitSelectorWidth, Constants.playerMenuUnitSelectorHeight, FlxColor.BLUE);
         baseSprite.lerpManager.lerpY = true;

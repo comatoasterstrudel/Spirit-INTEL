@@ -73,7 +73,7 @@ class BattleData extends CtJsonLoader
         var allUnits:Array<UnitInfo> = [];
 
         for(unit in data.allyUnits.concat(data.enemyUnits)){
-            if(new UnitData(unit.id).isBoss) return true;
+            if(Registry.get(UnitData, unit.id).isBoss) return true;
         }
         return false;
     }

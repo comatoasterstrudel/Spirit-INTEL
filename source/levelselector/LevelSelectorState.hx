@@ -103,13 +103,13 @@ class LevelSelectorState extends FlxState
 
 		for (room in CtUtil.stripTextFromStrings(CtUtil.findFilesInPath(Constants.roomDataFolder, [".json"], false, false), ["room_", ".json"]))
 		{
-			listOfRoomFiles.push(new RoomData(room));
+			listOfRoomFiles.push(Registry.get(RoomData, room));
 		}
 		
         listOfBattleFiles = [];
         
         for(battle in CtUtil.stripTextFromStrings(CtUtil.findFilesInPath(Constants.battleDataFolder, [".json"], false, false), ["battle_", ".json"])){
-            listOfBattleFiles.push(new BattleData(battle));
+            listOfBattleFiles.push(Registry.get(BattleData, battle));
         }
 
 		clearMenuOptions();

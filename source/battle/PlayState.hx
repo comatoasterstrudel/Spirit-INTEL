@@ -178,7 +178,7 @@ class PlayState extends FlxState
 	 */
 	function loadBattle():Void
 	{
-		battleData = new BattleData(battleName);
+		battleData = Registry.get(BattleData, battleName);
 
 		bgColor = FlxColor.GRAY;
 
@@ -1678,7 +1678,7 @@ class PlayState extends FlxState
 	{
 		battleName = name;
 		battleType = type;
-		battleData = new BattleData(battleName);
+		battleData = Registry.get(BattleData, battleName);
 	}
 
 	function doIntroAnim():Void

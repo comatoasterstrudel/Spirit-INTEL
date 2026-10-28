@@ -53,7 +53,7 @@ class Unit extends CtSprite
         super();
 
         this.unitID = unitID;
-		this.data = new UnitData(unitID);
+		this.data = Registry.get(UnitData, unitID);
         
         this.grid = grid;
         this.position = position;
@@ -128,13 +128,15 @@ class Unit extends CtSprite
 	{
 		for (i in 0...data.skills.length)
 		{
-			var skill = new SkillData(data.skills[i]);
+			var skill:SkillData = Registry.get(SkillData, data.skills[i]);
+
+			var newskill = new SkillData(skill.id); // doing it this way so the sp doesnt overwrite for the skill forever
 
 			if(i == 0){
-				skill.mpCost = 0;
+				newskill.mpCost = 0;
 			}
 			
-			skills.push(skill);
+			skills.push(newskill);
 		}
 	}
 	

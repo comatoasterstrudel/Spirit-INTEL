@@ -130,7 +130,7 @@ class UnitAi
                                     } else {
                                         points += 10;
 
-                                        var statusData = new StatusEffectData(effect.id);
+                                        var statusData = Registry.get(StatusEffectData, effect.id);
 
                                         points += statusData.effects.eff_damage;
                                         points += statusData.effects.eff_heal;

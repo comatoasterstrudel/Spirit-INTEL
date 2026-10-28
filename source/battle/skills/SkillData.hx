@@ -2,7 +2,7 @@ package battle.skills;
 
 class SkillData extends CtJsonLoader
 {
-    var id:String = "";
+    public var id:String = "";
     
     public var name:String;
     public var description:String;

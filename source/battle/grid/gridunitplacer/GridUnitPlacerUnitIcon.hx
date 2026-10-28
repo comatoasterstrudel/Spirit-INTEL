@@ -29,7 +29,7 @@ class GridUnitPlacerUnitIcon extends FlxSpriteGroup
         bg.lerpManager.lerpY = true;
         add(bg);
         
-        unitGraphic = new CtSprite().createFromImage(Constants.unitGridGraphicPath + new UnitData(unit).gridGraphic + ".png");
+        unitGraphic = new CtSprite().createFromImage(Constants.unitGridGraphicPath + Registry.get(UnitData, unit).gridGraphic + ".png");
         unitGraphic.antialiasing = false;
         add(unitGraphic);
         

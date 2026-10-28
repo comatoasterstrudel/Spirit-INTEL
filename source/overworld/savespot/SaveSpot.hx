@@ -7,7 +7,7 @@ class SaveSpot extends Interactable
 	public function new(name:String, saveName:String, tag:String, x:Int, y:Int):Void
 	{
         super();
-		data = new SaveSpotData(name);
+		data = Registry.get(SaveSpotData, name);
 		
 		addManually(x, y, 16, 16, INTERACT, tag, "", "", 0, "", "", true, saveName, data.bgName);
 		createFromImage(Constants.saveSpotGraphicPath + data.graphic + ".png");

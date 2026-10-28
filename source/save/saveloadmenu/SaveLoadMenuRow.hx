@@ -185,7 +185,7 @@ class SaveLoadMenuRow extends FlxSpriteGroup{
 
 		if (started)
 		{
-			var roomData = new RoomData(save.data.roomName);
+			var roomData = Registry.get(RoomData, save.data.roomName);
 
 			var roomName = roomData.displayName;
 			var time = FlxStringUtil.formatTime(save.data.playtime, false);

@@ -85,7 +85,7 @@ class Character extends CtSprite
 	{
 		animation.destroyAnimations();
 
-		data = new CharacterData(name);
+		data = Registry.get(CharacterData, name);
 		
 		if (data.fromAseprite)
 		{

@@ -11,13 +11,15 @@ class Prop extends CtSprite
     public var killedSignal = new FlxSignal();
     public var revivedSignal = new FlxSignal();
 
+    public var tempStackingOffset:Int = 0;
+
 	public function new(id:String, tag:String, x:Float, y:Float):Void
 	{
         super(x * Constants.overworldPixelScale, y * Constants.overworldPixelScale);
         
 		this.tag = tag;
         
-        data = new PropData(id);
+        data = Registry.get(PropData, (id));
         
         loadSprite();
         

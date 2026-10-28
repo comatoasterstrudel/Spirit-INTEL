@@ -15,7 +15,7 @@ class Door extends Interactable
 	{
         super();
 		this.player = player;
-		data = new DoorData(name);
+		data = Registry.get(DoorData, name);
 		
 		addManually(x, y, 32, 32, INTERACT, tag, room == "" ? lockedDialogue : "", room, transitionTime, "", scriptFunction);
 		createFromSparrow(Constants.doorGraphicPath + data.graphic + ".png", Constants.doorGraphicPath + data.graphic + ".xml");

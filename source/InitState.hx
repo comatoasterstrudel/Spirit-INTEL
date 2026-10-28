@@ -10,6 +10,8 @@ class InitState extends FlxState{
 		openfl.ui.Mouse.hide();
 		#end 
 		
+		initRegistry();
+
 		initControls();
 
 		initMenuManager();
@@ -60,6 +62,11 @@ class InitState extends FlxState{
         
 		FlxG.switchState(MainMenuState.new);
     }
+
+	function initRegistry():Void{
+		Registry.initRegistry();
+	}
+
 	function initControls():Void
 	{
 		CtControls.registerControl({id: "left", inputKey: [LEFT, A], inputPad: [DPAD_LEFT, LEFT_STICK_DIGITAL_LEFT]});
@@ -138,6 +145,7 @@ class InitState extends FlxState{
 	function initScripts():Void
 	{
 		CtScript.init();
+		CtScript.setDefaultValue({name: "Registry", value: Registry});
 		CtScript.setDefaultValue({name: "Character", value: Character});
 		CtScript.setDefaultValue({name: "Player", value: Player});
 		CtScript.setDefaultValue({name: "DOWN", value: FlxDirectionFlags.DOWN});

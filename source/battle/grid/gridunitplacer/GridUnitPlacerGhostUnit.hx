@@ -9,7 +9,7 @@ class GridUnitPlacerGhostUnit extends CtSprite
         
         this.unit = unit;
         
-        createFromImage(Constants.unitGridGraphicPath + new UnitData(unit).gridGraphic + ".png");
+        createFromImage(Constants.unitGridGraphicPath + Registry.get(UnitData, unit).gridGraphic + ".png");
 
         CtUtil.centerSpriteOnSprite(this, space.baseSprite, true, true);
         

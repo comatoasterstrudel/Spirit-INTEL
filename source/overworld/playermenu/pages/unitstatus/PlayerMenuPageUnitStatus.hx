@@ -130,7 +130,7 @@ class PlayerMenuPageUnitStatus extends PlayerMenuPage
 	public function setUnit(unit:String):Void{
         curUnit = unit;
 
-        var data = new UnitData(unit);
+        var data = Registry.get(UnitData, unit);
 
         nameText.text = data.name;
         lvlText.text = "Lvl. " + Save.levelUnits.get(unit).getLevel();

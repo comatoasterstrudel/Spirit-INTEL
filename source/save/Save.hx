@@ -64,7 +64,7 @@ class Save
 		
 		// reset unlocked units
 		for(unitName in Unit.getListOfUnits()){
-			unlockedUnits.set(unitName, new UnitData(unitName).unlockedByDefault ? true : false);
+			unlockedUnits.set(unitName, Registry.get(UnitData, unitName).unlockedByDefault ? true : false);
 		}
 
 		// reset character levels
@@ -228,7 +228,7 @@ class Save
 				var savedUnlockedUnits:Map<String, Bool> = cast save.data.unlockedUnits;
 
 				if(savedUnlockedUnits.exists(unitName)){
-					unlockedUnits.set(unitName, new UnitData(unitName).unlockedByDefault ? true : savedUnlockedUnits.get(unitName));
+					unlockedUnits.set(unitName, Registry.get(UnitData, unitName).unlockedByDefault ? true : savedUnlockedUnits.get(unitName));
 				}
 			}
 		}

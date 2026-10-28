@@ -25,6 +25,6 @@ class GridUnitPlacerCursor extends FlxSpriteGroup
     }
     
     public function updateUnit(unit:String):Void{
-        unitGraphic.createFromImage(Constants.unitGridGraphicPath + new UnitData(unit).gridGraphic + ".png");
+        unitGraphic.createFromImage(Constants.unitGridGraphicPath + Registry.get(UnitData, unit).gridGraphic + ".png");
     }
 }
