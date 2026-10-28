@@ -49,6 +49,9 @@ function create():Void{
 	factoryjesscorpse = getPropByTag("factoryjesscorpse");
 
 	jessdialogue = getInteractableByTag("jessdialogue");
+	if(Save.storyFlags.get("factory_sawproductioncutscene").val_bool){
+		jessdialogue.dialogue = "factory/lobby/dialogue_jessfunegg";
+	}
 
 	keycard = getPropByTag("keycard");
 	keycard.kill();
@@ -266,7 +269,12 @@ function doBlink():Void{
 function lockDoor():Void
 {
 	frontdoor.room = "";
-	frontdoor.dialogue = "factory/lobby/dialogue_exitdoor";
+
+	if(Save.storyFlags.get("factory_sawproductioncutscene").val_bool){
+		frontdoor.dialogue = "factory/lobby/dialogue_exitdoor2";
+	} else {
+		frontdoor.dialogue = "factory/lobby/dialogue_exitdoor";
+	}
 }
 
 function setUpScary():Void{

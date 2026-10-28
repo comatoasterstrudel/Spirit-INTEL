@@ -1,0 +1,122 @@
+[
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "You headin' out?",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "jess",
+		"autoSkip": false
+	},
+	{
+		"dialogue": "No.",
+		"events": [],
+		"continueLine": false,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "robin",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
+	},
+	{
+		"dialogue": " Apparently the manager has [[WAVE]]something[[ENDWAVE]] in the break room for us.",
+		"events": [],
+		"continueLine": true,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "robin",
+		"choicerOptions": [],
+		"voiceLine": "",
+		"autoSkip": false,
+		"speed": 0.03
+	},
+	{
+		"dialogue": "You gonna come with?",
+		"events": [],
+		"continueLine": false,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "robin",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
+	},
+	{
+		"dialogue": "Nah.",
+		"events": [],
+		"continueLine": false,
+		"portrait": "talkneutral",
+		"diaPitch": 1,
+		"actor": "jess",
+		"choicerOptions": [],
+		"voiceLine": "",
+		"autoSkip": false,
+		"speed": 0.03
+	},
+	{
+		"dialogue": "I gotta finish some work before I head out soon.",
+		"events": [],
+		"continueLine": false,
+		"portrait": "talkneutral",
+		"diaPitch": 1,
+		"actor": "jess",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
+	},
+	{
+		"dialogue": "I want to get to the gym before it gets too late.",
+		"events": [],
+		"continueLine": false,
+		"portrait": "sigh",
+		"diaPitch": 1,
+		"actor": "jess",
+		"choicerOptions": [],
+		"voiceLine": "",
+		"autoSkip": false,
+		"speed": 0.03
+	},
+	{
+		"dialogue": "I see.",
+		"events": [],
+		"continueLine": false,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "robin",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
+	},
+	{
+		"dialogue": " Well see you tommorrow, then.",
+		"events": [],
+		"continueLine": true,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "robin",
+		"choicerOptions": [],
+		"voiceLine": "",
+		"autoSkip": false,
+		"speed": 0.03
+	},
+	{
+		"dialogue": "Cya.",
+		"events": [],
+		"continueLine": false,
+		"portrait": "smile",
+		"diaPitch": 1,
+		"actor": "jess",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
+	}
+]
