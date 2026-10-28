@@ -1,0 +1,7 @@
+{
+    "name": "sliding",
+    "graphic": "sliding",
+    "openUpSound": "sliding",
+    "openDownSound": "sliding",
+    "lockSound": "factory"
+}

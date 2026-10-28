@@ -49,7 +49,7 @@
           "height": 32,
           "originX": 0,
           "originY": 0,
-          "values": {"doorName": "factory", "room": "factory_lobby", "transitionTime": 2, "lockedDialogue": "", "horizontal": false, "scriptFunction": "", "tag": "frontdoor", "facingDownwards": false}
+          "values": {"doorName": "sliding", "room": "factory_lobby", "transitionTime": 2, "lockedDialogue": "", "horizontal": false, "scriptFunction": "", "tag": "frontdoor", "facingDownwards": false}
         },
         {
           "name": "player",
@@ -298,6 +298,18 @@
           "originX": 0,
           "originY": 0,
           "values": {"name": "laurin", "tag": "laurin"}
+        },
+        {
+          "name": "door",
+          "id": 25,
+          "_eid": "17170951",
+          "x": 64,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "originX": 0,
+          "originY": 0,
+          "values": {"doorName": "bloodysliding", "room": "", "transitionTime": 0.5, "lockedDialogue": "", "horizontal": false, "scriptFunction": "", "tag": "bloodydoor", "facingDownwards": false}
         }
       ]
     },

@@ -1,0 +1,7 @@
+{
+    "name": "bloodysliding",
+    "graphic": "bloodysliding",
+    "openUpSound": "sliding",
+    "openDownSound": "sliding",
+    "lockSound": "factory"
+}

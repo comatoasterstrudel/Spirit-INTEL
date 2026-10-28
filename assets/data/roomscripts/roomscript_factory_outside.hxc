@@ -4,12 +4,16 @@ function CTSCRIPT_SETNAME():String
 }
 
 var frontDoor:Door;
+var bloodydoor:Door;
 
 var character_robin:Player;
 var character_laurin:Player;
 
 function create():Void{
     frontDoor = getDoorByTag("frontdoor");
+    bloodydoor = getDoorByTag("bloodydoor");
+    bloodydoor.disabled = true;
+    bloodydoor.kill();
 
     character_robin = get_player();
     character_laurin = getCharacterByTag("laurin");
@@ -30,8 +34,14 @@ function create():Void{
         var doorway = getInteractableByTag("door");
         doorway.roomTransitionTime = .5;
     } else {
-        frontDoor.room = "";
-        frontDoor.dialogue = "factory/outside/dialogue_door";
+        bloodydoor.room = "";
+        bloodydoor.dialogue = "factory/outside/dialogue_door";
+        bloodydoor.disabled = false;
+        bloodydoor.revive();
+        bloodydoor.setPosition(frontDoor.x, frontDoor.y);
+        
+        frontDoor.disabled = true;
+        frontDoor.kill();
     }
 
     if(Save.storyFlags.get("factory_killedmanager").val_bool && !Save.storyFlags.get("factory_seenLaurinOutside").val_bool || InitState.init_forceCutscene == "laurinOutsideScene"){
