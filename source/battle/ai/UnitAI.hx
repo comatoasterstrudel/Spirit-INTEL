@@ -153,6 +153,16 @@ class UnitAi
             }
         }
 
+        var biggestSkill:SkillData = null;
+
+        for(skill in skills){
+            if(biggestSkill == null || pointsPerSkill.get(skill) > pointsPerSkill.get(biggestSkill)){
+                biggestSkill = skill;
+            }
+        }
+
+        pointsPerSkill.set(biggestSkill, Std.int(pointsPerSkill.get(biggestSkill) * (2 + (1.5 * (unit.level / Constants.maxLevel)))));
+        
         return advantages;
     }
 
