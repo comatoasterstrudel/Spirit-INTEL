@@ -5,4 +5,5 @@ typedef SkillEffects = {
 	var eff_heal:Int;
 	var eff_statuses:Array<StatusParams>;
 	var eff_hpleech:Float;
+	var eff_exactdamage:Int;
 }

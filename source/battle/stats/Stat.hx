@@ -4,9 +4,9 @@ class Stat
 {
     public var name:String = "";
     
-    var min:Int;
+    public var min:Int;
     
-    var max:Int;
+    public var max:Int;
     
     public var value:Int = 0;
     

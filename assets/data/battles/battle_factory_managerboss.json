@@ -8,10 +8,11 @@
             "id": "managerboss",
             "x": 1,
             "y": 1,
-            "level": 7,
+            "level": 5,
             "tag": "managerboss"
         }  
     ],
     "music": "managerboss",
-    "script": ["factory_managerboss"]
+    "script": ["factory_managerboss"],
+    "loadBearingUnit": "managerboss"
 }

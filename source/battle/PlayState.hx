@@ -81,7 +81,8 @@ class PlayState extends FlxState
 	var roundNum:Int = 0;
 	var turnNum:Int = 0;
 	var turnOrder:Array<Unit> = [];
-	
+	var turnOrderInfo:Array<TurnOrderInfo> = [];
+
 	var currentTurnUnit:Unit;
 
 	var uiStatus:UIStatus = INACTIVE;
@@ -106,6 +107,9 @@ class PlayState extends FlxState
 
 	// STATUS INSPECTOR
 	var currentStatusInspectorUnit:Unit;
+
+	// groverhouse
+	var loadBearingUnitKilled:Bool = false;
 
 	override public function create()
 	{
@@ -417,45 +421,66 @@ class PlayState extends FlxState
 	{
 		for (unit in battleData.allyUnits)
 		{
-			placeUnit(unit.id, allyGrid, unit.position, true, unit.level, false, false, unit.tag);
+			placeUnit({
+				unitID: unit.id, 
+				grid: allyGrid, 
+				position: unit.position, 
+				controllable: true, 
+				level: unit.level, 
+				doAnim: false, 
+				placedByPlayer: false, 
+				tag: unit.tag
+			});
 		}
 		for (unit in battleData.enemyUnits)
 		{
-			placeUnit(unit.id, enemyGrid, unit.position, false, unit.level, false, false, unit.tag);
+			placeUnit({
+				unitID: unit.id, 
+				grid: enemyGrid, 
+				position: unit.position, 
+				controllable: false, 
+				level: unit.level, 
+				doAnim: false, 
+				placedByPlayer: false, 
+				tag: unit.tag
+			});
 		}
 	}
 	
-	/**
-	 * Call this to place a unit down on the grid.
-	 * @param unitID The id/name of the unit you want to place
-	 * @param grid Which grid you want to place it on
-	 * @param position Which position on the grid you want to place it on
-	 * @param controllable Should this unit be controllable or not? basically is it an enemy or ally
-	 */
-	function placeUnit(unitID:String, grid:Grid, position:FlxPoint, controllable:Bool, level:Int, ?doAnim:Bool = true, ?placedByPlayer:Bool = false, ?tag:String = ""):Void
+	function placeUnit(placement:UnitPlacementInfo):Void
 	{
-		if (position.x >= gridSize.x || position.y >= gridSize.y)
+		if(placement.doAnim == null) placement.doAnim = true;
+		if(placement.placedByPlayer == null) placement.placedByPlayer = false;
+		if(placement.tag == null) placement.tag = "";
+
+		if (placement.position.x >= gridSize.x || placement.position.y >= gridSize.y)
 		{
-			FlxG.log.error("Can't place unit \"" + unitID + "\" at " + position.x + ", " + position.y + ". Out of bounds!");
+			FlxG.log.error("Can't place unit \"" + placement.unitID + "\" at " + placement.position.x + ", " + placement.position.y + ". Out of bounds!");
 			return;
 		}
 		
-		if (Grid.getGridSpaceFromGrid(grid, position).unit != null)
+		if (Grid.getGridSpaceFromGrid(placement.grid, placement.position).unit != null)
 		{
-			FlxG.log.error("Can't place unit \"" + unitID + "\" at " + position.x + ", " + position.y + ". Occupied!");
+			FlxG.log.error("Can't place unit \"" + placement.unitID + "\" at " + placement.position.x + ", " + placement.position.y + ". Occupied!");
 			return;
 		}
 		
-		var unit = new Unit(unitID, grid, position, controllable, level, placedByPlayer, tag);
+		var unit = new Unit(placement.unitID, placement.grid, placement.position, placement.controllable, placement.level, placement.placedByPlayer, placement.tag);
 		unit.camera = camGame;
 
 		var bossEffect:UnitBossEffect = null;
 
 		if(unit.data.isBoss){
-			bossEffect = new UnitBossEffect(unit);
+			bossEffect = new UnitBossEffect(unit, placement.controllable ? allyBossEffectGroup : enemyBossEffectGroup);
 		}
 
-		if (controllable)
+		unit.onDeath.add(function():Void{
+			if(battleData.loadBearingUnit != "" && unit.tag == battleData.loadBearingUnit) {
+				loadBearingUnitKilled = true;
+			}
+		});
+
+		if (placement.controllable)
 		{
 			if(bossEffect != null) allyBossEffectGroup.add(bossEffect);
 			allyUnitGroup.add(unit);
@@ -467,14 +492,31 @@ class PlayState extends FlxState
 			enemyUnitGroup.add(unit);
 		}
 
-		grid.placeUnit(unit);
+		placement.grid.placeUnit(unit);
 
-		if (doAnim)
+		if (placement.doAnim)
 			unit.doEntranceAnimation();
 
 		units.push(unit);
 		statusEffectBars.addNewBar(unit);
 		miniHealthBars.addNewBar(unit);
+	}
+
+	function placeUnitChain(placements:Array<UnitPlacementInfo>, ?onComplete:Void->Void, ?onPlace:Int->Void):Void{
+		for(i in 0...placements.length){
+			var placement = placements[i];
+			
+			new FlxTimer().start(0.22 * i, function(f):Void{
+				placeUnit(placement);
+				if(onPlace != null) onPlace(i);
+				
+				if(i == placements.length - 1 && onComplete != null){
+					new FlxTimer().start(1, function(f):Void{
+						onComplete();
+					});
+				}
+			});
+		}
 	}
 
 	/**
@@ -576,11 +618,13 @@ class PlayState extends FlxState
 					return;
 				}
 
-				currentTurnUnit = turnOrder[turnNum];
+				updateTurn();
 
-				turnOrderDisplay.updateCurrentTurnWithID(turnNum);
-				bottomBar.updateCurrentUnit(currentTurnUnit);
-				turnOrderDisplay.topBar.updateCurrentUnit(currentTurnUnit);
+				executeScriptFunction("postAdvanceTurn", []);
+
+				if(battleFrozen){
+					return;
+				}
 
 				if (currentTurnUnit.controllable){
 					bottomBar.addMenu();
@@ -629,6 +673,13 @@ class PlayState extends FlxState
 				});
 			});
 		});
+	}
+
+	function updateTurn():Void{
+		currentTurnUnit = turnOrder[turnNum];
+		turnOrderDisplay.updateCurrentTurnWithID(turnNum);
+		bottomBar.updateCurrentUnit(currentTurnUnit);
+		turnOrderDisplay.topBar.updateCurrentUnit(currentTurnUnit);
 	}
 
 	/**
@@ -885,7 +936,7 @@ class PlayState extends FlxState
 		for (unit in units)
 		{
 			if (unit.dead)
-			{
+			{				
 				eventManager.addEvent(function():Void
 				{
 					var transactionName = unit.uniqueUnitID + "_" + "deathAnim";
@@ -920,7 +971,8 @@ class PlayState extends FlxState
 					enemyUnits++;
 			}
 		}
-		if (alliedUnits == 0 || enemyUnits == 0){ // game is over
+
+		if (alliedUnits == 0 || enemyUnits == 0 || loadBearingUnitKilled){ // game is over
 			eventManager.addEvent(function():Void
 			{
 				eventManager.startTransaction("GAMEOVER"); // never finish this
@@ -932,12 +984,12 @@ class PlayState extends FlxState
 				turnOrderDisplay.updateTurnOrderDisplay([]);
 
 				var type:ResultType = TIE;
-
-				if (alliedUnits > enemyUnits)
+				
+				if (loadBearingUnitKilled || alliedUnits > enemyUnits)
 					type = WIN;
-				if (enemyUnits > alliedUnits)
+				else if (enemyUnits > alliedUnits)
 					type = LOSS;
-				if (alliedUnits == enemyUnits)
+				else if (alliedUnits == enemyUnits)
 					type = TIE;
 
 				switch(type){
@@ -996,16 +1048,19 @@ class PlayState extends FlxState
 	/**
 	 * Call this to calculate and start the turn order for the next round
 	 */
-	function calculateTurnOrder():Void
+	function calculateTurnOrder(keepCurrentUnit:Bool = false):Void
 	{
+		var previousInfo = turnOrderInfo[turnNum];
+
 		turnOrder = [];
+		turnOrderInfo = [];
 
 		var curTurnOrder:Array<TurnOrderInfo> = [];
 
 		for (unit in units)
 		{
 			for(i in 0...unit.data.turns){
-				curTurnOrder.push({unit: unit, speed: unit.data.turnSpeed[i] ?? (unit.speed.value / (i + 1))});
+				curTurnOrder.push({unit: unit, speed: unit.data.turnSpeed[i] ?? (unit.speed.value / (i + 1)), turn: i});
 			}
 		}
 
@@ -1020,9 +1075,21 @@ class PlayState extends FlxState
 
 		for(turn in curTurnOrder){
 			turnOrder.push(turn.unit);
+			turnOrderInfo.push(turn);
 		}
 
 		turnOrderDisplay.updateTurnOrderDisplay(turnOrder);
+
+		if(keepCurrentUnit && previousInfo != null){
+			for(i in 0...turnOrderInfo.length){
+				var turn = turnOrderInfo[i];
+
+				if(turn.unit == previousInfo.unit && turn.turn == previousInfo.turn){
+					turnNum = i;
+					updateTurn();
+				}
+			}
+		}
 	}
 
 	/**
@@ -1083,6 +1150,14 @@ class PlayState extends FlxState
 							applyingUnit.heal(Std.int(damage * effects.eff_hpleech));
 						}
 					}
+				}			
+			});
+		}
+		if(effects.eff_exactdamage > 0){
+			eventManager.addEvent(function():Void
+			{
+				if (unit != null){
+					unit.takeDamage(effects.eff_exactdamage);	
 				}			
 			});
 		}
@@ -1195,6 +1270,8 @@ class PlayState extends FlxState
 								&& space.position.x == unit.position.x); // all allies in the same column as the current unit
 						case "enemy_sameColumn": (unit.grid != grid
 								&& space.position.x == unit.position.x); // all enemies in the same commumn as the current unit
+						case "enemy_center": (unit.grid != grid && space.position.x == 1 && space.position.y == 1); // center enemy
+						case "ally_center": (unit.grid == grid && space.position.x == 1 && space.position.y == 1); // center enemy
 						case "ally_all": (unit.grid == grid); // all allies
 						case "enemy_all": (unit.grid != grid); // all enemies
 						default: (true); // by default, add all spaces
@@ -1548,6 +1625,8 @@ class PlayState extends FlxState
 		script.setValue({name: "goBackToOverworld", value: goBackToOverworld});
 		
 		script.setValue({name: "placeUnit", value: placeUnit});
+		script.setValue({name: "placeUnitChain", value: placeUnitChain});
+
 		script.setValue({name: "getUnitByTag", value: getUnitByTag});
 
 		script.setValue({name: "calculateTurnOrder", value: calculateTurnOrder});
@@ -1577,6 +1656,9 @@ class PlayState extends FlxState
 
 		script.setValue({name: "get_bgLine", value: get_bgLine});
 		script.setValue({name: "set_bgLine", value: set_bgLine});
+
+		script.setValue({name: "get_currentTurnUnit", value: get_currentTurnUnit});
+		script.setValue({name: "set_currentTurnUnit", value: set_currentTurnUnit});
 
 		scripts.push(script);
 		script.executeFunction("create");
@@ -1652,6 +1734,16 @@ class PlayState extends FlxState
 		bgLine = val;
 	}
 
+	// currentTurnUnit
+	
+	public function get_currentTurnUnit():Unit
+	{
+		return currentTurnUnit;
+	}
+
+	public function set_currentTurnUnit(val:Unit):Void{
+		currentTurnUnit = val;
+	}
 
 	function executeScriptFunction(name:String, args:Array<Any>):Void 
 	{
@@ -1761,22 +1853,26 @@ class PlayState extends FlxState
 			}
 			else
 			{
+				var placements:Array<UnitPlacementInfo> = [];
+
 				for (i in 0...placedUnits.length)
 				{
-					new FlxTimer().start(.2 * i, function(f):Void
-					{
-						var unitInfo = placedUnits[i];
-						placeUnit(unitInfo.unit, allyGrid, FlxPoint.get(unitInfo.x, unitInfo.y), true, Save.levelUnits.get(unitInfo.unit).getLevel(), true, true);
-					});
+					var unitInfo = placedUnits[i];
 
-					if (i == placedUnits.length - 1)
-					{ // done
-						new FlxTimer().start(1, function(f):Void
-						{
-							advanceRound(true);
-						});
-					}
+					placements.push({
+						unitID: unitInfo.unit, 
+						grid: allyGrid, 
+						position: FlxPoint.get(unitInfo.x, unitInfo.y),
+						controllable: true, 
+						level: Save.levelUnits.get(unitInfo.unit).getLevel(),
+						doAnim: true, 
+						placedByPlayer: true
+					});
 				}
+
+				placeUnitChain(placements, function():Void{
+					advanceRound(true);
+				});
 			}
 		});
 	}

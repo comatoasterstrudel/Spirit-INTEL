@@ -5,7 +5,80 @@ function CTSCRIPT_SETNAME():String
 
 var unit_manager:Unit;
 
+var hasTalked:Bool = false;
+var summonedOnce:Bool = false;
+var summonedTwice:Bool = false;
+
 function create(){
     unit_manager = getUnitByTag("managerboss");
-    unit_manager.hp.value -= (150 + FlxG.random.int(-5, 5)); // from the gunshot
+    unit_manager.hp.value -= (110 + FlxG.random.int(-5, 5)); // from the gunshot
+}
+
+function postAdvanceTurn():Void{
+    if(get_currentTurnUnit().uniqueUnitID == unit_manager.uniqueUnitID){
+        if(!hasTalked){ // if manager first turn
+            hasTalked = true;
+            PlayState.battleFrozen = true;
+            startDialogue(["factory/fireexitroom/dialogue_fight_0"], function():Void{
+                PlayState.battleFrozen = false;
+                advanceTurn(1);
+            });
+        } else if(!summonedOnce && (unit_manager.hp.value / unit_manager.hp.max) <= .66){ // manager 66% hp
+            summonedOnce = true;
+
+            PlayState.battleFrozen = true;
+
+            startDialogue(["factory/fireexitroom/dialogue_fight_1"], function():Void{
+                placeUnitChain([
+                    {
+                        unitID: "soap", 
+                        grid: enemyGrid, 
+                        position: FlxPoint.get(1, 0), 
+                        level: 2,
+                        controllable: false
+                    },
+                    {
+                        unitID: "soap", 
+                        grid: enemyGrid, 
+                        position: FlxPoint.get(2, 1), 
+                        level: 2,
+                        controllable: false
+                    }
+                ], function():Void{
+                    PlayState.battleFrozen = false;
+                    advanceTurn(0);
+                }, function(num:Int):Void{
+                    calculateTurnOrder(true);
+                });
+            });
+        } else if(!summonedTwice && (unit_manager.hp.value / unit_manager.hp.max) <= .33){ // manager 33% hp
+            summonedTwice = true;
+
+            PlayState.battleFrozen = true;
+
+            startDialogue(["factory/fireexitroom/dialogue_fight_2"], function():Void{
+                placeUnitChain([
+                    {
+                        unitID: "soap", 
+                        grid: enemyGrid, 
+                        position: FlxPoint.get(0, 1), 
+                        level: 2,
+                        controllable: false
+                    },
+                    {
+                        unitID: "soap", 
+                        grid: enemyGrid, 
+                        position: FlxPoint.get(1, 2), 
+                        level: 2,
+                        controllable: false
+                    }
+                ], function():Void{
+                    PlayState.battleFrozen = false;
+                    advanceTurn(0);
+                }, function(num:Int):Void{
+                    calculateTurnOrder(true);
+                });
+            });
+        } 
+    }
 }

@@ -100,6 +100,8 @@ class UnitAi
                             case "damage":                            
                                 var dmg = PlayState.calculateSkillDamage(skill, affectedUnit, unit);
 
+                                dmg += skill.effects.eff_exactdamage;
+
                                 if(affectedUnit.hp.value - dmg <= 0){
                                     points += 9999; // get the kill
                                 } else {

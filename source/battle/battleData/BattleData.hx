@@ -20,6 +20,8 @@ class BattleData extends CtJsonLoader
      
     public var unlockableUnits:Array<UnitUnlockInfo> = [];
 
+    public var loadBearingUnit:String = "";
+
     public function new(id:String){
         this.id = id;
         
@@ -66,6 +68,8 @@ class BattleData extends CtJsonLoader
                 };
             });
         }
+
+        this.loadBearingUnit = data.loadBearingUnit ?? "";
     }
 
     public static function isBoss(data:BattleData):Bool

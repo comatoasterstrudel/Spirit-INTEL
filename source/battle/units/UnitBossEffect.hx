@@ -3,6 +3,7 @@ package battle.units;
 class UnitBossEffect extends FlxSpriteGroup
 {
     public var unit:Unit;
+    var grp:FlxTypedGroup<UnitBossEffect>;
 
     var effectTimer:FlxTimer;
     var effectTween1:FlxTween;
@@ -10,10 +11,11 @@ class UnitBossEffect extends FlxSpriteGroup
 
     var ended:Bool = false;
 
-    public function new(unit:Unit):Void{
+    public function new(unit:Unit, grp:FlxTypedGroup<UnitBossEffect>):Void{
         super();
 
-        this.unit = unit;
+        this.unit = unit;   
+        this.grp = grp;
 
         doEffect();
     }
@@ -56,10 +58,12 @@ class UnitBossEffect extends FlxSpriteGroup
     override function destroy():Void{
         ended = true;
 
+        grp.remove(this, true);
+        
         var removethese = [];
 
         for(spr in members){
-            removethese.push(spr);
+            if(spr != null) removethese.push(spr);
         }
 
         for(spr in removethese){

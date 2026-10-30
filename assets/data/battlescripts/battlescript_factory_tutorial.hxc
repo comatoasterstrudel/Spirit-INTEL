@@ -51,7 +51,14 @@ function onAdvanceTurn():Void{
                 startDialogue(["factory/hallway/tutorial/dialogue_tut_0"], function():Void{
                     tutorialZoomer.goHere(220, 200, FlxG.width - 440, FlxG.height - 400, 1.5, function():Void{ // grids
                         startDialogue(["factory/hallway/tutorial/dialogue_tut_1"], function():Void{
-                            placeUnit("partyhat", allyGrid, FlxPoint.get(1, 1), true);
+                            placeUnit({
+                                unitID: "partyhat", 
+                                grid: allyGrid, 
+                                position: FlxPoint.get(1, 1), 
+                                level: 1,
+                                controllable: true
+                            });
+
                             calculateTurnOrder();
 
                             PlayState.preventBattleEnding = false;

@@ -1,0 +1,11 @@
+{
+    "name": "Gore",
+    "description": "Kill Enemy Units in the center of their Grid.",
+    "iconGraphic": "gore",
+    "selectType": "enemy_center",
+    "effects": {
+        "eff_exactdamage": 9999
+    },
+    "mpCost": 0,
+    "type": "damage"
+}

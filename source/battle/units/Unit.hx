@@ -45,7 +45,8 @@ class Unit extends CtSprite
 
 	// SIGNALS
 	public var onStatusChanged = new FlxTypedSignal<Array<StatusEffect>->Void>();
-
+	public var onDeath = new FlxSignal();
+	
 	public var tag:String = "";
 
 	public function new(unitID:String, grid:Grid, position:FlxPoint, controllable:Bool, level:Int, ?placedByPlayer:Bool = false, ?tag:String):Void
@@ -192,6 +193,7 @@ class Unit extends CtSprite
 		if (hp.value == 0)
 		{
 			dead = true;
+			onDeath.dispatch();
 		}
 		FlxFlicker.flicker(this, .5, 0.03, true, true, function(f):Void
 		{
