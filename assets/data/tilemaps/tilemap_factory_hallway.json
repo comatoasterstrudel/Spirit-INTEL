@@ -187,7 +187,7 @@
           "height": 32,
           "originX": 0,
           "originY": 0,
-          "values": {"doorName": "factoryhorizontalL", "room": "", "transitionTime": 0.5, "lockedDialogue": "factory/hallway/dialogue_weirdleftdoor", "horizontal": true, "scriptFunction": "", "tag": "", "facingDownwards": false}
+          "values": {"doorName": "factoryhorizontalL", "room": "", "transitionTime": 0.5, "lockedDialogue": "factory/hallway/dialogue_weirdleftdoor", "horizontal": true, "scriptFunction": "", "tag": "leftdoor", "facingDownwards": false}
         },
         {
           "name": "interactable",

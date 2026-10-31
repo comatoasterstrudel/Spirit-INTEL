@@ -67,6 +67,10 @@ function create():Void{
 		character_coworkerC.kill();
 		character_coworkerD.kill();
 	}
+
+	if(!Save.storyFlags.get("factory_scarymode").val_bool){
+		character_player.changeAnimationPrefix("party_");
+	}
 }
 
 function update(elapsed:Float):Void{
@@ -294,7 +298,7 @@ function doCutscene():Void{
 					});
 				} else if (event == "tunedownmusic")
 				{
-					FlxG.sound.music.pitch = .9;
+					FlxTween.tween(FlxG.sound.music, {pitch: .9}, .5);
 				}
 			});
 
