@@ -6,7 +6,7 @@
     "stat_maxHp": 385,
     "stat_maxMp": 500,
     "stat_speed": 11,
-    "stat_attack": 90,
+    "stat_attack": 80,
     "stat_sattack": 120,
     "skills": ["gore", "slash", "shock", "whip"],
     "unlockedByDefault": false,

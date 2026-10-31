@@ -35,6 +35,9 @@ class VictoryScreen extends FlxSubState
 
     var expUiEnabled:Bool = true;
     
+    var levelUpSound:FlxSound;
+    var levelUps:Int = 0;
+
     public function new (unitsToAdd:Array<String>, expReward:Int, onComplete:Void->Void){
         super();
 
@@ -177,7 +180,11 @@ class VictoryScreen extends FlxSubState
         var floatingText = new VictoryScreenFloatingText(text, color, baseSprite);
         floatingText.camera = victoryCam;
         add(floatingText);
-        CtSound.play(Constants.sfx_levelup).pitch = FlxG.random.float(.8, 1.3);
+
+        if(levelUpSound != null) levelUpSound.stop();
+        levelUpSound = CtSound.play(Constants.sfx_levelup);
+        levelUpSound.pitch = .8 + (levelUps > 0 ? levelUps / 10 : 0);
+        levelUps ++;
     }
 
     function setupMenuManager():Void{
