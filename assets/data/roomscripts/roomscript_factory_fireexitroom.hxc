@@ -29,6 +29,7 @@ var spr_behindProps:FlxSpriteGroup;
 var props:FlxTypedSpriteGroup<FlxSprite>;
 
 var fullart_bg:CtSprite;
+var fullart_bgreal:CtSprite;
 var fullart_robin:CtSprite;
 var fullart_manager:CtSprite;
 var fullart_fade:CtSprite;
@@ -519,6 +520,7 @@ function doPostManagerBossScene():Void{
         camOverlay.scroll.y = -300;
 		FlxTween.tween(fullart_fade, {alpha: 1}, 2, {onComplete: function(f):Void{
 			fullart_bg.visible = true;
+            fullart_bgreal.visible = true;
             fullart_robin.visible = true;
 			fullart_manager.visible = true;
 
@@ -542,6 +544,7 @@ function doPostManagerBossScene():Void{
 			fullart_bg.visible = false;
             fullart_robin.visible = false;
 			fullart_manager.visible = false;
+            fullart_bgreal.visible = false;
 
             FlxTween.tween(fullart_fade, {alpha: 0}, 2, {onComplete: function(f):Void{
                 OverworldState.eventManager.finishTransaction("full art");
@@ -592,6 +595,14 @@ function setUpFullArt():Void
 	fullart_bg.visible = false;
     fullart_bg.scrollFactor.set(0,0);
 	add(fullart_bg);
+
+    fullart_bgreal = new CtSprite().createFromImage(Constants.overworldCutsceneGraphicPath + "managercorpse_bg.png");
+	fullart_bgreal.screenCenter();
+	fullart_bgreal.camera = camOverlay;
+	fullart_bgreal.visible = false;
+	fullart_bgreal.antialiasing = false;
+    fullart_bgreal.scrollFactor.set(.5,.5);
+	add(fullart_bgreal);
 
 	fullart_robin = new CtSprite().createFromImage(Constants.overworldCutsceneGraphicPath + "managercorpse_robin.png");
 	fullart_robin.screenCenter();
