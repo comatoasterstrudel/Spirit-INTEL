@@ -30,4 +30,10 @@ class Stat
         if(min != -55 && value < min) value = min;
         if(max != -55 && value > max) value = max;
     }
+
+    public function getPercent():Float
+    {
+        if(max == -55) return 0;
+        return value / max;
+    }
 }

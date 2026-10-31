@@ -11,7 +11,7 @@ var summonedTwice:Bool = false;
 
 function create(){
     unit_manager = getUnitByTag("managerboss");
-    unit_manager.hp.value -= (110 + FlxG.random.int(-5, 5)); // from the gunshot
+    unit_manager.hp.value -= (80 + FlxG.random.int(-5, 5)); // from the gunshot
 }
 
 function postAdvanceTurn():Void{
@@ -23,7 +23,7 @@ function postAdvanceTurn():Void{
                 PlayState.battleFrozen = false;
                 advanceTurn(1);
             });
-        } else if(!summonedOnce && (unit_manager.hp.value / unit_manager.hp.max) <= .66){ // manager 66% hp
+        } else if(!summonedOnce && unit_manager.hp.getPercent() <= .66){ // manager 66% hp
             summonedOnce = true;
 
             PlayState.battleFrozen = true;
@@ -34,14 +34,14 @@ function postAdvanceTurn():Void{
                         unitID: "soap", 
                         grid: enemyGrid, 
                         position: FlxPoint.get(1, 0), 
-                        level: 2,
+                        level: 1,
                         controllable: false
                     },
                     {
                         unitID: "soap", 
                         grid: enemyGrid, 
                         position: FlxPoint.get(2, 1), 
-                        level: 2,
+                        level: 1,
                         controllable: false
                     }
                 ], function():Void{
@@ -51,7 +51,7 @@ function postAdvanceTurn():Void{
                     calculateTurnOrder(true);
                 });
             });
-        } else if(!summonedTwice && (unit_manager.hp.value / unit_manager.hp.max) <= .33){ // manager 33% hp
+        } else if(!summonedTwice && unit_manager.hp.getPercent() <= .20){ // manager 33% hp
             summonedTwice = true;
 
             PlayState.battleFrozen = true;

@@ -23,7 +23,7 @@ class MainMenuState extends FlxState
 
 		addTexts(Constants.mainMenuIntroTime);
 
-		logo = new CtSprite(30, 40).createFromImage(Constants.mainMenuLogoPath);
+		logo = new CtSprite(30, 40).createFromImage(Constants.mainMenuLogoPath, .7);
 		logo.antialiasing = false;
 		add(logo);
 		doIntroAnim();

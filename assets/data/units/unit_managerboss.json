@@ -3,7 +3,7 @@
     "gridGraphic": "managerboss",
     "uiGraphicAlly": "manager",
     "uiGraphicEnemy": "manager",    
-    "stat_maxHp": 425,
+    "stat_maxHp": 370,
     "stat_maxMp": 500,
     "stat_speed": 11,
     "stat_attack": 90,

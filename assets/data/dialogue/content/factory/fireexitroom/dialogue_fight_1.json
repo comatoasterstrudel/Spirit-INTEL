@@ -1,0 +1,26 @@
+[
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Hgh..",
+		"choicerOptions": [],
+		"portrait": "sit_closed",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "managerscary",
+		"autoSkip": false
+	},
+	{
+		"dialogue": " ACK..!?",
+		"events": [],
+		"continueLine": true,
+		"portrait": "sit_open",
+		"diaPitch": 1,
+		"actor": "managerscary",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
+	}
+]

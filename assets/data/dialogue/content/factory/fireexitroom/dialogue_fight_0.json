@@ -1,0 +1,38 @@
+[
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "GH-",
+		"choicerOptions": [],
+		"portrait": "sit_closed",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "managerscary",
+		"autoSkip": false
+	},
+	{
+		"dialogue": " GRK-!",
+		"events": [],
+		"continueLine": true,
+		"portrait": "sit_closed",
+		"diaPitch": 1,
+		"actor": "managerscary",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
+	},
+	{
+		"dialogue": "Hgh..",
+		"events": [],
+		"continueLine": false,
+		"portrait": "sit_closed",
+		"diaPitch": 1,
+		"actor": "managerscary",
+		"choicerOptions": [],
+		"voiceLine": "",
+		"autoSkip": false,
+		"speed": 0.03
+	}
+]

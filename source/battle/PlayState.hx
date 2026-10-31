@@ -544,8 +544,7 @@ class PlayState extends FlxState
 		}
 
 		turnOrder.remove(unit);
-		turnOrderDisplay.updateTurnOrderDisplay(turnOrder);
-
+		
 		for (grid in grids)
 		{
 			for (space in grid.spaces)
@@ -567,9 +566,12 @@ class PlayState extends FlxState
 			}
 		}
 
+		if(unit.controllable) allyUnitGroup.remove(unit, true); else enemyUnitGroup.remove(unit, true);
 		units.remove(unit);
 		unit.destroy();
 		unit = null;
+
+		calculateTurnOrder(true);
 	}
 	
 	function getUnitByTag(tag:String):Unit
@@ -1084,9 +1086,10 @@ class PlayState extends FlxState
 			for(i in 0...turnOrderInfo.length){
 				var turn = turnOrderInfo[i];
 
-				if(turn.unit == previousInfo.unit && turn.turn == previousInfo.turn){
+				if(turn.unit.uniqueUnitID == previousInfo.unit.uniqueUnitID && turn.turn == previousInfo.turn){
 					turnNum = i;
 					updateTurn();
+					break;
 				}
 			}
 		}
