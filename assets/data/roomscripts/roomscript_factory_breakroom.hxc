@@ -311,6 +311,10 @@ function doCutscene():Void{
 	{
 		OverworldState.eventManager.startTransaction("walkaway");
 
+		moveCameraBackToPlayer(6, null, function():Void{
+			set_lockCamera(false);
+		});
+
 		character_laurin.movementSpeed = .5;
 		character_laurin.moveToGridSpace(15, 6, function():Void
 		{
@@ -349,19 +353,12 @@ function doCutscene():Void{
 	// end
 	OverworldState.eventManager.addEvent(function()
 	{
-		OverworldState.eventManager.startTransaction("end");
-
-		moveCameraBackToPlayer(1, null, function():Void{
-			inTheCutscene = false;
-			startParty();
-			character_player.lockMovement = false;
-			set_inCutscene(false);
-			set_lockCamera(false);
-			character_player.facing = DOWN;
-			character_player.movementSpeed = 1;
-
-			OverworldState.eventManager.finishTransaction("end");
-		});		
+		inTheCutscene = false;
+		startParty();
+		character_player.lockMovement = false;
+		set_inCutscene(false);
+		character_player.facing = DOWN;
+		character_player.movementSpeed = 1;
 	});
 }
 
