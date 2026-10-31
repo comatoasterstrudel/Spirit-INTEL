@@ -1,9 +1,9 @@
 {
     "name": "Manager",
-    "gridGraphic": "managerboss",
+    "gridGraphic": "manager",
     "uiGraphicAlly": "manager",
     "uiGraphicEnemy": "manager",    
-    "stat_maxHp": 370,
+    "stat_maxHp": 350,
     "stat_maxMp": 500,
     "stat_speed": 11,
     "stat_attack": 90,
