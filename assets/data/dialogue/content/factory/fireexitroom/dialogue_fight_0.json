@@ -3,7 +3,7 @@
 		"speed": 0.03,
 		"diaPitch": 1,
 		"events": [],
-		"dialogue": "GH-",
+		"dialogue": "[[SHAKE]]AGH-[[ENDSHAKE]]",
 		"choicerOptions": [],
 		"portrait": "sit_closed",
 		"continueLine": false,
@@ -12,27 +12,27 @@
 		"autoSkip": false
 	},
 	{
-		"dialogue": " GRK-!",
-		"events": [],
-		"continueLine": true,
-		"portrait": "sit_closed",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "managerscary",
+		"events": [],
+		"dialogue": " [[SHAKE]]GRK-![[ENDSHAKE]]",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "sit_closed",
+		"continueLine": true,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "managerscary",
+		"autoSkip": false
 	},
 	{
-		"dialogue": "Hgh..",
-		"events": [],
-		"continueLine": false,
-		"portrait": "sit_closed",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "managerscary",
+		"events": [],
+		"dialogue": "[[SHAKE]]Hgh..[[ENDSHAKE]]",
 		"choicerOptions": [],
+		"portrait": "sit_closed",
+		"continueLine": false,
 		"voiceLine": "",
-		"autoSkip": false,
-		"speed": 0.03
+		"actor": "managerscary",
+		"autoSkip": false
 	}
 ]

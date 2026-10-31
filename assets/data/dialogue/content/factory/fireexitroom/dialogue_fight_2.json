@@ -3,7 +3,7 @@
 		"speed": 0.03,
 		"diaPitch": 1,
 		"events": [],
-		"dialogue": "Hgh...",
+		"dialogue": "[[SHAKE]]Hgh...[[ENDSHAKE]]",
 		"choicerOptions": [],
 		"portrait": "sit_closed",
 		"continueLine": false,
@@ -12,27 +12,27 @@
 		"autoSkip": false
 	},
 	{
-		"dialogue": " Hgh...",
-		"events": [],
-		"continueLine": true,
-		"portrait": "sit_closed",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "managerscary",
+		"events": [],
+		"dialogue": " [[SHAKE]]Hgh...[[ENDSHAKE]]",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "sit_closed",
+		"continueLine": true,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "managerscary",
+		"autoSkip": false
 	},
 	{
-		"dialogue": " AGH..!?",
-		"events": [],
-		"continueLine": true,
-		"portrait": "sit_closed",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "managerscary",
+		"events": [],
+		"dialogue": " [[SHAKE]]AGH..!?[[ENDSHAKE]]",
 		"choicerOptions": [],
+		"portrait": "sit_closed",
+		"continueLine": true,
 		"voiceLine": "",
-		"autoSkip": false,
-		"speed": 0.03
+		"actor": "managerscary",
+		"autoSkip": false
 	}
 ]
