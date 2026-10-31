@@ -150,7 +150,7 @@ class MainMenuState extends FlxState
 
 	function addOption(text:String, onClick:Void->Void):CtText
 	{
-		var text = new CtText(110, Constants.mainMenuStartingY + (60 * texts.members.length), text, Constants.fontName, 50);
+		var text = new CtText(140, Constants.mainMenuStartingY + (60 * texts.members.length), text, Constants.fontName, 50);
 		text.antialiasing = false;
 		texts.add(text);
 
