@@ -3,7 +3,7 @@
 		"speed": 0.03,
 		"diaPitch": 1,
 		"events": [],
-		"dialogue": "The world's gonna end, Robin.",
+		"dialogue": "Yes, it's possible the world could end,",
 		"choicerOptions": [],
 		"portrait": "neutral",
 		"continueLine": false,
@@ -12,27 +12,27 @@
 		"autoSkip": false
 	},
 	{
-		"dialogue": "At least, it will if we don't have your help.",
-		"events": [],
-		"continueLine": false,
-		"portrait": "neutral",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "laurin",
+		"events": [],
+		"dialogue": "Or, it will if we don't have your help.",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "neutral",
+		"continueLine": false,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "laurin",
+		"autoSkip": false
 	},
 	{
-		"dialogue": "...",
-		"events": [],
-		"continueLine": false,
-		"portrait": "neutral",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "robin",
+		"events": [],
+		"dialogue": "...",
 		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
 		"voiceLine": "",
-		"autoSkip": false,
-		"speed": 0.03
+		"actor": "robin",
+		"autoSkip": false
 	}
 ]
