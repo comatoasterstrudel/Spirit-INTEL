@@ -36,6 +36,7 @@ import battle.units.*;
 import battle.units.Unit;
 import battle.victoryscreen.*;
 import battle.victoryscreen.VictoryScreenStages;
+import cataclysm.Cataclysm;
 import cpp.vm.Gc;
 import ctDialogueBox.ctdb.CtDialogueBox;
 import ctDialogueBox.textbox.Text;

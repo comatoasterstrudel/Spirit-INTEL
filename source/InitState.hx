@@ -28,6 +28,8 @@ class InitState extends FlxState{
 
 		setupMemoryCleanup();
 
+		initCataclysm();
+
 		#if debug
 		#if forceCutscene
 		init_forceCutscene = Compiler.getDefine("forceCutscene").split('=')[0];
@@ -230,5 +232,9 @@ class InitState extends FlxState{
 			Assets.cache.clear();
 			Gc.run(true);
 		});
+	}
+	function initCataclysm():Void{
+		var crash_handler:Cataclysm = new Cataclysm();
+		crash_handler.setup("crash", "Spirit-INTEL");
 	}
 }

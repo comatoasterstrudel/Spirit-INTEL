@@ -138,6 +138,14 @@ class MainMenuState extends FlxState
 			
 			openSubState(saveloadmenu);
 		});
+
+		#if addCrashOption
+		addOption("DEBUG: Crash", function():Void // testing cataclysm LOL
+		{
+			var funny:CtSprite = null;
+			trace(funny.x);
+		});
+		#end
 		#end
 
 		menuManager.setMenuOptions(menuOptions);

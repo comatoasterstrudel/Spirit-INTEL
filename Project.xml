@@ -33,6 +33,7 @@
 	<haxelib name="haxeui-core" if="ctDialogueEditor"/>
 	<haxelib name="haxeui-flixel" if="ctDialogueEditor"/>
 	<haxelib name="discord_rpc"/> 
+	<haxelib name="cataclysm"/> 
 
 	<haxedef name="FLX_NO_HEALTH" />
 	<haxedef unless="ctDialogueEditor " name="FLX_NO_MOUSE"/>
