@@ -12,7 +12,7 @@ class Grid extends FlxTypedGroup<GridSpace>
     
 	public var spaces:Array<GridSpace> = [];
     
-    var units:Array<Unit> = [];
+    public var units:Array<Unit> = [];
     
     public function new(size:FlxPoint, position:FlxPoint){
         super();
@@ -40,6 +40,13 @@ class Grid extends FlxTypedGroup<GridSpace>
         
         updateUnits();
 		unit.lerpManager.snap();
+    }
+
+    public function removeUnit(unit:Unit):Void{
+        if(!units.contains(unit)) return;
+
+        units.remove(unit);
+        updateUnits();
     }
     
     function updateUnits():Void{

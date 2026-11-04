@@ -528,23 +528,48 @@ class PlayState extends FlxState
 		statusEffectBars.removeBarByUnit(unit);
 		miniHealthBars.removeBarByUnit(unit);
 
-		var changedTurn:Bool = false;
-		
+		traceTurnOrder();
+
+		var offset:Int = 0;
+
 		for (i in 0...turnOrder.length)
 		{
-			if (turnOrder[i] == unit && !changedTurn)
+			if (turnOrder[i] == unit)
 			{
 				if (i <= turnNum)
 				{
-					turnNum--;
+					offset--;
 				}
-				changedTurn = true;
-				break;
+			}
+		}
+	
+		var unitsToRemove:Array<Unit> = [];
+
+		for(unitss in turnOrder){
+			if(unitss.uniqueUnitID == unit.uniqueUnitID) unitsToRemove.push(unitss);
+		}
+		
+		for(newUnit in unitsToRemove){
+			turnOrder.remove(newUnit);
+		}
+		
+		var unitsToRemove2:Array<TurnOrderInfo> = [];
+
+		for(info in turnOrderInfo){
+			if(info.unit.uniqueUnitID == unit.uniqueUnitID){
+				unitsToRemove2.push(info);
 			}
 		}
 
-		turnOrder.remove(unit);
+		for(newInfo in unitsToRemove2){
+			turnOrderInfo.remove(newInfo);
+		}
 		
+		turnNum += offset;
+		turnOrderDisplay.updateTurnOrderDisplay(turnOrder);
+		
+		traceTurnOrder();
+
 		for (grid in grids)
 		{
 			for (space in grid.spaces)
@@ -566,12 +591,11 @@ class PlayState extends FlxState
 			}
 		}
 
+		unit.grid.removeUnit(unit);
 		if(unit.controllable) allyUnitGroup.remove(unit, true); else enemyUnitGroup.remove(unit, true);
 		units.remove(unit);
 		unit.destroy();
 		unit = null;
-
-		calculateTurnOrder(true);
 	}
 	
 	function getUnitByTag(tag:String):Unit
@@ -1929,6 +1953,16 @@ class PlayState extends FlxState
 				}
 			}
 		});
+	}
+
+	function traceTurnOrder():Void{
+		#if traceTurnOrder
+		trace("TURN ORDER:");
+		for(turn in turnOrder){
+			trace(turn.data.name);
+		}
+		trace("CUR: " + turnNum);
+		#end
 	}
 
 	#if debug
