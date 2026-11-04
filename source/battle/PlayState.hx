@@ -532,13 +532,14 @@ class PlayState extends FlxState
 		
 		for (i in 0...turnOrder.length)
 		{
-			if (turnOrder[i].uniqueUnitID == unit.uniqueUnitID && !changedTurn)
+			if (turnOrder[i] == unit && !changedTurn)
 			{
 				if (i <= turnNum)
 				{
 					turnNum--;
 				}
 				changedTurn = true;
+				break;
 			}
 		}
 
