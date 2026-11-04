@@ -1422,16 +1422,27 @@ class PlayState extends FlxState
 				{
 					if (uiStatus == GRID_SKILL)
 					{
-						uiStatus = INACTIVE;
-						cameraTrackerType = CENTERED;
+						var skill = currentTurnUnit.skills[menuManagerPlayerUI.curSelected - (disableInspectButton ? 0 : 1)];
 
-						removeGridSelector();
+						var affectedSpaces = getAffectedSpacesForSkill(skill, currentTurnUnit,space.grid, space.position);
 
-						useSkill(currentTurnUnit.skills[menuManagerPlayerUI.curSelected - (disableInspectButton ? 0 : 1)], currentTurnUnit, space.grid,
-							FlxPoint.get(space.position.x, space.position.y), function():Void
-						{
-							endPlayerTurn();
-						});
+						var affectedUnits:Int = 0;
+
+						for(space in affectedSpaces){
+							if(space.unit != null) affectedUnits ++;
+						}
+
+						if(affectedUnits > 0 || skill.allowEmptySpaces){
+							uiStatus = INACTIVE;
+							cameraTrackerType = CENTERED;
+
+							removeGridSelector();
+
+							useSkill(skill, currentTurnUnit, space.grid, space.position, function():Void
+							{
+								endPlayerTurn();
+							});
+						}
 					} else if(uiStatus == GRID_INSPECT || uiStatus == GRID_PLACER_INSPECT){
 						if(space.unit != null){
 							menuManagerGridSelector.disable();

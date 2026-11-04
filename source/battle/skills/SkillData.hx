@@ -35,6 +35,8 @@ class SkillData extends CtJsonLoader
 		"spiritual"
 	];
 
+	public var allowEmptySpaces:Bool;
+
     public function new(id:String){
         this.id = id;
                 
@@ -64,6 +66,8 @@ class SkillData extends CtJsonLoader
 		effects = mapSkillEffects(data);
 
 		this.mpCost = data.mpCost == null ? 0 : data.mpCost;
+
+		this.allowEmptySpaces = data.allowEmptySpaces == null ? false : data.allowEmptySpaces;
 	}
 
 	public static function mapSkillEffects(data:Dynamic):SkillEffects
