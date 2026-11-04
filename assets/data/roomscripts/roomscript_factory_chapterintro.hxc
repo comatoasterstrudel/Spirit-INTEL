@@ -40,16 +40,19 @@ function create():Void{
 	spr_6 = new CtSprite().createFromImage(Constants.chapterIntroGraphicPath + "prologue_6.png");
 	spr_6.antialiasing = false;
 	spr_6.camera = camOverlay;
+	spr_6.scrollFactor.set(0, 0);
 	add(spr_6);
 	
 	spr_5 = new CtSprite().createFromImage(Constants.chapterIntroGraphicPath + "prologue_5.png");
 	spr_5.antialiasing = false;
 	spr_5.camera = camOverlay;
+	spr_5.scrollFactor.set(.8, .8);
 	add(spr_5);
 
 	spr_4 = new CtSprite().createFromImage(Constants.chapterIntroGraphicPath + "prologue_4.png");
 	spr_4.antialiasing = false;
 	spr_4.camera = camOverlay;
+	spr_4.scrollFactor.set(.9, .9);
 	add(spr_4);
 
 	spr_3 = new CtSprite().createFromImage(Constants.chapterIntroGraphicPath + "prologue_3.png");
@@ -65,13 +68,14 @@ function create():Void{
 	spr_1 = new CtSprite().createFromImage(Constants.chapterIntroGraphicPath + "prologue_1.png");
 	spr_1.antialiasing = false;
 	spr_1.camera = camOverlay;
+	spr_1.scrollFactor.set(1.2, 1.2);
 	add(spr_1);
 
 	for(spr in [spr_1, spr_2, spr_3, spr_4, spr_5, spr_6]){
 		spr.y = FlxG.height - spr.height;
 	}
 
-	camOverlay.scroll.y = spr_1.y;
+	camOverlay.scroll.y = spr_1.y - 300;
 
 	// ui
 
@@ -88,7 +92,8 @@ function create():Void{
 
 	// black
 	black = new CtSprite().createColorBlock(FlxG.width, FlxG.height, 0xFF000000);
-	black.camera = camUI;
+	black.camera = camOverlay;
+	black.scrollFactor.set(0,0);
 	add(black);
 
 	CtSound.play(Constants.sfxPath + "getofftrain.ogg");
@@ -96,6 +101,8 @@ function create():Void{
 	new FlxTimer().start(9, function(f):Void{
 		doMusicScene();
 	});
+
+	camUI.alpha = 0;
 }
 
 function update(elapsed:Float):Void{
@@ -107,10 +114,14 @@ function update(elapsed:Float):Void{
 function doMusicScene():Void{
 	FlxTween.tween(black, {alpha: 0}, 6);
 
-	FlxTween.tween(camOverlay.scroll, {y: -100}, 10);
+	FlxTween.tween(camOverlay.scroll, {y: -100}, 11.5, {ease: FlxEase.smoothStepOut});
 
 	conductor = new CtConductor(175, CtSound.play(Constants.musicPath + "chapterintro_0.ogg"));
 	conductor.start();
+
+	new FlxTimer().start(4.5, function(f):Void{
+		FlxTween.tween(camUI, {alpha: 1}, .5);
+	});
 
 	conductor.onBeat.add(function(beat:Int):Void{
 		if(beat >= startingBeat && beat < endingBeat){
