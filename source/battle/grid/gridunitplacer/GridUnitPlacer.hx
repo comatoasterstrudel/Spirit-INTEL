@@ -54,6 +54,18 @@ class GridUnitPlacer extends FlxSpriteGroup
 
     var doneSoundThisFrame:Bool = false;
 
+    // mini
+    var miniMenuManager:CtMenuManager;
+    var miniCursor:Cursor;
+    var miniMenuBg:CtSprite;
+    var miniMenuTexts:Array<CtText> = [];
+
+    var miniMenuTarget:GridUnitPlacerUnitIcon;
+    var miniMenuActive:Bool = false;
+
+    var infoPanelBg:CtSprite;
+    var infoPanel:PlayerMenuPageUnitStatus;
+
     public function new(allyGrid:Grid, enemyGrid:Grid):Void{
         super();
         
@@ -114,16 +126,22 @@ class GridUnitPlacer extends FlxSpriteGroup
         recalculateSP(true);
 
         initSelectingMenu();
+        initMiniMenu();
         initPlacingMenu();
+
+        initInfoPanel();
     }
     
     override function update(elapsed:Float):Void{
         super.update(elapsed);
         
         selectingMenuManager.update();
+        miniMenuManager.update();
         placingMenuManager.update();
 
         doneSoundThisFrame = false;
+
+        updateMiniMenu();
     }
     
     function addUnitIcons():Void{
@@ -170,11 +188,7 @@ class GridUnitPlacer extends FlxSpriteGroup
 
 		for (buttonName in ["finish", "inspect", "reuse"])
 		{
-			var button = new CtSprite().createFromImage((buttonName == "reuse" && !reuseEnabled) ? Constants.gridUnitPlacerButtonPath
-				+ buttonName
-				+ "_locked.png" : Constants.gridUnitPlacerButtonPath
-				+ buttonName
-				+ ".png");
+			var button = new CtSprite().createFromImage((buttonName == "reuse" && !reuseEnabled) ? Constants.gridUnitPlacerButtonPath + buttonName + "_locked.png" : Constants.gridUnitPlacerButtonPath + buttonName + ".png");
 
 			button.y = 20;
 			button.alpha = 0;
@@ -264,14 +278,10 @@ class GridUnitPlacer extends FlxSpriteGroup
 					selectingMenuManager.changeSelection();
                     recalculateSP();
                 } else {
-                    if(spValue - Registry.get(UnitData, i.unit).spCost < 0){
-                        spBar.doAngry();
-                        bottom.updateWithText("(NOT ENOUGH SP!)", "", Constants.color_spLoss);
-                        FlxTween.shake(i.bg, 0.05, .1, X);
-                    } else {
-                        selectingCursor.visible = false;
-                        startPlacing(i.unit);
-                    }
+                    selectingMenuManager.disable();
+                    new FlxTimer().start(0.0001, function(f):Void{
+                        addMiniMenu(i);
+                    });
                 }
             }});
         }
@@ -282,6 +292,111 @@ class GridUnitPlacer extends FlxSpriteGroup
     function updateUnitIconPositions():Void{
         for(icon in unitIconArray){
             icon.bg.lerpManager.targetPosition.y = icon.baseY - ((Constants.gridUnitPlacerUnitIconSize + Constants.gridUnitPlacerUnitIconSpacing) * ((FlxMath.bound(selectingMenuManager.curRack, 1) - 1)));
+        }
+    }
+
+    function initMiniMenu():Void{
+        miniMenuBg = new CtSprite().createFromImage(Constants.gridUnitPlacerUnitBg);
+        miniMenuBg.color = FlxColor.BLACK;
+        add(miniMenuBg);
+
+        miniMenuManager = new CtMenuManager();
+            
+        miniCursor = new Cursor(Constants.cursorArrowGraphic);
+        add(miniCursor);
+        
+        miniMenuManager.addCursor(miniCursor, 20, false, true);
+
+        var options:Array<Array<CtMenuOption>> = [];
+
+        var buttons = ["Place", "Info"];
+
+        for(i in 0...buttons.length){
+            var text = new CtText(0,0,buttons[i],Constants.fontName, 30);
+            text.ID = i;
+            add(text);
+            miniMenuTexts.push(text);
+            
+            options.push([{sprite: text, 
+                cursorDirection: LEFT,
+                clickFunction: function(f):Void{
+                    switch(buttons[i]){
+                        case "Place":
+                            if(spValue - Registry.get(UnitData, miniMenuTarget.unit).spCost < 0){
+                                spBar.doAngry();
+                                bottom.updateWithText("(NOT ENOUGH SP!)", "", Constants.color_spLoss);
+                                FlxTween.shake(miniMenuTarget.bg, 0.05, .1, X);
+                                removeMiniMenu(true);
+                            } else {
+                                selectingCursor.visible = false;
+                                startPlacing(miniMenuTarget.unit);
+                                removeMiniMenu();
+                            }
+                        case "Info":
+                            if(miniMenuTarget != null) {
+                                removeMiniMenu();
+                                openInfoPanel(miniMenuTarget.unit);
+                            }
+                    }
+                },
+                cancelFunction: function(f):Void{
+                    removeMiniMenu(true);
+                },
+                hoverFunction: function(f):Void{
+                    text.alpha = 1;
+                }, 
+                nonHoverFunction: function(f):Void{
+                    text.alpha = .4;
+                }
+            }]);
+        }
+
+        miniMenuManager.setMenuOptions(options);
+
+        removeMiniMenu();
+    }
+
+    function addMiniMenu(unitIcon:GridUnitPlacerUnitIcon):Void{
+        miniMenuActive = true;
+        miniMenuTarget = unitIcon;
+        miniMenuManager.enable(true);
+        updateMiniMenu();
+    }
+
+    function removeMiniMenu(?addSelecting:Bool = false):Void{
+        miniMenuActive = false;
+        miniMenuManager.disable();
+
+        if(addSelecting) selectingMenuManager.enable(false);
+        updateMiniMenu();
+    }
+
+    function updateMiniMenu():Void{
+        if(miniMenuActive && miniMenuTarget != null){
+            miniMenuBg.setPosition(miniMenuTarget.bg.x, miniMenuTarget.bg.y);
+
+            for(i in miniMenuTexts){
+                CtUtil.centerSpriteOnSprite(i, miniMenuTarget.bg, true, false);
+                i.y = miniMenuTarget.bg.y + 5 + (30 * i.ID);
+            }
+        }
+        
+        if(status == PLACING){
+            miniMenuBg.revive();
+            for(i in miniMenuTexts){
+                i.revive();
+                i.alpha = .4;
+            }
+        } else if(miniMenuActive){
+            miniMenuBg.revive();
+            for(i in miniMenuTexts){
+                i.revive();
+            }
+        } else {
+            miniMenuBg.kill();
+            for(i in miniMenuTexts){
+                i.kill();
+            }
         }
     }
 
@@ -330,7 +445,7 @@ class GridUnitPlacer extends FlxSpriteGroup
             }, nonHoverFunction: function(f):Void{
                 space.toggleFlashSprite(false);
             }, cancelFunction: function(f):Void{
-                endPlacing();
+                endPlacing(true);
             }, clickFunction: function(f):Void{
                 if(canPlaceOnSpace(space)){
                     placeUnit(space, currentPlacingUnit);
@@ -386,15 +501,23 @@ class GridUnitPlacer extends FlxSpriteGroup
         });
     }
     
-    function endPlacing():Void{
+    function endPlacing(?addMini:Bool = false):Void{
         status = SELECTING;
         showGridSpaces();
         placingUnitCursor.visible = false;
         selectingCursor.visible = true;
         placingMenuManager.disable();
         
+        if(addMini){
+            miniMenuActive = true;
+        }
+
         new FlxTimer().start(0.0001, function(f):Void{
-            selectingMenuManager.enable();            
+            if(addMini){
+                addMiniMenu(miniMenuTarget); 
+            } else {
+                selectingMenuManager.enable();  
+            }          
         });
     }
     
@@ -566,5 +689,38 @@ class GridUnitPlacer extends FlxSpriteGroup
         spValue = temp;
 
         spBar.updateSp(spValue, spMax, snapBar);
+    }
+
+    function initInfoPanel():Void{
+        infoPanelBg = new CtSprite().createColorBlock(FlxG.width, FlxG.height, FlxColor.WHITE);
+        infoPanelBg.alpha = .6;
+        infoPanelBg.scrollFactor.set(0,0);
+        infoPanelBg.visible = false;
+        infoPanelBg.camera = cursorCamera;
+        add(infoPanelBg);
+
+        infoPanel = new PlayerMenuPageUnitStatus(null);
+        infoPanel.openPage(Std.int(uiBg.x + uiBg.width / 2 - infoPanel.bg.bgCenter.width / 2));
+        infoPanel.removeActivePage();
+        infoPanel.camera = cursorCamera;
+        infoPanel.kill();
+        add(infoPanel);
+
+        infoPanel.exitSignal.add(function():Void{
+            infoPanelBg.visible = false;
+            infoPanel.kill();
+            infoPanel.removeActivePage();
+            new FlxTimer().start(0.0001, function(f):Void{
+                addMiniMenu(miniMenuTarget);
+            });
+        });
+    }
+
+    function openInfoPanel(unit:String):Void{
+        infoPanel.revive();
+        infoPanel.setUnit(unit);
+        infoPanel.setActivePage();
+
+        infoPanelBg.visible = true;
     }
 }

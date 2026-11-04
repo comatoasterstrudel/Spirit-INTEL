@@ -7,7 +7,7 @@ class PlayerMenuPageUnitStatus extends PlayerMenuPage
     var nameText:CtText;
     var lvlText:CtText;
     
-    var unitSprite:CtSprite;
+    var unitSprite:CtSprite; 
 
     var hpBar:UnitSelectorBar;
     var mpBar:UnitSelectorBar;
@@ -23,6 +23,8 @@ class PlayerMenuPageUnitStatus extends PlayerMenuPage
 	
     var cursor:Cursor;
     var menuManager:CtMenuManager;
+
+    public var exitSignal = new FlxSignal();
 
     public function new(playerMenu:PlayerMenu):Void{
         super(playerMenu, "unitstatus");
@@ -103,7 +105,8 @@ class PlayerMenuPageUnitStatus extends PlayerMenuPage
 
         if(CtControls.checkInput("cancel", JUSTPRESSED)){
             CtMenuManager.playUISound(Constants.sfx_ui_back);
-            playerMenu.removePage("unitstatus");
+            if(playerMenu != null) playerMenu.removePage("unitstatus");
+            exitSignal.dispatch();
         }
     }
 
