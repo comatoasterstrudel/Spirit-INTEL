@@ -32,7 +32,7 @@ class StatusEffectInfoBox extends FlxSpriteGroup
     }
 
     public function updateStatus(status:StatusEffect):Void{
-        text.text = "[[COLOR]]" + status.data.name + "[[COLOR]]  " + status.data.description + '  [[GRAY]]${status.turns} turns left[[GRAY]]';
+        text.text = "[[COLOR]]" + status.data.name + "[[COLOR]]  " + status.data.description + '  [[GRAY]]${status.turns} turn${status.turns > 1 ? "s" : ""} left[[GRAY]]';
 
         text.applyMarkup(text.text, [
             new FlxTextFormatMarkerPair(new FlxTextFormat(status.data.color), "[[COLOR]]"),
