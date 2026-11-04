@@ -712,6 +712,7 @@ class GridUnitPlacer extends FlxSpriteGroup
             infoPanel.removeActivePage();
             new FlxTimer().start(0.0001, function(f):Void{
                 addMiniMenu(miniMenuTarget);
+                miniMenuManager.changeRack(1);
             });
         });
     }
