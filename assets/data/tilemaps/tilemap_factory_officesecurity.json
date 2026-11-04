@@ -134,6 +134,18 @@
           "originX": 0,
           "originY": 0,
           "values": {"propName": "radiomonster", "tag": "radio2", "addLight": true}
+        },
+        {
+          "name": "prop",
+          "id": 9,
+          "_eid": "37256014",
+          "x": 275,
+          "y": 48,
+          "width": 16,
+          "height": 16,
+          "originX": 0,
+          "originY": 0,
+          "values": {"propName": "partyhatdouble", "tag": "hat", "addLight": false}
         }
       ]
     },

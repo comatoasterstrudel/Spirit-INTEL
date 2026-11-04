@@ -24,6 +24,7 @@ var staticFrame:Int = 0;
 var desk:Prop;
 var monsterradio:Prop;
 var radio2:Prop;
+var hat:Prop;
 
 var lightingCover:LightingSprite;
 
@@ -48,6 +49,9 @@ function create():Void{
     radio2 = getPropByTag("radio2");
     radio2.kill();
 
+    hat = getPropByTag("hat");
+    hat.y += (41 * Constants.overworldPixelScale);
+
     lightingCover = get_lightingCover();
 
     camSound = CtSound.loadEmbedded(Constants.sfxPath + "securitycamera.ogg", true);
@@ -57,6 +61,7 @@ function create():Void{
 
     if(Save.storyFlags.get("factory_seenSecurityPcScene").val_bool){
         monsterradio.kill();
+        hat.kill();
     }
 
     if(!Save.storyFlags.get("factory_seenSecurityIntro").val_bool){

@@ -9,6 +9,7 @@ var overMap:FlxSpriteGroup;
 
 var character_robin:Player;
 var sparkle:Prop;
+var hat:Prop;
 
 var openFridge:Prop;
 var openFridgeLight:LightSourceSprite;
@@ -39,6 +40,8 @@ function create():Void{
     noodles = getPropByTag("noodles");
     noodles.kill();
     
+    hat = getPropByTag("hat");
+    
     fridgedone = getInteractableByTag("fridgedone");
     noodleCutscene = getInteractableByTag("noodleCutscene");
 
@@ -47,6 +50,8 @@ function create():Void{
         openFridge.kill();
         openFridgeLight.kill();
         noodleCutscene.disabled = true;
+
+        hat.kill();
     } else {
         fridgedone.disabled = true;
     }

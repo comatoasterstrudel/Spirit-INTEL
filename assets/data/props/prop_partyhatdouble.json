@@ -1,0 +1,8 @@
+{
+    "name": "partyhatdouble",
+    "graphic": "partyhatdouble",
+    "hitboxX": 0,
+    "hitboxY": 0,
+    "hitboxWidth": 10,
+    "hitboxHeight": 10
+}
