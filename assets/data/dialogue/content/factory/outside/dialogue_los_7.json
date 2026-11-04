@@ -188,8 +188,7 @@
 		"portrait": "neutral",
 		"continueLine": true,
 		"voiceLine": "",
-		"actor": "robin",
-		"autoSkip": false
+		"actor": "robin"
 	},
 	{
 		"speed": 0.03,
@@ -246,7 +245,6 @@
 		"dialogue": "..Huh???",
 		"choicerOptions": [],
 		"portrait": "neutral",
-		"continueLine": true,
 		"voiceLine": "",
 		"actor": "robin",
 		"autoSkip": false
