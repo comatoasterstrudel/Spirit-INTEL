@@ -2,8 +2,10 @@
   "dependencies": [
     {
       "name": "cataclysm",
-      "type": "haxelib",
-      "version": null
+      "type": "git",
+      "dir": null,
+      "ref": "main",
+      "url": "https://github.com/comatoasterstrudel/Cataclysm"
     },
     {
       "name": "ctDialogueBox",
