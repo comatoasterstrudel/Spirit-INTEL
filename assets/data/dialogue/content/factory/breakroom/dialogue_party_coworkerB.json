@@ -1,7 +1,13 @@
 [
 	{
 		"speed": 0.03,
-		"dialogue": "...Did he figure out we were trying to unionize??? uh oh...",
+		"dialogue": "...Did he figure out we were trying to unionize???",
 		"actor": "npc"
+	},
+	{
+		"speed": 0.03,
+		"dialogue": " Uh oh...",
+		"actor": "npc",
+		"continueLine": true
 	}
 ]
