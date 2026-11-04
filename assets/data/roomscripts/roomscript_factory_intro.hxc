@@ -30,6 +30,10 @@ function create():Void{
 			roomTrigger.disabled = false;
 		});   
 	});
+
+	new FlxTimer().start(0.1, function(f):Void{
+		OverworldState.setUpMusic(Constants.sfxPath + "subway.ogg", 3, true);
+	});
 }
 
 function setupBg():Void
@@ -75,6 +79,7 @@ function doBump():Void
 	new FlxTimer().start(FlxG.random.float(5, 11), function(f):Void
 	{
 		camOverlay.scroll.y += (FlxG.random.bool(50)) ? FlxG.random.float(5, 12) : FlxG.random.float(-12, -5);
+		CtSound.play(Constants.sfxPath + "subwaybump.ogg").pitch = FlxG.random.float(.5, 1.5);
 
 		FlxTween.tween(camOverlay.scroll, {y: 0}, 1.2, {
 			ease: FlxEase.elasticOut,
