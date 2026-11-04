@@ -68,7 +68,7 @@ function create():Void{
 		character_coworkerD.kill();
 	}
 
-	if(!Save.storyFlags.get("factory_scarymode").val_bool){
+	if(!Save.storyFlags.get("factory_scarymode").val_bool && Save.storyFlags.get("factory_seenbreakroomcutscene").val_bool){
 		character_player.changeAnimationPrefix("party_");
 	}
 }
