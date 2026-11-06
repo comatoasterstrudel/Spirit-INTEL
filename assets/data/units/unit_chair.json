@@ -2,7 +2,7 @@
     "name": "Chair",
     "gridGraphic": "chair",
     "uiGraphicAlly": "chair_ally",
-    "uiGraphicEnemy": "chair_enemy",   
+    "uiGraphicEnemy": "chair_ally",   
     "stat_maxHp": 40,
     "stat_maxMp": 60,
     "stat_speed": 8,
