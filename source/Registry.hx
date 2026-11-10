@@ -58,6 +58,10 @@ class Registry
             TilesetData, 
             CtUtil.stripTextFromStrings(CtUtil.findFilesInPath(Constants.tilesetDataFolder, [".json"], false, false), [Constants.tilesetDataPrefix, ".json"])
         );
+        registry.addRegistry(
+            LightSourceData, 
+            CtUtil.stripTextFromStrings(CtUtil.findFilesInPath(Constants.lightSourceDataFolder, [".json"], false, false), [Constants.lightSourceDataPrefix, ".json"])
+        );
 
         // storyflagdata isnt set up here since its basically in its own registry
     }
