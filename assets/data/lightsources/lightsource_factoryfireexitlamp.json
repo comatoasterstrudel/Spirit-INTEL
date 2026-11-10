@@ -1,4 +1,9 @@
 {
     "name": "factoryfireexitlamp",
-    "graphic": "factoryfireexitlamp"
+    "graphic": "factoryfireexitlamp",
+    "flickerChance": 15,
+    "flickerGap": 2,
+    "flickerIntensity": 0.3,
+    "flickerSmoothing": 5,
+    "flickerTime": 1
 }
