@@ -63,7 +63,7 @@
 		"speed": 0.03,
 		"diaPitch": 1,
 		"events": [],
-		"dialogue": "Additionally, I had the job of observing you and getting close to you.",
+		"dialogue": "Additionally, I had the job of observing you and learning about you.",
 		"choicerOptions": [],
 		"portrait": "neutral",
 		"continueLine": false,
@@ -82,6 +82,18 @@
 		"voiceLine": "",
 		"actor": "robin",
 		"autoSkip": false
+	},
+	{
+		"dialogue": "What?",
+		"events": [],
+		"continueLine": true,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "robin",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
 	},
 	{
 		"speed": 0.03,
@@ -183,12 +195,13 @@
 		"speed": 0.03,
 		"diaPitch": 1,
 		"events": [],
-		"dialogue": "..Yeah?",
+		"dialogue": "Yeah?",
 		"choicerOptions": [],
 		"portrait": "neutral",
 		"continueLine": true,
 		"voiceLine": "",
-		"actor": "robin"
+		"actor": "robin",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
@@ -206,13 +219,25 @@
 		"speed": 0.03,
 		"diaPitch": 1,
 		"events": [],
-		"dialogue": "They can control them, but its rarely more then one.",
+		"dialogue": "They can control them,",
 		"choicerOptions": [],
 		"portrait": "neutral",
 		"continueLine": false,
 		"voiceLine": "",
 		"actor": "laurin",
 		"autoSkip": false
+	},
+	{
+		"dialogue": " but its rarely more then one.",
+		"events": [],
+		"continueLine": true,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "laurin",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
 	},
 	{
 		"speed": 0.03,
@@ -230,7 +255,7 @@
 		"speed": 0.03,
 		"diaPitch": 1,
 		"events": [],
-		"dialogue": "Is because the god of the underworld is sorta trapped in your coat.",
+		"dialogue": "...Is because the god of the underworld is sorta trapped in your coat.",
 		"choicerOptions": [],
 		"portrait": "neutral",
 		"continueLine": false,
@@ -242,11 +267,24 @@
 		"speed": 0.03,
 		"diaPitch": 1,
 		"events": [],
-		"dialogue": "..Huh???",
+		"dialogue": "...",
 		"choicerOptions": [],
 		"portrait": "neutral",
+		"continueLine": false,
 		"voiceLine": "",
 		"actor": "robin",
 		"autoSkip": false
+	},
+	{
+		"dialogue": "Huh???",
+		"events": [],
+		"continueLine": true,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "robin",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
 	}
 ]

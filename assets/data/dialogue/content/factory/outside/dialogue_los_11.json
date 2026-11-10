@@ -1,0 +1,38 @@
+[
+	{
+		"dialogue": "Shit-",
+		"events": [],
+		"continueLine": true,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "laurin",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
+	},
+	{
+		"dialogue": "Wait! Robin! Please-",
+		"events": [],
+		"continueLine": true,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "laurin",
+		"choicerOptions": [],
+		"voiceLine": "",
+		"autoSkip": false,
+		"speed": 0.03
+	},
+	{
+		"dialogue": "I'll call you, okay?",
+		"events": [],
+		"continueLine": true,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "laurin",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
+	}
+]

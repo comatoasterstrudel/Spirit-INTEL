@@ -17,7 +17,7 @@
 		"events": [],
 		"dialogue": " Hey.",
 		"choicerOptions": [],
-		"portrait": "neutral",
+		"portrait": "talk",
 		"continueLine": true,
 		"voiceLine": "",
 		"actor": "robin",

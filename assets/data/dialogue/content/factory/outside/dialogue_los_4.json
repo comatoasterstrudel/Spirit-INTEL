@@ -72,16 +72,16 @@
 		"autoSkip": false
 	},
 	{
-		"dialogue": "I wasn't really thinking clearly at the time.",
-		"events": [],
-		"continueLine": false,
-		"portrait": "neutral",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "robin",
+		"events": [],
+		"dialogue": "I wasn't really thinking clearly at the time.",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "neutral",
+		"continueLine": false,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "robin",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
@@ -144,16 +144,16 @@
 		"autoSkip": false
 	},
 	{
-		"dialogue": "Are you doing okay?",
-		"events": [],
-		"continueLine": false,
-		"portrait": "neutral",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "laurin",
+		"events": [],
+		"dialogue": "Are you doing okay?",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "neutral",
+		"continueLine": false,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "laurin",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
@@ -171,13 +171,25 @@
 		"speed": 0.03,
 		"diaPitch": 1,
 		"events": [],
-		"dialogue": "...Both?",
+		"dialogue": "...",
 		"choicerOptions": [],
 		"portrait": "neutral",
 		"continueLine": false,
 		"voiceLine": "",
 		"actor": "laurin",
 		"autoSkip": false
+	},
+	{
+		"dialogue": "Both?",
+		"events": [],
+		"continueLine": true,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "laurin",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
 	},
 	{
 		"speed": 0.03,
@@ -243,13 +255,25 @@
 		"speed": 0.03,
 		"diaPitch": 1,
 		"events": [],
-		"dialogue": "Is this your attempt at making me feel better?",
+		"dialogue": "I'm sorry-",
 		"choicerOptions": [],
 		"portrait": "neutral",
 		"continueLine": false,
 		"voiceLine": "",
 		"actor": "robin",
 		"autoSkip": false
+	},
+	{
+		"dialogue": "Is this your attempt at making me feel better?",
+		"events": [],
+		"continueLine": true,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "robin",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
 	},
 	{
 		"speed": 0.03,
@@ -300,16 +324,16 @@
 		"autoSkip": false
 	},
 	{
-		"dialogue": " Um...",
-		"events": [],
-		"continueLine": true,
-		"portrait": "neutral",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "laurin",
+		"events": [],
+		"dialogue": " Um...",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "neutral",
+		"continueLine": true,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "laurin",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
@@ -336,16 +360,16 @@
 		"autoSkip": false
 	},
 	{
-		"dialogue": " That's saying the least!",
-		"events": [],
-		"continueLine": true,
-		"portrait": "neutral",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "robin",
+		"events": [],
+		"dialogue": " That's saying the least!",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "neutral",
+		"continueLine": true,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "robin",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
@@ -444,16 +468,16 @@
 		"autoSkip": false
 	},
 	{
-		"dialogue": "  How does-",
-		"events": [],
-		"continueLine": true,
-		"portrait": "neutral",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "robin",
+		"events": [],
+		"dialogue": " How does-",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "neutral",
+		"continueLine": true,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "robin",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
