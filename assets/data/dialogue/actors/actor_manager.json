@@ -8,26 +8,32 @@
 	"textSoundVolume": 0.45,
 	"customNameBoxImgPath": "manager",
 	"portraitPrefix": "manager",
-	"layeredPortraits": [
+	"layerBases": [
 		{
-			"name": "neutral",
+			"tag": "normal",
+			"prefix": "",
 			"layers": [
 				"manager_base_normal",
-				"manager_face_neutral"
+				"[[FACE_normal]]" 
 			]
-		},
+		}
+	],
+	"layerFaces": [
 		{
-			"name": "talk",
-			"layers": [
-				"manager_base_normal",
-				"manager_face_talk"
-			]
-		},
-		{
-			"name": "douche",
-			"layers": [
-				"manager_base_normal",
-				"manager_face_douche"
+			"tag": "normal",
+			"faces": [
+				{
+					"name": "neutral",
+					"layer": "manager_face_neutral"
+				},
+				{
+					"name": "talk",
+					"layer": "manager_face_talk"
+				},
+				{
+					"name": "douche",
+					"layer": "manager_face_douche"
+				}
 			]
 		}
 	]

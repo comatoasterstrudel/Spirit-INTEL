@@ -7,154 +7,81 @@
 	"customNameBoxImgPath": "robin",
 	"portraitPrefix": "robin",
 	"textSound": "robin",
-	"layeredPortraits": [
+	"layerBases": [
 		{
-			"name": "smiletalk",
+			"tag": "normal",
+			"prefix": "",
 			"layers": [
 				"robin_base_normal",
-				"robin_face_smiletalk"
+				"[[FACE_normal]]" 
 			]
 		},
 		{
-			"name": "smile",
-			"layers": [
-				"robin_base_normal",
-				"robin_face_smile"
-			]
-		},
-		{
-			"name": "talk",
-			"layers": [
-				"robin_base_normal",
-				"robin_face_talk"
-			]
-		},
-		{
-			"name": "neutral",
-			"layers": [
-				"robin_base_normal",
-				"robin_face_neutral"
-			]
-		},
-		{
-			"name": "shocked",
-			"layers": [
-				"robin_base_normal",
-				"robin_face_shocked"
-			]
-		},
-		{
-			"name": "terrified",
-			"layers": [
-				"robin_base_normal",
-				"robin_face_terrified"
-			]
-		},
-		{
-			"name": "terrifieddown",
-			"layers": [
-				"robin_base_normal",
-				"robin_face_terrifieddown"
-			]
-		},
-		{
-			"name": "scared",
-			"layers": [
-				"robin_base_normal",
-				"robin_face_scared"
-			]
-		},
-		{
-			"name": "scareddown",
-			"layers": [
-				"robin_base_normal",
-				"robin_face_scareddown"
-			]
-		},
-		{
-			"name": "sleepy",
-			"layers": [
-				"robin_base_normal",
-				"robin_face_sleepy"
-			]
-		},
-		{
-			"name": "sleepyshock",
-			"layers": [
-				"robin_base_normal",
-				"robin_face_sleepyshock"
-			]
-		},
-
-		{
-			"name": "work_talk",
+			"tag": "normal",
+			"prefix": "work",
 			"layers": [
 				"robin_base_work",
-				"robin_face_talk"
+				"[[FACE_normal]]" 
 			]
 		},
 		{
-			"name": "work_neutral",
-			"layers": [
-				"robin_base_work",
-				"robin_face_neutral"
-			]
-		},
-
-		{
-			"name": "hat_neutral",
+			"tag": "normal",
+			"prefix": "hat",
 			"layers": [
 				"robin_base_normal",
 				"robin_hat",
-				"robin_face_neutral"
+				"[[FACE_normal]]" 
 			]
-		},
+		}
+	],
+	"layerFaces": [
 		{
-			"name": "hat_talk",
-			"layers": [
-				"robin_base_normal",
-				"robin_hat",
-				"robin_face_talk"
-			]
-		},
-		{
-			"name": "hat_scared",
-			"layers": [
-				"robin_base_normal",
-				"robin_hat",
-				"robin_face_scared"
-			]
-		},
-		{
-			"name": "hat_scareddown",
-			"layers": [
-				"robin_base_normal",
-				"robin_hat",
-				"robin_face_scareddown"
-			]
-		},
-		{
-			"name": "hat_shocked",
-			"layers": [
-				"robin_base_normal",
-				"robin_hat",
-				"robin_face_shocked"
-			]
-		},
-		{
-			"name": "hat_terrified",
-			"layers": [
-				"robin_base_normal",
-				"robin_hat",
-				"robin_face_terrified"
-			]
-		},
-		{
-			"name": "hat_terrifieddown",
-			"layers": [
-				"robin_base_normal",
-				"robin_hat",
-				"robin_face_terrifieddown"
+			"tag": "normal",
+			"faces": [
+				{
+					"name": "neutral",
+					"layer": "robin_face_neutral"
+				},
+				{
+					"name": "smiletalk",
+					"layer": "robin_face_smiletalk"
+				},
+				{
+					"name": "smile",
+					"layer": "robin_face_smile"
+				},
+				{
+					"name": "talk",
+					"layer": "robin_face_talk"
+				},
+				{
+					"name": "scared",
+					"layer": "robin_face_scared"
+				},
+				{
+					"name": "scareddown",
+					"layer": "robin_face_scareddown"
+				},
+				{
+					"name": "shocked",
+					"layer": "robin_face_shocked"
+				},
+				{
+					"name": "sleepy",
+					"layer": "robin_face_sleepy"
+				},
+				{
+					"name": "sleepyshock",
+					"layer": "robin_face_sleepyshock"
+				},
+				{
+					"name": "terrified",
+					"layer": "robin_face_terrified"
+				},
+				{
+					"name": "terrifieddown",
+					"layer": "robin_face_terrifieddown"
+				}
 			]
 		}
 	]

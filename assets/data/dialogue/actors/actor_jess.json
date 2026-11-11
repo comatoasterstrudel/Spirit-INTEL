@@ -8,54 +8,48 @@
 	"portraitPrefix": "jess",
 	"textSound": "jess",
 	"textSoundVolume": 0.6,
-	"layeredPortraits": [
+	"layerBases": [
 		{
-			"name": "closedsmile",
+			"tag": "normal",
+			"prefix": "",
 			"layers": [
 				"jess_base_normal",
-				"jess_face_closedsmile"
+				"[[FACE_normal]]" 
 			]
-		},
+		}
+	],
+	"layerFaces": [
 		{
-			"name": "neutral",
-			"layers": [
-				"jess_base_normal",
-				"jess_face_neutral"
-			]
-		},
-		{
-			"name": "quirkedup",
-			"layers": [
-				"jess_base_normal",
-				"jess_face_quirkedup"
-			]
-		},
-		{
-			"name": "sigh",
-			"layers": [
-				"jess_base_normal",
-				"jess_face_sigh"
-			]
-		},
-		{
-			"name": "smile",
-			"layers": [
-				"jess_base_normal",
-				"jess_face_smile"
-			]
-		},
-		{
-			"name": "talksmile",
-			"layers": [
-				"jess_base_normal",
-				"jess_face_talksmile"
-			]
-		},
-		{
-			"name": "talkneutral",
-			"layers": [
-				"jess_base_normal",
-				"jess_face_talkneutral"
+			"tag": "normal",
+			"faces": [
+				{
+					"name": "neutral",
+					"layer": "jess_face_neutral"
+				},
+				{
+					"name": "closedsmile",
+					"layer": "jess_face_closedsmile"
+				},
+				{
+					"name": "quirkedup",
+					"layer": "jess_face_quirkedup"
+				},
+				{
+					"name": "sigh",
+					"layer": "jess_face_sigh"
+				},
+				{
+					"name": "talkneutral",
+					"layer": "jess_face_talkneutral"
+				},
+				{
+					"name": "smile",
+					"layer": "jess_face_smile"
+				},
+				{
+					"name": "talksmile",
+					"layer": "jess_face_talksmile"
+				}
 			]
 		}
 	]
