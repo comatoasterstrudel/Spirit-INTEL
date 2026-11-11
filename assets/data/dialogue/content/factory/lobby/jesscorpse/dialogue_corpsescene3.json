@@ -3,12 +3,12 @@
 		"speed": 0.03,
 		"dialogue": "Come on, Robin.",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
 		"dialogue": "We gotta get out of here.",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	}
 ]

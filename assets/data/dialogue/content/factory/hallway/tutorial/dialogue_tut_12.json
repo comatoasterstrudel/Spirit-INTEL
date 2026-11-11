@@ -5,7 +5,7 @@
 		"events": [],
 		"dialogue": "[[SHAKE]]Ugh, why is he so strong!?[[ENDSHAKE]]",
 		"choicerOptions": [],
-		"portrait": "neutral",
+		"portrait": "neutral_neutral",
 		"continueLine": false,
 		"voiceLine": "",
 		"actor": "volor",

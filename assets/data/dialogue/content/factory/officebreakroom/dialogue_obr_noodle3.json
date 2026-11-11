@@ -9,7 +9,7 @@
 		"speed": 0.03,
 		"dialogue": "We keep getting jumpscared, huh?",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
@@ -40,25 +40,25 @@
 		"speed": 0.03,
 		"dialogue": "Yeah, I'd say 55% of spirits are calm.",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
 		"dialogue": "But there's a lot of them who wasted their lives away..",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
 		"dialogue": "..or were evil when they were alive..",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
 		"dialogue": "..whose regrets and behavior amplify after they pass.",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
@@ -90,25 +90,25 @@
 		"speed": 0.03,
 		"dialogue": "No, I wouldn't say that.",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
 		"dialogue": "I've never lived, per se, so I cannot possess a soul..",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
 		"dialogue": "..which is what a spirit is born from.",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
 		"dialogue": "I'm something different.",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
@@ -120,7 +120,7 @@
 		"speed": 0.03,
 		"dialogue": "A god, maybe.",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
@@ -132,13 +132,13 @@
 		"speed": 0.03,
 		"dialogue": "Heh!",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
 		"dialogue": " That might also be true.",
 		"actor": "volor",
-		"portrait": "neutral",
+		"portrait": "neutral_neutral",
 		"continueLine": true
 	},
 	{

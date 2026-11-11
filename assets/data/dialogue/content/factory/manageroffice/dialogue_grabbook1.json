@@ -19,19 +19,19 @@
 		"speed": 0.03,
 		"dialogue": "You enjoy poetry, right?",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
 		"dialogue": "Is any of this stuff good?",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
 		"dialogue": "Yeah I do, but most of this stuff is pretty pretentious and tired....",
 		"actor": "robin",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
@@ -50,7 +50,7 @@
 		"speed": 0.03,
 		"dialogue": "I have much more knowledge than an ephemeral being like yourself has.",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,

@@ -5,7 +5,7 @@
 		"events": [],
 		"dialogue": "Another tool you have in battle is Inspecting.",
 		"choicerOptions": [],
-		"portrait": "neutral",
+		"portrait": "neutral_neutral",
 		"continueLine": false,
 		"voiceLine": "",
 		"actor": "volor",

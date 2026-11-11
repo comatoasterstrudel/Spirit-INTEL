@@ -5,7 +5,7 @@
 		"events": [],
 		"dialogue": "We can't win like this...",
 		"choicerOptions": [],
-		"portrait": "neutral",
+		"portrait": "neutral_neutral",
 		"continueLine": false,
 		"voiceLine": "",
 		"actor": "volor",

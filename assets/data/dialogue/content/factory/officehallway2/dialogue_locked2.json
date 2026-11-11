@@ -16,7 +16,7 @@
 		"speed": 0.03,
 		"dialogue": "So there'll be a code down here somewhere probably, right?",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
@@ -41,7 +41,7 @@
 		"speed": 0.03,
 		"dialogue": "Which part?",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
@@ -53,7 +53,7 @@
 		"speed": 0.03,
 		"dialogue": "You're being REALLY vague.",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
@@ -77,13 +77,13 @@
 		"speed": 0.03,
 		"dialogue": "They aren't monsters, they're spirits.",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
 		"dialogue": "They're dead people whose souls have-",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
@@ -101,7 +101,7 @@
 		"speed": 0.03,
 		"dialogue": "I don't know.",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
@@ -113,25 +113,25 @@
 		"speed": 0.03,
 		"dialogue": "I only fight spirits of mortals..",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
 		"dialogue": "..when they don't bow down to me in reverence and fear.",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
 		"dialogue": "I'm terrifying.",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
 		"dialogue": " Bone-chilling, even.",
 		"actor": "volor",
-		"portrait": "neutral",
+		"portrait": "neutral_neutral",
 		"continueLine": true
 	},
 	{

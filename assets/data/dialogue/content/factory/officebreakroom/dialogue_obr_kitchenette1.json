@@ -18,7 +18,7 @@
 		"speed": 0.03,
 		"dialogue": "You should check out the cabinets.",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
@@ -42,7 +42,7 @@
 		"speed": 0.03,
 		"dialogue": "Ding dongs?",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
@@ -78,7 +78,7 @@
 		"speed": 0.03,
 		"dialogue": "I don't think you should eat those.",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,

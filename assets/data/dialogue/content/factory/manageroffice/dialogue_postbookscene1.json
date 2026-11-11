@@ -9,7 +9,7 @@
 		"speed": 0.03,
 		"dialogue": "They really have gotten everywhere here, huh..",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
@@ -21,19 +21,19 @@
 		"speed": 0.03,
 		"dialogue": "You'll get used to it.",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
 		"dialogue": "You're strong, Robin.",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
 		"dialogue": "This'll be a piece of cake for you in no time at all!",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,

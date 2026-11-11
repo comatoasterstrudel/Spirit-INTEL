@@ -20,7 +20,7 @@
 		"speed": 0.03,
 		"dialogue": "...Leather cracks?",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
@@ -38,7 +38,7 @@
 		"speed": 0.03,
 		"dialogue": "Oh, I guess I never put that together in my head.",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
@@ -50,13 +50,13 @@
 		"speed": 0.03,
 		"dialogue": "Hey!",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
 		"dialogue": " I do know quite a lot, but not silly things like how you take care of leather.",
 		"actor": "volor",
-		"portrait": "neutral",
+		"portrait": "neutral_neutral",
 		"continueLine": true
 	},
 	{

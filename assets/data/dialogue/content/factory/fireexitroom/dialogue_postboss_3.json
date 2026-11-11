@@ -27,7 +27,7 @@
 		"dialogue": "We should get out of here, Robin.",
 		"events": [],
 		"continueLine": false,
-		"portrait": "neutral",
+		"portrait": "neutral_neutral",
 		"diaPitch": 1,
 		"actor": "volor",
 		"choicerOptions": [],

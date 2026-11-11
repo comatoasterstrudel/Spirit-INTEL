@@ -28,13 +28,13 @@
 		"speed": 0.03,
 		"dialogue": "That was amazing, Robin!",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
 		"dialogue": "Lets hope we didn't need anything in those rooms!",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
@@ -58,6 +58,6 @@
 		"speed": 0.03,
 		"dialogue": "Yes! Lets!",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	}
 ]

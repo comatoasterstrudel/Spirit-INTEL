@@ -14,14 +14,14 @@
 		"dialogue": "            ",
 		"actor": "volor",
 		"events": ["volorappears"],
-		"portrait": "hat_scared",
+		"portrait": "hat_scared_neutral",
 		"autoSkip": true
 	},
 	{
 		"speed": 0.03,
 		"dialogue": "You need to fight!",
 		"actor": "volor",
-		"portrait": "hat_scared"
+		"portrait": "hat_scared_neutral"
 	},
 	{
 		"speed": 0.03,

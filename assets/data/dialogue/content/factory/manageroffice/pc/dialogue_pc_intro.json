@@ -20,7 +20,7 @@
 		"speed": 0.03,
 		"dialogue": "Do you have one on you?",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
@@ -32,7 +32,7 @@
 		"speed": 0.03,
 		"dialogue": "I thought it wouldn't hurt to ask.",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
@@ -67,7 +67,7 @@
 		"speed": 0.03,
 		"dialogue": "So we've gotta look through those shelves?",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
@@ -85,7 +85,7 @@
 		"speed": 0.03,
 		"dialogue": "Someone of my nature has MANY more ways to search without limbs.",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
@@ -104,7 +104,7 @@
 		"speed": 0.03,
 		"dialogue": "I don't want to.",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,

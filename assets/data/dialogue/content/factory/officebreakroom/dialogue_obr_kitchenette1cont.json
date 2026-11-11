@@ -9,7 +9,7 @@
 		"speed": 0.03,
 		"dialogue": "...",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
@@ -21,7 +21,7 @@
 		"speed": 0.03,
 		"dialogue": "Really?",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
@@ -33,7 +33,7 @@
 		"speed": 0.03,
 		"dialogue": "You cannot be serious.",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	},
 	{
 		"speed": 0.03,
@@ -51,6 +51,6 @@
 		"speed": 0.03,
 		"dialogue": "That's fascinating...",
 		"actor": "volor",
-		"portrait": "neutral"
+		"portrait": "neutral_neutral"
 	}
 ]

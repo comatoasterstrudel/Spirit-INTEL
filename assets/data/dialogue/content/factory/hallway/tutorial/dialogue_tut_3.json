@@ -3,7 +3,7 @@
 		"dialogue": "Go ahead and choose a skill from the list!",
 		"events": [],
 		"continueLine": false,
-		"portrait": "neutral",
+		"portrait": "neutral_neutral",
 		"diaPitch": 1,
 		"actor": "volor",
 		"choicerOptions": [],
