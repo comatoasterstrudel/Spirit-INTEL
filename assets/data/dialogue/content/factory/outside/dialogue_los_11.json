@@ -2,7 +2,7 @@
 	{
 		"dialogue": "Shit-",
 		"events": [],
-		"continueLine": true,
+		"continueLine": false,
 		"portrait": "neutral",
 		"diaPitch": 1,
 		"actor": "laurin",
@@ -14,7 +14,7 @@
 	{
 		"dialogue": "Wait! Robin! Please-",
 		"events": [],
-		"continueLine": true,
+		"continueLine": false,
 		"portrait": "neutral",
 		"diaPitch": 1,
 		"actor": "laurin",
@@ -26,7 +26,7 @@
 	{
 		"dialogue": "I'll call you, okay?",
 		"events": [],
-		"continueLine": true,
+		"continueLine": false,
 		"portrait": "neutral",
 		"diaPitch": 1,
 		"actor": "laurin",

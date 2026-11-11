@@ -10,29 +10,5 @@
 		"autoSkip": false,
 		"voiceLine": "",
 		"speed": 0.03
-	},
-	{
-		"dialogue": "(hah...",
-		"events": [],
-		"continueLine": false,
-		"portrait": "neutral",
-		"diaPitch": 1,
-		"actor": "laurin",
-		"choicerOptions": [],
-		"voiceLine": "",
-		"autoSkip": false,
-		"speed": 0.03
-	},
-	{
-		"dialogue": "I'm such an idiot....)",
-		"events": [],
-		"continueLine": true,
-		"portrait": "neutral",
-		"diaPitch": 1,
-		"actor": "laurin",
-		"choicerOptions": [],
-		"autoSkip": false,
-		"voiceLine": "",
-		"speed": 0.03
 	}
 ]

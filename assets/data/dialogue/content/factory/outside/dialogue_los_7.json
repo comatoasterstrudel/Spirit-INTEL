@@ -84,18 +84,6 @@
 		"autoSkip": false
 	},
 	{
-		"dialogue": "What?",
-		"events": [],
-		"continueLine": true,
-		"portrait": "neutral",
-		"diaPitch": 1,
-		"actor": "robin",
-		"choicerOptions": [],
-		"autoSkip": false,
-		"voiceLine": "",
-		"speed": 0.03
-	},
-	{
 		"speed": 0.03,
 		"diaPitch": 1,
 		"events": [],
@@ -198,7 +186,7 @@
 		"dialogue": "Yeah?",
 		"choicerOptions": [],
 		"portrait": "neutral",
-		"continueLine": true,
+		"continueLine": false,
 		"voiceLine": "",
 		"actor": "robin",
 		"autoSkip": false
@@ -219,25 +207,13 @@
 		"speed": 0.03,
 		"diaPitch": 1,
 		"events": [],
-		"dialogue": "They can control them,",
+		"dialogue": "They can control them, but its rarely more then one.",
 		"choicerOptions": [],
 		"portrait": "neutral",
 		"continueLine": false,
 		"voiceLine": "",
 		"actor": "laurin",
 		"autoSkip": false
-	},
-	{
-		"dialogue": " but its rarely more then one.",
-		"events": [],
-		"continueLine": true,
-		"portrait": "neutral",
-		"diaPitch": 1,
-		"actor": "laurin",
-		"choicerOptions": [],
-		"autoSkip": false,
-		"voiceLine": "",
-		"speed": 0.03
 	},
 	{
 		"speed": 0.03,
@@ -276,15 +252,15 @@
 		"autoSkip": false
 	},
 	{
-		"dialogue": "Huh???",
-		"events": [],
-		"continueLine": true,
-		"portrait": "neutral",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "robin",
+		"events": [],
+		"dialogue": "Huh???",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "neutral",
+		"continueLine": true,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "robin",
+		"autoSkip": false
 	}
 ]

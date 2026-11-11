@@ -130,6 +130,10 @@
 				{
 					"name": "speak",
 					"layer": "laurincall_face_speak"
+				},
+				{
+					"name": "neutral",
+					"layer": "laurincall_face_neutral"
 				}
 			]
 		}
