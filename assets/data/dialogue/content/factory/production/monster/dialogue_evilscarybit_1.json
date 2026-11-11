@@ -1,26 +1,38 @@
 [
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "...",
+		"choicerOptions": [],
+		"portrait": "hat_neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "hat_neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "(What was that noise..?)",
+		"choicerOptions": [],
+		"portrait": "hat_neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "hat_neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "...Hello..?",
+		"choicerOptions": [],
+		"portrait": "hat_neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "hat_neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "If that's you Steven, could we talk?",
-		"actor": "robin",
-		"portrait": "hat_neutral"
+		"autoSkip": false
 	}
-] 
+]

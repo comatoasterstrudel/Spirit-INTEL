@@ -1,35 +1,62 @@
 [
 	{
 		"speed": 0.1,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "[[SHAKE]]Hahh...",
+		"choicerOptions": [],
+		"portrait": "sit_closed",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "managerscary",
-		"portrait": "sit_closed"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.1,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "you...",
-		"actor": "managerscary",
+		"choicerOptions": [],
+		"portrait": "sit_closed",
 		"continueLine": true,
-		"portrait": "sit_closed"
+		"voiceLine": "",
+		"actor": "managerscary",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.1,
-		"dialogue": "This is...",
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Ro...",
+		"choicerOptions": [],
+		"portrait": "sit_closed",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "managerscary",
-		"portrait": "sit_closed"
+		"autoSkip": false
 	},
 	{
-		"speed": 0.1,
-		"dialogue": "your faul-",
-		"actor": "managerscary",
+		"dialogue": "bin...",
+		"events": [],
 		"continueLine": true,
-		"portrait": "sit_closed"
+		"portrait": "sit_closed",
+		"diaPitch": 1,
+		"actor": "managerscary",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.1
 	},
 	{
 		"speed": 0.06,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "AUGh-[[ENDSHAKE]]",
-		"actor": "managerscary",
+		"choicerOptions": [],
+		"portrait": "sit_open",
 		"continueLine": true,
-		"portrait": "sit_open"
+		"voiceLine": "",
+		"actor": "managerscary",
+		"autoSkip": false
 	}
-] 
+]

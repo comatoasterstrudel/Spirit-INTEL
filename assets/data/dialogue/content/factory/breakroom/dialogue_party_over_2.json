@@ -1,20 +1,26 @@
 [
 	{
 		"speed": 0.03,
-		"dialogue": "Time to go look for the manager, I guess.",
-		"actor": "robin", 
-		"portrait": "hat_neutral"
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "(Time to head out...)",
+		"choicerOptions": [],
+		"portrait": "hat_neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
 	},
 	{
-		"speed": 0.03,
-		"dialogue": "I should at least try to make my case for a raise.",
-		"actor": "robin", 
-		"portrait": "hat_neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "He's probably in his office down the hall.",
-		"actor": "robin", 
-		"portrait": "hat_neutral"
+		"dialogue": "(I'm so excited to go to bed...)",
+		"events": [],
+		"continueLine": false,
+		"portrait": "hat_neutral",
+		"diaPitch": 1,
+		"actor": "robin",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
 	}
 ]

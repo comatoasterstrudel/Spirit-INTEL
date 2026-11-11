@@ -1,19 +1,50 @@
 [
 	{
 		"speed": 0.03,
-		"dialogue": "It's a passkey you could plug into a computer.",
-		"actor": "narrator"
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "(...It's a thumb drive.)",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "narrator",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "This must be for his computer.",
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "A USB stick?",
+		"choicerOptions": [],
+		"portrait": "neutral_neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "volor",
-		"portrait": "neutral_neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "Let's just go plug it in so we can get out of here.",
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Yeah, I think you can make it so these can open computers.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
+	},
+	{
+		"dialogue": "Let's just go plug it in so we can get out of here.",
+		"events": [],
+		"continueLine": false,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "robin",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
 	}
 ]

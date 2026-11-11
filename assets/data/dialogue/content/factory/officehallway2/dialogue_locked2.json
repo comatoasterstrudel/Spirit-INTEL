@@ -1,161 +1,338 @@
 [
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Ugh...",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": " This is such a pain...",
-		"actor": "robin",
+		"choicerOptions": [],
 		"portrait": "neutral",
-		"continueLine": true
+		"continueLine": true,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "So there'll be a code down here somewhere probably, right?",
-		"actor": "volor",
-		"portrait": "neutral_neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Yeah, apparently...",
-		"actor": "robin",
-		"portrait": "neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Hey..",
-		"actor": "robin",
-		"portrait": "neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": " Can you just tell me what's going on?",
-		"actor": "robin",
-		"portrait": "neutral",
-		"continueLine": true
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Which part?",
-		"actor": "volor",
-		"portrait": "neutral_neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "All of it?",
-		"actor": "robin",
-		"portrait": "neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "You're being REALLY vague.",
-		"actor": "volor",
-		"portrait": "neutral_neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Ugh.",
-		"actor": "robin",
-		"portrait": "neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Why are there monster creatures running around the factory?",
-		"actor": "robin",
-		"portrait": "neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Better?",
-		"actor": "robin",
-		"portrait": "neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "They aren't monsters, they're spirits.",
-		"actor": "volor",
-		"portrait": "neutral_neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "They're dead people whose souls have-",
-		"actor": "volor",
-		"portrait": "neutral_neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "I KNOW what a ghost is.",
-		"actor": "robin",
-		"portrait": "neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Why are they here and killing people?",
-		"actor": "robin",
-		"portrait": "neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "I don't know.",
-		"actor": "volor",
-		"portrait": "neutral_neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "You don't know?",
-		"actor": "robin",
-		"portrait": "neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "I only fight spirits of mortals..",
-		"actor": "volor",
-		"portrait": "neutral_neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "..when they don't bow down to me in reverence and fear.",
-		"actor": "volor",
-		"portrait": "neutral_neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "I'm terrifying.",
-		"actor": "volor",
-		"portrait": "neutral_neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": " Bone-chilling, even.",
-		"actor": "volor",
+		"choicerOptions": [],
 		"portrait": "neutral_neutral",
-		"continueLine": true
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "...Uh-huh.",
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Yeah, apparently...",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Hey..",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": " Can you just tell me what's going on?",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": true,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Which part?",
+		"choicerOptions": [],
+		"portrait": "neutral_neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "All of it?",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Quite vauge, aren't you?",
+		"choicerOptions": [],
+		"portrait": "neutral_neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Ugh.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Why are there monster creatures running around the factory?",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Better?",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "They aren't monsters, they're spirits.",
+		"choicerOptions": [],
+		"portrait": "neutral_neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "They're dead people whose souls have-",
+		"choicerOptions": [],
+		"portrait": "neutral_neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "I KNOW what a ghost is.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Spirit, actually.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "...",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"dialogue": "Why are they here and killing people?",
+		"events": [],
+		"continueLine": true,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "robin",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "I don't know.",
+		"choicerOptions": [],
+		"portrait": "neutral_neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "You don't know?",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "I rarely concern myself with a mortal's intentions.",
+		"choicerOptions": [],
+		"portrait": "neutral_neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"dialogue": "I'm quick to strike them down, or they bow down in fear and awe.",
+		"events": [],
+		"continueLine": false,
+		"portrait": "neutral_neutral",
+		"diaPitch": 1,
+		"actor": "volor",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
+	},
+	{
+		"dialogue": "I'm quite the striking figure.",
+		"events": [],
+		"continueLine": false,
+		"portrait": "neutral_neutral",
+		"diaPitch": 1,
+		"actor": "volor",
+		"choicerOptions": [],
+		"voiceLine": "",
+		"autoSkip": false,
+		"speed": 0.03
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "...",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"dialogue": "Okay.....?",
+		"events": [],
+		"continueLine": true,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "robin",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Whatever.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "There seems to be three rooms down here.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Let's get searching.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	}
 ]

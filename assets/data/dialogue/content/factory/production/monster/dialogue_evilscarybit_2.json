@@ -1,24 +1,62 @@
 [
 	{
 		"speed": 0.1,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "[[SHAKE]]...hah....hah.....",
-		"actor": "managerscary"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "managerscary",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.1,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "...hel...[[ENDSHAKE]]",
-		"actor": "managerscary"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "managerscary",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "...Steven?",
+		"choicerOptions": [],
+		"portrait": "hat_neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
 		"dialogue": "...Is everything okay..?",
+		"events": [],
+		"continueLine": false,
+		"portrait": "hat_neutral",
+		"diaPitch": 1,
 		"actor": "robin",
-		"portrait": "hat_neutral"
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Do you need me to call someone..?",
+		"choicerOptions": [],
+		"portrait": "hat_neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "hat_neutral"
+		"autoSkip": false
 	}
-] 
+]

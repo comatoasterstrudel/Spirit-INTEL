@@ -1,27 +1,62 @@
 [
 	{
 		"speed": 0.03,
-		"dialogue": "The calendar is filled to the brim with activities, mostly corporate events or activities.",
-		"actor": "cutscene_narrator"
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "The calendar is filled to the brim with activities, mostly corporate events.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_narrator",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "\"Atman manager ball\", \"management development class\", \"Pickleball with DBO\"...",
-		"actor": "cutscene_narrator"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_narrator",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "\"Racketball with main branch Operations Supervisor\", \"golf with assistant VP\", \"Tennis with company tennis team\"...",
-		"actor": "cutscene_narrator"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_narrator",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Today on the calendar is labeled with 2 things.",
-		"actor": "cutscene_narrator"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_narrator",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "\"Robin's birthday\", \"Celebration dinner with Maggie :]\"",
-		"actor": "cutscene_narrator"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_narrator",
+		"autoSkip": false
 	}
 ]

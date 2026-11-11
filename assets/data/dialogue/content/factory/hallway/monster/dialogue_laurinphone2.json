@@ -1,108 +1,206 @@
 [
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Can you at least tell me what's going on??",
+		"choicerOptions": [],
+		"portrait": "shocked",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "shocked"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "I will!",
+		"choicerOptions": [],
+		"portrait": "call_lookupset",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "call_lookupset"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": " Just, please..",
-		"actor": "laurin",
+		"choicerOptions": [],
 		"portrait": "call_looksad",
-		"continueLine": true
+		"continueLine": true,
+		"voiceLine": "",
+		"actor": "laurin",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "My job right now is to make sure anyone still alive in this building is evacuated.",
+		"choicerOptions": [],
+		"portrait": "call_lookupset",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "call_lookupset"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "YOUR job is to not die or get caught.",
+		"choicerOptions": [],
+		"portrait": "call_lookupset",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "call_lookupset"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Get caught???",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "ack-",
-		"actor": "laurin",
-		"portrait": "call_lookshock"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": " um-",
-		"actor": "laurin",
+		"choicerOptions": [],
 		"portrait": "call_lookshock",
-		"continueLine": true
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "laurin",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": " um-",
+		"choicerOptions": [],
+		"portrait": "call_lookshock",
+		"continueLine": true,
+		"voiceLine": "",
+		"actor": "laurin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Look, if I sit and explain everything now..",
+		"choicerOptions": [],
+		"portrait": "call_looksad",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "call_looksad"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "..we'll be sitting ducks for the sentient detergent bottles to murder us..",
+		"choicerOptions": [],
+		"portrait": "call_lookupset",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "call_lookupset"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "..and cops to arrest our corpses.",
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "..and corperate goons to come take our corpses.",
+		"choicerOptions": [],
+		"portrait": "call_lookupset",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "call_lookupset"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "Why would the cops-",
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Why would they-",
+		"choicerOptions": [],
+		"portrait": "shocked",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "shocked"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Jesus-",
+		"choicerOptions": [],
+		"portrait": "call_lookupset",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "call_lookupset"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": " Just-",
-		"actor": "laurin",
+		"choicerOptions": [],
 		"portrait": "call_lookupset",
-		"continueLine": true
+		"continueLine": true,
+		"voiceLine": "",
+		"actor": "laurin",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": " PLEASE.",
-		"actor": "laurin",
+		"choicerOptions": [],
 		"portrait": "call_lookupset",
-		"continueLine": true
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Leave the building, get on your train, and go home.",
+		"continueLine": true,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "call_looksad"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Leave the building, get on your train, and go home.",
+		"choicerOptions": [],
+		"portrait": "call_looksad",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "laurin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "...",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	}
-] 
+]

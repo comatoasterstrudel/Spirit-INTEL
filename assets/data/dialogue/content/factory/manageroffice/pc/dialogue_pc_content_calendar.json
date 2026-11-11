@@ -1,129 +1,302 @@
 [
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "The calendar is filled to the brim with activities, mostly corporate events or activities.",
-		"actor": "cutscene_narrator"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_narrator",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "\"Atman manager ball\", \"management development class\", \"Pickleball with DBO\"...",
-		"actor": "cutscene_narrator"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_narrator",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "\"Racketball with main branch Operations Supervisor\", \"golf with assistant VP\", \"Tennis with company tennis team\"...",
-		"actor": "cutscene_narrator"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_narrator",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "This computer belongs to your manager?",
-		"actor": "cutscene_volor"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": " Are you sure he isn't a god?",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "cutscene_volor",
-		"continueLine": true
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": " Are you sure he isn't a god?",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": true,
+		"voiceLine": "",
+		"actor": "cutscene_volor",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "His schedule lacks sleep humans need.",
-		"actor": "cutscene_volor"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_volor",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Nah, he's human.",
-		"actor": "cutscene_robin"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "People are just idiotic and care more about bootlicking to social climb than sleeping.",
-		"actor": "cutscene_robin"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Doesn't surprise me though.",
-		"actor": "cutscene_robin"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": " He always looks wired and jittery.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "cutscene_robin",
-		"continueLine": true
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "Today on the calendar is labeled with 2 things.",
-		"actor": "cutscene_narrator"
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "People are just idiotic and care more about bootlicking to social climb than sleeping.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Doesn't surprise me though.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": " He's always looked wired and jittery.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": true,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Tommorow on the calendar is labeled with 2 things.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_narrator",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "My birthday..?",
-		"actor": "cutscene_robin"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Why would he label my birthday?",
-		"actor": "cutscene_robin"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Ooo maybe he's crushing on you and was planning a surprise for you.",
-		"actor": "cutscene_volor"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_volor",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Hah, no way.",
-		"actor": "cutscene_robin"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "He ignores me or treats me like a bug on his shirt most of the time.",
-		"actor": "cutscene_robin"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "Weird.",
-		"actor": "cutscene_volor"
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Mmm...facinating.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_volor",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "Yeah, weird...",
-		"actor": "cutscene_robin"
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Yeah...",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "And it looks like he already has someone.",
-		"actor": "cutscene_robin"
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": " Looks like he already has someone, anyway.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "Today is also labeled:",
-		"actor": "cutscene_narrator"
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Tommorow is also labeled:",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_narrator",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "\"Celebration dinner with Maggie :]\"",
-		"actor": "cutscene_narrator"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_narrator",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "Oh, how sweet.",
-		"actor": "cutscene_volor"
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Oh, how quaint.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_volor",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "I don't even know how he has time for a girlfriend with this schedule.",
-		"actor": "cutscene_robin"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Well, that dinner isn't happening.",
-		"actor": "cutscene_volor"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_volor",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Guess it isn't.",
-		"actor": "cutscene_robin"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
 	}
 ]

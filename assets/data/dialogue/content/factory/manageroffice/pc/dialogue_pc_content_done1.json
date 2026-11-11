@@ -1,71 +1,160 @@
 [
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Shit.",
-		"actor": "cutscene_robin"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [
+			"anim_rcomplain"
+		],
 		"dialogue": " The code's not on here.",
-		"actor": "cutscene_robin",
+		"choicerOptions": [],
+		"portrait": "",
 		"continueLine": true,
-		"events": ["anim_rcomplain"]
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "Noooo, look more.",
+		"diaPitch": 1,
+		"events": [
+			"anim_vtalk"
+		],
+		"dialogue": "Look more then, maybe?",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "cutscene_volor",
-		"events": ["anim_vtalk"]
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Have you even opened the \"cute puppies and kitties awww\" folder?",
-		"actor": "cutscene_volor"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_volor",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [
+			"anim_rcomplain"
+		],
 		"dialogue": "50% chance it's porn, I'd rather not know what my ex-pos boss, now attempted killer is into.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "cutscene_robin",
-		"events": ["anim_rcomplain"]
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [
+			"anim_vtalk"
+		],
 		"dialogue": "Scandalous!",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "cutscene_volor",
-		"events": ["anim_vtalk"]
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": " Partaking in such art at work!",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": true,
+		"voiceLine": "",
 		"actor": "cutscene_volor",
-		"continueLine": true
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [
+			"anim_rsmile"
+		],
 		"dialogue": "Pfft, art?",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "cutscene_robin",
-		"events": ["anim_rsmile"]
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [
+			"anim_vtalk"
+		],
 		"dialogue": "All things created by mortals are art, it is the nature of living.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "cutscene_volor",
-		"events": ["anim_vtalk"]
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [
+			"anim_rtalk"
+		],
 		"dialogue": "..You're quite radical.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "cutscene_robin",
-		"events": ["anim_rtalk"]
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "He gets paid to do spreadsheets sometimes and glare at us while we do the hard work.",
-		"actor": "cutscene_robin"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "He probably gets super bored sitting on his bony ass-!",
-		"actor": "cutscene_robin"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "cutscene_robin",
+		"autoSkip": false
 	}
 ]

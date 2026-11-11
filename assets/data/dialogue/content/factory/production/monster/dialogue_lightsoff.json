@@ -1,8 +1,14 @@
 [
 	{
 		"speed": 0.03,
-		"dialogue": "How come the lights are off in here..?",
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "The lights are already off?",
+		"choicerOptions": [],
+		"portrait": "hat_neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "hat_neutral"
+		"autoSkip": false
 	}
-] 
+]

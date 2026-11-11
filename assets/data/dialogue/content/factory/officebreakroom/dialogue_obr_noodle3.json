@@ -1,156 +1,326 @@
 [
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "God...",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "We keep getting jumpscared, huh?",
-		"actor": "volor",
-		"portrait": "neutral_neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Yeah.",
-		"actor": "robin",
-		"portrait": "neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": " I'm getting used to it now though, I think.",
-		"actor": "robin",
-		"portrait": "neutral",
-		"continueLine": true
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "I don't understand why they're all so violent though.",
-		"actor": "robin",
-		"portrait": "neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "I guess the vengeful ghost trope is a thing in real life too.",
-		"actor": "robin",
-		"portrait": "neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Yeah, I'd say 55% of spirits are calm.",
-		"actor": "volor",
-		"portrait": "neutral_neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "But there's a lot of them who wasted their lives away..",
-		"actor": "volor",
-		"portrait": "neutral_neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "..or were evil when they were alive..",
-		"actor": "volor",
-		"portrait": "neutral_neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "..whose regrets and behavior amplify after they pass.",
-		"actor": "volor",
-		"portrait": "neutral_neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Makes sense...",
-		"actor": "robin",
-		"portrait": "neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": " I doubt most people I know will die happy.",
-		"actor": "robin",
-		"portrait": "neutral",
-		"continueLine": true
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "So, what are you?",
-		"actor": "robin",
-		"portrait": "neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": " Are you also a spirit?",
-		"actor": "robin",
-		"portrait": "neutral",
-		"continueLine": true
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "No, I wouldn't say that.",
-		"actor": "volor",
-		"portrait": "neutral_neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "I've never lived, per se, so I cannot possess a soul..",
-		"actor": "volor",
-		"portrait": "neutral_neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "..which is what a spirit is born from.",
-		"actor": "volor",
-		"portrait": "neutral_neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "I'm something different.",
-		"actor": "volor",
-		"portrait": "neutral_neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Like what?",
-		"actor": "robin",
-		"portrait": "neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "A god, maybe.",
-		"actor": "volor",
-		"portrait": "neutral_neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "...Sounds like YOU have a big ego.",
-		"actor": "robin",
-		"portrait": "neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Heh!",
-		"actor": "volor",
-		"portrait": "neutral_neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": " That might also be true.",
-		"actor": "volor",
+		"choicerOptions": [],
 		"portrait": "neutral_neutral",
-		"continueLine": true
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "It absolutely is true.",
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Yeah.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": " I'm getting used to it now though, I think.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": true,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "I don't understand why they're all so violent though.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "I guess the vengeful ghost trope is a thing in real life too.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Yeah, many spirits aren't very calm.",
+		"choicerOptions": [],
+		"portrait": "neutral_neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "There's a lot of them who wasted their lives away..",
+		"choicerOptions": [],
+		"portrait": "neutral_neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "..or were evil when they were alive..",
+		"choicerOptions": [],
+		"portrait": "neutral_neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "..whose regrets and behavior amplify after they pass.",
+		"choicerOptions": [],
+		"portrait": "neutral_neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Makes sense...",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": " I doubt people die particularly happy.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": true,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"dialogue": "I know I wouldn't.",
+		"events": [],
+		"continueLine": false,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "robin",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
+	},
+	{
+		"dialogue": "...",
+		"events": [],
+		"continueLine": false,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "robin",
+		"choicerOptions": [],
+		"voiceLine": "",
+		"autoSkip": false,
+		"speed": 0.03
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "So, what are you?",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": " Are you also a spirit?",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": true,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "No, I wouldn't say that.",
+		"choicerOptions": [],
+		"portrait": "neutral_neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "I've never lived, per se, so I cannot possess a soul..",
+		"choicerOptions": [],
+		"portrait": "neutral_neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "..which is what a spirit is born from.",
+		"choicerOptions": [],
+		"portrait": "neutral_neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "I'm something different.",
+		"choicerOptions": [],
+		"portrait": "neutral_neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Like what?",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "A god, maybe.",
+		"choicerOptions": [],
+		"portrait": "neutral_neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "...Egotistical much?",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Hah!",
+		"choicerOptions": [],
+		"portrait": "neutral_neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": " That might be true.",
+		"choicerOptions": [],
+		"portrait": "neutral_neutral",
+		"continueLine": true,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Mhm...",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Lets dig through this fridge now, yeah?",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	}
 ]

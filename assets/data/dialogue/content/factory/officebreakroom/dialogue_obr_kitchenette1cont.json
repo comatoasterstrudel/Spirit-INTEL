@@ -1,56 +1,122 @@
 [
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "...",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "...",
+		"choicerOptions": [],
+		"portrait": "neutral_neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "volor",
-		"portrait": "neutral_neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "It actually isn't that bad.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Really?",
+		"choicerOptions": [],
+		"portrait": "neutral_neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "volor",
-		"portrait": "neutral_neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Yeah, it's just kinda stale.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "You cannot be serious.",
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Facinating...",
+		"choicerOptions": [],
+		"portrait": "neutral_neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "volor",
-		"portrait": "neutral_neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "They put a bunch of preservatives in these..",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "They'd probably still taste good after I was dead.",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "That's fascinating...",
+		"choicerOptions": [],
+		"portrait": "neutral_neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "volor",
-		"portrait": "neutral_neutral"
+		"autoSkip": false
+	},
+	{
+		"dialogue": "(Broken record...)",
+		"events": [],
+		"continueLine": false,
+		"portrait": "neutral",
+		"diaPitch": 1,
+		"actor": "robin",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
 	}
 ]

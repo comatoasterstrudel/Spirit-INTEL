@@ -1,22 +1,26 @@
 [
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "People slowly trickled out til I was the only one left.",
-		"actor": "narrator"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "narrator",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "I usually stay behind later on my shifts..",
-		"actor": "narrator"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Nothing beats the awkwardness of having to ride the subway at the same time as your coworkers.",
-		"actor": "narrator"
-	},
-	{
-		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Before I know it, I'm sitting in the breakroom alone, drinking flat soda.",
-		"actor": "narrator"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "narrator",
+		"autoSkip": false
 	}
 ]

@@ -1,45 +1,86 @@
 [
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "...",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "call_neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Yeah, it's started at site 05..",
+		"choicerOptions": [],
+		"portrait": "call_speak",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "call_speak"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "His great nephew's already been possessed.",
+		"choicerOptions": [],
+		"portrait": "call_eyesclosed",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "call_eyesclosed"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "He locked himself in the basement when it happened, I couldn't do any-",
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "He locked himself in a closet when it happened, I couldn't do any-",
+		"choicerOptions": [],
+		"portrait": "call_speak",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "call_speak"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "...",
+		"choicerOptions": [],
+		"portrait": "call_lookneutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "call_lookneutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Robin.",
+		"choicerOptions": [],
+		"portrait": "call_lookupset",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "call_lookupset"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": " You need to get out now, go home and I'll contact you there.",
-		"actor": "laurin",
+		"choicerOptions": [],
 		"portrait": "call_lookupset",
-		"continueLine": true
+		"continueLine": true,
+		"voiceLine": "",
+		"actor": "laurin",
+		"autoSkip": false
 	}
-] 
+]
