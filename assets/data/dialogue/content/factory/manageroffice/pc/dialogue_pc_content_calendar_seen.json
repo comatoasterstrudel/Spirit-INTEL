@@ -3,7 +3,7 @@
 		"speed": 0.03,
 		"diaPitch": 1,
 		"events": [],
-		"dialogue": "The calendar is filled to the brim with activities, mostly corporate events.",
+		"dialogue": "The calendar is filled to the brim with activities, mostly corporate events or activities.",
 		"choicerOptions": [],
 		"portrait": "",
 		"continueLine": false,
