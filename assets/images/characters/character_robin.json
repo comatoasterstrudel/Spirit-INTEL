@@ -422,6 +422,30 @@
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
     "duration": 100
+   },
+   "robin_coat_hold0000": {
+    "frame": { "x": 128, "y": 160, "w": 32, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
+    "sourceSize": { "w": 32, "h": 32 },
+    "duration": 100
+   },
+   "robin_hand_coat0000": {
+    "frame": { "x": 160, "y": 160, "w": 32, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
+    "sourceSize": { "w": 32, "h": 32 },
+    "duration": 100
+   },
+   "robin_puton_coat0000": {
+    "frame": { "x": 192, "y": 160, "w": 32, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
+    "sourceSize": { "w": 32, "h": 32 },
+    "duration": 100
    }
  },
  "meta": {
@@ -461,7 +485,10 @@
    { "name": "robin_putaway_book", "from": 49, "to": 49, "direction": "forward", "color": "#000000ff" },
    { "name": "robin_glow_book", "from": 50, "to": 50, "direction": "forward", "color": "#000000ff" },
    { "name": "robin_neutral_suprised", "from": 51, "to": 51, "direction": "forward", "color": "#000000ff" },
-   { "name": "robin_talk_suprised", "from": 52, "to": 52, "direction": "forward", "color": "#000000ff" }
+   { "name": "robin_talk_suprised", "from": 52, "to": 52, "direction": "forward", "color": "#000000ff" },
+   { "name": "robin_coat_hold", "from": 53, "to": 53, "direction": "forward", "color": "#000000ff" },
+   { "name": "robin_hand_coat", "from": 54, "to": 54, "direction": "forward", "color": "#000000ff" },
+   { "name": "robin_puton_coat", "from": 55, "to": 55, "direction": "forward", "color": "#000000ff" }
   ],
   "layers": [
    { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }

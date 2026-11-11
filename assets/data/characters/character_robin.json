@@ -201,6 +201,21 @@
             "name": "talk_suprised",
             "prefix": "robin_talk_suprised",
             "fps": 0
+        },
+        {
+            "name": "coat_hold",
+            "prefix": "robin_coat_hold",
+            "fps": 0
+        },
+        {
+            "name": "hand_coat",
+            "prefix": "robin_hand_coat",
+            "fps": 0
+        },
+        {
+            "name": "puton_coat",
+            "prefix": "robin_puton_coat",
+            "fps": 0
         }
     ]
 }

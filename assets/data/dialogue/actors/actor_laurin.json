@@ -83,6 +83,10 @@
 					"layer": "laurin_face_sadtalk"
 				},
 				{
+					"name": "talk",
+					"layer": "laurin_face_talk"
+				},
+				{
 					"name": "sigh",
 					"layer": "laurin_face_sigh"
 				},
