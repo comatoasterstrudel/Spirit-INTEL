@@ -6,5 +6,88 @@
 	"choicerUnselectedTextColor": [0, 0, 0],
 	"customNameBoxImgPath": "volor",
 	"portraitPrefix": "volor",
-	"textSound": "volor_"
-}
+	"textSound": "volor_",
+	"layerBases": [
+		{
+			"tag": "normal",
+			"prefix": "",
+			"layers": [
+				"robin_base_normal",
+				"[[FACE_normal]]",
+				"volor_base_normal",
+				"[[FACE_volor]]" 
+			]
+		},
+		{
+			"tag": "normal",
+			"prefix": "hat",
+			"layers": [
+				"robin_base_normal",
+				"robin_hat",
+				"[[FACE_normal]]",
+				"volor_base_hat",
+				"[[FACE_volor]]" 
+			]
+		}
+	],
+	"layerFaces": [
+		{
+			"tag": "normal",
+			"faces": [
+				{
+					"name": "neutral",
+					"layer": "robin_face_neutral"
+				},
+				{
+					"name": "smiletalk",
+					"layer": "robin_face_smiletalk"
+				},
+				{
+					"name": "smile",
+					"layer": "robin_face_smile"
+				},
+				{
+					"name": "talk",
+					"layer": "robin_face_talk"
+				},
+				{
+					"name": "scared",
+					"layer": "robin_face_scared"
+				},
+				{
+					"name": "scareddown",
+					"layer": "robin_face_scareddown"
+				},
+				{
+					"name": "shocked",
+					"layer": "robin_face_shocked"
+				},
+				{
+					"name": "sleepy",
+					"layer": "robin_face_sleepy"
+				},
+				{
+					"name": "sleepyshock",
+					"layer": "robin_face_sleepyshock"
+				},
+				{
+					"name": "terrified",
+					"layer": "robin_face_terrified"
+				},
+				{
+					"name": "terrifieddown",
+					"layer": "robin_face_terrifieddown"
+				}
+			]
+		},
+		{
+			"tag": "volor",
+			"faces": [
+				{
+					"name": "neutral",
+					"layer": "volor_face_neutral"
+				}
+			]
+		}
+	]
+} 
