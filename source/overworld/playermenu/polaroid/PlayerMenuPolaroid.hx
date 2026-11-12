@@ -75,6 +75,8 @@ class PlayerMenuPolaroid extends FlxSpriteGroup
     function getPolaPath():String
     {
         hScript = new CtScript(Constants.playerMenuPolaroidScriptPath);
-        return Constants.playerMenuPolaroidImgPath + hScript.executeFunction("getPath") + ".png";
+        var path = Constants.playerMenuPolaroidImgPath + hScript.executeFunction("getPath") + ".png";
+        hScript.destroy();
+        return path;
     }
 }

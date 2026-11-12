@@ -1803,6 +1803,13 @@ class OverworldState extends FlxState
 
 	override function destroy():Void{
 		playerMenu.destroy();
+
+		for(script in scripts){
+			script.executeFunction("destroy");
+			script.destroy();
+		}
+		scripts = [];
+		
 		super.destroy();
 	}
 

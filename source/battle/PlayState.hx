@@ -1965,6 +1965,16 @@ class PlayState extends FlxState
 		#end
 	}
 
+	override function destroy():Void{
+		for(script in scripts){
+			script.executeFunction("destroy");
+			script.destroy();
+		}
+		scripts = [];
+		
+		super.destroy();
+	}
+	
 	#if debug
 	function addDebugFunctions():Void
 	{
