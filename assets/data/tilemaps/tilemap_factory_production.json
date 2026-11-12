@@ -696,6 +696,18 @@
           "originX": 0,
           "originY": 0,
           "values": {"triggerByWalkingOver": false, "dialogue": "", "room": "", "roomTransitionTime": 0.3, "encounterName": "", "scriptFunction": "box", "tag": "", "openSave": false, "saveName": "", "saveBgName": ""}
+        },
+        {
+          "name": "prop",
+          "id": 67,
+          "_eid": "37256014",
+          "x": 536,
+          "y": 496,
+          "width": 32,
+          "height": 32,
+          "originX": 0,
+          "originY": 0,
+          "values": {"propName": "factorycartblocker", "tag": "blocker", "addLight": false}
         }
       ]
     },

@@ -28,6 +28,8 @@ var cutsceneSnowOverlay:CtSprite;
 var sleepyLevel:String = "awake";
 var productionObjects:FlxSpriteGroup;
 
+var blocker:Prop;
+
 //
 // MONSTER
 //
@@ -76,6 +78,9 @@ function create():Void
 		getScrollingPropByTag("conveyorVertical1"),
 		getScrollingPropByTag("conveyorVertical2")
 	];
+
+	blocker = getPropByTag("blocker");
+	blocker.kill();
 
 	conveyorLights = [getPropByTag("conveyorlight1"), getPropByTag("conveyorlight2")];
 	
@@ -921,6 +926,8 @@ function startMonsterCutscene():Void
 	character_player.changeAnimationPrefix("party_");
 	
 	set_inCutscene(true);
+
+	blocker.revive();
 
 	new FlxTimer().start(OverworldState.lastTransitionTime + 1, function(f):Void
 	{

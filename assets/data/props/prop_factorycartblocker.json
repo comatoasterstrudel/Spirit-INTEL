@@ -1,0 +1,8 @@
+{
+    "name": "factorycartblocker",
+    "graphic": "factorycart1L",
+    "hitboxX": -20,
+    "hitboxY": 10,
+    "hitboxWidth": 60,
+    "hitboxHeight": 10
+}
