@@ -59,9 +59,11 @@
       "version": null
     },
     {
-      "name": "hscript",
-      "type": "haxelib",
-      "version": null
+      "name": "hscript-iris",
+      "type": "git",
+      "dir": null,
+      "ref": "master",
+      "url": "https://github.com/comatoasterstrudel/hscript-iris"
     },
     {
       "name": "hxcpp",

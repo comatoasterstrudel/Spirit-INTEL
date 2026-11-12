@@ -22,7 +22,7 @@
 
 	<haxelib name="flixel" />
 	<haxelib name="flixel-addons" />
-	<haxelib name="hscript" />
+	<haxelib name="hscript-iris" />
 	<haxelib name="hxcpp" />
 	<haxelib name="hxcpp-debug-server" />
 	<haxelib name="openfl" />
