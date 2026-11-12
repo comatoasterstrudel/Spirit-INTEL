@@ -1,8 +1,3 @@
-function CTSCRIPT_SETNAME():String
-{
-	return "snow";
-}
-
 var map:BetterFlxOgmo3Loader;
 
 var snowGroup:FlxSpriteGroup;
@@ -59,7 +54,7 @@ function update(elapsed:Float):Void{
             addSnowflake(false);
         }   
     } else {
-		for (i in 0...((FlxG.random.int(40, 50)) * frequency))
+		for (i in 0...Std.int(((FlxG.random.int(40, 50)) * frequency)))
 		{
             addSnowflake(true);
         }

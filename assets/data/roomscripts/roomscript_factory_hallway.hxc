@@ -1,8 +1,3 @@
-function CTSCRIPT_SETNAME():String
-{
-	return "factory_hallway";
-}
-
 var breakRoomDoor:Door;
 var officeDoor:Door;
 var finaldoor:Door;
@@ -40,7 +35,7 @@ var doorCutsceneActive:Bool = false;
 
 var stepvolume:Float = 1;
 
-function create(){
+function create(){		
     breakRoomDoor = getDoorByTag("breakRoomDoor");
     officeDoor = getDoorByTag("officeDoor");
     finaldoor = getDoorByTag("finaldoor");

@@ -1,8 +1,3 @@
-function CTSCRIPT_SETNAME():String
-{
-	return "factory_officehallway2";
-}
-
 var doorTopLeft:Door;
 var bottomDoor:Door;
 
@@ -162,8 +157,8 @@ function doFireDoorLockedCutscene():Void{
 }
 
 function openBottomDoor():Void{
-    executeSingleScriptFunction("codeentry", "setCode", [[1, 2, 7, 4, 8, 3]]);
-    executeSingleScriptFunction("codeentry", "openMenu", [
+    executeSingleScriptFunction("roomscript_codeentry", "setCode", [[1, 2, 7, 4, 8, 3]]); 
+    executeSingleScriptFunction("roomscript_codeentry", "openMenu", [
         function(correct:Bool):Void{ // corrent answer
             var seenCodes:Bool = (Save.storyFlags.get("factory_pc_done").val_bool && Save.storyFlags.get("factory_gotNoodles").val_bool && Save.storyFlags.get("factory_seenSecurityPcScene").val_bool);
 

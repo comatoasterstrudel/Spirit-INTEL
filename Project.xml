@@ -24,7 +24,6 @@
 	<haxelib name="flixel-addons" />
 	<haxelib name="hscript-iris" />
 	<haxelib name="hxcpp" />
-	<haxelib name="hxcpp-debug-server" />
 	<haxelib name="openfl" />
 	<haxelib name="ctUtil" />
 	<haxelib name="ctDialogueBox" />
@@ -43,7 +42,8 @@
 	<haxedef name="NAPE_RELEASE_BUILD" unless="debug" />
 	<haxedef name="message.reporting" value="pretty" />
 	<haxedef name="FLX_NO_FOCUS_LOST_SCREEN" />
-	
+	<haxedef if="debug" name="hscriptPos" />
+
 	<icon path="assets/images/icons/256.png" size='258'/>
 	<icon path="assets/images/icons/128.png" size='128'/>
 	<icon path="assets/images/icons/64.png" size='64'/>

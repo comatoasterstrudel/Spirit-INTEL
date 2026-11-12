@@ -71,11 +71,6 @@
       "version": "4.3.2"
     },
     {
-      "name": "hxcpp-debug-server",
-      "type": "haxelib",
-      "version": "1.2.4"
-    },
-    {
       "name": "openfl",
       "type": "haxelib",
       "version": "9.5.2"

@@ -1,8 +1,3 @@
-function CTSCRIPT_SETNAME():String
-{
-	return "factory_fireexitroom";
-}
-
 var character_robin:Player;
 var character_managerscary:Character;
 

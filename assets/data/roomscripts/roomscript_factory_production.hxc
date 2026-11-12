@@ -1,8 +1,3 @@
-function CTSCRIPT_SETNAME():String
-{
-	return "factory_production";
-}
-
 var lightingCover:LightingSprite;
 
 var dialogueBox:CtDialogueBox;
@@ -361,7 +356,7 @@ function doProductionCutscene():Void
 	// wait, then change scene and move camera
 	OverworldState.eventManager.addEvent(function()
 	{
-		executeSingleScriptFunction("snow", "snow_set_frequency", [.5]);
+		executeSingleScriptFunction("roomscript_snow", "snow_set_frequency", [.5]);
 
 		cutsceneSnowOverlay = new CtSprite(100, 100).createColorBlock(FlxG.width * 2.5, 1000, 0x67FFFFFF);
 		spr_behindTiles.add(cutsceneSnowOverlay);
@@ -384,7 +379,7 @@ function doProductionCutscene():Void
 							doSceneFade(2);
 							lightingCover.alpha = .5;
 							cutsceneSnowOverlay.visible = false;
-							executeSingleScriptFunction("snow", "snow_set_frequency", [1.5]);
+							executeSingleScriptFunction("roomscript_snow", "snow_set_frequency", [1.5]);
 
 							new FlxTimer().start(4, function(F):Void
 							{
@@ -609,7 +604,7 @@ function removeProductionCutsceneTrigger():Void
 
 function configSnow():Void
 {
-	snowGroup = executeSingleScriptFunction("snow", "snow_get_snowGroup", []);    
+	snowGroup = executeSingleScriptFunction("roomscript_snow", "snow_get_snowGroup", []);    
     spr_behindTiles = get_spr_behindTiles();
     overMap = get_overMap();
     
@@ -618,8 +613,8 @@ function configSnow():Void
     
     snowGroup.alpha = .4;
     
-    executeSingleScriptFunction("snow", "snow_set_frequency", [1.5]);    
-	executeSingleScriptFunction("snow", "snow_setBoundariesFromGrid", [12, 42, 8, 15]);   
+    executeSingleScriptFunction("roomscript_snow", "snow_set_frequency", [1.5]);    
+	executeSingleScriptFunction("roomscript_snow", "snow_setBoundariesFromGrid", [12, 42, 8, 15]);   
 }
 var conveyorSpeed:Float = -30;
 
