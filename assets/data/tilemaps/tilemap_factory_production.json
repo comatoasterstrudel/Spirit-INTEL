@@ -708,6 +708,54 @@
           "originX": 0,
           "originY": 0,
           "values": {"propName": "factorycartblocker", "tag": "blocker", "addLight": false}
+        },
+        {
+          "name": "interactable",
+          "id": 68,
+          "_eid": "67528600",
+          "x": 704,
+          "y": 384,
+          "width": 32,
+          "height": 32,
+          "originX": 0,
+          "originY": 0,
+          "values": {"triggerByWalkingOver": false, "dialogue": "factory/production/dialogue_cart", "room": "", "roomTransitionTime": 0.3, "encounterName": "", "scriptFunction": "", "tag": "", "openSave": false, "saveName": "", "saveBgName": ""}
+        },
+        {
+          "name": "interactable",
+          "id": 69,
+          "_eid": "67528600",
+          "x": 448,
+          "y": 624,
+          "width": 32,
+          "height": 32,
+          "originX": 0,
+          "originY": 0,
+          "values": {"triggerByWalkingOver": false, "dialogue": "factory/production/dialogue_cart", "room": "", "roomTransitionTime": 0.3, "encounterName": "", "scriptFunction": "", "tag": "", "openSave": false, "saveName": "", "saveBgName": ""}
+        },
+        {
+          "name": "interactable",
+          "id": 70,
+          "_eid": "67528600",
+          "x": 480,
+          "y": 352,
+          "width": 32,
+          "height": 32,
+          "originX": 0,
+          "originY": 0,
+          "values": {"triggerByWalkingOver": false, "dialogue": "factory/production/dialogue_cart", "room": "", "roomTransitionTime": 0.3, "encounterName": "", "scriptFunction": "", "tag": "", "openSave": false, "saveName": "", "saveBgName": ""}
+        },
+        {
+          "name": "interactable",
+          "id": 71,
+          "_eid": "67528600",
+          "x": 536,
+          "y": 496,
+          "width": 32,
+          "height": 32,
+          "originX": 0,
+          "originY": 0,
+          "values": {"triggerByWalkingOver": false, "dialogue": "factory/production/dialogue_cart", "room": "", "roomTransitionTime": 0.3, "encounterName": "", "scriptFunction": "", "tag": "blockerdialogue", "openSave": false, "saveName": "", "saveBgName": ""}
         }
       ]
     },

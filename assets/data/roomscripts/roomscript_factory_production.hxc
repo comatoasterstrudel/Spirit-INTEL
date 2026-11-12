@@ -29,6 +29,7 @@ var sleepyLevel:String = "awake";
 var productionObjects:FlxSpriteGroup;
 
 var blocker:Prop;
+var blockerdialogue:Interactable;
 
 //
 // MONSTER
@@ -81,6 +82,9 @@ function create():Void
 
 	blocker = getPropByTag("blocker");
 	blocker.kill();
+
+	blockerdialogue = getInteractableByTag("blockerdialogue");
+	blockerdialogue.disabled = true;
 
 	conveyorLights = [getPropByTag("conveyorlight1"), getPropByTag("conveyorlight2")];
 	
@@ -928,7 +932,8 @@ function startMonsterCutscene():Void
 	set_inCutscene(true);
 
 	blocker.revive();
-
+	blockerdialogue.disabled = false;
+	
 	new FlxTimer().start(OverworldState.lastTransitionTime + 1, function(f):Void
 	{
 		startDialogue(["factory/production/monster/dialogue_lightsoff"], function():Void
