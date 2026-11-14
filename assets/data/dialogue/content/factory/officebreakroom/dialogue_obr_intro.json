@@ -1,26 +1,50 @@
 [
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "A breakroom?",
+		"choicerOptions": [],
+		"portrait": "neutral2",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Seems redundant.",
+		"choicerOptions": [],
+		"portrait": "neutral2",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Does the manager need his own special one?",
+		"choicerOptions": [],
+		"portrait": "lookdown_neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "volor",
-		"portrait": "neutral_neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Apparently.",
+		"choicerOptions": [],
+		"portrait": "neutral2",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	}
 ]

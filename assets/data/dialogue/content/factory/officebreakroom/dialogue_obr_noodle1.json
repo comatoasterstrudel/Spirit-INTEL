@@ -1,37 +1,74 @@
 [
 	{
 		"speed": 0.03,
-		"dialogue": "It's open ajar..",
-		"actor": "narrator"
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "The door's ajar..",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "narrator",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "It seems like it hasn't been opened like this long..",
+		"choicerOptions": [],
+		"portrait": "pensive",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "The air coming out of it is still cold.",
+		"choicerOptions": [],
+		"portrait": "pensive",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Do you think the manager came in here to get a bite?",
+		"choicerOptions": [],
+		"portrait": "lookdown_neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "volor",
-		"portrait": "neutral_neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Haha, very funny.",
+		"choicerOptions": [],
+		"portrait": "smile",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "I wonder if they have any good food in here-",
+		"choicerOptions": [],
+		"portrait": "smiletalk",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	}
 ]
