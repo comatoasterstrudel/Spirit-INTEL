@@ -5,34 +5,34 @@
 		"events": [],
 		"dialogue": "Every skill costs a certain amount of MP to use.",
 		"choicerOptions": [],
-		"portrait": "neutral_neutral",
+		"portrait": "pensive_neutral",
 		"continueLine": false,
 		"voiceLine": "",
 		"actor": "volor",
 		"autoSkip": false
 	},
 	{
-		"dialogue": "However, the first skill a spirit has will always be free.",
-		"events": [],
-		"continueLine": false,
-		"portrait": "neutral_neutral",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "volor",
+		"events": [],
+		"dialogue": "However, the first skill a spirit has will always be free.",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "pensive_neutral",
+		"continueLine": false,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "volor",
+		"autoSkip": false
 	},
 	{
-		"dialogue": "Make sure to conserve your spirits MP..",
-		"events": [],
-		"continueLine": false,
-		"portrait": "neutral_neutral",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "volor",
+		"events": [],
+		"dialogue": "Make sure to conserve your spirits MP.",
 		"choicerOptions": [],
+		"portrait": "pensive_neutral",
+		"continueLine": false,
 		"voiceLine": "",
-		"autoSkip": false,
-		"speed": 0.03
+		"actor": "volor",
+		"autoSkip": false
 	}
 ]

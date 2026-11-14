@@ -3,24 +3,24 @@
 		"speed": 0.03,
 		"diaPitch": 1,
 		"events": [],
-		"dialogue": "Something I forgot to mention is MP.",
+		"dialogue": "Something I forgot to mention is [[BLUE]]MP[[ENDBLUE]].",
 		"choicerOptions": [],
-		"portrait": "neutral_neutral",
+		"portrait": "pensive_neutral",
 		"continueLine": false,
 		"voiceLine": "",
 		"actor": "volor",
 		"autoSkip": false
 	},
 	{
-		"dialogue": "Here you can see how much MP a Spirit has..",
-		"events": [],
-		"continueLine": false,
-		"portrait": "neutral_neutral",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "volor",
+		"events": [],
+		"dialogue": "Here you can see how much MP a spirit has..",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "pensive_neutral",
+		"continueLine": false,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "volor",
+		"autoSkip": false
 	}
 ]

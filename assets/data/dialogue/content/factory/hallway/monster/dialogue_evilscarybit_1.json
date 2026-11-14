@@ -1,41 +1,74 @@
 [
 	{
 		"speed": 0.1,
-		"dialogue": "[[SHAKE]]...hah...",
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "[[SHAKE]]...hah...[[ENDSHAKE]]",
+		"choicerOptions": [],
+		"portrait": "stand",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "managerscary",
-		"portrait": "stand"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.1,
-		"dialogue": "hah...[[ENDSHAKE]]",
-		"actor": "managerscary",
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "[[SHAKE]]hah...[[ENDSHAKE]]",
+		"choicerOptions": [],
+		"portrait": "stand",
 		"continueLine": true,
-		"portrait": "stand"
+		"voiceLine": "",
+		"actor": "managerscary",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "...I...",
+		"choicerOptions": [],
+		"portrait": "hat_scared2",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "hat_shocked"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.1,
-		"dialogue": "[[SHAKE]]...help..",
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "[[SHAKE]]...help..[[ENDSHAKE]]",
+		"choicerOptions": [],
+		"portrait": "stand",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "managerscary",
-		"portrait": "stand"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.1,
-		"dialogue": "me...",
-		"actor": "managerscary",
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "[[SHAKE]]me...[[ENDSHAKE]]",
+		"choicerOptions": [],
+		"portrait": "stand",
 		"continueLine": true,
-		"portrait": "stand"
+		"voiceLine": "",
+		"actor": "managerscary",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.05,
-		"dialogue": "-GRK![[ENDSHAKE]]",
-		"actor": "managerscary",
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "[[SHAKE]]-GRK![[ENDSHAKE]]",
+		"choicerOptions": [],
+		"portrait": "stand",
 		"continueLine": true,
-		"portrait": "stand"
+		"voiceLine": "",
+		"actor": "managerscary",
+		"autoSkip": false
 	}
-] 
+]

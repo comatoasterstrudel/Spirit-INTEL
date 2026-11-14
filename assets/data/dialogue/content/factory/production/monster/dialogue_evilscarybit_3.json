@@ -1,34 +1,62 @@
 [
 	{
 		"speed": 0.1,
-		"dialogue": "[[SHAKE]]Augh...",
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "[[SHAKE]]Augh...[[ENDSHAKE]]",
+		"choicerOptions": [],
+		"portrait": "sit_closed",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "managerscary",
-		"portrait": "sit_closed"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.1,
-		"dialogue": " hehh...",
-		"actor": "managerscary",
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": " [[SHAKE]]hehh...[[ENDSHAKE]]",
+		"choicerOptions": [],
+		"portrait": "sit_closed",
 		"continueLine": true,
-		"portrait": "sit_closed"
+		"voiceLine": "",
+		"actor": "managerscary",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.1,
-		"dialogue": " hah...[[ENDSHAKE]]",
-		"actor": "managerscary",
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": " [[SHAKE]]hah...[[ENDSHAKE]]",
+		"choicerOptions": [],
+		"portrait": "sit_open",
 		"continueLine": true,
-		"portrait": "sit_open"
+		"voiceLine": "",
+		"actor": "managerscary",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "...",
+		"choicerOptions": [],
+		"portrait": "hat_scared2",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "hat_shocked"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "What the...",
+		"choicerOptions": [],
+		"portrait": "hat_shocked",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "hat_shocked"
+		"autoSkip": false
 	}
-] 
+]

@@ -5,34 +5,34 @@
 		"events": [],
 		"dialogue": "Damn, that guys strong..",
 		"choicerOptions": [],
-		"portrait": "neutral_neutral",
+		"portrait": "pensive_neutral",
 		"continueLine": false,
 		"voiceLine": "",
 		"actor": "volor",
 		"autoSkip": false
 	},
 	{
-		"dialogue": ".. Now that every spirit on the board has taken their turn..",
-		"events": [],
-		"continueLine": false,
-		"portrait": "neutral_neutral",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "volor",
+		"events": [],
+		"dialogue": "Now that every spirit on the board has taken their turn..",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "pensive_neutral",
+		"continueLine": false,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "volor",
+		"autoSkip": false
 	},
 	{
-		"dialogue": "We enter the next round!",
-		"events": [],
-		"continueLine": false,
-		"portrait": "neutral_neutral",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "volor",
+		"events": [],
+		"dialogue": "We'll enter the next round.",
 		"choicerOptions": [],
+		"portrait": "pensive_neutral",
+		"continueLine": false,
 		"voiceLine": "",
-		"autoSkip": false,
-		"speed": 0.03
+		"actor": "volor",
+		"autoSkip": false
 	}
 ]

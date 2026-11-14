@@ -15,7 +15,7 @@
 		"speed": 0.03,
 		"diaPitch": 1,
 		"events": [],
-		"dialogue": "Each grid space can contain a spirit..",
+		"dialogue": "Each grid space can contain a [[BLUE]]spirit[[ENDBLUE]].",
 		"choicerOptions": [],
 		"portrait": "hat_shocked_neutral",
 		"continueLine": false,
@@ -24,16 +24,16 @@
 		"autoSkip": false
 	},
 	{
-		"dialogue": "...!",
-		"events": [],
-		"continueLine": false,
-		"portrait": "hat_shocked_neutral",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "volor",
+		"events": [],
+		"dialogue": "...!",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "hat_shocked_neutral",
+		"continueLine": false,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "volor",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
@@ -41,34 +41,36 @@
 		"events": [],
 		"dialogue": "Like that one on your head!",
 		"choicerOptions": [],
-		"portrait": "hat_scared_neutral",
+		"portrait": "hat_shocked_neutral",
 		"continueLine": false,
 		"voiceLine": "",
 		"actor": "volor",
 		"autoSkip": false
 	},
 	{
-		"dialogue": "..?",
-		"events": [],
-		"continueLine": false,
-		"portrait": "hat_shocked",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "robin",
+		"events": [],
+		"dialogue": "..?",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "hat_pensive",
+		"continueLine": false,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "robin",
+		"autoSkip": false
 	},
 	{
-		"dialogue": "[[SHAKE]]..![[ENDSHAKE]]",
-		"events": ["shake"],
-		"continueLine": false,
-		"portrait": "shocked",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "robin",
+		"events": [
+			"shake"
+		],
+		"dialogue": "[[SHAKE]]..![[ENDSHAKE]]",
 		"choicerOptions": [],
+		"portrait": "shocked",
+		"continueLine": false,
 		"voiceLine": "",
-		"autoSkip": false,
-		"speed": 0.03
+		"actor": "robin",
+		"autoSkip": false
 	}
 ]

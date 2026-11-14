@@ -3,24 +3,24 @@
 		"speed": 0.03,
 		"diaPitch": 1,
 		"events": [],
-		"dialogue": "Watch out!",
+		"dialogue": "Be ready..",
 		"choicerOptions": [],
-		"portrait": "neutral_neutral",
+		"portrait": "pensive_neutral",
 		"continueLine": false,
 		"voiceLine": "",
 		"actor": "volor",
 		"autoSkip": false
 	},
 	{
-		"dialogue": " The manager's next..!",
-		"events": [],
-		"continueLine": true,
-		"portrait": "neutral_neutral",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "volor",
+		"events": [],
+		"dialogue": " The managers next.",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "pensive_neutral",
+		"continueLine": true,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "volor",
+		"autoSkip": false
 	}
 ]

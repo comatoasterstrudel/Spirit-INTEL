@@ -1,8 +1,14 @@
 [
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Then LISTEN to me!!",
+		"choicerOptions": [],
+		"portrait": "hat_scareddown2_neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "volor",
-		"portrait": "hat_shocked_neutral" 
+		"autoSkip": false
 	}
-] 
+]

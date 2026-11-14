@@ -1,32 +1,64 @@
 [
 	{
 		"speed": 0.08,
-		"dialogue": "It's time, Robin..!"
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "It's time, Robin..!",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "..?",
+		"choicerOptions": [],
+		"portrait": "hat_scareddown3",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "hat_scareddown"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.06,
+		"diaPitch": 1,
+		"events": [
+			"volorappears"
+		],
 		"dialogue": "            ",
+		"choicerOptions": [],
+		"portrait": "hat_scareddown3_neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "volor",
-		"events": ["volorappears"],
-		"portrait": "hat_scared_neutral",
 		"autoSkip": true
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "You need to fight!",
+		"choicerOptions": [],
+		"portrait": "hat_scareddown3_neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "volor",
-		"portrait": "hat_scared_neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "WHAT!?",
+		"choicerOptions": [],
+		"portrait": "hat_terrifieddown",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "hat_terrifieddown"
+		"autoSkip": false
 	}
-] 
+]

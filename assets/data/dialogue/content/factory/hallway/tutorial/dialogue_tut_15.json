@@ -5,7 +5,7 @@
 		"events": [],
 		"dialogue": "[[SHAKE]]We... barely made a dent...[[ENDSHAKE]]",
 		"choicerOptions": [],
-		"portrait": "neutral_neutral",
+		"portrait": "scared2_neutral",
 		"continueLine": false,
 		"voiceLine": "",
 		"actor": "volor",

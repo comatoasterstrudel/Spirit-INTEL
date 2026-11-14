@@ -1,14 +1,26 @@
 [
 	{
 		"speed": 0.05,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "[[SHAKE]]ACK-![[ENDSHAKE]]",
+		"choicerOptions": [],
+		"portrait": "sit_open",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "managerscary",
-		"portrait": "sit_open"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "What the-",
+		"choicerOptions": [],
+		"portrait": "hat_scareddown2",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "hat_shocked"
+		"autoSkip": false
 	}
-] 
+]
