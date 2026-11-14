@@ -143,6 +143,8 @@ class InitState extends FlxState{
 
 		CtDialogueBox.addTextEffect({typableStartText: "[[BLUE]]", typableEndText: "[[ENDBLUE]]", startText: "@[NUM]331640A", endText: "@[NUM]0", effectClass: BlueEffect});
 
+		WaveEffect.effect = .6;
+
 	}
 	function initScripts():Void
 	{

@@ -41,6 +41,7 @@ import cpp.vm.Gc;
 import ctDialogueBox.ctdb.CtDialogueBox;
 import ctDialogueBox.textbox.Text;
 import ctDialogueBox.textbox.effects.IEffect;
+import ctDialogueBox.textbox.effects.WaveEffect;
 import ctUtil.CtUtil;
 import ctUtil.cache.CtCache;
 import ctUtil.camera.*;
