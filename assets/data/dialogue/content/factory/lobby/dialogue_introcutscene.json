@@ -495,7 +495,7 @@
 		"speed": 0.03,
 		"diaPitch": 1,
 		"events": [],
-		"dialogue": " Happy Birthday!",
+		"dialogue": " [[WAVE]]Happy Birthday![[ENDWAVE]]",
 		"choicerOptions": [],
 		"portrait": "happy",
 		"continueLine": true,

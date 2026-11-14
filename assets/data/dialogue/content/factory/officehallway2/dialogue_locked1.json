@@ -1,18 +1,38 @@
 [
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "The door won't budge.",
-		"actor": "narrator"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "narrator",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Next to the handle is a 6 digit security lock.",
-		"actor": "narrator"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "narrator",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Goddammit!",
+		"choicerOptions": [],
+		"portrait": "angry5",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	}
 ]

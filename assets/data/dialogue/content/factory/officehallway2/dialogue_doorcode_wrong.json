@@ -1,13 +1,26 @@
 [
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Wrong code...",
-		"actor": "narrator"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "narrator",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Damn.",
+		"choicerOptions": [],
+		"portrait": "neutral2_neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "volor",
-		"portrait": "neutral_neutral"
+		"autoSkip": false
 	}
 ]
