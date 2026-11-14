@@ -5,22 +5,22 @@
 		"events": [],
 		"dialogue": "hah... hah...",
 		"choicerOptions": [],
-		"portrait": "neutral",
+		"portrait": "talk2",
 		"continueLine": false,
 		"voiceLine": "",
 		"actor": "robin",
 		"autoSkip": false
 	},
 	{
-		"dialogue": "...",
-		"events": [],
-		"continueLine": false,
-		"portrait": "neutral",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "robin",
+		"events": [],
+		"dialogue": "...",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "angry6",
+		"continueLine": false,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "robin",
+		"autoSkip": false
 	}
 ]

@@ -1,50 +1,50 @@
 [
 	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "He's really dead.",
-		"events": [],
-		"continueLine": false,
-		"portrait": "neutral",
-		"diaPitch": 1,
-		"actor": "robin",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "talk",
+		"continueLine": false,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "robin",
+		"autoSkip": false
 	},
 	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "...",
-		"events": [],
-		"continueLine": false,
-		"portrait": "neutral",
-		"diaPitch": 1,
-		"actor": "robin",
 		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
 		"voiceLine": "",
-		"autoSkip": false,
-		"speed": 0.03
+		"actor": "robin",
+		"autoSkip": false
 	},
 	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "We should get out of here, Robin.",
-		"events": [],
-		"continueLine": false,
-		"portrait": "neutral_neutral",
-		"diaPitch": 1,
-		"actor": "volor",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "neutral_neutral",
+		"continueLine": false,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "volor",
+		"autoSkip": false
 	},
 	{
-		"dialogue": "Oh-um, yeah...",
-		"events": [],
-		"continueLine": false,
-		"portrait": "neutral",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "robin",
+		"events": [],
+		"dialogue": "Um... yeah...",
 		"choicerOptions": [],
+		"portrait": "neutral2",
+		"continueLine": false,
 		"voiceLine": "",
-		"autoSkip": false,
-		"speed": 0.03
+		"actor": "robin",
+		"autoSkip": false
 	}
 ]

@@ -12,15 +12,15 @@
 		"autoSkip": false
 	},
 	{
-		"dialogue": "(I'm so excited to go to bed...)",
-		"events": [],
-		"continueLine": false,
-		"portrait": "hat_neutral",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "robin",
+		"events": [],
+		"dialogue": "(I'm so excited to go to bed...)",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "hat_pensive",
+		"continueLine": false,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "robin",
+		"autoSkip": false
 	}
 ]

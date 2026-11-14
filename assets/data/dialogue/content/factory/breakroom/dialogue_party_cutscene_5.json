@@ -1,8 +1,14 @@
 [
 	{
 		"speed": 0.03,
-		"dialogue": "(He definitely thought no one would hear that, did he?)",
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "(He definitely thought no one would hear that, didn't he?)",
+		"choicerOptions": [],
+		"portrait": "pensive",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	}
 ]

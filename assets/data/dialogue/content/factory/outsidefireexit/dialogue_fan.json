@@ -1,7 +1,14 @@
 [
 	{
 		"speed": 0.03,
-		"dialogue": "Fan.",
-		"actor": "narrator"
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Outdoor unit.",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "narrator",
+		"autoSkip": false
 	}
 ]

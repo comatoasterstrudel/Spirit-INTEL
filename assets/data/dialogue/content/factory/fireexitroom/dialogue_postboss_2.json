@@ -1,62 +1,62 @@
 [
 	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "I think he's dead.",
-		"events": [],
-		"continueLine": false,
-		"portrait": "neutral",
-		"diaPitch": 1,
-		"actor": "robin",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "lookdown",
+		"continueLine": false,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "robin",
+		"autoSkip": false
 	},
 	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "...",
-		"events": [],
-		"continueLine": false,
-		"portrait": "neutral",
-		"diaPitch": 1,
-		"actor": "robin",
 		"choicerOptions": [],
+		"portrait": "lookdown2",
+		"continueLine": false,
 		"voiceLine": "",
-		"autoSkip": false,
-		"speed": 0.03
+		"actor": "robin",
+		"autoSkip": false
 	},
 	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Augh...",
-		"events": [],
-		"continueLine": false,
-		"portrait": "neutral",
-		"diaPitch": 1,
-		"actor": "robin",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "pensive",
+		"continueLine": false,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "robin",
+		"autoSkip": false
 	},
 	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Thank god...",
-		"events": [],
-		"continueLine": false,
-		"portrait": "neutral",
-		"diaPitch": 1,
-		"actor": "robin",
 		"choicerOptions": [],
+		"portrait": "talk3",
+		"continueLine": false,
 		"voiceLine": "",
-		"autoSkip": false,
-		"speed": 0.03
+		"actor": "robin",
+		"autoSkip": false
 	},
 	{
-		"dialogue": "...",
-		"events": [],
-		"continueLine": false,
-		"portrait": "neutral",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "robin",
+		"events": [],
+		"dialogue": "...",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "neutral2",
+		"continueLine": false,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "robin",
+		"autoSkip": false
 	}
 ]

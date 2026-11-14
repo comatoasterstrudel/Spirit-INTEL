@@ -1,67 +1,134 @@
 [
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "There are many books here.",
-		"actor": "narrator"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "narrator",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "The bottom row is all documentation and data, but a lot of what's on this shelf is personal stuff.",
-		"actor": "narrator"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "narrator",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "So many poetry collections...",
-		"actor": "robin",
-		"portrait": "neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "You enjoy poetry, right?",
-		"actor": "volor",
-		"portrait": "neutral_neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Is any of this stuff good?",
-		"actor": "volor",
-		"portrait": "neutral_neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Yeah I do, but most of this stuff is pretty pretentious and tired....",
-		"actor": "robin",
-		"portrait": "neutral_neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "How do you know that though?",
-		"actor": "robin",
-		"portrait": "neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": " That I like poetry.",
-		"actor": "robin",
+		"choicerOptions": [],
 		"portrait": "neutral",
-		"continueLine": true
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "I have much more knowledge than an ephemeral being like yourself has.",
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "You enjoy poetry, right?",
+		"choicerOptions": [],
+		"portrait": "lookdown_neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "volor",
-		"portrait": "neutral_neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Is any of this stuff good?",
+		"choicerOptions": [],
+		"portrait": "neutral_neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Yeah I do, but most of this stuff is pretty pretentious and tired....",
+		"choicerOptions": [],
+		"portrait": "talk4",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "How do you know that though?",
+		"choicerOptions": [],
+		"portrait": "lookdown2",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": " That I like poetry.",
+		"choicerOptions": [],
+		"portrait": "talk3",
+		"continueLine": true,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "I have much more knowledge than an ephemeral being like yourself has.",
+		"choicerOptions": [],
+		"portrait": "lookdown_neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Okay...",
+		"choicerOptions": [],
+		"portrait": "pensive",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "...",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	}
 ]

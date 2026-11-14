@@ -29,22 +29,22 @@
 		"events": [],
 		"dialogue": "Yeah, I think you can make it so these can open computers.",
 		"choicerOptions": [],
-		"portrait": "neutral",
+		"portrait": "talk3",
 		"continueLine": false,
 		"voiceLine": "",
 		"actor": "robin",
 		"autoSkip": false
 	},
 	{
-		"dialogue": "Let's just go plug it in so we can get out of here.",
-		"events": [],
-		"continueLine": false,
-		"portrait": "neutral",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "robin",
+		"events": [],
+		"dialogue": "Let's just go plug it in so we can get out of here.",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "talk",
+		"continueLine": false,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "robin",
+		"autoSkip": false
 	}
 ]
