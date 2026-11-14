@@ -1,63 +1,122 @@
 [
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "The door unlocked.",
-		"actor": "narrator"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "narrator",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Wow!",
+		"choicerOptions": [],
+		"portrait": "yikk",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": " I got it right!",
+		"choicerOptions": [],
+		"portrait": "yikk",
+		"continueLine": true,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral",
-		"continueLine": true
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": " How intelligent of me!",
+		"choicerOptions": [],
+		"portrait": "yikk",
+		"continueLine": true,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral",
-		"continueLine": true
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "That was amazing, Robin!",
+		"choicerOptions": [],
+		"portrait": "yikk",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "volor",
-		"portrait": "neutral_neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Lets hope we didn't need anything in those rooms!",
+		"choicerOptions": [],
+		"portrait": "yikk",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "volor",
-		"portrait": "neutral_neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Of course!",
+		"choicerOptions": [],
+		"portrait": "yikk",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Those rooms held nothing of importance and will not affect the gameplay!",
+		"choicerOptions": [],
+		"portrait": "yikk",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Let's go, my friend!",
+		"choicerOptions": [],
+		"portrait": "yikk",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Yes! Lets!",
+		"choicerOptions": [],
+		"portrait": "yikk",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "volor",
-		"portrait": "neutral_neutral"
+		"autoSkip": false
 	}
 ]
