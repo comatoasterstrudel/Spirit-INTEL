@@ -37,105 +37,11 @@
 	"layerFaces": [
 		{
 			"tag": "normal",
-			"faces": [
-				{
-					"name": "neutral",
-					"layer": "laurin_face_neutral"
-				},
-				{
-					"name": "biglaugh",
-					"layer": "laurin_face_biglaugh"
-				},
-				{
-					"name": "sympathysmile",
-					"layer": "laurin_face_sympathysmile"
-				},
-				{
-					"name": "secret",
-					"layer": "laurin_face_secret"
-				},
-				{
-					"name": "frown",
-					"layer": "laurin_face_frown"
-				},
-				{
-					"name": "mad",
-					"layer": "laurin_face_mad"
-				},
-				{
-					"name": "singlebrowraise",
-					"layer": "laurin_face_singlebrowraise"
-				},
-				{
-					"name": "talkhighbrows",
-					"layer": "laurin_face_talkhighbrows"
-				},
-				{
-					"name": "raisedbrows",
-					"layer": "laurin_face_raisedbrows"
-				},
-				{
-					"name": "lecture",
-					"layer": "laurin_face_lecture"
-				},
-				{
-					"name": "sadtalk",
-					"layer": "laurin_face_sadtalk"
-				},
-				{
-					"name": "talk",
-					"layer": "laurin_face_talk"
-				},
-				{
-					"name": "sigh",
-					"layer": "laurin_face_sigh"
-				},
-				{
-					"name": "happy",
-					"layer": "laurin_face_happy"
-				}
-			]
+			"prefix": "laurin_face_"
 		},
 		{
 			"tag": "call",
-			"faces": [
-				{
-					"name": "eyesclosed",
-					"layer": "laurincall_face_eyesclosed"
-				},
-				{
-					"name": "lookneutral",
-					"layer": "laurincall_face_lookneutral"
-				},
-				{
-					"name": "looksad",
-					"layer": "laurincall_face_looksad"
-				},
-				{
-					"name": "lookshock",
-					"layer": "laurincall_face_lookshock"
-				},
-				{
-					"name": "lookspeak",
-					"layer": "laurincall_face_lookspeak"
-				},
-				{
-					"name": "lookupset",
-					"layer": "laurincall_face_lookupset"
-				},
-				{
-					"name": "lookneutral",
-					"layer": "laurincall_face_lookneutral"
-				},
-				{
-					"name": "speak",
-					"layer": "laurincall_face_speak"
-				},
-				{
-					"name": "neutral",
-					"layer": "laurincall_face_neutral"
-				}
-			]
+			"prefix": "laurincall_face_"
 		}
 	]
 }

@@ -21,20 +21,7 @@
 	"layerFaces": [
 		{
 			"tag": "normal",
-			"faces": [
-				{
-					"name": "neutral",
-					"layer": "manager_face_neutral"
-				},
-				{
-					"name": "talk",
-					"layer": "manager_face_talk"
-				},
-				{
-					"name": "douche",
-					"layer": "manager_face_douche"
-				}
-			]
+			"prefix": "manager_face_"
 		}
 	]
 } 

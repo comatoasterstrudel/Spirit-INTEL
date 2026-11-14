@@ -37,52 +37,7 @@
 	"layerFaces": [
 		{
 			"tag": "normal",
-			"faces": [
-				{
-					"name": "neutral",
-					"layer": "robin_face_neutral"
-				},
-				{
-					"name": "smiletalk",
-					"layer": "robin_face_smiletalk"
-				},
-				{
-					"name": "smile",
-					"layer": "robin_face_smile"
-				},
-				{
-					"name": "talk",
-					"layer": "robin_face_talk"
-				},
-				{
-					"name": "scared",
-					"layer": "robin_face_scared"
-				},
-				{
-					"name": "scareddown",
-					"layer": "robin_face_scareddown"
-				},
-				{
-					"name": "shocked",
-					"layer": "robin_face_shocked"
-				},
-				{
-					"name": "sleepy",
-					"layer": "robin_face_sleepy"
-				},
-				{
-					"name": "sleepyshock",
-					"layer": "robin_face_sleepyshock"
-				},
-				{
-					"name": "terrified",
-					"layer": "robin_face_terrified"
-				},
-				{
-					"name": "terrifieddown",
-					"layer": "robin_face_terrifieddown"
-				}
-			]
+			"prefix": "robin_face_"
 		}
 	]
 }

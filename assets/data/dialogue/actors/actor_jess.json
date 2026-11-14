@@ -21,36 +21,7 @@
 	"layerFaces": [
 		{
 			"tag": "normal",
-			"faces": [
-				{
-					"name": "neutral",
-					"layer": "jess_face_neutral"
-				},
-				{
-					"name": "closedsmile",
-					"layer": "jess_face_closedsmile"
-				},
-				{
-					"name": "quirkedup",
-					"layer": "jess_face_quirkedup"
-				},
-				{
-					"name": "sigh",
-					"layer": "jess_face_sigh"
-				},
-				{
-					"name": "talkneutral",
-					"layer": "jess_face_talkneutral"
-				},
-				{
-					"name": "smile",
-					"layer": "jess_face_smile"
-				},
-				{
-					"name": "talksmile",
-					"layer": "jess_face_talksmile"
-				}
-			]
+			"prefix": "jess_face_"
 		}
 	]
 } 
