@@ -12,16 +12,16 @@
 		"autoSkip": false
 	},
 	{
-		"dialogue": "...[[BLUE]]83[[ENDBLUE]].",
-		"events": [],
-		"continueLine": false,
-		"portrait": "neutral",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "robin",
+		"events": [],
+		"dialogue": "...[[BLUE]]83[[ENDBLUE]].",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "talk3",
+		"continueLine": false,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "robin",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
@@ -29,7 +29,7 @@
 		"events": [],
 		"dialogue": "What?",
 		"choicerOptions": [],
-		"portrait": "neutral_neutral",
+		"portrait": "lookdown_neutral",
 		"continueLine": false,
 		"voiceLine": "",
 		"actor": "volor",
@@ -41,46 +41,46 @@
 		"events": [],
 		"dialogue": "It's the last part of the code.",
 		"choicerOptions": [],
-		"portrait": "neutral_neutral",
+		"portrait": "talk3",
 		"continueLine": false,
 		"voiceLine": "",
 		"actor": "robin",
 		"autoSkip": false
 	},
 	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": " It's on the bottom of this radio.",
-		"events": [],
+		"choicerOptions": [],
+		"portrait": "talk3",
 		"continueLine": true,
-		"portrait": "neutral",
-		"diaPitch": 1,
+		"voiceLine": "",
 		"actor": "robin",
-		"choicerOptions": [],
-		"autoSkip": false,
-		"voiceLine": "",
-		"speed": 0.03
+		"autoSkip": false
 	},
 	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Oh, okay.",
-		"events": [],
-		"continueLine": false,
-		"portrait": "neutral_neutral",
-		"diaPitch": 1,
-		"actor": "volor",
 		"choicerOptions": [],
+		"portrait": "neutral2_neutral",
+		"continueLine": false,
 		"voiceLine": "",
-		"autoSkip": false,
-		"speed": 0.03
+		"actor": "volor",
+		"autoSkip": false
 	},
 	{
-		"dialogue": "Let go then.",
-		"events": [],
-		"continueLine": false,
-		"portrait": "neutral_neutral",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "volor",
+		"events": [],
+		"dialogue": "Let go then.",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "neutral2_neutral",
+		"continueLine": false,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "volor",
+		"autoSkip": false
 	}
 ]

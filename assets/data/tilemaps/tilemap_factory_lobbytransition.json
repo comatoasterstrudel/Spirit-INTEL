@@ -95,7 +95,7 @@
           "height": 32,
           "originX": 0,
           "originY": 0,
-          "values": {"name": "laurinwork", "tag": "laurin"}
+          "values": {"name": "laurin", "tag": "laurin"}
         },
         {
           "name": "interactable",
