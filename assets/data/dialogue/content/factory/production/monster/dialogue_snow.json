@@ -1,14 +1,26 @@
 [
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "The snow...",
+		"choicerOptions": [],
+		"portrait": "hat_neutral2",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "hat_neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "It's... pretty.",
+		"choicerOptions": [],
+		"portrait": "hat_smile",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "hat_neutral"
+		"autoSkip": false
 	}
-] 
+]

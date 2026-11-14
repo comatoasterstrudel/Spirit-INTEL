@@ -1,82 +1,158 @@
 [
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Y.. Yeah?",
+		"choicerOptions": [],
+		"portrait": "work_pensive",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "work_neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Our shift's been over for 5 minutes now..",
+		"choicerOptions": [],
+		"portrait": "work_raisedbrows",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "work_talk"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": " You can stop working.",
+		"choicerOptions": [],
+		"portrait": "work_talkhighbrows",
+		"continueLine": true,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "work_talk",
-		"continueLine": true
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Oh shit.",
+		"choicerOptions": [],
+		"portrait": "work_talk4",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "work_talk"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": " I didn't realize.",
+		"choicerOptions": [],
+		"portrait": "work_talk3",
+		"continueLine": true,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "work_talk",
-		"continueLine": true
+		"autoSkip": false
 	},
-	{	"speed": 0.03,
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "It's fine, it's just that there's something in the breakroom..",
+		"choicerOptions": [],
+		"portrait": "work_frown",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "work_neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "...Okay?",
+		"choicerOptions": [],
+		"portrait": "work_neutral2",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "work_neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "If it's a bigass rat like last time I'm NOT going in there.",
+		"choicerOptions": [],
+		"portrait": "work_talk3",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "work_neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "NO! No it isn't, I've changed my ways, I'm good now.",
+		"choicerOptions": [],
+		"portrait": "work_happy",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "work_neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "You sure?",
+		"choicerOptions": [],
+		"portrait": "work_sleepy",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "work_neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Oh my god, YES!",
+		"choicerOptions": [],
+		"portrait": "work_biglaugh",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "work_neutral"
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": " Now come on!",
+		"choicerOptions": [],
+		"portrait": "work_talkhighbrows",
+		"continueLine": true,
+		"voiceLine": "",
 		"actor": "laurin",
-		"portrait": "work_neutral",
-		"continueLine": true
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "...",
+		"choicerOptions": [],
+		"portrait": "work_neutral",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "work_neutral"
+		"autoSkip": false
 	}
-] 
+]

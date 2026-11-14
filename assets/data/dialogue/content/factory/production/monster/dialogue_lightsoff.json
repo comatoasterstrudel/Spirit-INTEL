@@ -5,7 +5,7 @@
 		"events": [],
 		"dialogue": "The lights are already off?",
 		"choicerOptions": [],
-		"portrait": "hat_neutral",
+		"portrait": "hat_pensive",
 		"continueLine": false,
 		"voiceLine": "",
 		"actor": "robin",
