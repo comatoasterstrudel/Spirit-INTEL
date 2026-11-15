@@ -67,11 +67,11 @@ class VictoryScreenUnitLevelUi extends FlxSpriteGroup
 
             setsofthree[yPos].push(unitCells[i].baseSprite);
 
-            xPos ++;
+            xPos += 1;
 
             if(xPos > 2){
                 xPos = 0;
-                yPos ++;
+                yPos += 1;
             }
         }
 

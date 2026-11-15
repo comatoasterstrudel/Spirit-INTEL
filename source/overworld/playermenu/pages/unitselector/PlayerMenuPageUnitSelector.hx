@@ -30,7 +30,7 @@ class PlayerMenuPageUnitSelector extends PlayerMenuPage
 
             tabArray.push(tab);
 
-            counter ++;
+            counter += 1;
         }
 
         initMenu();
@@ -105,7 +105,7 @@ class PlayerMenuPageUnitSelector extends PlayerMenuPage
 
             tab.updatePositions(menuManager.curRack == tab.id);
 
-            counter ++;
+            counter += 1;
         }
     }
 }

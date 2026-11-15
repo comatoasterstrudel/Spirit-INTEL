@@ -166,10 +166,10 @@ class GridUnitPlacer extends FlxSpriteGroup
             
             unitIconArray.push(unitIcon);
             
-            xPos ++;
+            xPos += 1;
             if(xPos >= Constants.gridUnitPlacerUnitsPerRow){
                 xPos = 0;
-                yPos ++;
+                yPos += 1;
             }
         }
     }
@@ -255,7 +255,7 @@ class GridUnitPlacer extends FlxSpriteGroup
 				}
 			});
 
-			xPos++;
+			xPos+= 1;
 		}
 
 		CtUtil.centerGroup(cast topButtons, Constants.gridUnitPlacerUnitIconSpacing, uiBg.x + uiBg.width / 2);

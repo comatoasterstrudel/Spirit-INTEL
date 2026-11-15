@@ -27,7 +27,7 @@ function update(elapsed:Float):Void{
 
         if(CtControls.checkInput("up", JUSTPRESSED)){
             CtSound.play(Constants.sfx_ui_scroll);
-            inputtedCode[menuManager.curSelected] ++;
+            inputtedCode[menuManager.curSelected] += 1;
             changed = true;
             if(inputtedCode[menuManager.curSelected] > 9){
                 inputtedCode[menuManager.curSelected] = 0;

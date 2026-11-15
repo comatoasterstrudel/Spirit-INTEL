@@ -155,11 +155,12 @@ function doCutscene():Void{
 		{
 			if (name == "clap")
 			{
-				frames++;
+				frames += 1;
 				if (frameNum == 1)
 				{
 					CtSound.play(Constants.sfxPath + "clap_" + FlxG.random.int(1, 4) + ".ogg");
 				} 
+
 				if (frames >= maxFrames)
 				{
 					character_manager.lockAnims = false;
@@ -246,7 +247,7 @@ function doCutscene():Void{
 		{
 			if (name == "fastClap" && frameNum == 1)
 			{
-				claps++;
+				claps += 1;
 
 				if (claps >= maxClaps)
 				{

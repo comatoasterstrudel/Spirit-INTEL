@@ -622,7 +622,7 @@ class OverworldState extends FlxState
 					{
 						if (i % layer.gridCellsX == 0 && i != 0)
 						{
-							collumn++;
+							collumn+= 1;
 						}
 
 						if (data2D[collumn] == null)

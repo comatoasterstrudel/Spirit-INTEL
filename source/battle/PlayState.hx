@@ -713,7 +713,7 @@ class PlayState extends FlxState
 	 */
 	function advanceRound(?enableUI:Bool = false):Void
 	{
-		roundNum++;
+		roundNum+= 1;
 
 		calculateTurnOrder();
 
@@ -992,9 +992,9 @@ class PlayState extends FlxState
 			if (unit.dead == false)
 			{
 				if (unit.controllable)
-					alliedUnits++;
+					alliedUnits += 1;
 				else
-					enemyUnits++;
+					enemyUnits += 1;
 			}
 		}
 
@@ -1453,7 +1453,7 @@ class PlayState extends FlxState
 						var affectedUnits:Int = 0;
 
 						for(space in affectedSpaces){
-							if(space.unit != null) affectedUnits ++;
+							if(space.unit != null) affectedUnits += 1;
 						}
 
 						if(affectedUnits > 0 || skill.allowEmptySpaces){

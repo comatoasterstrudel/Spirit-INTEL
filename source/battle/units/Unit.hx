@@ -61,7 +61,7 @@ class Unit extends CtSprite
         
 		this.controllable = controllable;
 		
-		Unit.uniqueUnitIDnum++;
+		Unit.uniqueUnitIDnum+= 1;
 
 		this.uniqueUnitID = uniqueUnitIDnum;
 		

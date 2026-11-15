@@ -184,7 +184,7 @@ class VictoryScreen extends FlxSubState
         if(levelUpSound != null) levelUpSound.stop();
         levelUpSound = CtSound.play(Constants.sfx_levelup);
         levelUpSound.pitch = .8 + (levelUps > 0 ? levelUps / 10 : 0);
-        levelUps ++;
+        levelUps += 1;
     }
 
     function setupMenuManager():Void{
@@ -274,7 +274,7 @@ class VictoryScreen extends FlxSubState
     }
 
     function advanceStage():Void{
-        stage ++;
+        stage += 1;
 
         switch(stages[stage]){
             case EXP:

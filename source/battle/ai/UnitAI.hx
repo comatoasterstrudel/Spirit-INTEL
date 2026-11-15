@@ -58,7 +58,7 @@ class UnitAi
                 var affectedSpacesWithUnits:Int = 0;
 
                 for(affectedSpace in PlayState.getAffectedSpacesForSkill(skill, unit, space.grid, space.position)){
-                    if(affectedSpace.unit != null) affectedSpacesWithUnits ++;
+                    if(affectedSpace.unit != null) affectedSpacesWithUnits += 1;
                 }
 
                 if(affectedSpacesWithUnits > 0){
@@ -111,8 +111,8 @@ class UnitAi
                                 var plac_hp:Int = affectedUnit.hp.value;
 
                                 for(i in 0...skill.effects.eff_heal){
-                                    plac_hp ++;
-                                    points ++;
+                                    plac_hp += 1;
+                                    points += 1;
 
                                     if(plac_hp >= affectedUnit.maxHp.value){
                                         break;

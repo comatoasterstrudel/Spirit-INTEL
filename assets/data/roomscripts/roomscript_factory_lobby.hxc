@@ -258,7 +258,7 @@ function doBlink():Void{
         doBlink();
     });
     
-    progress ++;
+    progress += 1;
     if(progress >= anims.length) progress = 0;
 }
 function lockDoor():Void

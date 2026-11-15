@@ -60,7 +60,7 @@ class CharacterLevel
             totalExp -= getExpForNextLevel(level);
 
             if(totalExp >= 0){
-                level ++;
+                level += 1;
             } else {
                 stillGoing = false;
             }
@@ -87,7 +87,7 @@ class CharacterLevel
 
         while(!done){
             if(getLevelFromExp(exp) != level){
-                exp ++;
+                exp += 1;
             } else {
                 done = true;
             }
