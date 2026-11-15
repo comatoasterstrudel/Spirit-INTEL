@@ -32,6 +32,14 @@
 				"robin_hat",
 				"[[FACE_normal]]" 
 			]
+		},
+		{
+			"tag": "normal",
+			"prefix": "nojacket",
+			"layers": [
+				"robin_base_nojacket",
+				"[[FACE_normal]]" 
+			]
 		}
 	],
 	"layerFaces": [
