@@ -145,6 +145,10 @@ class InitState extends FlxState{
 
 		WaveEffect.effect = .6;
 
+		#if(debug && ctDialogueTrimmer)
+		CtDialogueTrimmer.trimDialogueFaces();
+		#end
+
 	}
 	function initScripts():Void
 	{

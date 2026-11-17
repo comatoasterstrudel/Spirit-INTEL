@@ -154,4 +154,7 @@ import texteffects.BlueEffect;
 #if ctDialogueEditor
 import ctDialogueBox.editor.*;
 #end
+#if ctDialogueTrimmer
+import ctDialogueBox.trimmer.*;
+#end
 #end
