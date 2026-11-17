@@ -35,6 +35,8 @@ var doorCutsceneActive:Bool = false;
 
 var stepvolume:Float = 1;
 
+var running:Bool = false;
+
 function create(){		
     breakRoomDoor = getDoorByTag("breakRoomDoor");
     officeDoor = getDoorByTag("officeDoor");
