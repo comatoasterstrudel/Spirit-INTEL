@@ -101,7 +101,7 @@ class InitState extends FlxState{
 
 	function initDialogueBox():Void
 	{
-		CtDialogueBox.defaultSettings = {
+		CtDialogueBox.init({
 			antialiasing: false,
 			textAntialiasing: false,
 			pressedAcceptFunction: CtControls.getInputFunction("accept", JUSTPRESSED),
@@ -137,7 +137,7 @@ class InitState extends FlxState{
 			nameBoxFollowType: Opposite,
 			confirmImagePath: "dialogueconfirm",
 			confirmOffset: FlxPoint.get(40, 50),
-		}
+		});
 
 		CtDialogueBox.preloadFont(CtDialogueBox.defaultSettings.font, CtDialogueBox.defaultSettings.fontSize);
 
