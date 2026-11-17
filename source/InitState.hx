@@ -18,6 +18,8 @@ class InitState extends FlxState{
 
 		initDialogueBox();
 		
+		initSound();
+
 		initScripts();
 		
 		initSave();
@@ -150,6 +152,11 @@ class InitState extends FlxState{
 		#end
 
 	}
+
+	function initSound():Void{
+		CtSound.init();
+	}
+
 	function initScripts():Void
 	{
 		CtScript.init();
