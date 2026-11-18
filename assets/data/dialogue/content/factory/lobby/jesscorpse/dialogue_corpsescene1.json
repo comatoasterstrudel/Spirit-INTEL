@@ -1,8 +1,14 @@
 [
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Oh my god...",
+		"choicerOptions": [],
+		"portrait": "surprise",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "shocked"
+		"autoSkip": false
 	}
 ]
