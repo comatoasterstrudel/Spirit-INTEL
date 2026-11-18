@@ -97,7 +97,7 @@ function doConversationCutscene():Void
 	set_lockCamera(true);
 
 	character_player.lockMovement = true;
-	character_player.positionCharacterByGrid(7 + addThisX, 17);
+	character_player.positionCharacterByGrid(7 + addThisX, 16);
 	character_player.visible = false;
 	
 	camGame.scroll.x = getDesiredCameraPosition().x;
