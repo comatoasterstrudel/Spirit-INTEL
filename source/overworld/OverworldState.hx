@@ -424,6 +424,15 @@ class OverworldState extends FlxState
 	}
 
 	function moveCameraBackToPlayer(time:Float, ease:EaseFunction, ?onComplete:Void->Void):Void{
+		var desiredPos = getDesiredCameraPosition();
+
+		FlxTween.tween(camGame.scroll, {x: desiredPos.x, y: desiredPos.y}, time, {ease: ease, onComplete: function(f):Void{
+			if(onComplete != null) onComplete();
+		}});
+	}
+
+	function getDesiredCameraPosition():FlxPoint
+	{
 		var desiredX:Float = 0;
 		var desiredY:Float = 0;
 
@@ -446,9 +455,7 @@ class OverworldState extends FlxState
 
 		handleCameraScroll();
 
-		FlxTween.tween(camGame.scroll, {x: desiredX, y: desiredY}, time, {ease: ease, onComplete: function(f):Void{
-			if(onComplete != null) onComplete();
-		}});
+		return FlxPoint.get(desiredX, desiredY);
 	}
 	
 	function handleExit(elapsed:Float):Void
@@ -1432,6 +1439,7 @@ class OverworldState extends FlxState
 		script.setValue({name: "startBattle", value: startBattle});
 
 		script.setValue({name: "moveCameraBackToPlayer", value: moveCameraBackToPlayer});
+		script.setValue({name: "getDesiredCameraPosition", value: getDesiredCameraPosition});
 
 		// get, set
 		script.setValue({name: "get_inCutscene", value: get_inCutscene});

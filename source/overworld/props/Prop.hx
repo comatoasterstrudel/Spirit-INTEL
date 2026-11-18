@@ -27,7 +27,7 @@ class Prop extends CtSprite
 		hitbox.visible = false;
 		hitbox.immovable = true;
     }
-    
+
     function loadSprite():Void{
         var base = Constants.propImagePath + data.graphic;
 

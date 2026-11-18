@@ -66,7 +66,6 @@ class Character extends CtSprite
 	override function draw():Void
 	{
 		centerSpriteOnHitbox();
-
 		super.draw();
 	}
 
