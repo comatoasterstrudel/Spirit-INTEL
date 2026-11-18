@@ -1,0 +1,38 @@
+[
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "..That must be her keycard.",
+		"choicerOptions": [],
+		"portrait": "pensive",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"dialogue": "She must've dropped it when..",
+		"events": [],
+		"continueLine": false,
+		"portrait": "neutral2",
+		"diaPitch": 1,
+		"actor": "robin",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
+	},
+	{
+		"dialogue": "...",
+		"events": [],
+		"continueLine": false,
+		"portrait": "neutral2",
+		"diaPitch": 1,
+		"actor": "robin",
+		"choicerOptions": [],
+		"voiceLine": "",
+		"autoSkip": false,
+		"speed": 0.03
+	}
+]

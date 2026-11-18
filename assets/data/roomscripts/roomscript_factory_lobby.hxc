@@ -19,10 +19,16 @@ var lightingCover:LightingSprite;
 var addThisX:Int = 14;
 
 var fullart_fade:CtSprite;
+var fullart_bg:CtSprite;
+var fullart_robin:CtSprite;
+var fullart_jess:CtSprite;
+var fullart_bg2:CtSprite;
 
 var keycard:Prop;
 
 var corpsedia:Interactable;
+
+var fadething:CtSprite;
 
 function create():Void{
 	character_player = get_player();
@@ -289,6 +295,10 @@ function doCorpseCutscene():Void{
 	
 	camGame.scroll.y = 20;
 
+	fadething = new CtSprite().createColorBlock(Std.int(FlxG.width), Std.int(FlxG.height), 0xFF000000);
+	fadething.camera = camOverlay;
+	add(fadething);
+
 	// robin enters room
 	OverworldState.eventManager.addEvent(function()
 	{
@@ -296,11 +306,15 @@ function doCorpseCutscene():Void{
 
 		character_player.kill();
 
-		new FlxTimer().start(1, function(f):Void{
+		new FlxTimer().start(2, function(f):Void{
 			realdoor.playOpenSound();
 			character_player.revive();
 
-			OverworldState.eventManager.finishTransaction("enters");
+			new FlxTimer().start(1, function(f):Void{
+				FlxTween.tween(fadething, {alpha: 0}, 2);
+
+				OverworldState.eventManager.finishTransaction("enters");
+			});
 		});
 	});
 
@@ -309,7 +323,7 @@ function doCorpseCutscene():Void{
 	{
 		OverworldState.eventManager.startTransaction("walk downwards");
 
-		character_player.movementSpeed = .5;
+		character_player.movementSpeed = .4;
 
 		character_player.moveToGridSpace(-1, 8, function():Void
 		{
@@ -317,8 +331,9 @@ function doCorpseCutscene():Void{
 			{
 				character_player.facing = DOWN;
 
-				new FlxTimer().start(.3, function(f):Void{
+				new FlxTimer().start(1, function(f):Void{
 					FlxTween.shake(character_player, 0.05, .2, 0x01);
+					FlxTween.tween(FlxG.sound.music, {pitch: .5}, 3);
 
 					new FlxTimer().start(1, function(f):Void{
 						OverworldState.eventManager.finishTransaction("walk downwards");
@@ -348,9 +363,9 @@ function doCorpseCutscene():Void{
 		OverworldState.eventManager.startTransaction("walk downwards");
 		OverworldState.eventManager.startTransaction("cam");
 
-		character_player.movementSpeed = .3;
+		character_player.movementSpeed = .235;
 
-		FlxTween.tween(camGame.scroll, {y: camGame.scroll.y + 500}, 4, {onComplete: function(f):Void{
+		FlxTween.tween(camGame.scroll, {y: camGame.scroll.y + 500}, 4, {ease: FlxEase.smoothStepOut, onComplete: function(f):Void{
 			OverworldState.eventManager.finishTransaction("cam");
 		}});
 
@@ -400,7 +415,7 @@ function doCorpseCutscene():Void{
 		OverworldState.eventManager.finishTransaction("checkpulse");
 	});
 
-	// shes gone
+	// "She's... [gone]"
 	OverworldState.eventManager.addEvent(function()
 	{
 		OverworldState.eventManager.startTransaction("dialogue");
@@ -408,11 +423,57 @@ function doCorpseCutscene():Void{
 		new FlxTimer().start(2.5, function(f):Void{
 			startDialogue(["factory/lobby/jesscorpse/dialogue_corpsescene2"], function():Void
 			{
-				new FlxTimer().start(2, function(f):Void{
+				new FlxTimer().start(1, function(f):Void{
 					OverworldState.eventManager.finishTransaction("dialogue");
 				});
 			});
 		});
+	});
+
+	// fade in cg
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("cg");
+
+		fullart_fade.visible = true;
+		fullart_fade.alpha = 0;
+		camOverlay.scroll.y = -300;
+
+		FlxTween.tween(fullart_fade, {alpha: 1}, 2, {ease: FlxEase.smoothStepIn, onComplete: function(f):Void{
+			fullart_bg.visible = true;
+			fullart_robin.visible = true;
+			fullart_jess.visible = true;
+
+			FlxTween.tween(fullart_fade, {alpha: 0}, 2);
+
+			FlxTween.tween(camOverlay.scroll, {y: 0}, 4, {onComplete: function(f):Void{
+				new FlxTimer().start(2, function(f):Void{
+					OverworldState.eventManager.finishTransaction("cg");
+				});
+			}});
+		}});
+	});
+
+	// fade out first cg
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("fade");
+
+		fullart_bg2.visible = true;
+		fullart_bg2.alpha = 0;
+
+		FlxTween.tween(fullart_bg2, {alpha: 1}, 2, {onComplete: function(f):Void{
+			new FlxTimer().start(1, function(f):Void{
+				fullart_jess.visible = fullart_robin.visible = fullart_bg2.visible = false;
+				OverworldState.eventManager.finishTransaction("fade");
+			});
+		}});
+	});
+
+	// fade in second cg
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("cg2");
 	});
 
 	// monster screams off screen
@@ -524,9 +585,44 @@ function doCorpseCutscene():Void{
 
 		startDialogue(["factory/lobby/jesscorpse/dialogue_corpsescene4"], function():Void
 		{
-			character_player.lockAnims = false;
+			character_player.animation.play("idle_down");
 
 			OverworldState.eventManager.finishTransaction("dialogue");
+		});
+	});
+
+	// turns to keycard, talks, turns back
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("dialogue");
+
+		// anim names REPLACE LATER
+		var turnOne:String = "idle_left";
+		var turnTwo:String = "idle_up";
+
+		new FlxTimer().start(.6, function(f):Void{
+			character_player.animation.play(turnOne);
+
+			new FlxTimer().start(.6, function(f):Void{
+				character_player.animation.play(turnTwo);
+
+				new FlxTimer().start(1.5, function(f):Void{
+					startDialogue(["factory/lobby/jesscorpse/dialogue_corpsescene4.5"], function():Void
+					{
+						new FlxTimer().start(.6, function(f):Void{
+							character_player.animation.play(turnOne);
+
+							new FlxTimer().start(.6, function(f):Void{
+								character_player.animation.play("idle_down");
+
+								new FlxTimer().start(1, function(f):Void{
+									OverworldState.eventManager.finishTransaction("dialogue");
+								});
+							});
+						});
+					});
+				});
+			});
 		});
 	});
 
@@ -536,6 +632,8 @@ function doCorpseCutscene():Void{
 		OverworldState.eventManager.startTransaction("walk");
 
 		FlxTween.tween(camGame.scroll, {y: camGame.scroll.y - 100}, 4);
+
+		character_player.lockAnims = false;
 
 		character_player.moveToGridSpace(23, -1, function():Void
 		{	
@@ -621,8 +719,36 @@ function doCorpseCutscene():Void{
 
 function setUpFullArt():Void
 {
+	fullart_bg = new CtSprite().createFromImage(Constants.overworldCutsceneGraphicPath + "jesscorpse_bgColor.png");
+	fullart_bg.screenCenter();
+	fullart_bg.camera = camOverlay;
+	fullart_bg.visible = false;
+	fullart_bg.scrollFactor.set(0,0);
+	add(fullart_bg);
+
+	fullart_robin = new CtSprite().createFromImage(Constants.overworldCutsceneGraphicPath + "jesscorpse_robin.png");
+	fullart_robin.screenCenter();
+	fullart_robin.camera = camOverlay;
+	fullart_robin.visible = false;
+	fullart_robin.scrollFactor.set(.8,.8);
+	add(fullart_robin);
+
+	fullart_jess = new CtSprite().createFromImage(Constants.overworldCutsceneGraphicPath + "jesscorpse_jess.png");
+	fullart_jess.screenCenter();
+	fullart_jess.camera = camOverlay;
+	fullart_jess.visible = false;
+	add(fullart_jess);
+	
 	fullart_fade = new CtSprite().createColorBlock(FlxG.width, FlxG.height, 0xFF000000);
 	fullart_fade.camera = camOverlay;
 	fullart_fade.visible = false;
+	fullart_fade.scrollFactor.set(0,0);
 	add(fullart_fade);
+
+	fullart_bg2 = new CtSprite().createFromImage(Constants.overworldCutsceneGraphicPath + "jesscorpse_bgColor.png");
+	fullart_bg2.screenCenter();
+	fullart_bg2.camera = camOverlay;
+	fullart_bg2.visible = false;
+	fullart_bg2.scrollFactor.set(0,0);
+	add(fullart_bg2);
 }
