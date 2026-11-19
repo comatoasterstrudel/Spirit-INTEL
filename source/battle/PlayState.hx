@@ -113,6 +113,9 @@ class PlayState extends FlxState
 
 	override public function create()
 	{
+		//no more lag on victory screen
+		CtCache.cacheAudio([Constants.mus_victory]);
+
 		persistentUpdate = true;
 		
 		eventManager = new CtEventManager();
@@ -940,8 +943,6 @@ class PlayState extends FlxState
 
 							bottomBar.descriptionText.visible = false;
 							bottomBar.descriptionText.kill();
-
-							bottomBar.status.kill();
 
 							for(otherUnit in units){
 								otherUnit.alpha = 1;
