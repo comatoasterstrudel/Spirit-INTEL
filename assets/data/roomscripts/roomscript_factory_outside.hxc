@@ -393,7 +393,9 @@ function doLaurinOutsideScene():Void{
         {
             OverworldState.eventManager.finishTransaction("talk");
 
-            // END
+            new FlxTimer().start(1.5, function(f):Void{
+                moveRoom("factory_chapterend", 3);
+            });
         });
     });
 }
