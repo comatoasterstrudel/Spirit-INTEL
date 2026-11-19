@@ -1,0 +1,11 @@
+{
+    "name": "endscene_narrator",
+	"textColor": [255, 255, 255],
+	"choicerSelectedTextColor": [255, 255, 255],
+	"choicerUnselectedTextColor": [255, 255, 255],
+	"textSound": "narrator",
+	"customDialogueBoxImgPath": "box_endscene",
+	"widthOffset": -600,
+	"boxOffsetX": -300,
+	"boxOffsetY": -150
+} 

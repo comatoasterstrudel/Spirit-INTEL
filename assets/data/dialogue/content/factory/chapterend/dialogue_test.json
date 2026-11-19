@@ -3,7 +3,7 @@
 		"speed": 0.03,
 		"diaPitch": 1,
 		"events": [],
-		"dialogue": "Talks",
+		"dialogue": "Welcome to the dialogue editor!",
 		"choicerOptions": [],
 		"portrait": "",
 		"continueLine": false,
@@ -12,27 +12,27 @@
 		"autoSkip": false
 	},
 	{
-		"dialogue": "Talks2",
-		"events": [],
-		"continueLine": false,
-		"portrait": "",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "endscene_robin",
+		"events": [],
+		"dialogue": "What",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "neutral",
+		"continueLine": false,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "manager",
+		"autoSkip": false
 	},
 	{
-		"dialogue": "Talks3",
-		"events": [],
-		"continueLine": false,
-		"portrait": "",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "endscene_robin",
+		"events": [],
+		"dialogue": "Yep. I'm on the left side of the screen, what are you going to do about it, asshole?",
 		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
 		"voiceLine": "",
-		"autoSkip": false,
-		"speed": 0.03
+		"actor": "endscene_robin",
+		"autoSkip": false
 	}
 ]

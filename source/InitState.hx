@@ -123,7 +123,7 @@ class InitState extends FlxState{
 			portraitFieldWidthRight: 600,
 			textOffset: FlxPoint.get(100, 100),
 			boxPosition: FlxPoint.get(0, 170),
-			textRows: 4,
+			textRows: 6,
 			portraitOnTopOfBox: true,
 			portraitOffsetRight: FlxPoint.get(330, 320),
 			nameBoxOffsetLeft: FlxPoint.get(45, 60),

@@ -6,5 +6,8 @@
 	"choicerUnselectedTextColor": [255, 255, 255],
 	"customNameBoxImgPath": "robin",
 	"textSound": "robin",
-	"customDialogueBoxImgPath": "box_endscene"
+	"customDialogueBoxImgPath": "box_endscene",
+	"widthOffset": -600,
+	"boxOffsetX": -300,
+	"boxOffsetY": -150
 } 
