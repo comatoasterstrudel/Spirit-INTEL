@@ -1,0 +1,10 @@
+{
+    "name": "endscene_robin",
+	"vanityName": "Robin",
+	"textColor": [255, 255, 255],
+	"choicerSelectedTextColor": [255, 255, 255],
+	"choicerUnselectedTextColor": [255, 255, 255],
+	"customNameBoxImgPath": "robin",
+	"textSound": "robin",
+	"customDialogueBoxImgPath": "box_endscene"
+} 

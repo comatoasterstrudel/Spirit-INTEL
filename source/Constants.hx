@@ -260,6 +260,8 @@ class Constants
 	public static final overworldCutsceneGraphicPath:String = "assets/images/cutscene/cutscene_";
 	// Chapter intro
 	public static final chapterIntroGraphicPath:String = "assets/images/chapterintro/chapterintro_";
+	// Chapter end
+	public static final chapterEndGraphicPath:String = "assets/images/chapterend/chapterend_";
 	// Footsteps
 	public static final footstepDataFolder = "assets/data/footstep/";
 	public static final footstepDataPrefix = "footstep_";

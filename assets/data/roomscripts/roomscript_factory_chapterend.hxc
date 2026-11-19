@@ -1,5 +1,36 @@
+var spr_fg:CtSprite;
+
+var leaving:Bool = false;
+
 function create():Void{
 	set_inCutscene(true);
 	camGame.visible = false;
-	trace("heh");
+	OverworldState.lastTransitionTime = 3;
+
+	spr_fg = new CtSprite().createFromImage(Constants.chapterEndGraphicPath + "prologue_fg.png");
+	spr_fg.antialiasing = false;
+	spr_fg.camera = camOverlay;
+	spr_fg.screenCenter();
+	add(spr_fg);
+
+	doScroll();
+
+	new FlxTimer().start(3, function(f):Void{
+		startDialogue(["factory/chapterend/dialogue_test"], function():Void
+        {
+            OverworldState.eventManager.finishTransaction("talk");
+        });
+	});
+}
+
+function doScroll():Void
+{
+	var scrollamount:Float = 12;
+
+	camOverlay.scroll.x = -scrollamount;
+
+	FlxTween.tween(camOverlay.scroll, {x: scrollamount}, 5, {
+		type: 4,
+		ease: FlxEase.quadInOut
+	});
 }

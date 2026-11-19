@@ -1,0 +1,38 @@
+[
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Talks",
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "endscene_robin",
+		"autoSkip": false
+	},
+	{
+		"dialogue": "Talks2",
+		"events": [],
+		"continueLine": false,
+		"portrait": "",
+		"diaPitch": 1,
+		"actor": "endscene_robin",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
+	},
+	{
+		"dialogue": "Talks3",
+		"events": [],
+		"continueLine": false,
+		"portrait": "",
+		"diaPitch": 1,
+		"actor": "endscene_robin",
+		"choicerOptions": [],
+		"voiceLine": "",
+		"autoSkip": false,
+		"speed": 0.03
+	}
+]
