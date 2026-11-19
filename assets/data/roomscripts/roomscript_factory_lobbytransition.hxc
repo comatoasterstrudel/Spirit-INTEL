@@ -3,6 +3,7 @@ var character_manager:Character;
 var character_player:Player;
 
 var topdoor:Door;
+var bottomdoor:Door;
 
 var cutsceneTrigger:Interactable;
 
@@ -19,7 +20,8 @@ function create(){
     lightingCover = get_lightingCover();
 
 	topdoor = getDoorByTag("topdoor");
-	
+	bottomdoor = getDoorByTag("bottomdoor");
+
     if(Save.storyFlags.get("factory_seenTransitionCutscene").val_bool){ // disable cutscene        
         character_laurin.kill();
         character_manager.kill();
@@ -28,6 +30,11 @@ function create(){
 
 	if(Save.storyFlags.get("factory_scarymode").val_bool){ //SCARY
 		setUpScary();
+	}
+
+	if(Save.storyFlags.get("factory_seenJessCorpse").val_bool){
+		bottomdoor.room = "";
+		bottomdoor.dialogue = "factory/lobbytransition/dialogue_nojess";
 	}
 }
 

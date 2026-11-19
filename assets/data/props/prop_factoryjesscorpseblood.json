@@ -1,0 +1,9 @@
+{
+    "name": "factoryjesscorpseblood",
+    "graphic": "factoryjesscorpseblood",
+    "hitboxX": 0,
+    "hitboxY": 9999,
+    "hitboxWidth": 64,
+    "hitboxHeight": 17,
+    "yStackingOffset": -999999
+}

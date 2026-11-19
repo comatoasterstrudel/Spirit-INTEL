@@ -3,13 +3,25 @@
 		"speed": 0.03,
 		"diaPitch": 1,
 		"events": [],
-		"dialogue": "Come on, Robin.",
+		"dialogue": "...",
 		"choicerOptions": [],
-		"portrait": "lookdown3_neutral",
+		"portrait": "neutral2",
 		"continueLine": false,
 		"voiceLine": "",
-		"actor": "volor",
+		"actor": "robin",
 		"autoSkip": false
+	},
+	{
+		"dialogue": "Come on, Robin.",
+		"events": [],
+		"continueLine": false,
+		"portrait": "lookdown3_neutral",
+		"diaPitch": 1,
+		"actor": "volor",
+		"choicerOptions": [],
+		"autoSkip": false,
+		"voiceLine": "",
+		"speed": 0.03
 	},
 	{
 		"speed": 0.03,

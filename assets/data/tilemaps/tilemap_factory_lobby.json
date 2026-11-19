@@ -204,6 +204,18 @@
           "originX": 0,
           "originY": 0,
           "values": {"triggerByWalkingOver": false, "dialogue": "factory/lobby/jesscorpse/dialogue_corpse", "room": "", "roomTransitionTime": 0.3, "encounterName": "", "scriptFunction": "", "tag": "corpsedia", "openSave": false, "saveName": "", "saveBgName": ""}
+        },
+        {
+          "name": "prop",
+          "id": 17,
+          "_eid": "37256014",
+          "x": 0,
+          "y": 0,
+          "width": 64,
+          "height": 32,
+          "originX": 0,
+          "originY": 0,
+          "values": {"propName": "factoryjesscorpseblood", "tag": "factoryjesscorpseblood", "addLight": false}
         }
       ]
     },

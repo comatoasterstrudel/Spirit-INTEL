@@ -216,6 +216,27 @@
             "name": "puton_coat",
             "prefix": "robin_puton_coat",
             "fps": 0
+        },
+        {
+            "name": "lookback",
+            "prefix": "robin_lookback",
+            "fps": 0
+        },
+        {
+            "name": "lookleft",
+            "prefix": "robin_lookleft",
+            "fps": 0
+        },
+        {
+            "name": "lookshocked_idle",
+            "prefix": "robin_lookshocked_idle",
+            "fps": 0
+        },
+        {
+            "name": "lookshocked_walk",
+            "prefix": "robin_lookshocked_walk",
+            "fps": 5,
+            "looped": true
         }
     ]
 }
