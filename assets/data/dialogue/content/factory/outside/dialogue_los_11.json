@@ -1,8 +1,32 @@
 [
 	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "Shit-",
-		"events": [],
+		"choicerOptions": [],
+		"portrait": "neutral",
 		"continueLine": false,
+		"voiceLine": "",
+		"actor": "laurin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Wait!",
+		"choicerOptions": [],
+		"portrait": "neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "laurin",
+		"autoSkip": false
+	},
+	{
+		"dialogue": " Robin!",
+		"events": [],
+		"continueLine": true,
 		"portrait": "neutral",
 		"diaPitch": 1,
 		"actor": "laurin",
@@ -12,9 +36,9 @@
 		"speed": 0.03
 	},
 	{
-		"dialogue": "Wait! Robin! Please-",
+		"dialogue": " Please..",
 		"events": [],
-		"continueLine": false,
+		"continueLine": true,
 		"portrait": "neutral",
 		"diaPitch": 1,
 		"actor": "laurin",
@@ -24,15 +48,15 @@
 		"speed": 0.03
 	},
 	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "I'll call you, okay?",
-		"events": [],
-		"continueLine": false,
-		"portrait": "neutral",
-		"diaPitch": 1,
-		"actor": "laurin",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "neutral",
+		"continueLine": false,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "laurin",
+		"autoSkip": false
 	}
 ]

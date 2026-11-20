@@ -1,115 +1,230 @@
 [
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "The computer is locked.",
-		"actor": "narrator"
+		"choicerOptions": [],
+		"portrait": "",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "narrator",
+		"autoSkip": false
 	},
 	{
 		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
 		"dialogue": "...",
-		"actor": "robin",
-		"portrait": "neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "It needs a physical passkey..",
-		"actor": "robin",
-		"portrait": "neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Do you have one on you?",
-		"actor": "volor",
-		"portrait": "neutral_neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "No. Why would I?",
-		"actor": "robin",
-		"portrait": "neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "I thought it wouldn't hurt to ask.",
-		"actor": "volor",
-		"portrait": "neutral_neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "I've been in his office a total of twice, one of those being now.",
-		"actor": "robin",
-		"portrait": "neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "I don't have his computer passkey.",
-		"actor": "robin",
-		"portrait": "neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "He's got one of those hint things though, lets see...",
-		"actor": "robin",
-		"portrait": "neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "\"Bookshelf\"",
-		"actor": "narrator"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "[[SHAKE]]So[[ENDSHAKE]] descriptive..",
-		"actor": "robin",
-		"portrait": "neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "So we've gotta look through those shelves?",
-		"actor": "volor",
-		"portrait": "neutral_neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Yeah, but we?",
-		"actor": "robin",
-		"portrait": "neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "How are you gonna manage looking through books without arms?",
-		"actor": "robin",
-		"portrait": "neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Someone of my nature has MANY more ways to search without limbs.",
-		"actor": "volor",
-		"portrait": "neutral_neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "Okay then.",
-		"actor": "robin",
-		"portrait": "neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": " Do it for me.",
-		"actor": "robin",
+		"choicerOptions": [],
 		"portrait": "neutral",
-		"continueLine": true
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "I don't want to.",
-		"actor": "volor",
-		"portrait": "neutral_neutral"
-	},
-	{
-		"speed": 0.03,
-		"dialogue": "...",
+		"continueLine": false,
+		"voiceLine": "",
 		"actor": "robin",
-		"portrait": "neutral"
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "It says it needs a physical passkey..",
+		"choicerOptions": [],
+		"portrait": "annoyed2",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Do you have one on you?",
+		"choicerOptions": [],
+		"portrait": "lookdown3_neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "No. Why would I?",
+		"choicerOptions": [],
+		"portrait": "lookdown2",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "I thought it wouldn't hurt to ask.",
+		"choicerOptions": [],
+		"portrait": "lookdown3_neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "I've been in his office a total of twice, one of those being now.",
+		"choicerOptions": [],
+		"portrait": "lookdown2",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "I don't have the passkey to his computer.",
+		"choicerOptions": [],
+		"portrait": "lookdown2",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "He's got one of those hint things though, lets see...",
+		"choicerOptions": [],
+		"portrait": "talk",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "\"Bookshelf\"",
+		"choicerOptions": [],
+		"portrait": "talk2",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "[[SHAKE]]So[[ENDSHAKE]] descriptive..",
+		"choicerOptions": [],
+		"portrait": "annoyed4",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "So we've gotta look through those shelves?",
+		"choicerOptions": [],
+		"portrait": "lookdown3_neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Yeah, but we?",
+		"choicerOptions": [],
+		"portrait": "lookdown2",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "How are you gonna manage looking through books without arms?",
+		"choicerOptions": [],
+		"portrait": "lookdown2",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Someone of my nature has MANY more ways to search without limbs.",
+		"choicerOptions": [],
+		"portrait": "lookdown3_neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "Okay then.",
+		"choicerOptions": [],
+		"portrait": "talk4",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": " Do it for me.",
+		"choicerOptions": [],
+		"portrait": "lookdown3",
+		"continueLine": true,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "I don't want to.",
+		"choicerOptions": [],
+		"portrait": "lookdown_neutral",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "volor",
+		"autoSkip": false
+	},
+	{
+		"speed": 0.03,
+		"diaPitch": 1,
+		"events": [],
+		"dialogue": "...",
+		"choicerOptions": [],
+		"portrait": "lookdown3",
+		"continueLine": false,
+		"voiceLine": "",
+		"actor": "robin",
+		"autoSkip": false
 	}
 ]

@@ -1,26 +1,26 @@
-[	
+[
 	{
-		"dialogue": "(hah...",
-		"events": [],
-		"continueLine": false,
-		"portrait": "neutral",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "laurin",
+		"events": [],
+		"dialogue": "Hah...",
 		"choicerOptions": [],
+		"portrait": "sad2",
+		"continueLine": false,
 		"voiceLine": "",
-		"autoSkip": false,
-		"speed": 0.03
+		"actor": "laurin",
+		"autoSkip": false
 	},
 	{
-		"dialogue": "I'm such an idiot....)",
-		"events": [],
-		"continueLine": true,
-		"portrait": "neutral",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "laurin",
+		"events": [],
+		"dialogue": "I'm such an idiot..",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "sigh",
+		"continueLine": true,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "laurin",
+		"autoSkip": false
 	}
 ]
