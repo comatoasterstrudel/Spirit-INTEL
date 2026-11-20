@@ -16,7 +16,7 @@ function create():Void{
 	doScroll();
 
 	new FlxTimer().start(3, function(f):Void{
-		startDialogue(["factory/chapterend/dialogue_test"], function():Void
+		startDialogue(["factory/chapterend/dialogue_end"], function():Void
         {
             OverworldState.eventManager.finishTransaction("talk");
         });
