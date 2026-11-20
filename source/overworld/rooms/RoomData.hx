@@ -26,6 +26,7 @@ class RoomData extends CtJsonLoader
 	public var playerName:String;
 	
 	public var music:String;
+	public var musicTransitionTime:Float = -1;
 
     public function new(id:String){
         this.id = id;
@@ -68,5 +69,6 @@ class RoomData extends CtJsonLoader
 		this.playerName = data.playerName ?? Constants.playerCharacterName;
 
 		this.music = data.music ?? "";
+		this.musicTransitionTime = data.musicTransitionTime == null ? -1 : data.musicTransitionTime;
     }
 } 

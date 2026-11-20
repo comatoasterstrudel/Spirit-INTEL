@@ -131,7 +131,7 @@ class OverworldState extends FlxState
 		loadMap();
 		selectRandomEncounter();
 
-		if(!lockMusic) setUpMusic(getMusicPathFromRoom(roomData), lastTransitionTime);
+		if(!lockMusic) setUpMusic(getMusicPathFromRoom(roomData), roomData.musicTransitionTime == -1 ? lastTransitionTime : roomData.musicTransitionTime);
 		if (leftForBattle)
 		{
 			player.positionCharacter(positionBeforeBattle.x, positionBeforeBattle.y);

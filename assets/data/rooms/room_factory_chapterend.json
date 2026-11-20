@@ -2,5 +2,6 @@
     "name": "factory_chapterend",
     "map": "factory_chapterend",
     "script": ["factory_chapterend"],
-    "music": "factorymaingood"
+    "music": "spirittrain",
+    "musicTransitionTime": 0
 }
