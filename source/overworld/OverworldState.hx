@@ -345,36 +345,50 @@ class OverworldState extends FlxState
 	 */
 	function handleSorting():Void
 	{
-		for (prop in props)
+		var ogProps:Array<FlxSprite> = [];
+
+		for(i in props.members){
+			ogProps.push(i);
+		}
+
+		var stackingOffsets:Array<Float> = [];
+		
+		for (i in 0...ogProps.length)
 		{
+			var prop = ogProps[i];
+
+			stackingOffsets[i] = 0;
+
 			if (prop is Prop)
 			{
 				var trueProp:Prop = cast prop;
-				trueProp.y += ((trueProp.data.yStackingOffset + trueProp.tempStackingOffset) * Constants.overworldPixelScale);
+				stackingOffsets[i] += ((trueProp.data.yStackingOffset + trueProp.tempStackingOffset) * Constants.overworldPixelScale);
 			}
 
 			if(prop is Door)
 			{
 				var door:Door = cast prop;
-				if(door.horizontal) door.y -= 999;
+				if(door.horizontal) stackingOffsets[i] -= 999;
 			}
+
+			if(prop is ScrollingProp)
+			{
+				var trueProp:ScrollingProp = cast prop;
+				stackingOffsets[i] += trueProp.data.yStackingOffset;
+			}
+
+			prop.y += stackingOffsets[i];
 		}
 		
 		props.sort(FlxSort.byY, FlxSort.ASCENDING);
-		for (prop in props)
-		{
-			if (prop is Prop)
-			{
-				var trueProp:Prop = cast prop;
-				trueProp.y -= ((trueProp.data.yStackingOffset + trueProp.tempStackingOffset) * Constants.overworldPixelScale);
-			}
 
-			if(prop is Door)
-			{
-				var door:Door = cast prop;
-				if(door.horizontal) door.y += 999;
-			}
+		for (i in 0...ogProps.length)
+		{
+			var prop = ogProps[i];
+
+			prop.y -= stackingOffsets[i];
 		}
+
 	}
 
 	function handleCameraScroll():Void
@@ -843,7 +857,7 @@ class OverworldState extends FlxState
 						});
 					}
 				case "scrollingprop":
-					var scrollingprop = new ScrollingProp(entity.values.tag, Constants.scrollingPropImagePath + entity.values.propName + ".png",
+					var scrollingprop = new ScrollingProp(entity.values.tag, entity.values.propName,
 						Std.int(entity.x * Constants.overworldPixelScale), Std.int(entity.y * Constants.overworldPixelScale),
 						Std.int(entity.width * Constants.overworldPixelScale), Std.int(entity.height * Constants.overworldPixelScale));
 					scrollingprop.backdrop.velocity.set(entity.values.velocityX, entity.values.velocityY);

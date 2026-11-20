@@ -246,6 +246,9 @@ class Constants
 	public static final propDataPath:String = propDataFolder + propDataPrefix;
 	public static final propImagePath:String = "assets/images/props/prop_";
 	// Scrolling Props
+	public static final scrollingPropDataFolder:String = "assets/data/scrollingprops/";
+	public static final scrollingPropDataPrefix:String = "scrollingprop_";
+	public static final scrollingPropDataPath:String = scrollingPropDataFolder + scrollingPropDataPrefix;
 	public static final scrollingPropImagePath:String = "assets/images/scrollingprops/scrollingprop_";
 	// Scripts
 	public static final roomScriptPath:String = "assets/data/roomscripts/roomscript_";

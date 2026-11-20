@@ -1,5 +1,7 @@
 package;
 
+import overworld.scrollingprops.ScrollingPropData;
+
 /**
  * Class that manages all of the json registries used here ..
  */
@@ -45,6 +47,10 @@ class Registry
         registry.addRegistry(
             PropData, 
             CtUtil.stripTextFromStrings(CtUtil.findFilesInPath(Constants.propDataFolder, [".json"], false, false), [Constants.propDataPrefix, ".json"])
+        );
+        registry.addRegistry(
+            ScrollingPropData, 
+            CtUtil.stripTextFromStrings(CtUtil.findFilesInPath(Constants.scrollingPropDataFolder, [".json"], false, false), [Constants.scrollingPropDataPrefix, ".json"])
         );
         registry.addRegistry(
             DoorData, 

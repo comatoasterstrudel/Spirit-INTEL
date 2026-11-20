@@ -1,5 +1,5 @@
 package overworld.props;
-
+ 
 class PropData extends CtJsonLoader
 {
  	public var id:String;
