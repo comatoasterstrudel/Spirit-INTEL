@@ -1,3 +1,4 @@
+var spr_bg:CtSprite;
 var spr_fg:CtSprite;
 
 var leaving:Bool = false;
@@ -6,6 +7,15 @@ function create():Void{
 	set_inCutscene(true);
 	camGame.visible = false;
 	OverworldState.lastTransitionTime = 3;
+
+	spr_bg = new CtSprite().createFromSparrow(Constants.chapterEndGraphicPath + "prologue_bg.png", Constants.chapterEndGraphicPath + "prologue_bg.xml");
+	spr_bg.animation.addByPrefix("idle", "idle", 7);
+	spr_bg.animation.play("idle");
+	spr_bg.antialiasing = false;
+	spr_bg.camera = camOverlay;
+	spr_bg.screenCenter();
+	spr_bg.scrollFactor.set(.85, .85);
+	add(spr_bg);
 
 	spr_fg = new CtSprite().createFromImage(Constants.chapterEndGraphicPath + "prologue_fg.png");
 	spr_fg.antialiasing = false;
