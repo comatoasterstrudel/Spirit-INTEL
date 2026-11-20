@@ -15,7 +15,7 @@ function create():Void{
 	spr_bg.camera = camOverlay;
 	spr_bg.screenCenter();
 	spr_bg.scrollFactor.set(.85, .85);
-	add(spr_bg);
+	//add(spr_bg);
 
 	spr_fg = new CtSprite().createFromImage(Constants.chapterEndGraphicPath + "prologue_fg.png");
 	spr_fg.antialiasing = false;
