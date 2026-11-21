@@ -27,7 +27,7 @@
 		"speed": 0.03,
 		"diaPitch": 1,
 		"events": [],
-		"dialogue": "Make sure to check what you're up against before you battle.",
+		"dialogue": "Make sure to check what you are up against before you battle.",
 		"choicerOptions": [],
 		"portrait": "pensive_neutral",
 		"continueLine": false,

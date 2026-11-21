@@ -27,7 +27,7 @@
 		"speed": 0.03,
 		"diaPitch": 1,
 		"events": [],
-		"dialogue": "We gotta get out of here.",
+		"dialogue": "We have to get out of here.",
 		"choicerOptions": [],
 		"portrait": "lookdown3_neutral",
 		"continueLine": false,

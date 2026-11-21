@@ -247,7 +247,7 @@
 		"events": [
 			"anim_vtalk"
 		],
-		"dialogue": "It looks like we're on a scavenger hunt now.",
+		"dialogue": "It looks like we are on a scavenger hunt now.",
 		"choicerOptions": [],
 		"portrait": "",
 		"continueLine": false,
@@ -303,7 +303,7 @@
 		"events": [
 			"anim_vsurprised"
 		],
-		"dialogue": " ...well, I'm moreso [[WAVE]]on[[ENDWAVE]] you.",
+		"dialogue": " ...well, I am moreso [[WAVE]]on[[ENDWAVE]] you.",
 		"choicerOptions": [],
 		"portrait": "",
 		"continueLine": true,

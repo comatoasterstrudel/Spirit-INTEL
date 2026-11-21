@@ -17,12 +17,12 @@
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "Aren't humans in this era irrevocably attached to their electronics?",
+		"dialogue": "Humans in this era irrevocably attached to their electronics, are they not?",
 		"actor": "cutscene_volor"
 	},
 	{
 		"speed": 0.03,
-		"dialogue": "I'm sure it's on here.",
+		"dialogue": "I am sure it is on here.",
 		"actor": "cutscene_volor"
 	},
 	{
