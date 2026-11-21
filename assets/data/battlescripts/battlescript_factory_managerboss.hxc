@@ -57,14 +57,14 @@ function postAdvanceTurn():Void{
                         unitID: "soap", 
                         grid: enemyGrid, 
                         position: FlxPoint.get(0, 1), 
-                        level: 2,
+                        level: 1,
                         controllable: false
                     },
                     {
                         unitID: "soap", 
                         grid: enemyGrid, 
                         position: FlxPoint.get(1, 2), 
-                        level: 2,
+                        level: 1,
                         controllable: false
                     }
                 ], function():Void{
