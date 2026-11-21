@@ -217,6 +217,7 @@ class InitState extends FlxState{
 		CtScript.setDefaultValue({name: "FlxTextFormat", value: FlxTextFormat});
 		CtScript.setDefaultValue({name: "Cursor", value: Cursor});
 		CtScript.setDefaultValue({name: "MainMenuState", value: MainMenuState});
+		CtScript.setDefaultValue({name: "GameStatus", value: GameStatus});
 	}
 
 	function initSave():Void

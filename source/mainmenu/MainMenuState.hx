@@ -11,6 +11,8 @@ class MainMenuState extends FlxState
 	var bg:CtSprite;
 	var logo:CtSprite;
     
+	var statusText:CtText;
+
     override function create():Void{
         super.create();
         
@@ -26,6 +28,20 @@ class MainMenuState extends FlxState
 		logo = new CtSprite(30, 40).createFromImage(Constants.mainMenuLogoPath, .7);
 		logo.antialiasing = false;
 		add(logo);
+
+		statusText = new CtText(0, 0, "", Constants.fontName, 30);
+		statusText.antialiasing = false;
+		statusText.alpha = .5;
+
+		if(GameStatus.isPrologueDemo()){
+			statusText.text = "PROLOGUE DEMO";
+		} else {
+			statusText.text = "";
+		}
+
+		statusText.setPosition(FlxG.width - statusText.width - 3, FlxG.height - statusText.height - 3);
+		add(statusText);
+
 		doIntroAnim();
 
 		addMusic();

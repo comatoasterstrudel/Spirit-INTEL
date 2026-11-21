@@ -14,7 +14,7 @@ function create():Void{
 	set_inCutscene(true);
 	camGame.visible = false;
 	OverworldState.lastTransitionTime = 3;
-	
+
 	spr_fg = new CtSprite().createFromImage(Constants.chapterEndGraphicPath + "prologue_fg.png");
 	spr_fg.antialiasing = false;
 	spr_fg.camera = camOverlay;
@@ -146,7 +146,7 @@ function doScene():Void{
 	// ending (real)
 	OverworldState.eventManager.addEvent(function()
 	{
-		var isDemo:Bool = true;
+		var isDemo:Bool = GameStatus.isPrologueDemo();
 
 		if(isDemo){
 			moveRoom("factory_demoend", .1);
