@@ -1,5 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<TextureAtlas imagePath="chapterend_prologue_bg.png">
-<SubTexture name="idle0000" x="0" y="0" width="1341" height="538" frameX="0" frameY="-53" frameWidth="1321" frameHeight="720" />
-<SubTexture name="idle0001" x="0" y="538" width="1341" height="538" frameX="0" frameY="-53" frameWidth="1321" frameHeight="720" />
-</TextureAtlas>
