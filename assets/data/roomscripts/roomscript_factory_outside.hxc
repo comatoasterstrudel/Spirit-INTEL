@@ -394,7 +394,20 @@ function doLaurinOutsideScene():Void{
             OverworldState.eventManager.finishTransaction("talk");
 
             new FlxTimer().start(1.5, function(f):Void{
-                moveRoom("factory_chapterend", 3);
+                var black = new CtSprite().createColorBlock(FlxG.width, FlxG.height, 0xFF000000);
+                black.camera = camUI;
+                black.alpha = 0;
+                add(black);
+
+                FlxTween.tween(black, {alpha: 1}, 3);
+                FlxTween.tween(FlxG.sound.music, {volume: 0}, 3);
+
+                new FlxTimer().start(4, function(f):Void{
+                    FlxG.sound.music.destroy();
+                    FlxG.sound.music = null;
+                    CtSound.play(Constants.sfxPath + "snowstep.ogg");
+                    moveRoom("factory_chapterend", 7);
+                });
             });
         });
     });
