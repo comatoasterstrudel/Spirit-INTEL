@@ -4,7 +4,12 @@ var spr_fg:CtSprite;
 var spr_cg:CtSprite;
 var spr_fade:CtSprite;
 
+//stolen from chapterintro
+var bottom:CtSprite;
+
 var leaving:Bool = false;
+
+var newMusic:FlxSound;
 
 function create():Void{
 	set_inCutscene(true);
@@ -41,11 +46,24 @@ function create():Void{
 	spr_fade.scrollFactor.set(0,0);
 	add(spr_fade);
 
+	// text
+	bottom = new CtSprite().createFromImage(Constants.chapterIntroGraphicPath + "bottom.png");
+	bottom.screenCenter();
+	bottom.y = FlxG.height - bottom.height;
+	bottom.antialiasing = false;
+	bottom.camera = camUI;
+	bottom.alpha = 0;
+	add(bottom);
+
+	// music for cg
+	newMusic = CtSound.loadEmbedded(Constants.roomMusicPath + "spirittrainmuffled.ogg", true);
+	FlxG.sound.list.add(newMusic);
+
 	doScroll();
 
 	doScene();
 }
-
+ 
 function doScroll():Void
 {
 	var scrollamount:Float = 12;
@@ -89,5 +107,51 @@ function doScene():Void{
 				OverworldState.eventManager.finishTransaction("cg");
 			}});
 		}});
+
+		newMusic.play();
+		newMusic.volume = 0;
+		newMusic.time = FlxG.sound.music.time;
+
+		var vol = FlxG.sound.music.volume;
+
+		FlxTween.tween(newMusic, {volume: vol}, 4);
+		FlxTween.tween(FlxG.sound.music, {volume: 0}, 4);
 	});
+
+	// show bottom text
+	OverworldState.eventManager.addEvent(function()
+	{
+		new FlxTimer().start(4, function(f):Void{
+			FlxTween.tween(bottom, {alpha: 1}, 1.5, {onComplete: function(f):Void{
+				new FlxTimer().start(2, function(f):Void{
+					var bigText = new CtText();
+					bigText.text = 'PROLOGUE END';
+					bigText.setFormat(Constants.fontName, 60, 0xFFFFFFFF);
+					bigText.camera = camUI;
+					bigText.screenCenter();
+					bigText.y = FlxG.height - 100;
+					add(bigText);
+
+					doLetterTransition(bigText, 3.5, function():Void{
+						FlxTween.tween(newMusic, {volume: 0}, 7.5);
+
+						var black = new CtSprite().createColorBlock(FlxG.width, FlxG.height, 0xFF000000);
+						black.camera = camUI;
+						black.alpha = 0;
+						add(black);
+
+						FlxTween.tween(black, {alpha: 1}, 5, {startDelay: 3});						
+					});
+				});			
+			}});
+		});
+	});
+}
+
+function doLetterTransition(text:FlxSprite, time:Float, onComplete:Void->Void):Void{
+	text.y -= 30;
+	text.alpha = 0;
+	FlxTween.tween(text, {alpha: 1, y: text.y + 30}, time, {ease: FlxEase.quartOut, onComplete:function(f):Void{
+		onComplete();
+	}});
 }
