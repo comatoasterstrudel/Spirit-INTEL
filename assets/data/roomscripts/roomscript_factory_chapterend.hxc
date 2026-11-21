@@ -1,3 +1,4 @@
+var spr_bg:CtSprite;
 var spr_fg:CtSprite;
 
 var spr_cg:CtSprite;
@@ -13,7 +14,30 @@ var newMusic:FlxSound;
 function create():Void{
 	set_inCutscene(true);
 	camGame.visible = false;
-	OverworldState.lastTransitionTime = 3;
+	OverworldState.lastTransitionTime = 0;
+
+	var black = new CtSprite().createColorBlock(FlxG.width, FlxG.height, 0xFF000000);
+	black.camera = camUI;
+	black.alpha = 1;
+	add(black);
+
+	FlxTween.tween(black, {alpha: 0}, 3);
+
+	new FlxTimer().start(0.001, function(f):Void{
+		var vol = FlxG.sound.music.volume;
+		FlxG.sound.music.volume = 0;
+		FlxTween.tween(FlxG.sound.music, {volume: vol}, 3);
+	});
+
+	spr_bg = new CtSprite().createFromSparrow(Constants.chapterEndGraphicPath + "prologue_speed.png", Constants.chapterEndGraphicPath + "prologue_speed.xml");
+	spr_bg.animation.addByPrefix("idle", "idle", 7);
+	spr_bg.animation.play("idle");
+	spr_bg.antialiasing = false;
+	spr_bg.camera = camOverlay;
+	spr_bg.screenCenter();
+	spr_bg.scrollFactor.set(.85, .85);
+	spr_bg.alpha = .4;
+	add(spr_bg);
 
 	spr_fg = new CtSprite().createFromImage(Constants.chapterEndGraphicPath + "prologue_fg.png");
 	spr_fg.antialiasing = false;
