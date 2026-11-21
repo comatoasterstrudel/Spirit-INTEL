@@ -120,7 +120,7 @@
 		"autoSkip": false
 	},
 	{
-		"dialogue": "With our wonderful organic, high-tech, ,family-friendly, non-gmo, cheap products!",
+		"dialogue": "With our wonderful organic, high-tech, family-friendly, non-gmo, cheap products!",
 		"events": [],
 		"continueLine": false,
 		"portrait": "talk",
