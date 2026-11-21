@@ -67,7 +67,7 @@
 		],
 		"dialogue": "[[SHAKE]]..![[ENDSHAKE]]",
 		"choicerOptions": [],
-		"portrait": "shocked",
+		"portrait": "benddown",
 		"continueLine": false,
 		"voiceLine": "",
 		"actor": "robin",
