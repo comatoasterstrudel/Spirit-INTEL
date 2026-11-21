@@ -1,4 +1,5 @@
 var spr_bg:CtSprite;
+var spr_chibi:CtSprite;
 
 var smallText:CtText;
 var bigText:CtText;
@@ -13,9 +14,17 @@ function create():Void{
 
 	spr_bg = new CtSprite().createFromImage(Constants.chapterEndGraphicPath + "prologue_credit.png");
 	spr_bg.antialiasing = false;
-	spr_bg.camera = camOverlay;
+	spr_bg.camera = camUI;
 	spr_bg.screenCenter();
 	add(spr_bg);
+
+	spr_chibi = new CtSprite().createFromSparrow(Constants.chapterEndGraphicPath + "prologue_chibi.png", Constants.chapterEndGraphicPath + "prologue_chibi.xml");
+	spr_chibi.animation.addByPrefix("idle", "idle", 1);
+	spr_chibi.animation.play("idle");
+	spr_chibi.antialiasing = false;
+	spr_chibi.screenCenter();
+	spr_chibi.camera = camUI;
+	add(spr_chibi);
 
 	smallText = new CtText();
 	smallText.text = '[[BLUE]]Spirit-INTEL[[BLUE]] by\n\nstar_laika [[GRAY]](Writing, Art)[[GRAY]]\ncomatoasterstrudel [[GRAY]](Programming, Game Design)[[GRAY]]\nKyzroen [[GRAY]](Music)[[GRAY]]';
@@ -32,7 +41,7 @@ function create():Void{
 	smallText.y = 30;
 
 	bigText = new CtText();
-	bigText.text = 'Thank you for playing the PROLOGUE DEMO!\nIf you have any feedback, feel free to leave a comment on the itch.io page.\nEach chapter of the game will release as we finish them..\nStay tuned!';
+	bigText.text = 'Thank you for playing the PROLOGUE DEMO!\nIf you have any feedback, leave a comment on the itch.io page!\nEach chapter of the game will release as we finish them..\nStay tuned!';
 	bigText.setFormat(Constants.fontName, 40, 0xFFFFFFFF, "center");
 	bigText.camera = camUI;
 	bigText.screenCenter();
@@ -81,6 +90,6 @@ function leave():Void{
 		FlxG.sound.music.destroy();
 		FlxG.sound.music = null;
 
-		FlxG.switchState(new MainMenuState());
+		FlxG.switchState(new MainMenuState()); 
 	});
 }
