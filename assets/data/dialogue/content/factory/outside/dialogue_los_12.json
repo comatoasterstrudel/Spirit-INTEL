@@ -1,14 +1,14 @@
 [
 	{
-		"dialogue": "Try and I'll strangle you to death!",
-		"events": [],
-		"continueLine": false,
-		"portrait": "neutral",
+		"speed": 0.03,
 		"diaPitch": 1,
-		"actor": "robin",
+		"events": [],
+		"dialogue": "Try and I'll strangle you to death!",
 		"choicerOptions": [],
-		"autoSkip": false,
+		"portrait": "annoyed3_right",
+		"continueLine": false,
 		"voiceLine": "",
-		"speed": 0.03
+		"actor": "robin",
+		"autoSkip": false
 	}
 ]
