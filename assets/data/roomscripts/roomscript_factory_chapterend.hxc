@@ -1,6 +1,9 @@
 var spr_bg:CtSprite;
 var spr_fg:CtSprite;
 
+var spr_cg:CtSprite;
+var spr_fade:CtSprite;
+
 var leaving:Bool = false;
 
 function create():Void{
@@ -23,14 +26,24 @@ function create():Void{
 	spr_fg.screenCenter();
 	add(spr_fg);
 
+	//cg
+	spr_cg = new CtSprite().createFromImage(Constants.chapterEndGraphicPath + "prologue_endcg.png");
+	spr_cg.antialiasing = false;
+	spr_cg.camera = camOverlay;
+	spr_cg.screenCenter();
+	spr_cg.visible = false;
+	spr_cg.scrollFactor.set(0,0);
+	add(spr_cg);
+
+	spr_fade = new CtSprite().createColorBlock(FlxG.width, FlxG.height, 0xFF000000);
+	spr_fade.camera = camOverlay;
+	spr_fade.visible = false;
+	spr_fade.scrollFactor.set(0,0);
+	add(spr_fade);
+
 	doScroll();
 
-	new FlxTimer().start(3, function(f):Void{
-		startDialogue(["factory/chapterend/dialogue_end"], function():Void
-        {
-            OverworldState.eventManager.finishTransaction("talk");
-        });
-	});
+	doScene();
 }
 
 function doScroll():Void
@@ -42,5 +55,39 @@ function doScroll():Void
 	FlxTween.tween(camOverlay.scroll, {x: scrollamount}, 5, {
 		type: 4,
 		ease: FlxEase.quadInOut
+	});
+}
+
+function doScene():Void{
+
+	// first dialogue
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("talk");
+
+		new FlxTimer().start(3, function(f):Void{
+			startDialogue(["factory/chapterend/dialogue_end"], function():Void
+			{
+				new FlxTimer().start(2, function(f):Void{
+					OverworldState.eventManager.finishTransaction("talk");
+				});
+			});
+		});
+	});
+
+	// show cg
+	OverworldState.eventManager.addEvent(function()
+	{
+		OverworldState.eventManager.startTransaction("cg");
+
+		spr_fade.visible = true;
+		spr_fade.alpha = 0;
+
+		FlxTween.tween(spr_fade, {alpha: 1}, 2, {onComplete: function(f):Void{
+			spr_cg.visible = true;
+			FlxTween.tween(spr_fade, {alpha: 0}, 2, {onComplete: function(f):Void{
+				OverworldState.eventManager.finishTransaction("cg");
+			}});
+		}});
 	});
 }

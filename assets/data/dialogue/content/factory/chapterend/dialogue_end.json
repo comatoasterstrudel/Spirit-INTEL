@@ -846,7 +846,7 @@
 		"dialogue": "Gross.",
 		"choicerOptions": [],
 		"portrait": "",
-		"continueLine": true,
+		"continueLine": false,
 		"voiceLine": "",
 		"actor": "endscene_robin",
 		"autoSkip": false
@@ -858,7 +858,7 @@
 		"dialogue": "Haha.",
 		"choicerOptions": [],
 		"portrait": "",
-		"continueLine": true,
+		"continueLine": false,
 		"voiceLine": "",
 		"actor": "endscene_volor",
 		"autoSkip": false
@@ -870,7 +870,7 @@
 		"dialogue": "...",
 		"choicerOptions": [],
 		"portrait": "",
-		"continueLine": true,
+		"continueLine": false,
 		"voiceLine": "",
 		"actor": "endscene_robin",
 		"autoSkip": false
