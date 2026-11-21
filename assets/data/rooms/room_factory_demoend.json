@@ -1,0 +1,7 @@
+{
+    "name": "factory_demoend",
+    "map": "factory_demoend",
+    "script": ["factory_demoend"],
+    "music": "atmanfull",
+    "musicTransitionTime": 0
+}

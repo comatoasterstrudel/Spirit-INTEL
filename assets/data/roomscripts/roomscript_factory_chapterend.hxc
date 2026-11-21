@@ -118,9 +118,11 @@ function doScene():Void{
 		FlxTween.tween(FlxG.sound.music, {volume: 0}, 4);
 	});
 
-	// show bottom text
+	// ending
 	OverworldState.eventManager.addEvent(function()
 	{
+		OverworldState.eventManager.startTransaction("end");
+
 		new FlxTimer().start(4, function(f):Void{
 			FlxTween.tween(bottom, {alpha: 1}, 1.5, {onComplete: function(f):Void{
 				new FlxTimer().start(2, function(f):Void{
@@ -140,11 +142,25 @@ function doScene():Void{
 						black.alpha = 0;
 						add(black);
 
-						FlxTween.tween(black, {alpha: 1}, 5, {startDelay: 3});						
+						FlxTween.tween(black, {alpha: 1}, 5, {startDelay: 3});
+						
+						new FlxTimer().start(13, function(f):Void{
+							OverworldState.eventManager.finishTransaction("end");
+						});
 					});
 				});			
 			}});
 		});
+	});
+
+	// ending (real)
+	OverworldState.eventManager.addEvent(function()
+	{
+		var isDemo:Bool = true;
+
+		if(isDemo){
+			moveRoom("factory_demoend", .1);
+		}
 	});
 }
 

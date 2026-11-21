@@ -1,0 +1,86 @@
+var spr_bg:CtSprite;
+
+var smallText:CtText;
+var bigText:CtText;
+var button:CtText;
+
+var menuManager:CtMenuManager;
+
+function create():Void{
+	set_inCutscene(true);
+	camGame.visible = false;
+	OverworldState.lastTransitionTime = 0;
+
+	spr_bg = new CtSprite().createFromImage(Constants.chapterEndGraphicPath + "prologue_credit.png");
+	spr_bg.antialiasing = false;
+	spr_bg.camera = camOverlay;
+	spr_bg.screenCenter();
+	add(spr_bg);
+
+	smallText = new CtText();
+	smallText.text = '[[BLUE]]Spirit-INTEL[[BLUE]] by\n\nstar_laika [[GRAY]](Writing, Art)[[GRAY]]\ncomatoasterstrudel [[GRAY]](Programming, Game Design)[[GRAY]]\nKyzroen [[GRAY]](Music)[[GRAY]]';
+	smallText.setFormat(Constants.fontName, 55, 0xFFFFFFFF, "center");
+	smallText.camera = camUI;
+	add(smallText);
+
+	smallText.applyMarkup(smallText.text, [
+		new FlxTextFormatMarkerPair(new FlxTextFormat(0xFF0000FF), "[[BLUE]]"),
+		new FlxTextFormatMarkerPair(new FlxTextFormat(0xFF0018A0), "[[GRAY]]"),
+	]);
+
+	smallText.screenCenter();
+	smallText.y = 30;
+
+	bigText = new CtText();
+	bigText.text = 'Thank you for playing the PROLOGUE DEMO!\nIf you have any feedback, feel free to leave a comment on the itch.io page.\nEach chapter of the game will release as we finish them..\nStay tuned!';
+	bigText.setFormat(Constants.fontName, 40, 0xFFFFFFFF, "center");
+	bigText.camera = camUI;
+	bigText.screenCenter();
+	bigText.y = smallText.y + smallText.height + 80;
+	bigText.alpha = .6;
+	add(bigText);
+
+	button = new CtText();
+	button.text = 'Return to menu';
+	button.setFormat(Constants.fontName, 40, 0xFFFFFFFF, "center");
+	button.camera = camUI;
+	button.screenCenter();
+	button.y = bigText.y + bigText.height + 80;
+	add(button);
+
+	menuManager = new CtMenuManager();
+	menuManager.setMenuOptions([[{sprite: button, cursorDirection: LEFT, clickFunction: function(f):Void{
+		leave();
+	}}]]);
+
+	cursor = new Cursor(Constants.cursorArrowGraphic);
+	cursor.camera = camUI;
+	add(menuManager.addCursor(cursor, 20, false));
+
+	menuManager.enable(true);
+
+}
+
+function update(elapsed:Float):Void{
+    if(menuManager != null) menuManager.update();
+}
+
+function leave():Void{
+	menuManager.disable();
+	button.visible = false;
+
+	var black = new CtSprite().createColorBlock(FlxG.width, FlxG.height, 0xFF000000);
+	black.camera = camUI;
+	black.alpha = 0;
+	add(black);
+
+	FlxTween.tween(black, {alpha: 1}, 3);
+	FlxTween.tween(FlxG.sound.music, {volume: 0}, 3);
+
+	new FlxTimer().start(4, function(f):Void{
+		FlxG.sound.music.destroy();
+		FlxG.sound.music = null;
+
+		FlxG.switchState(new MainMenuState());
+	});
+}
