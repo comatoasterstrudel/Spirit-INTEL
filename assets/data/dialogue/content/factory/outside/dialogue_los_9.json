@@ -627,7 +627,7 @@
 		"speed": 0.03,
 		"diaPitch": 1,
 		"events": [],
-		"dialogue": "Atman will just supress bad press.",
+		"dialogue": "Atman will just surpress bad press.",
 		"choicerOptions": [],
 		"portrait": "nojacket_angry5",
 		"continueLine": false,

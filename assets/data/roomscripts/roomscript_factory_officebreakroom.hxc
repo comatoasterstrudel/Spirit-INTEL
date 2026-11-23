@@ -251,7 +251,6 @@ function doNoodleAftermathCutscene():Void{
 	{
         OverworldState.eventManager.startTransaction("talk");
 
-        FlxTween.shake(character_robin, 0.05, .2, 0x01);
         CtSound.play(Constants.sfxPath + "managerslide.ogg").pitch = 1.5;
 
         prevolume = FlxG.sound.music.volume;
