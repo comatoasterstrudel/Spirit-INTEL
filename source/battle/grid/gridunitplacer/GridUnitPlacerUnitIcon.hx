@@ -63,7 +63,7 @@ class GridUnitPlacerUnitIcon extends FlxSpriteGroup
         this.placed = placed;
         
         if(this.placed){
-            unitGraphic.alpha = .15 * this.alpha;
+            unitGraphic.alpha = .33 * this.alpha;
         } else {
             unitGraphic.alpha = 1 * this.alpha;
         }
