@@ -1,10 +1,10 @@
 {
     "name": "Poke",
-    "description": "Deal poor damage to an enemy Unit in the same Row",
+    "description": "Deal Light Damage to an enemy Unit in the same Row",
     "iconGraphic": "poke",
     "selectType": "enemy_sameRow",
     "effects": {
-        "eff_damage": 8 
+        "eff_damage": 10
     },
     "mpCost": 2,
     "type": "damage"

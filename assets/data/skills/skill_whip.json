@@ -1,6 +1,6 @@
 {
     "name": "Whip",
-    "description": "Damage enemy Units in a 3 tile tall area",
+    "description": "Deal Light Damage to enemy Units in a 3 tile tall area",
     "iconGraphic": "whip",
     "selectType": "enemy_all",
     "rangeY": 2,

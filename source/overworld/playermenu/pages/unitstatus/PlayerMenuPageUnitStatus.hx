@@ -28,7 +28,7 @@ class PlayerMenuPageUnitStatus extends PlayerMenuPage
 
     public function new(playerMenu:PlayerMenu):Void{
         super(playerMenu, "unitstatus");
-        makeBg(500, 500);
+        makeBg(650, 500);
 
         nameText = new CtText(0, 0, "");
 		nameText.setFormat(Constants.fontName, 60, FlxColor.BLACK);

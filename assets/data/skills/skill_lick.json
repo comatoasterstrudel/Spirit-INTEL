@@ -1,6 +1,6 @@
 {
     "name": "Lick",
-    "description": "Damage enemy Units in a 3 tile wide area and regain HP",
+    "description": "Deal Light Damage to enemy Units in a 3 tile wide area and regain HP",
     "iconGraphic": "lick",
     "selectType": "enemy_all",
     "rangeX": 2,

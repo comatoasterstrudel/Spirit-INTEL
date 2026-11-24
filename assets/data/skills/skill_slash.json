@@ -1,6 +1,6 @@
 {
     "name": "Slash",
-    "description": "Massively damage an enemy Unit in the same Row",
+    "description": "Deal Massive Damage to an enemy Unit in the same Row",
     "iconGraphic": "slash",
     "selectType": "enemy_sameRow",
     "effects": {
