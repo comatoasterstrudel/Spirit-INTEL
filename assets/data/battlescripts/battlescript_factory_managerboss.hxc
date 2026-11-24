@@ -15,8 +15,13 @@ function postAdvanceTurn():Void{
             hasTalked = true;
             PlayState.battleFrozen = true;
             startDialogue(["factory/fireexitroom/dialogue_fight_0"], function():Void{
-                PlayState.battleFrozen = false;
-                advanceTurn(1);
+                unit_manager.applyStatusEffect("weakened", 2);
+                
+                PlayState.eventManager.addEvent(function()
+		        {
+                    PlayState.battleFrozen = false;
+                    advanceTurn(1);
+                });
             });
         } else if(!summonedOnce && unit_manager.hp.getPercent() <= .5){ // manager 66% hp
             summonedOnce = true;
@@ -53,7 +58,7 @@ function postAdvanceTurn():Void{
 
             startDialogue(["factory/fireexitroom/dialogue_fight_2"], function():Void{
                 placeUnitChain([
-                    {
+                    { 
                         unitID: "soap", 
                         grid: enemyGrid, 
                         position: FlxPoint.get(0, 1), 

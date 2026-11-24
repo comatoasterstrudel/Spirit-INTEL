@@ -7,14 +7,14 @@
         {
             "id": "leftovers",
             "x": 1,
-            "y": 1,
+            "y": 2,
             "level": 4
         },
         {
             "id": "partyhat",
-            "x": 0,
+            "x": 1,
             "y": 1,
-            "level": 2
+            "level": 1
         }
     ],
     "music": "factory",
