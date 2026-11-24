@@ -42,6 +42,7 @@ class GridUnitPlacerUnitIcon extends FlxSpriteGroup
         super.update(elapsed);
 
         updatePositions();
+        updatePlaced(placed);
     }
 
     function updatePositions():Void{
@@ -62,9 +63,9 @@ class GridUnitPlacerUnitIcon extends FlxSpriteGroup
         this.placed = placed;
         
         if(this.placed){
-            unitGraphic.visible = false;
+            unitGraphic.alpha = .15 * this.alpha;
         } else {
-            unitGraphic.visible = true;
+            unitGraphic.alpha = 1 * this.alpha;
         }
     }
 }
