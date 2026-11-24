@@ -587,10 +587,11 @@ class PlayState extends FlxState
 
 		var effectGroup = (unit.controllable ? allyBossEffectGroup : enemyBossEffectGroup);
 		for(bossEffect in effectGroup.members){
-			if(bossEffect.unit.uniqueUnitID == unit.uniqueUnitID){
-				effectGroup.remove(bossEffect);
+			if(bossEffect.unit != null && bossEffect.unit.uniqueUnitID == unit.uniqueUnitID){
+				effectGroup.remove(bossEffect, true);
 				bossEffect.destroy();
 				bossEffect = null;
+				break;
 			}
 		}
 

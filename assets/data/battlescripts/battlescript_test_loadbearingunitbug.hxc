@@ -1,0 +1,6 @@
+function create(){
+    trace("hey");
+
+    var unit = getUnitByTag("1");
+    unit.hp.value = 1;
+}

@@ -1,0 +1,29 @@
+{
+    "gridSizeX": 3,
+    "gridSizeY": 3,
+    "allyUnits": [
+        {
+            "id": "partyhat",
+            "x": 2,
+            "y": 2,
+            "level": 999999
+        }  
+    ],
+    "enemyUnits": [
+        {
+            "id": "chair",
+            "x": 2,
+            "y": 1,
+            "tag": "2"
+        },
+        {
+            "id": "managerboss",
+            "x": 1,
+            "y": 1,
+            "tag": "1"
+        }  
+    ],
+    "loadBearingUnit": "1",
+    "script": ["test_loadbearingunitbug"],
+    "disableUnitPlacer": true
+}
